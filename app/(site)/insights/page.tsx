@@ -1,0 +1,134 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import Image from "next/image";
+import { getAllInsights } from "@/sanity/queries";
+
+export const metadata: Metadata = {
+  title: "Insights",
+  description:
+    "Practical thinking on digital marketing, AI, web development, and business growth from the MagicWorks team.",
+  alternates: { canonical: "/insights" },
+};
+
+export const revalidate = 3600;
+
+const categoryLabels: Record<string, string> = {
+  "digital-marketing": "Digital Marketing",
+  "web-development": "Web Development",
+  "ai-automation": "AI & Automation",
+  "seo-aeo": "SEO / AEO",
+  "industry-insights": "Industry Insights",
+  "company-news": "Company News",
+};
+
+export default async function InsightsPage() {
+  const articles = await getAllInsights().catch(() => []);
+
+  return (
+    <>
+      {/* Hero */}
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
+        <svg
+          className="absolute right-[-100px] top-[-80px] w-[400px] h-[400px] pointer-events-none opacity-50"
+          aria-hidden="true"
+        >
+          {[80, 140, 200].map((r, i) => (
+            <circle
+              key={r}
+              cx="200"
+              cy="200"
+              r={r}
+              fill="none"
+              stroke={i === 1 ? "#D4A537" : "#7C63D8"}
+              strokeWidth="1.5"
+              opacity={i === 1 ? 0.7 : 0.45}
+            />
+          ))}
+        </svg>
+        <div className="max-w-[1120px] mx-auto px-8 relative">
+          <p className="eyebrow text-[#D4A537] mb-4">Insights</p>
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+            Practical thinking on marketing, AI, and growth.
+          </h1>
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">
+            Open and crawlable — because the knowledge we publish should be
+            useful before it becomes a reason to call us.
+          </p>
+        </div>
+      </section>
+
+      {/* Articles grid */}
+      <section className="bg-[#F7F3EA] py-20">
+        <div className="max-w-[1120px] mx-auto px-8">
+          {articles.length === 0 ? (
+            <p className="text-[#9A9AA8] text-[15px]">
+              Articles coming soon. Check back shortly.
+            </p>
+          ) : (
+            <div className="grid md:grid-cols-3 gap-8">
+              {articles.map(
+                (a: {
+                  _id: string;
+                  slug: { current: string };
+                  title: string;
+                  excerpt: string;
+                  category: string;
+                  publishedAt: string;
+                  coverImage?: string;
+                  coverImageAlt?: string;
+                  author?: { name: string };
+                }) => (
+                  <Link
+                    key={a._id}
+                    href={`/insights/${a.slug.current}`}
+                    className="group bg-white border border-[#D8D8DE] rounded-[10px] overflow-hidden no-underline hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)] transition-all flex flex-col"
+                  >
+                    {a.coverImage && (
+                      <div className="relative h-[200px] overflow-hidden">
+                        <Image
+                          src={a.coverImage}
+                          alt={a.coverImageAlt ?? a.title}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, 33vw"
+                        />
+                      </div>
+                    )}
+                    <div className="p-6 flex flex-col flex-1">
+                      {a.category && (
+                        <span className="text-[11px] uppercase tracking-[0.14em] text-[#5B3FBE] font-bold mb-3">
+                          {categoryLabels[a.category] ?? a.category}
+                        </span>
+                      )}
+                      <h2 className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-3 group-hover:text-[#5B3FBE] transition-colors">
+                        {a.title}
+                      </h2>
+                      <p className="text-[14px] text-[#3F3F4A] flex-1 mb-4 line-clamp-3">
+                        {a.excerpt}
+                      </p>
+                      <div className="flex items-center justify-between mt-auto">
+                        <span className="text-[12px] text-[#9A9AA8]">
+                          {a.publishedAt
+                            ? new Date(a.publishedAt).toLocaleDateString(
+                                "en-IN",
+                                { year: "numeric", month: "short", day: "numeric" }
+                              )
+                            : ""}
+                        </span>
+                        {a.author?.name && (
+                          <span className="text-[12px] text-[#9A9AA8]">
+                            {a.author.name}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+                  </Link>
+                )
+              )}
+            </div>
+          )}
+        </div>
+      </section>
+    </>
+  );
+}

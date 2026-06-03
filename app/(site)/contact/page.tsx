@@ -1,0 +1,135 @@
+import type { Metadata } from "next";
+import ContactForm from "./ContactForm";
+
+export const metadata: Metadata = {
+  title: "Get in Touch",
+  description:
+    "Book a thirty-minute discovery call with MagicWorks. No obligation. We will tell you honestly whether we are the right fit for your business.",
+  alternates: { canonical: "/contact" },
+};
+
+const contactSchema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact MagicWorks",
+  url: "https://magicworksitsolutions.com/contact",
+  mainEntity: {
+    "@type": "Organization",
+    name: "MagicWorks IT Solutions Pvt. Ltd.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Pune",
+      addressRegion: "Maharashtra",
+      addressCountry: "IN",
+    },
+  },
+};
+
+export default function ContactPage() {
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
+      />
+
+      {/* Hero */}
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
+        <svg
+          className="absolute right-[-100px] top-[-100px] w-[480px] h-[480px] pointer-events-none opacity-50"
+          aria-hidden="true"
+        >
+          {[80, 140, 200].map((r, i) => (
+            <circle
+              key={r}
+              cx="240"
+              cy="240"
+              r={r}
+              fill="none"
+              stroke={i === 1 ? "#D4A537" : "#7C63D8"}
+              strokeWidth="1.5"
+              opacity={i === 1 ? 0.7 : 0.45}
+            />
+          ))}
+        </svg>
+        <div className="max-w-[1120px] mx-auto px-8 relative">
+          <p className="eyebrow text-[#D4A537] mb-4">Let us talk</p>
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[640px]">
+            A thirty-minute call, no obligation.
+          </h1>
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">
+            Tell us about your business and goals. We will tell you honestly
+            whether we are the right fit, and what the first step looks like.
+          </p>
+        </div>
+      </section>
+
+      {/* Content */}
+      <section className="bg-[#F7F3EA] py-20">
+        <div className="max-w-[1120px] mx-auto px-8 grid md:grid-cols-[1fr_1.4fr] gap-16 items-start">
+          {/* Left: info */}
+          <div>
+            <hr className="gold-rule mb-6" />
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[24px] text-[#2A1B5C] mb-6">
+              What to expect
+            </h2>
+            <div className="space-y-5">
+              {[
+                {
+                  n: "01",
+                  t: "Fill in the form",
+                  d: "Name, email, and a line about what you are working on.",
+                },
+                {
+                  n: "02",
+                  t: "We confirm a slot",
+                  d: "A team member will reach out within one working day to schedule.",
+                },
+                {
+                  n: "03",
+                  t: "Thirty-minute discovery call",
+                  d: "We listen, ask the right questions, and share a clear view of next steps.",
+                },
+                {
+                  n: "04",
+                  t: "Proposal in five working days",
+                  d: "A scoped proposal with no padding. You decide whether to proceed.",
+                },
+              ].map((s) => (
+                <div key={s.n} className="flex gap-4">
+                  <span className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#D4A537] leading-none mt-1 min-w-[32px]">
+                    {s.n}
+                  </span>
+                  <div>
+                    <p className="font-semibold text-[15px] text-[#2A1B5C]">
+                      {s.t}
+                    </p>
+                    <p className="text-[14px] text-[#3F3F4A] mt-1">{s.d}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-10 pt-8 border-t border-[#D8D8DE]">
+              <p className="text-[13px] uppercase tracking-[0.12em] text-[#9A9AA8] mb-2">
+                Office
+              </p>
+              <p className="text-[15px] text-[#3F3F4A]">
+                MagicWorks IT Solutions Pvt. Ltd.
+                <br />
+                Pune, Maharashtra, India
+              </p>
+              <p className="text-[13px] text-[#9A9AA8] mt-3">
+                Serving clients across India — Mumbai, Bangalore, Hyderabad,
+                Delhi-NCR.
+              </p>
+            </div>
+          </div>
+
+          {/* Right: form */}
+          <ContactForm />
+        </div>
+      </section>
+    </>
+  );
+}

@@ -1,26 +1,84 @@
 @import "tailwindcss";
 
+/* ============================================================
+   MAGICWORKS BRAND TOKENS — Brand Guidelines Edition 02
+   ============================================================ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --mw-indigo: #2A1B5C;
+  --mw-violet: #5B3FBE;
+  --mw-gold: #D4A537;
+  --mw-ivory: #F7F3EA;
+  --mw-graphite: #1A1A22;
+  --mw-neutral-700: #3F3F4A;
+  --mw-neutral-400: #9A9AA8;
+  --mw-neutral-200: #D8D8DE;
+  --mw-card-dark: #3A2A6E;
+  --mw-text-dark-2: #C8B8FF;
+  --mw-text-dark-3: #9A8FBF;
+  --mw-ring-violet: #7C63D8;
+  --mw-violet-pale: #EDE9F7;
+  --radius-pill: 999px;
+  --radius-card: 10px;
+  --maxw: 1120px;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-indigo: #2A1B5C;
+  --color-violet: #5B3FBE;
+  --color-gold: #D4A537;
+  --color-ivory: #F7F3EA;
+  --color-graphite: #1A1A22;
+  --color-neutral-700: #3F3F4A;
+  --color-neutral-400: #9A9AA8;
+  --color-neutral-200: #D8D8DE;
+  --color-card-dark: #3A2A6E;
+  --color-violet-pale: #EDE9F7;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-head: "Source Serif 4", Georgia, serif;
+  --font-body: "Inter", Calibri, system-ui, sans-serif;
+
+  --spacing-s1: 8px;
+  --spacing-s2: 16px;
+  --spacing-s3: 24px;
+  --spacing-s4: 32px;
+  --spacing-s5: 48px;
+  --spacing-s6: 64px;
+  --spacing-s7: 96px;
+  --spacing-s8: 128px;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background: var(--mw-ivory);
+  color: var(--mw-graphite);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* Gold rule — signature motif from brand deck */
+.gold-rule {
+  width: 64px;
+  height: 3px;
+  background: var(--mw-gold);
+  border: 0;
+  display: block;
+}
+
+/* Eyebrow label */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+/* Pull-quote */
+.pullquote {
+  font-family: var(--font-head);
+  font-style: italic;
+  font-size: clamp(20px, 2.6vw, 26px);
+  line-height: 1.4;
+  color: var(--mw-indigo);
 }
