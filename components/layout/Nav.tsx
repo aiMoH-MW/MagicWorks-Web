@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 const services = [
@@ -35,16 +36,15 @@ export default function Nav() {
     >
       <nav className="max-w-[1120px] mx-auto px-8 py-[14px] flex items-center justify-between">
         {/* Brand */}
-        <Link href="/" className="flex items-center gap-[10px] no-underline">
-          <span
-            className="w-[30px] h-[30px] rounded-full border-2 border-[#2A1B5C] relative"
-            aria-hidden
-          >
-            <span className="absolute inset-[6px] rounded-full border-2 border-[#D4A537]" />
-          </span>
-          <span className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] tracking-[0.01em]">
-            MagicWorks
-          </span>
+        <Link href="/" className="flex items-center no-underline">
+          <Image
+            src="/logo.png"
+            alt="MagicWorks IT Solutions"
+            width={180}
+            height={48}
+            className="h-10 w-auto object-contain"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}

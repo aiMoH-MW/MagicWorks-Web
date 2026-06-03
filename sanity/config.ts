@@ -10,7 +10,10 @@ export const sanityConfig = {
   useCdn: process.env.NODE_ENV === "production",
 };
 
-export const client = createClient(sanityConfig);
+export const client = createClient({
+  ...sanityConfig,
+  token: process.env.SANITY_API_READ_TOKEN,
+});
 
 const builder = imageUrlBuilder(client);
 

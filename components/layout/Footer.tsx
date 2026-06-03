@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const serviceLinks = [
   { label: "Digital Marketing", href: "/services/digital-marketing" },
@@ -35,19 +36,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
           {/* Brand col */}
           <div>
-            <Link
-              href="/"
-              className="flex items-center gap-[10px] no-underline mb-4"
-            >
-              <span
-                className="w-[30px] h-[30px] rounded-full border-2 border-[#F7F3EA] relative"
-                aria-hidden
-              >
-                <span className="absolute inset-[6px] rounded-full border-2 border-[#D4A537]" />
-              </span>
-              <span className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#F7F3EA]">
-                MagicWorks
-              </span>
+            <Link href="/" className="inline-block mb-4 no-underline">
+              <Image
+                src="/logo.png"
+                alt="MagicWorks IT Solutions"
+                width={180}
+                height={48}
+                className="h-10 w-auto object-contain brightness-0 invert"
+              />
             </Link>
             <p className="text-[#C8B8FF] text-[14px] leading-[1.6] max-w-[300px] mb-4">
               AI-first digital marketing agency. Human strategy, machine

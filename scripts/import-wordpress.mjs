@@ -12,10 +12,30 @@
 
 import { createClient } from "@sanity/client";
 import { parse } from "csv-parse";
-import { createReadStream } from "fs";
+import { createReadStream, readFileSync } from "fs";
 import { randomBytes } from "crypto";
 import path from "path";
 import { fileURLToPath } from "url";
+
+// Load .env.local manually so this works on Windows without setting env vars
+function loadEnv() {
+  try {
+    const envPath = path.join(path.dirname(fileURLToPath(import.meta.url)), "../.env.local");
+    const lines = readFileSync(envPath, "utf-8").split("\n");
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith("#")) continue;
+      const eq = trimmed.indexOf("=");
+      if (eq === -1) continue;
+      const k = trimmed.slice(0, eq).trim();
+      const v = trimmed.slice(eq + 1).trim();
+      if (!process.env[k]) process.env[k] = v;
+    }
+  } catch {
+    // .env.local not found — rely on process.env
+  }
+}
+loadEnv();
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -142,7 +162,8 @@ function slugify(str) {
 
 // ── Main import ────────────────────────────────────────────
 
-const CSV_PATH = path.join(__dirname, "../Docs/mwits-Posts-Export-2026-June-03-0916.csv");
+// CSV lives in the parent folder: MagicWorks Web/Docs/
+const CSV_PATH = path.join(__dirname, "../../Docs/mwits-Posts-Export-2026-June-03-0916.csv");
 
 async function importPosts() {
   if (!process.env.SANITY_API_TOKEN) {
@@ -177,21 +198,12 @@ async function importPosts() {
   console.log(`✅  ${posts.length} published posts to import`);
 
   let created = 0;
-  let skipped = 0;
 
   for (const post of posts) {
-    const slug = post["Slug"] || slugify(post["Title"] || `post-${post["ID"]}`);
-
-    // Check if already imported
-    const existing = await client.fetch(
-      `*[_type == "insight" && slug.current == $slug][0]._id`,
-      { slug }
-    );
-    if (existing) {
-      console.log(`  ↩  Skipping (exists): ${slug}`);
-      skipped++;
-      continue;
-    }
+    const wpId = post["ID"] || Math.random().toString(36).slice(2);
+    const slug = post["Slug"] || slugify(post["Title"] || `post-${wpId}`);
+    // Deterministic Sanity _id based on WP post ID — safe to re-run (createOrReplace is idempotent)
+    const sanityId = `insight-wp-${wpId}`;
 
     const title = post["Title"] || "Untitled";
     const rawContent = post["Content"] || "";
@@ -206,6 +218,7 @@ async function importPosts() {
       : new Date().toISOString();
 
     const doc = {
+      _id: sanityId,
       _type: "insight",
       title,
       slug: { _type: "slug", current: slug },
@@ -226,7 +239,7 @@ async function importPosts() {
     };
 
     try {
-      await client.create(doc);
+      await client.createOrReplace(doc);
       console.log(`  ✓  Imported: ${title}`);
       created++;
     } catch (err) {
@@ -237,7 +250,7 @@ async function importPosts() {
     await new Promise((r) => setTimeout(r, 100));
   }
 
-  console.log(`\n🎉  Done. Created: ${created}, Skipped (already existed): ${skipped}`);
+  console.log(`\n🎉  Done. Imported/updated: ${created} posts (re-run safe — uses createOrReplace).`);
 }
 
 importPosts().catch((err) => {
