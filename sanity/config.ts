@@ -1,22 +1,35 @@
-import { createClient } from "@sanity/client";
+import { createClient, type SanityClient } from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
+
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SanityImageSource = any;
 
-export const sanityConfig = {
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
-  apiVersion: "2025-06-03",
-  useCdn: process.env.NODE_ENV === "production",
-};
+function getConfig() {
+  return {
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
+    apiVersion: "2025-06-03",
+    useCdn: process.env.NODE_ENV === "production",
+    token: process.env.SANITY_API_READ_TOKEN,
+  };
+}
 
-export const client = createClient({
-  ...sanityConfig,
-  token: process.env.SANITY_API_READ_TOKEN,
+// Lazy singleton — only created on first call, not at module load time.
+// Prevents Vercel build failures when env vars are not set during compilation.
+let _client: SanityClient | null = null;
+
+export function getSanityClient(): SanityClient {
+  if (!_client) _client = createClient(getConfig());
+  return _client;
+}
+
+// Convenience alias for query files
+export const client = new Proxy({} as SanityClient, {
+  get(_t, prop) {
+    return (getSanityClient() as unknown as Record<string, unknown>)[prop as string];
+  },
 });
 
-const builder = imageUrlBuilder(client);
-
 export function urlFor(source: SanityImageSource) {
-  return builder.image(source);
+  return imageUrlBuilder(getSanityClient()).image(source);
 }
