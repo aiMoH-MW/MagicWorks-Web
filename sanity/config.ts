@@ -25,10 +25,15 @@ export function getSanityClient(): SanityClient {
   return _client;
 }
 
-// Convenience alias for query files
+// Convenience alias for query files.
+// Methods are explicitly bound to the SanityClient instance so `this` is
+// correct when called as client.fetch(...) — without binding, the Proxy
+// passes `this = proxy` instead of `this = SanityClient`, silently failing.
 export const client = new Proxy({} as SanityClient, {
   get(_t, prop) {
-    return (getSanityClient() as unknown as Record<string, unknown>)[prop as string];
+    const instance = getSanityClient();
+    const value = (instance as unknown as Record<string, unknown>)[prop as string];
+    return typeof value === "function" ? (value as Function).bind(instance) : value;
   },
 });
 
