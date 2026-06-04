@@ -89,6 +89,131 @@ export const insight = defineType({
             defineField({ name: "caption", title: "Caption", type: "string" }),
           ],
         },
+        // ── Callout Box ──────────────────────────────────────────────
+        {
+          type: "object",
+          name: "callout",
+          title: "Callout Box",
+          fields: [
+            defineField({ name: "title", title: "Box Title", type: "string" }),
+            defineField({ name: "body", title: "Body Text", type: "text", rows: 3 }),
+            defineField({
+              name: "variant",
+              title: "Style",
+              type: "string",
+              options: {
+                list: [
+                  { title: "Key Takeaways (violet)", value: "key-takeaway" },
+                  { title: "Stat Highlight (gold)", value: "stat" },
+                  { title: "Warning (red)", value: "warning" },
+                  { title: "Info (blue)", value: "info" },
+                ],
+                layout: "radio",
+              },
+              initialValue: "key-takeaway",
+            }),
+            defineField({
+              name: "items",
+              title: "Bullet Items (optional)",
+              type: "array",
+              of: [{ type: "string" }],
+            }),
+          ],
+          preview: {
+            select: { title: "title", variant: "variant" },
+            prepare(v: Record<string, string>) {
+              const icons: Record<string, string> = {
+                "key-takeaway": "💡",
+                stat: "📊",
+                warning: "⚠️",
+                info: "ℹ️",
+              };
+              return {
+                title: v.title || "Callout Box",
+                subtitle: `${icons[v.variant] ?? "📦"} ${v.variant ?? "key-takeaway"}`,
+              };
+            },
+          },
+        },
+        // ── Pull Quote ───────────────────────────────────────────────
+        {
+          type: "object",
+          name: "pullquote",
+          title: "Pull Quote",
+          fields: [
+            defineField({
+              name: "text",
+              title: "Quote Text",
+              type: "text",
+              rows: 3,
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({
+              name: "attribution",
+              title: "Attribution (optional)",
+              type: "string",
+            }),
+          ],
+          preview: {
+            select: { title: "text" },
+            prepare(v: Record<string, string>) {
+              return { title: v.title ? `"${v.title}"` : "Pull Quote" };
+            },
+          },
+        },
+        // ── Stats Row ────────────────────────────────────────────────
+        {
+          type: "object",
+          name: "statRow",
+          title: "Stats Row",
+          fields: [
+            defineField({
+              name: "stats",
+              title: "Stats (2–3 recommended)",
+              type: "array",
+              of: [
+                {
+                  type: "object",
+                  fields: [
+                    defineField({
+                      name: "value",
+                      title: "Value (e.g. ₹15L or 95%)",
+                      type: "string",
+                      validation: (Rule) => Rule.required(),
+                    }),
+                    defineField({
+                      name: "label",
+                      title: "Label",
+                      type: "string",
+                      validation: (Rule) => Rule.required(),
+                    }),
+                    defineField({
+                      name: "note",
+                      title: "Note (optional, small text)",
+                      type: "string",
+                    }),
+                  ],
+                  preview: {
+                    select: { value: "value", label: "label" },
+                    prepare(v: Record<string, string>) {
+                      return { title: v.value, subtitle: v.label };
+                    },
+                  },
+                },
+              ],
+            }),
+          ],
+          preview: {
+            select: { stats: "stats" },
+            prepare(v: Record<string, Array<{ value: string; label: string }>>) {
+              const count = v.stats?.length ?? 0;
+              return {
+                title: `Stats Row (${count} stat${count !== 1 ? "s" : ""})`,
+                subtitle: v.stats?.map((s) => s.value).join(" · ") ?? "",
+              };
+            },
+          },
+        },
       ],
     }),
     defineField({
@@ -102,6 +227,12 @@ export const insight = defineType({
             defineField({ name: "question", title: "Question", type: "string" }),
             defineField({ name: "answer", title: "Answer", type: "text" }),
           ],
+          preview: {
+            select: { title: "question" },
+            prepare(v: Record<string, string>) {
+              return { title: v.title || "FAQ item" };
+            },
+          },
         },
       ],
     }),
@@ -113,15 +244,25 @@ export const insight = defineType({
     }),
     defineField({
       name: "seoTitle",
-      title: "SEO Title (override)",
+      title: "SEO Title (override, max 60 chars)",
       type: "string",
       validation: (Rule) => Rule.max(60),
+    }),
+    defineField({
+      name: "tags",
+      title: "Tags (for AEO/GEO)",
+      type: "array",
+      of: [{ type: "string" }],
+      options: { layout: "tags" },
     }),
   ],
   preview: {
     select: { title: "title", author: "author.name", media: "coverImage" },
-    prepare({ title, author, media }) {
-      return { title, subtitle: author ? `By ${author}` : "", media };
+    prepare(v: Record<string, string>) {
+      return {
+        title: v.title,
+        subtitle: v.author ? `By ${v.author}` : "",
+      };
     },
   },
   orderings: [

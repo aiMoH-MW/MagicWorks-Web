@@ -23,7 +23,7 @@ export async function getAllInsights() {
 export async function getInsightBySlug(slug: string) {
   return client.fetch(
     `*[_type == "insight" && slug.current == $slug][0] {
-      _id, title, slug, excerpt, publishedAt, category, pillar, isGated, faq,
+      _id, title, slug, excerpt, publishedAt, category, pillar, isGated, faq, tags,
       "author": author->{ name, role, "photo": photo.asset->url, linkedin },
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt,
@@ -32,12 +32,25 @@ export async function getInsightBySlug(slug: string) {
         _type == "image" => {
           ...,
           "url": asset->url,
-          "alt": alt
+          "alt": alt,
+          caption
         }
       },
       seoTitle
     }`,
     { slug }
+  );
+}
+
+export async function getRelatedInsights(currentSlug: string, limit = 3) {
+  return client.fetch(
+    `*[_type == "insight" && slug.current != $currentSlug] | order(publishedAt desc) [0...3] {
+      _id, title, slug, excerpt, category, publishedAt,
+      "coverImage": coverImage.asset->url,
+      "coverImageAlt": coverImage.alt,
+      "author": author->{ name }
+    }`,
+    { currentSlug }
   );
 }
 

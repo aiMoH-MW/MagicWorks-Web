@@ -82,3 +82,41 @@ body {
   line-height: 1.4;
   color: var(--mw-indigo);
 }
+
+/* Article body — FAQ accordion (hide native disclosure triangle) */
+.article-faq summary {
+  list-style: none;
+}
+.article-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Article body — smooth table rendering */
+.article-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  margin: 2rem 0;
+}
+.article-table th {
+  background: #2A1B5C;
+  color: #F7F3EA;
+  font-weight: 600;
+  text-align: left;
+  padding: 10px 14px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.article-table td {
+  padding: 10px 14px;
+  color: #3F3F4A;
+  border-bottom: 1px solid #D8D8DE;
+  line-height: 1.6;
+}
+.article-table tr:nth-child(even) td {
+  background: #F7F3EA;
+}
+.article-table tr:hover td {
+  background: #EDE9F7;
+}
