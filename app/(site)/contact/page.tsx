@@ -13,25 +13,61 @@ const contactSchema = {
   "@type": "ContactPage",
   name: "Contact MagicWorks",
   url: "https://magicworksitsolutions.com/contact",
-  mainEntity: {
-    "@type": "Organization",
-    name: "MagicWorks IT Solutions Pvt. Ltd.",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pune",
-      addressRegion: "Maharashtra",
-      addressCountry: "IN",
-    },
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "ProfessionalService"],
+  "@id": "https://magicworksitsolutions.com/#organization",
+  name: "MagicWorks IT Solutions Pvt. Ltd.",
+  url: "https://magicworksitsolutions.com",
+  telephone: "+91-9764566644",
+  email: "hello@magicworksitsolutions.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Office 201, Vasant Bahawa, Bavdhan",
+    addressLocality: "Pune",
+    addressRegion: "Maharashtra",
+    postalCode: "411021",
+    addressCountry: "IN",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 18.5195,
+    longitude: 73.7898,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "09:30",
+    closes: "18:30",
+  },
+  areaServed: [
+    { "@type": "City", name: "Pune" },
+    { "@type": "City", name: "Mumbai" },
+    { "@type": "City", name: "Bangalore" },
+    { "@type": "City", name: "Hyderabad" },
+    { "@type": "State", name: "Maharashtra" },
+    { "@type": "Country", name: "India" },
+  ],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "Contact", item: "https://magicworksitsolutions.com/contact" },
+  ],
 };
 
 export default function ContactPage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
@@ -117,11 +153,15 @@ export default function ContactPage() {
               <p className="text-[15px] text-[#3F3F4A]">
                 MagicWorks IT Solutions Pvt. Ltd.
                 <br />
-                Pune, Maharashtra, India
+                Office 201, Vasant Bahawa, Bavdhan
+                <br />
+                Pune, Maharashtra 411021
+              </p>
+              <p className="text-[15px] text-[#3F3F4A] mt-2">
+                <a href="tel:+919764566644" className="text-[#5B3FBE] no-underline hover:underline">+91 97645 66644</a>
               </p>
               <p className="text-[13px] text-[#9A9AA8] mt-3">
-                Serving clients across India — Mumbai, Bangalore, Hyderabad,
-                Delhi-NCR.
+                Serving clients across India — Mumbai, Bangalore, Hyderabad, Delhi-NCR. International by referral.
               </p>
             </div>
           </div>

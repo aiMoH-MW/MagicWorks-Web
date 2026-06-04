@@ -40,6 +40,16 @@ export async function getInsightSlugs() {
   );
 }
 
+export async function getGatedInsights() {
+  return client.fetch(
+    `*[_type == "insight" && isGated == true] | order(publishedAt desc) {
+      _id, title, slug, excerpt, publishedAt, category,
+      "coverImage": coverImage.asset->url,
+      "coverImageAlt": coverImage.alt
+    }`
+  );
+}
+
 // ── Case Studies ──────────────────────────────────────────────────────────
 
 export async function getAllCaseStudies() {

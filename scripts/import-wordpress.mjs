@@ -138,14 +138,14 @@ function htmlToBlocks(html) {
   return blocks;
 }
 
-/** Map WordPress category string to Sanity category value */
-function mapCategory(wpCategories) {
-  if (!wpCategories) return "industry-insights";
-  const c = wpCategories.toLowerCase();
-  if (c.includes("seo") || c.includes("aeo") || c.includes("search")) return "seo-aeo";
-  if (c.includes("digital marketing") || c.includes("ppc") || c.includes("ads")) return "digital-marketing";
-  if (c.includes("web") || c.includes("development")) return "web-development";
-  if (c.includes("ai") || c.includes("automation")) return "ai-automation";
+/** Map WordPress category string + title to Sanity category value */
+function mapCategory(text) {
+  if (!text) return "industry-insights";
+  const c = text.toLowerCase();
+  if (c.includes("seo") || c.includes("aeo") || c.includes("google ai overview") || c.includes("answer engine")) return "seo-aeo";
+  if (c.includes(" ai ") || c.includes("artificial intelligence") || c.includes("ai-powered") || c.includes("ai investment") || c.includes("ai in ")) return "ai-automation";
+  if (c.includes("web") || c.includes("website") || c.includes("development")) return "web-development";
+  if (c.includes("social media") || c.includes("digital marketing") || c.includes("ppc") || c.includes("performance marketing") || c.includes("ads")) return "digital-marketing";
   return "industry-insights";
 }
 
@@ -172,16 +172,24 @@ async function importPosts() {
     process.exit(1);
   }
 
+  // ── STRATEGY: read by column INDEX (0–14) not by name.
+  // The CSV has Elementor JSON in column 21 (_elementor_data) which contains
+  // unescaped commas and quotes that shift all subsequent column indices,
+  // scrambling Status, Slug, etc. Columns 0–14 (ID through Categories) are
+  // always correct because they come before the Elementor columns.
+  // Col indices: 0=ID, 1=Title, 2=Content, 3=Excerpt, 4=Date,
+  //              5=PostType, 6=Permalink, 14=Categories
   const records = [];
 
   await new Promise((resolve, reject) => {
     createReadStream(CSV_PATH)
       .pipe(
         parse({
-          columns: true,
+          columns: false,        // read as arrays, not objects
           skip_empty_lines: true,
           relax_quotes: true,
           relax_column_count: true,
+          from_line: 2,          // skip header row
         })
       )
       .on("data", (row) => records.push(row))
@@ -191,30 +199,58 @@ async function importPosts() {
 
   console.log(`📄  Read ${records.length} rows from CSV`);
 
-  const posts = records.filter(
-    (r) => r["Status"] === "publish" && r["Post Type"] === "post"
-  );
+  // Event/gallery title keywords to skip
+  const eventKeywords = ["diwali", "christmas", "anniversary", "celebration", "bash", "retreat", "party"];
+  // Site page titles to skip (WordPress pages that aren't blog posts)
+  const pageSkip = ["home", "contact", "about", "services", "work", "careers", "privacy", "terms"];
 
-  console.log(`✅  ${posts.length} published posts to import`);
+  const posts = records.filter((row) => {
+    const title = (row[1] || "").trim();
+    const content = row[2] || "";
+    const postType = (row[5] || "").trim();
+
+    // Must be a "post" type
+    if (postType !== "post") return false;
+    // Must have meaningful content (> 200 chars of raw HTML)
+    if (content.length < 200) return false;
+    // Skip events
+    const tl = title.toLowerCase();
+    if (eventKeywords.some((kw) => tl.includes(kw))) return false;
+    if (pageSkip.some((kw) => tl === kw)) return false;
+    // Skip Simpli Distance duplicate (already a case study)
+    if (tl.includes("simpli distance") || tl.includes("simplidistance")) return false;
+    // Skip Aishwaryam / SRJ duplicates
+    if (tl.includes("aishwaryam") || tl.includes("srj")) return false;
+    return true;
+  });
+
+  console.log(`✅  ${posts.length} posts to import`);
 
   let created = 0;
 
-  for (const post of posts) {
-    const wpId = post["ID"] || Math.random().toString(36).slice(2);
-    const slug = post["Slug"] || slugify(post["Title"] || `post-${wpId}`);
-    // Deterministic Sanity _id based on WP post ID — safe to re-run (createOrReplace is idempotent)
+  for (const row of posts) {
+    const wpId = (row[0] || "").trim() || Math.random().toString(36).slice(2);
+    const title = stripHtml(row[1] || "Untitled").trim();
+    const rawContent = row[2] || "";
+    const rawExcerpt = row[3] || "";
+    const date = row[4] || "";
+    const permalink = row[6] || "";
+    const categories = row[14] || "";
+
+    // Derive slug from permalink or title
+    const permalinkSlug = permalink.replace(/.*\/([^/]+)\/?$/, "$1");
+    const slug = permalinkSlug && permalinkSlug.length > 3
+      ? permalinkSlug
+      : slugify(title);
+
     const sanityId = `insight-wp-${wpId}`;
 
-    const title = post["Title"] || "Untitled";
-    const rawContent = post["Content"] || "";
-    const excerpt =
-      post["_yoast_wpseo_metadesc"] ||
-      post["Excerpt"] ||
+    const excerpt = stripHtml(rawExcerpt).substring(0, 155) ||
       stripHtml(rawContent).substring(0, 155);
 
     const body = htmlToBlocks(rawContent);
-    const publishedAt = post["Date"]
-      ? new Date(post["Date"]).toISOString()
+    const publishedAt = date
+      ? new Date(date).toISOString()
       : new Date().toISOString();
 
     const doc = {
@@ -224,7 +260,7 @@ async function importPosts() {
       slug: { _type: "slug", current: slug },
       excerpt: excerpt.substring(0, 155),
       publishedAt,
-      category: mapCategory(post["Categories"]),
+      category: mapCategory(categories + " " + title),
       isGated: false,
       body: body.length ? body : [
         {
@@ -235,7 +271,6 @@ async function importPosts() {
           markDefs: [],
         },
       ],
-      seoTitle: post["_yoast_wpseo_title"] || undefined,
     };
 
     try {

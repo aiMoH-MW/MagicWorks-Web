@@ -11,15 +11,33 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
-  name: "About MagicWorks IT Solutions",
   url: "https://magicworksitsolutions.com/about",
-  mainEntity: {
-    "@type": "Organization",
-    name: "MagicWorks IT Solutions Pvt. Ltd.",
-    foundingDate: "2009",
-    description: "AI-first digital marketing agency in Pune, India.",
-    address: { "@type": "PostalAddress", addressLocality: "Pune", addressRegion: "Maharashtra", addressCountry: "IN" },
+  name: "About MagicWorks IT Solutions",
+  description: "MagicWorks IT Solutions Pvt. Ltd. is an AI-first digital marketing agency in Pune, India, founded in 2009 by Swapnil Ughade.",
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".about-lede"],
   },
+};
+
+const founderSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "@id": "https://magicworksitsolutions.com/#founder",
+  name: "Swapnil Ughade",
+  jobTitle: "Founder",
+  worksFor: { "@id": "https://magicworksitsolutions.com/#organization" },
+  knowsAbout: ["Digital Marketing", "AI Consultation", "Web Development", "Platform Strategy"],
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "About", item: "https://magicworksitsolutions.com/about" },
+  ],
 };
 
 const timeline = [
@@ -42,6 +60,8 @@ export default function AboutPage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(founderSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 relative overflow-hidden">
@@ -55,8 +75,8 @@ export default function AboutPage() {
           <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[700px]">
             Seventeen years of practice. Evolving with purpose.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px] mt-5">
-            Founded in 2009. Incorporated 2012. Built on the conviction that human strategy and machine acceleration are not opposites — they are the combination that creates compounding results for ambitious Indian businesses.
+          <p className="about-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px] mt-5">
+            MagicWorks IT Solutions Pvt. Ltd. is an AI-first digital marketing agency in Pune, India, founded in 2009 and incorporated in 2012 by Swapnil Ughade. Over seventeen years, the firm has helped ambitious Indian businesses turn traffic, leads, and operations into predictable revenue across digital marketing, web development, AI consultation, and platform strategy.
           </p>
         </div>
       </section>
@@ -114,6 +134,31 @@ export default function AboutPage() {
               <p className="text-[13px] text-[#3F3F4A] mt-2">{s.cap}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* Founder */}
+      <section className="bg-[#F7F3EA] py-20 border-t border-[#D8D8DE]">
+        <div className="max-w-[1120px] mx-auto px-8 grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <hr className="gold-rule mb-6" />
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-5">Led by the founder.</h2>
+            <p className="text-[16px] text-[#3F3F4A] leading-[1.65] mb-4">
+              MagicWorks IT Solutions was founded and is led by <strong>Swapnil Ughade</strong>, who brings more than seventeen years of experience across digital marketing, web development, and AI strategy for ambitious Indian businesses.
+            </p>
+            <p className="text-[16px] text-[#3F3F4A] leading-[1.65]">
+              The advisory pillars — AI Consultation and Platform Consultation — are founder-led by design. Senior judgment is not delegated to account managers.
+            </p>
+          </div>
+          <div className="bg-[#2A1B5C] rounded-[12px] p-8 text-[#F7F3EA]">
+            <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A537] mb-4">The MagicWorks Group</p>
+            <p className="text-[15px] text-[#C8B8FF] leading-[1.65] mb-5">
+              MagicWorks IT Solutions is the parent in a small family of brands, alongside MagicFlow AI, Magic Pipeline, and MagicWorks Host. Each is its own brand with its own product and contract. We will introduce you, but you engage each brand directly.
+            </p>
+            <Link href="/group" className="text-[#D4A537] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline">
+              Meet the group →
+            </Link>
+          </div>
         </div>
       </section>
 
