@@ -3,10 +3,11 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "cdn.sanity.io",
-      },
+      { protocol: "https", hostname: "cdn.sanity.io" },
+      // WordPress origin images (used for imported blog content)
+      { protocol: "https", hostname: "magicworksitsolutions.com" },
+      // BerqWP image CDN (serves optimised WordPress images)
+      { protocol: "https", hostname: "images.berqwp.com" },
     ],
   },
   async redirects() {

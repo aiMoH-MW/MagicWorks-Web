@@ -416,145 +416,99 @@ export default async function InsightArticlePage({ params }: Props) {
       )}
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] relative overflow-hidden pt-16 pb-24">
-        {/* Decorative rings */}
+      {/* Matches template: .ahead { padding: 96px 0 64px } + .wrap { max-width: 1120px } */}
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] relative overflow-hidden pt-[96px] pb-[64px]">
+        {/* Rings — exact template values: 640×640, right:-200px, top:-160px */}
         <svg
-          className="absolute right-[-80px] top-[-80px] w-[480px] h-[480px] pointer-events-none opacity-60"
+          className="absolute pointer-events-none"
+          style={{ width: "640px", height: "640px", right: "-200px", top: "-160px" }}
+          viewBox="0 0 640 640"
           aria-hidden="true"
-          viewBox="0 0 480 480"
         >
-          <circle
-            cx="240"
-            cy="240"
-            r="230"
-            fill="none"
-            stroke="#7C63D8"
-            strokeWidth="1.5"
-            opacity="0.4"
-          />
-          <circle
-            cx="240"
-            cy="240"
-            r="165"
-            fill="none"
-            stroke="#D4A537"
-            strokeWidth="1.5"
-            opacity="0.6"
-          />
-          <circle
-            cx="240"
-            cy="240"
-            r="100"
-            fill="none"
-            stroke="#7C63D8"
-            strokeWidth="1.5"
-            opacity="0.35"
-          />
+          <circle cx="320" cy="320" r="310" fill="none" stroke="#7C63D8" strokeWidth="1.5" opacity="0.4" />
+          <circle cx="320" cy="320" r="225" fill="none" stroke="#D4A537" strokeWidth="1.5" opacity="0.65" />
+          <circle cx="320" cy="320" r="140" fill="none" stroke="#7C63D8" strokeWidth="1.5" opacity="0.4" />
         </svg>
 
-        <div className="max-w-[780px] mx-auto px-6 md:px-8 relative">
+        {/* .wrap = max-width: 1120px — same as template */}
+        <div className="max-w-[1120px] mx-auto px-8 relative">
           {/* Breadcrumb */}
           <nav
             aria-label="Breadcrumb"
-            className="flex items-center gap-2 text-[13px] text-[#9A8FBF] mb-6 flex-wrap"
+            className="flex items-center gap-2 text-[13px] text-[#C8B8FF] mb-6 flex-wrap"
           >
-            <Link
-              href="/"
-              className="hover:text-[#D4A537] transition-colors no-underline"
-            >
+            <Link href="/" className="hover:text-[#D4A537] transition-colors no-underline text-[#C8B8FF]">
               Home
             </Link>
-            <span aria-hidden="true" className="opacity-50">/</span>
-            <Link
-              href="/insights"
-              className="hover:text-[#D4A537] transition-colors no-underline"
-            >
+            <span aria-hidden="true" className="opacity-50 font-normal">/</span>
+            <Link href="/insights" className="hover:text-[#D4A537] transition-colors no-underline text-[#C8B8FF]">
               Insights
             </Link>
-            <span aria-hidden="true" className="opacity-50">/</span>
-            <span className="text-[#C8B8FF] truncate max-w-[240px]">
+            <span aria-hidden="true" className="opacity-50 font-normal">/</span>
+            <span className="text-[#9A8FBF] truncate max-w-[260px]">
               {article.title}
             </span>
           </nav>
 
           {/* Category pill */}
           {article.category && (
-            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.12em] text-[#2A1B5C] bg-[#D4A537] px-3 py-[5px] rounded-full mb-5">
+            <span className="inline-block text-[11px] font-bold uppercase tracking-[0.1em] text-[#2A1B5C] bg-[#D4A537] px-3 py-[4px] rounded-full mb-6">
               {categoryLabels[article.category] ?? article.category}
             </span>
           )}
 
-          {/* Title */}
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4vw,44px)] leading-[1.15] text-[#F7F3EA] mb-5">
+          {/* Title — max-w-[760px] matches template .ahead h1 */}
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4.2vw,44px)] leading-[1.14] text-[#F7F3EA] max-w-[760px] mb-6">
             {article.title}
           </h1>
 
-          {/* Excerpt / standfirst */}
-          <p className="text-[18px] leading-[1.62] text-[#C8B8FF] mb-8 max-w-[640px]">
-            {article.excerpt}
-          </p>
-
-          {/* Gold rule */}
-          <hr className="gold-rule mb-7" />
-
-          {/* Author + meta strip */}
-          <div className="flex items-center gap-4 flex-wrap text-[14px] text-[#9A8FBF]">
+          {/* Author meta strip — matches template .ameta format exactly:
+              [avatar] By Name · Primary Role · Date · N min read */}
+          <div className="flex items-center gap-4 flex-wrap text-[14px] text-[#C8B8FF]">
             {article.author?.photo ? (
               <Image
                 src={article.author.photo}
                 alt={article.author.name ?? "Author"}
-                width={40}
-                height={40}
-                className="rounded-full border-2 border-[rgba(212,165,55,0.4)]"
+                width={38}
+                height={38}
+                className="rounded-full flex-shrink-0"
+                style={{ background: "linear-gradient(135deg,#5B3FBE,#D4A537)" }}
               />
-            ) : article.author ? (
-              <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#5B3FBE] to-[#D4A537] flex-shrink-0" />
-            ) : null}
-
-            {article.author && (
-              <div>
-                <span className="text-[#F7F3EA] font-semibold">
-                  {article.author.name}
-                </span>
-                {article.author.role && (
-                  <span className="text-[#9A8FBF]">
-                    {" "}
-                    &middot; {article.author.role}
-                  </span>
-                )}
-              </div>
+            ) : (
+              <span
+                className="flex-shrink-0 w-[38px] h-[38px] rounded-full inline-block"
+                style={{ background: "linear-gradient(135deg,#5B3FBE,#D4A537)" }}
+              />
             )}
-
-            {formattedDate && (
-              <span className="text-[#9A8FBF]">{formattedDate}</span>
-            )}
-
-            <span className="flex items-center gap-1.5 text-[#9A8FBF]">
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                aria-hidden="true"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-              {readingTime} min read
+            <span>
+              By{" "}
+              <strong className="text-[#F7F3EA] font-semibold">
+                {article.author?.name ?? "MagicWorks"}
+              </strong>
+              {article.author?.role && (
+                <>
+                  {" "}&middot;{" "}
+                  {/* Show only primary role (first segment before · or |) */}
+                  {article.author.role.split(/[·|]/)[0].trim()}
+                </>
+              )}
+              {formattedDate && (
+                <>{" "}&middot; {formattedDate}</>
+              )}
+              {" "}&middot; {readingTime} min read
             </span>
           </div>
         </div>
       </section>
 
       {/* ── COVER IMAGE ──────────────────────────────────────────────── */}
-      {article.coverImage && (
-        <div className="bg-[#F7F3EA]">
-          <div className="max-w-[960px] mx-auto px-6 md:px-8">
+      {/* Template: .cover-img { max-width:960px; margin:-40px auto 0; height:300px } */}
+      <div className="bg-[#F7F3EA]">
+        <div className="max-w-[960px] mx-auto px-6 md:px-8">
+          {article.coverImage ? (
             <div
-              className="relative -mt-10 rounded-[12px] overflow-hidden shadow-[0_20px_60px_rgba(42,27,92,0.18)]"
-              style={{ aspectRatio: "21/9" }}
+              className="relative rounded-[10px] overflow-hidden shadow-[0_20px_60px_rgba(42,27,92,0.18)] border border-[#D8D8DE]"
+              style={{ marginTop: "-40px", height: "clamp(240px,30vw,400px)" }}
             >
               <Image
                 src={article.coverImage}
@@ -565,9 +519,29 @@ export default async function InsightArticlePage({ params }: Props) {
                 sizes="(max-width: 768px) 100vw, 960px"
               />
             </div>
-          </div>
+          ) : (
+            /* Placeholder matches template .cover-img with ring decoration */
+            <div
+              className="relative rounded-[10px] border border-[#D8D8DE] overflow-hidden"
+              style={{
+                marginTop: "-40px",
+                height: "300px",
+                background: "linear-gradient(135deg,#EDE9F7,#fff)",
+              }}
+            >
+              {/* Template decorative ellipses */}
+              <span
+                className="absolute inset-[60px] rounded-full"
+                style={{ border: "1.5px solid rgba(91,63,190,0.2)" }}
+              />
+              <span
+                className="absolute inset-[110px] rounded-full"
+                style={{ border: "1.5px solid rgba(212,165,55,0.4)" }}
+              />
+            </div>
+          )}
         </div>
-      )}
+      </div>
 
       {/* ── ARTICLE BODY ─────────────────────────────────────────────── */}
       <div className="bg-[#F7F3EA] pt-14 pb-20">
