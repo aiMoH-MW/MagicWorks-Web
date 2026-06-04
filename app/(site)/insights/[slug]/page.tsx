@@ -158,9 +158,21 @@ const articleComponents: PortableTextComponents = {
     },
   },
   types: {
+    externalImage: ({ value }) => {
+      if (!value?.url) return null;
+      return (
+        <figure className="my-10 -mx-6 sm:-mx-8 md:mx-0">
+          <div className="relative w-full rounded-[10px] overflow-hidden bg-[#EDE9F7] shadow-[0_8px_30px_rgba(42,27,92,0.10)]" style={{ aspectRatio: "16/9" }}>
+            <Image src={value.url} alt={value.alt ?? ""} fill className="object-contain" sizes="(max-width: 768px) 100vw, 800px" />
+          </div>
+          {value.caption && (
+            <figcaption className="text-center text-[13px] text-[#9A9AA8] mt-3 italic leading-[1.5]">{value.caption}</figcaption>
+          )}
+        </figure>
+      );
+    },
     image: ({ value }) => {
-      // Support both Sanity CDN images (value.url) and external URLs (value.externalUrl)
-      const src = value?.url ?? value?.externalUrl;
+      const src = value?.url;
       if (!src) return null;
       return (
         <figure className="my-10 -mx-6 sm:-mx-8 md:mx-0">
@@ -592,13 +604,14 @@ export default async function InsightArticlePage({ params }: Props) {
       {/* Template: .cover-img { max-width:960px; margin:-40px auto 0; height:300px } */}
       <div className="bg-[#F7F3EA]">
         <div className="max-w-[960px] mx-auto px-6 md:px-8">
-          {article.coverImage ? (
+          {/* Use Sanity CDN image first, then external URL fallback, then placeholder */}
+          {(article.coverImage || article.externalCoverImageUrl) ? (
             <div
               className="relative rounded-[10px] overflow-hidden shadow-[0_20px_60px_rgba(42,27,92,0.18)] border border-[#D8D8DE]"
               style={{ marginTop: "-40px", height: "clamp(240px,30vw,400px)" }}
             >
               <Image
-                src={article.coverImage}
+                src={article.coverImage ?? article.externalCoverImageUrl}
                 alt={article.coverImageAlt ?? article.title}
                 fill
                 priority

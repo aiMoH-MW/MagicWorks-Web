@@ -67,8 +67,14 @@ export const insight = defineType({
       },
     }),
     defineField({
+      name: "externalCoverImageUrl",
+      title: "Cover Image URL (external — use when Sanity upload not available)",
+      type: "url",
+      description: "Paste a public image URL. Used as fallback when no Sanity cover image is set.",
+    }),
+    defineField({
       name: "coverImage",
-      title: "Cover Image",
+      title: "Cover Image (Sanity CDN)",
       type: "image",
       options: { hotspot: true },
       fields: [
@@ -88,6 +94,28 @@ export const insight = defineType({
             defineField({ name: "alt", title: "Alt text", type: "string" }),
             defineField({ name: "caption", title: "Caption", type: "string" }),
           ],
+        },
+        // ── External Image (URL-based, no Sanity upload required) ───
+        {
+          type: "object",
+          name: "externalImage",
+          title: "External Image (URL)",
+          fields: [
+            defineField({
+              name: "url",
+              title: "Image URL",
+              type: "url",
+              validation: (Rule) => Rule.required(),
+            }),
+            defineField({ name: "alt", title: "Alt text", type: "string" }),
+            defineField({ name: "caption", title: "Caption", type: "string" }),
+          ],
+          preview: {
+            select: { title: "alt", subtitle: "url" },
+            prepare(v: Record<string, string>) {
+              return { title: v.title || "External Image", subtitle: v.subtitle };
+            },
+          },
         },
         // ── Callout Box ──────────────────────────────────────────────
         {
