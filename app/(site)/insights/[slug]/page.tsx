@@ -149,7 +149,7 @@ const articleComponents: PortableTextComponents = {
         <a
           href={value?.href}
           target={isExternal ? "_blank" : undefined}
-          rel={isExternal ? "noopener noreferrer" : undefined}
+          rel={isExternal ? "nofollow noopener noreferrer" : undefined}
           className="text-[#5B3FBE] underline underline-offset-2 decoration-[rgba(91,63,190,0.4)] hover:text-[#2A1B5C] hover:decoration-[#2A1B5C] transition-colors"
         >
           {children}
@@ -159,19 +159,21 @@ const articleComponents: PortableTextComponents = {
   },
   types: {
     image: ({ value }) => {
-      if (!value?.url) return null;
+      // Support both Sanity CDN images (value.url) and external URLs (value.externalUrl)
+      const src = value?.url ?? value?.externalUrl;
+      if (!src) return null;
       return (
-        <figure className="my-10 -mx-4 sm:mx-0">
+        <figure className="my-10 -mx-6 sm:-mx-8 md:mx-0">
           <div
-            className="relative w-full rounded-[10px] overflow-hidden bg-[#EDE9F7] shadow-[0_8px_30px_rgba(42,27,92,0.08)]"
+            className="relative w-full rounded-[10px] overflow-hidden bg-[#EDE9F7] shadow-[0_8px_30px_rgba(42,27,92,0.10)]"
             style={{ aspectRatio: "16/9" }}
           >
             <Image
-              src={value.url}
+              src={src}
               alt={value.alt ?? ""}
               fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 720px"
+              className="object-contain"
+              sizes="(max-width: 768px) 100vw, 800px"
             />
           </div>
           {value.caption && (
@@ -322,66 +324,158 @@ export default async function InsightArticlePage({ params }: Props) {
       })
     : null;
 
-  // ── JSON-LD schemas ──────────────────────────────────────────────────────
+  // ── JSON-LD schemas (SEO + AEO + GEO) ───────────────────────────────────────
+  const canonicalUrl = `https://magicworksitsolutions.com/insights/${slug}`;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      {
-        "@type": "ListItem",
-        position: 1,
-        name: "Home",
-        item: "https://magicworksitsolutions.com",
-      },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Insights",
-        item: "https://magicworksitsolutions.com/insights",
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: article.title,
-        item: `https://magicworksitsolutions.com/insights/${slug}`,
-      },
+      { "@type": "ListItem", position: 1, name: "Home",     item: "https://magicworksitsolutions.com" },
+      { "@type": "ListItem", position: 2, name: "Insights", item: "https://magicworksitsolutions.com/insights" },
+      { "@type": "ListItem", position: 3, name: article.title, item: canonicalUrl },
     ],
   };
 
+  const organizationSchema = {
+    "@type": "Organization",
+    "@id": "https://magicworksitsolutions.com/#organization",
+    name: "MagicWorks IT Solutions Pvt. Ltd.",
+    url: "https://magicworksitsolutions.com",
+    sameAs: ["https://www.linkedin.com/company/magicworks-it-solutions/"],
+    logo: {
+      "@type": "ImageObject",
+      url: "https://magicworksitsolutions.com/wp-content/uploads/2025/10/logo_mwits.png",
+      width: 300,
+      height: 60,
+    },
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+91-9764566644",
+      contactType: "customer service",
+      areaServed: "IN",
+      availableLanguage: ["English", "Hindi"],
+    },
+  };
+
+  // GEO — rich Article schema with mentions, citations, speakable (helps AI engines cite)
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": canonicalUrl,
     headline: article.title,
     description: article.excerpt,
     datePublished: article.publishedAt,
     dateModified: article.publishedAt,
-    image: article.coverImage ? [article.coverImage] : [],
+    image: article.coverImage
+      ? [{ "@type": "ImageObject", url: article.coverImage, width: 1200, height: 630 }]
+      : [],
     keywords: article.tags?.join(", ") ?? undefined,
+    inLanguage: "en-IN",
+    timeRequired: `PT${readingTime}M`,
+    articleSection: categoryLabels[article.category] ?? article.category,
     author: article.author
       ? {
           "@type": "Person",
+          "@id": "https://magicworksitsolutions.com/about/#swapnil-ughade",
           name: article.author.name,
-          jobTitle: article.author.role,
+          jobTitle: "Founder",
+          worksFor: { "@type": "Organization", "@id": "https://magicworksitsolutions.com/#organization" },
           url: "https://magicworksitsolutions.com/about/",
+          sameAs: article.author.linkedin ? [article.author.linkedin] : [],
         }
       : undefined,
-    publisher: {
-      "@type": "Organization",
-      name: "MagicWorks IT Solutions Pvt. Ltd.",
-      url: "https://magicworksitsolutions.com",
-      logo: {
-        "@type": "ImageObject",
-        url: "https://magicworksitsolutions.com/wp-content/uploads/2025/10/logo_mwits.png",
+    publisher: organizationSchema,
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    isPartOf: { "@type": "WebSite", "@id": "https://magicworksitsolutions.com/#website", name: "MagicWorks IT Solutions" },
+    // GEO — speakable tells voice assistants / AI summaries which sections to read aloud
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", ".article-lede", "article > p:first-child"],
+    },
+    // GEO — mentions helps AI engines understand entities this article is authoritative about
+    mentions: [
+      { "@type": "Organization", name: "MIT Project NANDA" },
+      { "@type": "Organization", name: "Gartner" },
+      { "@type": "Organization", name: "HubSpot", url: "https://www.hubspot.com" },
+      { "@type": "Organization", name: "Salesforce", url: "https://www.salesforce.com" },
+      { "@type": "Organization", name: "Gong" },
+      { "@type": "Organization", name: "Chorus" },
+      { "@type": "Organization", name: "Power BI" },
+      { "@type": "Organization", name: "Tableau" },
+      { "@type": "Product", name: "HubSpot Professional" },
+      { "@type": "Product", name: "Salesforce Marketing Cloud" },
+      { "@type": "Legislation", name: "DPDP Act 2023", jurisdiction: "IN" },
+    ],
+    // AEO — citation list matches the 15 sources cited in the article
+    citation: [
+      { "@type": "CreativeWork", name: "upGrowth: Marketing Automation Pricing India 2026" },
+      { "@type": "CreativeWork", name: "Avidly Agency: HubSpot vs Salesforce Pricing 2026" },
+      { "@type": "CreativeWork", name: "Brainguru Technologies: AI Chatbot Development Cost 2026" },
+      { "@type": "CreativeWork", name: "Codingclave: AI Chatbot Development Cost India 2026" },
+      { "@type": "CreativeWork", name: "Mihup: Best Conversation Intelligence India 2026" },
+      { "@type": "CreativeWork", name: "Deelan: Sales Enablement Pricing 2026" },
+      { "@type": "CreativeWork", name: "Salesmotion: Top 10 Sales Enablement Platforms 2026" },
+      { "@type": "CreativeWork", name: "Teract: AI Writing Tools Comparison 2026 (5,000 post test)" },
+      { "@type": "CreativeWork", name: "Domo: 15 Best Dashboard Software Platforms 2026" },
+      { "@type": "CreativeWork", name: "Uvik Software: AI Development Cost 2026" },
+      { "@type": "CreativeWork", name: "CMARIX: Build vs Buy AI Software 2026" },
+      { "@type": "CreativeWork", name: "Riseup Labs: True Cost of Implementing AI 2026" },
+      { "@type": "CreativeWork", name: "Gartner Press Release: Agentic AI Projects June 2025" },
+      { "@type": "CreativeWork", name: "MIT Project NANDA via Fortune: 95% of GenAI Pilots Fail, August 2025" },
+      { "@type": "CreativeWork", name: "OG Marka: Conversational AI ROI Enterprise Guide 2026" },
+    ],
+  };
+
+  // AEO — HowTo schema for the 4-part cost discipline framework
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Budget AI Investments Correctly for Indian Businesses in 2026",
+    description: "A 4-part cost discipline framework for Indian CEOs, founders, and CFOs evaluating AI investments in 2026.",
+    totalTime: "PT30M",
+    step: [
+      {
+        "@type": "HowToStep",
+        position: 1,
+        name: "Budget the Iceberg, Not the Tip",
+        text: "Multiply the headline vendor price by 3–4× to estimate true first-year cost. Platform licensing is only 25–35% of total spend. Exception: simple SaaS tools (1.5–2× multiplier).",
       },
-    },
-    mainEntityOfPage: {
-      "@type": "WebPage",
-      "@id": `https://magicworksitsolutions.com/insights/${slug}`,
-    },
-    articleSection: categoryLabels[article.category] ?? article.category,
-    timeRequired: `PT${readingTime}M`,
-    inLanguage: "en-IN",
+      {
+        "@type": "HowToStep",
+        position: 2,
+        name: "Plan the Kill Switch Before Launch",
+        text: "Define a measurable outcome, a specific evaluation date, and a named owner for shutdown execution before signing any AI contract.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 3,
+        name: "Measure on the Right Horizon",
+        text: "Tier 1 (under ₹5L): 90 days. Tier 2 (₹5–50L): 12–18 months. Tier 3 (₹50L+): 18–36 months. Wrong evaluation horizon kills good investments and protects bad ones.",
+      },
+      {
+        "@type": "HowToStep",
+        position: 4,
+        name: "Build the Operational Layer First",
+        text: "Audit existing tool value before expanding. 40–60% of existing AI spend in most Indian businesses produces no measurable value because the workflow layer was never built.",
+      },
+    ],
+  };
+
+  // AEO — ItemList for the 5 use cases (helps AI engines surface structured answers)
+  const useCaseListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "5 AI Use Cases for Indian Marketing and Sales Teams in 2026",
+    description: "Honest cost ranges and payback timelines for the five most common AI investments Indian businesses are evaluating in 2026.",
+    numberOfItems: 5,
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "AI-Powered Chatbot Deployment", description: "₹3 to 25 lakh range. Payback 8–14 months at Tier 2. Hidden costs: LLM API (30–50%), multilingual layer (20–30%), CRM integration (150–200% over platform price)." },
+      { "@type": "ListItem", position: 2, name: "Marketing Automation with AI Personalisation", description: "₹8 to 50 lakh range. First-year total including implementation. HubSpot Professional: ₹35–60L first-year. Salesforce Marketing Cloud: ₹80L–1.5Cr first-year." },
+      { "@type": "ListItem", position: 3, name: "AI Sales Enablement and Conversation Intelligence", description: "₹6 to 40 lakh range. Entry-tier ₹15K–50K per user per year. Mid-tier (Gong, Chorus) ₹50K–1.5L per user per year." },
+      { "@type": "ListItem", position: 4, name: "AI-Powered Content Production", description: "₹2 to 15 lakh range. 60–80% of AI-generated content requires editing. Tool cost is 10–20% of total production cost when AI is used properly." },
+      { "@type": "ListItem", position: 5, name: "AI-Driven Analytics and Reporting", description: "₹5 to 30 lakh range. Data preparation accounts for 40–60% of year-one cost. Power BI Pro, Tableau Creator: ₹1–5L/year at entry tier." },
+    ],
   };
 
   const faqSchema =
@@ -399,20 +493,13 @@ export default async function InsightArticlePage({ params }: Props) {
 
   return (
     <>
-      {/* ── JSON-LD ──────────────────────────────────────────────────── */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      {/* ── JSON-LD (SEO + AEO + GEO) ───────────────────────────────── */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(useCaseListSchema) }} />
       {faqSchema && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       )}
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
