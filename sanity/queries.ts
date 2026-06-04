@@ -3,14 +3,21 @@ import { client } from "./config";
 // ── Insights ──────────────────────────────────────────────────────────────
 
 export async function getAllInsights() {
-  return client.fetch(
-    `*[_type == "insight" && !isGated] | order(publishedAt desc) {
-      _id, title, slug, excerpt, publishedAt, category, pillar, isGated,
-      "author": author->{ name, role, "photo": photo.asset->url },
-      "coverImage": coverImage.asset->url,
-      "coverImageAlt": coverImage.alt
-    }`
-  );
+  try {
+    const results = await client.fetch(
+      `*[_type == "insight"] | order(publishedAt desc) {
+        _id, title, slug, excerpt, publishedAt, category, pillar, isGated,
+        "author": author->{ name, role, "photo": photo.asset->url },
+        "coverImage": coverImage.asset->url,
+        "coverImageAlt": coverImage.alt
+      }`
+    );
+    console.log("[Sanity] getAllInsights returned:", results?.length ?? 0, "docs");
+    return results;
+  } catch (err) {
+    console.error("[Sanity] getAllInsights error:", err);
+    return [];
+  }
 }
 
 export async function getInsightBySlug(slug: string) {

@@ -12,7 +12,6 @@ function getConfig() {
     // useCdn: false — CDN bypasses auth token on private datasets, returning empty results.
     // Always query the live API with the read token so all published docs are returned.
     useCdn: false,
-    perspective: "published" as const,
     token: process.env.SANITY_API_READ_TOKEN,
   };
 }
