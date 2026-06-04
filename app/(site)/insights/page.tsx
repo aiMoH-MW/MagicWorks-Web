@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/insights" },
 };
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 const categoryLabels: Record<string, string> = {
   "digital-marketing": "Digital Marketing",

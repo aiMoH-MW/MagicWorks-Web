@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getInsightBySlug, getInsightSlugs } from "@/sanity/queries";
 import { PortableText } from "@portabletext/react";
 
-export const revalidate = 3600;
+export const revalidate = 60;
 
 type Props = { params: Promise<{ slug: string }> };
 
