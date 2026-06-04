@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/work" },
 };
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const industryLabels: Record<string, string> = {
   education: "Education",

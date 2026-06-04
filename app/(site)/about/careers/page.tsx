@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/about/careers" },
 };
 
-export const revalidate = 60;
+export const dynamic = "force-dynamic";
 
 const deptColors: Record<string, string> = {
   "digital-marketing": "#5B3FBE",

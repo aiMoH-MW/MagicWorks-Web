@@ -9,7 +9,10 @@ function getConfig() {
     projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID!,
     dataset: process.env.NEXT_PUBLIC_SANITY_DATASET ?? "production",
     apiVersion: "2025-06-03",
-    useCdn: process.env.NODE_ENV === "production",
+    // useCdn: false — CDN bypasses auth token on private datasets, returning empty results.
+    // Always query the live API with the read token so all published docs are returned.
+    useCdn: false,
+    perspective: "published" as const,
     token: process.env.SANITY_API_READ_TOKEN,
   };
 }
