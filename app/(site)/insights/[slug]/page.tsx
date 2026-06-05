@@ -19,6 +19,7 @@ type RelatedArticle = {
   publishedAt: string;
   coverImage?: string;
   coverImageAlt?: string;
+  externalCoverImageUrl?: string;
 };
 
 type FaqItem = { question: string; answer: string };
@@ -795,10 +796,10 @@ export default async function InsightArticlePage({ params }: Props) {
                   className="group bg-white border border-[#D8D8DE] rounded-[10px] overflow-hidden no-underline hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.12)] transition-all flex flex-col"
                   style={{ borderTop: "3px solid #5B3FBE" }}
                 >
-                  {r.coverImage && (
+                  {(r.coverImage ?? r.externalCoverImageUrl) && (
                     <div className="relative h-[170px] overflow-hidden bg-[#EDE9F7]">
                       <Image
-                        src={r.coverImage}
+                        src={(r.coverImage ?? r.externalCoverImageUrl)!}
                         alt={r.coverImageAlt ?? r.title}
                         fill
                         className="object-cover"

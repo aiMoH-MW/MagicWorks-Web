@@ -7,6 +7,7 @@ export async function getAllInsights() {
     const results = await client.fetch(
       `*[_type == "insight"] | order(publishedAt desc) {
         _id, title, slug, excerpt, publishedAt, category, pillar, isGated,
+        externalCoverImageUrl,
         "author": author->{ name, role, "photo": photo.asset->url },
         "coverImage": coverImage.asset->url,
         "coverImageAlt": coverImage.alt
@@ -47,6 +48,7 @@ export async function getRelatedInsights(currentSlug: string, limit = 3) {
   return client.fetch(
     `*[_type == "insight" && slug.current != $currentSlug] | order(publishedAt desc) [0...3] {
       _id, title, slug, excerpt, category, publishedAt,
+      externalCoverImageUrl,
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt,
       "author": author->{ name }

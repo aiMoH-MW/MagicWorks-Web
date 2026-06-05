@@ -76,17 +76,20 @@ export default async function InsightsPage() {
                   publishedAt: string;
                   coverImage?: string;
                   coverImageAlt?: string;
+                  externalCoverImageUrl?: string;
                   author?: { name: string };
-                }) => (
+                }) => {
+                  const thumb = a.coverImage ?? a.externalCoverImageUrl;
+                  return (
                   <Link
                     key={a._id}
                     href={`/insights/${a.slug.current}`}
                     className="group bg-white border border-[#D8D8DE] rounded-[10px] overflow-hidden no-underline hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)] transition-all flex flex-col"
                   >
-                    {a.coverImage && (
+                    {thumb && (
                       <div className="relative h-[200px] overflow-hidden">
                         <Image
-                          src={a.coverImage}
+                          src={thumb}
                           alt={a.coverImageAlt ?? a.title}
                           fill
                           className="object-cover"
@@ -123,7 +126,8 @@ export default async function InsightsPage() {
                       </div>
                     </div>
                   </Link>
-                )
+                  );
+                }
               )}
             </div>
           )}
