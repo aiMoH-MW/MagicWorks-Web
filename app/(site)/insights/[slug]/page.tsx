@@ -516,7 +516,7 @@ export default async function InsightArticlePage({ params }: Props) {
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       {/* Matches template: .ahead { padding: 96px 0 64px } + .wrap { max-width: 1120px } */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] relative overflow-hidden pt-[96px] pb-[64px]">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] relative pt-[96px] pb-[64px]" style={{ overflowX: "clip" }}>
         {/* Rings — exact template values: 640×640, right:-200px, top:-160px */}
         <svg
           className="absolute pointer-events-none"
