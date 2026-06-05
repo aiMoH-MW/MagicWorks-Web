@@ -37,7 +37,7 @@ export default function Nav() {
       <nav className="max-w-[1120px] mx-auto px-8 py-[14px] flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="flex items-center no-underline">
-          <Image src="/logo.png" alt="MagicWorks IT Solutions" width={180} height={48} className="h-10 w-auto object-contain" priority />
+          <Image src="/logo.png" alt="MagicWorks IT Solutions" width={220} height={60} className="h-14 w-auto object-contain" priority />
         </Link>
 
         {/* Desktop links */}

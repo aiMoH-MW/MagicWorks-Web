@@ -581,9 +581,20 @@ export default async function InsightArticlePage({ params }: Props) {
             )}
             <span>
               By{" "}
-              <strong className="text-[#F7F3EA] font-semibold">
-                {article.author?.name ?? "MagicWorks"}
-              </strong>
+              {article.author?.linkedin ? (
+                <a
+                  href={article.author.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-[#F7F3EA] font-semibold hover:text-[#D4A537] transition-colors no-underline"
+                >
+                  {article.author.name ?? "MagicWorks"}
+                </a>
+              ) : (
+                <strong className="text-[#F7F3EA] font-semibold">
+                  {article.author?.name ?? "MagicWorks"}
+                </strong>
+              )}
               {article.author?.role && (
                 <>
                   {" "}&middot;{" "}
@@ -707,9 +718,20 @@ export default async function InsightArticlePage({ params }: Props) {
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#5B3FBE] to-[#D4A537] flex-shrink-0" />
                 )}
                 <div>
-                  <p className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-0.5">
-                    {article.author.name}
-                  </p>
+                  {article.author.linkedin ? (
+                    <a
+                      href={article.author.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-0.5 hover:text-[#5B3FBE] transition-colors no-underline block"
+                    >
+                      {article.author.name}
+                    </a>
+                  ) : (
+                    <p className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-0.5">
+                      {article.author.name}
+                    </p>
+                  )}
                   {article.author.role && (
                     <p className="text-[13px] text-[#5B3FBE] font-semibold mb-3">
                       {article.author.role}
