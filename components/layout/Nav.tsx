@@ -24,10 +24,17 @@ const chevron = (
   </svg>
 );
 
+const insightsLinks = [
+  { label: "Articles", href: "/insights" },
+  { label: "Whitepapers", href: "/insights/whitepapers" },
+  { label: "Reports", href: "/insights/reports" },
+];
+
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
   const [industriesOpen, setIndustriesOpen] = useState(false);
+  const [insightsOpen, setInsightsOpen] = useState(false);
 
   return (
     <header
@@ -106,7 +113,45 @@ export default function Nav() {
 
           {[
             { label: "Work", href: "/work" },
-            { label: "Insights", href: "/insights" },
+          ].map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors no-underline">
+                {item.label}
+              </Link>
+            </li>
+          ))}
+
+          {/* Insights dropdown */}
+          <li className="relative">
+            <div
+              className="relative"
+              onMouseEnter={() => setInsightsOpen(true)}
+              onMouseLeave={() => setInsightsOpen(false)}
+            >
+              <button
+                className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors flex items-center gap-1 bg-transparent border-none cursor-pointer py-2"
+                aria-expanded={insightsOpen}
+              >
+                Insights {chevron}
+              </button>
+              <div className={`absolute top-full left-0 pt-2 ${insightsOpen ? "block" : "hidden"}`}>
+                <div className="w-[200px] bg-white border border-[#D8D8DE] rounded-[10px] shadow-lg py-2">
+                  {insightsLinks.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      className="block px-4 py-3 text-[14px] text-[#1A1A22] hover:bg-[#EDE9F7] hover:text-[#5B3FBE] transition-colors no-underline"
+                      onClick={() => setInsightsOpen(false)}
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </li>
+
+          {[
             { label: "About", href: "/about" },
           ].map((item) => (
             <li key={item.href}>
@@ -143,8 +188,14 @@ export default function Nav() {
               {i.label}
             </Link>
           ))}
+          <p className="text-[11px] uppercase tracking-[0.16em] text-[#9A9AA8] mt-4 mb-2">Insights</p>
+          {insightsLinks.map((i) => (
+            <Link key={i.href} href={i.href} className="block py-2 text-[14px] text-[#1A1A22] hover:text-[#5B3FBE] no-underline" onClick={() => setMobileOpen(false)}>
+              {i.label}
+            </Link>
+          ))}
           <div className="border-t border-[#D8D8DE] my-3" />
-          {[{ label: "Work", href: "/work" }, { label: "Insights", href: "/insights" }, { label: "About", href: "/about" }].map((item) => (
+          {[{ label: "Work", href: "/work" }, { label: "About", href: "/about" }].map((item) => (
             <Link key={item.href} href={item.href} className="block py-2 text-[14px] text-[#1A1A22] hover:text-[#5B3FBE] no-underline" onClick={() => setMobileOpen(false)}>
               {item.label}
             </Link>
