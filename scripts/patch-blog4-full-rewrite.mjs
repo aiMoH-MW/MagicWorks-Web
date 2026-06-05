@@ -88,6 +88,20 @@ function ol(text) {
     children: [{ _type: "span", _key: k("s"), text, marks: [] }] };
 }
 
+// Numbered list item with the source name hyperlinked
+// linkText: the anchor text, href: the URL, suffix: rest of the text
+function olLink(linkText, href, suffix = "") {
+  const linkKey = k("lk");
+  return {
+    _type: "block", _key: k(), style: "normal", listItem: "number", level: 1,
+    markDefs: [{ _type: "link", _key: linkKey, href }],
+    children: [
+      { _type: "span", _key: k("s"), text: linkText, marks: [linkKey] },
+      ...(suffix ? [{ _type: "span", _key: k("s"), text: suffix, marks: [] }] : []),
+    ],
+  };
+}
+
 function pq(text, attribution = "") {
   return { _type: "pullquote", _key: k("pq"), text, attribution };
 }
@@ -419,20 +433,20 @@ function buildBody() {
 
     // ── Sources ───────────────────────────────────────────────────────────────
     h2("Sources Cited"),
-    ol("upGrowth: Marketing Automation Pricing India 2026 — platform pricing layers, 25–35% sticker price rule"),
-    ol("Avidly Agency: HubSpot vs Salesforce Pricing 2026 — TCO comparison for mid-sized companies"),
-    ol("Brainguru Technologies: AI Chatbot Development Cost 2026 — India pricing, multilingual cost premium"),
-    ol("Codingclave: AI Chatbot Development Cost India 2026 — 50+ projects, real Indian pricing"),
-    ol("Mihup: Best Conversation Intelligence India 2026 — Indian platform advantage, DPDP Act compliance"),
-    ol("Deelan: Sales Enablement Pricing 2026 — full cost breakdown including hidden fees"),
-    ol("Salesmotion: Top 10 Sales Enablement Platforms 2026 — market consolidation, Seismic-Highspot merger"),
-    ol("Teract: AI Writing Tools Comparison 2026 — 60–80% editing finding from 5,000 post test"),
-    ol("Domo: 15 Best Dashboard Software Platforms 2026 — analytics pricing benchmarks"),
-    ol("Uvik Software: AI Development Cost 2026 — TCO 1.5–2× initial build, data prep underestimation"),
-    ol("CMARIX: Build vs Buy AI Software CTO Guide 2026 — 150–200% hidden integration costs"),
-    ol("Riseup Labs: True Cost of Implementing AI 2026 — 15–30% annual maintenance, ongoing cost realities"),
-    ol("Gartner: Over 40% of Agentic AI Projects Cancelled by 2027 (June 25, 2025)"),
-    ol("MIT Project NANDA via Fortune: 95% of GenAI Pilots Fail (August 2025)"),
+    olLink("upGrowth: Marketing Automation Pricing India 2026", "https://upgrowth.in/marketing-automation-pricing-india-2026/", " — platform pricing layers, 25–35% sticker price rule"),
+    olLink("Avidly Agency: HubSpot vs Salesforce Pricing 2026", "https://www.avidlyagency.com/blog/hubspot-vs.-salesforce-pricing-the-real-cost-for-mid-market-companies", " — TCO comparison for mid-sized companies"),
+    olLink("Brainguru Technologies: AI Chatbot Development Cost 2026", "https://www.brainguru.in/ai-chatbot-development-cost/", " — India pricing, multilingual cost premium"),
+    olLink("Codingclave: AI Chatbot Development Cost India 2026", "https://codingclave.com/blog/ai-chatbot-development-cost-india-2026", " — 50+ projects, real Indian pricing"),
+    olLink("Mihup: Best Conversation Intelligence India 2026", "https://mihup.ai/blog/best-conversation-intelligence-platforms-india-2026", " — Indian platform advantage, DPDP Act compliance"),
+    olLink("Deelan: Sales Enablement Pricing 2026", "https://deelan.ai/resources/sales-enablement-pricing-2026", " — full cost breakdown including hidden fees"),
+    olLink("Salesmotion: Top 10 Sales Enablement Platforms 2026", "https://salesmotion.io/blog/best-sales-enablement-platforms", " — market consolidation, Seismic-Highspot merger"),
+    olLink("Teract: AI Writing Tools Comparison 2026", "https://www.teract.ai/resources/ai-writing-tools-comparison-2026", " — 60–80% editing finding from 5,000 post test"),
+    olLink("Domo: 15 Best Dashboard Software Platforms 2026", "https://www.domo.com/learn/article/dashboard-tools", " — analytics pricing benchmarks"),
+    olLink("Uvik Software: AI Development Cost 2026", "https://uvik.net/blog/ai-development-cost/", " — TCO 1.5–2× initial build, data prep underestimation"),
+    olLink("CMARIX: Build vs Buy AI Software CTO Guide 2026", "https://www.cmarix.com/blog/build-vs-buy-ai-software/", " — 150–200% hidden integration costs"),
+    olLink("Riseup Labs: True Cost of Implementing AI 2026", "https://riseuplabs.com/cost-of-implementing-ai-in-business/", " — 15–30% annual maintenance, ongoing cost realities"),
+    olLink("Gartner: Over 40% of Agentic AI Projects Cancelled by 2027", "https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027", " (June 25, 2025)"),
+    olLink("MIT Project NANDA via Fortune: 95% of GenAI Pilots Fail", "https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/", " (August 2025)"),
   ];
 }
 
