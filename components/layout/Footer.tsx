@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import NewsletterForm from "@/components/NewsletterForm";
 
 const serviceLinks = [
   { label: "Digital Marketing", href: "/services/digital-marketing" },
@@ -191,21 +192,8 @@ export default function Footer() {
               </div>
             </div>
 
-            {/* CTA — directly below links, no gap */}
-            <div className="rounded-2xl border border-[#D4A537]/40 bg-white/5 px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-5">
-              <div>
-                <p className="text-[#D4A537] text-[11px] uppercase tracking-[0.18em] font-bold mb-1">Ready to grow?</p>
-                <p className="text-white text-[20px] font-bold leading-tight">
-                  Let&apos;s build your AI-first marketing engine.
-                </p>
-              </div>
-              <Link
-                href="/contact"
-                className="shrink-0 bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.1em] px-7 py-3 rounded-full no-underline hover:bg-white transition-colors whitespace-nowrap"
-              >
-                Book a Discovery Call
-              </Link>
-            </div>
+            {/* Newsletter strip — directly below links */}
+            <NewsletterForm source="footer" variant="footer" />
           </div>
         </div>
 

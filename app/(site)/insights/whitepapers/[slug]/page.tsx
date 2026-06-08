@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import NewsletterFormWP from "@/components/NewsletterForm";
 
 const whitepapers = [
   {
@@ -188,6 +189,9 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
                   ← All whitepapers
                 </Link>
               </div>
+
+              {/* Newsletter opt-in */}
+              <NewsletterFormWP source={`whitepaper-${wp.slug ?? slug}`} />
 
               {others.length > 0 && (
                 <div>
