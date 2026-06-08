@@ -21,7 +21,7 @@ const companyLinks = [
   { label: "Work", href: "/work" },
   { label: "Insights", href: "/insights" },
   { label: "Whitepapers", href: "/insights/whitepapers" },
-  { label: "Careers", href: "/about/careers" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
