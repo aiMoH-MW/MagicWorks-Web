@@ -26,7 +26,7 @@ const TABS: { key: Tab; label: string }[] = [
 function exportCSV(rows: Row[], filename: string) {
   if (!rows.length) return;
   const keys = Object.keys(rows[0]);
-  const csv = [keys.join(","), ...rows.map((r) => keys.map((k) => JSON.stringify((r as Record<string,unknown>)[k] ?? "")).join(","))].join("\n");
+  const csv = [keys.join(","), ...rows.map((r) => keys.map((k) => JSON.stringify((r as unknown as Record<string,unknown>)[k] ?? "")).join(","))].join("\n");
   const blob = new Blob([csv], { type: "text/csv" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -179,7 +179,7 @@ export default function AdminPage() {
                   {rows.map((row, i) => (
                     <tr key={row.id ?? i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                       {cols.map((c) => {
-                        const val = (row as Record<string, unknown>)[c];
+                        const val = (row as unknown as Record<string, unknown>)[c];
                         const display = c === "created_at"
                           ? new Date(val as string).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
                           : (val as string) ?? "—";
