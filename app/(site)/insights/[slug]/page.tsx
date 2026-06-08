@@ -558,7 +558,7 @@ export default async function InsightArticlePage({ params }: Props) {
           )}
 
           {/* Title — max-w-[760px] matches template .ahead h1 */}
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4.2vw,44px)] leading-[1.14] text-[#F7F3EA] max-w-[760px] mb-6">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,36px)] leading-[1.18] text-[#F7F3EA] max-w-[760px] mb-6">
             {article.title}
           </h1>
 
@@ -617,7 +617,7 @@ export default async function InsightArticlePage({ params }: Props) {
         <div className="max-w-[1280px] mx-auto px-4 md:px-6">
           {(article.coverImage || article.externalCoverImageUrl) ? (
             <div
-              className="relative rounded-[14px] overflow-hidden shadow-[0_28px_90px_rgba(42,27,92,0.24)] border border-white/50"
+              className="relative rounded-[14px] overflow-hidden shadow-[0_28px_90px_rgba(42,27,92,0.24)] border border-white/50 bg-[#0D0824]"
               style={{ marginTop: "-52px", height: "clamp(300px,38vw,540px)" }}
             >
               <Image
@@ -625,8 +625,8 @@ export default async function InsightArticlePage({ params }: Props) {
                 alt={article.coverImageAlt ?? article.title}
                 fill
                 priority
-                className="object-cover"
-                sizes="(max-width: 768px) 100vw, 960px"
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 1280px"
               />
             </div>
           ) : (
