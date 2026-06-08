@@ -558,7 +558,7 @@ export default async function InsightArticlePage({ params }: Props) {
           )}
 
           {/* Title — max-w-[760px] matches template .ahead h1 */}
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,36px)] leading-[1.18] text-[#F7F3EA] max-w-[760px] mb-6">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,36px)] leading-[1.18] text-[#F7F3EA] max-w-[920px] mb-6">
             {article.title}
           </h1>
 

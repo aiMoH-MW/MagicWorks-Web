@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
+import { sendNotification } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
   try {
@@ -9,6 +10,7 @@ export async function POST(req: NextRequest) {
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
+
     const { error } = await supabase.from("leads").insert({
       name,
       email,
@@ -24,6 +26,21 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) throw error;
+
+    // Send notification email (non-blocking)
+    sendNotification(
+      `New lead from ${source_page ?? "website"} — ${name}`,
+      `
+        <h2>New Contact Form Submission</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+        ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
+        ${pillar ? `<p><strong>Service interest:</strong> ${pillar}</p>` : ""}
+        ${message ? `<p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>` : ""}
+        <p><strong>Source page:</strong> ${source_page ?? "unknown"}</p>
+      `
+    );
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch {
