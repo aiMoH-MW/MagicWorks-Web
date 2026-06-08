@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import ChatWidget from "@/components/ChatWidget";
 import "./globals.css";
 
 const GTM_ID = "GTM-W75DJC";
@@ -115,8 +116,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        {/* MagicFlow AI chatbot — every page except /studio */}
-        <script src="https://www.magicflowai.io/chatbot.js" async />
       </head>
       <body className="min-h-full flex flex-col bg-[#F7F3EA] text-[#1A1A22]">
         {/* GTM noscript fallback */}
@@ -130,6 +129,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         </noscript>
         {children}
         <Analytics />
+        <ChatWidget />
         {/* GTM script — loads after page is interactive */}
         <Script
           id="gtm-init"

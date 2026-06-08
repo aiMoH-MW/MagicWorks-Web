@@ -12,13 +12,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // /blog/{slug} → /insights/{slug} (301 — preserves WordPress SEO)
+      // /insights/{article-slug} → /blog/{slug} (301 — /blog is now canonical for articles)
+      // Excludes /insights/whitepapers and /insights/reports which stay where they are
       {
-        source: "/blog/:slug",
-        destination: "/insights/:slug",
+        source: "/insights/:slug((?!whitepapers|reports)[^/]+)",
+        destination: "/blog/:slug",
         permanent: true,
       },
-      // /blog (index) → /insights
+      // /blog (index) → /insights listing page
       {
         source: "/blog",
         destination: "/insights",

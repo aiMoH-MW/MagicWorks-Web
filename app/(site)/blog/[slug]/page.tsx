@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.seoTitle ?? article.title,
     description: article.excerpt,
-    alternates: { canonical: `/insights/${slug}` },
+    alternates: { canonical: `/blog/${slug}` },
     keywords: article.tags ?? [],
     openGraph: {
       title: article.seoTitle ?? article.title,
@@ -338,7 +338,7 @@ export default async function InsightArticlePage({ params }: Props) {
     : null;
 
   // ── JSON-LD schemas (SEO + AEO + GEO) ───────────────────────────────────────
-  const canonicalUrl = `https://magicworksitsolutions.com/insights/${slug}`;
+  const canonicalUrl = `https://magicworksitsolutions.com/blog/${slug}`;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -795,7 +795,7 @@ export default async function InsightArticlePage({ params }: Props) {
               {(related as RelatedArticle[]).map((r) => (
                 <Link
                   key={r._id}
-                  href={`/insights/${r.slug.current}`}
+                  href={`/blog/${r.slug.current}`}
                   className="group bg-white border border-[#D8D8DE] rounded-[10px] overflow-hidden no-underline hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.12)] transition-all flex flex-col"
                   style={{ borderTop: "3px solid #5B3FBE" }}
                 >
