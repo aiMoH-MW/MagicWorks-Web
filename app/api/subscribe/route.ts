@@ -13,13 +13,12 @@ export async function POST(req: NextRequest) {
     const cleanEmail = email.toLowerCase().trim();
     const cleanSource = source || "footer";
 
-    const { error } = await supabase.from("newsletter_subscribers").insert({
-      email: cleanEmail,
-      source: cleanSource,
-    });
+    // Upsert: insert new, or update source if email already exists
+    const { error } = await supabase
+      .from("newsletter_subscribers")
+      .upsert({ email: cleanEmail, source: cleanSource }, { onConflict: "email" });
 
-    // Ignore duplicate email errors — silently succeed
-    if (error && !error.message.includes("duplicate")) throw error;
+    if (error) throw error;
 
     // Send notification email (non-blocking)
     const label = cleanSource.startsWith("whitepaper-")
