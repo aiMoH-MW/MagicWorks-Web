@@ -117,6 +117,41 @@ export const insight = defineType({
             },
           },
         },
+        // ── Comparison Table ─────────────────────────────────────────
+        {
+          type: "object",
+          name: "comparisonTable",
+          title: "Comparison Table",
+          fields: [
+            defineField({ name: "colA", title: "Column A Label", type: "string" }),
+            defineField({ name: "colB", title: "Column B Label", type: "string" }),
+            defineField({
+              name: "rows",
+              title: "Rows",
+              type: "array",
+              of: [{
+                type: "object",
+                fields: [
+                  defineField({ name: "metric", title: "Metric / Label", type: "string" }),
+                  defineField({ name: "a", title: "Column A Value", type: "string" }),
+                  defineField({ name: "b", title: "Column B Value", type: "string" }),
+                ],
+                preview: {
+                  select: { title: "metric", a: "a", b: "b" },
+                  prepare(v: Record<string, string>) {
+                    return { title: v.title, subtitle: `${v.a} | ${v.b}` };
+                  },
+                },
+              }],
+            }),
+          ],
+          preview: {
+            select: { colA: "colA", colB: "colB" },
+            prepare(v: Record<string, string>) {
+              return { title: "Comparison Table", subtitle: `${v.colA} vs ${v.colB}` };
+            },
+          },
+        },
         // ── Callout Box ──────────────────────────────────────────────
         {
           type: "object",

@@ -280,6 +280,35 @@ const articleComponents: PortableTextComponents = {
       </blockquote>
     ),
 
+    comparisonTable: ({ value }) => {
+      const rows = (value.rows ?? []) as Array<{ metric: string; a: string; b: string }>;
+      return (
+        <div className="my-10 -mx-4 sm:mx-0 overflow-x-auto rounded-[12px] shadow-[0_4px_24px_rgba(42,27,92,0.12)]">
+          <table className="w-full min-w-[520px] border-collapse text-[14px]">
+            <thead>
+              <tr style={{ background: "linear-gradient(90deg,#2A1B5C,#3D2880)" }}>
+                <th className="text-left px-5 py-4 text-[12px] font-bold uppercase tracking-[0.1em] text-white/70 w-[34%]">Metric</th>
+                <th className="text-left px-5 py-4 text-[12px] font-bold uppercase tracking-[0.1em] text-[#FFD580] w-[33%]">
+                  {value.colA || "Option A"}
+                </th>
+                <th className="text-left px-5 py-4 text-[12px] font-bold uppercase tracking-[0.1em] text-[#A8F5B0] w-[33%]">
+                  {value.colB || "Option B"}
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((row, i) => (
+                <tr key={i} className={i % 2 === 0 ? "bg-white" : "bg-[#F7F3EA]"}>
+                  <td className="px-5 py-3.5 text-[#2A1B5C] font-semibold border-b border-[#EBEBF0]">{row.metric}</td>
+                  <td className="px-5 py-3.5 text-[#8B5E3C] border-b border-[#EBEBF0]">{row.a || "—"}</td>
+                  <td className="px-5 py-3.5 text-[#1A5C34] font-semibold border-b border-[#EBEBF0]">{row.b || "—"}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    },
     statRow: ({ value }) => {
       const stats = (value.stats ?? []) as Array<{
         value: string;
@@ -654,7 +683,7 @@ export default async function InsightArticlePage({ params }: Props) {
 
       {/* ── ARTICLE BODY ─────────────────────────────────────────────── */}
       <div className="bg-[#F7F3EA] pt-14 pb-20">
-        <div className="max-w-[1120px] mx-auto px-6 md:px-8">
+        <div className="max-w-[760px] mx-auto px-6 md:px-8">
           <article>
             <PortableText
               value={article.body ?? []}
