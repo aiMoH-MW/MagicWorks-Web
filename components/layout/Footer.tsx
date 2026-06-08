@@ -89,30 +89,37 @@ const groupLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2A1B5C] text-[#F7F3EA] border-t-[2px] border-t-[#D4A537] pt-24 pb-4">
-      <div className="max-w-[1120px] mx-auto px-8">
-        <div className="grid grid-cols-1 md:grid-cols-[2fr_1fr_1fr_1fr] gap-10">
+    <footer
+      className="text-[#F7F3EA] border-t-[3px] border-t-[#D4A537] pt-16 pb-4"
+      style={{ background: "linear-gradient(160deg, #1E1248 0%, #2A1B5C 50%, #1A1040 100%)" }}
+    >
+      <div className="max-w-[1200px] mx-auto px-8">
+        {/* Two-column layout: Brand left | Links+CTA right */}
+        <div className="flex flex-col lg:flex-row gap-8">
+
           {/* Brand col */}
-          <div>
-            <Link href="/" className="inline-block mb-4 no-underline">
+          <div className="lg:w-[260px] lg:shrink-0 lg:border-r lg:border-white/10 lg:pr-8">
+            <Link href="/" className="inline-block mb-1 no-underline">
               <Image
-                src="/logo.png"
+                src="/logo-footer.png"
                 alt="MagicWorks IT Solutions"
-                width={180}
-                height={48}
-                className="h-10 w-auto object-contain brightness-0 invert"
+                width={220}
+                height={132}
+                className="h-36 w-auto object-contain"
+                style={{ mixBlendMode: "screen" }}
               />
             </Link>
-            <p className="text-[#C8B8FF] text-[14px] leading-[1.6] max-w-[300px] mb-4">
-              AI-first digital marketing agency. Human strategy, machine
-              acceleration. Evolving with Purpose.
+            <p className="text-white/80 text-[13px] leading-[1.7] mb-5">
+              AI-first digital marketing agency.<br />
+              Human strategy, machine acceleration.
             </p>
-            <p className="text-[#C8B8FF] text-[13px]">
+            <p className="text-[#D4A537] text-[11px] font-semibold uppercase tracking-normal whitespace-nowrap mb-1">
               MagicWorks IT Solutions Pvt. Ltd.
-              <br />
-              Pune, Maharashtra, India
             </p>
-            <div className="mt-4 flex flex-wrap gap-3">
+            <p className="text-white/50 text-[12px]">Pune, Maharashtra, India</p>
+
+            {/* Social icons — single row */}
+            <div className="mt-5 flex flex-nowrap gap-[6px]">
               {socialLinks.map((s) => (
                 <a
                   key={s.label}
@@ -120,7 +127,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="text-[#C8B8FF] hover:text-[#D4A537] transition-colors"
+                  className="w-7 h-7 rounded-full flex items-center justify-center bg-white/10 hover:bg-[#D4A537] hover:text-[#2A1B5C] text-white/70 transition-all shrink-0"
                 >
                   {s.icon}
                 </a>
@@ -128,89 +135,86 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
-          <div>
-            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#9A8FBF] mb-3">
-              Services
-            </h4>
-            {serviceLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="block text-[#F7F3EA] text-[14px] py-[7px] opacity-[0.78] hover:opacity-100 hover:text-[#D4A537] transition-all no-underline"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
+          {/* Right side: links grid + CTA stacked */}
+          <div className="flex-1 flex flex-col gap-8">
+            {/* 4-column links */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
+              {/* Services */}
+              <div>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#D4A537] mb-4 pb-2 border-b border-[#D4A537]/30">
+                  Services
+                </h4>
+                {serviceLinks.map((l) => (
+                  <Link key={l.href} href={l.href} className="block text-white/70 text-[13px] py-[6px] hover:text-[#D4A537] hover:pl-1 transition-all no-underline">
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
 
-          {/* Industries */}
-          <div>
-            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#9A8FBF] mb-3">
-              Industries
-            </h4>
-            {industryLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="block text-[#F7F3EA] text-[14px] py-[7px] opacity-[0.78] hover:opacity-100 hover:text-[#D4A537] transition-all no-underline"
-              >
-                {l.label}
-              </Link>
-            ))}
-            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#9A8FBF] mt-5 mb-3">
-              Company
-            </h4>
-            {companyLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="block text-[#F7F3EA] text-[14px] py-[7px] opacity-[0.78] hover:opacity-100 hover:text-[#D4A537] transition-all no-underline"
-              >
-                {l.label}
-              </Link>
-            ))}
-          </div>
+              {/* Industries */}
+              <div>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#D4A537] mb-4 pb-2 border-b border-[#D4A537]/30">
+                  Industries
+                </h4>
+                {industryLinks.map((l) => (
+                  <Link key={l.href} href={l.href} className="block text-white/70 text-[13px] py-[6px] hover:text-[#D4A537] hover:pl-1 transition-all no-underline">
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
 
-          {/* MagicWorks Group */}
-          <div>
-            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#9A8FBF] mb-3">
-              MagicWorks Group
-            </h4>
-            {groupLinks.map((l) => (
+              {/* MagicWorks Group */}
+              <div>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#D4A537] mb-4 pb-2 border-b border-[#D4A537]/30">
+                  MagicWorks Group
+                </h4>
+                {groupLinks.map((l) => (
+                  <Link key={l.href} href={l.href} className="block text-white/70 text-[13px] py-[6px] hover:text-[#D4A537] hover:pl-1 transition-all no-underline">
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Legal */}
+              <div>
+                <h4 className="text-[11px] font-bold uppercase tracking-[0.18em] text-[#D4A537] mb-4 pb-2 border-b border-[#D4A537]/30">
+                  Legal
+                </h4>
+                {[
+                  { label: "Privacy Policy", href: "/privacy" },
+                  { label: "Terms of Service", href: "/terms" },
+                ].map((l) => (
+                  <Link key={l.href} href={l.href} className="block text-white/70 text-[13px] py-[6px] hover:text-[#D4A537] hover:pl-1 transition-all no-underline">
+                    {l.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
+            {/* CTA — directly below links, no gap */}
+            <div className="rounded-2xl border border-[#D4A537]/40 bg-white/5 px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-5">
+              <div>
+                <p className="text-[#D4A537] text-[11px] uppercase tracking-[0.18em] font-bold mb-1">Ready to grow?</p>
+                <p className="text-white text-[20px] font-bold leading-tight">
+                  Let&apos;s build your AI-first marketing engine.
+                </p>
+              </div>
               <Link
-                key={l.href}
-                href={l.href}
-                className="block text-[#F7F3EA] text-[14px] py-[7px] opacity-[0.78] hover:opacity-100 hover:text-[#D4A537] transition-all no-underline"
+                href="/contact"
+                className="shrink-0 bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.1em] px-7 py-3 rounded-full no-underline hover:bg-white transition-colors whitespace-nowrap"
               >
-                {l.label}
+                Book a Discovery Call
               </Link>
-            ))}
-            <h4 className="text-[11px] uppercase tracking-[0.16em] text-[#9A8FBF] mt-5 mb-3">
-              Legal
-            </h4>
-            {[
-              { label: "Privacy Policy", href: "/privacy" },
-              { label: "Terms of Service", href: "/terms" },
-            ].map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="block text-[#F7F3EA] text-[14px] py-[7px] opacity-[0.78] hover:opacity-100 hover:text-[#D4A537] transition-all no-underline"
-              >
-                {l.label}
-              </Link>
-            ))}
+            </div>
           </div>
         </div>
 
         {/* Footer bottom */}
-        <div className="border-t border-white/[0.12] mt-16 pt-4 flex flex-wrap justify-between gap-2">
-          <span className="text-[#9A8FBF] text-[11px] uppercase tracking-[0.14em]">
-            &copy; {new Date().getFullYear()} MagicWorks IT Solutions Pvt. Ltd.
-            All rights reserved.
+        <div className="border-t border-white/10 mt-8 pt-5 flex flex-wrap justify-between items-center gap-2">
+          <span className="text-white/40 text-[11px] uppercase tracking-[0.14em]">
+            &copy; {new Date().getFullYear()} MagicWorks IT Solutions Pvt. Ltd. All rights reserved.
           </span>
-          <span className="text-[#9A8FBF] text-[11px] uppercase tracking-[0.14em]">
+          <span className="text-[#D4A537]/70 text-[11px] uppercase tracking-[0.14em] font-medium">
             Evolving with Purpose.
           </span>
         </div>

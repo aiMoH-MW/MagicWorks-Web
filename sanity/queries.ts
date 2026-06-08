@@ -26,7 +26,7 @@ export async function getInsightBySlug(slug: string) {
     `*[_type == "insight" && slug.current == $slug][0] {
       _id, title, slug, excerpt, publishedAt, category, pillar, isGated, faq, tags,
       externalCoverImageUrl,
-      "author": author->{ name, role, "photo": photo.asset->url, linkedin },
+      "author": author->{ name, role, "photo": photo.asset->url, linkedin, "slug": slug.current, bio },
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt,
       body[] {
@@ -128,6 +128,29 @@ export async function getJobOpeningBySlug(slug: string) {
 }
 
 // ── Team Members ──────────────────────────────────────────────────────────
+
+export async function getTeamMemberBySlug(slug: string) {
+  return client.fetch(
+    `*[_type == "teamMember" && slug.current == $slug][0] {
+      _id, name, role, bio, linkedin, isFounder,
+      "photo": photo.asset->url,
+      "photoAlt": photo.alt,
+      "slug": slug.current
+    }`,
+    { slug }
+  );
+}
+
+export async function getInsightsByAuthor(authorName: string) {
+  return client.fetch(
+    `*[_type == "insight" && author->name == $authorName] | order(publishedAt desc) {
+      _id, title, slug, excerpt, publishedAt, category,
+      externalCoverImageUrl,
+      "coverImage": coverImage.asset->url
+    }`,
+    { authorName }
+  );
+}
 
 export async function getTeamMembers() {
   return client.fetch(

@@ -44,7 +44,7 @@ export default function Nav() {
       <nav className="max-w-[1120px] mx-auto px-8 py-[14px] flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="flex items-center no-underline">
-          <Image src="/logo.png" alt="MagicWorks IT Solutions" width={220} height={60} className="h-14 w-auto object-contain" priority />
+          <Image src="/logo-header.png" alt="MagicWorks IT Solutions" width={220} height={60} className="h-14 w-auto object-contain" priority />
         </Link>
 
         {/* Desktop links */}
@@ -72,6 +72,42 @@ export default function Nav() {
                       href={s.href}
                       className="block px-4 py-3 text-[14px] text-[#1A1A22] hover:bg-[#EDE9F7] hover:text-[#5B3FBE] transition-colors no-underline"
                       onClick={() => setServicesOpen(false)}
+                    >
+                      {s.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li>
+            <Link href="/work" className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors no-underline">
+              Work
+            </Link>
+          </li>
+
+          {/* Insights dropdown */}
+          <li className="relative">
+            <div
+              className="relative"
+              onMouseEnter={() => setInsightsOpen(true)}
+              onMouseLeave={() => setInsightsOpen(false)}
+            >
+              <button
+                className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors flex items-center gap-1 bg-transparent border-none cursor-pointer py-2"
+                aria-expanded={insightsOpen}
+              >
+                Insights {chevron}
+              </button>
+              <div className={`absolute top-full left-0 pt-2 ${insightsOpen ? "block" : "hidden"}`}>
+                <div className="w-[200px] bg-white border border-[#D8D8DE] rounded-[10px] shadow-lg py-2">
+                  {insightsLinks.map((s) => (
+                    <Link
+                      key={s.href}
+                      href={s.href}
+                      className="block px-4 py-3 text-[14px] text-[#1A1A22] hover:bg-[#EDE9F7] hover:text-[#5B3FBE] transition-colors no-underline"
+                      onClick={() => setInsightsOpen(false)}
                     >
                       {s.label}
                     </Link>
@@ -111,55 +147,17 @@ export default function Nav() {
             </div>
           </li>
 
-          {[
-            { label: "Work", href: "/work" },
-          ].map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors no-underline">
-                {item.label}
-              </Link>
-            </li>
-          ))}
-
-          {/* Insights dropdown */}
-          <li className="relative">
-            <div
-              className="relative"
-              onMouseEnter={() => setInsightsOpen(true)}
-              onMouseLeave={() => setInsightsOpen(false)}
-            >
-              <button
-                className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors flex items-center gap-1 bg-transparent border-none cursor-pointer py-2"
-                aria-expanded={insightsOpen}
-              >
-                Insights {chevron}
-              </button>
-              <div className={`absolute top-full left-0 pt-2 ${insightsOpen ? "block" : "hidden"}`}>
-                <div className="w-[200px] bg-white border border-[#D8D8DE] rounded-[10px] shadow-lg py-2">
-                  {insightsLinks.map((s) => (
-                    <Link
-                      key={s.href}
-                      href={s.href}
-                      className="block px-4 py-3 text-[14px] text-[#1A1A22] hover:bg-[#EDE9F7] hover:text-[#5B3FBE] transition-colors no-underline"
-                      onClick={() => setInsightsOpen(false)}
-                    >
-                      {s.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
+          <li>
+            <Link href="/about" className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors no-underline">
+              About
+            </Link>
           </li>
 
-          {[
-            { label: "About", href: "/about" },
-          ].map((item) => (
-            <li key={item.href}>
-              <Link href={item.href} className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors no-underline">
-                {item.label}
-              </Link>
-            </li>
-          ))}
+          <li>
+            <Link href="/careers" className="text-[14px] font-medium text-[#1A1A22] hover:text-[#5B3FBE] transition-colors no-underline">
+              Careers
+            </Link>
+          </li>
         </ul>
 
         {/* CTA */}
@@ -182,20 +180,22 @@ export default function Nav() {
               {s.label}
             </Link>
           ))}
-          <p className="text-[11px] uppercase tracking-[0.16em] text-[#9A9AA8] mt-4 mb-2">Industries</p>
-          {industries.map((i) => (
-            <Link key={i.href} href={i.href} className="block py-2 text-[14px] text-[#1A1A22] hover:text-[#5B3FBE] no-underline" onClick={() => setMobileOpen(false)}>
-              {i.label}
-            </Link>
-          ))}
+          <div className="border-t border-[#D8D8DE] my-3" />
+          <Link href="/work" className="block py-2 text-[14px] text-[#1A1A22] hover:text-[#5B3FBE] no-underline" onClick={() => setMobileOpen(false)}>Work</Link>
           <p className="text-[11px] uppercase tracking-[0.16em] text-[#9A9AA8] mt-4 mb-2">Insights</p>
           {insightsLinks.map((i) => (
             <Link key={i.href} href={i.href} className="block py-2 text-[14px] text-[#1A1A22] hover:text-[#5B3FBE] no-underline" onClick={() => setMobileOpen(false)}>
               {i.label}
             </Link>
           ))}
+          <p className="text-[11px] uppercase tracking-[0.16em] text-[#9A9AA8] mt-4 mb-2">Industries</p>
+          {industries.map((i) => (
+            <Link key={i.href} href={i.href} className="block py-2 text-[14px] text-[#1A1A22] hover:text-[#5B3FBE] no-underline" onClick={() => setMobileOpen(false)}>
+              {i.label}
+            </Link>
+          ))}
           <div className="border-t border-[#D8D8DE] my-3" />
-          {[{ label: "Work", href: "/work" }, { label: "About", href: "/about" }].map((item) => (
+          {[{ label: "About", href: "/about" }, { label: "Careers", href: "/careers" }].map((item) => (
             <Link key={item.href} href={item.href} className="block py-2 text-[14px] text-[#1A1A22] hover:text-[#5B3FBE] no-underline" onClick={() => setMobileOpen(false)}>
               {item.label}
             </Link>

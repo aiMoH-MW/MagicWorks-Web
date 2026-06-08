@@ -657,7 +657,7 @@ export default async function InsightArticlePage({ params }: Props) {
 
       {/* ── ARTICLE BODY ─────────────────────────────────────────────── */}
       <div className="bg-[#F7F3EA] pt-14 pb-20">
-        <div className="max-w-[720px] mx-auto px-6 md:px-8">
+        <div className="max-w-[1120px] mx-auto px-6 md:px-8">
           <article>
             <PortableText
               value={article.body ?? []}
@@ -719,15 +719,13 @@ export default async function InsightArticlePage({ params }: Props) {
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#5B3FBE] to-[#D4A537] flex-shrink-0" />
                 )}
                 <div>
-                  {article.author.linkedin ? (
-                    <a
-                      href={article.author.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer nofollow"
+                  {article.author.slug ? (
+                    <Link
+                      href={`/authors/${article.author.slug}`}
                       className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-0.5 hover:text-[#5B3FBE] transition-colors no-underline block"
                     >
                       {article.author.name}
-                    </a>
+                    </Link>
                   ) : (
                     <p className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-0.5">
                       {article.author.name}
@@ -739,20 +737,28 @@ export default async function InsightArticlePage({ params }: Props) {
                     </p>
                   )}
                   <p className="text-[14px] text-[#3F3F4A] leading-[1.65]">
-                    Founder of MagicWorks IT Solutions, with 17+ years across
-                    digital marketing, web strategy, and AI. He writes from
-                    inside live client engagements — not theory.
+                    {article.author.bio ?? "Founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements — not theory."}
                   </p>
-                  {article.author.linkedin && (
-                    <a
-                      href={article.author.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-block mt-3 text-[13px] text-[#5B3FBE] font-semibold hover:text-[#2A1B5C] transition-colors no-underline"
-                    >
-                      LinkedIn &rarr;
-                    </a>
-                  )}
+                  <div className="flex gap-4 mt-3">
+                    {article.author.slug && (
+                      <Link
+                        href={`/authors/${article.author.slug}`}
+                        className="text-[13px] text-[#5B3FBE] font-semibold hover:text-[#2A1B5C] transition-colors no-underline"
+                      >
+                        View profile &rarr;
+                      </Link>
+                    )}
+                    {article.author.linkedin && (
+                      <a
+                        href={article.author.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[13px] text-[#5B3FBE] font-semibold hover:text-[#2A1B5C] transition-colors no-underline"
+                      >
+                        LinkedIn &rarr;
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
