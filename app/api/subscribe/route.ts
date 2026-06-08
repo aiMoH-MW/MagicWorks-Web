@@ -13,22 +13,33 @@ export async function POST(req: NextRequest) {
     const cleanEmail = email.toLowerCase().trim();
     const cleanSource = source || "footer";
 
-    // Upsert: insert new, or update source if email already exists
-    const { error } = await supabase
-      .from("newsletter_subscribers")
-      .upsert({ email: cleanEmail, source: cleanSource }, { onConflict: "email" });
+    if (cleanSource.startsWith("whitepaper-")) {
+      // ── Whitepaper opt-in → dedicated table ────────────────────
+      const whitepaperSlug = cleanSource.replace("whitepaper-", "");
+      const { error } = await supabase
+        .from("whitepaper_subscribers")
+        .insert({ email: cleanEmail, whitepaper: whitepaperSlug });
 
-    if (error) throw error;
+      // Silently succeed on duplicate (same email + same whitepaper)
+      if (error && error.code !== "23505") throw error;
 
-    // Send notification email (non-blocking)
-    const label = cleanSource.startsWith("whitepaper-")
-      ? `Whitepaper opt-in: ${cleanSource.replace("whitepaper-", "")}`
-      : "Footer newsletter";
+      sendNotification(
+        `New whitepaper opt-in — ${whitepaperSlug}`,
+        `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Whitepaper:</strong> ${whitepaperSlug}</p>`
+      );
+    } else {
+      // ── Newsletter → newsletter_subscribers ────────────────────
+      const { error } = await supabase
+        .from("newsletter_subscribers")
+        .upsert({ email: cleanEmail, source: cleanSource }, { onConflict: "email" });
 
-    sendNotification(
-      `New subscriber — ${label}`,
-      `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Source:</strong> ${cleanSource}</p>`
-    );
+      if (error) throw error;
+
+      sendNotification(
+        `New newsletter subscriber — ${cleanSource}`,
+        `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Source:</strong> ${cleanSource}</p>`
+      );
+    }
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch {

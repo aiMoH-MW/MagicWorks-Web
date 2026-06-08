@@ -25,9 +25,8 @@ export async function GET(req: NextRequest) {
 
     if (tab === "whitepaper") {
       const { data, error } = await client
-        .from("newsletter_subscribers")
+        .from("whitepaper_subscribers")
         .select("*")
-        .ilike("source", "whitepaper%")
         .order("created_at", { ascending: false });
       if (error) throw error;
       return NextResponse.json({ data });

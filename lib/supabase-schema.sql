@@ -70,6 +70,15 @@ create table if not exists newsletter_subscribers (
   report_slug text                         -- if gated-report, which one
 );
 
+-- 6. Whitepaper subscribers (separate from newsletter — one row per email+whitepaper)
+create table if not exists whitepaper_subscribers (
+  id          uuid primary key default gen_random_uuid(),
+  created_at  timestamptz not null default now(),
+  email       text not null,
+  whitepaper  text not null,                  -- the whitepaper slug
+  unique (email, whitepaper)
+);
+
 -- ── Row Level Security ──────────────────────────────────────
 -- Allow inserts from the browser (anon key), read only via service role.
 
@@ -89,6 +98,9 @@ alter table newsletter_subscribers enable row level security;
 create policy "Insert only" on newsletter_subscribers for insert with check (true);
 create policy "Upsert own email" on newsletter_subscribers
   for update using (true) with check (true);
+
+alter table whitepaper_subscribers enable row level security;
+create policy "Insert only" on whitepaper_subscribers for insert with check (true);
 
 -- ── Storage bucket for resumes ──────────────────────────────
 -- Create in Supabase dashboard → Storage → New bucket → 'resumes' (private)

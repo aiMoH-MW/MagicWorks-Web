@@ -111,7 +111,7 @@ export default function AdminPage() {
   }
 
   const newsletterCols = ["created_at", "email", "source"];
-  const whitepaperCols = ["created_at", "email", "source"];
+  const whitepaperCols = ["created_at", "email", "whitepaper"];
   const leadsCols = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
   const cols = tab === "leads" ? leadsCols : tab === "newsletter" ? newsletterCols : whitepaperCols;
 
