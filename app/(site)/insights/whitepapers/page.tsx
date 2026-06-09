@@ -65,10 +65,10 @@ export default function WhitepapersPage() {
             <span className="text-[#F7F3EA]">Whitepapers</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Free to download</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(36px,5.5vw,60px)] leading-[1.08] text-[#F7F3EA] max-w-[860px]">
             Research-backed whitepapers for decision-makers.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-4">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[580px] mt-4">
             Practical, data-driven guides on AI adoption and performance marketing — written for Indian business leaders who need more than vendor slides.
           </p>
         </div>

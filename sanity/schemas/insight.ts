@@ -318,6 +318,63 @@ export const insight = defineType({
       of: [{ type: "string" }],
       options: { layout: "tags" },
     }),
+    // ── Case Study Mode (optional) ───────────────────────────────────────────
+    defineField({
+      name: "caseStudyHeroStats",
+      title: "Hero Stats (case study mode)",
+      description: "Up to 3 key metrics shown in the hero bar. Leave empty for regular articles.",
+      type: "array",
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "value", title: "Value (e.g. 13 or 25%)", type: "string", validation: (R) => R.required() }),
+            defineField({ name: "label", title: "Label (e.g. Project Inquiries/Mo)", type: "string", validation: (R) => R.required() }),
+          ],
+          preview: {
+            select: { title: "value", subtitle: "label" },
+            prepare(v: Record<string, string>) { return { title: v.title, subtitle: v.label }; },
+          },
+        },
+      ],
+      validation: (R) => R.max(3),
+    }),
+    defineField({
+      name: "caseStudyMeta",
+      title: "Case Study Sidebar",
+      description: "Optional — enables two-column case study layout with sticky sidebar.",
+      type: "object",
+      fields: [
+        defineField({ name: "industry", title: "Industry", type: "string" }),
+        defineField({ name: "clientType", title: "Client Type", type: "string" }),
+        defineField({ name: "objective", title: "Objective", type: "string" }),
+        defineField({ name: "timeline", title: "Timeline", type: "string" }),
+        defineField({ name: "geography", title: "Geography / Market", type: "string" }),
+        defineField({
+          name: "keyResults",
+          title: "Key Results",
+          type: "array",
+          of: [{
+            type: "object",
+            fields: [
+              defineField({ name: "label", title: "Label", type: "string" }),
+              defineField({ name: "value", title: "Value", type: "string" }),
+            ],
+            preview: {
+              select: { title: "label", subtitle: "value" },
+              prepare(v: Record<string, string>) { return { title: v.title, subtitle: v.value }; },
+            },
+          }],
+        }),
+        defineField({
+          name: "servicesUsed",
+          title: "Services Used",
+          type: "array",
+          of: [{ type: "string" }],
+          options: { layout: "tags" },
+        }),
+      ],
+    }),
   ],
   preview: {
     select: { title: "title", author: "author.name", media: "coverImage" },

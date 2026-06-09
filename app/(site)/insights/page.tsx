@@ -47,10 +47,10 @@ export default async function InsightsPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Insights</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(36px,5.5vw,60px)] leading-[1.08] text-[#F7F3EA] max-w-[860px]">
             Practical thinking on marketing, AI, and growth.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[580px] mt-4">
             Open and crawlable — because the knowledge we publish should be
             useful before it becomes a reason to call us.
           </p>

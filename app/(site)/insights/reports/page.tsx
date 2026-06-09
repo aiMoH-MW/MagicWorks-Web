@@ -150,10 +150,10 @@ export default function InsightsReportsPage() {
             <span className="text-[#F7F3EA]">Reports</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Gated resources</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(36px,5.5vw,60px)] leading-[1.08] text-[#F7F3EA] max-w-[860px]">
             In-depth reports, free with your email.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[580px] mt-4">
             Playbooks, benchmarks, and strategy checklists on digital marketing, AI, and platform building. High-value, bottom-of-funnel content. Open articles stay open — we only gate the long-form assets.
           </p>
         </div>

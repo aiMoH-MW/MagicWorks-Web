@@ -100,10 +100,10 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
           <div className="grid md:grid-cols-[1fr_auto] gap-10 items-start">
             <div>
               <p className="eyebrow text-[#D4A537] mb-4">{wp.category}</p>
-              <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4.5vw,46px)] leading-[1.1] text-[#F7F3EA] max-w-[680px] mb-4">
+              <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(30px,4.8vw,52px)] leading-[1.08] text-[#F7F3EA] max-w-[820px] mb-4">
                 {wp.title}
               </h1>
-              <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px]">{wp.tagline}</p>
+              <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px]">{wp.tagline}</p>
               <div className="flex gap-4 text-[11px] text-[#9A8FBF] mt-5 flex-wrap">
                 <span>{wp.pages}</span>
                 <span>·</span>
@@ -191,7 +191,7 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
               </div>
 
               {/* Newsletter opt-in */}
-              <NewsletterFormWP source={`whitepaper-${wp.slug ?? slug}`} />
+              <NewsletterFormWP source={`whitepaper-${wp.slug ?? slug}`} variant="whitepaper" />
 
               {others.length > 0 && (
                 <div>

@@ -25,7 +25,7 @@ export async function getInsightBySlug(slug: string) {
   return client.fetch(
     `*[_type == "insight" && slug.current == $slug][0] {
       _id, title, slug, excerpt, publishedAt, category, pillar, isGated, faq, tags,
-      externalCoverImageUrl,
+      externalCoverImageUrl, caseStudyHeroStats, caseStudyMeta,
       "author": author->{ name, role, "photo": photo.asset->url, linkedin, "slug": slug.current, bio },
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt,
