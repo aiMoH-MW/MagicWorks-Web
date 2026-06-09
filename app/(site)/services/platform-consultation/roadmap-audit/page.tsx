@@ -9,8 +9,8 @@ export const metadata: Metadata = {
 };
 
 const deliverables = [
-  "A pressure-tested platform thesis — stress-tested against real market and technical constraints",
-  "Risk and sequencing analysis — what to do first, and what to defer",
+  "A pressure-tested platform thesis, stress-tested against real market and technical constraints",
+  "Risk and sequencing analysis: what to do first, and what to defer",
   "Build-or-buy calls on key modules with reasoning made explicit",
   "A sequenced platform roadmap you can act on with any partner",
 ];

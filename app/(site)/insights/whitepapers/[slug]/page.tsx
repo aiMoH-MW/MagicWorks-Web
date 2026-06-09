@@ -8,9 +8,9 @@ const whitepapers = [
     slug: "ai-automation-readiness-indian-smes",
     title: "AI Automation Readiness for Indian SMEs",
     category: "AI Consultation",
-    tagline: "Know exactly where you stand — and where to start.",
+    tagline: "Know exactly where you stand, and where to start.",
     description:
-      "Most Indian SMEs know AI matters. Few know where they actually stand. This whitepaper gives founders and operations leaders a structured five-dimension readiness framework — built from MagicWorks AI consultation engagements — to assess your current state, prioritise automation opportunities, and build a phased roadmap without getting sold a solution you're not ready for.",
+      "Most Indian SMEs know AI matters. Few know where they actually stand. This whitepaper gives founders and operations leaders a structured five-dimension readiness framework (built from MagicWorks AI consultation engagements) to assess your current state, prioritise automation opportunities, and build a phased roadmap without getting sold a solution you're not ready for.",
     whatYoullLearn: [
       "The five dimensions of AI readiness: data, process, people, infrastructure, and governance",
       "How to score your organisation and identify your biggest blockers",
@@ -27,19 +27,19 @@ const whitepapers = [
     pages: "24 pages",
     audience: "Founders · COOs · Operations heads",
     publishedDate: "May 2026",
-    googleDriveUrl: "#",
+    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1XXp8iH6y2Anuddt2SrKHNEEq52lqUV72",
   },
   {
     slug: "performance-marketing-roi",
-    title: "Performance Marketing ROI — The MagicWorks Framework",
+    title: "Performance Marketing ROI: The MagicWorks Framework",
     category: "Digital Marketing",
     tagline: "Stop guessing what's working. Start measuring what matters.",
     description:
-      "Performance marketing in India is full of vanity metrics. This whitepaper delivers the measurement framework MagicWorks uses across client campaigns — covering attribution modelling, CPL and ROAS benchmarks by industry, full-funnel tracking, and a practical audit checklist you can run on your current campaigns today. Built for marketing heads and founders who want to hold their agency accountable.",
+      "Performance marketing in India is full of vanity metrics. This whitepaper delivers the measurement framework MagicWorks uses across client campaigns, covering attribution modelling, CPL and ROAS benchmarks by industry, full-funnel tracking, and a practical audit checklist you can run on your current campaigns today. Built for marketing heads and founders who want to hold their agency accountable.",
     whatYoullLearn: [
       "CPL and ROAS benchmarks across education, real estate, manufacturing, and professional services",
       "How to build a multi-touch attribution model for Indian buyer journeys",
-      "The most common ad-spend leakage points — and how to recover them",
+      "The most common ad-spend leakage points, and how to recover them",
       "Full-funnel measurement: from first click to closed revenue",
       "How to structure a monthly performance review that keeps agencies honest",
       "A 30-point campaign audit checklist you can run independently",
@@ -52,7 +52,7 @@ const whitepapers = [
     pages: "32 pages",
     audience: "Marketing heads · Founders · Growth managers",
     publishedDate: "May 2026",
-    googleDriveUrl: "#",
+    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1ReNkY6rW8DexdZfdFxzRbmSB6Xnzy4Nl",
   },
 ];
 

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const included = [
-  "Uptime monitoring — alerts before visitors notice a problem",
+  "Uptime monitoring: alerts before visitors notice a problem",
   "Security patches and platform updates",
   "Content updates and editorial changes",
   "Performance and load-time upkeep",

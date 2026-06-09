@@ -14,7 +14,7 @@ const pillars = [
     type: "delivery",
     label: "Delivery",
     title: "Digital Marketing",
-    body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer — with a commission tier for larger ad spends.",
+    body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer, with a commission tier for larger ad spends.",
     href: "/services/digital-marketing",
   },
   {
@@ -28,7 +28,7 @@ const pillars = [
   {
     num: "03",
     type: "advisory",
-    label: "Advisory — consultation only",
+    label: "Advisory: consultation only",
     title: "AI Consultation",
     body: "A clear, defensible AI roadmap. We advise and design the path. You decide who builds it. Independent advice, no bundling.",
     href: "/services/ai-consultation",
@@ -36,7 +36,7 @@ const pillars = [
   {
     num: "04",
     type: "advisory",
-    label: "Advisory — consultation only",
+    label: "Advisory: consultation only",
     title: "Marketplace & Platform Consultation",
     body: "Founder-led judgment for portal and platform builders. Independent advice, no bundling, no conflict of interest.",
     href: "/services/platform-consultation",
@@ -54,7 +54,7 @@ const steps = [
   { n: "01", t: "Discovery", d: "Thirty minutes to understand your business and goals." },
   { n: "02", t: "Strategy", d: "A clear proposal in five working days, no padding." },
   { n: "03", t: "Onboarding", d: "Access, brand alignment, and kick-off." },
-  { n: "04", t: "Execution", d: "Build, launch, improve — with weekly and monthly reviews." },
+  { n: "04", t: "Execution", d: "Build, launch, improve, with weekly and monthly reviews." },
   { n: "05", t: "Reporting", d: "Reports you can actually read." },
 ];
 
@@ -76,7 +76,7 @@ const faq = [
   },
   {
     q: "What makes MagicWorks AI-first?",
-    a: "We build AI into how we work — from AI-native websites to answer-engine optimisation and an AI consultation practice — rather than treating it as an add-on.",
+    a: "We build AI into how we work (from AI-native websites to answer-engine optimisation and an AI consultation practice) rather than treating it as an add-on.",
   },
 ];
 
@@ -200,7 +200,7 @@ export default function HomePage() {
             <p className="text-[16px] text-[#3F3F4A]">
               Digital Marketing and Web Development produce work you can buy as a
               deliverable. AI Consultation and Platform Consultation produce
-              judgment — we advise and design the roadmap, and you stay free to
+              judgment: we advise and design the roadmap, and you stay free to
               choose who builds it. The boundary is deliberate, and it keeps our
               advice honest.
             </p>

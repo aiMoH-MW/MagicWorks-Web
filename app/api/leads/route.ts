@@ -29,7 +29,7 @@ export async function POST(req: NextRequest) {
 
     // Send notification email (non-blocking)
     sendNotification(
-      `New lead from ${source_page ?? "website"} — ${name}`,
+      `New lead from ${source_page ?? "website"}: ${name}`,
       `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>

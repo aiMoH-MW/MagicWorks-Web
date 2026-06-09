@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service",
-  description: "Terms of service for magicworksitsolutions.com — MagicWorks IT Solutions Pvt. Ltd.",
+  description: "Terms of service for magicworksitsolutions.com, MagicWorks IT Solutions Pvt. Ltd.",
   alternates: { canonical: "/terms" },
   robots: { index: false, follow: false },
 };
@@ -19,7 +19,7 @@ export default function TermsPage() {
           {[
             { h: "1. Services", p: "MagicWorks IT Solutions Pvt. Ltd. provides digital marketing, web development, AI consultation, and platform consultation services. Specific terms, deliverables, timelines, and fees are set out in individual service agreements or statements of work signed by both parties." },
             { h: "2. Use of this website", p: "This website is provided for informational purposes. You may not copy, reproduce, or distribute any content from this site without written permission. You may not use this site for unlawful purposes or in any way that could damage the reputation of MagicWorks IT Solutions Pvt. Ltd." },
-            { h: "3. Intellectual property", p: "All content on this site — text, design, imagery, and code — is owned by or licensed to MagicWorks IT Solutions Pvt. Ltd. Client work product ownership is governed by the relevant service agreement." },
+            { h: "3. Intellectual property", p: "All content on this site (text, design, imagery, and code) is owned by or licensed to MagicWorks IT Solutions Pvt. Ltd. Client work product ownership is governed by the relevant service agreement." },
             { h: "4. Limitation of liability", p: "To the maximum extent permitted by applicable law, MagicWorks IT Solutions Pvt. Ltd. shall not be liable for any indirect, incidental, or consequential damages arising from the use of this website or our services, beyond the fees paid in the relevant engagement period." },
             { h: "5. Governing law", p: "These terms are governed by the laws of India. Any disputes shall be subject to the exclusive jurisdiction of the courts of Pune, Maharashtra, India." },
             { h: "6. Changes to these terms", p: "We may update these terms from time to time. Material changes will be notified by updating the date at the top of this page. Continued use of this site after changes constitutes acceptance." },

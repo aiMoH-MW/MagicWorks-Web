@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const deliverables = [
   "A defensible map of where AI can and cannot help the named processes",
-  "Honest opportunity ranking — no inflated projections",
+  "Honest opportunity ranking, no inflated projections",
   "Build-versus-buy decisions with the reasoning made explicit",
   "Vendor recommendations where relevant",
   "A sequenced 12-month roadmap you can act on with any partner",
@@ -18,7 +18,7 @@ const deliverables = [
 
 const method = [
   { n: "01", t: "Discovery interviews", d: "We talk to the people who actually run the process, not just leadership. What works, what breaks, where the friction is." },
-  { n: "02", t: "Process mapping", d: "We map the process as it is today — not the idealised version — against AI capability as it exists today." },
+  { n: "02", t: "Process mapping", d: "We map the process as it is today (not the idealised version) against AI capability as it exists today." },
   { n: "03", t: "Opportunity ranking", d: "We rank the opportunities honestly: effort, risk, cost, and genuine potential. Some things AI cannot help with yet; we say so." },
   { n: "04", t: "Roadmap workshop", d: "We present our findings, make the build-versus-buy calls, and agree the sequenced twelve-month roadmap together." },
 ];
@@ -168,7 +168,7 @@ export default function ProcessAuditPage() {
               We design the roadmap. You choose who executes it.
             </h2>
             <p className="text-[16px] text-[#C8B8FF] leading-[1.65]">
-              MagicWorks AI Consultation is consultation only. We advise, audit, and design the roadmap. We do not build, deploy, or operate AI on the client's behalf. That boundary is not a limitation — it is the differentiator. A consultant who also builds has an incentive to recommend building. We do not.
+              MagicWorks AI Consultation is consultation only. We advise, audit, and design the roadmap. We do not build, deploy, or operate AI on the client's behalf. That boundary is not a limitation; it is the differentiator. A consultant who also builds has an incentive to recommend building. We do not.
             </p>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-[10px] p-8">

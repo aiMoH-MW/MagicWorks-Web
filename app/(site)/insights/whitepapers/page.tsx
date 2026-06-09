@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Whitepapers | Insights",
-  description: "Free whitepapers from MagicWorks IT Solutions — in-depth research on AI automation readiness and performance marketing ROI for Indian businesses.",
+  description: "Free whitepapers from MagicWorks IT Solutions: in-depth research on AI automation readiness and performance marketing ROI for Indian businesses.",
   alternates: { canonical: "/insights/whitepapers" },
 };
 
@@ -24,11 +24,11 @@ const whitepapers = [
     pages: "24 pages",
     audience: "Founders · COOs · Operations heads",
     publishedDate: "May 2026",
-    googleDriveUrl: "#",
+    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1XXp8iH6y2Anuddt2SrKHNEEq52lqUV72",
   },
   {
     slug: "performance-marketing-roi",
-    title: "Performance Marketing ROI — The MagicWorks Framework",
+    title: "Performance Marketing ROI: The MagicWorks Framework",
     category: "Digital Marketing",
     description:
       "A data-backed framework for measuring and improving performance marketing ROI across Google Ads, Meta, and LinkedIn. Includes CPL and ROAS benchmarks for Indian markets, attribution models, and a practical campaign audit checklist.",
@@ -42,7 +42,7 @@ const whitepapers = [
     pages: "32 pages",
     audience: "Marketing heads · Founders · Growth managers",
     publishedDate: "May 2026",
-    googleDriveUrl: "#",
+    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1ReNkY6rW8DexdZfdFxzRbmSB6Xnzy4Nl",
   },
 ];
 
@@ -69,7 +69,7 @@ export default function WhitepapersPage() {
             Research-backed whitepapers for decision-makers.
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[580px] mt-4">
-            Practical, data-driven guides on AI adoption and performance marketing — written for Indian business leaders who need more than vendor slides.
+            Practical, data-driven guides on AI adoption and performance marketing, written for Indian business leaders who need more than vendor slides.
           </p>
         </div>
       </section>

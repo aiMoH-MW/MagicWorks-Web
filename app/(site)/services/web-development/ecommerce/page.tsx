@@ -20,7 +20,7 @@ const included = [
 
 const faq = [
   {
-    q: "Which platform — AI-native, WooCommerce, or custom?",
+    q: "Which platform: AI-native, WooCommerce, or custom?",
     a: "We recommend based on your roadmap. WooCommerce suits simpler catalogues with standard needs. An AI-native build on Next.js suits ambitious, scaling stores that need personalisation, fast performance, and intelligent search.",
   },
   {
@@ -33,7 +33,7 @@ const faq = [
   },
   {
     q: "Who maintains the store after launch?",
-    a: "Our Web AMC retainer covers ongoing maintenance for stores we built — security patches, platform updates, content changes, and performance upkeep.",
+    a: "Our Web AMC retainer covers ongoing maintenance for stores we built: security patches, platform updates, content changes, and performance upkeep.",
   },
 ];
 
@@ -48,7 +48,7 @@ const serviceSchema = {
   "@type": "Service",
   "@id": "https://magicworksitsolutions.com/services/web-development/ecommerce#service",
   name: "E-commerce Website Development",
-  description: "Online stores built around the buying journey — AI-native commerce or WooCommerce, with payments, analytics, and an AMC tail.",
+  description: "Online stores built around the buying journey: AI-native commerce or WooCommerce, with payments, analytics, and an AMC tail.",
   provider: {
     "@type": "Organization",
     "@id": "https://magicworksitsolutions.com/#organization",
@@ -115,7 +115,7 @@ export default function EcommercePage() {
             Stores built around the buying journey, not just the catalogue.
           </h1>
           <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
-            We build online stores designed to sell. AI-native commerce on Next.js for businesses with ambitious roadmaps, or WooCommerce for simpler catalogues — both with payments, tracking, and an AMC tail built in.
+            We build online stores designed to sell. AI-native commerce on Next.js for businesses with ambitious roadmaps, or WooCommerce for simpler catalogues, both with payments, tracking, and an AMC tail built in.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
             <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">

@@ -8,20 +8,20 @@ const questions = [
     id: "leadership",
     text: "Does your leadership team have a shared understanding of what AI can and cannot do today?",
     options: [
-      { label: "No — it is mostly speculation", score: 0 },
-      { label: "Partial — some members do, most do not", score: 1 },
-      { label: "Mostly — we have had some exposure", score: 2 },
-      { label: "Yes — we have a clear, grounded view", score: 3 },
+      { label: "No, it is mostly speculation", score: 0 },
+      { label: "Partial: some members do, most do not", score: 1 },
+      { label: "Mostly, we have had some exposure", score: 2 },
+      { label: "Yes, we have a clear, grounded view", score: 3 },
     ],
   },
   {
     id: "processes",
     text: "Have you identified specific business processes where AI might reduce cost or improve speed?",
     options: [
-      { label: "No — we have not looked yet", score: 0 },
+      { label: "No, we have not looked yet", score: 0 },
       { label: "We have vague ideas but nothing specific", score: 1 },
-      { label: "Yes — we have one or two specific candidates", score: 2 },
-      { label: "Yes — several mapped with clear pain points", score: 3 },
+      { label: "Yes, we have one or two specific candidates", score: 2 },
+      { label: "Yes, several mapped with clear pain points", score: 3 },
     ],
   },
   {
@@ -41,14 +41,14 @@ const questions = [
       { label: "No budget allocated", score: 0 },
       { label: "Under discussion", score: 1 },
       { label: "Some budget set aside", score: 2 },
-      { label: "Yes — committed and sized", score: 3 },
+      { label: "Yes, committed and sized", score: 3 },
     ],
   },
   {
     id: "urgency",
     text: "What is driving your interest in AI right now?",
     options: [
-      { label: "Curiosity — no specific pressure", score: 0 },
+      { label: "Curiosity, no specific pressure", score: 0 },
       { label: "Competitive pressure to explore", score: 1 },
       { label: "A specific operational pain point", score: 2 },
       { label: "Clear cost or growth target it must hit", score: 3 },
@@ -72,7 +72,7 @@ function getRecommendation(score: number, max: number): Recommendation {
       level: "Early stage",
       color: "#9A9AA8",
       headline: "Build the foundation first.",
-      body: "Your organisation is in the early stages of AI readiness. The most valuable next step is not a technology project — it is building a shared, honest understanding of what AI can and cannot do. A Literacy Workshop for your leadership team will fast-track the alignment needed before any process work begins.",
+      body: "Your organisation is in the early stages of AI readiness. The most valuable next step is not a technology project; it is building a shared, honest understanding of what AI can and cannot do. A Literacy Workshop for your leadership team will fast-track the alignment needed before any process work begins.",
       cta: "Learn about the AI Literacy Workshop",
       ctaHref: "/services/ai-consultation/workshop",
     };

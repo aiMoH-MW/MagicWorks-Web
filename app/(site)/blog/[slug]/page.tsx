@@ -593,7 +593,7 @@ export default async function BlogArticlePage({ params }: Props) {
                         </p>
                       )}
                       <p className="text-[14px] text-[#3F3F4A] leading-[1.65]">
-                        {article.author.bio ?? "Founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements — not theory."}
+                        {article.author.bio ?? "Founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory."}
                       </p>
                       <div className="flex gap-4 mt-3">
                         {article.author.slug && (

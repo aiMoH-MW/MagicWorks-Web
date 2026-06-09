@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "What is a targeted advisory sprint?",
-    a: "A targeted advisory sprint is a focused, fixed-fee consultation of two to four weeks on a single high-stakes platform decision — such as a pricing model, marketplace liquidity strategy, or build-or-buy on a specific module. It ends with a clear recommendation and the reasoning behind it.",
+    a: "A targeted advisory sprint is a focused, fixed-fee consultation of two to four weeks on a single high-stakes platform decision, such as a pricing model, marketplace liquidity strategy, or build-or-buy on a specific module. It ends with a clear recommendation and the reasoning behind it.",
   },
   {
     q: "What kinds of decisions does it cover?",
@@ -83,7 +83,7 @@ export default function AdvisorySprintPage() {
             One hard decision, resolved.
           </h1>
           <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
-            A focused, fixed-fee engagement on a single high-stakes platform decision — pricing model, marketplace liquidity, build-or-buy on a module — that ends with a clear recommendation and the reasoning behind it.
+            A focused, fixed-fee engagement on a single high-stakes platform decision (pricing model, marketplace liquidity, build-or-buy on a module) that ends with a clear recommendation and the reasoning behind it.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
             <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
@@ -114,7 +114,7 @@ export default function AdvisorySprintPage() {
             When one question is blocking progress.
           </h2>
           <div className="grid md:grid-cols-2 gap-4">
-            {["Which pricing model — subscription, transaction fee, or freemium — fits this market and network?", "How do we solve the supply-side cold-start problem before we can grow demand?", "Build this module ourselves, buy an off-the-shelf tool, or integrate an API?", "Which vertical or geography do we enter first to create a defensible foothold?"].map((d) => (
+            {["Which pricing model (subscription, transaction fee, or freemium) fits this market and network?", "How do we solve the supply-side cold-start problem before we can grow demand?", "Build this module ourselves, buy an off-the-shelf tool, or integrate an API?", "Which vertical or geography do we enter first to create a defensible foothold?"].map((d) => (
               <div key={d} className="flex items-start gap-4 bg-white/10 border border-white/20 rounded-[10px] p-5">
                 <span className="mt-[3px] flex-shrink-0 w-1.5 h-1.5 rounded-full bg-[#D4A537] mt-2" />
                 <p className="text-[15px] text-[#C8B8FF]">{d}</p>

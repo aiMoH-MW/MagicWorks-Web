@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const outcomes = [
-  "A sharpened platform thesis — stress-tested in the room",
+  "A sharpened platform thesis, stress-tested in the room",
   "Team alignment on the business model and monetisation logic",
   "A shortlist of near-term priorities to act on",
   "Sharper questions to take into the build phase",

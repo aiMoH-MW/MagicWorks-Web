@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       if (error && error.code !== "23505") throw error;
 
       sendNotification(
-        `New whitepaper opt-in — ${whitepaperSlug}`,
+        `New whitepaper opt-in: ${whitepaperSlug}`,
         `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Whitepaper:</strong> ${whitepaperSlug}</p>`
       );
     } else {
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
       if (error) throw error;
 
       sendNotification(
-        `New newsletter subscriber — ${cleanSource}`,
+        `New newsletter subscriber: ${cleanSource}`,
         `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Source:</strong> ${cleanSource}</p>`
       );
     }
