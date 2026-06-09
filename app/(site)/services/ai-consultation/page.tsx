@@ -88,7 +88,7 @@ const formats = [
     label: "Wedge",
     title: "AI Literacy Workshop",
     body: "1 to 3 days. For leadership teams who need a shared foundation before making AI decisions. The most common starting point.",
-    link: null,
+    link: "/services/ai-consultation/workshop",
   },
   {
     flagship: true,
@@ -101,15 +101,15 @@ const formats = [
     flagship: false,
     label: null,
     title: "Vendor & Build-vs-Buy Sprint",
-    body: "A focused, fixed-fee sprint around a single critical decision — which AI vendor, tool, or build approach is right for your use case.",
-    link: null,
+    body: "A focused, fixed-fee sprint around a single critical decision: which AI vendor, tool, or build approach is right for your use case.",
+    link: "/services/ai-consultation/vendor-sprint",
   },
   {
     flagship: false,
     label: null,
     title: "Embedded AI Advisor",
     body: "A recurring retainer engagement, sold only as a follow-on after an audit or sprint. Senior advisory presence on an ongoing basis.",
-    link: null,
+    link: "/services/ai-consultation/embedded-advisor",
   },
 ];
 
@@ -303,7 +303,7 @@ export default function AIConsultationPage() {
               </h3>
               <p className="text-[16px] leading-[1.65] text-[#C8B8FF]">
                 For manufacturers with complex operations. Process automation, quality control,
-                demand forecasting, and supplier intelligence — mapped to a roadmap you can defend
+                demand forecasting, and supplier intelligence, mapped to a roadmap you can defend
                 to your board.
               </p>
             </div>
@@ -346,7 +346,7 @@ export default function AIConsultationPage() {
               <p className="text-[16px] leading-[1.65] text-[#3F3F4A]">
                 If you need someone to build or deploy AI tools, we will point you to{" "}
                 <strong className="text-[#2A1B5C]">MagicFlow AI</strong> or{" "}
-                <strong className="text-[#2A1B5C]">Magic Pipeline</strong> — two products built by
+                <strong className="text-[#2A1B5C]">Magic Pipeline</strong>, two products built by
                 the MagicWorks Group.
               </p>
             </div>
@@ -399,7 +399,7 @@ export default function AIConsultationPage() {
           </h2>
           <p className="text-[18px] text-[#C8B8FF] max-w-[500px] mx-auto mb-10">
             A thirty-minute discovery call, no obligation. We will tell you honestly whether we are
-            the right fit — and what the first step looks like.
+            the right fit, and what the first step looks like.
           </p>
           <div className="flex gap-4 flex-wrap items-center justify-center">
             <Link
