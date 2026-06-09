@@ -165,9 +165,17 @@ const articleComponents: PortableTextComponents = {
     externalImage: ({ value }) => {
       if (!value?.url) return null;
       return (
-        <figure className="my-12 -mx-4 sm:-mx-6">
-          <div className="relative w-full rounded-[12px] overflow-hidden bg-[#EDE9F7] shadow-[0_16px_56px_rgba(42,27,92,0.18)]" style={{ aspectRatio: "16/9" }}>
-            <Image src={value.url} alt={value.alt ?? ""} fill className="object-cover" sizes="(max-width: 768px) 100vw, 760px" />
+        <figure className="my-12">
+          <div className="rounded-[12px] overflow-hidden shadow-[0_16px_56px_rgba(42,27,92,0.18)]">
+            <Image
+              src={value.url}
+              alt={value.alt ?? ""}
+              width={0}
+              height={0}
+              sizes="(max-width: 768px) 100vw, 760px"
+              style={{ width: "100%", height: "auto" }}
+              className="block"
+            />
           </div>
           {value.caption && (
             <figcaption className="text-center text-[13px] text-[#9A9AA8] mt-4 italic leading-[1.5]">{value.caption}</figcaption>
@@ -179,9 +187,17 @@ const articleComponents: PortableTextComponents = {
       const src = value?.url;
       if (!src) return null;
       return (
-        <figure className="my-12 -mx-4 sm:-mx-6">
-          <div className="relative w-full rounded-[12px] overflow-hidden bg-[#EDE9F7] shadow-[0_16px_56px_rgba(42,27,92,0.18)]" style={{ aspectRatio: "16/9" }}>
-            <Image src={src} alt={value.alt ?? ""} fill className="object-cover" sizes="(max-width: 768px) 100vw, 760px" />
+        <figure className="my-12">
+          <div className="rounded-[12px] overflow-hidden shadow-[0_16px_56px_rgba(42,27,92,0.18)]">
+            <Image
+              src={src}
+              alt={value.alt ?? ""}
+              width={0}
+              height={0}
+              sizes="(max-width: 768px) 100vw, 760px"
+              style={{ width: "100%", height: "auto" }}
+              className="block"
+            />
           </div>
           {value.caption && (
             <figcaption className="text-center text-[13px] text-[#9A9AA8] mt-4 italic leading-[1.5]">{value.caption}</figcaption>
