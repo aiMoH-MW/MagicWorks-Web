@@ -14,23 +14,33 @@ export async function POST(req: NextRequest) {
     const cleanSource = source || "footer";
     const db = createServiceClient();
 
-    // Both newsletter and whitepaper opt-ins go into newsletter_subscribers.
-    // Source field encodes the variant: "footer", "insights", "whitepaper-{slug}", etc.
-    const { error } = await db
-      .from("newsletter_subscribers")
-      .upsert({ email: cleanEmail, source: cleanSource }, { onConflict: "email" });
+    if (cleanSource.startsWith("whitepaper-")) {
+      // ── Whitepaper opt-in → dedicated table ────────────────────────────────
+      const whitepaperSlug = cleanSource.replace("whitepaper-", "");
+      const { error } = await db
+        .from("whitepaper_subscribers")
+        .insert({ email: cleanEmail, whitepaper: whitepaperSlug });
 
-    if (error) throw error;
+      // Silently succeed on duplicate (same email + same whitepaper)
+      if (error && error.code !== "23505") throw error;
 
-    const isWhitepaper = cleanSource.startsWith("whitepaper-");
-    const subject = isWhitepaper
-      ? `New whitepaper opt-in: ${cleanSource.replace("whitepaper-", "")}`
-      : `New newsletter subscriber: ${cleanSource}`;
+      sendNotification(
+        `New whitepaper opt-in: ${whitepaperSlug}`,
+        `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Whitepaper:</strong> ${whitepaperSlug}</p>`
+      );
+    } else {
+      // ── Newsletter → newsletter_subscribers ────────────────────────────────
+      const { error } = await db
+        .from("newsletter_subscribers")
+        .upsert({ email: cleanEmail, source: cleanSource }, { onConflict: "email" });
 
-    sendNotification(
-      subject,
-      `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Source:</strong> ${cleanSource}</p>`
-    );
+      if (error) throw error;
+
+      sendNotification(
+        `New newsletter subscriber: ${cleanSource}`,
+        `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Source:</strong> ${cleanSource}</p>`
+      );
+    }
 
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (err) {
