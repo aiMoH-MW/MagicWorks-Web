@@ -165,7 +165,7 @@ export default function MetaAdsPage() {
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A537] mb-4">Full-funnel motion</p>
             <p className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#F7F3EA] mb-3">Discovery + intent = compounding results.</p>
             <p className="text-[14px] text-[#C8B8FF] leading-[1.6]">
-              Meta creates demand at scale. Google Ads captures that demand when the buyer is ready to act. Together, they close the loop between awareness and conversion.
+              Meta creates demand at scale. Google Ads captures that demand when the buyer is ready to act. Together, they close the loop between awareness, enquiry, and sales.
             </p>
           </div>
         </div>
