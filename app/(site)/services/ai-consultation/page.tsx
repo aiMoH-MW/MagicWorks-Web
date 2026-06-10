@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AIConsultationForm from "./AIConsultationForm";
 
 export const metadata: Metadata = {
   title: "AI Consultation for Founders & Operators",
@@ -8,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/services/ai-consultation" },
 };
 
-/* ─── JSON-LD schemas ─────────────────────────────────────── */
+/* --- JSON-LD schemas --------------------------------------- */
 
 const serviceSchema = {
   "@context": "https://schema.org",
@@ -37,7 +38,7 @@ const faqItems = [
   },
   {
     q: "Who is this for?",
-    a: "Founders, CEOs, COOs, and CXOs at businesses with ₹25 Cr revenue or more in manufacturing or professional services.",
+    a: "Founders, CEOs, COOs, and CXOs at businesses with ?25 Cr revenue or more in manufacturing or professional services.",
   },
   {
     q: "What is the AI Literacy Workshop?",
@@ -80,7 +81,7 @@ const breadcrumbSchema = {
   ],
 };
 
-/* ─── Engagement formats ──────────────────────────────────── */
+/* --- Engagement formats ------------------------------------ */
 
 const formats = [
   {
@@ -113,7 +114,7 @@ const formats = [
   },
 ];
 
-/* ─── Page ────────────────────────────────────────────────── */
+/* --- Page -------------------------------------------------- */
 
 export default function AIConsultationPage() {
   return (
@@ -131,7 +132,7 @@ export default function AIConsultationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
-      {/* ── 1. HERO ────────────────────────────────────────────── */}
+      {/* -- 1. HERO ---------------------------------------------- */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-32 pb-24 relative overflow-hidden">
         {/* Ring SVG — 5 circles alternating violet / gold */}
         <svg
@@ -180,22 +181,22 @@ export default function AIConsultationPage() {
 
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 03 · Advisory</p>
 
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(38px,5.8vw,60px)] leading-[1.08] tracking-[-0.01em] text-[#F7F3EA] max-w-[760px] mt-3">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(38px,5.8vw,60px)] leading-[1.08] tracking-[-0.01em] text-[#F7F3EA] max-w-[820px] mt-3">
             A clear, defensible AI roadmap.
           </h1>
 
-          <p className="text-[18px] leading-[1.6] text-[#C8B8FF] max-w-[560px] mt-6 mb-10">
+          <p className="text-[18px] leading-[1.6] text-[#C8B8FF] max-w-[620px] mt-6 mb-10">
             Consultation only. We advise, audit, and design the AI roadmap. You decide who builds it.
             Independent advice, no bundling, no conflict of interest.
           </p>
 
           <div className="flex gap-4 flex-wrap items-center">
-            <Link
-              href="/contact"
+            <a
+              href="#ai-enquiry"
               className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block"
             >
               Book an AI Literacy Workshop
-            </Link>
+            </a>
             <Link
               href="/tools/ai-readiness-assessment"
               className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors inline-block"
@@ -206,7 +207,7 @@ export default function AIConsultationPage() {
         </div>
       </section>
 
-      {/* ── 2. CONSULTATION-ONLY BOUNDARY ─────────────────────── */}
+      {/* -- 2. CONSULTATION-ONLY BOUNDARY ----------------------- */}
       <section className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="max-w-[760px]">
@@ -230,7 +231,7 @@ export default function AIConsultationPage() {
         </div>
       </section>
 
-      {/* ── 3. FOUR ENGAGEMENT FORMATS ────────────────────────── */}
+      {/* -- 3. FOUR ENGAGEMENT FORMATS -------------------------- */}
       <section className="bg-[#F7F3EA] py-6 pb-24">
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="max-w-[680px] mb-12">
@@ -275,7 +276,7 @@ export default function AIConsultationPage() {
                     href={f.link}
                     className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
                   >
-                    Learn more →
+                    Learn more ?
                   </Link>
                 )}
               </div>
@@ -284,7 +285,7 @@ export default function AIConsultationPage() {
         </div>
       </section>
 
-      {/* ── 4. PRIORITY VERTICALS ─────────────────────────────── */}
+      {/* -- 4. PRIORITY VERTICALS ------------------------------- */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="max-w-[680px] mb-12">
@@ -323,7 +324,7 @@ export default function AIConsultationPage() {
         </div>
       </section>
 
-      {/* ── 5. BUYER PROFILE ──────────────────────────────────── */}
+      {/* -- 5. BUYER PROFILE ------------------------------------ */}
       <section className="bg-[#EDE9F7] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="grid md:grid-cols-[1fr_1.1fr] gap-14 items-start">
@@ -335,7 +336,7 @@ export default function AIConsultationPage() {
               </h2>
               <p className="text-[17px] leading-[1.65] text-[#3F3F4A]">
                 The right buyer is a founder, CEO, COO, or CXO at a business with revenue of
-                ₹25&nbsp;Cr or more, who needs a clear AI strategy before committing to any vendor
+                ?25&nbsp;Cr or more, who needs a clear AI strategy before committing to any vendor
                 or build.
               </p>
             </div>
@@ -354,7 +355,7 @@ export default function AIConsultationPage() {
         </div>
       </section>
 
-      {/* ── 6. FAQ ────────────────────────────────────────────── */}
+      {/* -- 6. FAQ ---------------------------------------------- */}
       <section className="bg-[#F7F3EA] py-20">
         <div className="max-w-[1120px] mx-auto px-8">
           <h2 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-10">
@@ -371,7 +372,7 @@ export default function AIConsultationPage() {
         </div>
       </section>
 
-      {/* ── 7. FINAL CTA ──────────────────────────────────────── */}
+      {/* -- 7. FINAL CTA ---------------------------------------- */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24 relative overflow-hidden">
         {/* Decorative ring */}
         <svg
@@ -402,18 +403,41 @@ export default function AIConsultationPage() {
             the right fit, and what the first step looks like.
           </p>
           <div className="flex gap-4 flex-wrap items-center justify-center">
-            <Link
-              href="/contact"
+            <a
+              href="#ai-enquiry"
               className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-9 py-[15px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block"
             >
               Book a discovery call
-            </Link>
+            </a>
             <Link
               href="/tools/ai-readiness-assessment"
               className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-9 py-[15px] rounded-full no-underline hover:bg-white/10 transition-colors inline-block"
             >
               Take the AI Readiness Assessment
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Enquiry form */}
+      <section id="ai-enquiry" className="bg-[#F7F3EA] py-24">
+        <div className="max-w-[1120px] mx-auto px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Start with a conversation.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                A thirty-minute discovery call, no obligation. We will tell you honestly whether we are the right fit and what the first step looks like.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Consultation only — no build obligation</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Independent advice, no vendor conflict</li>
+              </ul>
+            </div>
+            <AIConsultationForm />
           </div>
         </div>
       </section>

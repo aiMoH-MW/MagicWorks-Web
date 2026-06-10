@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PlatformContactForm from "./PlatformContactForm";
 
 export const metadata: Metadata = {
   title: "Marketplace & Platform Consultation",
@@ -22,17 +23,17 @@ const faqSchema = {
   "@type": "FAQPage",
   mainEntity: [
     { "@type": "Question", name: "What does MagicWorks advise on for platforms?", acceptedAnswer: { "@type": "Answer", text: "Platform strategy, build-vs-buy decisions, vendor selection, monetisation model design, feature roadmap sequencing, and market entry approach. We do not build or manage platforms on your behalf." } },
-    { "@type": "Question", name: "What is a Platform Strategy Workshop?", acceptedAnswer: { "@type": "Answer", text: "A focused session — typically one to two days — that maps your platform vision, the core use case, the monetisation model, and the first 90 days of execution. The most common starting point." } },
+    { "@type": "Question", name: "What is a Platform Strategy Workshop?", acceptedAnswer: { "@type": "Answer", text: "A focused session (typically one to two days) that maps your platform vision, the core use case, the monetisation model, and the first 90 days of execution. The most common starting point." } },
     { "@type": "Question", name: "Who is this for?", acceptedAnswer: { "@type": "Answer", text: "Founders and product leaders building edtech platforms, B2B sourcing and trade marketplaces, and wellness and lifestyle platforms. The advisory is most useful before or during the build, not after." } },
     { "@type": "Question", name: "Is this consultation-only?", acceptedAnswer: { "@type": "Answer", text: "Yes. MagicWorks advises, designs roadmaps, and guides decisions. You choose who builds and operates the platform. That boundary keeps the advice independent and conflict-free." } },
   ],
 };
 
 const formats = [
-  { tag: "Wedge", tagColor: "#5B3FBE", title: "Platform Strategy Workshop", body: "A focused session — typically one to two days — that maps your platform vision, core use case, monetisation model, and first 90 days of execution. The most common starting point.", href: "/contact" },
+  { tag: "Wedge", tagColor: "#5B3FBE", title: "Platform Strategy Workshop", body: "A focused session (typically one to two days) that maps your platform vision, core use case, monetisation model, and first 90 days of execution. The most common starting point.", href: "/services/platform-consultation/workshop" },
   { tag: "Flagship", tagColor: "#D4A537", title: "Platform Roadmap Audit", body: "A structured audit of your existing platform or pre-launch plan. Surfaces gaps in the business model, sequencing errors, build-vs-buy misalignments, and vendor risk. Delivers a prioritised roadmap.", href: "/services/platform-consultation/roadmap-audit" },
-  { tag: "Fixed-scope", tagColor: "#5B3FBE", title: "Targeted Advisory Sprint", body: "A specific decision, fixed scope, fixed fee. Right for a single critical question — which vendor, which monetisation model, which partner structure.", href: "/contact" },
-  { tag: "Follow-on only", tagColor: "#9A9AA8", title: "Embedded Platform Advisor", body: "A recurring retainer, sold only as a follow-on after an audit or workshop. Senior advisory presence on platform decisions on an ongoing basis.", href: "/contact" },
+  { tag: "Fixed-scope", tagColor: "#5B3FBE", title: "Targeted Advisory Sprint", body: "A specific decision, fixed scope, fixed fee. Right for a single critical question: which vendor, which monetisation model, which partner structure.", href: "/services/platform-consultation/advisory-sprint" },
+  { tag: "Follow-on only", tagColor: "#9A9AA8", title: "Embedded Platform Advisor", body: "A recurring retainer, sold only as a follow-on after an audit or workshop. Senior advisory presence on platform decisions on an ongoing basis.", href: "/services/platform-consultation/embedded-advisor" },
 ];
 
 const platforms = [
@@ -43,7 +44,7 @@ const platforms = [
 
 const faq = [
   { q: "What does MagicWorks advise on for platforms?", a: "Platform strategy, build-vs-buy decisions, vendor selection, monetisation model design, feature roadmap sequencing, and market entry approach. We do not build or manage platforms on your behalf." },
-  { q: "What is a Platform Strategy Workshop?", a: "A focused session — typically one to two days — that maps your platform vision, the core use case, the monetisation model, and the first 90 days of execution. The most common starting point." },
+  { q: "What is a Platform Strategy Workshop?", a: "A focused session (typically one to two days) that maps your platform vision, the core use case, the monetisation model, and the first 90 days of execution. The most common starting point." },
   { q: "Who is this for?", a: "Founders and product leaders building edtech platforms, B2B sourcing and trade marketplaces, and wellness and lifestyle platforms. The advisory is most useful before or during the build, not after." },
   { q: "Is this consultation-only?", a: "Yes. MagicWorks advises, designs roadmaps, and guides decisions. You choose who builds and operates the platform. That boundary keeps the advice independent and conflict-free." },
 ];
@@ -62,17 +63,31 @@ export default function PlatformConsultationPage() {
           ))}
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="mb-6">
+            <ol className="flex gap-2 items-center text-[12px] text-[#9A8FBF]">
+              <li>
+                <Link href="/" className="hover:text-[#C8B8FF] transition-colors no-underline">Home</Link>
+              </li>
+              <li aria-hidden="true" className="text-[#5B3FBE]">/</li>
+              <li>
+                <Link href="/services" className="hover:text-[#C8B8FF] transition-colors no-underline">Services</Link>
+              </li>
+              <li aria-hidden="true" className="text-[#5B3FBE]">/</li>
+              <li className="text-[#C8B8FF]" aria-current="page">Platform Consultation</li>
+            </ol>
+          </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 04 · Advisory</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[700px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Founder-led judgment for platform builders.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-5 mb-10">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             Independent advice on platform strategy, roadmap design, and build-vs-buy decisions. We advise. You choose who builds. No bundling, no conflict of interest.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            <a href="#platform-enquiry" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Request a Strategy Workshop
-            </Link>
+            </a>
             <Link href="/services" className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors">
               All services
             </Link>
@@ -89,7 +104,7 @@ export default function PlatformConsultationPage() {
               We advise. You choose who builds.
             </h2>
             <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
-              MagicWorks does not build, deploy, or operate platforms on your behalf. We advise on strategy, audit roadmaps, and guide decisions. That boundary is deliberate — it means our advice is never shaped by what we sell next, and your options remain open.
+              MagicWorks does not build, deploy, or operate platforms on your behalf. We advise on strategy, audit roadmaps, and guide decisions. That boundary is deliberate: it means our advice is never shaped by what we sell next, and your options remain open.
             </p>
             <p className="font-[family-name:var(--font-head)] italic text-[clamp(18px,2.4vw,24px)] text-[#2A1B5C] border-l-4 border-[#D4A537] pl-5">
               &ldquo;The most valuable platform advisor is one who has nothing to sell you after the engagement ends.&rdquo;
@@ -115,7 +130,7 @@ export default function PlatformConsultationPage() {
                 <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mt-2 mb-3">{f.title}</h3>
                 <p className="text-[15px] text-[#3F3F4A] mb-5">{f.body}</p>
                 <Link href={f.href} className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.06em] no-underline hover:underline">
-                  Learn more →
+                  Learn more ?
                 </Link>
               </div>
             ))}
@@ -162,19 +177,26 @@ export default function PlatformConsultationPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      {/* Enquiry form */}
+      <section id="platform-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,38px)] text-[#F7F3EA] max-w-[600px] mx-auto mb-4">
-            Building a platform and need senior judgment?
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[480px] mx-auto mb-10">
-            Start with a Platform Strategy Workshop. One to two days, focused, and actionable.
-          </p>
-          <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Request a Strategy Workshop
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Building a platform and need senior judgment?
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                Start with a Platform Strategy Workshop — one to two days, focused, and actionable. Tell us about your platform and we will suggest the right engagement.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>No bundling, no upsell after the engagement</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>You choose who builds — always</li>
+              </ul>
+            </div>
+            <PlatformContactForm />
+          </div>
         </div>
       </section>
     </>

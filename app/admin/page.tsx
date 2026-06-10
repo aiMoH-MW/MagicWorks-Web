@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 
 const ADMIN_SECRET = process.env.NEXT_PUBLIC_ADMIN_SECRET ?? "magicworks-admin-2026";
 
-type Tab = "newsletter" | "whitepaper" | "leads";
+type Tab = "newsletter" | "whitepaper" | "leads" | "contact";
 
 interface Row {
   id: string;
@@ -14,13 +14,16 @@ interface Row {
   phone?: string;
   message?: string;
   pillar?: string;
+  subject?: string;
+  source_page?: string;
   created_at: string;
 }
 
 const TABS: { key: Tab; label: string }[] = [
   { key: "newsletter", label: "Newsletter" },
   { key: "whitepaper", label: "Whitepaper Leads" },
-  { key: "leads", label: "Contact Leads" },
+  { key: "leads", label: "Service Enquiries" },
+  { key: "contact", label: "Contact Page" },
 ];
 
 function exportCSV(rows: Row[], filename: string) {
@@ -43,7 +46,7 @@ export default function AdminPage() {
   const [tab, setTab] = useState<Tab>("newsletter");
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
-  const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, leads: 0 });
+  const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, leads: 0, contact: 0 });
 
   const fetchTab = useCallback(async (t: Tab) => {
     setLoading(true);
@@ -66,7 +69,7 @@ export default function AdminPage() {
   // Prefetch counts
   useEffect(() => {
     if (!authed) return;
-    (["newsletter", "whitepaper", "leads"] as Tab[]).forEach(async (t) => {
+    (["newsletter", "whitepaper", "leads", "contact"] as Tab[]).forEach(async (t) => {
       const res = await fetch(`/api/admin/data?tab=${t}`, { headers: { "x-admin-secret": ADMIN_SECRET } });
       const json = await res.json();
       setCounts((prev) => ({ ...prev, [t]: json.data?.length ?? 0 }));
@@ -113,7 +116,8 @@ export default function AdminPage() {
   const newsletterCols = ["created_at", "email", "source"];
   const whitepaperCols = ["created_at", "email", "whitepaper"];
   const leadsCols = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
-  const cols = tab === "leads" ? leadsCols : tab === "newsletter" ? newsletterCols : whitepaperCols;
+  const contactCols = ["created_at", "name", "email", "phone", "subject", "message"];
+  const cols = tab === "leads" ? leadsCols : tab === "newsletter" ? newsletterCols : tab === "contact" ? contactCols : whitepaperCols;
 
   return (
     <div className="min-h-screen bg-[#0E0A1F] text-white">
@@ -183,12 +187,15 @@ export default function AdminPage() {
                         const display = c === "created_at"
                           ? new Date(val as string).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
                           : (val as string) ?? "—";
+                        const isWrap = c === "message" || c === "source_page";
                         return (
-                          <td key={c} className="px-5 py-3 text-white/80 max-w-[200px] truncate">
+                          <td key={c} className={`px-5 py-3 align-top text-white/80 ${isWrap ? "max-w-[280px] whitespace-pre-wrap break-words text-[12px] leading-[1.6]" : "max-w-[180px] truncate"}`}>
                             {c === "email" ? (
                               <a href={`mailto:${display}`} className="text-[#D4A537] hover:underline">{display}</a>
-                            ) : c === "source" ? (
+                            ) : c === "source" || c === "pillar" ? (
                               <span className="bg-white/10 text-white/60 px-2 py-0.5 rounded text-[11px]">{display}</span>
+                            ) : c === "source_page" ? (
+                              <span className="text-[#C8B8FF] text-[11px]">{display}</span>
                             ) : display}
                           </td>
                         );

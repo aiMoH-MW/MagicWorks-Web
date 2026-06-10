@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import WebDevelopmentContactForm from "../WebDevelopmentContactForm";
 
 export const metadata: Metadata = {
   title: "AI-Native Website Development · MagicWorks",
@@ -9,14 +10,14 @@ export const metadata: Metadata = {
 };
 
 const included = [
-  "Next.js front-end — React, Tailwind, mobile-first",
+  "Next.js front-end: React, Tailwind, mobile-first",
   "LLM-backed backend with edge functions for speed",
   "Headless CMS (Sanity, Payload, or Strapi, chosen per project)",
   "AI chat agents that qualify leads 24/7",
   "Intelligent search, content personalisation, recommendations",
   "Conversational lead capture built into the site structure",
   "SEO and AEO foundation with structured data throughout",
-  "Passes Core Web Vitals — LCP, INP, CLS — green on launch",
+  "Passes Core Web Vitals (LCP, INP, CLS), green on launch",
 ];
 
 const steps = [
@@ -28,7 +29,7 @@ const steps = [
 const faq = [
   {
     q: "What is an AI-native website?",
-    a: "An AI-native website is a site built on a modern stack — Next.js with an LLM-backed backend and a headless CMS — with intelligent features such as chat, smart search, personalisation, and conversational lead capture built in from the start, rather than added later as plugins.",
+    a: "An AI-native website is a site built on a modern stack (Next.js with an LLM-backed backend and a headless CMS) with intelligent features such as chat, smart search, personalisation, and conversational lead capture built in from the start, rather than added later as plugins.",
   },
   {
     q: "Do I need AI features to choose this stack?",
@@ -56,7 +57,7 @@ const serviceSchema = {
   "@id": "https://magicworksitsolutions.com/services/web-development/ai-native-websites#service",
   name: "AI-Native Website Development",
   description:
-    "Websites built on Next.js with an LLM-backed backend and a headless CMS. Intelligent features — chat, smart search, personalisation, conversational lead capture — built in from the start.",
+    "Websites built on Next.js with an LLM-backed backend and a headless CMS. Intelligent features (chat, smart search, personalisation, conversational lead capture) built in from the start.",
   provider: {
     "@type": "Organization",
     "@id": "https://magicworksitsolutions.com/#organization",
@@ -126,16 +127,16 @@ export default function AiNativeWebsitesPage() {
             <span className="text-[#F7F3EA]">AI-Native Websites</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 02 · Flagship Build</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             Websites that work, not just sit there.
           </h1>
-          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
-            An AI-native website is built on Next.js with an LLM-backed backend and a headless CMS, with intelligent features — chat that qualifies leads, smart search, personalisation — built in from the start. It is our default for all new builds since June 2026, and the kind of site a competitor cannot copy without significant rework.
+          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
+            An AI-native website is built on Next.js with an LLM-backed backend and a headless CMS, with intelligent features (chat that qualifies leads, smart search, personalisation) built in from the start. It is our default for all new builds since June 2026, and the kind of site a competitor cannot copy without significant rework.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            <a href="#web-enquiry" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Start a project conversation
-            </Link>
+            </a>
             <Link href="/services/web-development" className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors">
               All web development services
             </Link>
@@ -262,19 +263,29 @@ export default function AiNativeWebsitesPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      {/* Inline enquiry form */}
+      <section id="web-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,36px)] text-[#F7F3EA] max-w-[580px] mx-auto mb-4">
-            Ready to build a site that actually generates business?
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[480px] mx-auto mb-10">
-            The right trigger is a relaunch, a rebrand, or a new business line. Thirty minutes to explore the fit.
-          </p>
-          <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Start a project conversation
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Start the conversation about your AI-native build.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                Tell us about your project and we will outline the scope, timeline, and which AI features would earn their place in your build.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Written scope delivered within five working days of kick-off</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>AI-native by default from June 2026</li>
+              </ul>
+            </div>
+            <WebDevelopmentContactForm
+              sourcePage="/services/web-development/ai-native-websites"
+              defaultProject="AI-native website"
+            />
+          </div>
         </div>
       </section>
     </>

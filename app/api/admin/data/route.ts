@@ -41,6 +41,15 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ data });
     }
 
+    if (tab === "contact") {
+      const { data, error } = await client
+        .from("contact_submissions")
+        .select("*")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return NextResponse.json({ data });
+    }
+
     return NextResponse.json({ data: [] });
   } catch (err) {
     console.error(err);

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AIConsultationForm from "../AIConsultationForm";
 
 export const metadata: Metadata = {
   title: "AI Vendor & Build-vs-Buy Sprint · MagicWorks",
@@ -86,16 +87,16 @@ export default function VendorSprintPage() {
             <span className="text-[#F7F3EA]">Vendor & Build-vs-Buy Sprint</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 03 · Focused Sprint</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             Build, buy, or wait? A clear answer in weeks.
           </h1>
-          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
+          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             For when you have decided to act on a specific AI process but do not know which vendor to use, or whether to build or buy at all. A focused two-to-four-week sprint that ends in a clear, reasoned recommendation.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            <a href="#ai-enquiry" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Book a discovery call
-            </Link>
+            </a>
             <Link href="/services/ai-consultation" className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors">
               All AI consultation services
             </Link>
@@ -161,18 +162,25 @@ export default function VendorSprintPage() {
         </div>
       </section>
 
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      <section id="ai-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,36px)] text-[#F7F3EA] max-w-[560px] mx-auto mb-4">
-            Ready to make a clear build-or-buy decision?
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[460px] mx-auto mb-10">
-            Thirty minutes to understand the specific decision and whether a sprint is the right scope.
-          </p>
-          <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Book a discovery call
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Ready to make a clear build-or-buy decision?
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                Tell us the specific AI decision you are facing and we will confirm whether a sprint is the right scope.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Fixed scope, fixed fee — one named decision</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Independent recommendation, no vendor tie-in</li>
+              </ul>
+            </div>
+            <AIConsultationForm />
+          </div>
         </div>
       </section>
     </>

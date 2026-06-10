@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AIConsultationForm from "../AIConsultationForm";
 
 export const metadata: Metadata = {
   title: "AI Process Audit & Roadmap · MagicWorks",
@@ -125,16 +126,16 @@ export default function ProcessAuditPage() {
             <span className="text-[#F7F3EA]">AI Process Audit & Roadmap</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 03 · Flagship Engagement</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             A defensible AI roadmap you can act on with any partner.
           </h1>
-          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
+          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             Our flagship. Over four to six weeks we map one or two named processes, rank the opportunities honestly, make the build-versus-buy calls, and hand you a sequenced twelve-month roadmap. The deliverable is a decision, not a sales pitch, and you execute with whoever you choose.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            <a href="#ai-enquiry" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Book a discovery call
-            </Link>
+            </a>
             <Link href="/services/ai-consultation" className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors">
               All AI consultation services
             </Link>
@@ -288,19 +289,25 @@ export default function ProcessAuditPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      <section id="ai-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,36px)] text-[#F7F3EA] max-w-[600px] mx-auto mb-4">
-            Ready to find out honestly where AI fits in your business?
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[480px] mx-auto mb-10">
-            Thirty minutes to understand your processes and whether an audit is the right next step.
-          </p>
-          <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Book a discovery call
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Ready to find out honestly where AI fits in your business?
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                Tell us about your business processes and we will confirm whether an audit is the right next step.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Fixed-scope audit, consultation only</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>You choose what to build and with whom</li>
+              </ul>
+            </div>
+            <AIConsultationForm />
+          </div>
         </div>
       </section>
     </>

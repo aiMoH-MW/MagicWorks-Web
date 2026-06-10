@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PlatformContactForm from "../PlatformContactForm";
 
 export const metadata: Metadata = {
   title: "Embedded Platform Advisor · MagicWorks",
@@ -86,10 +87,10 @@ export default function EmbeddedPlatformAdvisorPage() {
             <span className="text-[#F7F3EA]">Embedded Platform Advisor</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 04 · Ongoing Retainer</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             A senior platform advisor in your corner.
           </h1>
-          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
+          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             For founders executing a roadmap who want a steady, senior advisor on call. Regular reviews, escalation support, and re-prioritisation as the platform evolves. Sold as a follow-on only.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
@@ -161,18 +162,31 @@ export default function EmbeddedPlatformAdvisorPage() {
         </div>
       </section>
 
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      <section id="platform-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,36px)] text-[#F7F3EA] max-w-[560px] mx-auto mb-4">
-            Executing a platform roadmap and want a senior advisor on call?
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[460px] mx-auto mb-10">
-            The Embedded Platform Advisor follows a Roadmap Audit. Start there if you haven't already.
-          </p>
-          <Link href="/services/platform-consultation/roadmap-audit" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Start with a Roadmap Audit
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Executing a platform roadmap and want a senior advisor on call?
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-4">
+                The Embedded Platform Advisor follows a Roadmap Audit. If you have already completed one, tell us about your platform and where you are in the execution.
+              </p>
+              <p className="text-[15px] text-[#3F3F4A] mb-6">
+                Not done a Roadmap Audit yet?{" "}
+                <Link href="/services/platform-consultation/roadmap-audit" className="text-[#5B3FBE] font-semibold hover:underline">
+                  Start there first.
+                </Link>
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Monthly retainer, capped hours agreed up front</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Follow-on engagement only</li>
+              </ul>
+            </div>
+            <PlatformContactForm />
+          </div>
         </div>
       </section>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import DigitalMarketingContactForm from "./DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
   title: "Digital Marketing Agency in Pune",
@@ -12,7 +13,7 @@ const services = [
   {
     slug: "full-funnel-programme",
     name: "Full-Funnel Programme",
-    desc: "Our flagship engagement — strategy, execution, and attribution across every channel, in one accountable programme.",
+    desc: "Our flagship engagement: strategy, execution, and attribution across every channel, in one accountable programme.",
     flagship: true,
   },
   {
@@ -54,7 +55,7 @@ const services = [
   {
     slug: "thought-leadership-geo",
     name: "Thought Leadership & GEO",
-    desc: "Generative Engine Optimisation — content structured to be cited by AI assistants and LLMs, not just ranked in Google.",
+    desc: "Generative Engine Optimisation: content structured to be cited by AI assistants and LLMs, not just ranked in Google.",
     flagship: false,
   },
   {
@@ -74,11 +75,11 @@ const services = [
 const faq = [
   {
     q: "How much does digital marketing cost at MagicWorks?",
-    a: "Our standard retainer is scoped to the channels and goals agreed at discovery — price depends on the mix of services, ad spend managed, and reporting depth. For confirmed ad spend of ₹5 lakh or more per month, we offer a commission tier that aligns our incentives with your growth. Final pricing is set after the discovery call.",
+    a: "Our standard retainer is scoped to the channels and goals agreed at discovery; price depends on the mix of services, ad spend managed, and reporting depth. For confirmed ad spend of ?5 lakh or more per month, we offer a commission tier that aligns our incentives with your growth. Final pricing is set after the discovery call.",
   },
   {
     q: "Do you require a long contract?",
-    a: "We recommend twelve months because marketing compounds — search authority, audience data, and creative learnings all build on each other. We will tell you that honestly rather than locking you into short cycles that prevent real results.",
+    a: "We recommend twelve months because marketing compounds: search authority, audience data, and creative learnings all build on each other. We will tell you that honestly rather than locking you into short cycles that prevent real results.",
   },
   {
     q: "Which industries do you focus on?",
@@ -172,23 +173,37 @@ export default function DigitalMarketingPage() {
           ))}
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
-          <p className="eyebrow text-[#D4A537] mb-4">Pillar 01 · Delivery</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(40px,6vw,62px)] leading-[1.08] tracking-[-0.01em] text-[#F7F3EA] max-w-[780px] mt-3">
+          {/* Breadcrumb */}
+          <nav aria-label="Breadcrumb" className="mb-6">
+            <ol className="flex gap-2 items-center text-[12px] text-[#9A8FBF]">
+              <li>
+                <Link href="/" className="hover:text-[#C8B8FF] transition-colors no-underline">Home</Link>
+              </li>
+              <li aria-hidden="true" className="text-[#5B3FBE]">/</li>
+              <li>
+                <Link href="/services" className="hover:text-[#C8B8FF] transition-colors no-underline">Services</Link>
+              </li>
+              <li aria-hidden="true" className="text-[#5B3FBE]">/</li>
+              <li className="text-[#C8B8FF]" aria-current="page">Digital Marketing</li>
+            </ol>
+          </nav>
+          <p className="eyebrow text-[#D4A537] mb-4">Pillar 01 · Execution</p>
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(40px,6vw,62px)] leading-[1.08] tracking-[-0.01em] text-[#F7F3EA] max-w-[820px] mt-3">
             Predictable revenue from traffic and leads.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px] mt-6 mb-10">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-6 mb-10">
             Performance marketing, SEO, social, and content, run by one
             accountable team on a monthly retainer. We measure every engagement
             against the number that matters to your business, never vanity
             metrics.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link
-              href="/contact"
+            <a
+              href="#dm-enquiry"
               className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform"
             >
               Book a discovery call
-            </Link>
+            </a>
             <Link
               href="/work"
               className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors"
@@ -235,7 +250,7 @@ export default function DigitalMarketingPage() {
             </h2>
             <p className="text-[16px] text-[#3F3F4A]">
               Each service is available individually or combined into our
-              Full-Funnel Programme — one accountable engagement that spans every
+              Full-Funnel Programme: one accountable engagement that spans every
               channel your buyers use.
             </p>
           </div>
@@ -262,7 +277,7 @@ export default function DigitalMarketingPage() {
                   href={`/services/digital-marketing/${s.slug}`}
                   className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
                 >
-                  Learn more →
+                  Learn more ?
                 </Link>
               </div>
             ))}
@@ -288,7 +303,7 @@ export default function DigitalMarketingPage() {
                 Monthly fee, clearly scoped.
               </h3>
               <p className="text-[15px] text-[#C8B8FF] leading-[1.6]">
-                For businesses with ad spend under ₹5 lakh per month. Scoped
+                For businesses with ad spend under ?5 lakh per month. Scoped
                 monthly fee, indexed annually.
               </p>
             </div>
@@ -300,7 +315,7 @@ export default function DigitalMarketingPage() {
                 Aligned incentives at scale.
               </h3>
               <p className="text-[15px] text-[#C8B8FF] leading-[1.6]">
-                For confirmed ad spend of ₹5 lakh or more per month. Clean
+                For confirmed ad spend of ?5 lakh or more per month. Clean
                 attribution, twelve-month commitment required.
               </p>
             </div>
@@ -308,7 +323,7 @@ export default function DigitalMarketingPage() {
           <div className="bg-[#D4A537]/15 border border-[#D4A537]/40 rounded-[10px] p-8">
             <p className="text-[14px] text-[#F7F3EA] leading-[1.65]">
               <span className="font-bold text-[#D4A537]">Note: </span>
-              The commission tier requires confirmed ad spend of ₹5L or more per
+              The commission tier requires confirmed ad spend of ?5L or more per
               month and a twelve-month commitment. Final pricing set after
               discovery call.
             </p>
@@ -365,7 +380,7 @@ export default function DigitalMarketingPage() {
                 href="/work"
                 className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
               >
-                See all case studies →
+                See all case studies ?
               </Link>
             </div>
           </div>
@@ -393,40 +408,26 @@ export default function DigitalMarketingPage() {
         </div>
       </section>
 
-      {/* FINAL CTA */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24 relative overflow-hidden">
-        <svg
-          className="absolute left-1/2 -translate-x-1/2 bottom-[-360px] w-[680px] h-[680px] pointer-events-none opacity-70"
-          aria-hidden="true"
-        >
-          {[120, 200, 280, 360].map((r, i) => (
-            <circle
-              key={r}
-              cx="340"
-              cy="340"
-              r={r}
-              fill="none"
-              stroke={i === 1 ? "#D4A537" : "#7C63D8"}
-              strokeWidth="1.5"
-              opacity={i === 1 ? 0.7 : 0.45}
-            />
-          ))}
-        </svg>
-        <div className="max-w-[1120px] mx-auto px-8 relative">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4vw,38px)] text-[#F7F3EA] max-w-[640px] mx-auto mb-4">
-            Ready to build a predictable revenue engine?
-          </h2>
-          <p className="text-[18px] text-[#C8B8FF] max-w-[520px] mx-auto mb-10">
-            A thirty-minute discovery call, no obligation. We will tell you
-            honestly whether we are the right fit.
-          </p>
-          <Link
-            href="/contact"
-            className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block"
-          >
-            Book a discovery call
-          </Link>
+      {/* INLINE CONTACT FORM */}
+      <section id="dm-enquiry" className="bg-[#F7F3EA] py-24">
+        <div className="max-w-[1120px] mx-auto px-8">
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Ready to build a predictable revenue engine?
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                A thirty-minute discovery call, no obligation. We will tell you honestly whether we are the right fit.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Monthly retainer, clearly scoped after discovery</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>One team, one invoice, transparent attribution</li>
+              </ul>
+            </div>
+            <DigitalMarketingContactForm />
+          </div>
         </div>
       </section>
     </>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
   title: "Google Ads & Search Marketing Agency · MagicWorks",
@@ -25,7 +26,7 @@ const faq = [
   },
   {
     q: "How is this priced?",
-    a: "A monthly retainer, or the commission tier for confirmed ad spends of ₹5 lakh or more with clean attribution and a twelve-month commitment.",
+    a: "A monthly retainer, or the commission tier for confirmed ad spends of ?5 lakh or more with clean attribution and a twelve-month commitment.",
   },
   {
     q: "Do you guarantee a cost per lead?",
@@ -90,16 +91,16 @@ export default function GoogleAdsPage() {
             <span className="text-[#F7F3EA]">Google Ads & Search Marketing</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 01 · Paid Search</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             Paid search that scales, without the wasted spend.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px] mt-5 mb-10">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             Our headline service. We run Search, Performance Max, Display, and YouTube campaigns with conversion tracking, Google Tag Manager, and audiences set up properly from day one, so every rupee is accountable to a result.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            <a href="#dm-enquiry" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Book a discovery call
-            </Link>
+            </a>
             <Link href="/services/digital-marketing" className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors">
               All digital marketing services
             </Link>
@@ -112,7 +113,7 @@ export default function GoogleAdsPage() {
         <div className="max-w-[1120px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { label: "Engagement", val: "Monthly retainer" },
-            { label: "Commission tier", val: "₹5L+ ad spend" },
+            { label: "Commission tier", val: "?5L+ ad spend" },
             { label: "Recommended term", val: "12 months" },
             { label: "Best for", val: "Founders & marketing heads" },
           ].map((i) => (
@@ -158,14 +159,14 @@ export default function GoogleAdsPage() {
               The headline service for scaling paid acquisition.
             </h2>
             <p className="text-[16px] text-[#C8B8FF] leading-[1.65]">
-              This is the right engagement for clients ready to scale paid acquisition. For confirmed monthly spends of ₹5 lakh or more, we offer a commission tier that aligns our incentives directly with your growth, replacing or reducing the standard retainer fee.
+              This is the right engagement for clients ready to scale paid acquisition. For confirmed monthly spends of ?5 lakh or more, we offer a commission tier that aligns our incentives directly with your growth, replacing or reducing the standard retainer fee.
             </p>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-[10px] p-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A537] mb-4">Commission tier</p>
             <p className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#F7F3EA] mb-3">Aligned incentives at scale.</p>
             <p className="text-[14px] text-[#C8B8FF] leading-[1.6]">
-              For confirmed ad spend of ₹5 lakh or more per month. Clean attribution and a twelve-month commitment required. Our growth is tied to yours.
+              For confirmed ad spend of ?5 lakh or more per month. Clean attribution and a twelve-month commitment required. Our growth is tied to yours.
             </p>
           </div>
         </div>
@@ -201,19 +202,29 @@ export default function GoogleAdsPage() {
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      {/* Inline enquiry form */}
+      <section id="dm-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,36px)] text-[#F7F3EA] max-w-[560px] mx-auto mb-4">
-            Ready to make every rupee of ad spend accountable?
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[460px] mx-auto mb-10">
-            Thirty minutes to understand your goals and tell you honestly whether we are the right fit.
-          </p>
-          <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Book a discovery call
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Make every rupee of paid search accountable.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                Share your current Google Ads situation and we will tell you honestly what is costing you and what we would do about it.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Commission tier available for confirmed spends of ₹5L or more</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Transparent attribution, honest reporting</li>
+              </ul>
+            </div>
+            <DigitalMarketingContactForm
+              sourcePage="/services/digital-marketing/google-ads-search-marketing"
+              defaultService="Google Ads"
+            />
+          </div>
         </div>
       </section>
     </>

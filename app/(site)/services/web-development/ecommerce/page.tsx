@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import WebDevelopmentContactForm from "../WebDevelopmentContactForm";
 
 export const metadata: Metadata = {
   title: "E-commerce Website Development · MagicWorks",
@@ -111,16 +112,16 @@ export default function EcommercePage() {
             <span className="text-[#F7F3EA]">E-commerce</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 02 · Commerce</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             Stores built around the buying journey, not just the catalogue.
           </h1>
-          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
+          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             We build online stores designed to sell. AI-native commerce on Next.js for businesses with ambitious roadmaps, or WooCommerce for simpler catalogues, both with payments, tracking, and an AMC tail built in.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            <a href="#web-enquiry" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Start a project conversation
-            </Link>
+            </a>
             <Link href="/services/web-development" className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors">
               All web development services
             </Link>
@@ -223,19 +224,29 @@ export default function EcommercePage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      {/* Inline enquiry form */}
+      <section id="web-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,36px)] text-[#F7F3EA] max-w-[580px] mx-auto mb-4">
-            Ready to build a store that earns its traffic and converts it?
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[480px] mx-auto mb-10">
-            Thirty minutes to understand your catalogue and which build fits your roadmap.
-          </p>
-          <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Start a project conversation
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Build a store designed to earn traffic and convert it.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                Tell us about your catalogue and roadmap and we will recommend the right build — honestly, not based on what is easier to sell.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Payments, checkout, and analytics included from day one</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>AI-native by default from June 2026</li>
+              </ul>
+            </div>
+            <WebDevelopmentContactForm
+              sourcePage="/services/web-development/ecommerce"
+              defaultProject="E-commerce"
+            />
+          </div>
         </div>
       </section>
     </>

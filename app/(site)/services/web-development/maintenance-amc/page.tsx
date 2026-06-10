@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import WebDevelopmentContactForm from "../WebDevelopmentContactForm";
 
 export const metadata: Metadata = {
   title: "Web AMC & Website Maintenance · MagicWorks",
@@ -109,16 +110,16 @@ export default function MaintenanceAmcPage() {
             <span className="text-[#F7F3EA]">Web AMC</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 02 · Ongoing</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             Keep the site we built fast, secure, and current.
           </h1>
-          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-10">
+          <p className="aeo-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             Web AMC is an optional monthly retainer for sites MagicWorks built. It covers uptime monitoring, security patches, content updates, and for AI-native builds, LLM cost management and model upgrades as the technology evolves.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
-            <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            <a href="#web-enquiry" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Talk to us about AMC
-            </Link>
+            </a>
             <Link href="/services/web-development" className="border border-[#F7F3EA] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-white/10 transition-colors">
               All web development services
             </Link>
@@ -211,19 +212,29 @@ export default function MaintenanceAmcPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24">
+      {/* Inline enquiry form */}
+      <section id="web-enquiry" className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <hr className="gold-rule mx-auto mb-8" style={{ margin: "0 auto 2rem" }} />
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,36px)] text-[#F7F3EA] max-w-[560px] mx-auto mb-4">
-            Built with us? Let us keep it running at its best.
-          </h2>
-          <p className="text-[17px] text-[#C8B8FF] max-w-[460px] mx-auto mb-10">
-            AMC is discussed at build handover. If you missed it or want to revisit, get in touch.
-          </p>
-          <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-[16px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Talk to us about AMC
-          </Link>
+          <div className="grid md:grid-cols-2 gap-16 items-start">
+            <div>
+              <hr className="gold-rule mb-6" />
+              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,32px)] text-[#2A1B5C] mb-4">
+                Keep your MagicWorks site fast, secure, and current.
+              </h2>
+              <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
+                Tell us about the site we built for you and we will scope an AMC retainer that fits its complexity and your expected maintenance volume.
+              </p>
+              <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>LLM cost management included for AI-native sites</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>AI-native by default from June 2026</li>
+              </ul>
+            </div>
+            <WebDevelopmentContactForm
+              sourcePage="/services/web-development/maintenance-amc"
+              defaultProject="Web AMC"
+            />
+          </div>
         </div>
       </section>
     </>
