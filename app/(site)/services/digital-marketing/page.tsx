@@ -37,13 +37,13 @@ const services = [
   {
     slug: "youtube-video-optimisation",
     name: "YouTube Video Optimisation",
-    desc: "Video SEO, ad placement, and channel strategy to extend reach beyond search into intent-rich video audiences.",
+    desc: "Video SEO, content strategy, and channel growth to reach high-intent audiences where they watch.",
     flagship: false,
   },
   {
     slug: "meta-ads",
     name: "Meta Ads",
-    desc: "Facebook and Instagram campaigns that move buyers from awareness to enquiry with clear funnel logic.",
+    desc: "Facebook and Instagram campaigns built to generate enquiries and drive sales, not just impressions.",
     flagship: false,
   },
   {
