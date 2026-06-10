@@ -90,7 +90,7 @@ export default function ContactPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Let us talk</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[640px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             A thirty-minute call, no obligation.
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">
@@ -161,7 +161,7 @@ export default function ContactPage() {
                 <a href="tel:+919764566644" className="text-[#5B3FBE] no-underline hover:underline">+91 97645 66644</a>
               </p>
               <p className="text-[13px] text-[#9A9AA8] mt-3">
-                Serving clients across India — Mumbai, Bangalore, Hyderabad, Delhi-NCR. International by referral.
+                Serving clients across India: Mumbai, Bangalore, Hyderabad, Delhi-NCR. Offshore: Europe & USA.
               </p>
             </div>
           </div>

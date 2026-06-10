@@ -29,11 +29,11 @@ export default function ManufacturingPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Industry · Manufacturing</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Digital presence and AI readiness for Indian manufacturers.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-5 mb-10">
-            Our broadest industry vertical. We span Digital Marketing, Web Development, and AI Consultation for manufacturers — the only sector where all three pillars apply together.
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
+            Our broadest industry vertical. We span Digital Marketing, Web Development, and AI Consultation for manufacturers, the only sector where all three pillars apply together.
           </p>
           <div className="flex gap-4 flex-wrap">
             <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
@@ -50,7 +50,7 @@ export default function ManufacturingPage() {
       <section className="bg-[#D4A537]/10 border-y border-[#D4A537]/30 py-10">
         <div className="max-w-[1120px] mx-auto px-8 flex gap-6 items-start">
           <span className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.14em] mt-1 whitespace-nowrap">Priority 1 Vertical</span>
-          <p className="text-[16px] text-[#2A1B5C]">Manufacturing is our <strong>Priority 1 vertical for AI Consultation</strong>. More AI opportunities exist in manufacturing operations than in any other sector we serve — process automation, quality control, demand forecasting, and supplier intelligence.</p>
+          <p className="text-[16px] text-[#2A1B5C]">Manufacturing is our <strong>Priority 1 vertical for AI Consultation</strong>. More AI opportunities exist in manufacturing operations than in any other sector we serve: process automation, quality control, demand forecasting, and supplier intelligence.</p>
         </div>
       </section>
 
@@ -65,8 +65,8 @@ export default function ManufacturingPage() {
               <p className="text-[12px] mt-3 text-[#5B3FBE] uppercase tracking-[0.06em] font-semibold">Manufacturing · Steel</p>
             </div>
             <div>
-              <p className="text-[16px] text-[#3F3F4A] mb-4">Multi-channel digital presence for a steel manufacturer — company website, product catalogue, export-facing pages, and B2B lead generation. Built for credibility with procurement decision-makers.</p>
-              <Link href="/work" className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline">See full case study →</Link>
+              <p className="text-[16px] text-[#3F3F4A] mb-4">Multi-channel digital presence for a steel manufacturer: company website, product catalogue, export-facing pages, and B2B lead generation. Built for credibility with procurement decision-makers.</p>
+              <Link href="/work" className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline">See full case study ?</Link>
             </div>
           </div>
         </div>

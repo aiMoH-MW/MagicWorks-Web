@@ -43,7 +43,7 @@ export default async function CareersPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Careers</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Build the agency you wish existed.
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">
@@ -115,7 +115,7 @@ export default async function CareersPage() {
                     <h3 className="font-[family-name:var(--font-head)] font-bold text-[19px] text-[#2A1B5C] mb-1 group-hover:text-[#5B3FBE] transition-colors">{job.title}</h3>
                     <p className="text-[14px] text-[#3F3F4A] line-clamp-2">{job.summary}</p>
                   </div>
-                  <span className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] ml-6 whitespace-nowrap">View role →</span>
+                  <span className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] ml-6 whitespace-nowrap">View role ?</span>
                 </Link>
               ))}
             </div>

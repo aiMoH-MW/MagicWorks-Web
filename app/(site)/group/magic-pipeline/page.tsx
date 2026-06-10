@@ -19,18 +19,18 @@ export default function MagicPipelinePage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <Link href="/group" className="text-[#D4A537] text-[13px] uppercase tracking-[0.12em] font-bold no-underline hover:underline mb-6 inline-block">
-            ← MagicWorks Group
+            ? MagicWorks Group
           </Link>
           <p className="eyebrow text-[#D4A537] mb-4">MagicWorks Group · SaaS AI Product</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Magic Pipeline
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-4 mb-10">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-4 mb-10">
             An AI-powered CRM and sales pipeline tool for ambitious businesses. Built by the MagicWorks Group to bring AI-native sales intelligence to growing teams.
           </p>
           <a href="https://magicpipeline.io" target="_blank" rel="noopener noreferrer"
             className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Visit Magic Pipeline ↗
+            Visit Magic Pipeline ?
           </a>
         </div>
       </section>
@@ -40,7 +40,7 @@ export default function MagicPipelinePage() {
           <div>
             <hr className="gold-rule mb-6" />
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-4">What Magic Pipeline does.</h2>
-            <p className="text-[16px] text-[#3F3F4A] mb-4">Magic Pipeline is an AI-native CRM and pipeline management platform. It helps sales teams track leads, automate follow-ups, and surface the right actions at the right time — without the complexity of enterprise CRM.</p>
+            <p className="text-[16px] text-[#3F3F4A] mb-4">Magic Pipeline is an AI-native CRM and pipeline management platform. It helps sales teams track leads, automate follow-ups, and surface the right actions at the right time, without the complexity of enterprise CRM.</p>
             <p className="text-[16px] text-[#3F3F4A]">Magic Pipeline and MagicWorks IT Solutions are separate entities under the MagicWorks Group. Contracts and pricing belong to each entity independently.</p>
           </div>
           <div className="space-y-4">
@@ -64,7 +64,7 @@ export default function MagicPipelinePage() {
           <div className="flex gap-4 flex-wrap">
             {[{ label: "MagicFlow AI", href: "/group/magicflow-ai" }, { label: "MagicWorks Host", href: "/group/magicworks-host" }].map(g => (
               <Link key={g.href} href={g.href} className="border border-white/30 text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-6 py-3 rounded-full no-underline hover:bg-white/10 transition-colors">
-                {g.label} →
+                {g.label} ?
               </Link>
             ))}
           </div>

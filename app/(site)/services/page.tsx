@@ -12,7 +12,7 @@ const pillars = [
   {
     num: "01", type: "delivery", label: "Delivery",
     title: "Digital Marketing",
-    body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer — with a commission tier for confirmed ad spend of ₹5L or more.",
+    body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer, with a commission tier for confirmed ad spend of ?5L or more.",
     href: "/services/digital-marketing",
   },
   {
@@ -22,13 +22,13 @@ const pillars = [
     href: "/services/web-development",
   },
   {
-    num: "03", type: "advisory", label: "Advisory — consultation only",
+    num: "03", type: "advisory", label: "Advisory: consultation only",
     title: "AI Consultation",
     body: "A clear, defensible AI roadmap. We advise and design the path. You decide who builds. Independent advice, no bundling.",
     href: "/services/ai-consultation",
   },
   {
-    num: "04", type: "advisory", label: "Advisory — consultation only",
+    num: "04", type: "advisory", label: "Advisory: consultation only",
     title: "Marketplace & Platform Consultation",
     body: "Founder-led judgment for portal and platform builders. Independent strategy, roadmap audits, and targeted advisory sprints.",
     href: "/services/platform-consultation",
@@ -47,10 +47,10 @@ export default function ServicesPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Services</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Four pillars. Two that deliver, two that advise.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px] mt-5">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5">
             Digital Marketing and Web Development produce work you can buy as a deliverable. AI Consultation and Platform Consultation produce judgment. The boundary is deliberate, and it keeps our advice honest.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function ServicesPage() {
                 <h2 className="font-[family-name:var(--font-head)] font-bold text-[24px] text-[#2A1B5C] mt-1 mb-4">{p.title}</h2>
                 <p className="text-[16px] text-[#3F3F4A] mb-8">{p.body}</p>
                 <Link href={p.href} className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-3 rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-                  Explore pillar →
+                  Explore pillar ?
                 </Link>
               </div>
             ))}

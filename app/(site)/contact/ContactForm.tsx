@@ -52,7 +52,7 @@ export default function ContactForm() {
       <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-10 text-center">
         <div className="text-[40px] mb-4">✓</div>
         <h3 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#2A1B5C] mb-3">
-          Thank you — message received.
+          Thank you. Message received.
         </h3>
         <p className="text-[15px] text-[#3F3F4A]">
           A team member will reach out within one working day to schedule your

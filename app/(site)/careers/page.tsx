@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Careers — Join MagicWorks IT Solutions",
+  title: "Careers: Join MagicWorks IT Solutions",
   description:
     "Build the future of AI-first marketing with us. We're a small, ambitious team in Pune working on real problems for ambitious Indian businesses.",
   alternates: { canonical: "/careers" },
@@ -25,7 +25,7 @@ const perks = [
       </svg>
     ),
     title: "Flexible hours",
-    body: "We care about outcomes, not clock-ins. Work when you're most productive — we coordinate around deliverables, not attendance.",
+    body: "We care about outcomes, not clock-ins. Work when you're most productive; we coordinate around deliverables, not attendance.",
   },
   {
     icon: (
@@ -34,7 +34,7 @@ const perks = [
       </svg>
     ),
     title: "Learning budget",
-    body: "Courses, certifications, tools — we invest in your growth. AI is moving fast and we'll make sure you move with it.",
+    body: "Courses, certifications, tools: we invest in your growth. AI is moving fast and we'll make sure you move with it.",
   },
   {
     icon: (
@@ -43,7 +43,7 @@ const perks = [
       </svg>
     ),
     title: "Small, senior team",
-    body: "You'll work directly with the founders and senior leads — no corporate layers, no waiting for approvals on good ideas.",
+    body: "You'll work directly with the founders and senior leads, with no corporate layers and no waiting for approvals on good ideas.",
   },
   {
     icon: (
@@ -61,7 +61,7 @@ const perks = [
       </svg>
     ),
     title: "Purpose-driven culture",
-    body: "We're building long-term — not chasing exits. Every team member understands why the work matters and has a voice in how we do it.",
+    body: "We're building long-term, not chasing exits. Every team member understands why the work matters and has a voice in how we do it.",
   },
 ];
 
@@ -81,7 +81,7 @@ const openRoles = [
     tags: ["AI Workflows", "Python", "n8n / Make"],
   },
   {
-    title: "Content Strategist — AI & B2B",
+    title: "Content Strategist: AI & B2B",
     type: "Full-time · Pune / Hybrid",
     description:
       "Write long-form content, whitepapers, and thought-leadership pieces for MagicWorks and clients. Strong research skills required.",
@@ -99,7 +99,7 @@ const openRoles = [
 export default function CareersPage() {
   return (
     <>
-      {/* ── HERO ───────────────────────────────────────────────────── */}
+      {/* -- HERO ----------------------------------------------------- */}
       <section
         className="relative pt-[88px] pb-[72px] text-[#F7F3EA] overflow-hidden"
         style={{ background: "linear-gradient(155deg,#1E1248 0%,#2A1B5C 55%,#1A1040 100%)" }}
@@ -118,11 +118,11 @@ export default function CareersPage() {
 
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-4">Careers at MagicWorks</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4vw,48px)] leading-[1.12] text-[#F7F3EA] max-w-[680px] mb-6">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4vw,48px)] leading-[1.12] text-[#F7F3EA] max-w-[780px] mb-6">
             Build AI-first marketing with a team that gives a damn.
           </h1>
           <p className="text-[18px] text-[#C8B8FF] max-w-[520px] leading-[1.65] mb-10">
-            We&apos;re a small, ambitious team in Pune working on real problems — not demo projects. If you want to grow fast and own meaningful work, read on.
+            We&apos;re a small, ambitious team in Pune working on real problems, not demo projects. If you want to grow fast and own meaningful work, read on.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
@@ -141,7 +141,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* ── WHY MAGICWORKS ─────────────────────────────────────────── */}
+      {/* -- WHY MAGICWORKS ------------------------------------------- */}
       <section className="bg-[#F7F3EA] py-20">
         <div className="max-w-[1120px] mx-auto px-8">
           <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-3">Why join us</p>
@@ -167,7 +167,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* ── OPEN ROLES ─────────────────────────────────────────────── */}
+      {/* -- OPEN ROLES ----------------------------------------------- */}
       <section id="open-roles" className="bg-white py-20">
         <div className="max-w-[1120px] mx-auto px-8">
           <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-3">Open positions</p>
@@ -230,7 +230,7 @@ export default function CareersPage() {
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────────────────────────────── */}
+      {/* -- CTA ------------------------------------------------------ */}
       <section
         className="py-20 text-[#F7F3EA]"
         style={{ background: "linear-gradient(155deg,#1E1248 0%,#2A1B5C 60%,#1A1040 100%)" }}
@@ -241,13 +241,13 @@ export default function CareersPage() {
             Ready to evolve with purpose?
           </h2>
           <p className="text-[16px] text-[#C8B8FF] mb-8 leading-[1.65]">
-            Drop us a message. No long application forms — just tell us who you are and what you want to build.
+            Drop us a message. No long application forms. Just tell us who you are and what you want to build.
           </p>
           <Link
             href="/contact"
             className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-4 rounded-full no-underline hover:scale-[1.02] transition-transform"
           >
-            Say hello →
+            Say hello ?
           </Link>
         </div>
       </section>

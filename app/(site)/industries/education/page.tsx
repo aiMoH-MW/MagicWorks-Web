@@ -41,10 +41,10 @@ export default function EducationPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Industry · Education</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             High-intent student enquiries, compounding year on year.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-5 mb-10">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
             Education is one of our deepest verticals. We understand admission cycles, programme-level targeting, and the difference between a click and an enrolment-ready lead.
           </p>
           <div className="flex gap-4 flex-wrap">

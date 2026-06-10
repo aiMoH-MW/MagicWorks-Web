@@ -41,7 +41,7 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
         </div>
         <h3 className="font-bold text-[17px] leading-snug mb-2">Get the next whitepaper free</h3>
         <p className="text-white/70 text-[13px] leading-[1.6] mb-4">
-          AI strategy, marketing automation, and India market insights — delivered when each new guide drops. No spam.
+          AI strategy, marketing automation, and India market insights, delivered when each new guide drops. No spam.
         </p>
 
         {status === "success" ? (

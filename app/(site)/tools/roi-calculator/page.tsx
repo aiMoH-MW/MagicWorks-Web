@@ -214,7 +214,7 @@ export default function RoiCalculatorPage() {
               <div className="bg-[#EDE9F7] border border-[#D8D8DE] rounded-[12px] p-5">
                 <p className="text-[13px] text-[#3F3F4A] leading-[1.65]">
                   <span className="font-semibold text-[#2A1B5C]">Important: </span>
-                  These are indicative ranges based on sector averages. Actual returns depend on targeting, creative quality, landing page conversion, your sales process, and market conditions. We do not guarantee a specific return — anyone who does is not being honest with you. The right next step is a discovery call where we can look at your specific situation.
+                  These are indicative ranges based on sector averages. Actual returns depend on targeting, creative quality, landing page conversion, your sales process, and market conditions. We do not guarantee a specific return; anyone who does is not being honest with you. The right next step is a discovery call where we can look at your specific situation.
                 </p>
               </div>
 

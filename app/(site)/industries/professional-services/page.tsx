@@ -29,11 +29,11 @@ export default function ProfessionalServicesPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Industry · Professional Services</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Trusted advisors advising trusted advisors.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-5 mb-10">
-            CA firms, law practices, management consultancies, and advisory firms with 50 or more professionals. We understand how expertise-led businesses grow — through reputation, thought leadership, and now, AI.
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-10">
+            CA firms, law practices, management consultancies, and advisory firms with 50 or more professionals. We understand how expertise-led businesses grow through reputation, thought leadership, and now, AI.
           </p>
           <div className="flex gap-4 flex-wrap">
             <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
@@ -52,7 +52,7 @@ export default function ProfessionalServicesPage() {
           <div>
             <hr className="gold-rule mb-6" />
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-4">Priority 2 for AI Consultation.</h2>
-            <p className="text-[16px] text-[#3F3F4A] mb-4">Professional services firms have more to gain from AI than almost any other sector — and more to lose from the wrong implementation. We help senior partners understand the opportunity, audit the processes most ready for AI, and build a defensible roadmap before committing to any vendor.</p>
+            <p className="text-[16px] text-[#3F3F4A] mb-4">Professional services firms have more to gain from AI than almost any other sector, and more to lose from the wrong implementation. We help senior partners understand the opportunity, audit the processes most ready for AI, and build a defensible roadmap before committing to any vendor.</p>
             <p className="text-[16px] text-[#3F3F4A]">That is what trusted advisors need from their own advisors: clarity, not hype.</p>
           </div>
           <div className="bg-white border border-[#D8D8DE] border-l-4 border-l-[#D4A537] rounded-[10px] p-8">

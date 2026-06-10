@@ -124,7 +124,7 @@ function ReportCard({ report }: { report: typeof reports[number] }) {
         <div className="bg-[#F7F3EA] border border-[#D8D8DE] rounded-[10px] p-5">
           <div className="flex items-center gap-3 mb-1">
             <svg width="14" height="16" viewBox="0 0 14 16" fill="none"><rect x="1" y="7" width="12" height="9" rx="2" stroke="#9A9AA8" strokeWidth="1.5"/><path d="M4 7V5a3 3 0 1 1 6 0v2" stroke="#9A9AA8" strokeWidth="1.5" strokeLinecap="round"/></svg>
-            <p className="text-[12px] font-semibold text-[#9A9AA8] uppercase tracking-[0.1em]">Free — unlocks with email</p>
+            <p className="text-[12px] font-semibold text-[#9A9AA8] uppercase tracking-[0.1em]">Free (unlocks with email)</p>
           </div>
           <GateForm reportId={report.id} title={report.title} onUnlock={() => setUnlocked(true)} />
         </div>
@@ -154,7 +154,7 @@ export default function InsightsReportsPage() {
             In-depth reports, free with your email.
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[580px] mt-4">
-            Playbooks, benchmarks, and strategy checklists on digital marketing, AI, and platform building. High-value, bottom-of-funnel content. Open articles stay open — we only gate the long-form assets.
+            Playbooks, benchmarks, and strategy checklists on digital marketing, AI, and platform building. High-value, bottom-of-funnel content. Open articles stay open; we only gate the long-form assets.
           </p>
         </div>
       </section>
@@ -178,7 +178,7 @@ export default function InsightsReportsPage() {
               Want open articles instead?
             </h2>
             <p className="text-[15px] text-[#3F3F4A]">
-              All top-of-funnel Insights are open and crawlable — no gate.
+              All top-of-funnel Insights are open and crawlable, with no gate.
             </p>
           </div>
           <Link

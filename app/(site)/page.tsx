@@ -72,7 +72,7 @@ const faq = [
   },
   {
     q: "Where is MagicWorks based?",
-    a: "Pune, India, serving clients across the country, with Mumbai, Bangalore, Hyderabad, and Delhi-NCR as primary catchment.",
+    a: "Headquartered in Pune, with active clients in Mumbai, Bangalore, Hyderabad, and Delhi-NCR — and growing presence across Europe and the USA.",
   },
   {
     q: "What makes MagicWorks AI-first?",
@@ -143,12 +143,12 @@ export default function HomePage() {
           <p className="eyebrow text-[#D4A537] mb-4">
             AI-first digital marketing agency · Pune
           </p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(40px,6vw,62px)] leading-[1.08] tracking-[-0.01em] text-[#F7F3EA] max-w-[780px] mt-3">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(40px,6vw,62px)] leading-[1.08] tracking-[-0.01em] text-[#F7F3EA] max-w-[820px] mt-3">
             Human strategy.
             <br />
             Machine acceleration.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-6 mb-10">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-6 mb-10">
             We turn traffic, leads, and operations into predictable revenue for
             ambitious Indian businesses. Four service pillars, one team, built
             to compound over time.
@@ -233,7 +233,7 @@ export default function HomePage() {
                   href={p.href}
                   className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
                 >
-                  Learn more →
+                  Learn more ?
                 </Link>
               </div>
             ))}
@@ -312,7 +312,7 @@ export default function HomePage() {
                 href="/work"
                 className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
               >
-                See all case studies →
+                See all case studies ?
               </Link>
             </div>
           </div>

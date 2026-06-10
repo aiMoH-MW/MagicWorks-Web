@@ -72,10 +72,10 @@ export default function AboutPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">About</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[700px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Seventeen years of practice. Evolving with purpose.
           </h1>
-          <p className="about-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px] mt-5">
+          <p className="about-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5">
             MagicWorks IT Solutions Pvt. Ltd. is an AI-first digital marketing agency in Pune, India, founded in 2009 and incorporated in 2012 by Swapnil Ughade. Over seventeen years, the firm has helped ambitious Indian businesses turn traffic, leads, and operations into predictable revenue across digital marketing, web development, AI consultation, and platform strategy.
           </p>
         </div>
@@ -87,9 +87,9 @@ export default function AboutPage() {
           <div>
             <hr className="gold-rule mb-6" />
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,30px)] text-[#2A1B5C] mb-5">What we stand for.</h2>
-            <p className="text-[16px] text-[#3F3F4A] mb-4">MagicWorks is an AI-first digital marketing agency. We work with ambitious Indian businesses that want predictable revenue from traffic, leads, and operations — not just activity reports.</p>
+            <p className="text-[16px] text-[#3F3F4A] mb-4">MagicWorks is an AI-first digital marketing agency. We work with ambitious Indian businesses that want predictable revenue from traffic, leads, and operations, not just activity reports.</p>
             <p className="text-[16px] text-[#3F3F4A] mb-4">We are not a campaign factory. We are not a technology vendor. We are a practice: four service pillars, one team, one accountability model, built to compound over time.</p>
-            <p className="text-[16px] text-[#3F3F4A]">The word &ldquo;purpose&rdquo; in our tagline is deliberate. Every decision — about which services to offer, which clients to work with, which advice to give — is made against a long-term standard, not a short-term target.</p>
+            <p className="text-[16px] text-[#3F3F4A]">The word &ldquo;purpose&rdquo; in our tagline is deliberate. Every decision (about which services to offer, which clients to work with, which advice to give) is made against a long-term standard, not a short-term target.</p>
           </div>
           <div className="space-y-5">
             {values.map(v => (
@@ -147,7 +147,7 @@ export default function AboutPage() {
               MagicWorks IT Solutions was founded and is led by <strong>Swapnil Ughade</strong>, who brings more than seventeen years of experience across digital marketing, web development, and AI strategy for ambitious Indian businesses.
             </p>
             <p className="text-[16px] text-[#3F3F4A] leading-[1.65]">
-              The advisory pillars — AI Consultation and Platform Consultation — are founder-led by design. Senior judgment is not delegated to account managers.
+              The advisory pillars (AI Consultation and Platform Consultation) are founder-led by design. Senior judgment is not delegated to account managers.
             </p>
           </div>
           <div className="bg-[#2A1B5C] rounded-[12px] p-8 text-[#F7F3EA]">
@@ -156,7 +156,7 @@ export default function AboutPage() {
               MagicWorks IT Solutions is the parent in a small family of brands, alongside MagicFlow AI, Magic Pipeline, and MagicWorks Host. Each is its own brand with its own product and contract. We will introduce you, but you engage each brand directly.
             </p>
             <Link href="/group" className="text-[#D4A537] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline">
-              Meet the group →
+              Meet the group ?
             </Link>
           </div>
         </div>

@@ -6,7 +6,7 @@ import { getAllCaseStudies } from "@/sanity/queries";
 export const metadata: Metadata = {
   title: "Work",
   description:
-    "Result-led case studies from MagicWorks. Education, real estate, manufacturing — real numbers, named clients, honest accounts of what changed.",
+    "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
   alternates: { canonical: "/work" },
 };
 
@@ -53,7 +53,7 @@ export default async function WorkPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Work</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Results that speak plainly.
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "MagicWorks Host · MagicWorks Group",
   description:
-    "Domain registration, web hosting, and SSL certificates from MagicWorks Host — part of the MagicWorks Group. All new hosting and domain enquiries handled here.",
+    "Domain registration, web hosting, and SSL certificates from MagicWorks Host, part of the MagicWorks Group. All new hosting and domain enquiries handled here.",
   alternates: { canonical: "/group/magicworks-host" },
 };
 
@@ -19,18 +19,18 @@ export default function MagicWorksHostPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <Link href="/group" className="text-[#D4A537] text-[13px] uppercase tracking-[0.12em] font-bold no-underline hover:underline mb-6 inline-block">
-            ← MagicWorks Group
+            ? MagicWorks Group
           </Link>
           <p className="eyebrow text-[#D4A537] mb-4">MagicWorks Group · Hosting & Domains</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             MagicWorks Host
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[540px] mt-4 mb-10">
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-4 mb-10">
             Domains, web hosting, and SSL certificates for Indian businesses. All new hosting and domain registration enquiries from MagicWorks IT Solutions clients are routed here.
           </p>
           <a href="https://magicworkshost.com" target="_blank" rel="noopener noreferrer"
             className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
-            Visit MagicWorks Host ↗
+            Visit MagicWorks Host ?
           </a>
         </div>
       </section>
@@ -64,7 +64,7 @@ export default function MagicWorksHostPage() {
           <div className="flex gap-4 flex-wrap">
             {[{ label: "MagicFlow AI", href: "/group/magicflow-ai" }, { label: "Magic Pipeline", href: "/group/magic-pipeline" }].map(g => (
               <Link key={g.href} href={g.href} className="border border-white/30 text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-6 py-3 rounded-full no-underline hover:bg-white/10 transition-colors">
-                {g.label} →
+                {g.label} ?
               </Link>
             ))}
           </div>

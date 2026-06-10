@@ -75,11 +75,11 @@ export default function GroupPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">The MagicWorks Group</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.08] text-[#F7F3EA] max-w-[720px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
             One group, focused brands, clean boundaries.
           </h1>
-          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[600px] mt-5 mb-0">
-            MagicWorks IT Solutions is the parent services company in a small family of brands. Each sibling exists because it serves a distinct buyer and a distinct need. Each has its own product, its own pricing, and its own contract. We will happily introduce you, but you engage each brand directly — which is exactly how we keep our advice independent and our invoices clean.
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5 mb-0">
+            MagicWorks IT Solutions is the parent services company in a small family of brands. Each sibling exists because it serves a distinct buyer and a distinct need. Each has its own product, its own pricing, and its own contract. We will happily introduce you, but you engage each brand directly, which is exactly how we keep our advice independent and our invoices clean.
           </p>
         </div>
       </section>
@@ -93,7 +93,7 @@ export default function GroupPage() {
               Three brands. Three distinct jobs.
             </h2>
             <p className="text-[16px] text-[#3F3F4A]">
-              One provider, one invoice, one contract applies at each brand. We will introduce you — but we never bundle sibling products into our services or our pricing.
+              One provider, one invoice, one contract applies at each brand. We will introduce you, but we never bundle sibling products into our services or our pricing.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -116,7 +116,7 @@ export default function GroupPage() {
                     rel="noopener noreferrer"
                     className="text-center bg-[#2A1B5C] text-[#F7F3EA] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-[11px] rounded-full no-underline hover:bg-[#5B3FBE] transition-colors"
                   >
-                    {b.cta} ↗
+                    {b.cta} ?
                   </a>
                   <Link
                     href={b.href}
@@ -136,9 +136,9 @@ export default function GroupPage() {
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="bg-white border border-[#D8D8DE] border-l-[4px] border-l-[#D4A537] rounded-[10px] p-8 max-w-[800px]">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A537] mb-3">The clean boundary</p>
-            <p className="text-[16px] text-[#2A1B5C] font-semibold mb-2">One provider, one invoice, one contract — always.</p>
+            <p className="text-[16px] text-[#2A1B5C] font-semibold mb-2">One provider, one invoice, one contract, always.</p>
             <p className="text-[15px] text-[#3F3F4A] leading-[1.65]">
-              A client of MagicWorks IT Solutions never pays for a sibling product on a MagicWorks invoice, and never pays a sibling brand for consulting or agency services. The two are kept separate so our advice stays independent and your procurement stays clean. When an engagement naturally leads toward one of these products, we introduce you — and you engage the sibling brand directly, under its own terms.
+              A client of MagicWorks IT Solutions never pays for a sibling product on a MagicWorks invoice, and never pays a sibling brand for consulting or agency services. The two are kept separate so our advice stays independent and your procurement stays clean. When an engagement naturally leads toward one of these products, we introduce you, and you engage the sibling brand directly, under its own terms.
             </p>
           </div>
         </div>

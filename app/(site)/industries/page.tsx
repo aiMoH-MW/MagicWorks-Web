@@ -13,7 +13,7 @@ const industries = [
     title: "Education",
     href: "/industries/education",
     tag: "Digital Marketing · Web",
-    body: "High-intent student enquiries, admission-cycle campaigns, and AI-native portals. Anchor case: SimpliDistance — 75,000+ qualified leads per year.",
+    body: "High-intent student enquiries, admission-cycle campaigns, and AI-native portals. Anchor case: SimpliDistance, 75,000+ qualified leads per year.",
     metric: "75,000+",
     metricLabel: "Qualified leads / year",
   },
@@ -21,7 +21,7 @@ const industries = [
     title: "Real Estate",
     href: "/industries/real-estate",
     tag: "Digital Marketing · Web",
-    body: "Project launch campaigns, sustained buyer pipelines, and conversion-optimised property sites. Anchor case: Aishwaryam — 6,500+ units in pipeline.",
+    body: "Project launch campaigns, sustained buyer pipelines, and conversion-optimised property sites. Anchor case: Aishwaryam, 6,500+ units in pipeline.",
     metric: "6,500+",
     metricLabel: "Units in pipeline",
   },
@@ -55,11 +55,11 @@ export default function IndustriesPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">Industries</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[680px]">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             We go deep in a focused set of sectors.
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[520px] mt-4">
-            Industry expertise is how generalist services become specific results. We do not work across every sector — we go deep in four.
+            Industry expertise is how generalist services become specific results. We do not work across every sector; we go deep in four.
           </p>
         </div>
       </section>
@@ -77,7 +77,7 @@ export default function IndustriesPage() {
                 <span className="text-[12px] uppercase tracking-[0.1em] text-[#9A9AA8]">{ind.metricLabel}</span>
               </div>
               <p className="text-[15px] text-[#3F3F4A] flex-1 mb-6">{ind.body}</p>
-              <span className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.06em]">Explore →</span>
+              <span className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.06em]">Explore ?</span>
             </Link>
           ))}
         </div>
