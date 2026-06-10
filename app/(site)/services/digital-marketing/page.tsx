@@ -24,7 +24,7 @@ const services = [
   },
   {
     slug: "seo-aeo",
-    name: "SEO / AEO",
+    name: "Search Engine Optimization (SEO) & Answer Engine Optimization (AEO)",
     desc: "Rank in search engines and appear in AI-generated answers. Technical, on-page, and entity optimisation.",
     flagship: false,
   },

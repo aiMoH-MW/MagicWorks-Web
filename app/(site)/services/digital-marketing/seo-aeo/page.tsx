@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "SEO & AEO · Digital Marketing · MagicWorks",
+  title: "Search Engine Optimization (SEO) & Answer Engine Optimization (AEO) · MagicWorks",
   description:
     "Be found in search and inside the answer. Technical SEO and answer engine optimisation across ChatGPT, Perplexity, and Google AI Overviews.",
   alternates: { canonical: "/services/digital-marketing/seo-aeo" },
@@ -92,7 +92,7 @@ export default function SeoAeoPage() {
           <nav className="flex items-center gap-2 text-[12px] text-[#C8B8FF] mb-6">
             <Link href="/services/digital-marketing" className="hover:text-[#F7F3EA] transition-colors no-underline">Digital Marketing</Link>
             <span className="opacity-50">/</span>
-            <span className="text-[#F7F3EA]">SEO / AEO</span>
+            <span className="text-[#F7F3EA]">Search Engine Optimization (SEO) & Answer Engine Optimization (AEO)</span>
           </nav>
           <p className="eyebrow text-[#D4A537] mb-4">Pillar 01 · Organic Search</p>
           <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,54px)] leading-[1.08] text-[#F7F3EA] max-w-[780px]">
