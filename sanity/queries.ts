@@ -82,7 +82,7 @@ export async function getGatedInsights() {
 export async function getAllCaseStudies() {
   return client.fetch(
     `*[_type == "caseStudy"] | order(publishedAt desc) {
-      _id, title, slug, client, heroMetric, heroMetricLabel, industry, pillar, featured,
+      _id, title, slug, client, heroMetric, heroMetricLabel, industry, pillar, featured, situation,
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt
     }`

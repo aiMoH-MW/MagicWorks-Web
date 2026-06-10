@@ -43,9 +43,15 @@ export default async function CaseStudyPage({ params }: Props) {
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
         <div className="max-w-[1120px] mx-auto px-8 relative">
-          <Link href="/work" className="text-[#D4A537] text-[13px] uppercase tracking-[0.12em] font-bold no-underline hover:underline mb-6 inline-block">
-            ← Work
-          </Link>
+          <div className="flex items-center gap-3 mb-6">
+            <Link href="/work" className="text-[#D4A537] text-[13px] uppercase tracking-[0.12em] font-bold no-underline hover:underline">
+              ← Work
+            </Link>
+            <span className="text-[#5B3FBE]/60 text-[13px]">/</span>
+            <span className="text-[11px] uppercase tracking-[0.18em] text-[#F7F3EA] bg-white/10 border border-white/20 px-3 py-1 rounded-full font-semibold">
+              Case Study
+            </span>
+          </div>
           <div className="grid md:grid-cols-[280px_1fr] gap-12 items-center mt-4">
             <div>
               <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(52px,8vw,84px)] text-[#F7F3EA] leading-[0.9]">
