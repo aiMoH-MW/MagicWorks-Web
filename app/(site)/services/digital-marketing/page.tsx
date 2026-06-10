@@ -343,27 +343,29 @@ export default function DigitalMarketingPage() {
           <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-12 grid md:grid-cols-[280px_1fr] gap-12 items-center">
             <div>
               <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(56px,8vw,84px)] text-[#2A1B5C] leading-[0.95]">
-                6,500+
+                75,000+
               </div>
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#3F3F4A] mt-3">
-                Units in pipeline
+                Qualified leads per year
               </p>
               <p className="text-[13px] mt-4">
                 <span className="text-[#5B3FBE] uppercase tracking-[0.06em] font-semibold text-[12px]">
-                  Aishwaryam · Real Estate
+                  SimpliDistance · Education
                 </span>
               </p>
             </div>
             <div>
               <p className="text-[16px] text-[#3F3F4A] mb-6">
-                Cost per lead delivered below benchmark throughout the campaign.
-                One accountable team, one attribution model, compounding
-                engagement over time.
+                High-intent search advertising scaled MBA enrolments year on year.
+                One attribution model, compounding lead growth, cost per lead held
+                30–40% below category benchmark through Year 3.
               </p>
               <div className="grid grid-cols-2 gap-4 mb-8">
                 {[
-                  { v: "6,500+", l: "Units in pipeline" },
-                  { v: "Below benchmark", l: "Cost per lead" },
+                  { v: "75,000+", l: "Qualified leads per year" },
+                  { v: "4–8%", l: "Admission conversion rate" },
+                  { v: "30–40%", l: "Below benchmark CPL" },
+                  { v: "4×", l: "Lead growth by Year 3" },
                 ].map((m) => (
                   <div
                     key={m.l}
@@ -377,10 +379,10 @@ export default function DigitalMarketingPage() {
                 ))}
               </div>
               <Link
-                href="/work"
+                href="/work/simplidistance-mba-enrollments"
                 className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
               >
-                See all case studies ?
+                Read the case study →
               </Link>
             </div>
           </div>
