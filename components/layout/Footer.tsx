@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import NewsletterForm from "@/components/NewsletterForm";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 
 const serviceLinks = [
   { label: "Digital Marketing", href: "/services/digital-marketing" },
@@ -189,6 +190,7 @@ export default function Footer() {
                     {l.label}
                   </Link>
                 ))}
+                <CookieSettingsButton />
               </div>
             </div>
 

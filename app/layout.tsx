@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import ChatWidget from "@/components/ChatWidget";
+import CookieBanner from "@/components/CookieBanner";
 import "./globals.css";
 
 const GTM_ID = "GTM-W75DJC";
@@ -116,6 +117,33 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        {/* Google Consent Mode v2 — defaults must fire BEFORE GTM loads */}
+        <Script
+          id="consent-defaults"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+window.dataLayer=window.dataLayer||[];
+function gtag(){window.dataLayer.push(arguments);}
+window.gtag=gtag;
+gtag('consent','default',{
+  analytics_storage:'denied',
+  ad_storage:'denied',
+  ad_user_data:'denied',
+  ad_personalization:'denied',
+  wait_for_update:2000
+});
+try{
+  var _c=localStorage.getItem('mw_cookie_consent');
+  if(_c){var _p=JSON.parse(_c);gtag('consent','update',{
+    analytics_storage:_p.analytics?'granted':'denied',
+    ad_storage:_p.marketing?'granted':'denied',
+    ad_user_data:_p.marketing?'granted':'denied',
+    ad_personalization:_p.marketing?'granted':'denied'
+  });}
+}catch(e){}`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col bg-[#F7F3EA] text-[#1A1A22]">
         {/* GTM noscript fallback */}
@@ -130,6 +158,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <Analytics />
         <ChatWidget />
+        <CookieBanner />
         {/* GTM script — loads after page is interactive */}
         <Script
           id="gtm-init"

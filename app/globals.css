@@ -56,6 +56,15 @@ body {
   overflow-x: hidden;
 }
 
+/* Cookie banner slide-up */
+@keyframes mw-slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.mw-cookie-banner {
+  animation: mw-slide-up 0.35s ease-out forwards;
+}
+
 /* Gold rule — signature motif from brand deck */
 .gold-rule {
   width: 64px;
