@@ -50,6 +50,15 @@ export async function GET(req: NextRequest) {
       return NextResponse.json({ data });
     }
 
+    if (tab === "careers") {
+      const { data, error } = await client
+        .from("career_applications")
+        .select("*")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return NextResponse.json({ data });
+    }
+
     return NextResponse.json({ data: [] });
   } catch (err) {
     console.error(err);

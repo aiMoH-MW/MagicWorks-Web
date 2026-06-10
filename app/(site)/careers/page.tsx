@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import OpenRoles from "./OpenRoles";
 
 export const metadata: Metadata = {
   title: "Careers: Join MagicWorks IT Solutions",
@@ -65,36 +66,6 @@ const perks = [
   },
 ];
 
-const openRoles = [
-  {
-    title: "Performance Marketing Executive",
-    type: "Full-time · Pune / Hybrid",
-    description:
-      "Manage Google Ads and Meta campaigns for B2B and B2C clients. Own reporting, optimisation, and strategy. 1–3 years experience preferred.",
-    tags: ["Google Ads", "Meta Ads", "Analytics"],
-  },
-  {
-    title: "AI & Automation Specialist",
-    type: "Full-time · Pune / Remote",
-    description:
-      "Build and deploy AI workflows, automation pipelines, and LLM-powered tools for MagicWorks clients and internal operations.",
-    tags: ["AI Workflows", "Python", "n8n / Make"],
-  },
-  {
-    title: "Content Strategist: AI & B2B",
-    type: "Full-time · Pune / Hybrid",
-    description:
-      "Write long-form content, whitepapers, and thought-leadership pieces for MagicWorks and clients. Strong research skills required.",
-    tags: ["Content Strategy", "SEO / AEO", "B2B Writing"],
-  },
-  {
-    title: "Full-Stack Developer (Next.js)",
-    type: "Full-time · Pune / Remote",
-    description:
-      "Build client websites and internal tools. Strong Next.js, TypeScript, and Supabase skills required. AI integration experience is a big plus.",
-    tags: ["Next.js", "TypeScript", "Supabase"],
-  },
-];
 
 export default function CareersPage() {
   return (
@@ -176,42 +147,7 @@ export default function CareersPage() {
           </h2>
           <div className="w-10 h-[3px] bg-[#D4A537] mb-12" />
 
-          <div className="space-y-4">
-            {openRoles.map((role) => (
-              <div
-                key={role.title}
-                className="border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[12px] p-7 hover:shadow-[0_8px_32px_rgba(42,27,92,0.10)] transition-shadow"
-              >
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-                  <div className="flex-1">
-                    <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-1">
-                      {role.title}
-                    </h3>
-                    <p className="text-[13px] text-[#5B3FBE] font-semibold mb-3">{role.type}</p>
-                    <p className="text-[15px] text-[#3F3F4A] leading-[1.65] mb-4 max-w-[600px]">
-                      {role.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {role.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="text-[12px] font-medium text-[#5B3FBE] bg-[#EDE9F7] px-3 py-1 rounded-full"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                  <Link
-                    href={`/contact?pillar=${encodeURIComponent(role.title)}&source=careers`}
-                    className="shrink-0 self-start bg-[#2A1B5C] text-[#F7F3EA] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-3 rounded-full no-underline hover:bg-[#D4A537] hover:text-[#2A1B5C] transition-colors whitespace-nowrap"
-                  >
-                    Apply now
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
+          <OpenRoles />
 
           <div className="mt-10 bg-[#F7F3EA] border border-[#D8D8DE] rounded-[12px] p-8 text-center">
             <h3 className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-2">
