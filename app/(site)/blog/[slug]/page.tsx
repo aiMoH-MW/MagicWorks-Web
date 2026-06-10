@@ -15,7 +15,7 @@ type RelatedArticle = {
   slug: { current: string };
   title: string;
   excerpt: string;
-  category: string;
+  categories: string[];
   publishedAt: string;
   coverImage?: string;
   coverImageAlt?: string;
@@ -352,7 +352,7 @@ export default async function BlogArticlePage({ params }: Props) {
     keywords: article.tags?.join(", ") ?? undefined,
     inLanguage: "en-IN",
     timeRequired: `PT${readingTime}M`,
-    articleSection: categoryLabels[article.category] ?? article.category,
+    articleSection: article.categories?.map((c: string) => categoryLabels[c] ?? c).join(", "),
     author: article.author
       ? {
           "@type": "Person",
@@ -419,11 +419,15 @@ export default async function BlogArticlePage({ params }: Props) {
             <span className="text-[#9A8FBF] truncate max-w-[240px]">{article.title}</span>
           </nav>
 
-          {/* Category pill */}
-          {article.category && (
-            <span className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.13em] text-[#E0D8FF] border border-[rgba(255,255,255,0.22)] bg-[rgba(255,255,255,0.08)] px-4 py-[5px] rounded-full mb-6">
-              {categoryLabels[article.category] ?? article.category}
-            </span>
+          {/* Category pills */}
+          {article.categories?.length > 0 && (
+            <div className="flex flex-wrap gap-2 mb-6">
+              {article.categories.map((cat: string) => (
+                <span key={cat} className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.13em] text-[#E0D8FF] border border-[rgba(255,255,255,0.22)] bg-[rgba(255,255,255,0.08)] px-4 py-[5px] rounded-full">
+                  {categoryLabels[cat] ?? cat}
+                </span>
+              ))}
+            </div>
           )}
 
           {/* Title */}
@@ -774,10 +778,14 @@ export default async function BlogArticlePage({ params }: Props) {
                     </div>
                   )}
                   <div className="p-5 flex flex-col flex-1">
-                    {r.category && (
-                      <span className="text-[11px] uppercase tracking-[0.14em] text-[#5B3FBE] font-bold mb-2">
-                        {categoryLabels[r.category] ?? r.category}
-                      </span>
+                    {r.categories?.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5 mb-2">
+                        {r.categories.map((cat: string) => (
+                          <span key={cat} className="text-[11px] uppercase tracking-[0.14em] text-[#5B3FBE] font-bold bg-[#EDE9F7] px-2 py-0.5 rounded">
+                            {categoryLabels[cat] ?? cat}
+                          </span>
+                        ))}
+                      </div>
                     )}
                     <h3 className="font-[family-name:var(--font-head)] font-bold text-[16px] text-[#2A1B5C] mb-3 leading-[1.35] group-hover:text-[#5B3FBE] transition-colors">
                       {r.title}

@@ -69,7 +69,7 @@ export default async function AuthorPage({ params }: Props) {
           <p className="text-[#9A9AA8] text-[15px]">No articles published yet.</p>
         ) : (
           <div className="grid gap-6">
-            {articles.map((a: { slug: { current: string }; coverImage?: string; externalCoverImageUrl?: string; title: string; category?: string; publishedAt?: string; excerpt?: string }) => (
+            {articles.map((a: { slug: { current: string }; coverImage?: string; externalCoverImageUrl?: string; title: string; categories?: string[]; publishedAt?: string; excerpt?: string }) => (
               <Link
                 key={a.slug.current}
                 href={`/insights/${a.slug.current}`}
@@ -85,10 +85,14 @@ export default async function AuthorPage({ params }: Props) {
                   />
                 )}
                 <div className="p-4 flex flex-col justify-center">
-                  {a.category && (
-                    <span className="text-[#D4A537] text-[10px] uppercase tracking-widest font-bold mb-1">
-                      {a.category}
-                    </span>
+                  {a.categories && a.categories.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-1">
+                      {a.categories.map((cat: string) => (
+                        <span key={cat} className="text-[#D4A537] text-[10px] uppercase tracking-widest font-bold">
+                          {cat}
+                        </span>
+                      ))}
+                    </div>
                   )}
                   <h3 className="text-[#2A1B5C] font-bold text-[16px] leading-snug group-hover:text-[#5B3FBE] transition-colors mb-1">
                     {a.title}

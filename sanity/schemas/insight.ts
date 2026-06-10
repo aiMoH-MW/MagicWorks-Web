@@ -38,9 +38,28 @@ export const insight = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "categories",
+      title: "Categories",
+      type: "array",
+      of: [{ type: "string" }],
+      options: {
+        list: [
+          { title: "Digital Marketing", value: "digital-marketing" },
+          { title: "Web Development", value: "web-development" },
+          { title: "AI & Automation", value: "ai-automation" },
+          { title: "SEO / AEO", value: "seo-aeo" },
+          { title: "Industry Insights", value: "industry-insights" },
+          { title: "Company News", value: "company-news" },
+        ],
+        layout: "tags",
+      },
+      validation: (Rule) => Rule.required().min(1),
+    }),
+    defineField({
       name: "category",
-      title: "Category",
+      title: "Category (legacy — use Categories above)",
       type: "string",
+      hidden: true,
       options: {
         list: [
           { title: "Digital Marketing", value: "digital-marketing" },
@@ -51,7 +70,6 @@ export const insight = defineType({
           { title: "Company News", value: "company-news" },
         ],
       },
-      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: "pillar",

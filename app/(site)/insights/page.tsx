@@ -51,7 +51,7 @@ export default async function InsightsPage() {
             Practical thinking on marketing, AI, and growth.
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[580px] mt-4">
-            Open and crawlable — because the knowledge we publish should be
+            Open and crawlable, because the knowledge we publish should be
             useful before it becomes a reason to call us.
           </p>
         </div>
@@ -72,7 +72,7 @@ export default async function InsightsPage() {
                   slug: { current: string };
                   title: string;
                   excerpt: string;
-                  category: string;
+                  categories: string[];
                   publishedAt: string;
                   coverImage?: string;
                   coverImageAlt?: string;
@@ -98,10 +98,14 @@ export default async function InsightsPage() {
                       </div>
                     )}
                     <div className="p-6 flex flex-col flex-1">
-                      {a.category && (
-                        <span className="text-[11px] uppercase tracking-[0.14em] text-[#5B3FBE] font-bold mb-3">
-                          {categoryLabels[a.category] ?? a.category}
-                        </span>
+                      {a.categories?.length > 0 && (
+                        <div className="flex flex-wrap gap-1.5 mb-3">
+                          {a.categories.map((cat: string) => (
+                            <span key={cat} className="text-[11px] uppercase tracking-[0.14em] text-[#5B3FBE] font-bold bg-[#EDE9F7] px-2 py-0.5 rounded">
+                              {categoryLabels[cat] ?? cat}
+                            </span>
+                          ))}
+                        </div>
                       )}
                       <h2 className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-3 group-hover:text-[#5B3FBE] transition-colors">
                         {a.title}

@@ -6,7 +6,8 @@ export async function getAllInsights() {
   try {
     const results = await client.fetch(
       `*[_type == "insight"] | order(publishedAt desc) {
-        _id, title, slug, excerpt, publishedAt, category, pillar, isGated,
+        _id, title, slug, excerpt, publishedAt, pillar, isGated,
+        "categories": coalesce(categories, select(defined(category) => [category], [])),
         externalCoverImageUrl,
         "author": author->{ name, role, "photo": photo.asset->url },
         "coverImage": coverImage.asset->url,
@@ -24,7 +25,8 @@ export async function getAllInsights() {
 export async function getInsightBySlug(slug: string) {
   return client.fetch(
     `*[_type == "insight" && slug.current == $slug][0] {
-      _id, title, slug, excerpt, publishedAt, category, pillar, isGated, faq, tags,
+      _id, title, slug, excerpt, publishedAt, pillar, isGated, faq, tags,
+      "categories": coalesce(categories, select(defined(category) => [category], [])),
       externalCoverImageUrl, caseStudyHeroStats, caseStudyMeta,
       "author": author->{ name, role, "photo": photo.asset->url, linkedin, "slug": slug.current, bio },
       "coverImage": coverImage.asset->url,
@@ -47,7 +49,8 @@ export async function getInsightBySlug(slug: string) {
 export async function getRelatedInsights(currentSlug: string, limit = 3) {
   return client.fetch(
     `*[_type == "insight" && slug.current != $currentSlug] | order(publishedAt desc) [0...3] {
-      _id, title, slug, excerpt, category, publishedAt,
+      _id, title, slug, excerpt, publishedAt,
+      "categories": coalesce(categories, select(defined(category) => [category], [])),
       externalCoverImageUrl,
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt,
@@ -66,7 +69,8 @@ export async function getInsightSlugs() {
 export async function getGatedInsights() {
   return client.fetch(
     `*[_type == "insight" && isGated == true] | order(publishedAt desc) {
-      _id, title, slug, excerpt, publishedAt, category,
+      _id, title, slug, excerpt, publishedAt,
+      "categories": coalesce(categories, select(defined(category) => [category], [])),
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt
     }`
@@ -144,7 +148,8 @@ export async function getTeamMemberBySlug(slug: string) {
 export async function getInsightsByAuthor(authorName: string) {
   return client.fetch(
     `*[_type == "insight" && author->name == $authorName] | order(publishedAt desc) {
-      _id, title, slug, excerpt, publishedAt, category,
+      _id, title, slug, excerpt, publishedAt,
+      "categories": coalesce(categories, select(defined(category) => [category], [])),
       externalCoverImageUrl,
       "coverImage": coverImage.asset->url
     }`,
