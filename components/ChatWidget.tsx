@@ -10,7 +10,7 @@ export default function ChatWidget() {
   if (excluded) return null;
   return (
     <Script
-      src="https://magicflowai.io/chatbot.js"
+      src="https://www.magicflowai.io/chatbot.js"
       strategy="afterInteractive"
       data-bottom-margin="20"
       data-side-margin="20"
