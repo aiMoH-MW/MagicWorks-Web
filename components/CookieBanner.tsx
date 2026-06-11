@@ -217,7 +217,7 @@ export default function CookieBanner() {
                 </Link>
               </p>
             </div>
-            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0">
+            <div className="flex flex-wrap sm:flex-nowrap items-center gap-2 shrink-0 pr-[80px] sm:pr-0">
               <button
                 onClick={openPrefs}
                 className="text-[12px] text-[#9A8FBF] hover:text-[#F7F3EA] underline underline-offset-2 transition-colors px-2 py-2 whitespace-nowrap"
