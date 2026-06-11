@@ -72,7 +72,7 @@ const faq = [
   },
   {
     q: "Where is MagicWorks based?",
-    a: "Headquartered in Pune, with active clients in Mumbai, Bangalore, Hyderabad, and Delhi-NCR — and growing presence across Europe and the USA.",
+    a: "Headquartered in Pune, with active clients in Mumbai, Bangalore, Hyderabad, and Delhi-NCR, and growing presence across Europe and the USA.",
   },
   {
     q: "What makes MagicWorks AI-first?",
