@@ -49,11 +49,10 @@ export default function GateForm() {
           ✓
         </div>
         <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-1.5">
-          On its way.
+          Your playbook is ready.
         </h3>
         <p className="text-[14px] text-[#3F3F4A] mb-6 leading-[1.6]">
-          Check your inbox. If you do not see it in a few minutes, look in your promotions or spam
-          folder.
+          Click below to download your PDF.
         </p>
         <a
           href={PDF_URL}
@@ -145,8 +144,8 @@ export default function GateForm() {
         {submitting ? "Sending…" : "Send me the playbook"}
       </button>
       <p className="text-[11.5px] text-[#9A9AA8] mt-3 leading-[1.5]">
-        By submitting, you agree to receive the playbook and occasional relevant insights from
-        MagicWorks. No spam. Unsubscribe anytime.
+        By submitting, you agree to occasionally receive relevant insights from MagicWorks. No
+        spam. Unsubscribe anytime.
       </p>
     </form>
   );
