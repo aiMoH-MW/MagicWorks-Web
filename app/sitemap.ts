@@ -41,6 +41,7 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${base}/insights`,                                                     changeFrequency: "daily",   priority: 0.85 },
   { url: `${base}/insights/reports`,                                             changeFrequency: "monthly", priority: 0.7 },
   { url: `${base}/insights/whitepapers`,                                         changeFrequency: "monthly", priority: 0.7 },
+  { url: `${base}/insights/reports/ai-search-visibility-playbook`,               changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/about`,                                                        changeFrequency: "monthly", priority: 0.75 },
   { url: `${base}/about/careers`,                                                changeFrequency: "weekly",  priority: 0.65 },
   { url: `${base}/tools/ai-readiness-assessment`,                                changeFrequency: "monthly", priority: 0.75 },
