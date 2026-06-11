@@ -1,0 +1,73 @@
+# MagicWorks
+
+> MagicWorks is an AI-first digital marketing agency headquartered in Pune, India. We help ambitious Indian businesses grow through digital marketing, web development, AI consultation, and marketplace and platform consultation. Active clients in Mumbai, Bangalore, Hyderabad, and Delhi-NCR, with a growing presence across Europe and the USA.
+
+## Services
+
+- [Services Overview](https://magicworksitsolutions.com/services): All four service pillars at a glance.
+- [Digital Marketing](https://magicworksitsolutions.com/services/digital-marketing): Full-funnel digital marketing strategy and execution.
+- [Full-Funnel Programme](https://magicworksitsolutions.com/services/digital-marketing/full-funnel-programme): End-to-end campaigns spanning awareness through conversion.
+- [Google Ads & Search Marketing](https://magicworksitsolutions.com/services/digital-marketing/google-ads-search-marketing): Paid search on Google — strategy, setup, and optimisation.
+- [SEO & AEO](https://magicworksitsolutions.com/services/digital-marketing/seo-aeo): Search engine optimisation and answer engine optimisation for AI search.
+- [Meta Ads](https://magicworksitsolutions.com/services/digital-marketing/meta-ads): Facebook and Instagram advertising campaigns.
+- [Thought Leadership & GEO](https://magicworksitsolutions.com/services/digital-marketing/thought-leadership-geo): Generative engine optimisation and thought leadership content strategy.
+- [Site Performance & Conversion](https://magicworksitsolutions.com/services/digital-marketing/site-performance-conversion): CRO, page speed, and conversion rate improvements.
+- [GMB Optimisation](https://magicworksitsolutions.com/services/digital-marketing/gmb-optimisation): Google My Business setup, management, and local SEO.
+- [Email Marketing](https://magicworksitsolutions.com/services/digital-marketing/email-marketing): Email campaign strategy, automation, and execution.
+- [LinkedIn & Organic Social](https://magicworksitsolutions.com/services/digital-marketing/linkedin-organic-social): LinkedIn and organic social media management.
+- [YouTube & Video Optimisation](https://magicworksitsolutions.com/services/digital-marketing/youtube-video-optimisation): YouTube channel growth and video SEO.
+- [Web Development](https://magicworksitsolutions.com/services/web-development): Custom websites and web applications for ambitious businesses.
+- [AI-Native Websites](https://magicworksitsolutions.com/services/web-development/ai-native-websites): Websites built with AI-first architecture and answer-engine readiness.
+- [E-commerce](https://magicworksitsolutions.com/services/web-development/ecommerce): Online store development, integration, and management.
+- [Maintenance & AMC](https://magicworksitsolutions.com/services/web-development/maintenance-amc): Annual maintenance contracts for ongoing website support.
+- [AI Consultation](https://magicworksitsolutions.com/services/ai-consultation): AI strategy, readiness, and implementation for Indian businesses.
+- [Process Audit](https://magicworksitsolutions.com/services/ai-consultation/process-audit): AI readiness assessment and workflow audit.
+- [AI Workshop](https://magicworksitsolutions.com/services/ai-consultation/workshop): Hands-on workshops to upskill teams on AI tools and workflows.
+- [Vendor Sprint](https://magicworksitsolutions.com/services/ai-consultation/vendor-sprint): Rapid AI vendor evaluation and selection sprints.
+- [AI Embedded Advisor](https://magicworksitsolutions.com/services/ai-consultation/embedded-advisor): Ongoing embedded AI advisory for businesses.
+- [Platform Consultation](https://magicworksitsolutions.com/services/platform-consultation): Marketplace and platform strategy for product businesses.
+- [Roadmap Audit](https://magicworksitsolutions.com/services/platform-consultation/roadmap-audit): Platform and product roadmap review and prioritisation.
+- [Platform Workshop](https://magicworksitsolutions.com/services/platform-consultation/workshop): Platform strategy workshops for leadership teams.
+- [Advisory Sprint](https://magicworksitsolutions.com/services/platform-consultation/advisory-sprint): Short-term platform advisory and problem-solving sprints.
+- [Platform Embedded Advisor](https://magicworksitsolutions.com/services/platform-consultation/embedded-advisor): Ongoing embedded platform advisory.
+
+## Industries
+
+- [Industries Overview](https://magicworksitsolutions.com/industries): Sectors MagicWorks specialises in.
+- [Education](https://magicworksitsolutions.com/industries/education): Digital marketing and web services for schools, colleges, and edtech companies.
+- [Real Estate](https://magicworksitsolutions.com/industries/real-estate): Lead generation, paid media, and digital marketing for real estate developers and agents.
+- [Manufacturing](https://magicworksitsolutions.com/industries/manufacturing): B2B digital marketing and web development for manufacturing companies.
+- [Professional Services](https://magicworksitsolutions.com/industries/professional-services): Digital marketing for law firms, consultancies, and professional service providers.
+
+## Content & Insights
+
+- [Insights](https://magicworksitsolutions.com/insights): Articles and thought leadership on digital marketing, AI, and web development.
+- [Reports](https://magicworksitsolutions.com/insights/reports): Downloadable research reports.
+- [Whitepapers](https://magicworksitsolutions.com/insights/whitepapers): In-depth whitepapers on marketing and AI topics (gated, requires email).
+
+## Tools
+
+- [AI Readiness Assessment](https://magicworksitsolutions.com/tools/ai-readiness-assessment): Free interactive quiz to assess your business's readiness to adopt AI.
+- [ROI Calculator](https://magicworksitsolutions.com/tools/roi-calculator): Estimate the potential ROI from a digital marketing engagement.
+
+## Work
+
+- [Case Studies](https://magicworksitsolutions.com/work): Portfolio of client projects with measurable results.
+
+## Company
+
+- [About MagicWorks](https://magicworksitsolutions.com/about): Company background, values, and team.
+- [Careers](https://magicworksitsolutions.com/about/careers): Open roles at MagicWorks.
+- [Contact](https://magicworksitsolutions.com/contact): Book a free thirty-minute discovery call or send an enquiry.
+
+## Group Products
+
+- [MagicWorks Group](https://magicworksitsolutions.com/group): Overview of the MagicWorks group of products.
+- [MagicFlow AI](https://magicworksitsolutions.com/group/magicflow-ai): AI assistant product by MagicWorks.
+- [Magic Pipeline](https://magicworksitsolutions.com/group/magic-pipeline): AI-powered sales pipeline and CRM automation product.
+- [MagicWorks Host](https://magicworksitsolutions.com/group/magicworks-host): Managed web hosting by MagicWorks.
+
+## Optional
+
+- [Privacy Policy](https://magicworksitsolutions.com/privacy): Data privacy policy for magicworksitsolutions.com.
+- [Terms of Service](https://magicworksitsolutions.com/terms): Terms of use for magicworksitsolutions.com.

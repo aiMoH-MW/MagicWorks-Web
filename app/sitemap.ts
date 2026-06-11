@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getInsightSlugs, getAllCaseStudies, getActiveJobOpenings } from "@/sanity/queries";
+import { getInsightSlugs, getAllCaseStudies, getActiveJobOpenings, getGatedInsights } from "@/sanity/queries";
 
 const base = "https://magicworksitsolutions.com";
 
@@ -40,6 +40,7 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${base}/work`,                                                         changeFrequency: "weekly",  priority: 0.85 },
   { url: `${base}/insights`,                                                     changeFrequency: "daily",   priority: 0.85 },
   { url: `${base}/insights/reports`,                                             changeFrequency: "monthly", priority: 0.7 },
+  { url: `${base}/insights/whitepapers`,                                         changeFrequency: "monthly", priority: 0.7 },
   { url: `${base}/about`,                                                        changeFrequency: "monthly", priority: 0.75 },
   { url: `${base}/about/careers`,                                                changeFrequency: "weekly",  priority: 0.65 },
   { url: `${base}/tools/ai-readiness-assessment`,                                changeFrequency: "monthly", priority: 0.75 },
@@ -54,10 +55,11 @@ const staticRoutes: MetadataRoute.Sitemap = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Fetch dynamic slugs from Sanity — fall back to empty arrays if unreachable
-  const [insightSlugs, caseStudies, jobs] = await Promise.all([
+  const [insightSlugs, caseStudies, jobs, whitepapers] = await Promise.all([
     getInsightSlugs().catch(() => []),
     getAllCaseStudies().catch(() => []),
     getActiveJobOpenings().catch(() => []),
+    getGatedInsights().catch(() => []),
   ]);
 
   const insightRoutes: MetadataRoute.Sitemap = insightSlugs.map(
@@ -85,10 +87,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
+  const whitepaperRoutes: MetadataRoute.Sitemap = whitepapers.map(
+    (w: { slug: { current: string }; publishedAt?: string }) => ({
+      url: `${base}/insights/whitepapers/${w.slug.current}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      lastModified: w.publishedAt ? new Date(w.publishedAt) : undefined,
+    })
+  );
+
   return [
     ...staticRoutes,
     ...insightRoutes,
     ...caseStudyRoutes,
     ...careerRoutes,
+    ...whitepaperRoutes,
   ];
 }
