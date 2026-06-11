@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 
 const ADMIN_SECRET = process.env.NEXT_PUBLIC_ADMIN_SECRET ?? "magicworks-admin-2026";
 
-type Tab = "newsletter" | "whitepaper" | "leads" | "contact" | "careers";
+type Tab = "newsletter" | "whitepaper" | "leads" | "contact" | "careers" | "playbooks";
 
 interface Row {
   id: string;
@@ -22,6 +22,7 @@ interface Row {
 const TABS: { key: Tab; label: string }[] = [
   { key: "newsletter", label: "Newsletter" },
   { key: "whitepaper", label: "Whitepaper Leads" },
+  { key: "playbooks", label: "Playbook Downloads" },
   { key: "leads", label: "Service Enquiries" },
   { key: "contact", label: "Contact Page" },
   { key: "careers", label: "Job Applications" },
@@ -47,7 +48,7 @@ export default function AdminPage() {
   const [tab, setTab] = useState<Tab>("newsletter");
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
-  const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, leads: 0, contact: 0, careers: 0 });
+  const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, playbooks: 0, leads: 0, contact: 0, careers: 0 });
 
   const fetchTab = useCallback(async (t: Tab) => {
     setLoading(true);
@@ -70,7 +71,7 @@ export default function AdminPage() {
   // Prefetch counts
   useEffect(() => {
     if (!authed) return;
-    (["newsletter", "whitepaper", "leads", "contact", "careers"] as Tab[]).forEach(async (t) => {
+    (["newsletter", "whitepaper", "playbooks", "leads", "contact", "careers"] as Tab[]).forEach(async (t) => {
       const res = await fetch(`/api/admin/data?tab=${t}`, { headers: { "x-admin-secret": ADMIN_SECRET } });
       const json = await res.json();
       setCounts((prev) => ({ ...prev, [t]: json.data?.length ?? 0 }));
@@ -116,11 +117,13 @@ export default function AdminPage() {
 
   const newsletterCols = ["created_at", "email", "source"];
   const whitepaperCols = ["created_at", "email", "whitepaper"];
+  const playbookCols = ["created_at", "name", "email", "company", "message", "source_page"];
   const leadsCols = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
   const contactCols = ["created_at", "name", "email", "phone", "subject", "message"];
   const careersCols = ["created_at", "job_title", "name", "email", "phone", "linkedin_url", "portfolio_url", "cover_letter"];
   const cols =
-    tab === "leads" ? leadsCols
+    tab === "playbooks" ? playbookCols
+    : tab === "leads" ? leadsCols
     : tab === "newsletter" ? newsletterCols
     : tab === "contact" ? contactCols
     : tab === "careers" ? careersCols

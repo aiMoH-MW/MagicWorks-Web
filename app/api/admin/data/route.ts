@@ -36,6 +36,17 @@ export async function GET(req: NextRequest) {
       const { data, error } = await client
         .from("leads")
         .select("*")
+        .not("source_page", "ilike", "playbook-%")
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return NextResponse.json({ data });
+    }
+
+    if (tab === "playbooks") {
+      const { data, error } = await client
+        .from("leads")
+        .select("*")
+        .ilike("source_page", "playbook-%")
         .order("created_at", { ascending: false });
       if (error) throw error;
       return NextResponse.json({ data });
