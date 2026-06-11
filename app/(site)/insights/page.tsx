@@ -54,6 +54,12 @@ export default async function InsightsPage() {
             Open and crawlable, because the knowledge we publish should be
             useful before it becomes a reason to call us.
           </p>
+          <div className="flex flex-wrap gap-1 mt-10 border-b border-white/10">
+            <span className="px-4 py-3 text-[13px] font-semibold text-white border-b-2 border-[#D4A537] -mb-[1px]">All Insights</span>
+            <Link href="/insights" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Articles</Link>
+            <Link href="/insights/whitepapers" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Whitepapers</Link>
+            <Link href="/insights/reports" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Reports</Link>
+          </div>
         </div>
       </section>
 
