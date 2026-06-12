@@ -37,7 +37,7 @@ export async function GET(req: NextRequest) {
         .from("leads")
         .select("*")
         .not("source_page", "ilike", "playbook-%")
-        .in("pillar", ["Digital Marketing", "Web Development"])
+        .in("pillar", ["Digital Marketing", "Web Development", "Not sure yet"])
         .order("created_at", { ascending: false });
       if (error) throw error;
       return NextResponse.json({ data });
@@ -58,15 +58,6 @@ export async function GET(req: NextRequest) {
         .from("leads")
         .select("*")
         .ilike("source_page", "playbook-%")
-        .order("created_at", { ascending: false });
-      if (error) throw error;
-      return NextResponse.json({ data });
-    }
-
-    if (tab === "contact") {
-      const { data, error } = await client
-        .from("contact_submissions")
-        .select("*")
         .order("created_at", { ascending: false });
       if (error) throw error;
       return NextResponse.json({ data });
