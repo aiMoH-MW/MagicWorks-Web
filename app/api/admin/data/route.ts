@@ -37,6 +37,17 @@ export async function GET(req: NextRequest) {
         .from("leads")
         .select("*")
         .not("source_page", "ilike", "playbook-%")
+        .in("pillar", ["Digital Marketing", "Web Development"])
+        .order("created_at", { ascending: false });
+      if (error) throw error;
+      return NextResponse.json({ data });
+    }
+
+    if (tab === "consultation") {
+      const { data, error } = await client
+        .from("leads")
+        .select("*")
+        .in("pillar", ["AI Consultation", "Platform Consultation"])
         .order("created_at", { ascending: false });
       if (error) throw error;
       return NextResponse.json({ data });

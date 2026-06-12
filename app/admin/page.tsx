@@ -3,7 +3,7 @@ import { useState, useEffect, useCallback } from "react";
 
 const ADMIN_SECRET = process.env.NEXT_PUBLIC_ADMIN_SECRET ?? "magicworks-admin-2026";
 
-type Tab = "newsletter" | "whitepaper" | "leads" | "contact" | "careers" | "playbooks";
+type Tab = "newsletter" | "whitepaper" | "leads" | "consultation" | "contact" | "careers" | "playbooks";
 
 interface Row {
   id: string;
@@ -24,6 +24,7 @@ const TABS: { key: Tab; label: string }[] = [
   { key: "whitepaper", label: "Whitepaper Leads" },
   { key: "playbooks", label: "Playbook Downloads" },
   { key: "leads", label: "Service Enquiries" },
+  { key: "consultation", label: "Consultation Enquiries" },
   { key: "contact", label: "Contact Page" },
   { key: "careers", label: "Job Applications" },
 ];
@@ -48,7 +49,7 @@ export default function AdminPage() {
   const [tab, setTab] = useState<Tab>("newsletter");
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
-  const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, playbooks: 0, leads: 0, contact: 0, careers: 0 });
+  const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, playbooks: 0, leads: 0, consultation: 0, contact: 0, careers: 0 });
 
   const fetchTab = useCallback(async (t: Tab) => {
     setLoading(true);
@@ -71,7 +72,7 @@ export default function AdminPage() {
   // Prefetch counts
   useEffect(() => {
     if (!authed) return;
-    (["newsletter", "whitepaper", "playbooks", "leads", "contact", "careers"] as Tab[]).forEach(async (t) => {
+    (["newsletter", "whitepaper", "playbooks", "leads", "consultation", "contact", "careers"] as Tab[]).forEach(async (t) => {
       const res = await fetch(`/api/admin/data?tab=${t}`, { headers: { "x-admin-secret": ADMIN_SECRET } });
       const json = await res.json();
       setCounts((prev) => ({ ...prev, [t]: json.data?.length ?? 0 }));
@@ -123,7 +124,7 @@ export default function AdminPage() {
   const careersCols = ["created_at", "job_title", "name", "email", "phone", "linkedin_url", "portfolio_url", "cover_letter"];
   const cols =
     tab === "playbooks" ? playbookCols
-    : tab === "leads" ? leadsCols
+    : tab === "leads" || tab === "consultation" ? leadsCols
     : tab === "newsletter" ? newsletterCols
     : tab === "contact" ? contactCols
     : tab === "careers" ? careersCols
