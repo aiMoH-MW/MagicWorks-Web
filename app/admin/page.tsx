@@ -49,26 +49,29 @@ export default function AdminPage() {
   const [rows, setRows] = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
   const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, playbooks: 0, leads: 0, consultation: 0, careers: 0 });
+  const [dateFrom, setDateFrom] = useState("");
+  const [dateTo, setDateTo] = useState("");
+  const [sortDir, setSortDir] = useState<"desc" | "asc">("desc");
 
-  const fetchTab = useCallback(async (t: Tab) => {
+  const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
     try {
-      const res = await fetch(`/api/admin/data?tab=${t}`, {
-        headers: { "x-admin-secret": ADMIN_SECRET },
-      });
+      const p = new URLSearchParams({ tab: t, sort });
+      if (from) p.set("from", from);
+      if (to)   p.set("to", to);
+      const res = await fetch(`/api/admin/data?${p}`, { headers: { "x-admin-secret": ADMIN_SECRET } });
       const json = await res.json();
       setRows(json.data ?? []);
-      setCounts((prev) => ({ ...prev, [t]: json.data?.length ?? 0 }));
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    if (authed) fetchTab(tab);
-  }, [authed, tab, fetchTab]);
+    if (authed) fetchRows(tab, dateFrom, dateTo, sortDir);
+  }, [authed, tab, dateFrom, dateTo, sortDir, fetchRows]);
 
-  // Prefetch counts
+  // Prefetch total counts (no date filter)
   useEffect(() => {
     if (!authed) return;
     (["newsletter", "whitepaper", "playbooks", "leads", "consultation", "careers"] as Tab[]).forEach(async (t) => {
@@ -127,6 +130,8 @@ export default function AdminPage() {
     : tab === "careers" ? careersCols
     : whitepaperCols;
 
+  const hasFilter = !!(dateFrom || dateTo);
+
   return (
     <div className="min-h-screen bg-[#0E0A1F] text-white">
       {/* Header */}
@@ -137,12 +142,12 @@ export default function AdminPage() {
 
       <div className="max-w-[1200px] mx-auto px-8 py-8">
         {/* Tabs */}
-        <div className="flex gap-1 mb-8 border-b border-white/10 pb-0">
+        <div className="flex gap-1 mb-6 border-b border-white/10 pb-0 overflow-x-auto">
           {TABS.map((t) => (
             <button
               key={t.key}
               onClick={() => setTab(t.key)}
-              className={`px-5 py-3 text-[13px] font-semibold uppercase tracking-[0.1em] border-b-2 transition-colors -mb-[1px] ${
+              className={`px-5 py-3 text-[13px] font-semibold uppercase tracking-[0.1em] border-b-2 transition-colors -mb-[1px] whitespace-nowrap ${
                 tab === t.key
                   ? "border-[#D4A537] text-[#D4A537]"
                   : "border-transparent text-white/50 hover:text-white/80"
@@ -153,10 +158,57 @@ export default function AdminPage() {
           ))}
         </div>
 
+        {/* Filters row */}
+        <div className="flex flex-wrap items-center gap-3 mb-6">
+          <div className="flex items-center gap-2">
+            <span className="text-white/40 text-[11px] uppercase tracking-[0.1em]">From</span>
+            <input
+              type="date"
+              value={dateFrom}
+              onChange={(e) => setDateFrom(e.target.value)}
+              className="bg-white/10 border border-white/20 rounded-lg px-3 py-[7px] text-white text-[13px] focus:outline-none focus:border-[#D4A537] [color-scheme:dark]"
+            />
+          </div>
+          <div className="flex items-center gap-2">
+            <span className="text-white/40 text-[11px] uppercase tracking-[0.1em]">To</span>
+            <input
+              type="date"
+              value={dateTo}
+              onChange={(e) => setDateTo(e.target.value)}
+              className="bg-white/10 border border-white/20 rounded-lg px-3 py-[7px] text-white text-[13px] focus:outline-none focus:border-[#D4A537] [color-scheme:dark]"
+            />
+          </div>
+          <button
+            onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
+            className="flex items-center gap-2 text-[12px] text-white/60 hover:text-white border border-white/20 hover:border-white/40 rounded-lg px-4 py-[7px] transition-colors"
+          >
+            {sortDir === "desc" ? (
+              <>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+                Newest first
+              </>
+            ) : (
+              <>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+                Oldest first
+              </>
+            )}
+          </button>
+          {hasFilter && (
+            <button
+              onClick={() => { setDateFrom(""); setDateTo(""); }}
+              className="text-[12px] text-white/40 hover:text-white/80 underline underline-offset-2 transition-colors"
+            >
+              Clear filter
+            </button>
+          )}
+        </div>
+
         {/* Table header */}
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-[#D4A537] text-[13px] uppercase tracking-[0.14em] font-bold">
             {TABS.find((t) => t.key === tab)?.label}
+            {hasFilter && <span className="ml-2 text-white/30 normal-case tracking-normal font-normal text-[12px]">(filtered)</span>}
           </h2>
           <button
             onClick={() => exportCSV(rows, `${tab}-${new Date().toISOString().slice(0, 10)}.csv`)}
@@ -174,7 +226,7 @@ export default function AdminPage() {
           {loading ? (
             <div className="py-16 text-center text-white/40 text-[14px]">Loading…</div>
           ) : rows.length === 0 ? (
-            <div className="py-16 text-center text-white/40 text-[14px]">No records yet.</div>
+            <div className="py-16 text-center text-white/40 text-[14px]">No records{hasFilter ? " for this date range" : " yet"}.</div>
           ) : (
             <div className="overflow-x-auto">
               <table className="w-full text-[13px]">
