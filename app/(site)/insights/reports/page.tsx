@@ -21,6 +21,7 @@ type Playbook = {
   description: string;
   meta: string[];
   href?: string;
+  cta?: string;
   preview?: string[];
 };
 
@@ -47,7 +48,16 @@ const PLAYBOOKS: Playbook[] = [
     title: "AI Readiness Playbook for Founders",
     description:
       "A practical guide for founders and operations leaders: how to assess AI readiness, which processes to prioritise, and how to run a build-vs-buy decision without the vendor hype.",
-    meta: ["40 pages", "25 min read", "Founders, COOs"],
+    meta: ["7 pages", "10 min read", "Founders, COOs"],
+    href: "/insights/reports/ai-readiness-playbook",
+    cta: "Get the playbook",
+    preview: [
+      "Five-dimension readiness assessment",
+      "Where AI pays off first",
+      "Honest build vs. buy framework",
+      "90-day pilot plan",
+      "Myths and a one-page checklist",
+    ],
   },
   {
     cat: "dm",
@@ -63,7 +73,16 @@ const PLAYBOOKS: Playbook[] = [
     title: "Platform Strategy Checklist: 22 Decisions Before You Build",
     description:
       "The 22 strategy decisions every marketplace or platform founder must make first: business model, network cold start, pricing, build-or-buy, and go-to-market sequencing.",
-    meta: ["18 pages", "12 min read", "Platform founders"],
+    meta: ["6 pages", "8 min read", "Platform founders"],
+    href: "/insights/reports/platform-strategy-checklist",
+    cta: "Get the checklist",
+    preview: [
+      "Business model and unit economics",
+      "Liquidity and cold start plan",
+      "Trust, quality and money flow",
+      "Product, MVP and go-to-market",
+      "Defensibility and DPDP compliance",
+    ],
   },
   {
     cat: "web",
@@ -71,7 +90,16 @@ const PLAYBOOKS: Playbook[] = [
     title: "The AI-Native Website Spec Sheet",
     description:
       "What to demand from your next website build: the RFP essentials, the performance bar, conversion must-haves, and which AI features earn their place versus which are hype.",
-    meta: ["16 pages", "12 min read", "Founders, marketing heads"],
+    meta: ["20+ pages", "15 min read", "Founders, marketing heads"],
+    href: "/insights/reports/ai-native-website-spec-sheet",
+    cta: "Get the spec sheet",
+    preview: [
+      "Nine-part brief-ready specification",
+      "Performance and technical requirements",
+      "SEO and AI findability requirements",
+      "Conversion must-haves",
+      "Ownership, RFP and red flags",
+    ],
   },
   {
     cat: "industry",
@@ -126,7 +154,7 @@ function FeaturedCard({ p }: { p: Playbook }) {
               href={p.href!}
               className="inline-block bg-[#2A1B5C] text-[#F7F3EA] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:bg-[#5B3FBE] transition-colors duration-200"
             >
-              Get the playbook →
+              {p.cta ?? "Get the playbook"} →
             </Link>
           </div>
         </div>
