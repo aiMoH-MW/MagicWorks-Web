@@ -1,8 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 type State = "idle" | "submitting" | "success" | "error";
+
+const ALLOWED_TYPES = ["application/pdf", "application/msword",
+  "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+const MAX_MB = 5;
 
 const openRoles = [
   {
@@ -44,20 +48,42 @@ function ApplyForm({ jobSlug, jobTitle, onClose }: { jobSlug: string; jobTitle: 
   const [form, setForm] = useState({
     name: "", email: "", phone: "", linkedin_url: "", portfolio_url: "", cover_letter: "",
   });
+  const [resume, setResume] = useState<File | null>(null);
+  const [resumeError, setResumeError] = useState("");
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm((p) => ({ ...p, [e.target.name]: e.target.value }));
+  }
+
+  function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0] ?? null;
+    setResumeError("");
+    if (!file) { setResume(null); return; }
+    if (!ALLOWED_TYPES.includes(file.type)) {
+      setResumeError("Only PDF or Word documents are accepted.");
+      e.target.value = "";
+      return;
+    }
+    if (file.size > MAX_MB * 1024 * 1024) {
+      setResumeError(`File must be under ${MAX_MB} MB.`);
+      e.target.value = "";
+      return;
+    }
+    setResume(file);
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setState("submitting");
     try {
-      const res = await fetch("/api/careers", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, job_slug: jobSlug, job_title: jobTitle }),
-      });
+      const fd = new FormData();
+      Object.entries(form).forEach(([k, v]) => fd.append(k, v));
+      fd.append("job_slug", jobSlug);
+      fd.append("job_title", jobTitle);
+      if (resume) fd.append("resume", resume, resume.name);
+
+      const res = await fetch("/api/careers", { method: "POST", body: fd });
       if (!res.ok) throw new Error();
       setState("success");
     } catch {
@@ -132,6 +158,43 @@ function ApplyForm({ jobSlug, jobTitle, onClose }: { jobSlug: string; jobTitle: 
           onChange={handleChange}
           className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] bg-white focus:outline-none focus:border-[#5B3FBE] transition-colors"
         />
+      </div>
+
+      <div>
+        <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
+          Resume / CV <span className="normal-case text-[#9A9AA8]">(PDF or Word · max 5 MB)</span>
+        </label>
+        <div
+          className="w-full border border-dashed border-[#D8D8DE] rounded-[6px] px-4 py-4 bg-white flex items-center gap-4 cursor-pointer hover:border-[#5B3FBE] transition-colors"
+          onClick={() => fileInputRef.current?.click()}
+        >
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5B3FBE" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+          </svg>
+          <span className="text-[14px] text-[#3F3F4A]">
+            {resume ? resume.name : "Click to upload your resume"}
+          </span>
+          {resume && (
+            <button
+              type="button"
+              onClick={(ev) => { ev.stopPropagation(); setResume(null); if (fileInputRef.current) fileInputRef.current.value = ""; }}
+              className="ml-auto text-[#9A9AA8] hover:text-red-500 transition-colors"
+              aria-label="Remove file"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+              </svg>
+            </button>
+          )}
+        </div>
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept=".pdf,.doc,.docx"
+          onChange={handleFile}
+          className="hidden"
+        />
+        {resumeError && <p className="text-red-500 text-[12px] mt-1">{resumeError}</p>}
       </div>
 
       <div>
