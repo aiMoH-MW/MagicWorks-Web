@@ -94,12 +94,39 @@ const faq = [
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://magicworksitsolutions.com/services/digital-marketing#service",
   name: "Digital Marketing",
+  alternateName: "Performance Marketing",
+  serviceType: "Digital Marketing",
+  category: "Marketing Services",
+  description:
+    "Predictable revenue from traffic and leads. Ten digital marketing services on a monthly retainer — Full-Funnel Programme, Google Ads, SEO & AEO, GMB Optimisation, YouTube, Meta Ads, LinkedIn, Thought Leadership & GEO, Email Marketing, and CRO.",
+  url: "https://magicworksitsolutions.com/services/digital-marketing",
   provider: {
     "@type": "Organization",
+    "@id": "https://magicworksitsolutions.com/#organization",
     name: "MagicWorks IT Solutions Pvt. Ltd.",
+    url: "https://magicworksitsolutions.com",
   },
-  areaServed: "IN",
+  areaServed: { "@type": "Country", name: "India" },
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "B2B businesses in education, real estate, manufacturing, and professional services sectors in India seeking predictable lead generation and revenue growth.",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Digital Marketing Services",
+    itemListElement: services.map((s, i) => ({
+      "@type": "Offer",
+      position: i + 1,
+      itemOffered: {
+        "@type": "Service",
+        name: s.name,
+        description: s.desc,
+      },
+    })),
+  },
 };
 
 const faqSchema = {

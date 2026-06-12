@@ -12,15 +12,37 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://magicworksitsolutions.com/services/web-development#service",
   name: "Web Development",
+  alternateName: "AI-Native Website Development",
+  serviceType: "Web Development",
+  category: "Technology Services",
   description:
-    "AI-native websites built on Next.js with LLM-backed backends and headless CMS. E-commerce, portals, and WordPress builds.",
+    "AI-native websites built on Next.js with LLM-backed backends and headless CMS. From idea to live in 8 to 16 weeks. Builds include AI-native websites, e-commerce, portals and member sites, WordPress, and Web AMC.",
+  url: "https://magicworksitsolutions.com/services/web-development",
   provider: {
     "@type": "Organization",
+    "@id": "https://magicworksitsolutions.com/#organization",
     name: "MagicWorks IT Solutions Pvt. Ltd.",
     url: "https://magicworksitsolutions.com",
   },
-  areaServed: "IN",
+  areaServed: { "@type": "Country", name: "India" },
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Businesses in India seeking modern, AI-native websites that generate enquiries and compound brand value.",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Web Development Build Types",
+    itemListElement: [
+      { "@type": "Offer", position: 1, itemOffered: { "@type": "Service", name: "AI-Native Website", description: "Next.js front-end, LLM-backed backend, headless CMS with embedded AI features: chat agents, intelligent search, content personalisation, and conversational lead capture." } },
+      { "@type": "Offer", position: 2, itemOffered: { "@type": "Service", name: "E-commerce", description: "Headless commerce builds designed for conversion, catalogue management, and integration with Indian payment gateways." } },
+      { "@type": "Offer", position: 3, itemOffered: { "@type": "Service", name: "Portals & Member Sites", description: "Custom portals with authentication, gated content, dashboards, and role-based access for B2B and B2C use cases." } },
+      { "@type": "Offer", position: 4, itemOffered: { "@type": "Service", name: "WordPress", description: "WordPress builds for clients who specifically require the platform or need a simple brochure site." } },
+      { "@type": "Offer", position: 5, itemOffered: { "@type": "Service", name: "Web AMC", description: "Ongoing maintenance retainer covering monitoring, security, content updates, and LLM cost management for AI-native sites." } },
+    ],
+  },
 };
 
 const breadcrumbSchema = {

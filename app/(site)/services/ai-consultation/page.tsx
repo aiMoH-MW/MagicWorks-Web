@@ -14,17 +14,36 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://magicworksitsolutions.com/services/ai-consultation#service",
   name: "AI Consultation",
+  alternateName: "AI Strategy Advisory",
+  serviceType: "AI Strategy Advisory",
+  category: "Technology Consulting",
+  description:
+    "Consultation-only AI advisory for founders and operators. MagicWorks audits your processes, designs the AI roadmap, and helps you choose the right vendors. We do not build or deploy AI on your behalf.",
+  url: "https://magicworksitsolutions.com/services/ai-consultation",
   provider: {
     "@type": "Organization",
+    "@id": "https://magicworksitsolutions.com/#organization",
     name: "MagicWorks IT Solutions Pvt. Ltd.",
     url: "https://magicworksitsolutions.com",
   },
-  serviceType: "AI Strategy Advisory",
-  description:
-    "Consultation-only AI advisory. MagicWorks audits your processes, designs the AI roadmap, and helps you choose the right vendors. We do not build or deploy AI on your behalf.",
   areaServed: { "@type": "Country", name: "India" },
-  url: "https://magicworksitsolutions.com/services/ai-consultation",
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Founders, CEOs, COOs, and CXOs at Indian businesses with ₹25 Cr+ revenue in manufacturing or professional services seeking a defensible AI roadmap.",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "AI Consultation Engagement Formats",
+    itemListElement: [
+      { "@type": "Offer", position: 1, itemOffered: { "@type": "Service", name: "AI Literacy Workshop", description: "A 1 to 3 day workshop for leadership teams to build a shared foundation before making AI investment decisions." } },
+      { "@type": "Offer", position: 2, itemOffered: { "@type": "Service", name: "AI Process Audit & Roadmap", description: "A full structured audit of your operations to surface AI opportunities, followed by a prioritised, defensible roadmap." } },
+      { "@type": "Offer", position: 3, itemOffered: { "@type": "Service", name: "Vendor & Build-vs-Buy Sprint", description: "A focused sprint for a single critical AI decision — which vendor to choose, whether to build or buy, and how to evaluate options." } },
+      { "@type": "Offer", position: 4, itemOffered: { "@type": "Service", name: "Embedded AI Advisor", description: "A recurring advisory retainer, available as a follow-on after an audit, providing ongoing senior AI advisory presence." } },
+    ],
+  },
 };
 
 const faqItems = [

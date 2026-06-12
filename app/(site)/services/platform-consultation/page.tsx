@@ -12,10 +12,46 @@ export const metadata: Metadata = {
 const serviceSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://magicworksitsolutions.com/services/platform-consultation#service",
   name: "Marketplace & Platform Consultation",
-  description: "Founder-led advisory for portal and platform builders. Platform strategy, roadmap audits, and targeted advisory sprints.",
-  provider: { "@type": "Organization", name: "MagicWorks IT Solutions Pvt. Ltd.", url: "https://magicworksitsolutions.com" },
-  areaServed: "IN",
+  alternateName: "Platform Strategy Advisory",
+  serviceType: "Platform Consultation",
+  category: "Technology Consulting",
+  description:
+    "Founder-led advisory for portal and platform builders. Independent advice on platform strategy, roadmap design, and build-vs-buy decisions for edtech, B2B trade, and wellness platforms.",
+  url: "https://magicworksitsolutions.com/services/platform-consultation",
+  provider: {
+    "@type": "Organization",
+    "@id": "https://magicworksitsolutions.com/#organization",
+    name: "MagicWorks IT Solutions Pvt. Ltd.",
+    url: "https://magicworksitsolutions.com",
+  },
+  areaServed: { "@type": "Country", name: "India" },
+  audience: {
+    "@type": "Audience",
+    audienceType:
+      "Founders and product leaders in India building edtech platforms, B2B sourcing and trade marketplaces, and wellness and lifestyle platforms.",
+  },
+  hasOfferCatalog: {
+    "@type": "OfferCatalog",
+    name: "Platform Consultation Engagement Formats",
+    itemListElement: [
+      { "@type": "Offer", position: 1, itemOffered: { "@type": "Service", name: "Platform Strategy Workshop", description: "A 1 to 2 day session mapping platform vision, core use case, monetisation model, and first 90 days of execution." } },
+      { "@type": "Offer", position: 2, itemOffered: { "@type": "Service", name: "Platform Roadmap Audit", description: "A structured audit of an existing platform or pre-launch plan surfacing gaps in business model, sequencing, build-vs-buy alignment, and vendor risk." } },
+      { "@type": "Offer", position: 3, itemOffered: { "@type": "Service", name: "Targeted Advisory Sprint", description: "A fixed-scope, fixed-fee engagement for a single critical platform decision: vendor choice, monetisation model, or partner structure." } },
+      { "@type": "Offer", position: 4, itemOffered: { "@type": "Service", name: "Embedded Platform Advisor", description: "A recurring retainer for ongoing senior platform advisory, available as a follow-on after an audit or workshop." } },
+    ],
+  },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "Services", item: "https://magicworksitsolutions.com/services" },
+    { "@type": "ListItem", position: 3, name: "Marketplace & Platform Consultation", item: "https://magicworksitsolutions.com/services/platform-consultation" },
+  ],
 };
 
 const faqSchema = {
@@ -54,6 +90,7 @@ export default function PlatformConsultationPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 relative overflow-hidden">

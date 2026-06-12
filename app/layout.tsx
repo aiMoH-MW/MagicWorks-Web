@@ -55,7 +55,7 @@ const organizationSchema = {
   "@id": "https://magicworksitsolutions.com/#organization",
   name: "MagicWorks IT Solutions Pvt. Ltd.",
   legalName: "MagicWorks IT Solutions Private Limited",
-  alternateName: "MagicWorks",
+  alternateName: ["MagicWorks", "MagicWorks IT Solutions"],
   url: "https://magicworksitsolutions.com",
   logo: {
     "@type": "ImageObject",
@@ -70,36 +70,94 @@ const organizationSchema = {
   numberOfEmployees: { "@type": "QuantitativeValue", value: 20 },
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Pune",
     addressLocality: "Pune",
     addressRegion: "Maharashtra",
     addressCountry: "IN",
+    postalCode: "411001",
   },
-  areaServed: { "@type": "Country", name: "India" },
+  areaServed: [
+    { "@type": "Country", name: "India" },
+    { "@type": "City", name: "Pune" },
+    { "@type": "State", name: "Maharashtra" },
+  ],
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      contactType: "customer enquiries",
+      email: "info@magicworksitsolutions.com",
+      availableLanguage: ["English", "Hindi", "Marathi"],
+    },
+    {
+      "@type": "ContactPoint",
+      contactType: "sales",
+      url: "https://magicworksitsolutions.com/contact",
+      availableLanguage: ["English", "Hindi"],
+    },
+  ],
   knowsAbout: [
     "Digital Marketing",
     "Search Engine Optimisation",
     "Answer Engine Optimisation",
     "Generative Engine Optimisation",
     "Google Ads",
+    "Performance Max",
     "Meta Ads",
+    "LinkedIn Ads",
     "AI Consultation",
     "AI Process Audit",
+    "AI Roadmap",
     "Web Development",
     "Next.js",
+    "Headless CMS",
     "Marketplace Platform Consultation",
+    "Edtech Platform Strategy",
   ],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "MagicWorks Services",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Digital Marketing" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Web Development" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Consultation" } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Marketplace & Platform Consultation" } },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id": "https://magicworksitsolutions.com/services/digital-marketing#service",
+          name: "Digital Marketing",
+          url: "https://magicworksitsolutions.com/services/digital-marketing",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id": "https://magicworksitsolutions.com/services/web-development#service",
+          name: "Web Development",
+          url: "https://magicworksitsolutions.com/services/web-development",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id": "https://magicworksitsolutions.com/services/ai-consultation#service",
+          name: "AI Consultation",
+          url: "https://magicworksitsolutions.com/services/ai-consultation",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          "@id": "https://magicworksitsolutions.com/services/platform-consultation#service",
+          name: "Marketplace & Platform Consultation",
+          url: "https://magicworksitsolutions.com/services/platform-consultation",
+        },
+      },
     ],
   },
   sameAs: [
     "https://linkedin.com/company/magicworks-it-solutions",
+    "https://magicworksitsolutions.com",
   ],
 };
 
