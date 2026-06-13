@@ -60,14 +60,6 @@ const PLAYBOOKS: Playbook[] = [
     ],
   },
   {
-    cat: "dm",
-    catLabel: "Digital Marketing",
-    title: "Digital Marketing Benchmarks 2026",
-    description:
-      "CPL, ROAS, and conversion benchmarks across education, real estate, manufacturing, and professional services, based on MagicWorks campaign data. Sanity-check what your agency tells you.",
-    meta: ["28 pages", "15 min read", "Marketing heads, founders"],
-  },
-  {
     cat: "platform",
     catLabel: "Platform Consultation",
     title: "Platform Strategy Checklist: 22 Decisions Before You Build",
@@ -106,16 +98,34 @@ const PLAYBOOKS: Playbook[] = [
     catLabel: "Manufacturing",
     title: "The Manufacturer's Growth Playbook",
     description:
-      "From referral dependence to predictable inbound, and where AI genuinely fits: the multi-channel motion, plus RFQ-to-quote and proposal automation that actually moves the number.",
-    meta: ["20 pages", "15 min read", "MDs, sales heads"],
+      "Move from referrals to predictable inbound. The channels that actually work for manufacturers, and an honest view of where AI fits. Built for how technical buyers really buy.",
+    meta: ["7 pages", "9 min read", "MDs, founders & sales heads"],
+    href: "/insights/reports/manufacturers-growth-playbook",
+    cta: "Get the playbook",
+    preview: [
+      "From referral-led to a predictable demand engine",
+      "The channels that work for technical, long-cycle buyers",
+      "Where AI pays off: quoting, enquiries, and knowledge",
+      "A 90-day plan to a working demand engine",
+      "Myths and vanity metrics to ignore",
+    ],
   },
   {
     cat: "industry",
     catLabel: "Professional Services",
     title: "AI for Professional Services Firms",
     description:
-      "A partner's guide to confidentiality, process, and ROI: where AI helps across drafting, intake, knowledge, and billing, and how to think about client risk before you start.",
-    meta: ["20 pages", "15 min read", "Partners, firm leaders"],
+      "A partner's guide to confidentiality, process, and ROI. Where AI creates value in a firm, how to handle the risk, and a staged, safe path to adoption. Vendor-neutral.",
+    meta: ["7 pages", "10 min read", "Partners & firm leaders"],
+    href: "/insights/reports/ai-for-professional-services",
+    cta: "Get the guide",
+    preview: [
+      "Where AI gives your experts genuine leverage",
+      "The confidentiality and risk framework partners need",
+      "How to vet a vendor's data handling",
+      "A staged path from internal use to client-facing",
+      "A 90-day plan to a first safe pilot",
+    ],
   },
 ];
 
