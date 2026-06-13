@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
         ].join("\n");
 
         await transport.sendMail({
-          from:        `"MagicWorks Careers" <${process.env.SMTP_USER}>`,
+          from:        `"MagicWorks Careers" <mohan@magicworksitsolutions.com>`,
           to:          HR_EMAIL,
           replyTo:     email,
           subject:     `Application: ${job_title || job_slug} — ${name}`,
