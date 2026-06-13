@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About MagicWorks",
   description:
-    "Founded 2009. AI-first digital marketing agency in Pune. Seventeen years building for ambitious Indian businesses across digital marketing, web development, and AI.",
+    "Founded 2009. AI-first digital marketing agency in Pune. 17 years building for ambitious Indian businesses across digital marketing, web development, and AI.",
   alternates: { canonical: "/about" },
 };
 
@@ -73,10 +73,10 @@ export default function AboutPage() {
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">About</p>
           <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
-            Seventeen years of practice. Evolving with purpose.
+            17 years of practice. Evolving with purpose.
           </h1>
           <p className="about-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5">
-            MagicWorks IT Solutions Pvt. Ltd. is an AI-first digital marketing agency in Pune, India, founded in 2009 and incorporated in 2012 by Swapnil Ughade. Over seventeen years, the firm has helped ambitious Indian businesses turn traffic, leads, and operations into predictable revenue across digital marketing, web development, AI consultation, and platform strategy.
+            MagicWorks IT Solutions Pvt. Ltd. is an AI-first digital marketing agency in Pune, India, founded in 2009 and incorporated in 2012 by Swapnil Ughade. Over 17 years, the firm has helped ambitious Indian businesses turn traffic, leads, and operations into predictable revenue across digital marketing, web development, AI consultation, and platform strategy.
           </p>
         </div>
       </section>
@@ -124,7 +124,7 @@ export default function AboutPage() {
       <section className="bg-[#F7F3EA] py-16 border-b border-[#D8D8DE]">
         <div className="max-w-[1120px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { num: "17+", cap: "Years of practice" },
+            { num: "17", cap: "Years of practice" },
             { num: "2009", cap: "Year founded" },
             { num: "4", cap: "Service pillars" },
             { num: "Pune", cap: "Headquartered" },
@@ -144,7 +144,7 @@ export default function AboutPage() {
             <hr className="gold-rule mb-6" />
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-5">Led by the founder.</h2>
             <p className="text-[16px] text-[#3F3F4A] leading-[1.65] mb-4">
-              MagicWorks IT Solutions was founded and is led by <strong>Swapnil Ughade</strong>, who brings more than seventeen years of experience across digital marketing, web development, and AI strategy for ambitious Indian businesses.
+              MagicWorks IT Solutions was founded and is led by <strong>Swapnil Ughade</strong>, who brings 17 years of experience across digital marketing, web development, and AI strategy for ambitious Indian businesses.
             </p>
             <p className="text-[16px] text-[#3F3F4A] leading-[1.65]">
               The advisory pillars (AI Consultation and Platform Consultation) are founder-led by design. Senior judgment is not delegated to account managers.

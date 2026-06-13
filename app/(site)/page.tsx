@@ -174,7 +174,7 @@ export default function HomePage() {
       <section className="bg-[#F7F3EA] py-16 border-b border-[#D8D8DE]">
         <div className="max-w-[1120px] mx-auto px-8">
           <p className="text-center text-[12px] uppercase tracking-[0.16em] text-[#9A9AA8] mb-8">
-            Seventeen years of practice. Trusted across three priority industries.
+            17+ years of practice. Trusted across three priority industries.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((s) => (
