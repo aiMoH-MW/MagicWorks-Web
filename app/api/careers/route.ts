@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 
-const HR_EMAIL = "careers@magicworksitsolutions.com";
+const HR_EMAIL = "mohan@magicworksitsolutions.com";
 
 function makeTransport() {
   if (!process.env.SMTP_HOST) return null;
