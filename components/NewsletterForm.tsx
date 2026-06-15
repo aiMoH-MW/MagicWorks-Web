@@ -78,41 +78,41 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
   // Footer variant
   return (
     <div className="rounded-2xl border border-[#D4A537]/40 bg-white/5 px-8 py-7">
-      <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-        <div className="sm:flex-1">
+      <div className="flex flex-col lg:flex-row lg:items-center gap-5">
+        <div className="flex-1 min-w-0">
           <p className="text-[#D4A537] text-[11px] uppercase tracking-[0.18em] font-bold mb-1">Stay ahead</p>
-          <p className="text-white text-[18px] font-bold leading-tight mb-1">
-            AI & marketing insights, delivered monthly.
+          <p className="text-white text-[17px] font-bold leading-snug">
+            AI &amp; marketing insights, delivered monthly.
           </p>
-          <p className="text-white/50 text-[12px]">No spam. Unsubscribe anytime.</p>
         </div>
 
         {status === "success" ? (
-          <div className="bg-[#D4A537]/20 border border-[#D4A537]/40 rounded-xl px-5 py-3 text-[#D4A537] text-[13px] font-semibold whitespace-nowrap">
+          <div className="bg-[#D4A537]/20 border border-[#D4A537]/40 rounded-xl px-5 py-3 text-[#D4A537] text-[13px] font-semibold whitespace-nowrap shrink-0">
             You&apos;re subscribed!
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 lg:shrink-0">
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className="w-full sm:w-[220px] bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-[13px] text-white placeholder:text-white/40 focus:outline-none focus:border-[#D4A537] transition-colors"
+              className="w-full sm:w-[240px] bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-[13px] text-white placeholder:text-white/40 focus:outline-none focus:border-[#D4A537] transition-colors"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="w-full sm:w-auto shrink-0 bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-2.5 rounded-full hover:bg-white transition-colors disabled:opacity-60 whitespace-nowrap"
+              className="shrink-0 bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-2.5 rounded-full hover:bg-white transition-colors disabled:opacity-60 whitespace-nowrap"
             >
               {status === "loading" ? "…" : "Subscribe"}
             </button>
           </form>
         )}
       </div>
+      <p className="text-white/40 text-[11px] mt-3">No spam. Unsubscribe anytime.</p>
       {status === "error" && (
-        <p className="text-red-400 text-[12px] mt-2">{errorMsg}</p>
+        <p className="text-red-400 text-[12px] mt-1">{errorMsg}</p>
       )}
     </div>
   );

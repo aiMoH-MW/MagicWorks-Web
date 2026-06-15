@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ContactImage } from "@/components/ContactImage";
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -397,16 +398,19 @@ export default function PrivacyPage() {
               </p>
               <div className="bg-white border border-[#D8D8DE] border-l-4 border-l-[#5B3FBE] rounded-[10px] p-6">
                 <p className="font-semibold text-[15px] text-[#2A1B5C] mb-3">Grievance Officer</p>
-                <div className="space-y-1.5 text-[14px]">
-                  <p><span className="text-[#9A9AA8]">Organisation:</span> MagicWorks IT Solutions Pvt. Ltd.</p>
-                  <p><span className="text-[#9A9AA8]">Address:</span> Pune, Maharashtra, India</p>
-                  <p>
-                    <span className="text-[#9A9AA8]">Email:</span>{" "}
-                    <a href="mailto:legal@magicworksitsolutions.com" className="text-[#5B3FBE] hover:underline">
-                      legal@magicworksitsolutions.com
-                    </a>
+                <div className="space-y-2 text-[14px]">
+                  <p><span className="text-[#9A9AA8]">Name:</span> <span className="text-[#3F3F4A] font-medium">Sudhir Dilip Dixit</span></p>
+                  <p><span className="text-[#9A9AA8]">Organisation:</span> <span className="text-[#3F3F4A]">MagicWorks IT Solutions Pvt. Ltd.</span></p>
+                  <p><span className="text-[#9A9AA8]">Address:</span> <span className="text-[#3F3F4A]">201, Vasant Bahawa, Survey No. 20, Near La Valle Casa, Bavdhan, Pune, Maharashtra, India</span></p>
+                  <p className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[#9A9AA8]">Email:</span>
+                    <ContactImage text="info@magicworksitsolutions.com" href="mailto:info@magicworksitsolutions.com" />
                   </p>
-                  <p><span className="text-[#9A9AA8]">Response time:</span> We will acknowledge your grievance within 48 hours and resolve it within 30 days of receipt, or within the period prescribed by the Data Protection Board of India.</p>
+                  <p className="flex items-center gap-2 flex-wrap">
+                    <span className="text-[#9A9AA8]">Phone:</span>
+                    <ContactImage text="+91 8806430505" href="tel:+918806430505" />
+                  </p>
+                  <p className="text-[#9A9AA8] pt-1">Response time: We will acknowledge your grievance within 48 hours and resolve it within 30 days of receipt, or within the period prescribed by the Data Protection Board of India.</p>
                 </div>
               </div>
               <p>
