@@ -79,7 +79,9 @@ export default function TermsPage() {
                 </a>{" "}
                 (the &ldquo;Website&rdquo;), operated by MagicWorks IT Solutions Pvt. Ltd. (&ldquo;MagicWorks&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;). By accessing or using the Website, you agree to be bound by these Terms, our{" "}
                 <Link href="/privacy" className="text-[#5B3FBE] hover:underline">Privacy Policy</Link>,
-                our Cookie Policy, and our{" "}
+                our{" "}
+                <Link href="/cookies" className="text-[#5B3FBE] hover:underline">Cookie Policy</Link>,
+                and our{" "}
                 <Link href="/disclaimer" className="text-[#5B3FBE] hover:underline">Disclaimer</Link>.
                 If you do not agree, please do not use the Website.
               </p>
@@ -307,7 +309,10 @@ export default function TermsPage() {
             </h2>
             <div className="text-[15px] leading-[1.75]">
               <p>
-                If any provision of these Terms is found unenforceable, the remaining provisions will continue in effect. Our failure to enforce any right is not a waiver of it. These Terms, together with the Privacy Policy, Cookie Policy, and Disclaimer, and any applicable service agreement, constitute the entire agreement between you and us regarding the Website.
+                If any provision of these Terms is found unenforceable, the remaining provisions will continue in effect. Our failure to enforce any right is not a waiver of it. These Terms, together with the{" "}
+                <Link href="/privacy" className="text-[#5B3FBE] hover:underline">Privacy Policy</Link>,{" "}
+                <Link href="/cookies" className="text-[#5B3FBE] hover:underline">Cookie Policy</Link>, and{" "}
+                <Link href="/disclaimer" className="text-[#5B3FBE] hover:underline">Disclaimer</Link>, and any applicable service agreement, constitute the entire agreement between you and us regarding the Website.
               </p>
             </div>
           </div>

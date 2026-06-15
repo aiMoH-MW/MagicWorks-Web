@@ -191,8 +191,16 @@ export default function CookieBanner() {
                 className="text-[#D4A537] underline underline-offset-2 hover:text-white transition-colors"
               >
                 Privacy Policy
-              </Link>{" "}
-              or Cookie Settings in our footer.
+              </Link>
+              {", "}
+              <Link
+                href="/cookies"
+                onClick={() => setVisible(false)}
+                className="text-[#D4A537] underline underline-offset-2 hover:text-white transition-colors"
+              >
+                Cookie Policy
+              </Link>
+              {" "}or Cookie Settings in our footer.
             </p>
           </div>
         </div>
@@ -214,6 +222,10 @@ export default function CookieBanner() {
                 Analytics and marketing cookies help us improve our site and reach the right audience.{" "}
                 <Link href="/privacy" className="text-[#D4A537] underline underline-offset-2 hover:text-white transition-colors">
                   Privacy Policy
+                </Link>
+                {" "}·{" "}
+                <Link href="/cookies" className="text-[#D4A537] underline underline-offset-2 hover:text-white transition-colors">
+                  Cookie Policy
                 </Link>
               </p>
             </div>
