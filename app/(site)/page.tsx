@@ -275,7 +275,7 @@ export default function HomePage() {
               Results that speak plainly.
             </h2>
           </div>
-          <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-12 grid md:grid-cols-[280px_1fr] gap-12 items-center">
+          <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-5 sm:p-12 grid md:grid-cols-[280px_1fr] gap-8 sm:gap-12 items-center">
             <div>
               <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(56px,8vw,84px)] text-[#2A1B5C] leading-[0.95]">
                 75,000+
@@ -294,17 +294,17 @@ export default function HomePage() {
                 30 to 40% below benchmark cost per lead. 4x growth by Year 3.
                 One team, one accountability model, compounding year on year.
               </p>
-              <div className="grid grid-cols-3 gap-4 mb-8">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-8">
                 {[
                   { v: "4x", l: "Growth by Year 3" },
                   { v: "30–40%", l: "Below benchmark CPL" },
                   { v: "1", l: "Accountable team" },
                 ].map((m) => (
-                  <div key={m.v} className="bg-[#F7F3EA] rounded-[10px] p-4 border border-[#D8D8DE]">
-                    <div className="font-[family-name:var(--font-head)] font-bold text-[28px] text-[#2A1B5C]">
+                  <div key={m.v} className="bg-[#F7F3EA] rounded-[10px] p-3 sm:p-4 border border-[#D8D8DE]">
+                    <div className="font-[family-name:var(--font-head)] font-bold text-[20px] sm:text-[28px] text-[#2A1B5C] leading-tight">
                       {m.v}
                     </div>
-                    <p className="text-[13px] text-[#3F3F4A] mt-1">{m.l}</p>
+                    <p className="text-[11px] sm:text-[13px] text-[#3F3F4A] mt-1 leading-tight">{m.l}</p>
                   </div>
                 ))}
               </div>

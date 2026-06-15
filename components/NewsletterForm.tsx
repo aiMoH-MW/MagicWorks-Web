@@ -92,19 +92,19 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
             You&apos;re subscribed!
           </div>
         ) : (
-          <form onSubmit={handleSubmit} className="flex gap-2 sm:w-auto w-full">
+          <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 w-full">
             <input
               type="email"
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@email.com"
-              className="flex-1 sm:w-[220px] bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-[13px] text-white placeholder:text-white/40 focus:outline-none focus:border-[#D4A537] transition-colors"
+              className="w-full sm:w-[220px] bg-white/10 border border-white/20 rounded-full px-5 py-2.5 text-[13px] text-white placeholder:text-white/40 focus:outline-none focus:border-[#D4A537] transition-colors"
             />
             <button
               type="submit"
               disabled={status === "loading"}
-              className="shrink-0 bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-2.5 rounded-full hover:bg-white transition-colors disabled:opacity-60 whitespace-nowrap"
+              className="w-full sm:w-auto shrink-0 bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-2.5 rounded-full hover:bg-white transition-colors disabled:opacity-60 whitespace-nowrap"
             >
               {status === "loading" ? "…" : "Subscribe"}
             </button>
