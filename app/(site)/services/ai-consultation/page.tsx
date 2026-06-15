@@ -343,32 +343,47 @@ export default function AIConsultationPage() {
         </div>
       </section>
 
-      {/* -- 5. BUYER PROFILE ------------------------------------ */}
-      <section className="bg-[#EDE9F7] py-24">
+      {/* -- 5. WHO THIS IS FOR ---------------------------------- */}
+      <section className="bg-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <div className="grid md:grid-cols-[1fr_1.1fr] gap-14 items-start">
-            {/* Left */}
-            <div>
-              <hr className="gold-rule mb-6" />
-              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.2vw,30px)] text-[#2A1B5C] mb-5">
-                This practice is built for senior buyers.
-              </h2>
-              <p className="text-[17px] leading-[1.65] text-[#3F3F4A]">
-                The right buyer is a founder, CEO, COO, or CXO at a business with revenue of
-                ?25&nbsp;Cr or more, who needs a clear AI strategy before committing to any vendor
-                or build.
-              </p>
+          <div className="max-w-[680px] mb-12">
+            <p className="eyebrow text-[#5B3FBE] mb-3">Who this is for</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C]">
+              Best for leaders who want direction, not a sales pitch.
+            </h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">A strong fit</h3>
+              <ul>
+                {[
+                  "A founder, CEO, COO, or CXO who wants honest direction before spending on a build.",
+                  "Willing to invest in getting the strategy right first, then execute with the partner of your choice.",
+                  "Has real processes worth examining, in manufacturing or professional services especially.",
+                  "Open to involving the people who actually run those processes day to day.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[8px] flex-shrink-0 w-[8px] h-[8px] rounded-full bg-[#5B3FBE]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            {/* Right — not-a-fit callout */}
-            <div className="bg-white border border-[#D4A537] rounded-[10px] p-8">
-              <p className="eyebrow text-[#D4A537] mb-3">Not the right fit?</p>
-              <p className="text-[16px] leading-[1.65] text-[#3F3F4A]">
-                If you need someone to build or deploy AI tools, we will point you to{" "}
-                <strong className="text-[#2A1B5C]">MagicFlow AI</strong> or{" "}
-                <strong className="text-[#2A1B5C]">Magic Pipeline</strong>, two products built by
-                the MagicWorks Group.
-              </p>
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#9A9AA8] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">Not a fit</h3>
+              <ul>
+                {[
+                  "Wanting us to build and run the AI for you. That is a separate engagement with a separate brand.",
+                  "Looking for a quick stamp of approval on a decision already made.",
+                  "Expecting a tool recommendation without examining the underlying process.",
+                  "Unwilling to share how the business actually works.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[14px] flex-shrink-0 w-[10px] h-[1.5px] bg-[#9A9AA8]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

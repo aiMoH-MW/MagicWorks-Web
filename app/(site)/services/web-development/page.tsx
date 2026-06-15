@@ -268,6 +268,55 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
+      {/* WHO THIS IS FOR */}
+      <section className="bg-[#F7F3EA] py-24">
+        <div className="max-w-[1120px] mx-auto px-8">
+          <div className="max-w-[680px] mb-12">
+            <p className="eyebrow text-[#5B3FBE] mb-3">Who this is for</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C] mb-3">
+              We build for businesses that are serious about what a website should do.
+            </h2>
+            <p className="text-[16px] text-[#3F3F4A]">
+              The right trigger is a relaunch, a rebrand, or a new business line. Here is where we do our best work, and where we are not the right choice.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">A strong fit</h3>
+              <ul>
+                {[
+                  "A business going through a relaunch, a rebrand, or a new business line, where the old site is no longer fit for purpose.",
+                  "A founder, marketing head, or product leader who cares about performance and enquiry generation, not just aesthetics.",
+                  "Comfortable with a modern stack and willing to provide content, direction, and feedback at each stage.",
+                  "Planning to use the site as a genuine revenue engine, not a brochure that sits untouched for three years.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[8px] flex-shrink-0 w-[8px] h-[8px] rounded-full bg-[#5B3FBE]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#9A9AA8] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">Not a fit</h3>
+              <ul>
+                {[
+                  "Wanting a cheap, fast site. Speed and price at the expense of quality produce a site that performs like one.",
+                  "Looking for someone to execute a finished brief with no questions. We will ask questions.",
+                  "Expecting Google rankings in 30 days from a fresh build.",
+                  "Needing the site to also run the platform or marketplace logic — that sits in Platform Consultation.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[14px] flex-shrink-0 w-[10px] h-[1.5px] bg-[#9A9AA8]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-[#F7F3EA] py-20">
         <div className="max-w-[1120px] mx-auto px-8">

@@ -199,6 +199,55 @@ export default function PlatformConsultationPage() {
         </div>
       </section>
 
+      {/* WHO THIS IS FOR */}
+      <section className="bg-[#F7F3EA] py-24">
+        <div className="max-w-[1120px] mx-auto px-8">
+          <div className="max-w-[680px] mb-12">
+            <p className="eyebrow text-[#5B3FBE] mb-3">Who this is for</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C] mb-3">
+              Built for founders in the earliest decisions.
+            </h2>
+            <p className="text-[16px] text-[#3F3F4A]">
+              The advisory is most useful before or during the build, when the key decisions are still open and reversible. Here is where we are the right choice, and where we are not.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">A strong fit</h3>
+              <ul>
+                {[
+                  "A founder or product leader building a platform and needing honest input before committing to a tech stack or vendor.",
+                  "Pre-launch or early-stage, where the strategy is still open and the key decisions still reversible.",
+                  "Building in edtech, B2B trade, or wellness, or an adjacent sector where platform logic applies.",
+                  "Willing to share the real constraints: budget, timeline, team capability, and existing dependencies.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[8px] flex-shrink-0 w-[8px] h-[8px] rounded-full bg-[#5B3FBE]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#9A9AA8] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">Not a fit</h3>
+              <ul>
+                {[
+                  "Looking for someone to build or manage the platform. That is a separate engagement.",
+                  "Post-build, hoping validation will undo a decision already embedded in code.",
+                  "Expecting a technology shortlist without examining the business model first.",
+                  "Unwilling to slow down long enough to examine whether the model makes sense.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[14px] flex-shrink-0 w-[10px] h-[1.5px] bg-[#9A9AA8]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-[#F7F3EA] py-20">
         <div className="max-w-[1120px] mx-auto px-8">

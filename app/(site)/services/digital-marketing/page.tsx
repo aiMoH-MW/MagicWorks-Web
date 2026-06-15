@@ -416,6 +416,54 @@ export default function DigitalMarketingPage() {
         </div>
       </section>
 
+      {/* WHO THIS IS FOR */}
+      <section className="bg-[#F7F3EA] py-24">
+        <div className="max-w-[1120px] mx-auto px-8">
+          <div className="max-w-[680px] mb-12">
+            <p className="eyebrow text-[#5B3FBE] mb-3">Who this is for</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C] mb-3">
+              We do our best work with a particular kind of client.
+            </h2>
+            <p className="text-[16px] text-[#3F3F4A]">
+              Being clear about fit saves everyone time and leads to better results. Here is where we shine, and where we are not the right choice.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">A strong fit</h3>
+              <ul>
+                {[
+                  "In education, real estate, or manufacturing. We also take selective work in wellness, finance, travel, and recruitment.",
+                  "A team that knows what good looks like, even if the current results do not match.",
+                  "India-first, with Pune, Mumbai, Bangalore, Hyderabad, and Delhi-NCR as our primary catchment.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[8px] flex-shrink-0 w-[8px] h-[8px] rounded-full bg-[#5B3FBE]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#9A9AA8] rounded-[10px] p-8">
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">Not a fit</h3>
+              <ul>
+                {[
+                  "Chasing vanity metrics or expecting monthly miracles.",
+                  "Unwilling to share conversion data, which we need to be accountable.",
+                  "Looking primarily for influencer marketing, PR distribution, or offline media buying.",
+                  "Wanting a vendor to take orders rather than a partner who will ask questions first.",
+                ].map((item) => (
+                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
+                    <span className="mt-[14px] flex-shrink-0 w-[10px] h-[1.5px] bg-[#9A9AA8]" />
+                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-[#EDE9F7] py-20">
         <div className="max-w-[1120px] mx-auto px-8">
