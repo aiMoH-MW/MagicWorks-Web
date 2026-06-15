@@ -316,43 +316,55 @@ export default function DigitalMarketingPage() {
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="max-w-[680px] mb-12">
-            <hr className="gold-rule mb-6" />
-            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#F7F3EA] mb-3">
-              Two honest pricing models.
+            <p className="eyebrow text-[#D4A537] mb-4">How pricing works</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#F7F3EA] mb-4">
+              Two pricing models. No third.
             </h2>
+            <p className="text-[16px] text-[#C8B8FF] leading-[1.6]">
+              Clear from the first conversation. We scope to the channels and goals you actually need, and we index retainers annually rather than springing surprises.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-white/10 border border-white/20 rounded-[10px] p-8">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A537] mb-4">
+
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
+            {/* Standard retainer */}
+            <div className="bg-white rounded-[10px] border-t-[3px] border-t-[#5B3FBE] p-8 flex flex-col">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9A9AA8] mb-3">The default</p>
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#2A1B5C] mb-3">
                 Standard retainer
-              </p>
-              <h3 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#F7F3EA] mb-4">
-                Monthly fee, clearly scoped.
               </h3>
-              <p className="text-[15px] text-[#C8B8FF] leading-[1.6]">
-                For businesses with ad spend under ?5 lakh per month. Scoped
-                monthly fee, indexed annually.
+              <p className="text-[15px] text-[#3F3F4A] leading-[1.65] flex-1">
+                A monthly fee scoped to the services and channels included. The right model for most clients, with the team allocation matched to your goals.
               </p>
+              <div className="border-t border-[#F0F0F6] mt-6 pt-4">
+                <p className="text-[13px] text-[#9A9AA8]">For clients with monthly ad spend under &#8377;5 lakh. Indexed annually.</p>
+              </div>
             </div>
-            <div className="bg-white/10 border border-white/20 rounded-[10px] p-8">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A537] mb-4">
+
+            {/* Commission tier */}
+            <div className="bg-white rounded-[10px] border-t-[3px] border-t-[#D4A537] p-8 flex flex-col">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#9A9AA8] mb-3">For larger ad spends</p>
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#2A1B5C] mb-3">
                 Commission tier
-              </p>
-              <h3 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#F7F3EA] mb-4">
-                Aligned incentives at scale.
               </h3>
-              <p className="text-[15px] text-[#C8B8FF] leading-[1.6]">
-                For confirmed ad spend of ?5 lakh or more per month. Clean
-                attribution, twelve-month commitment required.
+              <p className="text-[15px] text-[#3F3F4A] leading-[1.65] flex-1">
+                A reduced or zero retainer plus a percentage of monthly ad spend or attributed revenue. Our incentives and yours point the same way.
               </p>
+              <div className="border-t border-[#F0F0F6] mt-6 pt-4">
+                <p className="text-[13px] text-[#9A9AA8]">Reserved for confirmed monthly ad spend of &#8377;5 lakh or more, with clean attribution and a 12-month commitment.</p>
+              </div>
             </div>
           </div>
-          <div className="bg-[#D4A537]/15 border border-[#D4A537]/40 rounded-[10px] p-8">
-            <p className="text-[14px] text-[#F7F3EA] leading-[1.65]">
-              <span className="font-bold text-[#D4A537]">Note: </span>
-              The commission tier requires confirmed ad spend of ?5L or more per
-              month and a twelve-month commitment. Final pricing set after
-              discovery call.
+
+          <p className="text-[15px] text-[#C8B8FF] leading-[1.65] mb-8">
+            Two situational models sit alongside these: a{" "}
+            <strong className="text-[#F7F3EA]">Project Boost</strong> fixed fee for a focused 4 to 12 week campaign push (launches, admission cycles, exhibitions), and the{" "}
+            <strong className="text-[#F7F3EA]">Full-Funnel programme</strong>, a premium retainer with a larger team and a quarterly business review.
+          </p>
+
+          <div className="border-l-[4px] border-[#D4A537] pl-7 py-1">
+            <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#D4A537] mb-3">The commission tier rule</p>
+            <p className="text-[15px] text-[#C8B8FF] leading-[1.65]">
+              You qualify for the commission tier only with a sustained monthly ad spend of &#8377;5 lakh or more, clean attribution through GA4 or a CRM, and a twelve-month commitment. Everyone else stays on a straightforward retainer, however persuasive the conversation. We would rather be honest than oversell.
             </p>
           </div>
         </div>

@@ -32,7 +32,7 @@ function loadStoredPrefs(): Prefs | null {
 export default function CookieBanner() {
   const [visible, setVisible] = useState(false);
   const [showPrefs, setShowPrefs] = useState(false);
-  const [prefs, setPrefs] = useState<Prefs>({ analytics: false, marketing: false });
+  const [prefs, setPrefs] = useState<Prefs>({ analytics: true, marketing: true });
 
   useEffect(() => {
     if (!loadStoredPrefs()) {
