@@ -429,7 +429,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* WHO THIS IS FOR */}
-      <section className="bg-[#EDE9F7] pt-16 pb-24">
+      <section className="bg-[#EDE9F7] pt-16 pb-16">
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="max-w-[680px] mb-14">
             <hr className="gold-rule mb-5" />
@@ -487,7 +487,7 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="bg-[#EDE9F7] py-20">
+      <section className="bg-[#F7F3EA] py-20 border-t border-[#D8D8DE]">
         <div className="max-w-[1120px] mx-auto px-8">
           <h2 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-8">
             Common questions
