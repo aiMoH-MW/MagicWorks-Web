@@ -429,45 +429,55 @@ export default function DigitalMarketingPage() {
       </section>
 
       {/* WHO THIS IS FOR */}
-      <section className="bg-[#F7F3EA] py-24">
+      <section className="bg-[#EDE9F7] pt-16 pb-24">
         <div className="max-w-[1120px] mx-auto px-8">
-          <div className="max-w-[680px] mb-12">
-            <p className="eyebrow text-[#5B3FBE] mb-3">Who this is for</p>
-            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C] mb-3">
+          <div className="max-w-[680px] mb-14">
+            <hr className="gold-rule mb-5" />
+            <p className="eyebrow text-[#5B3FBE] mb-4">Who this is for</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,3.6vw,34px)] text-[#2A1B5C] leading-[1.18] mb-3">
               We do our best work with a particular kind of client.
             </h2>
-            <p className="text-[16px] text-[#3F3F4A]">
+            <p className="text-[16px] text-[#3F3F4A] leading-[1.6]">
               Being clear about fit saves everyone time and leads to better results. Here is where we shine, and where we are not the right choice.
             </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-8">
-              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">A strong fit</h3>
-              <ul>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* A strong fit */}
+            <div className="bg-white border border-[#D8D8DE] border-t-[4px] border-t-[#5B3FBE] rounded-[12px] p-10 shadow-[0_2px_20px_rgba(42,27,92,0.07)] hover:shadow-[0_6px_28px_rgba(42,27,92,0.12)] transition-shadow">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-[10px] h-[10px] rounded-full bg-[#5B3FBE] flex-shrink-0" />
+                <h3 className="font-[family-name:var(--font-head)] font-bold text-[21px] text-[#2A1B5C]">A strong fit</h3>
+              </div>
+              <ul className="space-y-0">
                 {[
                   "In education, real estate, or manufacturing. We also take selective work in wellness, finance, travel, and recruitment.",
                   "A team that knows what good looks like, even if the current results do not match.",
                   "India-first, with Pune, Mumbai, Bangalore, Hyderabad, and Delhi-NCR as our primary catchment.",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
-                    <span className="mt-[8px] flex-shrink-0 w-[8px] h-[8px] rounded-full bg-[#5B3FBE]" />
-                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  <li key={item} className="flex items-start gap-4 py-[14px] border-b border-[#EDE9F7] last:border-0 list-none">
+                    <span className="mt-[7px] flex-shrink-0 w-[8px] h-[8px] rounded-full bg-[#5B3FBE]" />
+                    <span className="text-[15px] leading-[1.65] text-[#3F3F4A]">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#9A9AA8] rounded-[10px] p-8">
-              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-5">Not a fit</h3>
-              <ul>
+
+            {/* Not a fit */}
+            <div className="bg-white border border-[#D8D8DE] border-t-[4px] border-t-[#9A9AA8] rounded-[12px] p-10 shadow-[0_2px_20px_rgba(42,27,92,0.07)] hover:shadow-[0_6px_28px_rgba(42,27,92,0.12)] transition-shadow">
+              <div className="flex items-center gap-3 mb-6">
+                <span className="w-[10px] h-[2px] bg-[#9A9AA8] flex-shrink-0" />
+                <h3 className="font-[family-name:var(--font-head)] font-bold text-[21px] text-[#9A9AA8]">Not a fit</h3>
+              </div>
+              <ul className="space-y-0">
                 {[
                   "Chasing vanity metrics or expecting monthly miracles.",
                   "Unwilling to share conversion data, which we need to be accountable.",
                   "Looking primarily for influencer marketing, PR distribution, or offline media buying.",
                   "Wanting a vendor to take orders rather than a partner who will ask questions first.",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
-                    <span className="mt-[14px] flex-shrink-0 w-[10px] h-[1.5px] bg-[#9A9AA8]" />
-                    <span className="text-[15px] text-[#3F3F4A]">{item}</span>
+                  <li key={item} className="flex items-start gap-4 py-[14px] border-b border-[#EDE9F7] last:border-0 list-none">
+                    <span className="mt-[13px] flex-shrink-0 w-[12px] h-[2px] bg-[#9A9AA8]" />
+                    <span className="text-[15px] leading-[1.65] text-[#3F3F4A]">{item}</span>
                   </li>
                 ))}
               </ul>
