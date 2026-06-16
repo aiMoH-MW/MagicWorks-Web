@@ -123,7 +123,7 @@ export default function HomePage() {
       {/* HERO */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-32 pb-24 relative overflow-hidden">
         <svg
-          className="absolute right-[-200px] top-[-160px] w-[760px] h-[760px] pointer-events-none opacity-70"
+          className="absolute right-[-200px] top-[-160px] w-[760px] h-[760px] pointer-events-none opacity-70 hidden sm:block"
           aria-hidden="true"
         >
           {[120, 200, 280, 360, 440].map((r, i) => (
@@ -362,7 +362,7 @@ export default function HomePage() {
       {/* FINAL CTA */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] text-center py-24 relative overflow-hidden">
         <svg
-          className="absolute left-1/2 -translate-x-1/2 bottom-[-360px] w-[680px] h-[680px] pointer-events-none opacity-70"
+          className="absolute left-1/2 -translate-x-1/2 bottom-[-360px] w-[680px] h-[680px] pointer-events-none opacity-70 hidden sm:block"
           aria-hidden="true"
         >
           {[120, 200, 280, 360].map((r, i) => (

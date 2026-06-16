@@ -109,6 +109,8 @@ export default function Footer() {
                 height={132}
                 className="h-36 w-auto object-contain"
                 style={{ mixBlendMode: "screen" }}
+                sizes="220px"
+                loading="lazy"
               />
             </Link>
             <p className="text-white/80 text-[13px] leading-[1.7] mb-5">
