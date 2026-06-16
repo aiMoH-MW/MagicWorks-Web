@@ -46,9 +46,9 @@ export async function POST(req: NextRequest) {
       `${BASE}/work`,
       `${BASE}/about`,
       `${BASE}/contact`,
-      ...insights.flatMap((s) => urlsForDocument("insight", s.slug)),
-      ...caseStudies.flatMap((s) => urlsForDocument("caseStudy", s.slug.current)),
-      ...jobs.flatMap((j) => urlsForDocument("jobOpening", j.slug.current)),
+      ...insights.flatMap((s: { slug: string }) => urlsForDocument("insight", s.slug)),
+      ...caseStudies.flatMap((s: { slug: { current: string } }) => urlsForDocument("caseStudy", s.slug.current)),
+      ...jobs.flatMap((j: { slug: { current: string } }) => urlsForDocument("jobOpening", j.slug.current)),
     ];
 
     const result = await submitToIndexNow(urls);
