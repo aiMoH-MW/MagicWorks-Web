@@ -44,7 +44,7 @@ export default function Nav() {
       <nav className="max-w-[1120px] mx-auto px-8 py-[14px] flex items-center justify-between">
         {/* Brand */}
         <Link href="/" className="flex items-end gap-2 no-underline">
-          <Image src="/logo-header.png" alt="MagicWorks IT Solutions" width={220} height={60} className="h-14 w-auto object-contain" priority />
+          <Image src="/logo-header.png" alt="MagicWorks IT Solutions" width={220} height={60} className="h-14 w-auto object-contain" priority sizes="220px" />
           {Date.now() < Date.UTC(2026, 5, 16, 18, 30, 0) && (
             <span className="mb-1 bg-[#2A1B5C] text-[#D4A537] font-bold text-[10px] uppercase tracking-[0.1em] px-2 py-[3px] rounded-full border border-[#D4A537]/40">
               Beta
