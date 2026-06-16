@@ -19,7 +19,6 @@ const sourceSerif4 = Source_Serif_4({
   subsets: ["latin"],
   display: "swap",
   axes: ["opsz"],
-  weight: ["400", "600", "700"],
   style: ["normal", "italic"],
 });
 
