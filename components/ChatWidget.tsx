@@ -2,12 +2,11 @@
 import Script from "next/script";
 import { usePathname } from "next/navigation";
 
-// Only active on /chatbot-test for now — remove this guard to roll out site-wide
-const ENABLED_PATHS = ["/chatbot-test"];
+const EXCLUDED_PATHS = ["/studio", "/admin"];
 
 export default function ChatWidget() {
   const pathname = usePathname();
-  if (!ENABLED_PATHS.includes(pathname)) return null;
+  if (EXCLUDED_PATHS.some((p) => pathname.startsWith(p))) return null;
 
   return (
     <Script
