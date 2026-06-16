@@ -105,11 +105,11 @@ export default function Footer() {
               <Image
                 src="/logo-footer.webp"
                 alt="MagicWorks IT Solutions"
-                width={331}
-                height={288}
+                width={220}
+                height={132}
                 className="h-36 w-auto object-contain"
                 style={{ mixBlendMode: "screen" }}
-                sizes="180px"
+                sizes="220px"
                 loading="lazy"
               />
             </Link>
