@@ -103,13 +103,13 @@ export default function Footer() {
           <div className="lg:w-[260px] lg:shrink-0 lg:border-r lg:border-white/10 lg:pr-8">
             <Link href="/" className="inline-block mb-1 no-underline">
               <Image
-                src="/logo-footer.png"
+                src="/logo-footer.webp"
                 alt="MagicWorks IT Solutions"
-                width={220}
-                height={132}
+                width={331}
+                height={288}
                 className="h-36 w-auto object-contain"
                 style={{ mixBlendMode: "screen" }}
-                sizes="220px"
+                sizes="180px"
                 loading="lazy"
               />
             </Link>

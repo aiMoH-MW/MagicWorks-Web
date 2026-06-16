@@ -18,8 +18,7 @@ const sourceSerif4 = Source_Serif_4({
   variable: "--font-head",
   subsets: ["latin"],
   display: "swap",
-  axes: ["opsz"],
-  style: ["normal", "italic"],
+  weight: ["400", "600", "700"],
 });
 
 export const metadata: Metadata = {
