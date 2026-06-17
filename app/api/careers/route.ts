@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { supabase } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 
-const HR_EMAIL = "mohan@magicworksitsolutions.com";
+const HR_EMAIL = "careers@magicworksitsolutions.com";
 
 function makeTransport() {
   if (!process.env.SMTP_HOST) return null;
@@ -76,7 +76,7 @@ export async function POST(req: NextRequest) {
         ].join("\n");
 
         await transport.sendMail({
-          from:        `"MagicWorks Careers" <mohan@magicworksitsolutions.com>`,
+          from:        `"MagicWorks Careers" <careers@magicworksitsolutions.com>`,
           to:          HR_EMAIL,
           replyTo:     email,
           subject:     `Application: ${job_title || job_slug} — ${name}`,
