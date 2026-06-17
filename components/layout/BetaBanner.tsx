@@ -2,8 +2,8 @@
 
 import { useEffect, useState } from "react";
 
-// 17 June 2026 00:00:00 IST = 16 June 2026 18:30:00 UTC
-const LAUNCH_UTC = Date.UTC(2026, 5, 16, 18, 30, 0);
+// 17 June 2026 11:00:00 IST = 17 June 2026 05:30:00 UTC
+const LAUNCH_UTC = Date.UTC(2026, 5, 17, 5, 30, 0);
 
 export default function BetaBanner() {
   const [visible, setVisible] = useState(false);
