@@ -114,7 +114,7 @@ export default function AdminPage() {
   const whitepaperCols  = ["created_at", "email", "whitepaper"];
   const playbookCols    = ["created_at", "name", "email", "company", "message", "source_page"];
   const leadsCols       = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
-  const careersCols     = ["created_at", "job_title", "name", "email", "phone", "linkedin_url", "portfolio_url", "cover_letter"];
+  const careersCols     = ["created_at", "job_title", "name", "email", "phone", "linkedin_url", "portfolio_url", "resume_url", "cover_letter"];
   const cols =
     tab === "playbooks"                        ? playbookCols
     : tab === "leads" || tab === "consultation" ? leadsCols
@@ -266,10 +266,16 @@ export default function AdminPage() {
                             : (val as string) ?? "—";
                           const isWrap = c === "message" || c === "source_page" || c === "cover_letter";
                           const isLink = c === "linkedin_url" || c === "portfolio_url";
+                          const isResume = c === "resume_url";
                           return (
                             <td key={c} className={`px-5 py-3 align-top text-white/70 ${isWrap ? "max-w-[260px] whitespace-pre-wrap break-words text-[12px] leading-[1.6]" : "max-w-[180px] truncate"}`}>
                               {c === "email" ? (
                                 <a href={`mailto:${display}`} className="text-[#D4A537] hover:underline">{display}</a>
+                              ) : isResume && display !== "—" ? (
+                                <a href={display} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#D4A537] hover:underline text-[12px] font-medium">
+                                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                  Download
+                                </a>
                               ) : isLink && display !== "—" ? (
                                 <a href={display.startsWith("http") ? display : `https://${display}`} target="_blank" rel="noopener noreferrer" className="text-[#C8B8FF] hover:underline text-[12px]">{display}</a>
                               ) : c === "source" || c === "pillar" || c === "job_title" ? (

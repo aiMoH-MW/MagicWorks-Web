@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { supabase, createServiceClient } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 
 const HR_EMAIL = "careers@magicworksitsolutions.com";
+const RESUME_BUCKET = "resumes";
 
 function makeTransport() {
   if (!process.env.SMTP_HOST) return null;
@@ -15,6 +16,32 @@ function makeTransport() {
       pass: process.env.SMTP_PASS,
     },
   });
+}
+
+async function uploadResume(
+  file: File,
+  jobSlug: string,
+  applicantName: string,
+): Promise<string | null> {
+  try {
+    const ext      = file.name.split(".").pop() ?? "pdf";
+    const safeName = applicantName.toLowerCase().replace(/[^a-z0-9]/g, "-").slice(0, 40);
+    const path     = `${jobSlug}/${Date.now()}-${safeName}.${ext}`;
+    const buf      = Buffer.from(await file.arrayBuffer());
+
+    const svc = createServiceClient();
+    const { error } = await svc.storage.from(RESUME_BUCKET).upload(path, buf, {
+      contentType: file.type || "application/pdf",
+      upsert: false,
+    });
+    if (error) { console.error("[careers/route] storage upload:", error); return null; }
+
+    const { data } = svc.storage.from(RESUME_BUCKET).getPublicUrl(path);
+    return data.publicUrl ?? null;
+  } catch (e) {
+    console.error("[careers/route] uploadResume:", e);
+    return null;
+  }
 }
 
 export async function POST(req: NextRequest) {
@@ -35,6 +62,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name, email, and job are required" }, { status: 400 });
     }
 
+    // ── Upload resume to Supabase Storage ─────────────────────────────────────
+    const resume_url = resumeFile ? await uploadResume(resumeFile, job_slug, name) : null;
+
     // ── Supabase insert ───────────────────────────────────────────────────────
     const { error: dbError } = await supabase.from("career_applications").insert({
       job_slug,
@@ -45,6 +75,7 @@ export async function POST(req: NextRequest) {
       linkedin_url:  linkedin_url  || null,
       portfolio_url: portfolio_url || null,
       cover_letter:  cover_letter  || null,
+      resume_url:    resume_url    || null,
     });
 
     if (dbError) throw dbError;
@@ -53,10 +84,16 @@ export async function POST(req: NextRequest) {
     try {
       const transport = makeTransport();
       if (transport) {
+        // Re-read file buffer for email attachment (file stream already consumed above,
+        // so use the stored URL instead when available; attach file only as fallback)
         const attachments: { filename: string; content: Buffer }[] = [];
         if (resumeFile) {
-          const buf = Buffer.from(await resumeFile.arrayBuffer());
-          attachments.push({ filename: resumeFile.name, content: buf });
+          try {
+            const buf = Buffer.from(await resumeFile.arrayBuffer());
+            attachments.push({ filename: resumeFile.name, content: buf });
+          } catch {
+            // arrayBuffer already consumed — resume_url in email body is sufficient
+          }
         }
 
         const body = [
@@ -72,11 +109,15 @@ export async function POST(req: NextRequest) {
           "Cover letter / note:",
           cover_letter || "—",
           "",
-          resumeFile ? `Resume attached: ${resumeFile.name}` : "No resume uploaded.",
+          resume_url
+            ? `Resume: ${resume_url}`
+            : resumeFile
+              ? `Resume attached: ${resumeFile.name}`
+              : "No resume uploaded.",
         ].join("\n");
 
         await transport.sendMail({
-          from:        `"MagicWorks Careers" <careers@magicworksitsolutions.com>`,
+          from:        `"MagicWorks Careers" <${HR_EMAIL}>`,
           to:          HR_EMAIL,
           replyTo:     email,
           subject:     `Application: ${job_title || job_slug} — ${name}`,
@@ -85,7 +126,6 @@ export async function POST(req: NextRequest) {
         });
       }
     } catch (mailErr) {
-      // Email failure must not block the submission
       console.error("[careers/route] email failed:", mailErr);
     }
 
