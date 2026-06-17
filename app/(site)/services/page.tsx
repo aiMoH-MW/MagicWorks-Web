@@ -12,7 +12,7 @@ const pillars = [
   {
     num: "01", type: "delivery", label: "Delivery",
     title: "Digital Marketing",
-    body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer, with a commission tier for confirmed ad spend of ?5L or more.",
+    body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer, with a commission tier for confirmed ad spend of INR 5L or more.",
     href: "/services/digital-marketing",
   },
   {
