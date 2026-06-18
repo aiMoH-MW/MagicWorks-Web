@@ -11,16 +11,16 @@ export const metadata: Metadata = {
 const pillars = [
   {
     num: "01",
-    type: "delivery",
-    label: "Delivery",
+    type: "execution",
+    label: "Execution",
     title: "Digital Marketing",
     body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer, with a commission tier for larger ad spends.",
     href: "/services/digital-marketing",
   },
   {
     num: "02",
-    type: "delivery",
-    label: "Delivery",
+    type: "execution",
+    label: "Execution",
     title: "Web Development",
     body: "AI-native websites that compound brand and conversion. Built on Next.js to generate enquiries, not just to look good. Our default since June 2026.",
     href: "/services/web-development",
@@ -210,14 +210,14 @@ export default function HomePage() {
               <div
                 key={p.num}
                 className={`bg-white border border-[#D8D8DE] rounded-[10px] p-8 relative transition-all hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)] ${
-                  p.type === "delivery"
+                  p.type === "execution"
                     ? "border-t-[3px] border-t-[#5B3FBE]"
                     : "border-t-[3px] border-t-[#D4A537]"
                 }`}
               >
                 <span
                   className={`absolute top-8 right-8 text-[10px] font-bold uppercase tracking-[0.12em] ${
-                    p.type === "delivery" ? "text-[#5B3FBE]" : "text-[#9a7b1f]"
+                    p.type === "execution" ? "text-[#5B3FBE]" : "text-[#9a7b1f]"
                   }`}
                 >
                   {p.label}
