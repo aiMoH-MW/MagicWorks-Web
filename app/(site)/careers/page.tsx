@@ -55,6 +55,15 @@ const perks = [
     title: "Purpose-driven culture",
     body: "We're building long-term, not chasing exits. Every team member understands why the work matters and has a voice in how we do it.",
   },
+  {
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
+      </svg>
+    ),
+    title: "Impact you can see",
+    body: "Your work won't disappear into a backlog. You'll see how your ideas improve client outcomes, automate real workflows, and help businesses move faster.",
+  },
 ];
 
 
