@@ -61,8 +61,8 @@ export default function ServicesPage() {
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="grid md:grid-cols-2 gap-8">
             {pillars.map((p) => (
-              <div key={p.num} className={`bg-white border border-[#D8D8DE] rounded-[10px] p-10 relative transition-all hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)] ${p.type === "delivery" ? "border-t-[3px] border-t-[#5B3FBE]" : "border-t-[3px] border-t-[#D4A537]"}`}>
-                <span className={`absolute top-8 right-8 text-[10px] font-bold uppercase tracking-[0.12em] ${p.type === "delivery" ? "text-[#5B3FBE]" : "text-[#9a7b1f]"}`}>{p.label}</span>
+              <div key={p.num} className={`bg-white border border-[#D8D8DE] rounded-[10px] p-10 relative transition-all hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)] ${p.type === "execution" ? "border-t-[3px] border-t-[#5B3FBE]" : "border-t-[3px] border-t-[#D4A537]"}`}>
+                <span className={`absolute top-8 right-8 text-[10px] font-bold uppercase tracking-[0.12em] ${p.type === "execution" ? "text-[#5B3FBE]" : "text-[#9a7b1f]"}`}>{p.label}</span>
                 <p className="font-[family-name:var(--font-head)] font-bold text-[14px] text-[#9A9AA8] tracking-[0.1em]">{p.num}</p>
                 <h2 className="font-[family-name:var(--font-head)] font-bold text-[24px] text-[#2A1B5C] mt-1 mb-4">{p.title}</h2>
                 <p className="text-[16px] text-[#3F3F4A] mb-8">{p.body}</p>
