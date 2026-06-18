@@ -115,8 +115,8 @@ export async function getCaseStudyBySlug(slug: string) {
 
 export async function getActiveJobOpenings() {
   return client.fetch(
-    `*[_type == "jobOpening" && status == "active"] | order(postedAt desc) {
-      _id, title, slug, department, location, type, experience, summary, postedAt
+    `*[_type == "jobOpening" && status == "active"] | order(type asc, postedAt desc) {
+      _id, title, slug, department, area, location, type, experience, salary, summary, postedAt
     }`
   );
 }
@@ -124,8 +124,9 @@ export async function getActiveJobOpenings() {
 export async function getJobOpeningBySlug(slug: string) {
   return client.fetch(
     `*[_type == "jobOpening" && slug.current == $slug][0] {
-      _id, title, slug, department, location, type, experience,
-      summary, responsibilities, requirements, niceToHave, status, postedAt
+      _id, title, subtitle, slug, department, area, location, type, experience,
+      salary, qualification, mandatory, summary, responsibilities, requirements,
+      niceToHave, closing, status, postedAt
     }`,
     { slug }
   );

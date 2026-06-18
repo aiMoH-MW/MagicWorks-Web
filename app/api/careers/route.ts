@@ -22,7 +22,7 @@ async function uploadResume(
   file: File,
   jobSlug: string,
   applicantName: string,
-): Promise<string | null> {
+): Promise<{ path: string; buf: Buffer } | null> {
   try {
     const ext      = file.name.split(".").pop() ?? "pdf";
     const safeName = applicantName.toLowerCase().replace(/[^a-z0-9]/g, "-").slice(0, 40);
@@ -36,8 +36,7 @@ async function uploadResume(
     });
     if (error) { console.error("[careers/route] storage upload:", error); return null; }
 
-    const { data } = svc.storage.from(RESUME_BUCKET).getPublicUrl(path);
-    return data.publicUrl ?? null;
+    return { path, buf };
   } catch (e) {
     console.error("[careers/route] uploadResume:", e);
     return null;
@@ -63,7 +62,17 @@ export async function POST(req: NextRequest) {
     }
 
     // ── Upload resume to Supabase Storage ─────────────────────────────────────
-    const resume_url = resumeFile ? await uploadResume(resumeFile, job_slug, name) : null;
+    const uploaded = resumeFile ? await uploadResume(resumeFile, job_slug, name) : null;
+    const resume_path = uploaded?.path ?? null;
+
+    // Generate a 7-day signed URL for the email body (works even for private buckets)
+    let resume_signed_url: string | null = null;
+    if (resume_path) {
+      const { data: signed } = await createServiceClient()
+        .storage.from(RESUME_BUCKET)
+        .createSignedUrl(resume_path, 7 * 24 * 3600);
+      resume_signed_url = signed?.signedUrl ?? null;
+    }
 
     // ── Supabase insert ───────────────────────────────────────────────────────
     const { error: dbError } = await supabase.from("career_applications").insert({
@@ -75,7 +84,7 @@ export async function POST(req: NextRequest) {
       linkedin_url:  linkedin_url  || null,
       portfolio_url: portfolio_url || null,
       cover_letter:  cover_letter  || null,
-      resume_url:    resume_url    || null,
+      resume_url:    resume_path   || null,   // store path, not public URL
     });
 
     if (dbError) throw dbError;
@@ -84,16 +93,9 @@ export async function POST(req: NextRequest) {
     try {
       const transport = makeTransport();
       if (transport) {
-        // Re-read file buffer for email attachment (file stream already consumed above,
-        // so use the stored URL instead when available; attach file only as fallback)
         const attachments: { filename: string; content: Buffer }[] = [];
-        if (resumeFile) {
-          try {
-            const buf = Buffer.from(await resumeFile.arrayBuffer());
-            attachments.push({ filename: resumeFile.name, content: buf });
-          } catch {
-            // arrayBuffer already consumed — resume_url in email body is sufficient
-          }
+        if (uploaded?.buf) {
+          attachments.push({ filename: resumeFile!.name, content: uploaded.buf });
         }
 
         const body = [
@@ -109,10 +111,10 @@ export async function POST(req: NextRequest) {
           "Cover letter / note:",
           cover_letter || "—",
           "",
-          resume_url
-            ? `Resume: ${resume_url}`
-            : resumeFile
-              ? `Resume attached: ${resumeFile.name}`
+          resume_signed_url
+            ? `Resume download (valid 7 days): ${resume_signed_url}`
+            : uploaded
+              ? `Resume: attached to this email (${resumeFile!.name})`
               : "No resume uploaded.",
         ].join("\n");
 

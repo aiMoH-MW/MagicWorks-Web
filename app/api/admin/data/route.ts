@@ -78,7 +78,22 @@ export async function GET(req: NextRequest) {
         from, to, asc
       );
       if (error) throw error;
-      return NextResponse.json({ data });
+
+      // Generate 1-hour signed URLs so resume downloads work regardless of bucket visibility
+      const rows = await Promise.all(
+        (data ?? []).map(async (row: Record<string, unknown>) => {
+          const rawPath = row.resume_url as string | null;
+          if (!rawPath) return row;
+          // Handle both stored paths ("job-slug/file.pdf") and legacy full URLs
+          const path = rawPath.startsWith("http")
+            ? rawPath.split("/resumes/")[1] ?? rawPath
+            : rawPath;
+          const { data: signed } = await client.storage.from("resumes").createSignedUrl(path, 3600);
+          return { ...row, resume_url: signed?.signedUrl ?? null };
+        })
+      );
+
+      return NextResponse.json({ data: rows });
     }
 
     return NextResponse.json({ data: [] });

@@ -19,6 +19,12 @@ export const jobOpening = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: "subtitle",
+      title: "Role Subtitle",
+      type: "string",
+      description: 'Shown below the title in the hero. E.g. "Google Ads & Meta Ads"',
+    }),
+    defineField({
       name: "department",
       title: "Department",
       type: "string",
@@ -32,6 +38,12 @@ export const jobOpening = defineType({
           { title: "Sales", value: "sales" },
         ],
       },
+    }),
+    defineField({
+      name: "area",
+      title: "Sub-category / Specialisation",
+      type: "string",
+      description: 'Shown after dept label. E.g. "Paid Media", "Leadership", "AI Product (MagicFlow AI)"',
     }),
     defineField({
       name: "location",
@@ -59,6 +71,24 @@ export const jobOpening = defineType({
       type: "string",
     }),
     defineField({
+      name: "salary",
+      title: "Salary / Stipend Range",
+      type: "string",
+      description: 'E.g. "₹2.50 to 3.60 LPA" or "Performance-based stipend"',
+    }),
+    defineField({
+      name: "qualification",
+      title: "Qualification",
+      type: "string",
+      description: 'E.g. "B.Comm / M.Comm / B.E."',
+    }),
+    defineField({
+      name: "mandatory",
+      title: "Mandatory Requirement (callout)",
+      type: "string",
+      description: 'Highlighted callout. E.g. "Must have prior agency experience."',
+    }),
+    defineField({
       name: "summary",
       title: "Role Summary",
       type: "text",
@@ -82,6 +112,13 @@ export const jobOpening = defineType({
       title: "Nice to Have",
       type: "array",
       of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "closing",
+      title: "Closing Note",
+      type: "text",
+      rows: 2,
+      description: "Short note shown at the bottom of the job description.",
     }),
     defineField({
       name: "status",
