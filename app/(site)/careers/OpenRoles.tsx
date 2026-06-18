@@ -44,6 +44,13 @@ const FULL_TIME = [
     subtitle: "Full Stack: React, Node.js & AI-Assisted",
     meta: { location: "Pune", type: "Full-time", experience: "2 to 3 years", salary: "Competitive" },
   },
+  {
+    slug: "nextjs-developer",
+    dept: "Web Engineering · Technology",
+    title: "Next.js Developer",
+    subtitle: "Next.js, React.js & AI-Assisted",
+    meta: { location: "Pune", type: "Full-time", experience: "2–3 years", salary: "Competitive" },
+  },
 ];
 
 const INTERNSHIPS = [
@@ -107,20 +114,20 @@ function RoleCard({ role }: { role: Role }) {
 export default function OpenRoles() {
   return (
     <div>
-      {/* Full-time positions */}
-      <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
-        Full-time positions
-      </p>
-      <div className="flex flex-col gap-4 mb-10">
-        {FULL_TIME.map((role) => <RoleCard key={role.slug} role={role} />)}
-      </div>
-
       {/* Internships */}
       <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
         Internships
       </p>
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mb-10">
         {INTERNSHIPS.map((role) => <RoleCard key={role.slug} role={role} />)}
+      </div>
+
+      {/* Full-time positions */}
+      <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
+        Full-time positions
+      </p>
+      <div className="flex flex-col gap-4">
+        {FULL_TIME.map((role) => <RoleCard key={role.slug} role={role} />)}
       </div>
     </div>
   );

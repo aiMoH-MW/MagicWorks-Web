@@ -174,24 +174,24 @@ export default async function CareersPage() {
             </div>
           ) : (
             <>
-              {fullTimeJobs.length > 0 && (
-                <div className="mb-10">
-                  <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
-                    Full-time positions
-                  </p>
-                  <div className="flex flex-col gap-4">
-                    {fullTimeJobs.map(job => <RoleCard key={job._id} job={job} />)}
-                  </div>
-                </div>
-              )}
-
               {internJobs.length > 0 && (
-                <div>
+                <div className="mb-10">
                   <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
                     Internships
                   </p>
                   <div className="flex flex-col gap-4">
                     {internJobs.map(job => <RoleCard key={job._id} job={job} />)}
+                  </div>
+                </div>
+              )}
+
+              {fullTimeJobs.length > 0 && (
+                <div>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
+                    Full-time positions
+                  </p>
+                  <div className="flex flex-col gap-4">
+                    {fullTimeJobs.map(job => <RoleCard key={job._id} job={job} />)}
                   </div>
                 </div>
               )}
