@@ -79,12 +79,12 @@ export default function CareersPage() {
         </svg>
 
         <div className="max-w-[1120px] mx-auto px-8 relative">
-          <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-4">Careers at MagicWorks</p>
+          <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-4">Careers · Pune, India</p>
           <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4vw,48px)] leading-[1.12] text-[#F7F3EA] max-w-[780px] mb-6">
-            Build AI-first marketing with a team that gives a damn.
+            Build what is next. Join MagicWorks.
           </h1>
-          <p className="text-[18px] text-[#C8B8FF] max-w-[520px] leading-[1.65] mb-10">
-            We&apos;re a small, ambitious team in Pune working on real problems, not demo projects. If you want to grow fast and own meaningful work, read on.
+          <p className="text-[18px] text-[#C8B8FF] max-w-[560px] leading-[1.65] mb-10">
+            We are an AI-first digital marketing agency with 17+ years of experience, 30+ experts, and a 98% client satisfaction rate. We are growing, and looking for sharp, driven people to grow with us.
           </p>
           <div className="flex flex-wrap gap-4">
             <a
