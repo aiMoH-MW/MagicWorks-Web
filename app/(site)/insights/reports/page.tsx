@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import Link from "next/link";
@@ -236,7 +236,7 @@ export default function InsightsReportsPage() {
   return (
     <>
       {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] pt-20 pb-16 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         {/* Rings — right */}
         <svg
           className="absolute right-[-180px] top-[-140px] w-[600px] h-[600px] pointer-events-none"

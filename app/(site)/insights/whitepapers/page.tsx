@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -52,7 +52,7 @@ export default function WhitepapersPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-100px] top-[-80px] w-[400px] h-[400px] pointer-events-none opacity-40" aria-hidden="true">
           {[80, 140, 200].map((r, i) => (
             <circle key={r} cx="200" cy="200" r={r} fill="none" stroke={i === 1 ? "#D4A537" : "#7C63D8"} strokeWidth="1.5" opacity={i === 1 ? 0.7 : 0.45} />

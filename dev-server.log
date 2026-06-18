@@ -1,0 +1,37 @@
+﻿
+> magicworks-web@0.1.0 dev
+> next dev
+
+Γû▓ Next.js 16.2.7 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.1.5:3000
+- Environments: .env.local
+Γ£ô Ready in 566ms
+
+ GET / 200 in 951ms (next.js: 254ms, application-code: 697ms)
+node.exe : [browser] [Meta pixel] 937248196349622 is unavailable on this website due to it's traffic permission 
+settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. 
+(file://C:/Users/sudhi/MagicWorks 
+Web/magicworks-web/.next/dev/static/chunks/node_modules_next_dist_1ybzpk2._.js:2477:13)
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" "C:\Program Files\nodejs/node_mo ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ([browser] [Meta...2._.js:2477:13):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(node:5928) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+ GET /work 200 in 659ms (next.js: 82ms, application-code: 577ms)
+ GET /services/digital-marketing 200 in 105ms (next.js: 41ms, application-code: 63ms)
+Γ£ô Compiled in 150ms
+ GET /services/digital-marketing 200 in 239ms (next.js: 48ms, application-code: 191ms)
+ GET /services/digital-marketing 200 in 85ms (next.js: 4ms, application-code: 80ms)
+ GET / 200 in 105ms (next.js: 56ms, application-code: 48ms)
+Γ£ô Compiled in 158ms
+ GET / 200 in 274ms (next.js: 71ms, application-code: 204ms)
+ GET / 200 in 116ms (next.js: 6ms, application-code: 111ms)
+Γ£ô Compiled in 173ms
+ GET / 200 in 217ms (next.js: 61ms, application-code: 156ms)
+ GET / 200 in 83ms (next.js: 5ms, application-code: 78ms)
+ GET / 200 in 44ms (next.js: 4ms, application-code: 40ms)
+^C

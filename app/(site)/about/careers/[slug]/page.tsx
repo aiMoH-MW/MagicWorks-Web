@@ -76,7 +76,7 @@ export default async function JobOpeningPage({ params }: Props) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-200px] top-[-150px] w-[680px] h-[680px] pointer-events-none opacity-60" aria-hidden="true">
           {[330, 250, 170, 90].map((r, i) => (
             <circle key={r} cx="340" cy="340" r={r} fill="none" stroke={i === 2 ? "#D4A537" : "#7C63D8"} strokeWidth="1.5" opacity={i === 2 ? 0.7 : 0.45} />

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllCaseStudies } from "@/sanity/queries";
 import WorkClient from "./WorkClient";
@@ -35,7 +35,7 @@ export default async function WorkPage() {
   return (
     <>
       {/* ── HERO ───────────────────────────────────────────────────── */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] pt-24 pb-20 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         {/* Decorative rings */}
         <svg
           className="absolute right-[-80px] top-[-60px] w-[420px] h-[420px] pointer-events-none"

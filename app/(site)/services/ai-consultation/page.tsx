@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import AIConsultationForm from "./AIConsultationForm";
 
@@ -86,7 +86,7 @@ export default function AIConsultationPage() {
       />
 
       {/* -- 1. HERO -- */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[500px] relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg
           className="absolute right-[-220px] top-[-180px] w-[800px] h-[800px] pointer-events-none opacity-70"
           aria-hidden="true"
@@ -169,7 +169,7 @@ export default function AIConsultationPage() {
       </section>
 
       {/* -- 3. BOUNDARY -- */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-24 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg
           className="absolute left-[-180px] bottom-[-220px] w-[640px] h-[640px] pointer-events-none opacity-70"
           aria-hidden="true"

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllInsights } from "@/sanity/queries";
@@ -27,7 +27,7 @@ export default async function InsightsPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg
           className="absolute right-[-100px] top-[-80px] w-[400px] h-[400px] pointer-events-none opacity-50"
           aria-hidden="true"

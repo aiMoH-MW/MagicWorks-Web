@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -121,7 +121,7 @@ export default function HomePage() {
       />
 
       {/* HERO */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-32 pb-24 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg
           className="absolute right-[-200px] top-[-160px] w-[760px] h-[760px] pointer-events-none opacity-70 hidden sm:block"
           aria-hidden="true"

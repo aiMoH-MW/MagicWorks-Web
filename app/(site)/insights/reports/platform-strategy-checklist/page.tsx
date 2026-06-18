@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import GateForm from "./_GateForm";
 
@@ -155,7 +155,7 @@ export default function PlatformStrategyChecklistPage() {
       />
 
       {/* ── Hero + Gate ────────────────────────────────────────────────────── */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-24 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg
           className="absolute right-[-220px] bottom-[-260px] w-[640px] h-[640px] pointer-events-none"
           viewBox="0 0 640 640"

@@ -41,7 +41,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }} />
 
       {/* Hero */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <div className="flex items-center gap-3 mb-6">
             <Link href="/work" className="text-[#D4A537] text-[13px] uppercase tracking-[0.12em] font-bold no-underline hover:underline">
