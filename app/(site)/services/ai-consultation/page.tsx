@@ -86,7 +86,7 @@ export default function AIConsultationPage() {
       />
 
       {/* -- 1. HERO -- */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-32 pb-24 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[500px] relative overflow-hidden">
         <svg
           className="absolute right-[-220px] top-[-180px] w-[800px] h-[800px] pointer-events-none opacity-70"
           aria-hidden="true"

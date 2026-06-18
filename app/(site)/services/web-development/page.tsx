@@ -104,14 +104,14 @@ const builds = [
   },
   {
     title: "E-commerce",
-    tag: "Delivery",
+    tag: "Execution",
     tagColor: "#5B3FBE",
     body: "AI-native commerce for ambitious roadmaps, or WooCommerce for simpler catalogues. Built around the buying journey, with an AMC tail.",
     href: "/services/web-development/ecommerce",
   },
   {
     title: "Portals & member sites",
-    tag: "Delivery",
+    tag: "Execution",
     tagColor: "#5B3FBE",
     body: "AI-native only, with authentication, role-based access, and at least one AI-assisted workflow as standard. Strategy for these sits in Platform Consultation.",
     href: "/services/platform-consultation",
@@ -153,7 +153,7 @@ export default function WebDevelopmentPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[500px] relative overflow-hidden">
         <svg className="absolute right-[-200px] top-[-160px] w-[680px] h-[680px] pointer-events-none opacity-60" aria-hidden="true">
           {[100, 180, 260, 340, 420].map((r, i) => (
             <circle key={r} cx="340" cy="340" r={r} fill="none" stroke={i === 2 ? "#D4A537" : "#7C63D8"} strokeWidth="1.5" opacity={i === 2 ? 0.7 : 0.45} />

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 const pillars = [
   {
-    num: "01", type: "delivery", label: "Delivery",
+    num: "01", type: "execution", label: "Execution",
     title: "Digital Marketing",
     body: "Predictable revenue from traffic and leads. Search, social, SEO, AEO, and full-funnel programmes on a monthly retainer, with a commission tier for confirmed ad spend of INR 5L or more.",
     href: "/services/digital-marketing",
   },
   {
-    num: "02", type: "delivery", label: "Delivery",
+    num: "02", type: "execution", label: "Execution",
     title: "Web Development",
     body: "AI-native websites that compound brand and conversion. Built on Next.js. From June 2026, AI-native is our default for all new builds.",
     href: "/services/web-development",

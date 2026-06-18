@@ -160,7 +160,7 @@ export default function DigitalMarketingPage() {
       />
 
       {/* -- HERO -- */}
-      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-32 pb-24 relative overflow-hidden">
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[500px] relative overflow-hidden">
         <svg
           className="absolute right-[-200px] top-[-160px] w-[760px] h-[760px] pointer-events-none opacity-70"
           aria-hidden="true"
@@ -192,7 +192,7 @@ export default function DigitalMarketingPage() {
               <li className="text-[#C8B8FF]" aria-current="page">Digital Marketing</li>
             </ol>
           </nav>
-          <p className="eyebrow text-[#D4A537] mb-4">Pillar 01 · Delivery</p>
+          <p className="eyebrow text-[#D4A537] mb-4">Pillar 01 · Execution</p>
           <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(40px,6vw,62px)] leading-[1.08] tracking-[-0.01em] text-[#F7F3EA] max-w-[820px] mt-3">
             Predictable revenue from traffic and leads.
           </h1>
