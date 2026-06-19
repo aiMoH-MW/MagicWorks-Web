@@ -126,7 +126,7 @@ const NEW_JOBS = [
     status: "active",
     postedAt: "2026-06-17T00:00:00.000Z",
     summary:
-      "Own the full sales cycle for MagicFlow AI — our AI-powered lead qualification chatbot — from prospecting to close, targeting SMEs and growth-focused businesses.",
+      "Own the full sales cycle for MagicFlow AI, our AI-powered lead qualification chatbot, from prospecting to close, targeting SMEs and growth-focused businesses.",
     responsibilities: [
       "Prospect, qualify, and close deals for MagicFlow AI across SME and growth-stage businesses",
       "Conduct live product demos tailored to each prospect's use case",
@@ -159,7 +159,7 @@ const NEW_JOBS = [
     status: "active",
     postedAt: "2026-06-17T00:00:00.000Z",
     summary:
-      "Sell integrated digital marketing services — SEO retainers, paid media, social, and content — to ambitious businesses. Prior agency sales experience required.",
+      "Sell integrated digital marketing services: SEO retainers, paid media, social, and content, to ambitious businesses. Prior agency sales experience required.",
     responsibilities: [
       "Identify and prospect businesses that would benefit from MagicWorks' digital marketing services",
       "Pitch tailored proposals across SEO, paid media, social media, and content packages",
