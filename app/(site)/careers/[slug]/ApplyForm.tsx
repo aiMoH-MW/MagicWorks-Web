@@ -132,7 +132,6 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
             resume ? "border-[#5B3FBE] bg-[#EDE9F7]/40" : "border-[#D8D8DE] bg-white hover:border-[#5B3FBE]"
           }`}
         >
-          {/* Upload icon */}
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={resume ? "#5B3FBE" : "#9A9AA8"}
             strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="shrink-0">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>

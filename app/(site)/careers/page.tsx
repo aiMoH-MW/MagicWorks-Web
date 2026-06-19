@@ -1,190 +1,226 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import OpenRoles from "./OpenRoles";
+import { getActiveJobOpenings } from "@/sanity/queries";
 
 export const metadata: Metadata = {
-  title: "Careers: Join MagicWorks IT Solutions",
+  title: "Careers at MagicWorks",
   description:
-    "Build the future of AI-first marketing with us. We're a small, ambitious team in Pune working on real problems for ambitious Indian businesses.",
+    "Join MagicWorks IT Solutions in Pune. We are hiring across digital marketing, web development, AI, design, and operations. See open roles.",
   alternates: { canonical: "/careers" },
 };
 
-const perks = [
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/>
-      </svg>
-    ),
-    title: "Real work from day one",
-    body: "No busy-work. You'll be working on live client campaigns, AI workflows, and product features that reach thousands of users.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
-      </svg>
-    ),
-    title: "Learning budget",
-    body: "Courses, certifications, tools: we invest in your growth. AI is moving fast and we'll make sure you move with it.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-      </svg>
-    ),
-    title: "Small, senior team",
-    body: "You'll work directly with the founders and senior leads, with no corporate layers and no waiting for approvals on good ideas.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
-      </svg>
-    ),
-    title: "AI-first environment",
-    body: "Every role here touches AI tooling. You'll work with the latest models, automation stacks, and build things that didn't exist two years ago.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
-      </svg>
-    ),
-    title: "Purpose-driven culture",
-    body: "We're building long-term, not chasing exits. Every team member understands why the work matters and has a voice in how we do it.",
-  },
-  {
-    icon: (
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>
-      </svg>
-    ),
-    title: "Impact you can see",
-    body: "Your work won't disappear into a backlog. You'll see how your ideas improve client outcomes, automate real workflows, and help businesses move faster.",
-  },
-];
+export const dynamic = "force-dynamic";
 
+const deptLabels: Record<string, string> = {
+  "digital-marketing": "Digital Marketing",
+  "web-development": "Web Engineering",
+  "ai-consulting": "AI & Consulting",
+  "design": "Design",
+  "operations": "Operations",
+  "sales": "Sales",
+};
 
-export default function CareersPage() {
+type Job = {
+  _id: string;
+  slug: { current: string };
+  title: string;
+  department?: string;
+  area?: string;
+  location?: string;
+  type?: string;
+  experience?: string;
+  salary?: string;
+  summary: string;
+};
+
+function RoleCard({ job }: { job: Job }) {
+  const dept = deptLabels[job.department ?? ""] ?? job.department ?? "";
+  const tag = [dept, job.area].filter(Boolean).join(" · ");
+  const meta = [
+    job.location ?? "Pune",
+    job.type ? (job.type === "internship" ? "On-site internship" : job.type.replace(/-/g, " ").replace(/\b\w/g, c => c.toUpperCase())) : null,
+    job.experience,
+    job.salary,
+  ].filter(Boolean).join(" · ");
+
+  return (
+    <Link
+      href={`/careers/${job.slug.current}`}
+      className="group flex items-center justify-between bg-white border border-[#D8D8DE] border-l-[3px] border-l-[#5B3FBE] rounded-[10px] p-6 no-underline hover:translate-x-[3px] hover:shadow-[0_12px_32px_rgba(42,27,92,0.08)] transition-all"
+    >
+      <div className="flex-1 min-w-0">
+        {tag && (
+          <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#9A9AA8] mb-1">{tag}</p>
+        )}
+        <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mb-1 leading-[1.25]">
+          {job.title}
+        </h3>
+        {meta && <p className="text-[13px] text-[#3F3F4A]">{meta}</p>}
+      </div>
+      <span className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.08em] ml-8 whitespace-nowrap flex-shrink-0">
+        View role →
+      </span>
+    </Link>
+  );
+}
+
+export default async function CareersPage() {
+  const jobs: Job[] = await getActiveJobOpenings().catch(() => []);
+
+  const fullTimeJobs = jobs.filter(j => j.type !== "internship");
+  const internJobs = jobs.filter(j => j.type === "internship");
+
   return (
     <>
-      {/* -- HERO ----------------------------------------------------- */}
-      <section
-        className="relative pt-[88px] pb-[72px] text-[#F7F3EA] overflow-hidden"
-        style={{ background: "linear-gradient(155deg,#1E1248 0%,#2A1B5C 55%,#1A1040 100%)" }}
-      >
-        {/* Decorative rings */}
-        <svg
-          className="absolute pointer-events-none"
-          style={{ width: "600px", height: "600px", right: "-180px", top: "-200px", opacity: 0.35 }}
-          viewBox="0 0 600 600"
-          aria-hidden="true"
-        >
-          <circle cx="300" cy="300" r="290" fill="none" stroke="#7C63D8" strokeWidth="1.5" />
-          <circle cx="300" cy="300" r="210" fill="none" stroke="#D4A537" strokeWidth="1.5" opacity="0.7" />
-          <circle cx="300" cy="300" r="130" fill="none" stroke="#7C63D8" strokeWidth="1.5" />
+      {/* Hero */}
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
+        <svg className="absolute right-[-100px] top-[-80px] w-[480px] h-[480px] pointer-events-none opacity-50" aria-hidden="true">
+          {[80, 140, 200, 260].map((r, i) => (
+            <circle key={r} cx="240" cy="240" r={r} fill="none" stroke={i === 1 ? "#D4A537" : "#7C63D8"} strokeWidth="1.5" opacity={i === 1 ? 0.7 : 0.45} />
+          ))}
         </svg>
-
         <div className="max-w-[1120px] mx-auto px-8 relative">
-          <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-4">Careers · Pune, India</p>
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,4vw,48px)] leading-[1.12] text-[#F7F3EA] max-w-[780px] mb-6">
+          <p className="eyebrow text-[#D4A537] mb-4">Careers · Pune, India</p>
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
             Build what is next. Join MagicWorks.
           </h1>
-          <p className="text-[18px] text-[#C8B8FF] max-w-[560px] leading-[1.65] mb-10">
+          <hr className="w-16 h-[3px] bg-[#D4A537] border-0 my-6" />
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[560px] mb-8">
             We are an AI-first digital marketing agency with 17+ years of experience, 30+ experts, and a 98% client satisfaction rate. We are growing, and looking for sharp, driven people to grow with us.
           </p>
-          <div className="flex flex-wrap gap-4">
-            <a
-              href="#open-roles"
-              className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-4 rounded-full no-underline hover:scale-[1.02] transition-transform"
-            >
-              See open roles
-            </a>
-            <Link
-              href="/about"
-              className="border border-white/30 text-[#F7F3EA] font-semibold text-[13px] uppercase tracking-[0.08em] px-8 py-4 rounded-full no-underline hover:border-white/70 transition-colors"
-            >
-              About us
-            </Link>
-          </div>
+          <a href="#openings" className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform">
+            See open roles
+          </a>
         </div>
       </section>
 
-      {/* -- WHY MAGICWORKS ------------------------------------------- */}
-      <section className="bg-[#F7F3EA] py-20">
+      {/* Stats bar */}
+      <section className="bg-[#F7F3EA] border-b border-[#D8D8DE] py-12">
         <div className="max-w-[1120px] mx-auto px-8">
-          <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-3">Why join us</p>
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3vw,34px)] text-[#2A1B5C] mb-2 max-w-[560px]">
-            A place where your work actually ships.
-          </h2>
-          <div className="w-10 h-[3px] bg-[#D4A537] mb-12" />
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {perks.map((p) => (
-              <div key={p.title} className="flex gap-4">
-                <div className="w-10 h-10 rounded-[10px] bg-[#EDE9F7] flex items-center justify-center text-[#5B3FBE] shrink-0 mt-[2px]">
-                  {p.icon}
-                </div>
-                <div>
-                  <h3 className="font-[family-name:var(--font-head)] font-bold text-[16px] text-[#2A1B5C] mb-1">
-                    {p.title}
-                  </h3>
-                  <p className="text-[14px] text-[#3F3F4A] leading-[1.65]">{p.body}</p>
-                </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { num: "17+", cap: "Years of experience" },
+              { num: "30+", cap: "Experts on the team" },
+              { num: "98%", cap: "Client satisfaction" },
+              { num: "Pune", cap: "On-site, in the office" },
+            ].map(s => (
+              <div key={s.cap}>
+                <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(28px,3.6vw,40px)] text-[#2A1B5C] leading-none">{s.num}</div>
+                <div className="text-[13px] text-[#3F3F4A] mt-1.5">{s.cap}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* -- OPEN ROLES ----------------------------------------------- */}
-      <section id="open-roles" className="bg-white py-20">
+      {/* Why MagicWorks */}
+      <section className="bg-[#EDE9F7] py-20">
         <div className="max-w-[1120px] mx-auto px-8">
-          <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-3">Open positions</p>
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3vw,34px)] text-[#2A1B5C] mb-2">
-            We&apos;re currently hiring
-          </h2>
-          <div className="w-10 h-[3px] bg-[#D4A537] mb-12" />
-
-          <OpenRoles />
-
-          <div className="mt-10 bg-[#F7F3EA] border border-[#D8D8DE] rounded-[12px] p-8 text-center">
-            <h3 className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-2">
-              Don&apos;t see your role?
-            </h3>
-            <p className="text-[14px] text-[#3F3F4A] mb-5 max-w-[420px] mx-auto leading-[1.65]">
-              We occasionally hire for roles we haven&apos;t listed yet. Send us a short note about what you do and what you&apos;re looking for.
+          <div className="max-w-[680px] mb-10">
+            <p className="eyebrow text-[#5B3FBE] mb-2">Why MagicWorks</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,30px)] text-[#2A1B5C] mb-3">
+              Real work, modern tools, room to grow.
+            </h2>
+            <p className="text-[16px] text-[#3F3F4A]">
+              We believe human intelligence drives strategy and AI accelerates results. That shows up in how we work every day.
             </p>
-            <Link
-              href="/contact"
-              className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] px-8 py-3 rounded-full no-underline hover:scale-[1.02] transition-transform"
-            >
-              Get in touch
-            </Link>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                title: "Live work from day one",
+                body: "You work on real client projects and live campaigns, not busywork. Interns included.",
+              },
+              {
+                title: "AI-first by default",
+                body: "We use AI tools like Claude in our daily workflow, and we hire people who want to work that way too.",
+              },
+              {
+                title: "Mentorship and a path",
+                body: "Guidance from experienced professionals, with certificates, recommendations, and pre-placement offers for standout interns.",
+              },
+            ].map(v => (
+              <div key={v.title} className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-6">
+                <h3 className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mb-2">{v.title}</h3>
+                <p className="text-[14px] text-[#3F3F4A]">{v.body}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* -- CTA ------------------------------------------------------ */}
-      <section
-        className="py-20 text-[#F7F3EA]"
-        style={{ background: "linear-gradient(155deg,#1E1248 0%,#2A1B5C 60%,#1A1040 100%)" }}
-      >
-        <div className="max-w-[560px] mx-auto px-8 text-center">
-          <p className="text-[#D4A537] text-[11px] font-bold uppercase tracking-[0.2em] mb-4">Pune · India</p>
-          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,32px)] text-[#F7F3EA] mb-4 leading-[1.2]">
-            Ready to evolve with purpose?
+      {/* Open Positions */}
+      <section className="bg-[#F7F3EA] py-20" id="openings">
+        <div className="max-w-[1120px] mx-auto px-8">
+          <div className="max-w-[680px] mb-10">
+            <p className="eyebrow text-[#5B3FBE] mb-2">Open positions</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,30px)] text-[#2A1B5C] mb-3">
+              Find your role.
+            </h2>
+            <p className="text-[16px] text-[#3F3F4A]">
+              All roles are on-site in Pune. Tap a role to see the full description and apply.
+            </p>
+          </div>
+
+          {jobs.length === 0 ? (
+            <div className="bg-white border border-[#D8D8DE] rounded-[10px] p-10 text-center">
+              <p className="text-[16px] text-[#3F3F4A] mb-2">No open roles right now.</p>
+              <p className="text-[14px] text-[#9A9AA8]">
+                We hire when the right person shows up. Send your CV to{" "}
+                <a href="mailto:careers@magicworksitsolutions.com" className="text-[#5B3FBE] no-underline hover:underline">
+                  careers@magicworksitsolutions.com
+                </a>
+              </p>
+            </div>
+          ) : (
+            <>
+              {internJobs.length > 0 && (
+                <div className="mb-10">
+                  <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
+                    Internships
+                  </p>
+                  <div className="flex flex-col gap-4">
+                    {internJobs.map(job => <RoleCard key={job._id} job={job} />)}
+                  </div>
+                </div>
+              )}
+
+              {fullTimeJobs.length > 0 && (
+                <div>
+                  <p className="text-[12px] font-bold uppercase tracking-[0.16em] text-[#5B3FBE] mb-4">
+                    Full-time positions
+                  </p>
+                  <div className="flex flex-col gap-4">
+                    {fullTimeJobs.map(job => <RoleCard key={job._id} job={job} />)}
+                  </div>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      </section>
+
+      {/* Do not see the right role */}
+      <section className="bg-[#2A1B5C] text-[#F7F3EA] py-20 text-center relative overflow-hidden">
+        <svg className="absolute left-1/2 -translate-x-1/2 bottom-[-360px] w-[680px] h-[680px] pointer-events-none opacity-60" aria-hidden="true">
+          {[330, 240, 150].map((r, i) => (
+            <circle key={r} cx="340" cy="340" r={r} fill="none" stroke={i === 1 ? "#D4A537" : "#7C63D8"} strokeWidth="1.5" opacity={i === 1 ? 0.7 : 0.45} />
+          ))}
+        </svg>
+        <div className="max-w-[1120px] mx-auto px-8 relative">
+          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3.5vw,32px)] text-[#F7F3EA] max-w-[600px] mx-auto">
+            Do not see the right role?
           </h2>
-          <p className="text-[16px] text-[#C8B8FF] mb-8 leading-[1.65]">
-            Drop us a message. No long application forms. Just tell us who you are and what you want to build.
+          <hr className="w-16 h-[3px] bg-[#D4A537] border-0 mx-auto my-6" />
+          <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[500px] mx-auto mb-8">
+            If you are sharp, driven, and want to work the AI-first way, we still want to hear from you. Send us your details and tell us where you would fit.
           </p>
-          <Link
-            href="/contact"
-            className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-10 py-4 rounded-full no-underline hover:scale-[1.02] transition-transform"
+          <a
+            href="mailto:careers@magicworksitsolutions.com"
+            className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform"
           >
-            Say hello ?
-          </Link>
+            Send an open application
+          </a>
         </div>
       </section>
     </>

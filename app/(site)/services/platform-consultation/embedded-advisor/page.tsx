@@ -180,9 +180,9 @@ export default function EmbeddedPlatformAdvisorPage() {
                 </Link>
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Monthly retainer, capped hours agreed up front</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Follow-on engagement only</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Monthly retainer, capped hours agreed up front</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Follow-on engagement only</li>
               </ul>
             </div>
             <PlatformContactForm />

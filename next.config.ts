@@ -25,6 +25,12 @@ const nextConfig: NextConfig = {
         destination: "/insights",
         permanent: true,
       },
+      // /about/careers/* → /careers/* (/about/careers removed; /careers is now canonical)
+      {
+        source: "/about/careers/:slug*",
+        destination: "/careers/:slug*",
+        permanent: true,
+      },
     ];
   },
 };

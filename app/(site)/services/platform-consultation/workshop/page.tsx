@@ -174,9 +174,9 @@ export default function PlatformWorkshopPage() {
                 Tell us about your platform and where you are in the process. We will confirm whether a workshop is the right first step.
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Fixed fee, no obligation after the workshop</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Founder-level advisory throughout</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Fixed fee, no obligation after the workshop</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Founder-level advisory throughout</li>
               </ul>
             </div>
             <PlatformContactForm />

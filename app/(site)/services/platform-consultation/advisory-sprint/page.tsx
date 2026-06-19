@@ -165,9 +165,9 @@ export default function AdvisorySprintPage() {
                 Tell us the decision you are facing and we will confirm whether a sprint is the right scope and approach.
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Fixed scope, fixed fee — one named decision</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Independent advice, no downstream obligation</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Fixed scope, fixed fee — one named decision</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Independent advice, no downstream obligation</li>
               </ul>
             </div>
             <PlatformContactForm />

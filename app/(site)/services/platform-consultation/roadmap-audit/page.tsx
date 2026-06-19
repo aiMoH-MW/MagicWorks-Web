@@ -269,9 +269,9 @@ export default function RoadmapAuditPage() {
                 Tell us about your platform thesis and where you are now. We will confirm whether a roadmap audit is the right next step.
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>Fixed-scope, consultation only</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>You choose who builds — always</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Fixed-scope, consultation only</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>You choose who builds — always</li>
               </ul>
             </div>
             <PlatformContactForm />

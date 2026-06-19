@@ -31,7 +31,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${job.title} · Careers · MagicWorks`,
     description: job.summary,
-    alternates: { canonical: `/about/careers/${slug}` },
+    alternates: { canonical: `/careers/${slug}` },
     other: {
       "script:application/ld+json": JSON.stringify({
         "@context": "https://schema.org/",
@@ -87,7 +87,7 @@ export default async function JobOpeningPage({ params }: Props) {
           <div className="text-[13px] text-[#C8B8FF] mb-6">
             <Link href="/" className="text-[#C8B8FF] no-underline hover:text-[#D4A537] transition-colors">Home</Link>
             <span className="opacity-50 mx-2">/</span>
-            <Link href="/about/careers" className="text-[#C8B8FF] no-underline hover:text-[#D4A537] transition-colors">Careers</Link>
+            <Link href="/careers" className="text-[#C8B8FF] no-underline hover:text-[#D4A537] transition-colors">Careers</Link>
             <span className="opacity-50 mx-2">/</span>
             <span>{job.title}</span>
           </div>
@@ -163,7 +163,6 @@ export default async function JobOpeningPage({ params }: Props) {
       <section className="bg-[#F7F3EA] py-16">
         <div className="max-w-[760px] mx-auto px-8">
 
-          {/* Who we're looking for */}
           {job.summary && (
             <div className="mb-10">
               <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
@@ -173,7 +172,6 @@ export default async function JobOpeningPage({ params }: Props) {
             </div>
           )}
 
-          {/* About MagicWorks */}
           <div className="mb-10">
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
               About MagicWorks
@@ -183,7 +181,6 @@ export default async function JobOpeningPage({ params }: Props) {
             </p>
           </div>
 
-          {/* Responsibilities */}
           {job.responsibilities?.length > 0 && (
             <div className="mb-10">
               <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
@@ -200,7 +197,6 @@ export default async function JobOpeningPage({ params }: Props) {
             </div>
           )}
 
-          {/* Requirements */}
           {job.requirements?.length > 0 && (
             <div className="mb-10">
               <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
@@ -217,7 +213,6 @@ export default async function JobOpeningPage({ params }: Props) {
             </div>
           )}
 
-          {/* Nice to have */}
           {job.niceToHave?.length > 0 && (
             <div className="mb-10">
               <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
@@ -234,7 +229,6 @@ export default async function JobOpeningPage({ params }: Props) {
             </div>
           )}
 
-          {/* Closing note */}
           {job.closing && (
             <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-6 text-[15px] text-[#3F3F4A] leading-[1.6]">
               {job.closing}
@@ -263,7 +257,7 @@ export default async function JobOpeningPage({ params }: Props) {
       <section className="bg-[#2A1B5C] py-8">
         <div className="max-w-[1120px] mx-auto px-8 text-center">
           <Link
-            href="/about/careers"
+            href="/careers"
             className="text-[#C8B8FF] text-[13px] uppercase tracking-[0.1em] font-bold no-underline hover:text-[#D4A537] transition-colors"
           >
             ← Back to all open roles
