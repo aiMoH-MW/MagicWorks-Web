@@ -73,7 +73,8 @@ export default function AboutPage() {
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <p className="eyebrow text-[#D4A537] mb-4">About</p>
           <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(32px,5vw,52px)] leading-[1.1] text-[#F7F3EA] max-w-[780px]">
-            17 years of practice. Evolving with purpose.
+            17 years of practice.<br />
+            Evolving with purpose!
           </h1>
           <p className="about-lede text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-5">
             MagicWorks IT Solutions Pvt. Ltd. is an AI-first digital marketing agency in Pune, India, founded in 2009 and incorporated in 2012 by Swapnil Ughade. Over 17 years, the firm has helped ambitious Indian businesses turn traffic, leads, and operations into predictable revenue across digital marketing, web development, AI consultation, and platform strategy.
