@@ -91,10 +91,11 @@ export default function WebDevelopmentContactForm({
       <div>
         <label className="block text-[12px] font-semibold text-[#2A1B5C] uppercase tracking-[0.08em] mb-1">Timeline</label>
         <select name="timeline" className="w-full border border-[#D8D8DE] rounded-[8px] px-4 py-3 text-[14px] text-[#2A1B5C] focus:outline-none focus:ring-2 focus:ring-[#5B3FBE]/30 bg-white">
-          <option value="">Just exploring for now</option>
-          <option value="ASAP">ASAP — we have a deadline</option>
-          <option value="1–3 months">1 to 3 months</option>
-          <option value="3–6 months">3 to 6 months</option>
+          <option value="">Just Exploring for Now</option>
+          <option value="ASAP">ASAP we have deadline</option>
+          <option value="1 month">1 Month</option>
+          <option value="1–2 months">1 to 2 months</option>
+          <option value="2–4 months">2 to 4 months</option>
         </select>
       </div>
       <div>

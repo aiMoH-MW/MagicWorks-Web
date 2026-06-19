@@ -5,7 +5,7 @@ import WebDevelopmentContactForm from "./WebDevelopmentContactForm";
 export const metadata: Metadata = {
   title: "AI-Native Website Development",
   description:
-    "AI-native websites that compound brand and conversion. Built on Next.js to generate business, not just to look good. From idea to live in 8 to 16 weeks.",
+    "AI-native websites that compound brand and conversion. Built on Next.js to generate business, not just to look good. From idea to live in 3 to 10 weeks.",
   alternates: { canonical: "/services/web-development" },
 };
 
@@ -18,7 +18,7 @@ const serviceSchema = {
   serviceType: "Web Development",
   category: "Technology Services",
   description:
-    "AI-native websites built on Next.js with LLM-backed backends and headless CMS. From idea to live in 8 to 16 weeks. Builds include AI-native websites, e-commerce, portals and member sites, WordPress, and Web AMC.",
+    "AI-native websites built on Next.js with LLM-backed backends and headless CMS. From idea to live in 3 to 10 weeks. Builds include AI-native websites, e-commerce, portals and member sites, WordPress, and Web AMC.",
   url: "https://magicworksitsolutions.com/services/web-development",
   provider: {
     "@type": "Organization",
@@ -80,7 +80,7 @@ const faqSchema = {
       name: "How long does a website take?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Typically 8 to 16 weeks from kick-off to launch, depending on scope.",
+        text: "Typically 3 to 10 weeks from kick-off to launch, depending on scope.",
       },
     },
     {
@@ -141,7 +141,7 @@ const steps = [
 const faq = [
   { q: "What is an AI-native website?", a: "A site built on a modern stack (Next.js with an LLM-backed backend and a headless CMS) with intelligent features such as chat, smart search, personalisation, and conversational lead capture built in from the start, rather than added later." },
   { q: "Do you still build WordPress sites?", a: "Yes, when it is genuinely the right tool: a simple brochure site, or when you specifically require WordPress. AI-native is our default for everything else." },
-  { q: "How long does a website take?", a: "Typically 8 to 16 weeks from kick-off to launch, depending on scope." },
+  { q: "How long does a website take?", a: "Typically 3 to 10 weeks from kick-off to launch, depending on scope." },
   { q: "Do you maintain the site after launch?", a: "Yes, through an optional Web AMC retainer for sites we built, covering monitoring, security, content updates, and, for AI-native sites, LLM cost management." },
 ];
 
@@ -197,7 +197,7 @@ export default function WebDevelopmentPage() {
         <div className="max-w-[1120px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { label: "Engagement", val: "One-time project" },
-            { label: "Delivery", val: "8 to 16 weeks" },
+            { label: "Delivery", val: "3 to 10 weeks" },
             { label: "Tail support", val: "Optional Web AMC" },
             { label: "Built for", val: "Founders, marketing & product heads" },
           ].map((i) => (
@@ -304,7 +304,7 @@ export default function WebDevelopmentPage() {
                   "Wanting a cheap, fast site. Speed and price at the expense of quality produce a site that performs like one.",
                   "Looking for someone to execute a finished brief with no questions. We will ask questions.",
                   "Expecting Google rankings in 30 days from a fresh build.",
-                  "Needing the site to also run the platform or marketplace logic — that sits in Platform Consultation.",
+                  "Needing the site to also run the platform or marketplace logic that sits in Platform Consultation.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 py-3 border-b border-[#F0F0F6] last:border-0 list-none">
                     <span className="mt-[14px] flex-shrink-0 w-[10px] h-[1.5px] bg-[#9A9AA8]" />
@@ -346,7 +346,7 @@ export default function WebDevelopmentPage() {
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>8 to 16 week build, clear scope agreed up front</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>3 to 10 week build, clear scope agreed up front</li>
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>AI-native by default from June 2026</li>
               </ul>
             </div>
