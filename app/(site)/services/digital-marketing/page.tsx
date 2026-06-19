@@ -367,10 +367,10 @@ export default function DigitalMarketingPage() {
               </div>
               <ul className="space-y-0">
                 {[
-                  "Revenue between ₹10 Cr and ₹500 Cr, with a marketing function in place but underperforming.",
+                  "Revenue between ₹5 Cr and ₹500 Cr, with a marketing function in place but underperforming.",
                   "In education, real estate, or manufacturing. We also take selective work in wellness, finance, travel, and recruitment.",
                   "A team that knows what good looks like, even if the current results do not match.",
-                  "India-first, with Pune, Mumbai, Bangalore, Hyderabad, and Delhi-NCR as our primary catchment.",
+                  "Serving clients across India: Mumbai, Bangalore, Hyderabad, Delhi-NCR. Offshore: Europe & USA.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-4 py-[14px] border-b border-[#EDE9F7] last:border-0 list-none">
                     <span className="mt-[7px] flex-shrink-0 w-[8px] h-[8px] rounded-full bg-[#5B3FBE]" />
