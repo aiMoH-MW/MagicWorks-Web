@@ -26,7 +26,7 @@ const faq = [
   },
   {
     q: "How is this priced?",
-    a: "A monthly retainer, or the commission tier for confirmed ad spends of ?5 lakh or more with clean attribution and a twelve-month commitment.",
+    a: "A monthly retainer, or the commission tier for confirmed ad spends of INR 5 lakh or more with clean attribution and a twelve-month commitment.",
   },
   {
     q: "Do you guarantee a cost per lead?",
@@ -113,7 +113,7 @@ export default function GoogleAdsPage() {
         <div className="max-w-[1120px] mx-auto px-8 grid grid-cols-2 md:grid-cols-4 gap-6">
           {[
             { label: "Engagement", val: "Monthly retainer" },
-            { label: "Commission tier", val: "?5L+ ad spend" },
+            { label: "Commission tier", val: "INR 5L+ ad spend" },
             { label: "Recommended term", val: "12 months" },
             { label: "Best for", val: "Founders & marketing heads" },
           ].map((i) => (
@@ -159,14 +159,14 @@ export default function GoogleAdsPage() {
               The headline service for scaling paid acquisition.
             </h2>
             <p className="text-[16px] text-[#C8B8FF] leading-[1.65]">
-              This is the right engagement for clients ready to scale paid acquisition. For confirmed monthly spends of ?5 lakh or more, we offer a commission tier that aligns our incentives directly with your growth, replacing or reducing the standard retainer fee.
+              This is the right engagement for clients ready to scale paid acquisition. For confirmed monthly spends of INR 5 lakh or more, we offer a commission tier that aligns our incentives directly with your growth, replacing or reducing the standard retainer fee.
             </p>
           </div>
           <div className="bg-white/10 border border-white/20 rounded-[10px] p-8">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#D4A537] mb-4">Commission tier</p>
             <p className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#F7F3EA] mb-3">Aligned incentives at scale.</p>
             <p className="text-[14px] text-[#C8B8FF] leading-[1.6]">
-              For confirmed ad spend of ?5 lakh or more per month. Clean attribution and a twelve-month commitment required. Our growth is tied to yours.
+              For confirmed ad spend of INR 5 lakh or more per month. Clean attribution and a twelve-month commitment required. Our growth is tied to yours.
             </p>
           </div>
         </div>
@@ -216,7 +216,7 @@ export default function GoogleAdsPage() {
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Commission tier available for confirmed spends of ₹5L or more</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Commission tier available for confirmed spends of INR 5L or more</li>
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Transparent attribution, honest reporting</li>
               </ul>
             </div>
