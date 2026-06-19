@@ -160,6 +160,9 @@ export default function ContactPage() {
               <p className="text-[15px] text-[#3F3F4A] mt-2">
                 <a href="tel:+919764566644" className="text-[#5B3FBE] no-underline hover:underline">+91 97645 66644</a>
               </p>
+              <p className="text-[15px] text-[#3F3F4A] mt-1">
+                <a href="mailto:sales@magicworksitsolutions.com" className="text-[#5B3FBE] no-underline hover:underline">sales@magicworksitsolutions.com</a>
+              </p>
               <p className="text-[13px] text-[#9A9AA8] mt-3">
                 Serving clients across India: Mumbai, Bangalore, Hyderabad, Delhi-NCR. Offshore: Europe & USA.
               </p>

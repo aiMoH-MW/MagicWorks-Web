@@ -130,6 +130,15 @@ export default function Footer() {
               </svg>
               +91 97645 66644
             </a>
+            <a
+              href="mailto:sales@magicworksitsolutions.com"
+              className="text-white/70 hover:text-[#D4A537] text-[13px] no-underline transition-colors mt-1 inline-flex items-center gap-1.5"
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+              </svg>
+              sales@magicworksitsolutions.com
+            </a>
 
             {/* Social icons — single row */}
             <div className="mt-5 flex flex-nowrap gap-[6px]">
