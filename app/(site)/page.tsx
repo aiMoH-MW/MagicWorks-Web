@@ -233,7 +233,7 @@ export default function HomePage() {
                   href={p.href}
                   className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
                 >
-                  Learn more ?
+                  Learn more →
                 </Link>
               </div>
             ))}
@@ -312,7 +312,7 @@ export default function HomePage() {
                 href="/work"
                 className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
               >
-                See all case studies ?
+                See all case studies →
               </Link>
             </div>
           </div>

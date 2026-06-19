@@ -77,7 +77,7 @@ export default function IndustriesPage() {
                 <span className="text-[12px] uppercase tracking-[0.1em] text-[#9A9AA8]">{ind.metricLabel}</span>
               </div>
               <p className="text-[15px] text-[#3F3F4A] flex-1 mb-6">{ind.body}</p>
-              <span className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.06em]">Explore ?</span>
+              <span className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.06em]">Explore →</span>
             </Link>
           ))}
         </div>

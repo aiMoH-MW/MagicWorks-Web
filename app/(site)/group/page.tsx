@@ -116,7 +116,7 @@ export default function GroupPage() {
                     rel="noopener noreferrer"
                     className="text-center bg-[#2A1B5C] text-[#F7F3EA] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-[11px] rounded-full no-underline hover:bg-[#5B3FBE] transition-colors"
                   >
-                    {b.cta} ?
+                    {b.cta} →
                   </a>
                   <Link
                     href={b.href}

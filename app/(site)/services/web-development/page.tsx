@@ -239,7 +239,7 @@ export default function WebDevelopmentPage() {
                 <h3 className="font-[family-name:var(--font-head)] font-bold text-[19px] text-[#2A1B5C] mt-2 mb-3">{b.title}</h3>
                 <p className="text-[14px] text-[#3F3F4A] mb-5">{b.body}</p>
                 <Link href={b.href} className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.06em] no-underline hover:underline">
-                  Learn more ?
+                  Learn more →
                 </Link>
               </div>
             ))}

@@ -66,7 +66,7 @@ export default function ManufacturingPage() {
             </div>
             <div>
               <p className="text-[16px] text-[#3F3F4A] mb-4">Multi-channel digital presence for a steel manufacturer: company website, product catalogue, export-facing pages, and B2B lead generation. Built for credibility with procurement decision-makers.</p>
-              <Link href="/work" className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline">See full case study ?</Link>
+              <Link href="/work" className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline">See full case study →</Link>
             </div>
           </div>
         </div>
