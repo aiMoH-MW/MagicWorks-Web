@@ -65,12 +65,6 @@ const faqSchema = {
   ],
 };
 
-const formats = [
-  { tag: "Wedge", tagColor: "#5B3FBE", title: "Platform Strategy Workshop", body: "A focused session (typically one to two days) that maps your platform vision, core use case, monetisation model, and first 90 days of execution. The most common starting point.", href: "/services/platform-consultation/workshop" },
-  { tag: "Flagship", tagColor: "#D4A537", title: "Platform Roadmap Audit", body: "A structured audit of your existing platform or pre-launch plan. Surfaces gaps in the business model, sequencing errors, build-vs-buy misalignments, and vendor risk. Delivers a prioritised roadmap.", href: "/services/platform-consultation/roadmap-audit" },
-  { tag: "Fixed-scope", tagColor: "#5B3FBE", title: "Targeted Advisory Sprint", body: "A specific decision, fixed scope, fixed fee. Right for a single critical question: which vendor, which monetisation model, which partner structure.", href: "/services/platform-consultation/advisory-sprint" },
-  { tag: "Follow-on only", tagColor: "#9A9AA8", title: "Embedded Platform Advisor", body: "A recurring retainer, sold only as a follow-on after an audit or workshop. Senior advisory presence on platform decisions on an ongoing basis.", href: "/services/platform-consultation/embedded-advisor" },
-];
 
 const platforms = [
   { title: "Edtech platforms", body: "Course delivery, cohort management, admission funnels, and credential systems for education businesses building at scale." },
@@ -151,23 +145,73 @@ export default function PlatformConsultationPage() {
       </section>
 
       {/* Four formats */}
-      <section className="bg-[#EDE9F7] py-24">
+      <section id="formats" className="bg-[#EDE9F7] py-24">
         <div className="max-w-[1120px] mx-auto px-8">
           <div className="max-w-[680px] mb-12">
-            <hr className="gold-rule mb-6" />
-            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C]">
-              Four engagement formats.
+            <p className="eyebrow text-[#5B3FBE] mb-4">How we engage</p>
+            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C] mb-3">
+              Four ways in. One honest direction.
             </h2>
+            <p className="text-[16px] text-[#3F3F4A]">
+              Most clients start with the Roadmap Audit. Some begin with a strategy workshop. The embedded advisor is a follow-on for teams already executing a platform strategy.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-6">
-            {formats.map((f) => (
-              <div key={f.title} className="bg-white border border-[#D8D8DE] rounded-[10px] p-8 transition-all hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)]"
-                style={{ borderTopWidth: 3, borderTopColor: f.tagColor }}>
-                <span className="text-[10px] font-bold uppercase tracking-[0.12em]" style={{ color: f.tagColor }}>{f.tag}</span>
-                <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mt-2 mb-3">{f.title}</h3>
-                <p className="text-[15px] text-[#3F3F4A] mb-5">{f.body}</p>
-                <Link href={f.href} className="text-[#5B3FBE] font-bold text-[12px] uppercase tracking-[0.06em] no-underline hover:underline">
-                  Learn more ?
+
+          {/* Featured card */}
+          <div className="bg-[#2A1B5C] text-[#F7F3EA] rounded-[10px] border-t-[3px] border-t-[#D4A537] p-12 grid md:grid-cols-[1fr_auto] gap-8 items-center mb-6">
+            <div>
+              <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-[#D4A537] mb-2">The flagship</p>
+              <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#F7F3EA] mb-3">
+                Platform Roadmap Audit
+              </h3>
+              <p className="text-[15px] leading-[1.6] text-[#C8B8FF] max-w-[640px]">
+                A structured audit of your existing platform or pre-launch plan. Surfaces gaps in the business model, sequencing errors, build-vs-buy misalignments, and vendor risk. Delivers a prioritised roadmap you can act on with any partner.
+              </p>
+            </div>
+            <div className="flex-shrink-0">
+              <Link
+                href="/services/platform-consultation/roadmap-audit"
+                className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block whitespace-nowrap"
+              >
+                Learn more
+              </Link>
+            </div>
+          </div>
+
+          {/* Three smaller cards */}
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                tag: "Common starting point",
+                title: "Platform Strategy Workshop",
+                body: "A focused session (typically one to two days) that maps your platform vision, core use case, monetisation model, and first 90 days of execution. The most common way clients begin.",
+                link: "/services/platform-consultation/workshop",
+              },
+              {
+                tag: "A single decision",
+                title: "Targeted Advisory Sprint",
+                body: "A focused, fixed-fee engagement for a single critical platform decision: which vendor, which monetisation model, which partner structure. Clear recommendation, clear reasoning.",
+                link: "/services/platform-consultation/advisory-sprint",
+              },
+              {
+                tag: "Follow-on only",
+                title: "Embedded Platform Advisor",
+                body: "A recurring retainer, sold only as a follow-on after an audit or workshop. Senior advisory presence on platform decisions on an ongoing basis.",
+                link: "/services/platform-consultation/embedded-advisor",
+              },
+            ].map((f) => (
+              <div
+                key={f.title}
+                className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-8 flex flex-col transition-all hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)]"
+              >
+                <p className="text-[11px] font-bold uppercase tracking-[0.12em] text-[#9A9AA8] mb-1">{f.tag}</p>
+                <h3 className="font-[family-name:var(--font-head)] font-bold text-[18px] text-[#2A1B5C] mt-1 mb-4">{f.title}</h3>
+                <p className="text-[14px] leading-[1.6] text-[#3F3F4A] flex-1 mb-6">{f.body}</p>
+                <Link
+                  href={f.link}
+                  className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
+                >
+                  Learn more →
                 </Link>
               </div>
             ))}
@@ -276,9 +320,9 @@ export default function PlatformConsultationPage() {
                 Start with a Platform Strategy Workshop — one to two days, focused, and actionable. Tell us about your platform and we will suggest the right engagement.
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>No bundling, no upsell after the engagement</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">?</span>You choose who builds — always</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>No bundling, no upsell after the engagement</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>You choose who builds — always</li>
               </ul>
             </div>
             <PlatformContactForm />
