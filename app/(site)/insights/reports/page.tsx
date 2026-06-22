@@ -270,25 +270,6 @@ export default function InsightsReportsPage() {
             stay open — we only gate the long-form assets.
           </p>
 
-          {/* Insight-type tabs */}
-          <div className="flex flex-wrap gap-1 mt-10 border-b border-white/10 pb-0">
-            {[
-              { label: "All Insights", href: "/insights" },
-              { label: "Articles", href: "/insights" },
-              { label: "Whitepapers", href: "/insights/whitepapers" },
-            ].map(({ label, href }) => (
-              <Link
-                key={label}
-                href={href}
-                className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors"
-              >
-                {label}
-              </Link>
-            ))}
-            <span className="px-4 py-3 text-[13px] font-semibold text-white border-b-2 border-[#D4A537] -mb-[1px]">
-              Reports
-            </span>
-          </div>
         </div>
       </section>
 

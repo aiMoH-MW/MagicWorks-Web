@@ -69,12 +69,6 @@ export default function WhitepapersPage() {
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[580px] mt-4">
             Practical, data-driven guides on AI adoption and performance marketing, written for Indian business leaders who need more than vendor slides.
           </p>
-          <div className="flex flex-wrap gap-1 mt-10 border-b border-white/10">
-            <Link href="/insights" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">All Insights</Link>
-            <Link href="/insights" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Articles</Link>
-            <span className="px-4 py-3 text-[13px] font-semibold text-white border-b-2 border-[#D4A537] -mb-[1px]">Whitepapers</span>
-            <Link href="/insights/reports" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Reports</Link>
-          </div>
         </div>
       </section>
 
