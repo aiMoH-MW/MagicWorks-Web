@@ -41,7 +41,7 @@
 
 ## Content & Insights
 
-- [Insights](https://magicworksitsolutions.com/insights): Articles and thought leadership on digital marketing, AI, and web development.
+- [Insights / Blog](https://magicworksitsolutions.com/blog): Articles and thought leadership on digital marketing, AI, and web development.
 - [Reports](https://magicworksitsolutions.com/insights/reports): Downloadable research reports.
 - [Whitepapers](https://magicworksitsolutions.com/insights/whitepapers): In-depth whitepapers on marketing and AI topics (gated, requires email).
 
@@ -57,7 +57,7 @@
 ## Company
 
 - [About MagicWorks](https://magicworksitsolutions.com/about): Company background, values, and team.
-- [Careers](https://magicworksitsolutions.com/about/careers): Open roles at MagicWorks.
+- [Careers](https://magicworksitsolutions.com/careers): Open roles at MagicWorks.
 - [Contact](https://magicworksitsolutions.com/contact): Book a free thirty-minute discovery call or send an enquiry.
 
 ## Group Products
