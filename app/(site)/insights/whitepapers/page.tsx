@@ -58,7 +58,7 @@ export default function WhitepapersPage() {
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
           <nav className="flex items-center gap-2 text-[12px] text-[#C8B8FF] mb-6">
-            <Link href="/insights" className="hover:text-[#F7F3EA] transition-colors no-underline">Insights</Link>
+            <Link href="/blog" className="hover:text-[#F7F3EA] transition-colors no-underline">Blog</Link>
             <span className="opacity-50">/</span>
             <span className="text-[#F7F3EA]">Whitepapers</span>
           </nav>
