@@ -46,7 +46,7 @@ export default async function BlogPage() {
           ))}
         </svg>
         <div className="max-w-[1120px] mx-auto px-8 relative">
-          <p className="eyebrow text-[#D4A537] mb-4">Insights</p>
+          <p className="eyebrow text-[#D4A537] mb-4">Insights / Blog</p>
           <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(36px,5.5vw,60px)] leading-[1.08] text-[#F7F3EA] max-w-[860px]">
             Practical thinking on marketing, AI, and growth.
           </h1>
@@ -56,7 +56,7 @@ export default async function BlogPage() {
           </p>
           <div className="flex flex-wrap gap-1 mt-10 border-b border-white/10">
             <span className="px-4 py-3 text-[13px] font-semibold text-white border-b-2 border-[#D4A537] -mb-[1px]">All Insights</span>
-            <Link href="/blog" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Articles</Link>
+            <Link href="/blog" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Blogs</Link>
             <Link href="/insights/whitepapers" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Whitepapers</Link>
             <Link href="/insights/reports" className="px-4 py-3 text-[13px] font-semibold text-[#C8B8FF] no-underline hover:text-white border-b-2 border-transparent -mb-[1px] transition-colors">Reports</Link>
           </div>
