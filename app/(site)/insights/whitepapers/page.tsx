@@ -46,8 +46,6 @@ const whitepapers = [
   },
 ];
 
-export { whitepapers };
-
 export default function WhitepapersPage() {
   return (
     <>

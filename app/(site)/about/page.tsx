@@ -174,7 +174,7 @@ export default function AboutPage() {
             <Link href="/contact" className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[13px] rounded-full no-underline hover:scale-[1.02] transition-transform">
               Book a discovery call
             </Link>
-            <Link href="/about/careers" className="border border-[#5B3FBE] text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[13px] rounded-full no-underline hover:bg-[#5B3FBE] hover:text-white transition-colors">
+            <Link href="/careers" className="border border-[#5B3FBE] text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[13px] rounded-full no-underline hover:bg-[#5B3FBE] hover:text-white transition-colors">
               View open roles
             </Link>
           </div>
