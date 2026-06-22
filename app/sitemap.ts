@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { getInsightSlugs, getAllCaseStudies, getActiveJobOpenings, getGatedInsights } from "@/sanity/queries";
+import { getInsightSlugs, getAllCaseStudies, getActiveJobOpenings, getGatedInsights, getTeamMemberSlugs } from "@/sanity/queries";
 
 const base = "https://magicworksitsolutions.com";
 
@@ -56,11 +56,12 @@ const staticRoutes: MetadataRoute.Sitemap = [
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Fetch dynamic slugs from Sanity — fall back to empty arrays if unreachable
-  const [insightSlugs, caseStudies, jobs, whitepapers] = await Promise.all([
+  const [insightSlugs, caseStudies, jobs, whitepapers, teamMembers] = await Promise.all([
     getInsightSlugs().catch(() => []),
     getAllCaseStudies().catch(() => []),
     getActiveJobOpenings().catch(() => []),
     getGatedInsights().catch(() => []),
+    getTeamMemberSlugs().catch(() => []),
   ]);
 
   const insightRoutes: MetadataRoute.Sitemap = insightSlugs.map(
@@ -97,11 +98,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
+  const authorRoutes: MetadataRoute.Sitemap = teamMembers.map(
+    (m: { slug: string }) => ({
+      url: `${base}/authors/${m.slug}`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })
+  );
+
   return [
     ...staticRoutes,
     ...insightRoutes,
     ...caseStudyRoutes,
     ...careerRoutes,
     ...whitepaperRoutes,
+    ...authorRoutes,
   ];
 }

@@ -167,3 +167,9 @@ export async function getTeamMembers() {
     }`
   );
 }
+
+export async function getTeamMemberSlugs() {
+  return client.fetch(
+    `*[_type == "teamMember" && defined(slug.current)] { "slug": slug.current }`
+  );
+}
