@@ -431,13 +431,13 @@ export default async function BlogArticlePage({ params }: Props) {
           )}
 
           {/* Title */}
-          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,3.8vw,46px)] leading-[1.14] text-white mb-5">
+          <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,3.8vw,46px)] leading-[1.14] text-white max-w-[900px] mb-5">
             {article.title}
           </h1>
 
           {/* Excerpt — visible in hero for all articles */}
           {article.excerpt && (
-            <p className="article-lede text-[17px] leading-[1.72] text-[#C4B5EE] max-w-[780px] mb-7">
+            <p className="article-lede text-[17px] leading-[1.72] text-[#C4B5EE] max-w-[740px] mb-7">
               {article.excerpt}
             </p>
           )}
