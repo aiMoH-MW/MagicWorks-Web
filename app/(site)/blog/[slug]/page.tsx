@@ -314,7 +314,7 @@ export default async function BlogArticlePage({ params }: Props) {
     "@type": "BreadcrumbList",
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
-      { "@type": "ListItem", position: 2, name: "Insights", item: "https://magicworksitsolutions.com/insights" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://magicworksitsolutions.com/blog" },
       { "@type": "ListItem", position: 3, name: article.title, item: canonicalUrl },
     ],
   };
@@ -414,7 +414,7 @@ export default async function BlogArticlePage({ params }: Props) {
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-[13px] text-[#C8B8FF] mb-6 flex-wrap">
             <Link href="/" className="hover:text-[#D4A537] transition-colors no-underline text-[#C8B8FF]">Home</Link>
             <span aria-hidden="true" className="opacity-40">/</span>
-            <Link href="/insights" className="hover:text-[#D4A537] transition-colors no-underline text-[#C8B8FF]">Insights</Link>
+            <Link href="/blog" className="hover:text-[#D4A537] transition-colors no-underline text-[#C8B8FF]">Blog</Link>
             <span aria-hidden="true" className="opacity-40">/</span>
             <span className="text-[#9A8FBF] truncate max-w-[240px]">{article.title}</span>
           </nav>

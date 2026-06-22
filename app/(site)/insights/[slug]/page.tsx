@@ -570,8 +570,8 @@ export default async function InsightArticlePage({ params }: Props) {
               Home
             </Link>
             <span aria-hidden="true" className="opacity-50 font-normal">/</span>
-            <Link href="/insights" className="hover:text-[#D4A537] transition-colors no-underline text-[#C8B8FF]">
-              Insights
+            <Link href="/blog" className="hover:text-[#D4A537] transition-colors no-underline text-[#C8B8FF]">
+              Blog
             </Link>
             <span aria-hidden="true" className="opacity-50 font-normal">/</span>
             <span className="text-[#9A8FBF] truncate max-w-[260px]">

@@ -38,12 +38,12 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${base}/industries/manufacturing`,                                     changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/industries/professional-services`,                             changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/work`,                                                         changeFrequency: "weekly",  priority: 0.85 },
-  { url: `${base}/insights`,                                                     changeFrequency: "daily",   priority: 0.85 },
+  { url: `${base}/blog`,                                                         changeFrequency: "daily",   priority: 0.85 },
   { url: `${base}/insights/reports`,                                             changeFrequency: "monthly", priority: 0.7 },
   { url: `${base}/insights/whitepapers`,                                         changeFrequency: "monthly", priority: 0.7 },
   { url: `${base}/insights/reports/ai-search-visibility-playbook`,               changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/about`,                                                        changeFrequency: "monthly", priority: 0.75 },
-  { url: `${base}/about/careers`,                                                changeFrequency: "weekly",  priority: 0.65 },
+  { url: `${base}/careers`,                                                      changeFrequency: "weekly",  priority: 0.65 },
   { url: `${base}/tools/ai-readiness-assessment`,                                changeFrequency: "monthly", priority: 0.75 },
   { url: `${base}/tools/roi-calculator`,                                         changeFrequency: "monthly", priority: 0.75 },
   { url: `${base}/group`,                                                        changeFrequency: "monthly", priority: 0.6 },
@@ -65,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const insightRoutes: MetadataRoute.Sitemap = insightSlugs.map(
     (s: { slug: string }) => ({
-      url: `${base}/insights/${s.slug}`,
+      url: `${base}/blog/${s.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })
@@ -82,7 +82,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const careerRoutes: MetadataRoute.Sitemap = jobs.map(
     (j: { slug: { current: string } }) => ({
-      url: `${base}/about/careers/${j.slug.current}`,
+      url: `${base}/careers/${j.slug.current}`,
       changeFrequency: "weekly" as const,
       priority: 0.6,
     })

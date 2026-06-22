@@ -25,7 +25,7 @@ const chevron = (
 );
 
 const insightsLinks = [
-  { label: "Articles / Blogs", href: "/insights" },
+  { label: "Articles / Blogs", href: "/blog" },
   { label: "Whitepapers", href: "/insights/whitepapers" },
   { label: "Reports", href: "/insights/reports" },
 ];

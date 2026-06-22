@@ -19,10 +19,10 @@ const nextConfig: NextConfig = {
         destination: "/blog/:slug",
         permanent: true,
       },
-      // /blog (index) → /insights listing page
+      // /insights (index) → /blog (blog is now canonical listing)
       {
-        source: "/blog",
-        destination: "/insights",
+        source: "/insights",
+        destination: "/blog",
         permanent: true,
       },
       // Old WordPress slugs for "how to hire a digital marketing agency" — redirect to current post
