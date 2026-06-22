@@ -367,7 +367,7 @@ export default async function BlogArticlePage({ params }: Props) {
     publisher: organizationSchema,
     mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
     isPartOf: { "@type": "WebSite", "@id": "https://magicworksitsolutions.com/#website", name: "MagicWorks IT Solutions" },
-    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2", ".article-lede"] },
+    speakable: { "@type": "SpeakableSpecification", cssSelector: ["h1", "h2", ".article-lede", ".article-faq"] },
   };
 
   const faqSchema =

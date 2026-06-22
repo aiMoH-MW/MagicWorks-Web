@@ -67,6 +67,17 @@ const breadcrumbSchema = {
   ],
 };
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://magicworksitsolutions.com/services/ai-consultation",
+  url: "https://magicworksitsolutions.com/services/ai-consultation",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", ".eyebrow"],
+  },
+};
+
 /* --- Page -------------------------------------------------- */
 
 export default function AIConsultationPage() {
@@ -83,6 +94,10 @@ export default function AIConsultationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
 
       {/* -- 1. HERO -- */}

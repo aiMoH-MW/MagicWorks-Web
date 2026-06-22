@@ -33,7 +33,12 @@ export default async function CaseStudyPage({ params }: Props) {
     "@type": "Article",
     headline: study.title,
     description: study.situation ?? "",
-    publisher: { "@type": "Organization", name: "MagicWorks IT Solutions Pvt. Ltd." },
+    datePublished: study.publishedAt ?? undefined,
+    dateModified: study.publishedAt ?? undefined,
+    author: { "@type": "Organization", name: "MagicWorks IT Solutions Pvt. Ltd." },
+    publisher: { "@type": "Organization", name: "MagicWorks IT Solutions Pvt. Ltd.", "@id": "https://magicworksitsolutions.com/#organization" },
+    url: `https://magicworksitsolutions.com/work/${slug}`,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `https://magicworksitsolutions.com/work/${slug}` },
   };
 
   return (

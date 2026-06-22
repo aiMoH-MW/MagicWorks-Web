@@ -32,9 +32,22 @@ const toc = [
   { id: "grievance", label: "Grievance redressal and contact" },
 ];
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://magicworksitsolutions.com/terms",
+  name: "Terms of Use",
+  url: "https://magicworksitsolutions.com/terms",
+  description: "Terms of Use for magicworksitsolutions.com — MagicWorks IT Solutions Pvt. Ltd.",
+  isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
 export default function TermsPage() {
   return (
-    <section className="bg-[#F7F3EA] py-20">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <section className="bg-[#F7F3EA] py-20">
       <div className="max-w-[800px] mx-auto px-8">
 
         {/* Header */}
@@ -369,5 +382,6 @@ export default function TermsPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

@@ -8,6 +8,43 @@ export const metadata: Metadata = {
   alternates: { canonical: "/industries/professional-services" },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://magicworksitsolutions.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Professional Services", item: "https://magicworksitsolutions.com/industries/professional-services" },
+  ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "AI Consultation & Digital Marketing for Professional Services",
+  serviceType: "AI Consultation, Digital Marketing",
+  description: "AI process audits, AI literacy workshops, and digital marketing for CA firms, law practices, consultancies, and advisory firms.",
+  url: "https://magicworksitsolutions.com/industries/professional-services",
+  provider: { "@id": "https://magicworksitsolutions.com/#organization" },
+  areaServed: { "@type": "Country", name: "India" },
+};
+
+const faq = [
+  { q: "What can MagicWorks do for a CA firm or law practice?", a: "We offer AI Consultation (process audit and AI literacy workshops designed for partners), LinkedIn and thought leadership content, AI-native websites for digital credibility, and SEO/AEO for practice-area queries. Professional Services is our Priority 2 AI Consultation vertical." },
+  { q: "Why is AI Consultation relevant for professional services firms?", a: "Professional services firms have significant automation potential in client onboarding, document review, compliance workflows, and reporting. The right strategy starts from the firm's practice, not from the technology vendor's pitch." },
+  { q: "How does the AI advisory work for professional services?", a: "We start with an AI Literacy Workshop to build leadership alignment, then audit your specific processes to identify the highest-value automation opportunities. You choose who implements — we advise independently." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const services = [
   { title: "AI Process Audit + Roadmap", body: "Identify automation opportunities in client onboarding, document review, compliance workflows, and reporting cycles." },
   { title: "AI Literacy Workshop", body: "Build leadership alignment on AI before committing to any vendor. Designed for partners and senior teams." },
@@ -20,6 +57,10 @@ const services = [
 export default function ProfessionalServicesPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-200px] top-[-160px] w-[680px] h-[680px] pointer-events-none opacity-60" aria-hidden="true">
@@ -75,6 +116,22 @@ export default function ProfessionalServicesPage() {
               <div key={s.title} className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-6">
                 <h3 className="font-[family-name:var(--font-head)] font-bold text-[17px] text-[#2A1B5C] mb-2">{s.title}</h3>
                 <p className="text-[14px] text-[#3F3F4A]">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#F7F3EA] py-20">
+        <div className="max-w-[780px] mx-auto px-8">
+          <hr className="gold-rule mb-6" />
+          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-10">Frequently asked questions.</h2>
+          <div className="article-faq flex flex-col gap-6">
+            {faq.map((f) => (
+              <div key={f.q} className="border-b border-[#D8D8DE] pb-6">
+                <h3 className="font-[family-name:var(--font-head)] font-bold text-[17px] text-[#2A1B5C] mb-2">{f.q}</h3>
+                <p className="text-[15px] text-[#3F3F4A] leading-[1.6]">{f.a}</p>
               </div>
             ))}
           </div>

@@ -12,6 +12,17 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://magicworksitsolutions.com/blog",
+  name: "MagicWorks Blog",
+  description: "Practical thinking on digital marketing, AI, web development, and business growth from the MagicWorks team.",
+  url: "https://magicworksitsolutions.com/blog",
+  isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
 const categoryLabels: Record<string, string> = {
   "digital-marketing": "Digital Marketing",
   "web-development": "Web Development",
@@ -26,6 +37,8 @@ export default async function BlogPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg

@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   alternates: { canonical: "/group/magic-pipeline" },
 };
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Magic Pipeline",
+  applicationCategory: "BusinessApplication",
+  description: "AI-native CRM and sales pipeline management platform for growing teams. Lead scoring, follow-up automation, and deal insights.",
+  url: "https://magicpipeline.io",
+  offers: { "@type": "Offer", category: "SaaS" },
+  creator: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
 export default function MagicPipelinePage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-100px] top-[-80px] w-[480px] h-[480px] pointer-events-none opacity-50" aria-hidden="true">
           {[80, 140, 200].map((r, i) => (

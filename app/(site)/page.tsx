@@ -83,6 +83,7 @@ const faq = [
 const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://magicworksitsolutions.com/#organization",
   name: "MagicWorks IT Solutions Pvt. Ltd.",
   url: "https://magicworksitsolutions.com",
   logo: "https://magicworksitsolutions.com/logo.png",
@@ -96,6 +97,36 @@ const organizationSchema = {
   sameAs: ["https://linkedin.com/company/magicworks-it-solutions"],
   description:
     "AI-first digital marketing agency in Pune. Digital marketing, web development, AI consultation, and platform consultation for ambitious Indian businesses.",
+};
+
+const webSiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://magicworksitsolutions.com/#website",
+  name: "MagicWorks IT Solutions",
+  url: "https://magicworksitsolutions.com",
+  description:
+    "AI-first digital marketing agency in Pune. Digital marketing, web development, AI consultation, and platform consultation for ambitious Indian businesses.",
+  publisher: { "@id": "https://magicworksitsolutions.com/#organization" },
+  potentialAction: {
+    "@type": "SearchAction",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://magicworksitsolutions.com/blog?q={search_term_string}",
+    },
+    "query-input": "required name=search_term_string",
+  },
+};
+
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://magicworksitsolutions.com/",
+  url: "https://magicworksitsolutions.com/",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", ".eyebrow", "h2"],
+  },
 };
 
 const faqSchema = {
@@ -114,6 +145,14 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
       <script
         type="application/ld+json"

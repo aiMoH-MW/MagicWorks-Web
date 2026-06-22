@@ -143,6 +143,17 @@ const breadcrumbSchema = {
   ],
 };
 
+const speakableSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://magicworksitsolutions.com/services/digital-marketing",
+  url: "https://magicworksitsolutions.com/services/digital-marketing",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h2", ".eyebrow"],
+  },
+};
+
 export default function DigitalMarketingPage() {
   return (
     <>
@@ -157,6 +168,10 @@ export default function DigitalMarketingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
       />
 
       {/* -- HERO -- */}

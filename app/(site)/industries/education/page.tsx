@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/industries/education" },
 };
 
-const schema = {
+const breadcrumbSchema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   itemListElement: [
@@ -16,6 +16,33 @@ const schema = {
     { "@type": "ListItem", position: 2, name: "Industries", item: "https://magicworksitsolutions.com/industries" },
     { "@type": "ListItem", position: 3, name: "Education", item: "https://magicworksitsolutions.com/industries/education" },
   ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Digital Marketing for Education",
+  serviceType: "Digital Marketing",
+  description: "Lead generation, SEO, paid media, and AI-native websites for schools, colleges, and edtech companies in India.",
+  url: "https://magicworksitsolutions.com/industries/education",
+  provider: { "@id": "https://magicworksitsolutions.com/#organization" },
+  areaServed: { "@type": "Country", name: "India" },
+};
+
+const faq = [
+  { q: "How does MagicWorks generate student enquiries?", a: "We run Google Search campaigns targeting active course seekers, Meta Ads timed to admission cycles, SEO for sustained organic pipeline, and AI-native websites built for conversion. Our anchor case study is SimpliDistance: 75,000+ qualified admissions leads per year at 30–40% below benchmark CPL." },
+  { q: "What makes your education marketing different?", a: "We understand admission cycles and programme-level targeting. We distinguish between a click, an enquiry, and an enrolment-ready lead, and we build campaigns around that distinction." },
+  { q: "Do you work with online and distance education providers?", a: "Yes. SimpliDistance, our longest-running education client, is India's fastest-growing portal for distance and online MBA admissions." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
 };
 
 const services = [
@@ -30,7 +57,9 @@ const services = [
 export default function EducationPage() {
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
@@ -100,6 +129,24 @@ export default function EducationPage() {
               <div key={s.title} className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#5B3FBE] rounded-[10px] p-6">
                 <h3 className="font-[family-name:var(--font-head)] font-bold text-[17px] text-[#2A1B5C] mb-2">{s.title}</h3>
                 <p className="text-[14px] text-[#3F3F4A]">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#F7F3EA] py-20">
+        <div className="max-w-[780px] mx-auto px-8">
+          <hr className="gold-rule mb-6" />
+          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-10">
+            Frequently asked questions.
+          </h2>
+          <div className="article-faq flex flex-col gap-6">
+            {faq.map((f) => (
+              <div key={f.q} className="border-b border-[#D8D8DE] pb-6">
+                <h3 className="font-[family-name:var(--font-head)] font-bold text-[17px] text-[#2A1B5C] mb-2">{f.q}</h3>
+                <p className="text-[15px] text-[#3F3F4A] leading-[1.6]">{f.a}</p>
               </div>
             ))}
           </div>

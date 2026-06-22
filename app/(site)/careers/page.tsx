@@ -11,6 +11,17 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://magicworksitsolutions.com/careers",
+  name: "Careers at MagicWorks",
+  description: "Open roles at MagicWorks IT Solutions in Pune. Hiring across digital marketing, web development, AI, design, and operations.",
+  url: "https://magicworksitsolutions.com/careers",
+  isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
 const deptLabels: Record<string, string> = {
   "digital-marketing": "Digital Marketing",
   "web-development": "Web Engineering",
@@ -72,6 +83,8 @@ export default async function CareersPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-100px] top-[-80px] w-[480px] h-[480px] pointer-events-none opacity-50" aria-hidden="true">

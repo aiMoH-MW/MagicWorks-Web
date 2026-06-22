@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
@@ -5,6 +6,17 @@ import { getTeamMemberBySlug, getInsightsByAuthor } from "@/sanity/queries";
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const author = await getTeamMemberBySlug(slug);
+  if (!author) return { title: "Author not found" };
+  return {
+    title: `${author.name} · Author`,
+    description: author.bio ?? `Articles and insights by ${author.name} at MagicWorks IT Solutions.`,
+    alternates: { canonical: `/authors/${slug}` },
+  };
 }
 
 export default async function AuthorPage({ params }: Props) {

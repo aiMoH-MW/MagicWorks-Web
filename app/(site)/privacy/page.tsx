@@ -25,9 +25,22 @@ const toc = [
   { id: "changes", label: "Changes to This Policy" },
 ];
 
+const webPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://magicworksitsolutions.com/privacy",
+  name: "Privacy Policy",
+  url: "https://magicworksitsolutions.com/privacy",
+  description: "Privacy policy for magicworksitsolutions.com under the DPDP Act 2023.",
+  isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
 export default function PrivacyPage() {
   return (
-    <section className="bg-[#F7F3EA] py-20">
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+      <section className="bg-[#F7F3EA] py-20">
       <div className="max-w-[800px] mx-auto px-8">
 
         {/* Header */}
@@ -444,5 +457,6 @@ export default function PrivacyPage() {
         </div>
       </div>
     </section>
+    </>
   );
 }

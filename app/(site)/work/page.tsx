@@ -12,6 +12,17 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://magicworksitsolutions.com/work",
+  name: "MagicWorks Case Studies",
+  description: "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
+  url: "https://magicworksitsolutions.com/work",
+  isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
 type CaseStudy = {
   _id: string;
   slug: { current: string };
@@ -34,6 +45,8 @@ export default async function WorkPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+
       {/* ── HERO ───────────────────────────────────────────────────── */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         {/* Decorative rings */}

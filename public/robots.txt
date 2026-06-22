@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /api/
+Disallow: /studio/
+Disallow: /_next/
+
+Sitemap: https://magicworksitsolutions.com/sitemap.xml

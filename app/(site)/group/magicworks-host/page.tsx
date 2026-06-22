@@ -8,9 +8,21 @@ export const metadata: Metadata = {
   alternates: { canonical: "/group/magicworks-host" },
 };
 
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "MagicWorks Host",
+  serviceType: "Web Hosting",
+  description: "Domain registration, managed web hosting, and SSL certificates for Indian businesses.",
+  url: "https://magicworkshost.com",
+  provider: { "@id": "https://magicworksitsolutions.com/#organization" },
+  areaServed: { "@type": "Country", name: "India" },
+};
+
 export default function MagicWorksHostPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-100px] top-[-80px] w-[480px] h-[480px] pointer-events-none opacity-50" aria-hidden="true">
           {[80, 140, 200].map((r, i) => (

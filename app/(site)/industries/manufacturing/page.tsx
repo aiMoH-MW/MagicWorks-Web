@@ -8,6 +8,43 @@ export const metadata: Metadata = {
   alternates: { canonical: "/industries/manufacturing" },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "Industries", item: "https://magicworksitsolutions.com/industries" },
+    { "@type": "ListItem", position: 3, name: "Manufacturing", item: "https://magicworksitsolutions.com/industries/manufacturing" },
+  ],
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Digital Marketing & AI Consultation for Manufacturing",
+  serviceType: "Digital Marketing, AI Consultation",
+  description: "B2B lead generation, AI-native websites, and AI process audits for Indian manufacturers. Priority 1 AI Consultation vertical.",
+  url: "https://magicworksitsolutions.com/industries/manufacturing",
+  provider: { "@id": "https://magicworksitsolutions.com/#organization" },
+  areaServed: { "@type": "Country", name: "India" },
+};
+
+const faq = [
+  { q: "What services does MagicWorks provide for manufacturers?", a: "We cover three pillars: Digital Marketing (B2B lead generation, LinkedIn, SEO for industrial queries), Web Development (AI-native company and product sites, dealer portals), and AI Consultation (process audit and roadmap for automation opportunities). Manufacturing is our Priority 1 AI Consultation vertical." },
+  { q: "Can you help a manufacturer reach international buyers?", a: "Yes. We build export-facing websites and run digital campaigns targeting procurement heads and purchase decision-makers in international markets. Our work with SRJ Steel includes an export-facing product catalogue." },
+  { q: "What does an AI Process Audit involve for a manufacturer?", a: "We map your existing processes across production, quality control, inventory, and supplier management, identify the highest-value automation opportunities, and return a prioritised build-or-buy roadmap. Typical engagement: 4 to 8 weeks." },
+];
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faq.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 const services = [
   { pillar: "Digital Marketing", title: "B2B Lead Generation", body: "Google Search and LinkedIn campaigns targeting procurement heads, plant managers, and purchase decision-makers." },
   { pillar: "Web Development", title: "AI-Native Company & Product Sites", body: "Multi-language product catalogues, dealer portals, and export-facing websites built on Next.js." },
@@ -20,6 +57,10 @@ const services = [
 export default function ManufacturingPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-200px] top-[-160px] w-[680px] h-[680px] pointer-events-none opacity-60" aria-hidden="true">
@@ -87,6 +128,22 @@ export default function ManufacturingPage() {
                   style={{ color: s.pillar === "AI Consultation" ? "#9a7b1f" : "#5B3FBE" }}>{s.pillar}</span>
                 <h3 className="font-[family-name:var(--font-head)] font-bold text-[17px] text-[#2A1B5C] mt-1 mb-2">{s.title}</h3>
                 <p className="text-[14px] text-[#3F3F4A]">{s.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="bg-[#F7F3EA] py-20">
+        <div className="max-w-[780px] mx-auto px-8">
+          <hr className="gold-rule mb-6" />
+          <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-10">Frequently asked questions.</h2>
+          <div className="article-faq flex flex-col gap-6">
+            {faq.map((f) => (
+              <div key={f.q} className="border-b border-[#D8D8DE] pb-6">
+                <h3 className="font-[family-name:var(--font-head)] font-bold text-[17px] text-[#2A1B5C] mb-2">{f.q}</h3>
+                <p className="text-[15px] text-[#3F3F4A] leading-[1.6]">{f.a}</p>
               </div>
             ))}
           </div>

@@ -57,6 +57,7 @@
 ## Company
 
 - [About MagicWorks](https://magicworksitsolutions.com/about): Company background, values, and team.
+- [Founder – Sudhir Dixit](https://magicworksitsolutions.com/about): Sudhir Dixit, founder and director of MagicWorks IT Solutions, focused on AI-first digital growth for Indian businesses.
 - [Careers](https://magicworksitsolutions.com/careers): Open roles at MagicWorks.
 - [Contact](https://magicworksitsolutions.com/contact): Book a free thirty-minute discovery call or send an enquiry.
 

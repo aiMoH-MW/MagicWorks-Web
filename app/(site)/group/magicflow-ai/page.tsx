@@ -8,9 +8,22 @@ export const metadata: Metadata = {
   alternates: { canonical: "/group/magicflow-ai" },
 };
 
+const softwareSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "MagicFlow AI",
+  applicationCategory: "BusinessApplication",
+  description: "AI chatbot and process automation platform. Build, deploy, and manage AI agents on a managed SaaS platform. No code required.",
+  url: "https://magicflowai.io",
+  offers: { "@type": "Offer", category: "SaaS" },
+  creator: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
 export default function MagicFlowAIPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }} />
+
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-100px] top-[-80px] w-[480px] h-[480px] pointer-events-none opacity-50" aria-hidden="true">
