@@ -25,6 +25,17 @@ const nextConfig: NextConfig = {
         destination: "/insights",
         permanent: true,
       },
+      // Old WordPress slugs for "how to hire a digital marketing agency" — redirect to current post
+      {
+        source: "/blog/the-complete-guide-to-hiring-a-digital-marketing-agency-in-india-2026",
+        destination: "/blog/the-ultimate-guide-to-hiring-the-best-digital-marketing-agency",
+        permanent: true,
+      },
+      {
+        source: "/blog/how-to-hire-a-digital-marketing-agency-india",
+        destination: "/blog/the-ultimate-guide-to-hiring-the-best-digital-marketing-agency",
+        permanent: true,
+      },
       // /about/careers/* → /careers/* (/about/careers removed; /careers is now canonical)
       {
         source: "/about/careers/:slug*",
