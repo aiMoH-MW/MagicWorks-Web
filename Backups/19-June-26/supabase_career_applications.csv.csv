@@ -1,0 +1,513 @@
+id,created_at,job_slug,job_title,name,email,phone,linkedin_url,portfolio_url,cover_letter,resume_url,status
+e92ef75c-b68a-44f5-81c1-33dc34671dff,2026-06-10 12:24:56.213526+00,frontend-developer,Frontend Developer,Test Applicant,apply@example.com,9876543210,null,null,I love React,null,new
+f07fd3a0-2f79-4718-8fbd-a95a72b41baf,2026-06-10 12:27:36.469369+00,frontend-developer,Frontend Developer,Test Applicant,apply@example.com,9876543210,null,null,I love React,null,new
+a942bb8c-8b46-40ba-aa14-b01396759745,2026-06-10 12:51:53.379985+00,performance-marketing-executive,Performance Marketing Executive,Jane Doe,jane@test.com,9876543210,null,null,I have 3 years Google Ads experience.,null,new
+802fc930-97f8-47bb-bcd8-2b24ab01394b,2026-06-12 13:54:39.311123+00,performance-marketing-executive,Performance Marketing Executive,Mohan Chute,mohang.chute@gmail.com,+917030880661,https://www.linkedin.com/in/mohanchute/,https://www.amazon.in/stores/Mohan-Chute/author/B0CJ53M33G,"This is sample Resume.
+
+I a seeking internship with MW.",null,new
+9cddf8df-b54d-4f21-8b10-311378490543,2026-06-13 04:43:18.08595+00,ai-automation-specialist,AI & Automation Specialist,Mohan Chute,mohang.chute@gmail.com,+917030880661,null,null,Pls find my resume,null,new
+245fd44f-ab6f-4728-b801-31d1fcd9a008,2026-06-13 05:03:04.547648+00,content-strategist-ai-b2b,Content Strategist: AI & B2B,Mohan Chute,mohang.chute@gmail.com,+917030880661,null,null,pls find my resume,null,new
+7bbbdb9f-ac75-424f-ba4b-c22fca2509dd,2026-06-16 11:22:50.925545+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Dipali Jadhav,jadhavdipali924@gmail.com,+917843059259,null,null,null,null,new
+c06d3f90-7802-434e-83c0-4aad9f3718dc,2026-06-16 13:47:01.636278+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),mayank arya,mayank.arya421@gmail.com,+919981754674,https://www.linkedin.com/in/mayank-arya-2681b6296/,https://mayankarya123.github.io/portfolio/,null,null,new
+63f305bd-a99e-4cd7-8015-579569ec26a7,2026-06-16 14:08:38.297945+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Shubham Kishor Jadhav,shubhamjadhav5842@gmail.com,+919552885037,https://www.linkedin.com/in/shubham-jadhav26/,https://jadhavshubham.in/,null,null,new
+a925e2c3-bec0-4a80-b8f6-45dfa1515241,2026-06-16 14:52:17.493491+00,performance-marketing-executive,Performance Marketing Executive,Renuka Raut,renukaraut664@gmail.com,7397934835,https://www.linkedin.com/in/digitalmarketing-renukahttps://www.linkedin.com/in/digitalmarketing-renuka,null,null,null,new
+63a417e6-4574-49a9-ad61-d39e6b661568,2026-06-16 14:57:27.000558+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Sarthak Bhojane,sarthak.bhojane02@gmail.com,+917709437063,https://in.linkedin.com/in/sarthak-bhojane-6a1896237,null,null,null,new
+b82f1d34-c70e-47b5-9dc2-501d8363247a,2026-06-16 15:06:37.958718+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Dhuvarakesan Mani ",dhuvarakesan.m@gmail.com,+918508558899,https://in.linkedin.com/in/dhuvarakesan-mani-88baa5235,null,null,null,new
+4f367cde-178d-4ac7-9238-6d66439cc026,2026-06-16 18:05:31.246508+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Girraj Singhal,girrajsinghal12@gmail.com,+919352090542,https://www.linkedin.com/in/girraj-singhal/,https://webportfolio-orpin.vercel.app/,"I am a Software Engineer with nearly 2 years of experience building scalable web applications using React.js, Node.js, Express.js, MongoDB, and MySQL. I enjoy solving complex problems, developing user-focused solutions, and continuously learning new technologies. I am excited about the opportunity to contribute my skills and grow with your team.",null,new
+c5be9b26-7d2e-45d2-ac6c-e80b4a8d40bc,2026-06-16 18:34:37.19086+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Kartik Kulshreshtha,kartikkulshreshtha2507@gmail.com,7224098370,https://www.linkedin.com/in/kartik-kulshreshtha-9612b91b8/,null,null,null,new
+3a80a353-a218-48d9-854c-698099c8bf29,2026-06-16 18:41:27.842864+00,performance-marketing-executive,Performance Marketing Executive,Aniket Shivaji Sherkar,aniketsherkar2001@gmail.com,+917769871115,https://www.linkedin.com/in/aniketsh/,"  https://shorturl.at/Mo7Ay","Dear Hiring Manager, 
+I am writing to express my strong interest in a Marketing position at your organisation. With 2.5+ years of 
+hands-on experience in B2B customer engagement, sales pipeline management, and market research — 
+backed by an MBA in Marketing — I bring a data-driven approach to crafting campaigns and strategies that 
+deliver measurable results. 
+In my role as Business Development Executive at Zenon Systems, I conducted 80+ monthly discovery calls that 
+fed directly into marketing collateral and sales enablement materials. By designing a consultative sales 
+framework, I improved demo-to-deal conversion by 40% while simultaneously managing retention of 30+ 
+active B2B accounts with under 10% churn. This experience sharpened my ability to translate real customer 
+pain points into compelling marketing narratives and targeted campaigns. 
+Beyond day-to-day execution, I have led end-to-end go-to-market strategy projects — including a fintech 
+product positioning for PhonePe's Smart Financial Hub and a customer research initiative for Rapido — where 
+I defined user personas, mapped customer journeys, and developed competitive benchmarking frameworks. 
+These projects reflect my ability to blend analytical rigour with creative strategy, using tools such as Tableau, 
+Power BI, Google Analytics, and Mixpanel to ground decisions in data. 
+I am excited by the opportunity to bring this blend of customer empathy, marketing strategy, and analytical 
+capability to your team. I am confident I can contribute meaningfully to your customer acquisition goals, brand 
+growth, and campaign performance from day one. 
+I would welcome the chance to discuss how my background aligns with your team's needs. Thank you for your 
+time and consideration. 
+Warm regards, 
+Aniket Sherkar",null,new
+5f0859df-fe31-4288-a3e3-4b76854a21d0,2026-06-16 18:53:38.586186+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Amey Rathod,rathodamey429@gmail.com,+917769987240,https://www.linkedin.com/in/amey-rathod-10aa92173,https://ameyrathod05.github.io/my-portfolio/,null,null,new
+1ef3ac74-e010-46b4-8f5d-b096fd043786,2026-06-16 20:06:58.009249+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Vineet Jadhav,vineetworks29@gmail.com,7972792636,https://linkedin.com/in/vineet-op,https://vineetop.com,null,null,new
+d57f6434-a7b8-485d-adaf-a7a1922c3729,2026-06-16 22:46:16.844169+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Pulkit ",guptapulkit71@gmail.com,7440563065,https://www.linkedin.com/in/pulkit-methaniya-45b4621b8?utm_source=share_via&utm_content=profile&utm_medium=member_ios,null,null,null,new
+817d67aa-8998-473e-8e78-0150f352a4dd,2026-06-17 01:21:52.668868+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),ghanshyam jadhav,jadhavshyam08@gmail.com,9604134538,null,null,null,null,new
+86e733bc-3644-452b-80d0-32e1bb0977a9,2026-06-17 01:57:24.443828+00,performance-marketing-executive,Performance Marketing Executive,Leena Suresh Patil,leenapatil737@gmail.com,+919307201969,null,null,null,null,new
+9be72cf4-2286-412b-857b-09a27da4658a,2026-06-17 02:02:37.532773+00,performance-marketing-executive,Performance Marketing Executive,Leena Suresh Patil,leenapatil737@gmail.com,+919307201969,null,null,"I am excited to explore opportunities in Performance Marketing as it combines data-driven decision-making, campaign management, and business growth. My experience in coordinating marketing operations, handling customer requirements, managing order processes, and working with cross-functional teams has strengthened my analytical and organizational skills. I am eager to apply my learning mindset, marketing exposure, and problem-solving abilities to contribute to impactful digital marketing campaigns while continuing to grow professionally.
+",null,new
+0553409d-5cb4-4fd7-8807-fc599b283e21,2026-06-17 02:20:49.177039+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Mugdha Pravin Bhoot,bhootmugdha@gmail.com,9359106570,null,null,null,null,new
+748d8d1f-13d3-4a78-85e0-4fa8fb13a671,2026-06-17 02:42:52.739165+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Ankit,ankitbalhara012@gmail.com,+919896207924,https://www.linkedin.com/in/ankitbalharadeveloper/,null,null,null,new
+47f69d9c-cf31-47ed-b118-3cea76953edf,2026-06-17 03:04:32.543246+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),BHUSHAN VILAS MARATHE,bhushanmarathe12@gmail.com,9767852417,https://www.linkedin.com/in/bhushanmarathe,null,"June 17, 2026  
+bhushanmarathe12@gmail.com  
+
+Dear Hiring Manager,
+
+I am writing to express my interest in the Full-Stack Developer (Next.js) position at MagicWorks. With a strong foundation in Next.js, TypeScript, and Supabase, coupled with my experience in integrating AI solutions, I am excited about the opportunity to contribute to your dynamic team. My professional journey over the past few years has equipped me with the skills and knowledge necessary to build efficient client websites and innovative internal tools that align with your vision at MagicWorks.
+
+In my previous roles, I have dedicated over two years to developing applications using Next.js, honing my ability to create seamless user experiences and responsive designs. My proficiency in TypeScript has allowed me to write clean and maintainable code, enabling quicker turnaround times for project milestones while maintaining high standards of quality. Furthermore, my experience with Supabase has granted me the ability to build powerful back-end solutions that support complex functionalities, such as user authentication and real-time data management, resulting in enhanced application performance.
+
+I am particularly passionate about leveraging AI technologies to elevate the functionality of web applications. In past projects, I have successfully integrated AI features that improved user engagement and optimized data processing. This experience not only enhances my software development skills but also aligns with the innovative work environment that MagicWorks embraces. My eagerness to work remotely has provided me with the discipline and motivation to thrive in virtual collaborations, ensuring that distance does not diminish my contribution.
+
+I am confident that my blend of technical expertise and creative problem-solving makes me a strong fit for the Full-Stack Developer role at MagicWorks. I look forward to the possibility of discussing how my background, skills, and passions align with the goals of your team. Thank you for considering my application.
+
+Best regards,  
+
+Bhushan Marathe",null,new
+4abb6bb3-43ee-464e-9919-fe29eb476157,2026-06-17 05:30:22.079781+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Shashank Banait,shashankbanait@gmail.com,+919926589354,https://www.linkedin.com/in/shashankbanait/,https://github.com/shashankbanait,null,null,new
+0e6e6264-8103-4f72-8146-5cb67b49e67a,2026-06-17 03:13:54.932883+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Yashwant Ramesh Mali,yashwantmali555@gmail.com,+918698922567,https://www.linkedin.com/in/yashwantmali/,https://portfolio-gamma-ashy-69.vercel.app/,"Dear Hiring Manager,
+
+I am a Frontend Engineer with 4 years of experience building high-performance React applications at Infosys, working on enterprise platforms for clients including Home Depot and Gap.
+
+In that time I reduced page load times by 40% (LCP 4.2s → <2.5s), improved Lighthouse scores to 90+, cut production UI defects by 30%, and maintained 80%+ test coverage. I also led a component architecture migration that eliminated 25% of duplicate UI code and sped up new page delivery by 30–35%.
+
+I work primarily with React, Redux, Next.js, Tailwind CSS, Jest, and Node.js, and I hold Microsoft Azure certifications in AI and Cloud Fundamentals.
+
+I would love to bring this experience to your team. Thank you for your time — I look forward to connecting.
+
+Sincerely,
+Yashwant Mali,
+yashwantmali555@gmail.com,
+ +91 8698922567",null,new
+4016ea29-47ec-42c9-a242-70f11f2956d0,2026-06-17 03:25:16.010907+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),KEERTHANA C G,keerthanagowda752@gmail.com,+918105177680,https://linkedin.com/in/keerthana-c-g-470396302,null,null,null,new
+6be2ed8d-e6aa-48aa-9551-4ec0d7d22149,2026-06-17 03:29:47.681892+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Piyush Kumar,piyushkr925@gmail.com,+917740992099,https://www.linkedin.com/in/piyush-kumar925/,null,null,null,new
+103ecf8f-ca8e-4b82-958a-a1e3949afc62,2026-06-17 03:39:01.849902+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Ankush Abhinandan Pandit,ankushpandit2003@gmail.com,+917058639130,https://www.linkedin.com/in/ankushpandit2003/,https://github.com/Ankush7058,"I am a MERN Stack Developer with hands-on experience building and deploying full-stack web applications using React.js, Next.js, Node.js, TypeScript, MongoDB, and cloud platforms. I have experience developing scalable REST APIs, implementing JWT authentication, building responsive user interfaces, and deploying applications on Vercel and Render.
+
+My recent projects include a luxury e-commerce platform and an AI-powered travel itinerary generator, where I integrated AI services, document processing, and modern frontend workflows. I am particularly interested in this role because it combines Next.js development with AI-driven features and modern backend services.
+
+I bring strong problem-solving skills, a fast learning mindset, experience working across the full stack, and a commitment to building clean, performant, and user-focused applications. I would be excited to contribute to both client-facing products and internal tools while continuing to grow with your team.
+",null,new
+e7167017-bbfa-46d5-9537-0e44672a1a80,2026-06-17 03:56:29.403245+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Sahil Kumar Sahoo,sksahoo.dev@gmail.com,8327704042,null,null,null,null,new
+11a257be-5494-40b4-93fb-d40df20517d6,2026-06-17 04:10:47.597658+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Kanu Jain,kanujain482@gmail.com,6266644823,https://www.linkedin.com/in/kanu-jain?utm_source=share_via&utm_content=profile&utm_medium=member_android,https://www.nirvanarivercruises.com/,.,null,new
+5a926e81-e04b-4715-b8f6-dcc17b4e7e50,2026-06-17 04:15:38.751269+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Abbhiinav Jagtap,jagtapabbhiinav@gmail.com,+919763828674,null,null,null,null,new
+8f556f9e-bcfb-472d-8381-b79ef5568658,2026-06-17 04:27:27.830229+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Shriram Patil,patil.shriram98@gmail.com,+91 70384-55432,null,null,null,null,new
+3a2e4a04-21b8-4213-acb3-e6786777f627,2026-06-17 04:32:21.151861+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Kumar Shashank,1711shashank@gmail.com,8340767018,https://www.linkedin.com/in/1711shashank/,null,null,null,new
+a22685bc-dbf3-4dd7-ba44-1ad964512f56,2026-06-17 04:33:39.858405+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Abhishek Kadam,abhishek05670@gmail.com,+918149482862,null,null,null,null,new
+74db1a33-6cc2-477e-acbd-496bfd75f8f7,2026-06-17 04:41:54.571868+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Rohit Satkar,rohitmsatkar@gmail.com,8329858318,https://www.linkedin.com/in/rohit-satkar-210481267?utm_source=share_via&utm_content=profile&utm_medium=member_android,null,null,null,new
+496d0616-b304-4551-ba02-d93f23fc138d,2026-06-17 04:57:59.727491+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Sushant Salavi,salavisush88@gmail.com,9552077123,https://www.linkedin.com/in/sushant-salavi24021996/,null,"I have around 4 years of experience in software development, working extensively with modern web technologies such as React.js, JavaScript (ES6+), Node.js, Express.js, and MongoDB. In my current role at Knorex, I work in the digital advertising and marketing technology domain, which aligns closely with MagicWorks' business area.
+
+During my time at Knorex, I have been responsible for developing and enhancing customer-facing products, building scalable frontend applications, integrating backend APIs, optimizing application performance, and collaborating with global cross-functional teams.
+
+In addition to full-stack development, I have hands-on experience with AI/LLM integrations and modern development practices, enabling me to contribute to innovative digital solutions. My background in both frontend and backend development allows me to understand the complete product lifecycle and deliver high-quality features efficiently.
+
+I believe my experience in the digital marketing technology domain, strong technical skills, problem-solving mindset, and ability to quickly adapt to new technologies would enable me to add value to MagicWorks from day one.",null,new
+03f58f9a-befc-4be7-a373-5f4d07c8da2a,2026-06-17 04:59:15.119611+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Adesh Belokar,belokaradesh@gmail.com,+919404126923,https://www.linkedin.com/in/adesh-belokar-310381165?utm_source=share_via&utm_content=profile&utm_medium=member_android,null,null,null,new
+cfa72902-6031-4b0d-8fa9-f410f5e863f2,2026-06-17 05:07:33.838607+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Pradnya Vijay Patil,pradnyapatil2298@gmail.com,+919325230275,https://www.linkedin.com/in/pradnya-patil-33016720b/,null,null,null,new
+583b9ae8-0f4a-45ef-b2a4-1300493f7237,2026-06-17 05:11:19.213082+00,performance-marketing-executive,Performance Marketing Executive,Shravani Kanire,shravanikanire@gmail.com,+919284770562,https://www.linkedin.com/in/shravanikanire?utm_source=share_via&utm_content=profile&utm_medium=member_android,null,null,null,new
+608e3910-1e49-4073-b41e-f8e28c095361,2026-06-17 05:12:19.744884+00,ai-automation-specialist,AI & Automation Specialist,Cheedella kavya,kavyacheedella64@gmail.com,+919182836056,null,null,null,null,new
+c9b9a5f9-a3df-4217-b25e-32454fe29444,2026-06-17 05:19:06.975335+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Amit Lakade,lakadeamit220@gmail.com,+91 9168830229,https://www.linkedin.com/in/amit-lakade-771843217/,https://github.com/lakadeamit220,"Hi Team, 
+
+I’m a Full Stack Developer with 2+ years of experience building real-time web applications and IoT dashboards. I’ve independently developed complete applications, handling both backend and frontend development.
+
+On the backend, I work with Node.js, Express.js, MongoDB, and PostgreSQL to build APIs, manage real-time sensor data, and optimize application performance.
+On the frontend, I build interactive dashboards using React.js, WebSockets, and live data visualization tools.
+
+I also handle deployment and infrastructure using Docker and AWS EC2.
+
+I’m currently exploring new opportunities and would like to connect if there’s a relevant opening. I’ve shared my resume for reference.
+
+Thanks!",null,new
+0c6b9cf9-f9c0-44d8-9148-65393bbac00b,2026-06-17 05:21:53.905277+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Isha Patil,ishapatil298@gmail.com,8975795159,https://www.linkedin.com/in/isha-patil-developer/,https://porfolio-isha.vercel.app/,null,null,new
+47dabafe-8d98-4ae7-9d1d-f9939a250571,2026-06-17 05:33:29.181035+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Ayushi Samaddar ",ayushisamaddar55@gmail.com,9131564538,null,null,null,null,new
+b1cff8f9-df06-4d1b-b540-74569eecea1d,2026-06-17 05:59:18.093038+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Nikhil Bhagwat Thakre,thakrenikhil34@gmail.com,+918390912763,https://www.linkedin.com/in/nikhil-thakre-7b92a21a9/,null,null,null,new
+5d90326d-3738-439a-bf9b-8463ce3af20e,2026-06-17 06:01:26.197347+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Aarti Ghorpade,aartis.ghorpade@gmail.com,9511763183,https://www.linkedin.com/in/aarti-ghorpade-58b844201/,https://aartis-portfolio.netlify.app/,null,null,new
+b214129c-f14f-4689-a32e-ed5c3a5e35a6,2026-06-17 06:01:49.428243+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),gaurav shelar,gauravshelar.dev@gmail.com,8459177761,null,null,null,null,new
+10584c0b-d7ef-4700-a709-46a229398d8f,2026-06-17 06:02:55.922791+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Shailesh Sampat,shailesh.webdevelopment@gmail.com,8828797790,https://www.linkedin.com/in/shailesh-sampat/,https://shaileshwebdeveloper.github.io/,null,null,new
+f21b0e5b-bb01-41a7-806b-e945596f25a3,2026-06-17 06:09:10.291851+00,performance-marketing-executive,Performance Marketing Executive,Prateek Rawat,prateek19021999@gmail.com,+919868556837,https://www.linkedin.com/in/prateek-rawat,null,null,null,new
+456af093-0ce1-46cd-b602-00ad411b54c4,2026-06-17 06:10:29.93295+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Omkar dhane ",omkardhane159@gmail.com,7304249055,https://www.linkedin.com/in/omkar-dhane-042b97370/,https://www.linkedin.com/in/omkar-dhane-042b97370/,null,null,new
+a4d19b1d-9707-4206-95d8-e4d2e747d278,2026-06-17 06:15:35.290219+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Sanket Gabhane,sanket.gabhane1710@gmail.com,+919322546441,https://www.linkedin.com/in/sanketgabhane/,https://github.com/sanketgabhane,null,null,new
+9a8877d9-3fb1-4262-a76c-df1c4f527860,2026-06-17 06:18:19.001622+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Anand Kumar Shaw,akshaw5999@gmail.com,+916291312929,https://www.linkedin.com/in/anand-1n1116/,https://ak-info.netlify.app/,Immediate joiner,null,new
+10222823-807d-4af0-ab89-307d88c0655e,2026-06-17 06:25:50.245226+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Sanjeet jha,sanjeetjha9073@gmail.com,6290912557,null,null,"Dear Hiring Manager,
+
+I am excited to apply for the Full-Stack Developer (Next.js) position. With 2 years of experience as a Software Engineer, I have built and maintained scalable web applications using React.js, Next.js, Node.js, and modern cloud technologies.
+
+In my current role at XenonStack, I have worked on end-to-end application development, including designing responsive user interfaces, developing backend APIs, integrating third-party services, and deploying applications in cloud-native environments. I have hands-on experience with Next.js, React.js, JavaScript, TypeScript, REST APIs, Firebase, PostgreSQL, Docker, and Kubernetes.
+
+Some of my key contributions include developing customer-facing web applications, implementing payment gateway integrations such as Stripe and Razorpay, building real-time features using WebSockets, and optimizing application performance and user experience. I have also collaborated closely with cross-functional teams in Agile environments to deliver high-quality solutions.
+
+I am particularly interested in this opportunity because it aligns with my passion for building scalable full-stack applications and creating seamless user experiences. I am confident that my technical skills, problem-solving mindset, and ability to deliver production-ready solutions would make me a valuable addition to your team.
+
+Thank you for your time and consideration. I look forward to the opportunity to discuss how my experience and skills can contribute to your organization.
+
+Sincerely,
+
+Sanjeet Jha",null,new
+ccb5cae0-4da6-4fb5-a257-8720d066b8c8,2026-06-17 06:31:49.001095+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Sanket Ghorpade,sanketghorpade160@gmail.com,+917758941553,https://www.linkedin.com/in/sanket-ghorpade-v/,https://sanket-g.netlify.app/,null,null,new
+28cc3ffc-6c50-4782-9d92-629642414af4,2026-06-17 06:37:13.563141+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Rajendra Patel,rajendrapatel0430@gmail.com,+918359833649,null,https://rajendrapatel-portfolio.vercel.app/,null,null,new
+3f91d94b-bb6f-43a3-b846-9935d33983c6,2026-06-17 06:42:33.312+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Vaishnavi sunil pokale,vaishnavipokale215@gmail.com,+91 9172547953,https://www.linkedin.com/in/vaishnavi-pokale-a67835238/,null,null,null,new
+fee90616-eaed-4f1e-abfc-a42359212bed,2026-06-17 06:44:49.019267+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Nandini Gangurde,nandinigangurde3@gmail.com,09359531521,https://www.linkedin.com/in/nandini-gangurde-5b48ba252,"https://nandini-port-fd6803.netlify.app/ ","Motivated and detail-oriented Software Developer with hands-on experience in Full Stack Web Development, specializing
+in React.js, Angular, JavaScript, Java, Springboot, Hibernate, MySQL, MERN and modern web technologies. Skilled in
+building responsive web applications, implementing backend functionalities, and working with databases to solve real-
+world business problems. Strong understanding of software engineering principles, object-oriented programming, UI/UX
+design, and AI-driven applications. Passionate about learning emerging technologies and seeking an opportunity to
+contribute technical, problem-solving, and development also technical support and Manual testing skills toward
+organizational growth while continuously enhancing professional expertise.",null,new
+7c1d82ae-2235-4cac-8756-445c608c75fc,2026-06-17 06:46:47.155998+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Shivam Mahajan,shivammahajan3107@gmail.com,9754284729,null,null,null,null,new
+3d066199-1211-46dc-a73c-ece4003a9eee,2026-06-17 06:51:08.023687+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Chinmay Pimpalgaonkar ",pchinmay2017@gmail.com,9146795863,https://www.linkedin.com/in/chinmay-pimpalgaonkar,null,"Dear Hiring Manager,
+I am excited to apply for the Full Stack Developer role. With almost 2 years of experience in building scalable web applications using React.js, Next.js, Node.js, Redux, Tailwind CSS, REST APIs, and SQL, I have developed strong expertise in creating responsive user interfaces and integrating backend services.
+I have experience working on end-to-end feature development, payment gateway integrations, authentication using JWT/OAuth, and collaborating with cross-functional teams to deliver high-quality solutions. I am eager to bring my technical skills, problem-solving abilities, and enthusiasm for learning to your team.
+Thank you for your time and consideration. I look forward to discussing how I can contribute to your organization.
+Sincerely,
+Chinmay Pimpalgaonkar",null,new
+e908d14d-50b7-4b7b-bf06-bd4f1a72a940,2026-06-17 07:06:11.252752+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Suraj Bhoji ",surajbhoji1208@gmail.com,9172412089,null,null,null,null,new
+e7f1fdda-6b92-4d67-8fb6-3fc2c5d09885,2026-06-17 07:08:53.89999+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Naveen Yadav,yn.naveen00@gmail.com,7897553576,https://www.linkedin.com/in/naveenyadav1711/,https://github.com/1711naveen,"HI My name is Naveen. I have experience of 2 Years building full stack web application using NextJs ",null,new
+700c56c0-face-4024-bf53-0517973f1717,2026-06-17 07:11:50.688345+00,performance-marketing-executive,Performance Marketing Executive,"Aditya Joshi ",adityajoshi.cloud@gmail.com,7796617129,null,null,null,null,new
+2ec34fc9-29a3-4fc6-bae5-9ec6e270c53a,2026-06-18 09:01:43.721957+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Alfiya bhaldar,bhaldaralfiya12@gmail.com,9130309002,null,null,null,web-developer-full-stack/1781773300890-alfiya-bhaldar.pdf,new
+83d3f1a9-6cd2-4a81-9e42-3fd8a22995a1,2026-06-19 02:43:18.159592+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Vama Shah,vamashahnamo04@gmail.com,8788738464,null,null,null,web-developer-full-stack/1781836995056-vama-shah.pdf,new
+022f9d2b-051d-49f0-96f7-943d8b527ae7,2026-06-17 07:23:17.355122+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Dhanashree Pradeepkumar Thube,dhanashreepthube@gmail.com,+919503045707,null,https://dhanashree-portfolio-2.netlify.app/,"It aligns with my goal of building impactful software products and growing as a frontend engineer. Over the past few years, I have worked as a Technical Consultant, where I gained experience in problem-solving, understanding business requirements, and delivering solutions in a professional environment. Alongside my work, I have been actively strengthening my frontend development skills through projects and continuous learning in JavaScript, React, and modern web technologies. I am a quick learner, and I am always ready for new challenges. ",null,new
+c7d0272f-c25d-4c41-8219-bfc510269d96,2026-06-17 07:38:20.479702+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Vishal Bhange ",vishalbhange3333@gmail.com,7887302333,null,null,null,null,new
+ac837ce2-5bd7-4d40-b86f-7c21d974eba6,2026-06-17 07:38:53.969572+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Prawal Singh,prawalsinghbaghel@gmail.com,9398075922,https://www.linkedin.com/in/prawal-singh/,https://mi9portfolio.netlify.app/,null,null,new
+4ab577ea-2488-4a66-a4f0-130da7e91c12,2026-06-17 07:48:52.760852+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Sarthak Sukale,sarthaksukale001@gmail.com,+917028151877,https://www.linkedin.com/in/saarthaksukale,null,null,null,new
+91edcd19-a6fb-4426-a321-d860054ded4f,2026-06-17 08:52:10.360524+00,performance-marketing-executive,Performance Marketing Executive,Akshita Vashishtha,gaurivashishtha@gmail.com,+91918279778544,null,null,null,null,new
+5fb37a51-1b1a-4d77-9c5c-32b7cb64d5aa,2026-06-17 08:56:12.31822+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Jitendra Ramesh Thaware,jitendrathaware04@gmail.com,8007213323,https://www.linkedin.com/in/jitendra-thaware-34698521a/,null,null,null,new
+1a0f93a2-30b9-44f5-acd9-e0e5be48f9e0,2026-06-17 08:59:14.942399+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Atul Chandrashekhar Kotkar,Atulkotkar123@gmail.com,+919370561810,null,null,null,null,new
+28a69f07-120a-4b68-a658-8d526f827146,2026-06-17 09:20:53.335676+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Arati Ekatpure,ekatpurearati18@gmail.com,+919322359284,null,null,null,null,new
+2ed5b18b-efa0-467a-a98d-711ce400d8e9,2026-06-17 09:39:34.841068+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Unaib Naved Saiyad,unaibsaiyad18@gmail.com,+919284746757,https://www.linkedin.com/in/unaib-saiyad,https://github.com/unaib-saiyad/InterviewVault,"Software developer with 2 year of experience in frontend development, also skilled in backend work. Specialized in the MERN stack (MongoDB, Express, React, Node.js) and Python. Adept at building responsive web applications and collaborating across teams. Experienced in delivering full-stack solutions and simplifying complex technical concepts for seamless implementation.",null,new
+af23e4ac-1800-44ed-a9c1-5751929588ed,2026-06-17 09:45:17.099402+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Dnyaneshwari ",chaudharid2322@gmail.com,95183 47505,https://www.linkedin.com/in/dnyaneshwari-chaudhari-210476242,null,null,null,new
+be093247-add5-4ccf-8cb9-4c2d5edba951,2026-06-17 10:46:52.385479+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Chirala Ajith,ajithchirala@gmail.com,7386170259,https://www.linkedin.com/in/chirala-ajith-5050b4415/,https://marutdrones.com,"I have hands-on experience working across both front-end and back-end technologies to deliver complete web applications. I can handle the entire development lifecycle, from designing user interfaces to building APIs and managing databases. My ability to work across the stack helps me develop efficient, scalable, and high-quality solutions.
+",null,new
+b86cc0c7-eac9-48dd-9a72-32b90dcaecd4,2026-06-17 10:54:05.611411+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),shivam chaudhary,shivam.bhati181@gmail.com,9536957920,null,null,null,null,new
+e31b7e18-8d07-4c6a-a800-6ac737e061af,2026-06-17 11:06:31.99838+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Tejas Ghanshyam Patil ",tejasgpatil99@gmail.com,7350024616,null,null,null,null,new
+6245ac4e-80c1-4a9d-9355-bba189b47586,2026-06-17 11:14:41.403541+00,ai-automation-specialist,AI & Automation Specialist,suraj gawade,ssgawade244@gmail.com,+91 9096816224,null,null,"Immediate joiner ",null,new
+d81ca7f3-0f9e-4ba1-bd03-d1e3bc8a69af,2026-06-17 11:17:11.404649+00,performance-marketing-executive,Performance Marketing Executive,Kshemendra Gourav,kshemendragourav@gmail.com,+918851935123,https://www.linkedin.com/in/kshemendra-26e/,null,null,null,new
+350e5915-41dc-45bb-be51-ae861f17d356,2026-06-17 11:35:06.283293+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Anshu Kumar,anshu.kmr9015@gmail.com,7667804152,https://www.linkedin.com/in/anshu-kumar-9174b01b8/,null,null,null,new
+b3654a36-3564-483a-a654-60dbd6e5b9a9,2026-06-17 11:35:45.152522+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Bhumika Bharti,bhumi7049@gmail.com,+917049456818,null,null,null,null,new
+f2704fdc-6bda-4b77-9cb1-467df02cb336,2026-06-17 12:06:13.95506+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Anupriya Patel,anupriyapatel471@gmail.com,+918815662257,https://www.linkedin.com/in/anupriya-patel-283ab3256,null,null,null,new
+02fda33e-16a1-4530-818e-1e287de4f2ab,2026-06-17 12:25:05.854276+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Komal Suresh Gore,kgore9020@gmail.com,+919637612806,null,null,null,null,new
+722cd9d4-756d-465d-a1d8-8f7a042bbf37,2026-06-17 12:29:30.725095+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Vaishnavi Ashok Bhusare,vaishnavibhusare2002@gmail.com,+919699933200,null,null,null,null,new
+51139906-4444-423d-acb9-5d73f282a20c,2026-06-17 12:31:11.444338+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),BAL KRISHNA PANDEY,balkrishnapandey21@gmail.com,+919511469185,https://www.linkedin.com/in/ibkrishna/,https://ibkrishna.in/,null,null,new
+5d96b6b3-1906-422a-b1ef-951165113d23,2026-06-17 12:41:39.543251+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),"Saeed Ur Rehman ",saeedurrehman786100@gmail.com,+917898924059,https://linkedin.com/in/saeed-ur-rehman-128622172/,https://new-liart-eight.vercel.app/,null,null,new
+a3beab8d-faf2-4278-9120-85df21f46917,2026-06-17 12:47:29.909118+00,digital-marketing-intern,Digital Marketing Intern,Mohan Chute,mohang.chute@gmail.com,+917030880661,null,null,Testing,null,new
+a8eb85fd-67b6-4ba4-a396-58df4059a70b,2026-06-17 13:26:20.849861+00,web-developer,Web Developer,"Rahul Thangavelu ",rahulthangavelu@gmail.com,9095032123,https://www.linkedin.com/in/rahulthangavelu,https://github.com/RahulThangavelu03,"Hi Team,
+
+I hope you’re doing well.
+My name is Rahul Thangavelu, and I’m a React JS Developer with 2 plus years of experience in building responsive user interfaces and developing scalable front-end features using React, Redux Toolkit, JavaScript, Typescript,HTML, and CSS (Material UI, Tailwind).
+
+At Virtusa, I worked on projects like AstraZeneca’s IRep Dashboard for my client and an internal Smart Interview Evaluation App, improving UI performance and user engagement through clean, efficient code
+
+I want to share that I have been actively learning the MERN stack, and I am currently strong in front-end development with React, while also building real projects using Node and Express to strengthen my backend skills. I am confident that with guidance and consistent effort, I will quickly grow into a productive MERN developer for your team 
+
+Best regards,
+Rahul Thangavelu
+9095032123
+
+GitHub:(https://github.com/RahulThangavelu03)
+
+
+LinkedIn: (https://www.linkedin.com/in/rahulthangavelu
+",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781702778858-rahul-thangavelu-.pdf,new
+df377b0a-7b0e-4cd6-b114-d067b8248ed3,2026-06-17 13:27:06.697551+00,web-developer,Web Developer,Atharv Jadhav,atharvjadhav543@gmail.com,+91 9168403015,https://www.linkedin.com/in/atharv-jadhav-65474822b/,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781702825858-atharv-jadhav.pdf,new
+de52de66-1641-4cf3-a574-b32d2f158238,2026-06-17 13:29:23.874367+00,web-developer,Web Developer,Saurabh Agnihotri,agnihotrisaurabh303@gmail.com,+918737050286,https://www.linkedin.com/in/saurabh181/,https://portfolio-saurabh-181.vercel.app/,"Performance-driven Frontend Software Developer with over 1.8 years of experience specializing in React.js, Next.js, 
+TypeScript. Proven track record of building responsive, user-centric web applications and managing complex state 
+Architectures. Adept at collaborating in agile environments to deliver scalable, high-quality software solutions.",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781702961832-saurabh-agnihotri.pdf,new
+2e00b879-97d8-4865-89f2-88162ea9fac7,2026-06-17 13:44:12.005512+00,web-developer,Web Developer,Rohit Chandrakant Kodam,rohitkodam1@gmail.com,+918308029044,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781703849847-rohit-chandrakant-kodam.pdf,new
+cb0439c2-2485-4a50-b3f9-862b39e678f3,2026-06-17 14:15:50.719833+00,web-developer,Web Developer,Vinit Girde,vinitgirde@gmail.com,7798144951,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781705748318-vinit-girde.pdf,new
+fef1f706-2ff1-465d-b86d-371574e07dbc,2026-06-17 14:17:00.560602+00,web-developer,Web Developer,Yash Pramodrao Pote,poteyash24@gmail.com,+918999786471,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781705818706-yash-pramodrao-pote.pdf,new
+ca148dfc-ade3-4b71-99ca-7807741697a8,2026-06-17 14:27:51.823846+00,web-developer,Web Developer,Samidha Powar,samidhapowar8@gmail.com,+918828079959,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781706469897-samidha-powar.pdf,new
+b4500962-d9b8-4ef1-8c6e-dcba652d2d20,2026-06-17 14:59:31.634949+00,web-developer,Web Developer,Abhishek Sahu,abhisheksahu20010525@gmail.com,+91 6264716814,https://www.linkedin.com/in/abhisheksahu2001/,null,"I came across your Web Developer opening and wanted to reach out.
+
+I'm currently working as a Full-Stack Developer at PinnacleWay Business Consulting LLP, where I build applications using React.js, TypeScript, Node.js/NestJS, MongoDB, PostgreSQL, Redis, and Docker. My work involves developing REST APIs, building frontend features, optimizing performance, and collaborating with product and engineering teams.
+
+One recent project involved building a scalable healthcare module from scratch and reducing Docker image size by 80% through build optimization.
+
+I also built a side project called YouTube Subscription Manager, which analyzes YouTube subscription data and provides engagement insights:
+
+https://yt-unsubscribe-site.onrender.com/
+
+I believe my experience with React, Node.js, TypeScript, REST APIs, and databases aligns well with your requirements. I've attached my resume and would appreciate the opportunity to discuss the role further.
+
+Thanks for your time.",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781708369537-abhishek-sahu.pdf,new
+0313f3db-3dd1-4bd5-8a50-27a7413910b2,2026-06-17 15:20:17.610838+00,web-developer,Web Developer,Ganesh Patil,patilganesh3103@gmail.com,7083588718,http://linkedin.com/in/ganesh-patil-8384ab213,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781709615418-ganesh-patil.pdf,new
+215aafcf-c1fe-487c-8245-61d938c8dd1e,2026-06-17 15:36:35.464943+00,web-developer,Web Developer,Ritik jain,ritikjain2727@gmail.com,9770358078,https://www.linkedin.com/in/ritik-jain-3b2208217,https://personal-portfolio-v2-self.vercel.app/,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781710593419-ritik-jain.pdf,new
+55e0f61a-00c7-464d-9e2b-a56defa17ec2,2026-06-17 15:49:12.942457+00,web-developer,Web Developer,Tejas Musale,tejasmusale99@gmail.com,+919420407195,https://www.linkedin.com/in/tejas-musale-2a86b2171/,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781711351253-tejas-musale.pdf,new
+06cf19f1-8170-4ae5-8131-3536864f56a2,2026-06-17 16:44:18.156477+00,web-developer,Web Developer,Vishal Patel,yvishalpatelz3245@gmail.com,9373182856,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781714656046-vishal-patel.pdf,new
+1dcde4f4-f1cc-44bb-b6f3-37045b2c337c,2026-06-17 16:57:04.79144+00,web-developer,Web Developer,Prashant Mandlik,prashantmandlik619@gmail.com,+918275116547,https://www.linkedin.com/in/prashant-mandlik-34821b19b/,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781715422469-prashant-mandlik.pdf,new
+7cb59227-b699-4e21-abba-13eb9e284556,2026-06-17 16:58:03.209646+00,web-developer,Web Developer,saurabh bodakhe,saurabhbodakhe2004@gmail.com,8010566607,https://www.linkedin.com/in/saurabh-bodakhe-508792247,https://portfolio-website-psi-one-49.vercel.app/,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781715481342-saurabh-bodakhe.pdf,new
+84f5acae-6974-4cc8-adfb-8e6751a32eca,2026-06-17 17:02:23.767563+00,web-developer,Web Developer,Shahbaz Nagori,shahbaz.nagori86@gmail.com,+919039538436,https://www.linkedin.com/in/shahbaz-nagori-50840a252,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781715741279-shahbaz-nagori.pdf,new
+494968ee-98b5-4016-89de-c4459eac3901,2026-06-17 17:38:29.666322+00,web-developer,Web Developer,Akshay Shetti,akshayshetty967@gmail.com,+919075191077,https://www.linkedin.com/in/akshay-shetty-6101131a1/,https://github.com/Akshayshetty11/MegaBlog_Project,"Hi Team,
+
+I’m interested in this role. I have 3+ years of experience working with React.js, TypeScript, JavaScript, Redux Toolkit, Tailwind CSS, and REST APIs, building and maintaining enterprise web applications.
+
+My background includes developing reusable components, optimizing user experiences, and delivering scalable frontend solutions in Agile environments. I believe my experience would be a good fit for this position and would be happy to discuss further.
+
+Looking forward to hearing from you.",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781717908181-akshay-shetti.docx,new
+bc29b6ab-7739-469a-825c-6fe47d60d1f5,2026-06-17 17:46:52.61939+00,web-developer,Web Developer,Lokesh Siriganeni,lokeshsiriganeni7288@gmail.com,+917288952375,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781718410693-lokesh-siriganeni.pdf,new
+f885dbc3-7c90-4dbf-a4cf-08999329a34f,2026-06-17 18:08:14.428033+00,web-developer,Web Developer,Saksham Bajpai,bajpaisaksham183@gmail.com,7470675844,https://www.linkedin.com/in/sakshambajpai2401/,null,"Saksham Bajpai
+Gurugram, Haryana
++91 7470675844 | bajpaisaksham183@gmail.com
+linkedin.com/in/sakshambajpai2401 | github.com/bajpaisaksham
+
+June 17, 2026
+
+Dear Hiring Team,
+
+I'm writing to apply for the Full-Stack Web Developer (React, Node.js & AI-Assisted) role in Pune. As a Software Engineer who has spent the past year and a half shipping production features end-to-end — from schema design to consumer-facing UI — on a multi-tenant SaaS platform, I was drawn to this role's blend of solid full-stack fundamentals and genuine, day-to-day reliance on AI coding tools like Claude.
+
+At Technum Opus, I've owned full feature delivery across the stack: designing REST API contracts and structuring async data flows with Axios, implementing JWT authentication and RBAC, and modeling data across both PostgreSQL and MongoDB for products serving 5+ enterprise clients on Web, Android, and iOS. On the frontend, I built a shared component library and design-token system in React and TypeScript, and used Next.js (App Router, SSR/SSG) to take SEO-critical pages from a Lighthouse score of 64 to 88 while cutting initial load by roughly 35% — work that maps directly to the Core Web Vitals and Figma-to-production accuracy this role calls for.
+
+I also bridge backend data with product-facing insight: I've built interactive dashboards with Recharts and D3.js, integrated Firebase for real-time sync, and worked closely with backend engineers, product, and design in an agile setup — including leading code reviews and maintaining test coverage with Jest and React Testing Library. That cross-functional rhythm, paired with clean Git practices and a deployment-ready mindset, is exactly the collaborative, production-focused workflow this role describes.
+
+AI-assisted development isn't an afterthought in how I work — it's part of my regular toolkit. I use Claude and GitHub Copilot actively to write, review, debug, and refactor code, and I'm comfortable going further to integrate AI APIs directly into applications, whether that's a smart search feature, a content widget, or a chatbot. I'm genuinely excited by the chance to deepen that with Claude Code specifically and apply it to client websites and internal tools where speed and code quality both matter.
+
+I'd welcome the opportunity to bring this combination of full-stack ownership, measurable performance impact, and active AI-tool fluency to your team. Thank you for considering my application — I'd be glad to walk through my projects, including Onified, Express, and Track & Trace, in more detail.
+
+Sincerely,
+Saksham Bajpai",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781719692439-saksham-bajpai.pdf,new
+86caf594-462d-462f-963c-a99e063e2d0f,2026-06-17 18:08:58.009666+00,web-developer,Web Developer,Azmat Shaikh,shaikh.azmat5555@gmail.com,+917507675778,https://www.linkedin.com/in/azmat-shaikh-786478266/,https://azmatshaikh.netlify.app/,"This role aligns with my skills and career goals. I bring 2.6 years of full-stack development experience, a strong learning attitude, and the ability to build scalable, high-quality applications.",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781719736412-azmat-shaikh.pdf,new
+8c51c096-c634-47da-8ec8-6b930913ca76,2026-06-17 19:05:48.960722+00,sales-executive-ai-product,Sales Executive — AI Product,Mirza Zarafshan,mirzazarafshan2017@gmail.com,9149506607,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/sales-executive-ai-product/1781723146706-mirza-zarafshan.pdf,new
+75f4953f-0a58-414d-bac1-73f93f2406cd,2026-06-18 09:04:51.632482+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Shashikant Kumar,krshashikant191220@gmail.com,+918083671215,null,null,null,web-developer-full-stack/1781773489859-shashikant-kumar.pdf,new
+76b70081-be32-4985-91b4-c5f4986ed07d,2026-06-17 19:06:18.652291+00,sales-executive-ai-product,Sales Executive — AI Product,Sayali Kawate,sayalikawate2@gmail.com,9970722611,https://www.linkedin.com/in/sayali-kawate-15820022b?utm_source=share_via&utm_content=profile&utm_medium=member_ios,null,"I am excited about this role as it aligns with my experience in healthcare sales and business development. With nearly three years of experience in lead generation and client engagement, I bring strong communication skills, a customer-focused approach, and a proven ability to contribute to business growth.",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/sales-executive-ai-product/1781723177526-sayali-kawate.pdf,new
+918aee5f-405d-4422-8437-aac97ad6adcf,2026-06-17 19:06:52.126545+00,sales-executive-ai-product,Sales Executive — AI Product,Poonam wagh,waghpoonam15@gmail.com,9021692406,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/sales-executive-ai-product/1781723210686-poonam-wagh.pdf,new
+915da831-de69-4b98-b4f5-bb49632745e2,2026-06-17 20:12:34.602526+00,web-developer,Web Developer,MAHAK DALWANI,mahakdalwani1@gmail.com,+917489955456,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781727152398-mahak-dalwani.pdf,new
+66072a0a-7496-4251-b2e5-7efe20b0a619,2026-06-17 20:41:09.164131+00,digital-marketing-intern,Digital Marketing Intern,"Muskan Kumari ",mradul.sde@gmail.com,8787230820,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/digital-marketing-intern/1781728866613-muskan-kumari-.pdf,new
+fb7ef63a-ded3-4990-ac54-9c92bf39e7aa,2026-06-17 20:41:56.500453+00,seo-aeo-geo-intern,SEO / AEO / GEO Intern,"Muskan Kumari ",mradul.sde@gmail.com,8787230820,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/seo-aeo-geo-intern/1781728914473-muskan-kumari-.pdf,new
+3897c102-3ff0-4c0e-823d-16ccaf15d392,2026-06-17 20:42:34.798833+00,web-developer,Web Developer,"Mradul Sharma ",mradul.sde@gmail.com,9368802581,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781728952983-mradul-sharma-.pdf,new
+631d7df6-f001-4816-ad95-43ea75f872ba,2026-06-17 20:43:20.782501+00,digital-marketing-sales-executive,Digital Marketing Sales Executive,"Muskan Kumari ",mradul.sde@gmail.com,8787230820,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/digital-marketing-sales-executive/1781728998875-muskan-kumari-.pdf,new
+b9d8d9be-5987-420a-bd5e-68299b76953b,2026-06-17 20:43:51.442642+00,sales-executive-ai-product,Sales Executive — AI Product,"Muskan Kumari ",mradul.sde@gmail.com,8787230820,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/sales-executive-ai-product/1781729030089-muskan-kumari-.pdf,new
+9e8521e1-357e-40bb-a6c9-884f8d286a99,2026-06-17 20:44:16.450625+00,seo-executive,SEO Executive,"Muskan Kumari ",mradul.sde@gmail.com,8787230820,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/seo-executive/1781729054647-muskan-kumari-.pdf,new
+88b397a4-c09b-46bb-8095-f8e8ada8d8c0,2026-06-17 20:44:53.625356+00,digital-marketing-manager,Digital Marketing Manager,"Muskan Kumari ",mradul.sde@gmail.com,8787230820,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/digital-marketing-manager/1781729092001-muskan-kumari-.pdf,new
+a611a042-6c59-4928-a3d5-424b23ed8279,2026-06-17 20:45:17.985539+00,performance-marketing-executive,Performance Marketing Executive,"Muskan Kumari ",mradul.sde@gmail.com,8787230820,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/performance-marketing-executive/1781729116186-muskan-kumari-.pdf,new
+fbc545ef-d400-4447-9ca4-3e51dee94dcf,2026-06-17 22:30:40.415781+00,web-developer,Web Developer,Aditya Bhor,1671adityabhor@gmail.com,+917559371288,https://in.linkedin.com/in/adityasbhor,https://aditya-bhor.vercel.app/,"Hi,
+
+I’m a Frontend Engineer with experience building responsive and accessible web applications using React, Next.js, and modern frontend tools. I enjoy translating product requirements into clean, performant UI while maintaining strong code quality.
+
+I’ve worked closely with designers and stakeholders, owned features end to end, and contributed to production systems used at scale. I’m excited about the opportunity to contribute my skills, learn from the team, and help build meaningful products.
+
+You can view my portfolio here:
+https://aditya-bhor.vercel.app/
+
+Thank you for considering my application.
+Aditya Bhor",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781735437403-aditya-bhor.pdf,new
+1b08ee8f-a21f-408c-aeda-d41ddf7e56c5,2026-06-18 01:47:23.562743+00,web-developer,Web Developer,"Abhishek Gupta ",abgupta1108@gmail.com,8889797768,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781747241689-abhishek-gupta-.pdf,new
+247ea10f-ffaf-4c4e-bb43-a520bd504f28,2026-06-18 02:00:30.456904+00,web-developer,Web Developer,PALLAVI CHANDRAKANT PATIL,pallavipatil2727@gmail.com,+917030596377,https://www.linkedin.com/in/pallavi-patil-00108120b,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781748027792-pallavi-chandrakant-patil.pdf,new
+17bc32c5-da0d-4091-aa50-eae80db1ea27,2026-06-18 02:17:30.427728+00,web-developer,Web Developer,Gauri Sachin Khune,gaurikhune890@gmail.com,+918796476229,"https://github.com/Gaurikhune2701 ",null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781749048148-gauri-sachin-khune.pdf,new
+07e1eb7a-cfa3-4464-a43e-edcfc87120d0,2026-06-18 02:45:53.756212+00,web-developer,Web Developer,Pranisha Shahapure,pranishashahapure12@gmail.com,+919307262189,https://linkedin.com/in/pranisha-shahapure-65884b210,https://github.com/Pranisha01,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781750752003-pranisha-shahapure.pdf,new
+ee8830bd-f18c-473d-b60d-c8ca28e7971b,2026-06-18 03:08:12.823476+00,web-developer,Web Developer,"Nalla Manoj Kumar ",manojkumarnalla98@gmail.com,+91 9121727148,https://www.linkedin.com/in/manoj-kumar-nalla-906541232/,https://nalla-manoj-kumar-portfolio.vercel.app/,"Dear Hiring Manager,
+I am excited to apply for the Web Developer position. With 4+ years of experience building
+scalable web and mobile applications using React.js, TypeScript, Redux, Node.js, and modern frontend
+technologies, I am confident in my ability to contribute effectively to your engineering team and deliver
+high-quality frontend solutions.
+In my current role as a Software Engineer at Bo IT Solutions, I have independently developed and delivered
+multiple large-scale applications across e-commerce, real estate, and enterprise domains. I have built
+scalable frontend architectures using React.js, Next.js, Redux Toolkit, and TypeScript while collaborating
+closely with cross-functional teams to ensure high performance, maintainability, and excellent user
+experiences.
+One of my strongest areas is designing reusable and scalable frontend modules. I have developed 50+
+reusable UI components and optimized application performance by over 35% through efficient state
+management, API optimization, caching strategies, and frontend performance tuning. My experience
+includes handling large datasets, building responsive dashboards, implementing advanced filtering/search
+workflows, and integrating secure REST APIs.
+Your requirement for expertise in modern frontend ecosystems strongly aligns with my background,
+including: • React.js and modern JavaScript (ES6+) • TypeScript and Redux Toolkit • REST API integrations and
+scalable architecture • Performance optimization and debugging • Agile development and Git workflows •
+Component-driven frontend development • Cross-functional collaboration and code reviews
+Additionally, I have experience working with modern development tools and continuously leverage AI-
+powered tools to improve development productivity, debugging efficiency, code quality, and solution
+optimization. I am also actively exploring AI concepts such as intelligent agents, automation workflows, and
+developer productivity enhancements using modern AI platforms.
+Beyond technical skills, I bring strong ownership, problem-solving abilities, and a mindset focused on
+delivering business value. I have successfully delivered 15+ applications, built 40+ APIs, mentored junior
+developers, and consistently contributed to improving product performance and software quality.
+I am particularly excited about this opportunity because it aligns perfectly with my passion for building
+scalable frontend systems and creating impactful user experiences using modern technologies. I would
+welcome the opportunity to discuss how my experience and technical expertise can contribute to your
+team’s success.
+Thank you for your time and consideration. I look forward to the opportunity to speak with you.
+Sincerely,
+Nalla Manoj Kumar",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781752090383-nalla-manoj-kumar-.pdf,new
+5eebf1f1-4434-4b76-a432-09b7f4e24b88,2026-06-18 03:31:44.239213+00,web-developer,Web Developer,VINAYAK VISHNU MALI,2000vinayakmali@gmail.com,+919822712324,https://www.linkedin.com/in/vinayak-vishnu-mali/,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781753501693-vinayak-vishnu-mali.pdf,new
+cdaff181-db33-4ed3-96cf-362597060f94,2026-06-18 03:32:37.065855+00,web-developer,Web Developer,Sachin Bansode,sachinbansode2812@gmail.com,8805506894,https://www.linkedin.com/in/sachinkb2812/,https://github.com/SachinFlynaut11,"Dear Hiring Team,
+
+I am a Full Stack Developer with 2.3+ years of experience in React.js, Node.js, Express.js, MongoDB, and JavaScript. I have experience building scalable web applications, REST APIs, and responsive user interfaces. I am an Immediate Joiner and would welcome the opportunity to contribute to your team.
+
+Thank you for your consideration.
+
+Regards,
+Sachin Bansode
+8805506894",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781753555566-sachin-bansode.pdf,new
+7519f31f-85f2-4058-9287-036bc208d3fc,2026-06-18 09:04:53.600934+00,digital-marketing-manager,Digital Marketing Manager,Simika Verenkar,simikaverenkar@gmail.com,9021955301,null,https://simikaverenkar2.journoportfolio.com/,"I have 3+ years of experience in SEO, Email Marketing and Social Media Marketing.",digital-marketing-manager/1781773492506-simika-verenkar.pdf,new
+385be8db-f652-4bfb-97af-4f735e755bbd,2026-06-18 09:35:02.161309+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Tarangini Rai,taranginirai12@gmail.com,+916388681885,http://linkedin.com/in/tarangini-rai-79a3b3204,null,null,web-developer-full-stack/1781775299655-tarangini-rai.pdf,new
+575a2fb8-ab96-48f2-b076-70534887b8c3,2026-06-18 03:34:15.704857+00,web-developer,Web Developer,pravin Gawali,gawalipravin5142@gmail.com,+917620635076,null,https://github.com/pravin5142/secure-vault,"Dear,
+
+I am writing to apply for the Web Developer position. I have 2+ years of experience working with web technologies like HTML, CSS, JavaScript, and React.
+
+In my current role, I work on building responsive and user-friendly web applications. I have experience in developing frontend features, integrating APIs, and improving performance. I also have basic knowledge of backend technologies like Node.js and MongoDB.
+
+I am a quick learner and always try to improve my skills. I enjoy solving problems and building clean and efficient applications. I can work well in a team and also handle tasks independently.
+
+I am interested in this opportunity because it will help me grow my skills and work on real-world projects.
+
+Thank you for your time and consideration. I look forward to hearing from you.
+
+Sincerely,
+Pravin Gawali
+7620635076",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781753653412-pravin-gawali.pdf,new
+14ea63e5-b9c5-4d92-9c58-c8764306e49d,2026-06-18 03:48:14.175095+00,web-developer,Web Developer,Vidya Kumari,vidyakumari4me@gmail.com,+918210715451,https://www.linkedin.com/in/vidya-kumari-54620624a/,https://github.com/vidyakumari123,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781754492035-vidya-kumari.pdf,new
+7323b7f9-6b70-4f98-a2ac-affaca387c0f,2026-06-18 03:52:33.938759+00,web-developer,Web Developer,Ritesh salve,riteshsalve0001@gmail.com,+919977679355,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781754752063-ritesh-salve.pdf,new
+acf49e02-4385-4762-9a4b-d8fe89a31286,2026-06-18 04:11:23.591795+00,web-developer,Web Developer,Abhiket walunj,walunjabhiket@gmail.com,7709900772,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781755881413-abhiket-walunj.pdf,new
+8913de7b-0db7-4998-be0f-3e236de111e3,2026-06-18 04:22:10.741997+00,web-developer,Web Developer,Teeparthi Lakshmi Tulasi,lakshmiteeparthi99@gmail.com,+919704338953,https://www.linkedin.com/in/teeparthi-lakshmi-tulasi/,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781756528246-teeparthi-lakshmi-tulasi.pdf,new
+55fc84dd-26f6-41e0-8aa1-493bbeddc465,2026-06-18 04:38:39.196717+00,web-developer,Web Developer,Imran,imranbagwan7991@gmail.com,+919405408080,https://www.linkedin.com/in/imran-bagwan-169794216/,https://github.com/imranbagwan8080,"I am excited about this role because it aligns closely with my 2+ years of experience in building full-stack web applications using React.js, Next.js, and Node.js. I actively use AI coding tools like Claude and ChatGPT to improve productivity, debugging, and code quality. I can bring strong problem-solving skills, clean and maintainable code, and experience building scalable SaaS applications with modern web technologies.",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781757517647-imran.pdf,new
+3e338dcb-6a8d-4e69-bdc3-c7d2569af300,2026-06-18 04:58:54.27289+00,web-developer,Web Developer,Suyash Jain,jainsuyash2003@gmail.com,+917828442009,https://www.linkedin.com/in/jainsuyash2003,https://suyash-jain-portfolio.vercel.app,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781758732255-suyash-jain.pdf,new
+85d7679c-910c-4910-bc3f-76c03eed2ac3,2026-06-18 05:07:30.593651+00,web-developer,Web Developer,Prathamesh Magdum,prathameshmagdum2611@gmail.com,+919158619736,https://www.linkedin.com/in/prathamesh-magdum-2654951ba,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781759249206-prathamesh-magdum.pdf,new
+5c8dfb99-cfa5-4e7e-bbdf-532de6e1b16e,2026-06-18 05:17:08.535863+00,web-developer,Web Developer,Dinesh vishwakarma,dineshkum56p@gmail.com,+918960401450,https://www.linkedin.com/in/dinesh-vishwakarma12/,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781759826232-dinesh-vishwakarma.pdf,new
+ddf442c2-1e4a-4e55-b392-b9206028e5a6,2026-06-18 05:21:12.39034+00,web-developer,Web Developer,Yogesh Murugesan,barathyogesh147@gmail.com,+917010609903,https://www.linkedin.com/in/yogeshmurugesan,https://yogeshmurugesan.vercel.app/,"Dear Hiring Manager,
+
+I am excited to apply for this opportunity. With hands-on experience in React.js and end-to-end frontend development, I have built scalable applications, managed modules, and handled production issues. I am confident that my skills and dedication would make me a valuable addition to your team.
+
+Thank you for your consideration.
+
+Sincerely,
+
+Yogesh Murugesan
+",https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781760070255-yogesh-murugesan.pdf,new
+c01f0ef4-412f-431f-83b9-b6ab66475c1e,2026-06-18 05:23:17.046486+00,web-developer,Web Developer,Tejas Pawar,Pawartejastp1137@gmail.com,+919673622131,https://www.linkedin.com/in/tejas-pawar-a06595261,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781760195788-tejas-pawar.pdf,new
+3f8e7913-1e61-460d-8f86-d04c836e465a,2026-06-18 05:27:34.922973+00,web-developer,Web Developer,Sudhir,sudhirbisherwal4@gmail.com,8595056763,null,null,null,null,new
+8de15e2c-9ab4-4ae5-84dc-d1748270090c,2026-06-18 05:48:13.119995+00,web-developer,Web Developer,"Kalpesh Narendra Tamboli ",tambolikalpesh2000@gmail.com,+917248960414,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781761691421-kalpesh-narendra-tamboli-.pdf,new
+ff37ba38-bca2-41ec-a28d-6c2b1b249bd9,2026-06-18 06:05:43.266038+00,web-developer,Web Developer,Abhay Gupta,guptaabhay3003@gmail.com,8319238040,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781762741134-abhay-gupta.pdf,new
+05186cd5-e2b8-45fd-b27d-9b0f8ae24be9,2026-06-18 06:14:45.587548+00,web-developer,Web Developer,Surashree Gawande,surashreegawande9@gmail.com,7066366610,null,null,null,https://kbiskmppkshhzciwflfn.supabase.co/storage/v1/object/public/resumes/web-developer/1781763283194-surashree-gawande.pdf,new
+2ce6a7d2-fdbf-4c72-b3f0-8fe950ce5d0d,2026-06-18 09:32:51.500015+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Pooja Devrao Kanse,kanse.pd@gmail.com,+919307966834,https://www.linkedin.com/in/pooja-kanse-2b3a701a5,null,null,web-developer-full-stack/1781775168737-pooja-devrao-kanse.pdf,new
+dcb18a94-d2ed-452a-84cc-7da01594df89,2026-06-18 19:38:02.86177+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",David Kawadkar,davidkawadkar007@gmail.com,+916283091433,https://www.linkedin.com/in/davidkawadkar/,https://github.com/david4u17,null,web-developer-full-stack/1781811480306-david-kawadkar.pdf,new
+327928aa-a040-431e-b0db-34b0da4b76e3,2026-06-19 03:53:13.489354+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Vaibhav Rathod,vaibhavrathod193@gmail.com,+918080974340,https://www.linkedin.com/in/vaibhav-rathod-a27600300/,null,null,web-developer-full-stack/1781841191488-vaibhav-rathod.pdf,new
+a9713fcb-047e-437e-990c-cc3b064a0bd1,2026-06-19 04:10:10.538175+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Pritam Tanaji Patil,pritampatil0125@gmail.com,9146106614,null,https://www.linkedin.com/in/pritam-patil-261275228/,null,web-developer-full-stack/1781842208119-pritam-tanaji-patil.pdf,new
+c84f586e-ed7b-42eb-8eec-0ffac16e2ee4,2026-06-18 06:21:52.958611+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Sonali Vijaykumar Kulkarni,sk7021456@gmail.com,+919021547344,https://www.linkedin.com/in/sonali-kulkarni-365249228,https://sonali-portfolio1.netlify.app/,"Dear Hiring Manager,
+
+I hope you are doing well.
+
+I am writing to express my interest in the Full Stack Developer position at your organization. I have 1 years of experience in web development, with hands-on experience in building responsive and scalable web applications using modern front-end and back-end technologies.
+
+My technical skills include HTML, CSS, JavaScript, React.js, Bootstrap, Java, Spring Boot, MySQL, REST APIs, and Git/GitHub. During my professional experience and project work, I have been involved in developing user-friendly interfaces, integrating APIs, managing databases, and ensuring application performance and responsiveness.
+
+One of my key projects is Meenakshi Metal Forms, where I worked on developing and maintaining web application features, enhancing user experience, and implementing responsive designs. This experience strengthened my problem-solving abilities and gave me practical exposure to real-world software development processes.
+
+I am a quick learner, highly motivated, and passionate about building efficient and user-centric applications. I enjoy working in collaborative environments and continuously improving my technical skills to stay updated with industry trends.
+
+Please find my resume attached for your review. I would welcome the opportunity to discuss how my experience, technical expertise, and enthusiasm can contribute to your team.
+
+Thank you for your time and consideration. I look forward to hearing from you.
+
+Warm Regards,
+
+Sonali Kulkarni
+📧 77sonalikulkarni@gmail.com
+📞 9021547344",web-developer-full-stack/1781763710058-sonali-vijaykumar-kulkarni.pdf,new
+7160cf87-5fcc-40c7-9543-e821d39d3c11,2026-06-18 06:35:28.869192+00,seo-aeo-geo-intern,SEO / AEO / GEO Intern,Mohan Chute Testing,mohang.chute@gmail.com,+917030880661,null,null,null,null,new
+919a4736-d0a5-42df-bdea-20a2ee81c1ff,2026-06-18 07:09:54.538647+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Atul Vishwakarma,atul.vis4@gmail.com,+919969368255,null,https://atulv.dev,null,web-developer-full-stack/1781766592842-atul-vishwakarma.pdf,new
+15a7d085-7724-4697-a322-04f0cc9cca67,2026-06-18 07:14:36.220342+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Yashasvee Praful Deshmukh,yashasvideshmukh31@gmail.com,+918669075002,https://www.linkedin.com/in/yashasvi-deshmukh-05a805298,https://github.com/Yashasvee-Deshmukh,"Dear Hiring Team,
+I am a recent graduate and an aspiring Web Developer with knowledge of HTML, CSS, JavaScript, Bootstrap, and React. During my academic projects and internship, I developed responsive web pages and gained hands-on experience in frontend development.
+I am eager to learn, adaptable, and passionate about building user-friendly web applications. I believe my enthusiasm, problem-solving skills, and willingness to grow would make me a valuable addition to your team.
+Thank you for considering my application. I look forward to the opportunity to contribute and learn from your organization.
+Regards,
+Yashasvee Deshmukh",web-developer-full-stack/1781766873640-yashasvee-praful-deshmukh.pdf,new
+cb060b88-493b-4ec1-89ba-8c604b6db162,2026-06-18 07:22:54.413067+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Rohit Gound,rohitgound2001@gmail.com,+918779973597,https://www.linkedin.com/in/rohit-gound-41aba6249,https://www.beetles.consulting/,"Hi Hiring manager,
+
+I am a Frontend Developer with 1.6 years of experience in React.js, TypeScript, and Tailwind CSS, currently building a live SaaS Booking Engine product at RateBotAI. I also have hands-on MERN stack experience with JWT authentication and Django REST API integration.
+
+CGPA 9.03 | Silver Medal | Live projects on GitHub. Actively looking for a Frontend / React Developer role and would love to be considered.
+
+Happy to share my resume or connect for a quick call.
+
+Thanks,
+Rohit Gound
+8779973597",web-developer-full-stack/1781767372798-rohit-gound.pdf,new
+8d18a46b-37ce-483e-a285-3e38e28b32f7,2026-06-18 07:41:31.52707+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",omkar powar,omkarpowar2425@gmail.com,+918007628605,https://www.linkedin.com/in/omkar-powar-0b76563b7/,null,"I’m Omkar Powar , a Full Stack Developer with 3 years of experience in the MERN stack (React.js, React Native, Node.js, Express.js, MongoDB). I specialize in building scalable web applications, designing RESTful APIs, and creating responsive user interfaces.
+In my current role, I’ve worked on real-time features using Socket.IO, implemented secure authentication (JWT), and optimized application performance using TanStack Query and efficient database design.
+I’m excited about the opportunity to contribute my skills and grow while working on impactful products.
+Please find my resume attached. I look forward to hearing from you.
+Best regards,
+Omkar Powar
++91 80076 28605
+omkarpowar2425@gmail.com",web-developer-full-stack/1781768489200-omkar-powar.pdf,new
+ea1735c5-8877-4114-84b7-ddc03156eb0a,2026-06-18 07:50:05.776843+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Mohd Kaif,kaifmohammad5990@gmail.com,+918318155149,https://www.linkedin.com/in/mohd-kaif-01/,https://github.com/The-Kaif,null,web-developer-full-stack/1781769003604-mohd-kaif.pdf,new
+0c15d390-1ed4-4eac-a19b-72dfdede3ae1,2026-06-18 07:59:57.659491+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)","Mayuri Sachin Turkane ",mayuri.turakane12@gmail.com,8010388611,https://www.linkedin.com/in/mayuri-turkane-39954532b/,null,null,web-developer-full-stack/1781769595806-mayuri-sachin-turkane-.PDF,new
+e937b27f-0bb0-479b-ade7-d8e407d3558a,2026-06-18 08:13:17.733917+00,seo-executive,SEO Executive,Sameer Shilimkar,sameershilimkar999@gmail.com,+917875595071,https://www.linkedin.com/in/sameer-shilimkar/,https://www.instagram.com/velhe_taluka/,I've strong interest in digital marketing and willing to learn more and more.. I'll always give my best to this organization.,seo-executive/1781770395157-sameer-shilimkar.pdf,new
+282f8ad8-755d-44e5-81d1-7d100e737515,2026-06-18 08:17:27.412127+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Abhishek Satish Gulhane,abhishekgulhane231@gmail.com,+917709525759,null,null,null,web-developer-full-stack/1781770645492-abhishek-satish-gulhane.pdf,new
+0cf6478d-14a1-43e4-adf2-807815e7e2c3,2026-06-18 08:44:06.431695+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Raj krishan Mahajan,rajmahajan853@gmail.com,9689191783,https://www.linkedin.com/in/raj-mahajan20,https://raj-mahajan-portfolio.netlify.app/,"Dear Hiring Team,
+
+I am excited to apply for the Front-End Software Engineer position at MagicWorks IT Solutions.
+
+I have 2.2+ years of experience building web and mobile applications using React.js, Next.js, TypeScript, React Native, and REST APIs across SaaS, government, fintech, and event management domains. At 12Grids Technologies, I have worked on enterprise applications serving thousands of users, implemented RBAC systems, built reusable component architectures, and improved application performance by reducing load times from 8 seconds to 3–4 seconds.
+
+I also actively use AI-powered development tools such as Claude, Claude Code, GitHub Copilot, and Cursor to improve productivity and code quality. MagicWorks' AI-first approach and focus on building innovative digital products strongly aligns with my interests and experience.
+
+I would welcome the opportunity to discuss how my skills and experience can contribute to your team.
+
+Thank you for your consideration.
+
+Sincerely,
+Raj Mahajan",web-developer-full-stack/1781772243391-raj-krishan-mahajan.pdf,new
+0042c4b7-d3be-4a77-92e8-8fb0198195d4,2026-06-18 10:03:51.376293+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Gunjan Prakash Mandpe,gunjabmandpe2002@gmail.com,+919359965403,https://www.linkedin.com/in/gunjan-mandpe-111711310/," https://coffee-ecommercesite.gunjabmandpe2002.workers.dev/","Dear Hiring Team,
+
+I am writing to express my interest in the opportunity at your organization. I have completed my Bachelor’s degree in Computer Engineering and have **1 year of hands-on experience as a Frontend Developer**, where I worked on building responsive and user-friendly web applications.
+
+During my experience, I have worked extensively with **HTML, CSS, JavaScript, and React.js** to develop modern and interactive user interfaces. I also have experience in **API integration, state management, creating reusable components, responsive design, and improving application performance** to deliver smooth user experiences across devices.
+
+In addition to frontend development, I have basic knowledge of **Node.js, Express.js, MongoDB, Git/GitHub, and REST APIs**, which has helped me understand full-stack development concepts and collaborate effectively in development workflows.
+
+I am passionate about creating clean, efficient, and scalable applications while continuously improving my technical skills. I believe my practical experience, adaptability, and eagerness to learn make me a strong candidate for this opportunity.
+
+Please find my resume attached for your consideration. I would be grateful for the opportunity to contribute to your team and further grow as a developer.
+
+Thank you for your time and consideration.
+
+Best Regards,
+Gunjan Mandpe
+
+",null,new
+e21a8598-16f8-4268-830e-ef241e3e4790,2026-06-18 10:21:37.724747+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Ramkrushn Raurale,rdraurale98@gmail.com,7744099620,null,https://www.linkedin.com/in/ramkrushn-raurale-180890227/,null,web-developer-full-stack/1781778095683-ramkrushn-raurale.pdf,new
+e062972b-6a1c-445e-ac58-7c20cc6f9d7e,2026-06-18 10:22:08.445789+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",pawan goswami,pawanpuri300@gmail.com,+919691630789,null,null,null,web-developer-full-stack/1781778125889-pawan-goswami.pdf,new
+b9e422b8-d7ef-40b3-bd21-ca89c2430938,2026-06-18 10:48:20.232232+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",pallavi patil,patilpallavi2599@gmail.com,+917387581850,https://linkedin.com/in/pallavi-sunil-patil,https://pallavisunilpatil.netify.apo,null,web-developer-full-stack/1781779697974-pallavi-patil.pdf,new
+27c67d73-ff8e-4075-b0b9-663413c99f79,2026-06-18 11:06:30.647925+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Nilesh Kokare,nile10kokare@gmail.com,9653227842,https://www.linkedin.com/in/nilesh-kokare-92461b231/,https://github.com/haachico,null,null,new
+ad1bc3ee-9611-4edf-9ae0-cd8da09f892e,2026-06-18 11:18:10.590539+00,fullstack-developer-nextjs,Full-Stack Developer (Next.js),Priyatosh Samal,priyatosh5201@gmail.com,+91 8660757918,https://www.linkedin.com/in/priyatoshs/,null,null,fullstack-developer-nextjs/1781781488151-priyatosh-samal.pdf,new
+386151f4-5fea-4654-afa6-603392fca835,2026-06-18 12:56:53.547428+00,nextjs-developer,Next.js Developer,shivam singh,shivam953647@gmail.com,+919536476286,https://www.linkedin.com/in/shivam-singh-49a19a264/,https://github.com/js-1608,null,nextjs-developer/1781787410761-shivam-singh.pdf,new
+a2784989-3e3b-4bb4-967b-be7c5e2c6907,2026-06-18 14:08:42.922854+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Vishal Sharma,vishalsharma331441@gmail.com,+91 90393-31441,https://www.linkedin.com/in/vishal-sharma-388956218/,https://vishal-508.github.io/,null,web-developer-full-stack/1781791718948-vishal-sharma.pdf,new
+b19fa3cd-4db9-46d7-b22f-a2eca2637e02,2026-06-18 14:25:32.50135+00,performance-marketing-executive,Performance Marketing Executive,"Supriya Sasmal ",supriyasasmal28@gmail.com,9175491983,https://www.linkedin.com/in/supriya-sasmal-digital-strategist,null,null,performance-marketing-executive/1781792729315-supriya-sasmal-.pdf,new
+50b6d57e-1ea0-4a7b-ac45-e7fcdc0f9533,2026-06-18 14:40:19.653705+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Ayush Kumar,ayush385361@gmail.com,8271274460,https://www.linkedin.com/in/ayush-gupta-4332731b1/,https://github.com/ayush827127,"Dear Hiring Manager,
+
+I am writing to express my interest in opportunities within your organization.
+
+I am a motivated and enthusiastic software developer with experience in building web applications and working with modern technologies. I am passionate about learning new skills, solving challenging problems, and contributing to high-quality software products. I enjoy working in collaborative environments and continuously strive to improve both my technical and professional abilities.
+
+I am confident that my dedication, adaptability, and eagerness to learn would make me a valuable addition to your team. I would appreciate the opportunity to discuss how my skills and experience align with your requirements.
+
+Thank you for your time and consideration. I look forward to hearing from you.
+
+Sincerely,
+
+Ayush Kumar
++91 8271274460
+ayush385361@gmail.com
+",web-developer-full-stack/1781793617628-ayush-kumar.pdf,new
+f54bff33-4777-4161-b819-90a482e5231b,2026-06-18 16:50:39.710215+00,nextjs-developer,Next.js Developer,"Tejas Shekhar Tejale ",tejastejale13@gmail.com,7350692966,https://www.linkedin.com/in/tejas-tejale/,https://tejastejale.netlify.app/,null,nextjs-developer/1781801437024-tejas-shekhar-tejale-.pdf,new
+9e2bc3ee-2b7a-4ad9-b9c4-fe1cd4a5131c,2026-06-18 16:51:47.850091+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)","Tejas Shekhar Tejale ",tejastejale13@gmail.com,"7350692966 ","https://www.linkedin.com/in/tejas-tejale/ ","https://tejastejale.netlify.app/ ",null,web-developer-full-stack/1781801505386-tejas-shekhar-tejale-.pdf,new
+04a6ec70-20e0-427b-bba2-181146062830,2026-06-18 17:24:34.502813+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Mrunal Bhagwat,mrunal.bhagwat12@gmail.com,+919022040234,null,null,null,web-developer-full-stack/1781803471507-mrunal-bhagwat.pdf,new
+7444f2f2-59fe-4fec-a19e-22e53b971a53,2026-06-18 18:24:43.144277+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Shrikant Ajmire,shrikantajmire1998@gmail.com,7744948004,null,null,null,web-developer-full-stack/1781807080017-shrikant-ajmire.pdf,new
+8dca0d91-617f-4679-8e52-1d4e5fdda5c8,2026-06-18 18:47:58.685069+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",MAHAK DALWANI,mahakdalwani1@gmail.com,+917489955456,null,null,null,web-developer-full-stack/1781808476218-mahak-dalwani.pdf,new
+08c9c08a-60f9-48cc-8c24-8dd49689f03b,2026-06-18 19:07:52.394437+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Jigar Sable,jigarsable21@gmail.com,+917043024736,https://peerlist.io/jigar,https://jigarsable.vercel.app,null,web-developer-full-stack/1781809669052-jigar-sable.pdf,new
+039f92ce-072c-4a93-94c1-2fa9e87f2cda,2026-06-18 19:10:34.17974+00,sales-executive-ai-product,Sales Executive — AI Product,Ashwini Ramteke,ashwiniramteke100203@gmail.com,9699871153,null,null,null,sales-executive-ai-product/1781809832146-ashwini-ramteke.pdf,new
+d8e022fd-055d-468b-83fd-93911bfd613d,2026-06-18 19:14:58.728946+00,sales-executive-ai-product,Sales Executive — AI Product,Sayali Kawate,sayalikawate2@gmail.com,+919970722611,https://www.linkedin.com/in/sayali-kawate-15820022b?utm_source=share_via&utm_content=profile&utm_medium=member_ios,null,null,sales-executive-ai-product/1781810095836-sayali-kawate.docx,new
+c351afa4-41d5-4606-87fb-e79bd2d7835c,2026-06-18 19:37:15.795097+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",David Kawadkar,davidkawadkar007@gmail.com,+916283091433,https://www.linkedin.com/in/davidkawadkar/,https://github.com/david4u17,null,web-developer-full-stack/1781811432844-david-kawadkar.pdf,new
+2209e0bb-8d5d-4488-819a-b64691d63c32,2026-06-19 04:23:08.500255+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Pradeep Anand,panandinnitp@gmail.com,+918210592851,https://www.linkedin.com/in/pradeep-anand0?,https://frontend-bsptcl.vercel.app,"I'm excited about this role because it combines full-stack development with AI-assisted workflows, allowing me to work on innovative, real-world solutions. I bring strong skills in React.js, Node.js, JavaScript, SQL, and problem-solving, along with a continuous learning mindset, adaptability, and enthusiasm to contribute from day one.",web-developer-full-stack/1781842986416-pradeep-anand.pdf,new
+d0f35c54-2836-4b1d-8abd-f5f71c5c1dfd,2026-06-19 05:06:14.25582+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Deepak Sinha,sinhadeepak619@gmail.com,+916204745004,https://www.linkedin.com/in/deepak-sinha-/,https://www.linkedin.com/in/deepak-sinha-/,"I am excited about this opportunity because it aligns closely with my experience in full-stack web development and my interest in AI-assisted software engineering.
+
+I am a B.Tech graduate with professional experience as an Associate Software Engineer, where I worked on backend development, debugging, optimization and maintenance of business applications. My core skills include React.js, Node.js, Express.js, JavaScript, MongoDB, MySQL, REST APIs, Git and modern web development practices.
+
+I have built and deployed projects including a MERN Admin Panel with role-based authentication, an E-commerce platform, and a URL Shortener service. These projects strengthened my understanding of frontend development, backend architecture, API design, database management, authentication, and responsive user experiences.
+
+I regularly use AI tools such as ChatGPT, GitHub Copilot, Claude, and other AI-assisted development tools for code generation, debugging, documentation, learning new technologies, and improving development productivity. I believe AI-assisted workflows are becoming an essential part of modern software engineering and I enjoy leveraging them to build better products faster.
+
+What I would bring to MagicWorks is a strong foundation in full-stack development, a problem-solving mindset, eagerness to learn, adaptability, ownership and a genuine passion for building high-quality web applications. I am excited about the opportunity to contribute to client projects, AI-integrated products, and a team that embraces innovation and continuous improvement.",web-developer-full-stack/1781845572001-deepak-sinha.pdf,new
+d0b9dbda-9d64-44f6-b4c3-f3dd1b191e6b,2026-06-19 05:19:59.982566+00,nextjs-developer,Next.js Developer,PATIL DEEPASHREE NITEEN,dpatil191002@gmail.com,7620991962,null,null,null,nextjs-developer/1781846397457-patil-deepashree-niteen.pdf,new
+13782c96-0b27-4b21-a153-1dfafae6bfbc,2026-06-19 05:39:27.765999+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Komal Raut,rautkomal50@gmail.com,7709450903,https://www.linkedin.com/in/komal-raut-653b56205,https://komalraut-protfolio.netlify.app,"I am excited about this role because it aligns with my experience in React.js and frontend development. I bring strong problem-solving skills, a focus on creating user-friendly interfaces, and experience building responsive, scalable web applications. I am eager to contribute to the team while continuing to learn and grow professionally.This works well for job applications and application forms.
+
+",web-developer-full-stack/1781847565839-komal-raut.pdf,new
+ea61fcb5-81c9-4030-9d7b-6b7bc0c872e6,2026-06-19 06:01:41.142193+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Rushabh Hanmant Jadhav,rushabhjadhav155@gmail.com,9763044424,null,null,null,web-developer-full-stack/1781848898523-rushabh-hanmant-jadhav.pdf,new
+a38d02a1-9ad1-4e42-95d1-4cae5309fab6,2026-06-19 06:18:01.722138+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Gaurav Godase,Gauravgodase21@gmail.com,(860) 096-5456,null,https://shree-man-tarang.vercel.app,null,web-developer-full-stack/1781849879731-gaurav-godase.pdf,new
+bc202d81-7293-4f6b-8e74-2befc53e6ce7,2026-06-19 06:32:51.066317+00,web-developer-full-stack,"Web Developer (Full Stack: React, Node.js & AI Assisted)",Ashwini sahebrao patil,ashuvishal20@gmail.com,9209411870,null,null,null,web-developer-full-stack/1781850768282-ashwini-sahebrao-patil.pdf,new

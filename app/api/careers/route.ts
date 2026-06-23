@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { supabase, createServiceClient } from "@/lib/supabase";
 import nodemailer from "nodemailer";
+import { scoreApplication } from "@/lib/gemini-score";
 
 const HR_EMAIL = "careers@magicworksitsolutions.com";
 const RESUME_BUCKET = "resumes";
@@ -55,6 +56,8 @@ export async function POST(req: NextRequest) {
     const linkedin_url  = fd.get("linkedin_url")  as string | null;
     const portfolio_url = fd.get("portfolio_url") as string | null;
     const cover_letter  = fd.get("cover_letter")  as string | null;
+    const current_ctc   = fd.get("current_ctc")   as string | null;
+    const expected_ctc  = fd.get("expected_ctc")  as string | null;
     const resumeFile    = fd.get("resume") as File | null;
 
     if (!name || !email || !job_slug) {
@@ -65,7 +68,7 @@ export async function POST(req: NextRequest) {
     const uploaded = resumeFile ? await uploadResume(resumeFile, job_slug, name) : null;
     const resume_path = uploaded?.path ?? null;
 
-    // Generate a 7-day signed URL for the email body (works even for private buckets)
+    // Generate a 7-day signed URL for the email body
     let resume_signed_url: string | null = null;
     if (resume_path) {
       const { data: signed } = await createServiceClient()
@@ -74,22 +77,65 @@ export async function POST(req: NextRequest) {
       resume_signed_url = signed?.signedUrl ?? null;
     }
 
-    // ── Supabase insert ───────────────────────────────────────────────────────
-    const { error: dbError } = await supabase.from("career_applications").insert({
-      job_slug,
-      job_title:     job_title || job_slug,
-      name,
-      email,
-      phone:         phone         || null,
-      linkedin_url:  linkedin_url  || null,
-      portfolio_url: portfolio_url || null,
-      cover_letter:  cover_letter  || null,
-      resume_url:    resume_path   || null,   // store path, not public URL
-    });
+    // ── Supabase insert — capture ID for async scoring ────────────────────────
+    const { data: inserted, error: dbError } = await supabase
+      .from("career_applications")
+      .insert({
+        job_slug,
+        job_title:     job_title || job_slug,
+        name,
+        email,
+        phone:         phone         || null,
+        linkedin_url:  linkedin_url  || null,
+        portfolio_url: portfolio_url || null,
+        cover_letter:  cover_letter  || null,
+        resume_url:    resume_path   || null,
+        current_ctc:   current_ctc   || null,
+        expected_ctc:  expected_ctc  || null,
+      })
+      .select("id")
+      .single();
 
     if (dbError) throw dbError;
 
-    // ── Email (fires only when SMTP is configured) ────────────────────────────
+    // ── Gemini AI Scoring (async — does not block the response) ───────────────
+    if (inserted?.id) {
+      const rowId = inserted.id as string;
+      scoreApplication({
+        job_title: job_title || job_slug,
+        job_slug,
+        name,
+        current_ctc,
+        expected_ctc,
+        phone,
+        linkedin_url,
+        portfolio_url,
+        cover_letter,
+        resumeBuffer:   uploaded?.buf ?? null,
+        resumeMimeType: resumeFile?.type ?? null,
+      })
+        .then(async (score) => {
+          if (!score) return;
+          const { error: scoreErr } = await createServiceClient()
+            .from("career_applications")
+            .update({
+              ai_score:           score.overall_score,
+              ai_score_breakdown: score.breakdown,
+              ai_score_label:     score.label,
+              ai_score_summary:   score.summary,
+              ai_scored_at:       new Date().toISOString(),
+            })
+            .eq("id", rowId);
+          if (scoreErr) {
+            console.error("[careers/score] DB update failed:", scoreErr);
+          } else {
+            console.log(`[careers/score] ${name} → ${score.overall_score} (${score.label})`);
+          }
+        })
+        .catch((err) => console.error("[careers/score] error:", err));
+    }
+
+    // ── Email notification ────────────────────────────────────────────────────
     try {
       const transport = makeTransport();
       if (transport) {
@@ -101,12 +147,14 @@ export async function POST(req: NextRequest) {
         const body = [
           "New job application received via MagicWorks website.",
           "",
-          `Role:       ${job_title || job_slug}`,
-          `Name:       ${name}`,
-          `Email:      ${email}`,
-          `Phone:      ${phone || "—"}`,
-          `LinkedIn:   ${linkedin_url || "—"}`,
-          `Portfolio:  ${portfolio_url || "—"}`,
+          `Role:         ${job_title || job_slug}`,
+          `Name:         ${name}`,
+          `Email:        ${email}`,
+          `Phone:        ${phone || "—"}`,
+          `LinkedIn:     ${linkedin_url || "—"}`,
+          `Portfolio:    ${portfolio_url || "—"}`,
+          `Current CTC:  ${current_ctc || "—"}`,
+          `Expected CTC: ${expected_ctc || "—"}`,
           "",
           "Cover letter / note:",
           cover_letter || "—",
@@ -116,6 +164,8 @@ export async function POST(req: NextRequest) {
             : uploaded
               ? `Resume: attached to this email (${resumeFile!.name})`
               : "No resume uploaded.",
+          "",
+          "AI score will appear in the admin dashboard within ~30 seconds.",
         ].join("\n");
 
         await transport.sendMail({

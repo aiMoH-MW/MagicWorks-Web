@@ -5,6 +5,13 @@ const ADMIN_SECRET = process.env.NEXT_PUBLIC_ADMIN_SECRET ?? "magicworks-admin-2
 
 type Tab = "newsletter" | "whitepaper" | "leads" | "consultation" | "careers" | "playbooks";
 
+interface ScoreBreakdown {
+  resume_score: number;
+  cover_score: number;
+  profile_score: number;
+  ctc_score: number;
+}
+
 interface Row {
   id: string;
   email?: string;
@@ -17,6 +24,21 @@ interface Row {
   subject?: string;
   source_page?: string;
   created_at: string;
+  // careers-specific
+  job_title?: string;
+  job_slug?: string;
+  linkedin_url?: string;
+  portfolio_url?: string;
+  resume_url?: string;
+  cover_letter?: string;
+  current_ctc?: string;
+  expected_ctc?: string;
+  // AI score
+  ai_score?: number | null;
+  ai_score_breakdown?: ScoreBreakdown | null;
+  ai_score_label?: string | null;
+  ai_score_summary?: string | null;
+  ai_scored_at?: string | null;
 }
 
 const TABS: { key: Tab; label: string; icon: string }[] = [
@@ -41,6 +63,159 @@ function exportCSV(rows: Row[], filename: string) {
   URL.revokeObjectURL(url);
 }
 
+// ── AI Score Badge ────────────────────────────────────────────────────────────
+function ScoreBadge({ score, label }: { score: number; label: string }) {
+  const color =
+    score >= 80 ? { bg: "bg-emerald-500/20", text: "text-emerald-400", ring: "ring-emerald-500/40" }
+    : score >= 60 ? { bg: "bg-blue-500/20",    text: "text-blue-400",    ring: "ring-blue-500/40" }
+    : score >= 40 ? { bg: "bg-amber-500/20",   text: "text-amber-400",   ring: "ring-amber-500/40" }
+    :               { bg: "bg-red-500/20",     text: "text-red-400",     ring: "ring-red-500/40" };
+
+  return (
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ring-1 ${color.bg} ${color.ring}`}>
+      <span className={`text-[13px] font-bold tabular-nums ${color.text}`}>{score}</span>
+      <span className={`text-[10px] font-medium ${color.text} opacity-80`}>{label}</span>
+    </span>
+  );
+}
+
+// ── Score Breakdown Bar ───────────────────────────────────────────────────────
+function ScoreBar({ label, value }: { label: string; value: number }) {
+  const color =
+    value >= 80 ? "bg-emerald-500"
+    : value >= 60 ? "bg-blue-500"
+    : value >= 40 ? "bg-amber-500"
+    : "bg-red-500";
+  return (
+    <div className="space-y-1">
+      <div className="flex justify-between items-center">
+        <span className="text-[11px] text-white/50">{label}</span>
+        <span className="text-[11px] font-semibold text-white/80">{value}</span>
+      </div>
+      <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
+        <div className={`h-full rounded-full ${color} transition-all`} style={{ width: `${value}%` }} />
+      </div>
+    </div>
+  );
+}
+
+// ── Careers Row with Expandable Score Panel ───────────────────────────────────
+function CareerRow({ row }: { row: Row }) {
+  const [open, setOpen] = useState(false);
+
+  const val = (key: string) => (row as Record<string, unknown>)[key];
+  const display = (key: string) => {
+    const v = val(key);
+    if (key === "created_at") return new Date(v as string).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
+    return (v as string) ?? "—";
+  };
+
+  const cols = ["created_at", "job_title", "name", "email", "phone", "current_ctc", "expected_ctc", "linkedin_url", "portfolio_url", "resume_url", "ai_score"];
+
+  return (
+    <>
+      <tr
+        className={`border-b border-white/[0.05] transition-colors cursor-pointer ${open ? "bg-white/[0.05]" : "hover:bg-white/[0.03]"}`}
+        onClick={() => setOpen((o) => !o)}
+      >
+        {cols.map((c) => {
+          const isLink     = c === "linkedin_url" || c === "portfolio_url";
+          const isResume   = c === "resume_url";
+          const isScore    = c === "ai_score";
+          const isWrap     = false;
+          const rawVal     = val(c);
+          const disp       = display(c);
+
+          return (
+            <td key={c} className={`px-4 py-3 align-middle text-white/70 ${isWrap ? "max-w-[200px] whitespace-pre-wrap break-words text-[12px] leading-[1.6]" : "max-w-[160px] truncate"} text-[12.5px]`}>
+              {isScore ? (
+                row.ai_score != null && row.ai_score_label ? (
+                  <ScoreBadge score={row.ai_score} label={row.ai_score_label} />
+                ) : (
+                  <span className="text-white/20 text-[11px] italic">Scoring…</span>
+                )
+              ) : c === "email" ? (
+                <a href={`mailto:${disp}`} onClick={(e) => e.stopPropagation()} className="text-[#D4A537] hover:underline">{disp}</a>
+              ) : isResume && rawVal ? (
+                <a href={disp} target="_blank" rel="noopener noreferrer nofollow" onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1 text-[#D4A537] hover:underline text-[12px] font-medium">
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                  </svg>
+                  Download
+                </a>
+              ) : isLink && rawVal ? (
+                <a href={(disp as string).startsWith("http") ? disp : `https://${disp}`}
+                  target="_blank" rel="noopener noreferrer nofollow" onClick={(e) => e.stopPropagation()}
+                  className="text-[#C8B8FF] hover:underline text-[12px]">{disp}</a>
+              ) : c === "job_title" ? (
+                <span className="bg-white/[0.08] text-white/50 px-2 py-0.5 rounded text-[11px]">{disp}</span>
+              ) : disp}
+            </td>
+          );
+        })}
+        {/* Expand indicator */}
+        <td className="px-3 py-3 text-white/20">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+            strokeLinecap="round" strokeLinejoin="round"
+            className={`transition-transform ${open ? "rotate-180" : ""}`}>
+            <polyline points="6 9 12 15 18 9"/>
+          </svg>
+        </td>
+      </tr>
+
+      {/* Expanded score panel */}
+      {open && (
+        <tr className="border-b border-white/[0.05] bg-[#0E0A1F]/80">
+          <td colSpan={cols.length + 1} className="px-6 py-5">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Score breakdown */}
+              <div>
+                <p className="text-[10px] uppercase tracking-[0.18em] text-white/30 mb-3 font-semibold">AI Score Breakdown</p>
+                {row.ai_score != null && row.ai_score_breakdown ? (
+                  <div className="space-y-2.5">
+                    <ScoreBar label="Resume match"         value={row.ai_score_breakdown.resume_score} />
+                    <ScoreBar label="Cover letter"         value={row.ai_score_breakdown.cover_score} />
+                    <ScoreBar label="Profile completeness" value={row.ai_score_breakdown.profile_score} />
+                    <ScoreBar label="CTC fit"              value={row.ai_score_breakdown.ctc_score} />
+                  </div>
+                ) : (
+                  <p className="text-white/30 text-[12px]">Score not yet available — check back in ~30 seconds.</p>
+                )}
+                {row.ai_scored_at && (
+                  <p className="text-white/20 text-[10px] mt-3">
+                    Scored {new Date(row.ai_scored_at).toLocaleString("en-IN", { day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" })}
+                  </p>
+                )}
+              </div>
+
+              {/* Summary + cover letter */}
+              <div className="space-y-4">
+                {row.ai_score_summary && (
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-white/30 mb-2 font-semibold">AI Summary</p>
+                    <p className="text-[13px] text-white/70 leading-relaxed">{row.ai_score_summary}</p>
+                  </div>
+                )}
+                {row.cover_letter && (
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.18em] text-white/30 mb-2 font-semibold">Cover Letter</p>
+                    <p className="text-[12px] text-white/50 leading-relaxed whitespace-pre-wrap">{row.cover_letter}</p>
+                  </div>
+                )}
+                {!row.ai_score_summary && !row.cover_letter && (
+                  <p className="text-white/20 text-[12px] italic">No additional details.</p>
+                )}
+              </div>
+            </div>
+          </td>
+        </tr>
+      )}
+    </>
+  );
+}
+
+// ── Main Admin Page ───────────────────────────────────────────────────────────
 export default function AdminPage() {
   const [authed, setAuthed] = useState(false);
   const [password, setPassword] = useState("");
@@ -114,45 +289,46 @@ export default function AdminPage() {
   const whitepaperCols  = ["created_at", "email", "whitepaper"];
   const playbookCols    = ["created_at", "name", "email", "company", "message", "source_page"];
   const leadsCols       = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
-  const careersCols     = ["created_at", "job_title", "name", "email", "phone", "linkedin_url", "portfolio_url", "resume_url", "cover_letter"];
   const cols =
     tab === "playbooks"                        ? playbookCols
     : tab === "leads" || tab === "consultation" ? leadsCols
     : tab === "newsletter"                      ? newsletterCols
-    : tab === "careers"                         ? careersCols
+    : tab === "careers"                         ? [] // careers has its own CareerRow renderer
     : whitepaperCols;
 
   const hasFilter = !!(dateFrom || dateTo);
   const activeTab = TABS.find((t) => t.key === tab)!;
+
+  // Career score sort
+  const careerRows = tab === "careers"
+    ? [...rows].sort((a, b) => {
+        const sa = a.ai_score ?? -1;
+        const sb = b.ai_score ?? -1;
+        return sortDir === "desc" ? sb - sa : sa - sb;
+      })
+    : rows;
 
   return (
     <div className="min-h-screen bg-[#0A0818] text-white flex">
 
       {/* ── Sidebar ─────────────────────────────────────────── */}
       <aside className="w-[220px] shrink-0 bg-[#0E0A1F] border-r border-white/[0.07] flex flex-col">
-        {/* Brand */}
         <div className="px-6 py-6 border-b border-white/[0.07]">
           <p className="text-[#D4A537] text-[10px] uppercase tracking-[0.22em] font-semibold mb-[2px]">Admin</p>
           <p className="text-white text-[15px] font-bold leading-tight">MagicWorks</p>
         </div>
-
-        {/* Nav */}
         <nav className="flex-1 py-4">
           <p className="px-6 mb-2 text-white/25 text-[10px] uppercase tracking-[0.18em]">Data</p>
           {TABS.map((t) => {
             const active = tab === t.key;
             return (
-              <button
-                key={t.key}
-                onClick={() => setTab(t.key)}
+              <button key={t.key} onClick={() => setTab(t.key)}
                 className={`w-full flex items-center justify-between px-6 py-[10px] text-left transition-all group ${
-                  active
-                    ? "bg-[#D4A537]/10 border-r-[3px] border-[#D4A537]"
-                    : "border-r-[3px] border-transparent hover:bg-white/[0.04]"
-                }`}
-              >
+                  active ? "bg-[#D4A537]/10 border-r-[3px] border-[#D4A537]" : "border-r-[3px] border-transparent hover:bg-white/[0.04]"
+                }`}>
                 <div className="flex items-center gap-3 min-w-0">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
+                    strokeLinecap="round" strokeLinejoin="round"
                     className={active ? "text-[#D4A537]" : "text-white/30 group-hover:text-white/50 transition-colors"}>
                     <path d={t.icon} />
                   </svg>
@@ -169,8 +345,6 @@ export default function AdminPage() {
             );
           })}
         </nav>
-
-        {/* Footer */}
         <div className="px-6 py-4 border-t border-white/[0.07]">
           <p className="text-white/20 text-[10px]">MagicWorks © 2026</p>
         </div>
@@ -183,12 +357,14 @@ export default function AdminPage() {
         <div className="border-b border-white/[0.07] px-8 py-4 flex items-center justify-between bg-[#0E0A1F]">
           <div>
             <h1 className="text-white text-[18px] font-bold leading-none">{activeTab.label}</h1>
-            {hasFilter && <p className="text-white/30 text-[11px] mt-1">Date filter active</p>}
+            {tab === "careers" && (
+              <p className="text-white/30 text-[11px] mt-1">Click any row to see AI score breakdown · Sorted by AI score</p>
+            )}
+            {hasFilter && tab !== "careers" && <p className="text-white/30 text-[11px] mt-1">Date filter active</p>}
           </div>
           <button
             onClick={() => exportCSV(rows, `${tab}-${new Date().toISOString().slice(0, 10)}.csv`)}
-            className="flex items-center gap-2 text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-4 py-2 transition-colors"
-          >
+            className="flex items-center gap-2 text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-4 py-2 transition-colors">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
@@ -198,35 +374,33 @@ export default function AdminPage() {
 
         {/* Filters */}
         <div className="px-8 py-4 border-b border-white/[0.07] flex flex-wrap items-center gap-3 bg-[#0E0A1F]/60">
-          <div className="flex items-center gap-2">
-            <span className="text-white/30 text-[11px] uppercase tracking-[0.1em]">From</span>
-            <input
-              type="date"
-              value={dateFrom}
-              onChange={(e) => setDateFrom(e.target.value)}
-              className="bg-white/[0.07] border border-white/[0.12] rounded-lg px-3 py-[6px] text-white text-[12px] focus:outline-none focus:border-[#D4A537]/60 [color-scheme:dark]"
-            />
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="text-white/30 text-[11px] uppercase tracking-[0.1em]">To</span>
-            <input
-              type="date"
-              value={dateTo}
-              onChange={(e) => setDateTo(e.target.value)}
-              className="bg-white/[0.07] border border-white/[0.12] rounded-lg px-3 py-[6px] text-white text-[12px] focus:outline-none focus:border-[#D4A537]/60 [color-scheme:dark]"
-            />
-          </div>
-          <button
-            onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
-            className="flex items-center gap-[6px] text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-3 py-[6px] transition-colors"
-          >
-            {sortDir === "desc" ? (
+          {tab !== "careers" && (
+            <>
+              <div className="flex items-center gap-2">
+                <span className="text-white/30 text-[11px] uppercase tracking-[0.1em]">From</span>
+                <input type="date" value={dateFrom} onChange={(e) => setDateFrom(e.target.value)}
+                  className="bg-white/[0.07] border border-white/[0.12] rounded-lg px-3 py-[6px] text-white text-[12px] focus:outline-none focus:border-[#D4A537]/60 [color-scheme:dark]" />
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-white/30 text-[11px] uppercase tracking-[0.1em]">To</span>
+                <input type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)}
+                  className="bg-white/[0.07] border border-white/[0.12] rounded-lg px-3 py-[6px] text-white text-[12px] focus:outline-none focus:border-[#D4A537]/60 [color-scheme:dark]" />
+              </div>
+            </>
+          )}
+          <button onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
+            className="flex items-center gap-[6px] text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-3 py-[6px] transition-colors">
+            {tab === "careers" ? (
+              sortDir === "desc"
+                ? <><span>↓</span> Highest score first</>
+                : <><span>↑</span> Lowest score first</>
+            ) : sortDir === "desc" ? (
               <><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Newest first</>
             ) : (
               <><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>Oldest first</>
             )}
           </button>
-          {hasFilter && (
+          {hasFilter && tab !== "careers" && (
             <button onClick={() => { setDateFrom(""); setDateTo(""); }}
               className="text-[11px] text-[#D4A537]/60 hover:text-[#D4A537] transition-colors underline underline-offset-2">
               Clear
@@ -244,7 +418,28 @@ export default function AdminPage() {
               <div className="py-20 text-center text-white/30 text-[14px]">
                 {hasFilter ? "No records in this date range." : "No records yet."}
               </div>
+            ) : tab === "careers" ? (
+              /* ── Careers table with AI score ── */
+              <div className="overflow-x-auto">
+                <table className="w-full text-[13px]">
+                  <thead>
+                    <tr className="border-b border-white/[0.07]">
+                      {["Date", "Role", "Name", "Email", "Phone", "Current CTC", "Expected CTC", "LinkedIn", "Portfolio", "Resume", "AI Score", ""].map((h) => (
+                        <th key={h} className="text-left px-4 py-3 text-white/30 uppercase tracking-[0.1em] text-[10px] font-semibold whitespace-nowrap">
+                          {h}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {careerRows.map((row, i) => (
+                      <CareerRow key={row.id ?? i} row={row} />
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             ) : (
+              /* ── Generic table for other tabs ── */
               <div className="overflow-x-auto">
                 <table className="w-full text-[13px]">
                   <thead>
@@ -260,12 +455,12 @@ export default function AdminPage() {
                     {rows.map((row, i) => (
                       <tr key={row.id ?? i} className="border-b border-white/[0.05] hover:bg-white/[0.03] transition-colors">
                         {cols.map((c) => {
-                          const val = (row as unknown as Record<string, unknown>)[c];
+                          const rawVal = (row as unknown as Record<string, unknown>)[c];
                           const display = c === "created_at"
-                            ? new Date(val as string).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
-                            : (val as string) ?? "—";
-                          const isWrap = c === "message" || c === "source_page" || c === "cover_letter";
-                          const isLink = c === "linkedin_url" || c === "portfolio_url";
+                            ? new Date(rawVal as string).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })
+                            : (rawVal as string) ?? "—";
+                          const isWrap   = c === "message" || c === "source_page" || c === "cover_letter";
+                          const isLink   = c === "linkedin_url" || c === "portfolio_url";
                           const isResume = c === "resume_url";
                           return (
                             <td key={c} className={`px-5 py-3 align-top text-white/70 ${isWrap ? "max-w-[260px] whitespace-pre-wrap break-words text-[12px] leading-[1.6]" : "max-w-[180px] truncate"}`}>
