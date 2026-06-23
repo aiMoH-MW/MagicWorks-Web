@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Magic Pipeline · MagicWorks Group",
+  title: "Magic Pipeline — CRM & Revenue Ops",
   description:
     "Magic Pipeline is a SaaS AI CRM and sales pipeline product from the MagicWorks Group. Part of the MagicWorks family.",
   alternates: { canonical: "/group/magic-pipeline" },
@@ -40,7 +40,7 @@ export default function MagicPipelinePage() {
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-4 mb-10">
             An AI-powered CRM and sales pipeline tool for ambitious businesses. Built by the MagicWorks Group to bring AI-native sales intelligence to growing teams.
           </p>
-          <a href="https://magicpipeline.io" target="_blank" rel="noopener noreferrer"
+          <a href="https://magicpipeline.io" target="_blank" rel="noopener noreferrer nofollow"
             className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
             Visit Magic Pipeline →
           </a>

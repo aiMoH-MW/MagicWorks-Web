@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dept = deptLabels[job.department ?? ""] ?? job.department ?? "";
   const area = job.area ? ` · ${job.area}` : "";
   return {
-    title: `${job.title} · Careers · MagicWorks`,
+    title: `${job.title} · Careers`,
     description: job.summary,
     alternates: { canonical: `/careers/${slug}` },
     other: {

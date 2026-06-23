@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Search Engine Optimization (SEO) & Answer Engine Optimization (AEO) · MagicWorks",
+  title: "SEO & Answer Engine Optimisation (AEO) Agency",
   description:
     "Be found in search and inside the answer. Technical SEO and answer engine optimisation across ChatGPT, Perplexity, and Google AI Overviews.",
   alternates: { canonical: "/services/digital-marketing/seo-aeo" },

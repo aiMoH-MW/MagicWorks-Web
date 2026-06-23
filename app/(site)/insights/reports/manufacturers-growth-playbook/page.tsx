@@ -3,14 +3,14 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "The Manufacturer's Growth Playbook (Free) · From Referrals to Predictable Inbound · MagicWorks",
+  title: "Manufacturer's Growth Playbook — Free Download's Growth Playbook (Free) · From Referrals to Predictable Inbound",
   description:
-    "Free playbook for Indian manufacturers: move from referrals to predictable inbound, the channels that actually work, and where AI fits. Practical, honest. Download with your email.",
+    "Free playbook for Indian manufacturers: move from referrals to predictable inbound. The channels that work and where AI fits. Practical, honest.",
   alternates: {
     canonical: "/insights/reports/manufacturers-growth-playbook",
   },
   openGraph: {
-    title: "The Manufacturer's Growth Playbook · MagicWorks",
+    title: "The Manufacturer's Growth Playbook",
     description:
       "From referrals to predictable inbound, and where AI fits. Built for Indian manufacturers.",
     type: "website",

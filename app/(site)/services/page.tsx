@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Services",
+  title: "Digital Marketing, Web & AI Services",
   description:
     "Four service pillars: Digital Marketing, Web Development, AI Consultation, and Marketplace & Platform Consultation. Two that deliver, two that advise.",
   alternates: { canonical: "/services" },

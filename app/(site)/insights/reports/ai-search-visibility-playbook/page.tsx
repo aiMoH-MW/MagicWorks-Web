@@ -3,14 +3,14 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "AI Search Visibility Playbook (Free) · Get Cited by ChatGPT & AI Search",
+  title: "AI Search Visibility Playbook — Free Guide",
   description:
-    "Free playbook for Indian businesses: how to get found and cited inside ChatGPT, Perplexity, and Google AI Overviews. Practical, execution-led, no hype. Download with your email.",
+    "Free playbook: how to get found and cited inside ChatGPT, Perplexity, and Google AI Overviews. Practical and execution-led for Indian businesses.",
   alternates: {
     canonical: "/insights/reports/ai-search-visibility-playbook",
   },
   openGraph: {
-    title: "The AI Search Visibility Playbook · MagicWorks",
+    title: "The AI Search Visibility Playbook",
     description:
       "How to get found and cited inside ChatGPT, Perplexity, and Google AI Overviews. Free, for Indian businesses.",
     type: "website",

@@ -57,7 +57,7 @@ export default async function AuthorPage({ params }: Props) {
               <a
                 href={author.linkedin}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="inline-flex items-center gap-2 mt-5 text-[#D4A537] text-[13px] font-semibold no-underline hover:text-white transition-colors"
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">

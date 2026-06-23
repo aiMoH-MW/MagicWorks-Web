@@ -3,14 +3,14 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "AI-Native Website Spec Sheet (Free) · What to Demand From Your Next Build · MagicWorks",
+  title: "AI-Native Website Spec Sheet — Free Download",
   description:
-    "Free spec sheet for Indian businesses: exactly what to demand from your next website build so it performs, converts, and gets found in search and AI answers. Download with your email.",
+    "Free spec sheet: exactly what to demand from your next website so it performs, converts, and gets found in search and AI answers. For Indian businesses.",
   alternates: {
     canonical: "/insights/reports/ai-native-website-spec-sheet",
   },
   openGraph: {
-    title: "The AI-Native Website Spec Sheet · MagicWorks",
+    title: "The AI-Native Website Spec Sheet",
     description:
       "What to demand from your next website build. Vendor-neutral, RFP-ready, free for Indian businesses.",
     type: "website",

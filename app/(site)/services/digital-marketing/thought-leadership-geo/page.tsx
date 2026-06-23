@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Thought Leadership & Generative-Engine Visibility · MagicWorks",
+  title: "Thought Leadership & GEO Services",
   description:
     "Founder-attributed content as a sustained programme, built to earn citations in AI answer engines, not just rankings.",
   alternates: { canonical: "/services/digital-marketing/thought-leadership-geo" },

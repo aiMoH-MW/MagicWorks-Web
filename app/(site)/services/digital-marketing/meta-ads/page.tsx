@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Meta Ads · Facebook & Instagram Advertising · MagicWorks",
+  title: "Meta Ads · Facebook & Instagram Advertising",
   description:
     "Facebook and Instagram campaigns with strong creative and audience automation, often paired with Google Ads for a true full-funnel motion.",
   alternates: { canonical: "/services/digital-marketing/meta-ads" },

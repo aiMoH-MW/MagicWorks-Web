@@ -4,7 +4,7 @@ import Image from "next/image";
 import { getAllInsights } from "@/sanity/queries";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog — AI, Marketing & Web Insights",
   description:
     "Practical thinking on digital marketing, AI, web development, and business growth from the MagicWorks team.",
   alternates: { canonical: "/blog" },

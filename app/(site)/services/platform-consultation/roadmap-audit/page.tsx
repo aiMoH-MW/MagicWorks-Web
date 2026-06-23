@@ -3,7 +3,7 @@ import Link from "next/link";
 import PlatformContactForm from "../PlatformContactForm";
 
 export const metadata: Metadata = {
-  title: "Platform Roadmap Audit · MagicWorks",
+  title: "Platform Roadmap Audit",
   description:
     "A fixed-scope sprint that pressure-tests your platform strategy and returns a sequenced, defensible roadmap you can act on with any partner.",
   alternates: { canonical: "/services/platform-consultation/roadmap-audit" },

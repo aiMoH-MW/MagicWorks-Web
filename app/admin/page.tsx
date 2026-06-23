@@ -272,12 +272,12 @@ export default function AdminPage() {
                               {c === "email" ? (
                                 <a href={`mailto:${display}`} className="text-[#D4A537] hover:underline">{display}</a>
                               ) : isResume && display !== "—" ? (
-                                <a href={display} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#D4A537] hover:underline text-[12px] font-medium">
+                                <a href={display} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 text-[#D4A537] hover:underline text-[12px] font-medium">
                                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                   Download
                                 </a>
                               ) : isLink && display !== "—" ? (
-                                <a href={display.startsWith("http") ? display : `https://${display}`} target="_blank" rel="noopener noreferrer" className="text-[#C8B8FF] hover:underline text-[12px]">{display}</a>
+                                <a href={display.startsWith("http") ? display : `https://${display}`} target="_blank" rel="noopener noreferrer nofollow" className="text-[#C8B8FF] hover:underline text-[12px]">{display}</a>
                               ) : c === "source" || c === "pillar" || c === "job_title" ? (
                                 <span className="bg-white/[0.08] text-white/50 px-2 py-0.5 rounded text-[11px]">{display}</span>
                               ) : c === "source_page" ? (

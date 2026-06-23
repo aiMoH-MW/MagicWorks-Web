@@ -2,9 +2,9 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "AI Consultation & Digital Marketing for Professional Services",
+  title: "Digital Marketing for Professional Services",
   description:
-    "MagicWorks works with CA firms, law practices, consultancies, and advisory firms. Priority 2 vertical for AI Consultation. Trusted advisors advising trusted advisors.",
+    "MagicWorks works with CA firms, law practices, consultancies, and advisory firms. Trusted advisors advising trusted advisors — AI and digital marketing.",
   alternates: { canonical: "/industries/professional-services" },
 };
 

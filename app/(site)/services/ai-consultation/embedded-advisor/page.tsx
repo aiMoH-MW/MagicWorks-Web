@@ -3,9 +3,9 @@ import Link from "next/link";
 import AIConsultationForm from "../AIConsultationForm";
 
 export const metadata: Metadata = {
-  title: "Embedded AI Advisor · MagicWorks",
+  title: "Embedded AI Advisor",
   description:
-    "Senior AI judgment on call while your team or chosen vendors execute the roadmap. Monthly reviews, escalation support, quarterly re-prioritisation. A follow-on only.",
+    "Senior AI judgment on call while your team executes the roadmap. Monthly reviews and quarterly re-prioritisation. Follow-on only.",
   alternates: { canonical: "/services/ai-consultation/embedded-advisor" },
 };
 

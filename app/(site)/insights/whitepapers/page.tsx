@@ -28,7 +28,7 @@ const whitepapers = [
   },
   {
     slug: "performance-marketing-roi",
-    title: "Performance Marketing ROI: The MagicWorks Framework",
+    title: "Performance Marketing ROI Framework",
     category: "Digital Marketing",
     description:
       "A data-backed framework for measuring and improving performance marketing ROI across Google Ads, Meta, and LinkedIn. Includes CPL and ROAS benchmarks for Indian markets, attribution models, and a practical campaign audit checklist.",
@@ -134,7 +134,7 @@ export default function WhitepapersPage() {
                   <a
                     href={wp.googleDriveUrl}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="flex-1 bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] py-3 rounded-full text-center no-underline hover:scale-[1.02] transition-transform"
                   >
                     Download PDF →

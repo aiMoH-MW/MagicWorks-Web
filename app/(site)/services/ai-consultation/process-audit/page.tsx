@@ -3,7 +3,7 @@ import Link from "next/link";
 import AIConsultationForm from "../AIConsultationForm";
 
 export const metadata: Metadata = {
-  title: "AI Process Audit & Roadmap · MagicWorks",
+  title: "AI Process Audit & Roadmap",
   description:
     "A defensible map of where AI can and cannot help one or two named processes, with build-vs-buy decisions and a sequenced 12-month roadmap. 4 to 6 weeks.",
   alternates: { canonical: "/services/ai-consultation/process-audit" },

@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "MagicFlow AI · MagicWorks Group",
+  title: "MagicFlow AI — Lead Capture & Automation",
   description:
     "MagicFlow AI is an AI product from the MagicWorks Group, a SaaS chatbot and automation platform for businesses. Part of the MagicWorks family.",
   alternates: { canonical: "/group/magicflow-ai" },
@@ -42,7 +42,7 @@ export default function MagicFlowAIPage() {
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-4 mb-10">
             An AI chatbot and automation platform for businesses. Built by the MagicWorks Group. If you need AI built or deployed, not just advised on, MagicFlow AI is where you go.
           </p>
-          <a href="https://magicflowai.io" target="_blank" rel="noopener noreferrer"
+          <a href="https://magicflowai.io" target="_blank" rel="noopener noreferrer nofollow"
             className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
             Visit MagicFlow AI →
           </a>

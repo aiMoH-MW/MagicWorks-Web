@@ -3,9 +3,9 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Google Ads & Search Marketing Agency · MagicWorks",
+  title: "Google Ads & Search Marketing Agency",
   description:
-    "Search, Performance Max, Display, and YouTube campaigns with proper tracking and audiences. Paid acquisition built to scale, with a commission tier for larger spends.",
+    "Search, Performance Max, Display, and YouTube campaigns with proper tracking. Paid acquisition built to scale, with a commission tier for larger spends.",
   alternates: { canonical: "/services/digital-marketing/google-ads-search-marketing" },
 };
 

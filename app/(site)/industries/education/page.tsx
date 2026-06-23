@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing & Web Development for Education",
+  title: "Digital Marketing for Education Institutes",
   description:
     "MagicWorks helps education businesses generate high-intent student enquiries. See how we drove 75,000+ qualified leads per year for SimpliDistance.",
   alternates: { canonical: "/industries/education" },

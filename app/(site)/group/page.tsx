@@ -2,9 +2,9 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The MagicWorks Group",
+  title: "The Group — Three Sibling Brands",
   description:
-    "Three sibling brands alongside our services: MagicFlow AI for AI-powered lead capture, Magic Pipeline for CRM and revenue ops, and MagicWorks Host for hosting.",
+    "Three sibling brands: MagicFlow AI for lead capture, Magic Pipeline for CRM and revenue ops, and MagicWorks Host for hosting and domains.",
   alternates: { canonical: "/group" },
 };
 
@@ -113,7 +113,7 @@ export default function GroupPage() {
                   <a
                     href={b.externalHref}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="text-center bg-[#2A1B5C] text-[#F7F3EA] font-bold text-[12px] uppercase tracking-[0.08em] px-6 py-[11px] rounded-full no-underline hover:bg-[#5B3FBE] transition-colors"
                   >
                     {b.cta} →

@@ -57,7 +57,7 @@ export default function GateForm() {
         <a
           href={PDF_URL}
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noopener noreferrer nofollow"
           className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full hover:scale-[1.02] transition-transform no-underline"
         >
           Download PDF now ↓

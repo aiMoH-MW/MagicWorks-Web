@@ -40,12 +40,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   return {
     title: article.seoTitle ?? article.title,
-    description: article.excerpt,
+    description: article.excerpt ? (article.excerpt.length > 155 ? article.excerpt.slice(0, 152) + '...' : article.excerpt) : undefined,
     alternates: { canonical: `/insights/${slug}` },
     keywords: article.tags ?? [],
     openGraph: {
       title: article.seoTitle ?? article.title,
-      description: article.excerpt,
+      description: article.excerpt ? (article.excerpt.length > 155 ? article.excerpt.slice(0, 152) + '...' : article.excerpt) : undefined,
       type: "article",
       publishedTime: article.publishedAt,
       authors: article.author?.name ? [article.author.name] : undefined,
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: article.seoTitle ?? article.title,
-      description: article.excerpt,
+      description: article.excerpt ? (article.excerpt.length > 155 ? article.excerpt.slice(0, 152) + '...' : article.excerpt) : undefined,
       images: article.coverImage ? [article.coverImage] : [],
     },
   };
@@ -782,7 +782,7 @@ export default async function InsightArticlePage({ params }: Props) {
                       <a
                         href={article.author.linkedin}
                         target="_blank"
-                        rel="noopener noreferrer"
+                        rel="noopener noreferrer nofollow"
                         className="text-[13px] text-[#5B3FBE] font-semibold hover:text-[#2A1B5C] transition-colors no-underline"
                       >
                         LinkedIn &rarr;

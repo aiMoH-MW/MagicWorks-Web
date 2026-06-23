@@ -3,9 +3,9 @@ import Link from "next/link";
 import AIConsultationForm from "../AIConsultationForm";
 
 export const metadata: Metadata = {
-  title: "AI Vendor & Build-vs-Buy Sprint · MagicWorks",
+  title: "AI Vendor & Build-vs-Buy Sprint",
   description:
-    "Decided to act on a process but unsure which vendor, or whether to build or buy? A focused 2 to 4 week sprint: diagnosis, evaluation, and a clear recommendation.",
+    "Unsure which vendor to pick, or build vs buy? A focused 2–4 week sprint: diagnosis, vendor evaluation, and a clear recommendation.",
   alternates: { canonical: "/services/ai-consultation/vendor-sprint" },
 };
 

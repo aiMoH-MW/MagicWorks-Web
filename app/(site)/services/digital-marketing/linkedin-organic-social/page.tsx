@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "LinkedIn & B2B Organic Social · MagicWorks",
+  title: "LinkedIn & B2B Organic Social",
   description:
     "A LinkedIn-led organic presence for B2B brands and founders, including executive thought-leadership ghostwriting and employee advocacy.",
   alternates: { canonical: "/services/digital-marketing/linkedin-organic-social" },

@@ -31,7 +31,7 @@ const whitepapers = [
   },
   {
     slug: "performance-marketing-roi",
-    title: "Performance Marketing ROI: The MagicWorks Framework",
+    title: "Performance Marketing ROI Framework",
     category: "Digital Marketing",
     tagline: "Stop guessing what's working. Start measuring what matters.",
     description:
@@ -125,7 +125,7 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
               <a
                 href={wp.googleDriveUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="noopener noreferrer nofollow"
                 className="block bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] py-3 px-6 rounded-full no-underline hover:scale-[1.02] transition-transform"
               >
                 Download PDF →
@@ -177,7 +177,7 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
                 <a
                   href={wp.googleDriveUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] py-3 rounded-full no-underline hover:scale-[1.02] transition-transform mb-3"
                 >
                   Download PDF →

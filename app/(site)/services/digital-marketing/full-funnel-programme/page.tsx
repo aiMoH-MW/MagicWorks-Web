@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Full-Funnel Digital Marketing Programme · MagicWorks",
+  title: "Full-Funnel Digital Marketing Programme",
   description:
     "Google Ads, SEO, Meta, email, and reporting run as one quarterly programme with a single point of contact. The complete motion, accountable to one number.",
   alternates: { canonical: "/services/digital-marketing/full-funnel-programme" },

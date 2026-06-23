@@ -16,8 +16,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const study = await getCaseStudyBySlug(slug).catch(() => null);
   if (!study) return { title: "Case study not found" };
+  const rawTitle = study.title ?? "Case Study";
+  const shortTitle = rawTitle.length > 55 ? rawTitle.slice(0, 52) + "..." : rawTitle;
   return {
-    title: study.title,
+    title: shortTitle,
     description: study.situation?.substring(0, 155) ?? `${study.heroMetric} ${study.heroMetricLabel}`,
     alternates: { canonical: `/work/${slug}` },
   };

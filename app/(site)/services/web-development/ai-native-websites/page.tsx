@@ -3,7 +3,7 @@ import Link from "next/link";
 import WebDevelopmentContactForm from "../WebDevelopmentContactForm";
 
 export const metadata: Metadata = {
-  title: "AI-Native Website Development · MagicWorks",
+  title: "AI-Native Website Development",
   description:
     "Websites built on Next.js with an LLM-backed backend and intelligent features, from chat to smart search. Our default build, live in 8 to 16 weeks.",
   alternates: { canonical: "/services/web-development/ai-native-websites" },

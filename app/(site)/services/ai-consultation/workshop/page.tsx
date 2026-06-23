@@ -3,7 +3,7 @@ import Link from "next/link";
 import AIConsultationForm from "../AIConsultationForm";
 
 export const metadata: Metadata = {
-  title: "AI Literacy Workshop for Leadership · MagicWorks",
+  title: "AI Literacy Workshop for Leadership Teams",
   description:
     "One to three days to get your leadership team fluent in AI: what it can and cannot do, sharper vendor questions, and a shared vocabulary for AI decisions.",
   alternates: { canonical: "/services/ai-consultation/workshop" },

@@ -3,7 +3,7 @@ import Link from "next/link";
 import PlatformContactForm from "../PlatformContactForm";
 
 export const metadata: Metadata = {
-  title: "Embedded Platform Advisor · MagicWorks",
+  title: "Embedded Platform Advisor",
   description:
     "Ongoing, founder-level platform judgment for founders executing a roadmap. Regular reviews, escalation support, and re-prioritisation. A follow-on only.",
   alternates: { canonical: "/services/platform-consultation/embedded-advisor" },

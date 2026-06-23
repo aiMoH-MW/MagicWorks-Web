@@ -3,7 +3,7 @@ import Link from "next/link";
 import WebDevelopmentContactForm from "../WebDevelopmentContactForm";
 
 export const metadata: Metadata = {
-  title: "E-commerce Website Development · MagicWorks",
+  title: "E-commerce Website Development",
   description:
     "Online stores built around the buying journey. AI-native commerce for ambitious roadmaps, or WooCommerce for simpler catalogues, with an AMC tail.",
   alternates: { canonical: "/services/web-development/ecommerce" },

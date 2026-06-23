@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Google Business Profile & Local SEO · MagicWorks",
+  title: "Google Business Profile & Local SEO",
   description:
     "Show up first when nearby buyers search. Google Business Profile management, reviews, and local-pack ranking, standalone or inside an SEO retainer.",
   alternates: { canonical: "/services/digital-marketing/gmb-optimisation" },

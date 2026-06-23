@@ -5,7 +5,7 @@ import AIConsultationForm from "./AIConsultationForm";
 export const metadata: Metadata = {
   title: "AI Consultation for Founders & Operators",
   description:
-    "A clear, defensible AI roadmap. Consultation only: we advise and design the path, and you choose who builds it. Independent AI advisory for Indian businesses.",
+    "Independent AI advisory for Indian businesses. We design the roadmap; you choose who builds it. Vendor-neutral consultation only.",
   alternates: { canonical: "/services/ai-consultation" },
 };
 

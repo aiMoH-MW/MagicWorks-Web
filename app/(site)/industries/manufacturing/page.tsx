@@ -2,9 +2,9 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Digital Marketing & AI Consultation for Manufacturing",
+  title: "Digital Marketing & AI for Manufacturing",
   description:
-    "MagicWorks is the Priority 1 AI Consultation vertical for manufacturing. Digital presence, B2B lead generation, and AI process roadmaps for Indian manufacturers.",
+    "AI consultation and digital marketing for Indian manufacturers. B2B lead generation, digital presence, and AI process roadmaps.",
   alternates: { canonical: "/industries/manufacturing" },
 };
 

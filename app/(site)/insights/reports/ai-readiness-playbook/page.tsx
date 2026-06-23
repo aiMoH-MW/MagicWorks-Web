@@ -3,14 +3,14 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "AI Readiness Playbook (Free) · A Founder's Guide to AI Without the Hype · MagicWorks",
+  title: "AI Readiness Playbook — Free Founder's Guide's Guide to AI Without the Hype",
   description:
-    "Free playbook for Indian founders: assess your AI readiness, find where AI pays off first, decide build vs buy, and get a real result in 90 days. Vendor-neutral. Download with your email.",
+    "Free for Indian founders: assess AI readiness, find where it pays off first, decide build vs buy, and get a real result in 90 days. Vendor-neutral.",
   alternates: {
     canonical: "/insights/reports/ai-readiness-playbook",
   },
   openGraph: {
-    title: "The AI Readiness Playbook · MagicWorks",
+    title: "The AI Readiness Playbook",
     description:
       "A founder's guide to putting AI to work without the hype. Vendor-neutral, for Indian businesses.",
     type: "website",

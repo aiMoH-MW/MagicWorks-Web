@@ -4,7 +4,7 @@ import { getAllCaseStudies } from "@/sanity/queries";
 import WorkClient from "./WorkClient";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Client Work & Case Studies",
   description:
     "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
   alternates: { canonical: "/work" },

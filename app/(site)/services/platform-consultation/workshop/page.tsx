@@ -3,7 +3,7 @@ import Link from "next/link";
 import PlatformContactForm from "../PlatformContactForm";
 
 export const metadata: Metadata = {
-  title: "Platform Strategy Workshop · MagicWorks",
+  title: "Platform Strategy Workshop",
   description:
     "A founder-led session to align your team on the platform thesis, the model, and the near-term priorities. The usual way to begin platform consultation.",
   alternates: { canonical: "/services/platform-consultation/workshop" },

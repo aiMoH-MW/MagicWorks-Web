@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Email Marketing & Lifecycle Automation · MagicWorks",
+  title: "Email Marketing & Lifecycle Automation",
   description:
     "List building, nurture sequences, broadcasts, and lifecycle automation that turn contacts into customers. Standalone or part of a full-funnel programme.",
   alternates: { canonical: "/services/digital-marketing/email-marketing" },

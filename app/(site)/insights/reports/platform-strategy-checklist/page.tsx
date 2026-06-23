@@ -3,14 +3,14 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "Platform Strategy Checklist (Free) · 22 Decisions Before You Build · MagicWorks",
+  title: "Platform Strategy Checklist — 22 Key Decisions",
   description:
-    "Free checklist for marketplace and platform founders: the 22 decisions that determine whether a platform works, from business model to cold start to defensibility. Download with your email.",
+    "Free checklist for marketplace and platform founders: 22 decisions covering business model, cold start, and defensibility. Download with your email.",
   alternates: {
     canonical: "/insights/reports/platform-strategy-checklist",
   },
   openGraph: {
-    title: "The Platform Strategy Checklist · MagicWorks",
+    title: "The Platform Strategy Checklist",
     description:
       "22 decisions to make before you build a marketplace or platform. Founder-led, for Indian businesses.",
     type: "website",

@@ -3,14 +3,14 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "AI for Professional Services Firms (Free) · A Partner's Guide to Confidentiality, Process & ROI · MagicWorks",
+  title: "AI for Professional Services Firms (Free Guide)'s Guide to Confidentiality, Process & ROI",
   description:
-    "Free guide for partners at CA, law, consulting, and advisory firms: where AI creates value, how to handle confidentiality and risk, and a staged, safe path to adoption. Vendor-neutral. Download with your email.",
+    "Free guide for CA firms, law practices and consultancies: where AI creates value, how to manage confidentiality risk, and safe adoption steps.",
   alternates: {
     canonical: "/insights/reports/ai-for-professional-services",
   },
   openGraph: {
-    title: "AI for Professional Services Firms · MagicWorks",
+    title: "AI for Professional Services Firms",
     description:
       "A partner's guide to confidentiality, process, and ROI. Vendor-neutral, for Indian firms.",
     type: "website",

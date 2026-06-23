@@ -3,9 +3,9 @@ import Link from "next/link";
 import PlatformContactForm from "../PlatformContactForm";
 
 export const metadata: Metadata = {
-  title: "Targeted Advisory Sprint · Platform Consultation · MagicWorks",
+  title: "Targeted Advisory Sprint",
   description:
-    "A focused, fixed-fee engagement on a single hard platform decision: pricing model, marketplace liquidity, or build-or-buy on a specific module. 2 to 4 weeks.",
+    "A focused, fixed-fee engagement on one hard platform decision: pricing model, marketplace liquidity, or build-vs-buy. 2–4 weeks.",
   alternates: { canonical: "/services/platform-consultation/advisory-sprint" },
 };
 

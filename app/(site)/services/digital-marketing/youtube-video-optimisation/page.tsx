@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "YouTube Video Optimisation & Channel Growth · MagicWorks",
+  title: "YouTube Video Optimisation & Channel Growth",
   description:
     "Organic YouTube growth done right: channel hygiene, video SEO, thumbnails, and retention. For brands and founders with a video pipeline.",
   alternates: { canonical: "/services/digital-marketing/youtube-video-optimisation" },

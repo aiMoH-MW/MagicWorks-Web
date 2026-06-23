@@ -3,7 +3,7 @@ import Link from "next/link";
 import WebDevelopmentContactForm from "../WebDevelopmentContactForm";
 
 export const metadata: Metadata = {
-  title: "Web AMC & Website Maintenance · MagicWorks",
+  title: "Web AMC & Website Maintenance",
   description:
     "Ongoing maintenance for sites we built: uptime monitoring, security patches, content updates, and LLM cost management for AI-native sites.",
   alternates: { canonical: "/services/web-development/maintenance-amc" },

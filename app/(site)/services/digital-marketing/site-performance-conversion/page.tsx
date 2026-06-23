@@ -3,7 +3,7 @@ import Link from "next/link";
 import DigitalMarketingContactForm from "../DigitalMarketingContactForm";
 
 export const metadata: Metadata = {
-  title: "Site Performance & Conversion Optimisation · MagicWorks",
+  title: "Site Performance & Conversion Optimisation",
   description:
     "Recover ad ROI on a slow or leaky site. Core Web Vitals, load time, and landing-page conversion, fixed scope, with measurable before-and-after numbers.",
   alternates: { canonical: "/services/digital-marketing/site-performance-conversion" },

@@ -2,9 +2,9 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "MagicWorks Host · MagicWorks Group",
+  title: "MagicWorks Host — Domains & Hosting",
   description:
-    "Domain registration, web hosting, and SSL certificates from MagicWorks Host, part of the MagicWorks Group. All new hosting and domain enquiries handled here.",
+    "Domain registration, web hosting and SSL certificates from MagicWorks Host — part of the MagicWorks Group. All new enquiries handled here.",
   alternates: { canonical: "/group/magicworks-host" },
 };
 
@@ -40,7 +40,7 @@ export default function MagicWorksHostPage() {
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-4 mb-10">
             Domains, web hosting, and SSL certificates for Indian businesses. All new hosting and domain registration enquiries from MagicWorks IT Solutions clients are routed here.
           </p>
-          <a href="https://magicworkshost.com" target="_blank" rel="noopener noreferrer"
+          <a href="https://magicworkshost.com" target="_blank" rel="noopener noreferrer nofollow"
             className="bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform inline-block">
             Visit MagicWorks Host →
           </a>
