@@ -122,19 +122,19 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
       {/* Current CTC + Expected CTC */}
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
-          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Current CTC</label>
-          <input name="current_ctc" type="text" placeholder="e.g. ₹4.5 LPA"
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Current CTC *</label>
+          <input name="current_ctc" type="text" required placeholder="e.g. ₹4.5 LPA · 0 if fresher"
             value={form.current_ctc} onChange={handleChange}
             className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
         </div>
         <div>
-          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Expected CTC</label>
-          <input name="expected_ctc" type="text" placeholder="e.g. ₹6 LPA"
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Expected CTC *</label>
+          <input name="expected_ctc" type="text" required placeholder="e.g. ₹6 LPA · stipend if intern"
             value={form.expected_ctc} onChange={handleChange}
             className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
         </div>
       </div>
-      <p className="text-[11px] text-[#9A9AA8] -mt-3 italic">Not applicable to interns — leave blank if applying for an internship.</p>
+      <p className="text-[11px] text-[#9A9AA8] -mt-3 italic">Freshers: enter 0 for current CTC. Interns: enter your expected stipend (e.g. ₹8,000/month).</p>
 
       {/* Portfolio */}
       <div>
