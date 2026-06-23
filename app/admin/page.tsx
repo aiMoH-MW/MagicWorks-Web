@@ -103,7 +103,7 @@ function ScoreBar({ label, value }: { label: string; value: number }) {
 function CareerRow({ row }: { row: Row }) {
   const [open, setOpen] = useState(false);
 
-  const val = (key: string) => (row as Record<string, unknown>)[key];
+  const val = (key: string) => (row as unknown as Record<string, unknown>)[key];
   const display = (key: string) => {
     const v = val(key);
     if (key === "created_at") return new Date(v as string).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" });
