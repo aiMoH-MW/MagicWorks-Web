@@ -15,6 +15,7 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
   const [state, setState] = useState<State>("idle");
   const [form, setForm] = useState({
     name: "", email: "", phone: "", linkedin_url: "", portfolio_url: "", cover_letter: "",
+    current_ctc: "", expected_ctc: "",
   });
   const [resume, setResume] = useState<File | null>(null);
   const [resumeError, setResumeError] = useState("");
@@ -49,6 +50,10 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!resume) {
+      setResumeError("Please upload your resume to continue.");
+      return;
+    }
     setState("submitting");
     try {
       const fd = new FormData();
@@ -100,18 +105,36 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
 
       {/* Phone + LinkedIn */}
       <div className="grid sm:grid-cols-2 gap-4">
-        {[
-          { name: "phone",        label: "Phone",        type: "tel", placeholder: "+91 98xxx xxxxx" },
-          { name: "linkedin_url", label: "LinkedIn URL",  type: "url", placeholder: "linkedin.com/in/you" },
-        ].map(f => (
-          <div key={f.name}>
-            <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">{f.label}</label>
-            <input name={f.name} type={f.type} placeholder={f.placeholder}
-              value={form[f.name as keyof typeof form]} onChange={handleChange}
-              className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
-          </div>
-        ))}
+        <div>
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Phone *</label>
+          <input name="phone" type="tel" required placeholder="+91 98xxx xxxxx"
+            value={form.phone} onChange={handleChange}
+            className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
+        </div>
+        <div>
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">LinkedIn URL</label>
+          <input name="linkedin_url" type="url" placeholder="linkedin.com/in/you"
+            value={form.linkedin_url} onChange={handleChange}
+            className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
+        </div>
       </div>
+
+      {/* Current CTC + Expected CTC */}
+      <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Current CTC</label>
+          <input name="current_ctc" type="text" placeholder="e.g. ₹4.5 LPA"
+            value={form.current_ctc} onChange={handleChange}
+            className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
+        </div>
+        <div>
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Expected CTC</label>
+          <input name="expected_ctc" type="text" placeholder="e.g. ₹6 LPA"
+            value={form.expected_ctc} onChange={handleChange}
+            className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
+        </div>
+      </div>
+      <p className="text-[11px] text-[#9A9AA8] -mt-3 italic">Not applicable to interns — leave blank if applying for an internship.</p>
 
       {/* Portfolio */}
       <div>
@@ -124,7 +147,7 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
       {/* Resume upload */}
       <div>
         <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
-          Resume / CV <span className="normal-case text-[#9A9AA8]">(PDF or Word · max 5 MB)</span>
+          Resume / CV * <span className="normal-case text-[#9A9AA8]">(PDF or Word · max 5 MB)</span>
         </label>
         <div
           onClick={() => fileRef.current?.click()}
