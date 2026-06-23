@@ -75,6 +75,25 @@ const nextConfig: NextConfig = {
         destination: "/careers/:slug*",
         permanent: true,
       },
+
+      // ── Old WordPress URLs (pre-June 2026 site) ──────────────────────────────
+      // Service pages — old structure
+      { source: "/digital-marketing/:slug*", destination: "/services/digital-marketing", permanent: true },
+      { source: "/web-development-saas-app-development/:slug*", destination: "/services/web-development", permanent: true },
+      { source: "/web-development-saas-app-development", destination: "/services/web-development", permanent: true },
+      { source: "/ai-automation-integration/:slug*", destination: "/services/ai-consultation", permanent: true },
+      { source: "/ai-automation-integration", destination: "/services/ai-consultation", permanent: true },
+
+      // Case studies → Work
+      { source: "/case-studies/:slug*", destination: "/work", permanent: true },
+
+      // Thank-you page (old WP form submission landing)
+      { source: "/thank-you", destination: "/contact", permanent: true },
+      { source: "/thank-you/", destination: "/contact", permanent: true },
+
+      // Old WP blog slugs imported into new site — redirect to /blog (Sanity handles canonical slugs)
+      { source: "/blog/e-commerce-d2c-lifestyle-brand", destination: "/blog", permanent: true },
+      { source: "/blog/e-commerce-d2c-lifestyle-brand/", destination: "/blog", permanent: true },
     ];
   },
 };
