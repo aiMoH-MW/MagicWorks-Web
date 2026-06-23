@@ -11,14 +11,16 @@ const GTM_ID = "GTM-W75DJC";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
+  preload: true,
 });
 
 const sourceSerif4 = Source_Serif_4({
   variable: "--font-head",
   subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "600", "700"],
+  display: "optional",
+  preload: true,
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {

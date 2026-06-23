@@ -47,13 +47,18 @@
   --spacing-s8: 128px;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: var(--font-body);
   background: var(--mw-ivory);
   color: var(--mw-graphite);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
+  overflow-x: clip; /* clip prevents horizontal scroll without affecting vertical scrollbar gutter */
+  scrollbar-gutter: stable; /* reserves scrollbar space so page doesn't shift when it appears */
 }
 
 /* Cookie banner slide-up */
