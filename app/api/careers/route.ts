@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase, createServiceClient } from "@/lib/supabase";
+import { createServiceClient } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 import { scoreApplication } from "@/lib/gemini-score";
 
@@ -77,8 +77,9 @@ export async function POST(req: NextRequest) {
       resume_signed_url = signed?.signedUrl ?? null;
     }
 
-    // ── Supabase insert — capture ID for async scoring ────────────────────────
-    const { data: inserted, error: dbError } = await supabase
+    // ── Supabase insert — use service client so .select("id") isn't blocked by RLS
+    const svc = createServiceClient();
+    const { data: inserted, error: dbError } = await svc
       .from("career_applications")
       .insert({
         job_slug,
