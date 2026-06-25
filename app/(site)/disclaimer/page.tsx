@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Disclaimer",
-  description: "Disclaimer for magicworksitsolutions.com — MagicWorks IT Solutions Pvt. Ltd. General information, no professional advice, no guarantee of results.",
+  description: "Disclaimer for magicworksitsolutions.com | MagicWorks IT Solutions Pvt. Ltd. General information, no professional advice, no guarantee of results.",
   alternates: { canonical: "/disclaimer" },
   robots: { index: false, follow: false },
 };

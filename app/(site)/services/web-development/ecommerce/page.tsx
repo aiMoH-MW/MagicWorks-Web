@@ -234,7 +234,7 @@ export default function EcommercePage() {
                 Build a store designed to earn traffic and convert it.
               </h2>
               <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
-                Tell us about your catalogue and roadmap and we will recommend the right build — honestly, not based on what is easier to sell.
+                Tell us about your catalogue and roadmap and we will recommend the right build, honestly, not based on what is easier to sell.
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>

@@ -4,7 +4,7 @@ import { ContactImage } from "@/components/ContactImage";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
-  description: "Terms of Use for magicworksitsolutions.com — MagicWorks IT Solutions Pvt. Ltd.",
+  description: "Terms of Use for magicworksitsolutions.com | MagicWorks IT Solutions Pvt. Ltd.",
   alternates: { canonical: "/terms" },
   robots: { index: false, follow: false },
 };
@@ -38,7 +38,7 @@ const webPageSchema = {
   "@id": "https://magicworksitsolutions.com/terms",
   name: "Terms of Use",
   url: "https://magicworksitsolutions.com/terms",
-  description: "Terms of Use for magicworksitsolutions.com — MagicWorks IT Solutions Pvt. Ltd.",
+  description: "Terms of Use for magicworksitsolutions.com | MagicWorks IT Solutions Pvt. Ltd.",
   isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
   about: { "@id": "https://magicworksitsolutions.com/#organization" },
 };

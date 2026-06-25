@@ -3,7 +3,7 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "AI-Native Website Spec Sheet — Free Download",
+  title: "AI-Native Website Spec Sheet: Free Download",
   description:
     "Free spec sheet: exactly what to demand from your next website so it performs, converts, and gets found in search and AI answers. For Indian businesses.",
   alternates: {

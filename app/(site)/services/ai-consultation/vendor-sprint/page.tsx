@@ -175,7 +175,7 @@ export default function VendorSprintPage() {
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Fixed scope, fixed fee — one named decision</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Fixed scope, fixed fee: one named decision</li>
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>Independent recommendation, no vendor tie-in</li>
               </ul>
             </div>

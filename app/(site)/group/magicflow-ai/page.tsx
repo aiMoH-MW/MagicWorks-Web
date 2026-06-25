@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "MagicFlow AI — Lead Capture & Automation",
+  title: "MagicFlow AI: Lead Capture and Automation",
   description:
     "MagicFlow AI is an AI product from the MagicWorks Group, a SaaS chatbot and automation platform for businesses. Part of the MagicWorks family.",
   alternates: { canonical: "/group/magicflow-ai" },

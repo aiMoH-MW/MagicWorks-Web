@@ -3,7 +3,7 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "AI Readiness Playbook — Free Founder's Guide's Guide to AI Without the Hype",
+  title: "AI Readiness Playbook: Free Founder's Guide to AI Without the Hype",
   description:
     "Free for Indian founders: assess AI readiness, find where it pays off first, decide build vs buy, and get a real result in 90 days. Vendor-neutral.",
   alternates: {

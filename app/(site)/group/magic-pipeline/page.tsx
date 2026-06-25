@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Magic Pipeline — CRM & Revenue Ops",
+  title: "Magic Pipeline: CRM and Revenue Ops",
   description:
     "Magic Pipeline is a SaaS AI CRM and sales pipeline product from the MagicWorks Group. Part of the MagicWorks family.",
   alternates: { canonical: "/group/magic-pipeline" },

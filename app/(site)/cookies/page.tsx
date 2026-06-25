@@ -4,7 +4,7 @@ import { ContactImage } from "@/components/ContactImage";
 
 export const metadata: Metadata = {
   title: "Cookie Policy",
-  description: "Cookie Policy for magicworksitsolutions.com — how MagicWorks IT Solutions uses cookies and similar technologies, and how to manage your preferences.",
+  description: "Cookie Policy for magicworksitsolutions.com: how MagicWorks IT Solutions uses cookies and similar technologies, and how to manage your preferences.",
   alternates: { canonical: "/cookies" },
   robots: { index: false, follow: false },
 };

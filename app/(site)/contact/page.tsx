@@ -2,7 +2,7 @@
 import ContactForm from "./ContactForm";
 
 export const metadata: Metadata = {
-  title: "Talk to Us — Discovery Call & Enquiries",
+  title: "Talk to Us: Discovery Call and Enquiries",
   description:
     "Book a thirty-minute discovery call with MagicWorks. No obligation. We will tell you honestly whether we are the right fit for your business.",
   alternates: { canonical: "/contact" },

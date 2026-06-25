@@ -329,8 +329,8 @@ export default function AiForProfessionalServicesPage() {
               Who it is for
             </h2>
             <p className="text-[18px] leading-[1.55] text-[#3F3F4A] max-w-[720px]">
-              Partners and leaders at professional services firms in India — accounting and CA
-              firms, law firms, consulting and advisory firms — weighing where AI fits without
+              Partners and leaders at professional services firms in India: accounting and CA
+              firms, law firms, consulting and advisory firms, weighing where AI fits without
               putting client trust or reputation at risk. If your name is on the work, this is
               written for you.
             </p>

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Digital Marketing for Professional Services",
   description:
-    "MagicWorks works with CA firms, law practices, consultancies, and advisory firms. Trusted advisors advising trusted advisors — AI and digital marketing.",
+    "MagicWorks works with CA firms, law practices, consultancies, and advisory firms. Trusted advisors advising trusted advisors: AI and digital marketing.",
   alternates: { canonical: "/industries/professional-services" },
 };
 
@@ -32,7 +32,7 @@ const serviceSchema = {
 const faq = [
   { q: "What can MagicWorks do for a CA firm or law practice?", a: "We offer AI Consultation (process audit and AI literacy workshops designed for partners), LinkedIn and thought leadership content, AI-native websites for digital credibility, and SEO/AEO for practice-area queries. Professional Services is our Priority 2 AI Consultation vertical." },
   { q: "Why is AI Consultation relevant for professional services firms?", a: "Professional services firms have significant automation potential in client onboarding, document review, compliance workflows, and reporting. The right strategy starts from the firm's practice, not from the technology vendor's pitch." },
-  { q: "How does the AI advisory work for professional services?", a: "We start with an AI Literacy Workshop to build leadership alignment, then audit your specific processes to identify the highest-value automation opportunities. You choose who implements — we advise independently." },
+  { q: "How does the AI advisory work for professional services?", a: "We start with an AI Literacy Workshop to build leadership alignment, then audit your specific processes to identify the highest-value automation opportunities. You choose who implements; we advise independently." },
 ];
 
 const faqSchema = {

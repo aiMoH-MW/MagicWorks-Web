@@ -3,7 +3,7 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "AI Search Visibility Playbook — Free Guide",
+  title: "AI Search Visibility Playbook: Free Guide",
   description:
     "Free playbook: how to get found and cited inside ChatGPT, Perplexity, and Google AI Overviews. Practical and execution-led for Indian businesses.",
   alternates: {

@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: { absolute: "MagicWorks — AI-First Digital Marketing Agency, Pune" },
+  title: { absolute: "MagicWorks: AI-First Digital Marketing Agency, Pune" },
   description:
     "Human strategy, machine acceleration. MagicWorks turns traffic, leads and operations into predictable revenue for ambitious Indian businesses.",
   alternates: { canonical: "/" },

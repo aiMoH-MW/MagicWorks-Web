@@ -3,7 +3,7 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "Manufacturer's Growth Playbook — Free Download's Growth Playbook (Free) · From Referrals to Predictable Inbound",
+  title: "Manufacturer's Growth Playbook: From Referrals to Predictable Inbound (Free Download)",
   description:
     "Free playbook for Indian manufacturers: move from referrals to predictable inbound. The channels that work and where AI fits. Practical, honest.",
   alternates: {

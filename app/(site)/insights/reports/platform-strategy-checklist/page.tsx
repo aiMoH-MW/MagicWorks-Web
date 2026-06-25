@@ -3,7 +3,7 @@ import Link from "next/link";
 import GateForm from "./_GateForm";
 
 export const metadata: Metadata = {
-  title: "Platform Strategy Checklist — 22 Key Decisions",
+  title: "Platform Strategy Checklist: 22 Key Decisions",
   description:
     "Free checklist for marketplace and platform founders: 22 decisions covering business model, cold start, and defensibility. Download with your email.",
   alternates: {

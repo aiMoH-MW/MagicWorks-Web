@@ -2,7 +2,7 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Group — Three Sibling Brands",
+  title: "The Group: Three Sibling Brands",
   description:
     "Three sibling brands: MagicFlow AI for lead capture, Magic Pipeline for CRM and revenue ops, and MagicWorks Host for hosting and domains.",
   alternates: { canonical: "/group" },

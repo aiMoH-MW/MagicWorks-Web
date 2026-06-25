@@ -2,9 +2,9 @@
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "MagicWorks Host — Domains & Hosting",
+  title: "MagicWorks Host: Domains and Hosting",
   description:
-    "Domain registration, web hosting and SSL certificates from MagicWorks Host — part of the MagicWorks Group. All new enquiries handled here.",
+    "Domain registration, web hosting and SSL certificates from MagicWorks Host, part of the MagicWorks Group. All new enquiries handled here.",
   alternates: { canonical: "/group/magicworks-host" },
 };
 

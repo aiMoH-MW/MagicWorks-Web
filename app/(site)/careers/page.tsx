@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getActiveJobOpenings } from "@/sanity/queries";
 
 export const metadata: Metadata = {
-  title: "Open Roles — Join the Team",
+  title: "Open Roles: Join the Team",
   description:
     "Join MagicWorks IT Solutions in Pune. We are hiring across digital marketing, web development, AI, design, and operations. See open roles.",
   alternates: { canonical: "/careers" },
