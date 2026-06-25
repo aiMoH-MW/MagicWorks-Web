@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
 
 export async function POST(req: NextRequest) {
@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
 
-    const { error } = await supabase.from("leads").insert({
+    const { error } = await createServiceClient().from("leads").insert({
       name,
       email,
       phone: phone || null,
@@ -27,7 +27,6 @@ export async function POST(req: NextRequest) {
 
     if (error) throw error;
 
-    // Send notification email (non-blocking)
     sendNotification(
       `New lead from ${source_page ?? "website"}: ${name}`,
       `

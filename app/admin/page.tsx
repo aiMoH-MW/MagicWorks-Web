@@ -1,9 +1,10 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 const ADMIN_SECRET = process.env.NEXT_PUBLIC_ADMIN_SECRET ?? "magicworks-admin-2026";
 
 type Tab = "newsletter" | "whitepaper" | "leads" | "consultation" | "careers" | "playbooks";
+type CareerSortCol = "date" | "role" | "score";
 
 interface ScoreBreakdown {
   resume_score: number;
@@ -42,18 +43,18 @@ interface Row {
 }
 
 const TABS: { key: Tab; label: string; icon: string }[] = [
-  { key: "newsletter",   label: "Newsletter",              icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
-  { key: "whitepaper",   label: "Whitepaper Leads",        icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
-  { key: "playbooks",    label: "Playbook Downloads",      icon: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
-  { key: "leads",        label: "Service Enquiries",       icon: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
-  { key: "consultation", label: "Consultation Enquiries",  icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" },
-  { key: "careers",      label: "Job Applications",        icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" },
+  { key: "newsletter",   label: "Newsletter",             icon: "M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+  { key: "whitepaper",   label: "Whitepaper Leads",       icon: "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+  { key: "playbooks",    label: "Playbook Downloads",     icon: "M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" },
+  { key: "leads",        label: "Service Enquiries",      icon: "M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" },
+  { key: "consultation", label: "Consultation Enquiries", icon: "M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" },
+  { key: "careers",      label: "Job Applications",       icon: "M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" },
 ];
 
 function exportCSV(rows: Row[], filename: string) {
   if (!rows.length) return;
   const keys = Object.keys(rows[0]);
-  const csv = [keys.join(","), ...rows.map((r) => keys.map((k) => JSON.stringify((r as unknown as Record<string,unknown>)[k] ?? "")).join(","))].join("\n");
+  const csv = [keys.join(","), ...rows.map((r) => keys.map((k) => JSON.stringify((r as unknown as Record<string, unknown>)[k] ?? "")).join(","))].join("\n");
   const blob = new Blob([csv], { type: "text/csv" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -67,10 +68,9 @@ function exportCSV(rows: Row[], filename: string) {
 function ScoreBadge({ score, label }: { score: number; label: string }) {
   const color =
     score >= 80 ? { bg: "bg-emerald-500/20", text: "text-emerald-400", ring: "ring-emerald-500/40" }
-    : score >= 60 ? { bg: "bg-blue-500/20",    text: "text-blue-400",    ring: "ring-blue-500/40" }
-    : score >= 40 ? { bg: "bg-amber-500/20",   text: "text-amber-400",   ring: "ring-amber-500/40" }
-    :               { bg: "bg-red-500/20",     text: "text-red-400",     ring: "ring-red-500/40" };
-
+    : score >= 60 ? { bg: "bg-blue-500/20",   text: "text-blue-400",   ring: "ring-blue-500/40" }
+    : score >= 40 ? { bg: "bg-amber-500/20",  text: "text-amber-400",  ring: "ring-amber-500/40" }
+    :               { bg: "bg-red-500/20",    text: "text-red-400",    ring: "ring-red-500/40" };
   return (
     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ring-1 ${color.bg} ${color.ring}`}>
       <span className={`text-[13px] font-bold tabular-nums ${color.text}`}>{score}</span>
@@ -81,11 +81,7 @@ function ScoreBadge({ score, label }: { score: number; label: string }) {
 
 // ── Score Breakdown Bar ───────────────────────────────────────────────────────
 function ScoreBar({ label, value }: { label: string; value: number }) {
-  const color =
-    value >= 80 ? "bg-emerald-500"
-    : value >= 60 ? "bg-blue-500"
-    : value >= 40 ? "bg-amber-500"
-    : "bg-red-500";
+  const color = value >= 80 ? "bg-emerald-500" : value >= 60 ? "bg-blue-500" : value >= 40 ? "bg-amber-500" : "bg-red-500";
   return (
     <div className="space-y-1">
       <div className="flex justify-between items-center">
@@ -95,6 +91,58 @@ function ScoreBar({ label, value }: { label: string; value: number }) {
       <div className="h-1.5 bg-white/10 rounded-full overflow-hidden">
         <div className={`h-full rounded-full ${color} transition-all`} style={{ width: `${value}%` }} />
       </div>
+    </div>
+  );
+}
+
+// ── Sort Icon ─────────────────────────────────────────────────────────────────
+function SortIcon({ active, asc }: { active: boolean; asc: boolean }) {
+  return (
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
+      strokeLinecap="round" strokeLinejoin="round"
+      className={"inline ml-1 " + (active ? "text-[#D4A537]" : "text-white/20")}>
+      {active && asc
+        ? <polyline points="18 15 12 9 6 15" />
+        : <polyline points="6 9 12 15 18 9" />}
+    </svg>
+  );
+}
+
+// ── Drag-to-pan horizontal scroll ────────────────────────────────────────────
+function DragScroll({ children }: { children: React.ReactNode }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const dragging = useRef(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  function onMouseDown(e: React.MouseEvent) {
+    dragging.current = true;
+    startX.current = e.pageX - (ref.current?.offsetLeft ?? 0);
+    scrollLeft.current = ref.current?.scrollLeft ?? 0;
+    if (ref.current) ref.current.style.cursor = "grabbing";
+    e.preventDefault();
+  }
+  function onMouseUp() {
+    dragging.current = false;
+    if (ref.current) ref.current.style.cursor = "grab";
+  }
+  function onMouseMove(e: React.MouseEvent) {
+    if (!dragging.current || !ref.current) return;
+    const x = e.pageX - ref.current.offsetLeft;
+    ref.current.scrollLeft = scrollLeft.current - (x - startX.current);
+  }
+
+  return (
+    <div
+      ref={ref}
+      className="overflow-x-auto select-none"
+      style={{ cursor: "grab" }}
+      onMouseDown={onMouseDown}
+      onMouseUp={onMouseUp}
+      onMouseLeave={onMouseUp}
+      onMouseMove={onMouseMove}
+    >
+      {children}
     </div>
   );
 }
@@ -115,19 +163,18 @@ function CareerRow({ row }: { row: Row }) {
   return (
     <>
       <tr
-        className={`border-b border-white/[0.05] transition-colors cursor-pointer ${open ? "bg-white/[0.05]" : "hover:bg-white/[0.03]"}`}
+        className={"border-b border-white/[0.05] transition-colors cursor-pointer " + (open ? "bg-white/[0.05]" : "hover:bg-white/[0.03]")}
         onClick={() => setOpen((o) => !o)}
       >
         {cols.map((c) => {
-          const isLink     = c === "linkedin_url" || c === "portfolio_url";
-          const isResume   = c === "resume_url";
-          const isScore    = c === "ai_score";
-          const isWrap     = false;
-          const rawVal     = val(c);
-          const disp       = display(c);
+          const isLink   = c === "linkedin_url" || c === "portfolio_url";
+          const isResume = c === "resume_url";
+          const isScore  = c === "ai_score";
+          const rawVal   = val(c);
+          const disp     = display(c);
 
           return (
-            <td key={c} className={`px-4 py-3 align-middle text-white/70 ${isWrap ? "max-w-[200px] whitespace-pre-wrap break-words text-[12px] leading-[1.6]" : "max-w-[160px] truncate"} text-[12.5px]`}>
+            <td key={c} className={"px-4 py-3 align-middle text-white/70 text-[12.5px] " + (isScore ? "" : "max-w-[160px] truncate")}>
               {isScore ? (
                 row.ai_score != null && row.ai_score_label ? (
                   <ScoreBadge score={row.ai_score} label={row.ai_score_label} />
@@ -135,7 +182,7 @@ function CareerRow({ row }: { row: Row }) {
                   <span className="text-white/20 text-[11px] italic">Scoring…</span>
                 )
               ) : c === "email" ? (
-                <a href={`mailto:${disp}`} onClick={(e) => e.stopPropagation()} className="text-[#D4A537] hover:underline">{disp}</a>
+                <a href={"mailto:" + disp} onClick={(e) => e.stopPropagation()} className="text-[#D4A537] hover:underline">{disp}</a>
               ) : isResume && rawVal ? (
                 <a href={disp} target="_blank" rel="noopener noreferrer nofollow" onClick={(e) => e.stopPropagation()}
                   className="inline-flex items-center gap-1 text-[#D4A537] hover:underline text-[12px] font-medium">
@@ -145,7 +192,7 @@ function CareerRow({ row }: { row: Row }) {
                   Download
                 </a>
               ) : isLink && rawVal ? (
-                <a href={(disp as string).startsWith("http") ? disp : `https://${disp}`}
+                <a href={(disp as string).startsWith("http") ? disp : "https://" + disp}
                   target="_blank" rel="noopener noreferrer nofollow" onClick={(e) => e.stopPropagation()}
                   className="text-[#C8B8FF] hover:underline text-[12px]">{disp}</a>
               ) : c === "job_title" ? (
@@ -154,11 +201,11 @@ function CareerRow({ row }: { row: Row }) {
             </td>
           );
         })}
-        {/* Expand indicator */}
+        {/* Expand chevron */}
         <td className="px-3 py-3 text-white/20">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
             strokeLinecap="round" strokeLinejoin="round"
-            className={`transition-transform ${open ? "rotate-180" : ""}`}>
+            className={"transition-transform " + (open ? "rotate-180" : "")}>
             <polyline points="6 9 12 15 18 9"/>
           </svg>
         </td>
@@ -169,7 +216,6 @@ function CareerRow({ row }: { row: Row }) {
         <tr className="border-b border-white/[0.05] bg-[#0E0A1F]/80">
           <td colSpan={cols.length + 1} className="px-6 py-5">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-              {/* Score breakdown */}
               <div>
                 <p className="text-[10px] uppercase tracking-[0.18em] text-white/30 mb-3 font-semibold">AI Score Breakdown</p>
                 {row.ai_score != null && row.ai_score_breakdown ? (
@@ -188,8 +234,6 @@ function CareerRow({ row }: { row: Row }) {
                   </p>
                 )}
               </div>
-
-              {/* Summary + cover letter */}
               <div className="space-y-4">
                 {row.ai_score_summary && (
                   <div>
@@ -215,18 +259,44 @@ function CareerRow({ row }: { row: Row }) {
   );
 }
 
+// ── Sortable header cell for careers table ────────────────────────────────────
+function CareerTh({
+  label, sortCol, currentSort, onSort,
+}: {
+  label: string;
+  sortCol?: CareerSortCol;
+  currentSort: { col: CareerSortCol; dir: "asc" | "desc" };
+  onSort?: (col: CareerSortCol) => void;
+}) {
+  const sortable = !!(sortCol && onSort);
+  const active = sortable && currentSort.col === sortCol;
+  const baseClass = "text-left px-4 py-3 text-white/30 uppercase tracking-[0.1em] text-[10px] font-semibold whitespace-nowrap select-none";
+  const extraClass = sortable ? " cursor-pointer hover:text-white/60 transition-colors" : "";
+  const activeClass = active ? " !text-[#D4A537]/80" : "";
+  return (
+    <th
+      className={baseClass + extraClass + activeClass}
+      onClick={sortable ? () => onSort!(sortCol!) : undefined}
+    >
+      {label}
+      {sortable && <SortIcon active={active} asc={currentSort.dir === "asc"} />}
+    </th>
+  );
+}
+
 // ── Main Admin Page ───────────────────────────────────────────────────────────
 export default function AdminPage() {
-  const [authed, setAuthed] = useState(false);
+  const [authed, setAuthed]   = useState(false);
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
-  const [tab, setTab] = useState<Tab>("newsletter");
-  const [rows, setRows] = useState<Row[]>([]);
+  const [tab, setTab]         = useState<Tab>("newsletter");
+  const [rows, setRows]       = useState<Row[]>([]);
   const [loading, setLoading] = useState(false);
-  const [counts, setCounts] = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, playbooks: 0, leads: 0, consultation: 0, careers: 0 });
+  const [counts, setCounts]   = useState<Record<Tab, number>>({ newsletter: 0, whitepaper: 0, playbooks: 0, leads: 0, consultation: 0, careers: 0 });
   const [dateFrom, setDateFrom] = useState("");
-  const [dateTo, setDateTo] = useState("");
+  const [dateTo, setDateTo]   = useState("");
   const [sortDir, setSortDir] = useState<"desc" | "asc">("desc");
+  const [careerSort, setCareerSort] = useState<{ col: CareerSortCol; dir: "asc" | "desc" }>({ col: "score", dir: "desc" });
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
@@ -261,6 +331,14 @@ export default function AdminPage() {
     else setLoginError("Incorrect password.");
   }
 
+  function toggleCareerSort(col: CareerSortCol) {
+    setCareerSort((prev) =>
+      prev.col === col
+        ? { col, dir: prev.dir === "desc" ? "asc" : "desc" }
+        : { col, dir: col === "score" ? "desc" : "asc" }
+    );
+  }
+
   if (!authed) {
     return (
       <div className="min-h-screen bg-[#0E0A1F] flex items-center justify-center">
@@ -285,33 +363,39 @@ export default function AdminPage() {
     );
   }
 
-  const newsletterCols  = ["created_at", "email", "source"];
-  const whitepaperCols  = ["created_at", "email", "whitepaper"];
-  const playbookCols    = ["created_at", "name", "email", "company", "message", "source_page"];
-  const leadsCols       = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
+  const newsletterCols = ["created_at", "email", "source"];
+  const whitepaperCols = ["created_at", "email", "whitepaper"];
+  const playbookCols   = ["created_at", "name", "email", "company", "message", "source_page"];
+  const leadsCols      = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
   const cols =
-    tab === "playbooks"                        ? playbookCols
+    tab === "playbooks"                         ? playbookCols
     : tab === "leads" || tab === "consultation" ? leadsCols
     : tab === "newsletter"                      ? newsletterCols
-    : tab === "careers"                         ? [] // careers has its own CareerRow renderer
+    : tab === "careers"                         ? []
     : whitepaperCols;
 
-  const hasFilter = !!(dateFrom || dateTo);
-  const activeTab = TABS.find((t) => t.key === tab)!;
+  const hasFilter  = !!(dateFrom || dateTo);
+  const activeTab  = TABS.find((t) => t.key === tab)!;
 
-  // Career score sort
   const careerRows = tab === "careers"
     ? [...rows].sort((a, b) => {
-        const sa = a.ai_score ?? -1;
-        const sb = b.ai_score ?? -1;
-        return sortDir === "desc" ? sb - sa : sa - sb;
+        const mul = careerSort.dir === "desc" ? -1 : 1;
+        if (careerSort.col === "score") {
+          return mul * ((a.ai_score ?? -1) - (b.ai_score ?? -1));
+        }
+        if (careerSort.col === "date") {
+          return mul * (new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+        }
+        const ra = (a.job_title ?? "").toLowerCase();
+        const rb = (b.job_title ?? "").toLowerCase();
+        return mul * ra.localeCompare(rb);
       })
     : rows;
 
   return (
     <div className="min-h-screen bg-[#0A0818] text-white flex">
 
-      {/* ── Sidebar ─────────────────────────────────────────── */}
+      {/* ── Sidebar ───────────────────────────────────────────── */}
       <aside className="w-[220px] shrink-0 bg-[#0E0A1F] border-r border-white/[0.07] flex flex-col">
         <div className="px-6 py-6 border-b border-white/[0.07]">
           <p className="text-[#D4A537] text-[10px] uppercase tracking-[0.22em] font-semibold mb-[2px]">Admin</p>
@@ -323,22 +407,18 @@ export default function AdminPage() {
             const active = tab === t.key;
             return (
               <button key={t.key} onClick={() => setTab(t.key)}
-                className={`w-full flex items-center justify-between px-6 py-[10px] text-left transition-all group ${
-                  active ? "bg-[#D4A537]/10 border-r-[3px] border-[#D4A537]" : "border-r-[3px] border-transparent hover:bg-white/[0.04]"
-                }`}>
+                className={"w-full flex items-center justify-between px-6 py-[10px] text-left transition-all group border-r-[3px] " + (active ? "bg-[#D4A537]/10 border-[#D4A537]" : "border-transparent hover:bg-white/[0.04]")}>
                 <div className="flex items-center gap-3 min-w-0">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
                     strokeLinecap="round" strokeLinejoin="round"
                     className={active ? "text-[#D4A537]" : "text-white/30 group-hover:text-white/50 transition-colors"}>
                     <path d={t.icon} />
                   </svg>
-                  <span className={`text-[12.5px] font-medium leading-snug truncate ${active ? "text-[#D4A537]" : "text-white/50 group-hover:text-white/80 transition-colors"}`}>
+                  <span className={"text-[12.5px] font-medium leading-snug truncate " + (active ? "text-[#D4A537]" : "text-white/50 group-hover:text-white/80 transition-colors")}>
                     {t.label}
                   </span>
                 </div>
-                <span className={`ml-2 shrink-0 text-[10px] font-bold px-[7px] py-[2px] rounded-full ${
-                  active ? "bg-[#D4A537] text-[#2A1B5C]" : "bg-white/[0.08] text-white/30"
-                }`}>
+                <span className={"ml-2 shrink-0 text-[10px] font-bold px-[7px] py-[2px] rounded-full " + (active ? "bg-[#D4A537] text-[#2A1B5C]" : "bg-white/[0.08] text-white/30")}>
                   {counts[t.key]}
                 </span>
               </button>
@@ -350,7 +430,7 @@ export default function AdminPage() {
         </div>
       </aside>
 
-      {/* ── Main ────────────────────────────────────────────── */}
+      {/* ── Main ──────────────────────────────────────────────── */}
       <div className="flex-1 flex flex-col min-w-0">
 
         {/* Top bar */}
@@ -358,12 +438,12 @@ export default function AdminPage() {
           <div>
             <h1 className="text-white text-[18px] font-bold leading-none">{activeTab.label}</h1>
             {tab === "careers" && (
-              <p className="text-white/30 text-[11px] mt-1">Click any row to see AI score breakdown · Sorted by AI score</p>
+              <p className="text-white/30 text-[11px] mt-1">Click any row to see AI score breakdown · Click column headers to sort · Drag table to scroll</p>
             )}
             {hasFilter && tab !== "careers" && <p className="text-white/30 text-[11px] mt-1">Date filter active</p>}
           </div>
           <button
-            onClick={() => exportCSV(rows, `${tab}-${new Date().toISOString().slice(0, 10)}.csv`)}
+            onClick={() => exportCSV(rows, tab + "-" + new Date().toISOString().slice(0, 10) + ".csv")}
             className="flex items-center gap-2 text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-4 py-2 transition-colors">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
@@ -386,25 +466,24 @@ export default function AdminPage() {
                 <input type="date" value={dateTo} onChange={(e) => setDateTo(e.target.value)}
                   className="bg-white/[0.07] border border-white/[0.12] rounded-lg px-3 py-[6px] text-white text-[12px] focus:outline-none focus:border-[#D4A537]/60 [color-scheme:dark]" />
               </div>
+              <button onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
+                className="flex items-center gap-[6px] text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-3 py-[6px] transition-colors">
+                {sortDir === "desc" ? (
+                  <><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Newest first</>
+                ) : (
+                  <><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>Oldest first</>
+                )}
+              </button>
+              {hasFilter && (
+                <button onClick={() => { setDateFrom(""); setDateTo(""); }}
+                  className="text-[11px] text-[#D4A537]/60 hover:text-[#D4A537] transition-colors underline underline-offset-2">
+                  Clear
+                </button>
+              )}
             </>
           )}
-          <button onClick={() => setSortDir((d) => (d === "desc" ? "asc" : "desc"))}
-            className="flex items-center gap-[6px] text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-3 py-[6px] transition-colors">
-            {tab === "careers" ? (
-              sortDir === "desc"
-                ? <><span>↓</span> Highest score first</>
-                : <><span>↑</span> Lowest score first</>
-            ) : sortDir === "desc" ? (
-              <><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>Newest first</>
-            ) : (
-              <><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>Oldest first</>
-            )}
-          </button>
-          {hasFilter && tab !== "careers" && (
-            <button onClick={() => { setDateFrom(""); setDateTo(""); }}
-              className="text-[11px] text-[#D4A537]/60 hover:text-[#D4A537] transition-colors underline underline-offset-2">
-              Clear
-            </button>
+          {tab === "careers" && (
+            <span className="text-white/25 text-[11px] italic">Click Date, Role or AI Score headers to sort ↑↓</span>
           )}
           <span className="ml-auto text-white/20 text-[11px]">{rows.length} records</span>
         </div>
@@ -419,16 +498,23 @@ export default function AdminPage() {
                 {hasFilter ? "No records in this date range." : "No records yet."}
               </div>
             ) : tab === "careers" ? (
-              /* ── Careers table with AI score ── */
-              <div className="overflow-x-auto">
-                <table className="w-full text-[13px]">
+              /* ── Careers table: drag-to-pan + sortable headers ── */
+              <DragScroll>
+                <table className="w-full text-[13px]" style={{ minWidth: 1100 }}>
                   <thead>
                     <tr className="border-b border-white/[0.07]">
-                      {["Date", "Role", "Name", "Email", "Phone", "Current CTC", "Expected CTC", "LinkedIn", "Portfolio", "Resume", "AI Score", ""].map((h) => (
-                        <th key={h} className="text-left px-4 py-3 text-white/30 uppercase tracking-[0.1em] text-[10px] font-semibold whitespace-nowrap">
-                          {h}
-                        </th>
-                      ))}
+                      <CareerTh label="Date"         sortCol="date"  currentSort={careerSort} onSort={toggleCareerSort} />
+                      <CareerTh label="Role"         sortCol="role"  currentSort={careerSort} onSort={toggleCareerSort} />
+                      <CareerTh label="Name"                         currentSort={careerSort} />
+                      <CareerTh label="Email"                        currentSort={careerSort} />
+                      <CareerTh label="Phone"                        currentSort={careerSort} />
+                      <CareerTh label="Current CTC"                  currentSort={careerSort} />
+                      <CareerTh label="Expected CTC"                 currentSort={careerSort} />
+                      <CareerTh label="LinkedIn"                    currentSort={careerSort} />
+                      <CareerTh label="Portfolio"                   currentSort={careerSort} />
+                      <CareerTh label="Resume"                      currentSort={careerSort} />
+                      <CareerTh label="AI Score" sortCol="score"   currentSort={careerSort} onSort={toggleCareerSort} />
+                      <CareerTh label=""                            currentSort={careerSort} />
                     </tr>
                   </thead>
                   <tbody>
@@ -437,9 +523,9 @@ export default function AdminPage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </DragScroll>
             ) : (
-              /* ── Generic table for other tabs ── */
+              /* Generic table for other tabs */
               <div className="overflow-x-auto">
                 <table className="w-full text-[13px]">
                   <thead>
@@ -463,16 +549,16 @@ export default function AdminPage() {
                           const isLink   = c === "linkedin_url" || c === "portfolio_url";
                           const isResume = c === "resume_url";
                           return (
-                            <td key={c} className={`px-5 py-3 align-top text-white/70 ${isWrap ? "max-w-[260px] whitespace-pre-wrap break-words text-[12px] leading-[1.6]" : "max-w-[180px] truncate"}`}>
+                            <td key={c} className={"px-5 py-3 align-top text-white/70 " + (isWrap ? "max-w-[260px] whitespace-pre-wrap break-words text-[12px] leading-[1.6]" : "max-w-[180px] truncate")}>
                               {c === "email" ? (
-                                <a href={`mailto:${display}`} className="text-[#D4A537] hover:underline">{display}</a>
+                                <a href={"mailto:" + display} className="text-[#D4A537] hover:underline">{display}</a>
                               ) : isResume && display !== "—" ? (
                                 <a href={display} target="_blank" rel="noopener noreferrer nofollow" className="inline-flex items-center gap-1 text-[#D4A537] hover:underline text-[12px] font-medium">
                                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
                                   Download
                                 </a>
                               ) : isLink && display !== "—" ? (
-                                <a href={display.startsWith("http") ? display : `https://${display}`} target="_blank" rel="noopener noreferrer nofollow" className="text-[#C8B8FF] hover:underline text-[12px]">{display}</a>
+                                <a href={display.startsWith("http") ? display : "https://" + display} target="_blank" rel="noopener noreferrer nofollow" className="text-[#C8B8FF] hover:underline text-[12px]">{display}</a>
                               ) : c === "source" || c === "pillar" || c === "job_title" ? (
                                 <span className="bg-white/[0.08] text-white/50 px-2 py-0.5 rounded text-[11px]">{display}</span>
                               ) : c === "source_page" ? (
