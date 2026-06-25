@@ -13,6 +13,28 @@ const eslintConfig = defineConfig([
     "build/**",
     "next-env.d.ts",
   ]),
+  // ── Safety rule: ban anon Supabase client in API routes ──────────────
+  // API routes must use createServiceClient() to bypass Row Level Security.
+  // Using the anon `supabase` export server-side silently blocks SELECT
+  // after INSERT, causing 500 errors and data loss.
+  {
+    files: ["app/api/**/*.ts"],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          paths: [
+            {
+              name: "@/lib/supabase",
+              importNames: ["supabase", "getSupabase"],
+              message:
+                "API routes must use createServiceClient() — never the anon client. See lib/supabase.ts.",
+            },
+          ],
+        },
+      ],
+    },
+  },
 ]);
 
 export default eslintConfig;

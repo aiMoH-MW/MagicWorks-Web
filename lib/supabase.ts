@@ -1,7 +1,7 @@
 import { createClient, SupabaseClient } from "@supabase/supabase-js";
 
-// Lazy singleton — not initialized at module load, only when first called.
-// Prevents build failures on Vercel when env vars aren't available at compile time.
+// Lazy singleton -- not initialized at module load, only when first called.
+// Prevents build failures on Vercel when env vars are not available at compile time.
 let _anon: SupabaseClient | null = null;
 
 export function getSupabase(): SupabaseClient {
@@ -13,9 +13,16 @@ export function getSupabase(): SupabaseClient {
   return _anon;
 }
 
-// Convenience re-export so call sites read naturally: supabase.from(...)
+// Browser-only anon client -- DO NOT use in API routes (app/api/**).
+// API routes must use createServiceClient() to bypass RLS.
+// This proxy throws at runtime if accidentally called server-side.
 export const supabase = new Proxy({} as SupabaseClient, {
   get(_target, prop) {
+    if (typeof window === "undefined") {
+      throw new Error(
+        "[supabase] Anon client used server-side. Use createServiceClient() in API routes instead."
+      );
+    }
     return (getSupabase() as unknown as Record<string, unknown>)[prop as string];
   },
 });
