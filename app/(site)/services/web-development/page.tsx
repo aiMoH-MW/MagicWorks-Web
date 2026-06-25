@@ -3,7 +3,7 @@ import Link from "next/link";
 import WebDevelopmentContactForm from "./WebDevelopmentContactForm";
 
 export const metadata: Metadata = {
-  title: "AI-Native Website Development",
+  title: "Web Development Agency in Pune",
   description:
     "AI-native websites that compound brand and conversion. Built on Next.js to generate business, not just to look good. From idea to live in 3 to 10 weeks.",
   alternates: { canonical: "/services/web-development" },
