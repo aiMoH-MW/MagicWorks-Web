@@ -80,7 +80,7 @@ export default function DigitalMarketingContactForm({
       <div>
         <label className="block text-[12px] font-semibold text-[#2A1B5C] uppercase tracking-[0.08em] mb-1">Service interest</label>
         <select name="service" defaultValue={defaultService} className="w-full border border-[#D8D8DE] rounded-[8px] px-4 py-3 text-[14px] text-[#2A1B5C] focus:outline-none focus:ring-2 focus:ring-[#5B3FBE]/30 bg-white">
-          <option value="">Not sure yet — tell us your goal</option>
+          <option value="">Not sure yet: tell us your goal</option>
           <option value="Full-Funnel Programme">Full-Funnel Programme (flagship)</option>
           <option value="Google Ads">Google Ads & Search Marketing</option>
           <option value="SEO / AEO">SEO / AEO</option>

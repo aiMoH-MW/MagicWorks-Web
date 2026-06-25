@@ -76,7 +76,7 @@ export default async function WorkPage() {
           </h1>
           <p className="text-[18px] leading-[1.6] text-[#C8B8FF] max-w-[500px]">
             Situation, intervention, result. Real numbers, named clients, honest
-            accounts of what changed — and why.
+            accounts of what changed, and why.
           </p>
 
           {/* Aggregate strip */}

@@ -329,12 +329,12 @@ export default function PlatformConsultationPage() {
                 Building a platform and need senior judgment?
               </h2>
               <p className="text-[17px] leading-[1.6] text-[#3F3F4A] mb-6">
-                Start with a Platform Strategy Workshop — one to two days, focused, and actionable. Tell us about your platform and we will suggest the right engagement.
+                Start with a Platform Strategy Workshop: one to two days, focused, and actionable. Tell us about your platform and we will suggest the right engagement.
               </p>
               <ul className="space-y-3 text-[15px] text-[#3F3F4A]">
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>We respond within one working day</li>
                 <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>No bundling, no upsell after the engagement</li>
-                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>You choose who builds — always</li>
+                <li className="flex gap-3 items-start"><span className="text-[#D4A537] font-bold mt-[2px]">&#10003;</span>You choose who builds. Always.</li>
               </ul>
             </div>
             <PlatformContactForm />

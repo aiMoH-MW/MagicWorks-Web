@@ -108,7 +108,7 @@ const serviceSchema = {
   serviceType: "Digital Marketing",
   category: "Marketing Services",
   description:
-    "Predictable revenue from traffic and leads. Ten digital marketing services on a monthly retainer — Full-Funnel Programme, Google Ads, SEO & AEO, GMB Optimisation, YouTube, Meta Ads, LinkedIn, Thought Leadership & GEO, Email Marketing, and CRO.",
+    "Predictable revenue from traffic and leads. Ten digital marketing services on a monthly retainer: Full-Funnel Programme, Google Ads, SEO & AEO, GMB Optimisation, YouTube, Meta Ads, LinkedIn, Thought Leadership & GEO, Email Marketing, and CRO.",
   url: "https://magicworksitsolutions.com/services/digital-marketing",
   provider: {
     "@type": "Organization",

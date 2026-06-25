@@ -272,7 +272,7 @@ export default function InsightsReportsPage() {
           <div className="w-14 h-[3px] bg-[#D4A537] my-5" />
           <p className="text-[17px] leading-[1.6] text-[#C8B8FF] max-w-[560px]">
             Execution-ready guides on digital marketing, AI, and platform building. Open articles
-            stay open — we only gate the long-form assets.
+            stay open. We only gate the long-form assets.
           </p>
 
         </div>
@@ -356,7 +356,7 @@ export default function InsightsReportsPage() {
                 Prefer open reading?
               </h2>
               <p className="text-[15px] text-[#C8B8FF] mt-1.5 max-w-[440px] leading-[1.55]">
-                All top-of-funnel Insights are open and crawlable — no email required.
+                All top-of-funnel Insights are open and crawlable, no email required.
               </p>
             </div>
             <Link
