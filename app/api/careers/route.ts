@@ -97,6 +97,7 @@ export async function POST(req: NextRequest) {
       .select("id")
       .single();
 
+    console.log("[careers/route] insert result — id:", inserted?.id, "error:", dbError ? JSON.stringify(dbError) : null);
     if (dbError) throw dbError;
 
     // ── Gemini AI Scoring (async — does not block the response) ───────────────
