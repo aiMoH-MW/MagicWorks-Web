@@ -170,7 +170,7 @@ export async function POST(req: NextRequest) {
         ].join("\n");
 
         await transport.sendMail({
-          from:        `"MagicWorks Careers" <${HR_EMAIL}>`,
+          from:        '"MagicWorks Careers" <noreply@magicworksitsolutions.com>',
           to:          HR_EMAIL,
           replyTo:     email,
           subject:     `Application: ${job_title || job_slug} — ${name}`,
@@ -185,6 +185,4 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (err) {
     console.error("[careers/route]", err);
-    return NextResponse.json({ error: "Submission failed" }, { status: 500 });
-  }
-}
+    return NextResponse.json({ error: "Submission failed" }, { 
