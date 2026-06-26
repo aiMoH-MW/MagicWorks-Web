@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 
 const NOTIFY_TO = [
-  "mohang.chute@gmail.com",
+  "sales@magicworksitsolutions.com",
 ];
 
 function makeTransport() {
