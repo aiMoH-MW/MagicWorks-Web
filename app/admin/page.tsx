@@ -297,6 +297,7 @@ export default function AdminPage() {
   const [dateTo, setDateTo]   = useState("");
   const [sortDir, setSortDir] = useState<"desc" | "asc">("desc");
   const [careerSort, setCareerSort] = useState<{ col: CareerSortCol; dir: "asc" | "desc" }>({ col: "score", dir: "desc" });
+  const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
@@ -396,38 +397,63 @@ export default function AdminPage() {
     <div className="min-h-screen bg-[#0A0818] text-white flex">
 
       {/* ── Sidebar ───────────────────────────────────────────── */}
-      <aside className="w-[220px] shrink-0 bg-[#0E0A1F] border-r border-white/[0.07] flex flex-col">
-        <div className="px-6 py-6 border-b border-white/[0.07]">
-          <p className="text-[#D4A537] text-[10px] uppercase tracking-[0.22em] font-semibold mb-[2px]">Admin</p>
-          <p className="text-white text-[15px] font-bold leading-tight">MagicWorks</p>
+      <aside className={"shrink-0 bg-[#0E0A1F] border-r border-white/[0.07] flex flex-col transition-all duration-200 " + (sidebarOpen ? "w-[220px]" : "w-[52px]")}>
+        {/* Header + collapse toggle */}
+        <div className={"border-b border-white/[0.07] flex items-center " + (sidebarOpen ? "px-6 py-6 justify-between" : "px-0 py-[18px] justify-center")}>
+          {sidebarOpen && (
+            <div>
+              <p className="text-[#D4A537] text-[10px] uppercase tracking-[0.22em] font-semibold mb-[2px]">Admin</p>
+              <p className="text-white text-[15px] font-bold leading-tight">MagicWorks</p>
+            </div>
+          )}
+          <button
+            onClick={() => setSidebarOpen((o) => !o)}
+            title={sidebarOpen ? "Collapse sidebar" : "Expand sidebar"}
+            className="text-white/30 hover:text-white/70 transition-colors p-1 rounded"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2"
+              strokeLinecap="round" strokeLinejoin="round">
+              {sidebarOpen
+                ? <><line x1="18" y1="6" x2="6" y2="18"/><polyline points="14 6 6 6 6 14"/></>
+                : <><line x1="6" y1="6" x2="18" y2="18"/><polyline points="10 18 18 18 18 10"/></>
+              }
+            </svg>
+          </button>
         </div>
         <nav className="flex-1 py-4">
-          <p className="px-6 mb-2 text-white/25 text-[10px] uppercase tracking-[0.18em]">Data</p>
+          {sidebarOpen && <p className="px-6 mb-2 text-white/25 text-[10px] uppercase tracking-[0.18em]">Data</p>}
           {TABS.map((t) => {
             const active = tab === t.key;
             return (
               <button key={t.key} onClick={() => setTab(t.key)}
-                className={"w-full flex items-center justify-between px-6 py-[10px] text-left transition-all group border-r-[3px] " + (active ? "bg-[#D4A537]/10 border-[#D4A537]" : "border-transparent hover:bg-white/[0.04]")}>
-                <div className="flex items-center gap-3 min-w-0">
+                title={!sidebarOpen ? t.label : undefined}
+                className={"w-full flex items-center justify-between text-left transition-all group border-r-[3px] " + (sidebarOpen ? "px-6 py-[10px] " : "px-0 py-[10px] justify-center ") + (active ? "bg-[#D4A537]/10 border-[#D4A537]" : "border-transparent hover:bg-white/[0.04]")}>
+                <div className={"flex items-center min-w-0 " + (sidebarOpen ? "gap-3" : "gap-0 justify-center w-full")}>
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"
                     strokeLinecap="round" strokeLinejoin="round"
                     className={active ? "text-[#D4A537]" : "text-white/30 group-hover:text-white/50 transition-colors"}>
                     <path d={t.icon} />
                   </svg>
-                  <span className={"text-[12.5px] font-medium leading-snug truncate " + (active ? "text-[#D4A537]" : "text-white/50 group-hover:text-white/80 transition-colors")}>
-                    {t.label}
-                  </span>
+                  {sidebarOpen && (
+                    <span className={"text-[12.5px] font-medium leading-snug truncate " + (active ? "text-[#D4A537]" : "text-white/50 group-hover:text-white/80 transition-colors")}>
+                      {t.label}
+                    </span>
+                  )}
                 </div>
-                <span className={"ml-2 shrink-0 text-[10px] font-bold px-[7px] py-[2px] rounded-full " + (active ? "bg-[#D4A537] text-[#2A1B5C]" : "bg-white/[0.08] text-white/30")}>
-                  {counts[t.key]}
-                </span>
+                {sidebarOpen && (
+                  <span className={"ml-2 shrink-0 text-[10px] font-bold px-[7px] py-[2px] rounded-full " + (active ? "bg-[#D4A537] text-[#2A1B5C]" : "bg-white/[0.08] text-white/30")}>
+                    {counts[t.key]}
+                  </span>
+                )}
               </button>
             );
           })}
         </nav>
-        <div className="px-6 py-4 border-t border-white/[0.07]">
-          <p className="text-white/20 text-[10px]">MagicWorks © 2026</p>
-        </div>
+        {sidebarOpen && (
+          <div className="px-6 py-4 border-t border-white/[0.07]">
+            <p className="text-white/20 text-[10px]">MagicWorks © 2026</p>
+          </div>
+        )}
       </aside>
 
       {/* ── Main ──────────────────────────────────────────────── */}

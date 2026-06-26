@@ -67,17 +67,47 @@
 
 ---
 
+#### 9. Em dash audit and removal
+- Removed all em dashes from 27+ files (metadata titles, visible content).
+- Replaced with colons or commas as appropriate. Code comments and table placeholders left unchanged.
+- Commits: d13eb61, 248c386
+
+#### 10. Blog category filter chips
+- Built `app/(site)/blog/BlogClient.tsx` — client component with useState filter chips.
+- Filter categories: All + dynamic chips from article data. Active = dark indigo fill.
+- Commit: (BlogClient.tsx was staged and pushed separately)
+
+#### 11. Case studies — unpublish
+- Manually unpublished in Sanity Studio. Only 3 remain on /work:
+  - simplidistance-mba-enrollments
+  - srj-steel-b2b-digital-presence
+  - trexova-wellness-tourism-pipeline
+
+#### 13. Admin sidebar collapse toggle
+- Added collapse/expand button to the admin sidebar.
+- Collapsed state shows only icons (52px wide) with tooltips; expanded shows full labels and counts.
+- State: `sidebarOpen` boolean in AdminPage, toggled by an arrow button in the sidebar header.
+- **File:** `app/admin/page.tsx`
+
+#### 12. SEO code fixes (commit a5dde28)
+- About page title: shortened from 62 to 52 chars (was over 60-char limit)
+- Web development duplicate title: `/services/web-development` title changed to "Web Development Agency in Pune" to differentiate from `/services/web-development/ai-native-websites`
+- Audited: meta descriptions (all over-155 cases were in JSON-LD schema, not HTML meta — no fix needed), images (all use proper Next.js Image component), static H1s (all under 70 chars)
+- CMS H1s >70 chars: these are Sanity article titles — need to be shortened in Sanity Studio directly
+
+---
+
 ### Pending / carry-forward
 
 - [ ] Backfill 199 unscored applications via PowerShell loop to `/api/admin/rescore` with header `x-admin-secret: magicworks-admin-2026`
-- [ ] SEO fixes: static page titles >60 chars, meta descriptions >155 chars, images missing width/height, H1s, duplicate H2s (tracked in task list)
-- [ ] Verify build passes after all SEO fixes (`npm run build`)
+- [ ] Shorten long blog/insights article titles in Sanity Studio (rendered as H1s > 70 chars on article pages)
+- [ ] Verify Vercel build passes (check Vercel dashboard after latest push)
 
 ---
 
 ### Known issues at end of session
 
-- None active. All routes passing `npx tsc --noEmit`.
+- None active. All static SEO code fixes committed and pushed.
 
 ---
 
@@ -85,6 +115,9 @@
 
 ```
 git log --oneline (latest):
+a5dde28 seo: fix page title length and duplicate title issues
+248c386 fix: remove em dashes from all site pages
+d13eb61 feat: blog category filter, em dash fixes, Supabase guards
 fix: use service client for career insert to bypass RLS SELECT restriction
 feat: email notifications, admin sort/drag-scroll, CTC placeholder fixes
 guard: prevent anon Supabase client in API routes
