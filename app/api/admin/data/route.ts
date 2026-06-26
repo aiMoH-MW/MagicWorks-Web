@@ -34,10 +34,11 @@ export async function GET(req: NextRequest) {
     }
 
     if (tab === "whitepaper") {
-      const { data, error } = await applyFilters(
-        client.from("whitepaper_subscribers").select("*"),
-        from, to, asc
-      );
+      // whitepaper_subscribers has no created_at — order by id instead
+      const { data, error } = await client
+        .from("whitepaper_subscribers")
+        .select("*")
+        .order("id", { ascending: asc });
       if (error) throw error;
       return NextResponse.json({ data });
     }
@@ -99,6 +100,4 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ data: [] });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Failed to fetch data" }, { status: 500 });
-  }
-}
+    retu
