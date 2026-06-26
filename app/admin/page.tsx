@@ -296,7 +296,7 @@ export default function AdminPage() {
   const [dateFrom, setDateFrom] = useState("");
   const [dateTo, setDateTo]   = useState("");
   const [sortDir, setSortDir] = useState<"desc" | "asc">("desc");
-  const [careerSort, setCareerSort] = useState<{ col: CareerSortCol; dir: "asc" | "desc" }>({ col: "score", dir: "desc" });
+  const [careerSort, setCareerSort] = useState<{ col: CareerSortCol; dir: "asc" | "desc" }>({ col: "date", dir: "desc" });
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
