@@ -124,6 +124,7 @@ Respond with ONLY this JSON (no extra keys, no markdown):
           temperature: 0.1,
           maxOutputTokens: 512,
           responseMimeType: "application/json",
+          thinkingConfig: { thinkingBudget: 0 },
         },
       }),
     });
@@ -135,8 +136,11 @@ Respond with ONLY this JSON (no extra keys, no markdown):
     }
 
     const data = await res.json();
-    const raw: string =
-      data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    // Thinking models return thought parts first — find the actual text part
+    const allParts: Array<{ text?: string; thought?: boolean }> =
+      data?.candidates?.[0]?.content?.parts ?? [];
+    const textPart = allParts.find((p) => !p.thought && p.text != null);
+    const raw: string = textPart?.text ?? "";
 
     // Strip any accidental code fences
     const clean = raw
