@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getActiveJobOpenings } from "@/sanity/queries";
 
+export const revalidate = 300;
+
 export const metadata: Metadata = {
   title: "Open Roles: Join the Team",
   description:

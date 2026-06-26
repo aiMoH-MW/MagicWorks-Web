@@ -5,6 +5,89 @@
 
 ---
 
+## Session: 26 June 2026 (Mohan / Claude Sonnet)
+
+### What was built
+
+#### 1. Admin sidebar collapse toggle
+- Added collapse/expand button to admin sidebar.
+- Collapsed: 52px wide, icon-only with `title` tooltips. Expanded: 220px with labels and counts.
+- State: `sidebarOpen` boolean toggled by arrow button in sidebar header.
+- **File:** `app/admin/page.tsx`
+
+#### 2. Gemini AI scoring — model + API key fix
+- `gemini-2.0-flash` was deprecated → 404. Tried `gemini-1.5-flash` → also 404.
+- Root cause: old GEMINI_API_KEY in Vercel was expired/wrong.
+- Fix: new API key created in Google AI Studio (`AQ.Ab8RN6...`), updated in Vercel and `.env.local`.
+- Updated model to `gemini-2.5-flash` (thinking model — requires `thinkingConfig: { thinkingBudget: 0 }` to disable thinking output).
+- Fixed response parser to skip `thought: true` parts and find the actual text part.
+- **File:** `lib/gemini-score.ts`
+
+#### 3. Build failure — corrupted files fix (commit 2e38b4c)
+- `app/api/admin/data/route.ts` was truncated (ended at `retu` on line 103) and `lib/gemini-score.ts` had a null byte at line 179.
+- Root cause: Linux sandbox writing to Windows-mounted filesystem corrupts files.
+- Fix: re-wrote both files clean. **Never use Write tool for large files on Windows-mounted paths — use Edit tool only.**
+- Committed as 2e38b4c.
+
+#### 4. Old WordPress URL redirect — /business-challenges
+- Added permanent 301 redirects in `next.config.ts`:
+  - `/business-challenges/:slug*` → `/services/ai-consultation`
+  - `/business-challenges` → `/services`
+
+#### 5. Email notifications — SMTP + await fix (critical)
+- **Problem 1:** SMTP port 587 (STARTTLS) was timing out from Vercel. Fixed by switching to port 465 (SSL, `SMTP_SECURE=true`).
+- **Problem 2:** `sendNotification` was called without `await` in all three form routes. Vercel kills the function when response returns — fire-and-forget email never actually sent.
+- **Fix:** Added `await` to `sendNotification(...)` in all three routes.
+- **Files fixed:** `app/api/leads/route.ts`, `app/api/contact/route.ts`, `app/api/subscribe/route.ts`
+- **Confirmed working:** Email received at mohang.chute@gmail.com during test (26 Jun 2026, 2:08 PM).
+
+#### 6. Email routing — sales@ and careers@
+- Non-career forms (contact, leads, subscribe) → `sales@magicworksitsolutions.com`
+- Career applications → `careers@magicworksitsolutions.com` (already set in `app/api/careers/route.ts` via `HR_EMAIL` constant)
+- **File:** `lib/email.ts`
+
+---
+
+### Decisions made
+
+| Decision | Reason |
+|---|---|
+| Always `await sendNotification(...)` | Vercel serverless: function terminates on response — unawaited async work is killed |
+| Port 465 (SSL) for SES SMTP | Port 587 (STARTTLS) times out from Vercel network |
+| sales@ for all non-career forms | Single inbox for all sales/marketing leads |
+| careers@ for career applications | Separate HR inbox; set via HR_EMAIL in careers route |
+| Never use Write tool for large files on Windows paths | Causes null bytes / truncation — use Edit tool only |
+| gemini-2.5-flash with thinkingBudget: 0 | Current working model; thinking disabled to get clean JSON response |
+
+---
+
+### Pending / carry-forward
+
+- [ ] Backfill ~176 remaining unscored career applications via PowerShell loop to `/api/admin/rescore` with header `x-admin-secret: magicworks-admin-2026`
+- [ ] Shorten long blog/insights article titles in Sanity Studio (rendered as H1s > 70 chars on article pages)
+- [ ] Set up Custom MAIL FROM domain in AWS SES for `magicworksitsolutions.com` — fixes SPF record warning, improves deliverability (emails may land in spam without it)
+- [ ] Verify `sales@` and `careers@` inboxes are monitored / set up in email client
+
+---
+
+### Known issues at end of session
+
+- None active.
+
+---
+
+### Commit reference
+
+```
+7ba6c39 test: send notification emails to gmail for deliverability test
+(await fix) fix: await sendNotification so emails send before function terminates
+(email routing) fix: route form notifications to sales@ and career applications to careers@
+```
+
+---
+
+---
+
 ## Session: June 2026 (Mohan / Claude Sonnet)
 
 ### What was built

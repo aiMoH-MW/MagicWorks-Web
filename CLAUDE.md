@@ -27,10 +27,11 @@ The anon `supabase` export is for **browser/client components only** (e.g. real-
 ## Email Notifications
 
 All notification emails route through `lib/email.ts` → `sendNotification(subject, html)`.
-- Uses Nodemailer + Amazon SES SMTP
-- Recipients: mohan@magicworksitsolutions.com, swapnil@magicworksitsolutions.com
-- Required env vars: `SMTP_HOST`, `SMTP_PORT`, `SMTP_SECURE`, `SMTP_USER`, `SMTP_PASS`
-- `sendNotification` is fire-and-forget — never `await` it in the response path
+- Uses Nodemailer + Amazon SES SMTP (port 465, SMTP_SECURE=true)
+- **Non-career forms** (contact, leads, subscribe) → `sales@magicworksitsolutions.com` via `lib/email.ts`
+- **Career applications** → `careers@magicworksitsolutions.com` — handled directly in `app/api/careers/route.ts` (does NOT use `lib/email.ts`)
+- Required env vars: `SMTP_HOST`, `SMTP_PORT=465`, `SMTP_SECURE=true`, `SMTP_USER`, `SMTP_PASS`
+- **Always `await sendNotification(...)`** — Vercel terminates serverless functions as soon as the response is sent; fire-and-forget means the email never actually sends
 
 ---
 

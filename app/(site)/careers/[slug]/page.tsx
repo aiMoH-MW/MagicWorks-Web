@@ -4,7 +4,7 @@ import Link from "next/link";
 import { getJobOpeningBySlug, getActiveJobOpenings } from "@/sanity/queries";
 import ApplyForm from "./ApplyForm";
 
-export const revalidate = 3600;
+export const revalidate = 300;
 
 type Props = { params: Promise<{ slug: string }> };
 
