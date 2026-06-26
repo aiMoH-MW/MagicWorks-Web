@@ -100,4 +100,6 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ data: [] });
   } catch (err) {
     console.error(err);
-    retu
+    return NextResponse.json({ error: "Failed to fetch data" }, { status: 500 });
+  }
+}
