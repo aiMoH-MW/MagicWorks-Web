@@ -185,4 +185,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ success: true }, { status: 201 });
   } catch (err) {
     console.error("[careers/route]", err);
-    return NextResponse.json({ error: "Submission failed" }, { 
+    return NextResponse.json({ error: "Submission failed" }, { status: 500 });
+  }
+}
