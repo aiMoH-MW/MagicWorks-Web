@@ -77,6 +77,10 @@ const nextConfig: NextConfig = {
       },
 
       // ── Old WordPress URLs (pre-June 2026 site) ──────────────────────────────
+      // Business challenges section (old WP URL structure)
+      { source: "/business-challenges/:slug*", destination: "/services/ai-consultation", permanent: true },
+      { source: "/business-challenges", destination: "/services", permanent: true },
+
       // Service pages — old structure
       { source: "/digital-marketing/:slug*", destination: "/services/digital-marketing", permanent: true },
       { source: "/web-development-saas-app-development/:slug*", destination: "/services/web-development", permanent: true },
