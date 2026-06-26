@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     const subjectRow = subject ? "<p><strong>Subject:</strong> " + subject + "</p>" : "";
     const msgBody = message.replace(/\n/g, "<br>");
 
-    sendNotification(
+    await sendNotification(
       "New contact form submission: " + name,
       "<h2>New Contact Form Submission</h2>" +
       "<p><strong>Name:</strong> " + name + "</p>" +

@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
 
     if (error) throw error;
 
-    sendNotification(
+    await sendNotification(
       `New lead from ${source_page ?? "website"}: ${name}`,
       `
         <h2>New Contact Form Submission</h2>

@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
       // Silently succeed on duplicate (same email + same whitepaper)
       if (error && error.code !== "23505") throw error;
 
-      sendNotification(
+      await sendNotification(
         `New whitepaper opt-in: ${whitepaperSlug}`,
         `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Whitepaper:</strong> ${whitepaperSlug}</p>`
       );
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
 
       if (error) throw error;
 
-      sendNotification(
+      await sendNotification(
         `New newsletter subscriber: ${cleanSource}`,
         `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Source:</strong> ${cleanSource}</p>`
       );
