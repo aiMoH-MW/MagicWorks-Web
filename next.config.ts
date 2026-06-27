@@ -24,17 +24,27 @@ const nextConfig: NextConfig = {
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
           // Permissions policy — disable features the site doesn't use
           { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), interest-cohort=()" },
-          // Basic CSP — allows self, trusted CDNs, and Google/Meta/Vercel services
+          // Comprehensive CSP — covers all third-party services used on the site:
+          // GTM, GA4, Google Ads, Facebook Pixel, Microsoft Clarity,
+          // MagicFlow AI chatbot, Vercel Analytics, Cal.com, Supabase, Sanity
           {
             key: "Content-Security-Policy",
             value: [
               "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://*.clarity.ms https://va.vercel-scripts.com https://www.magicflowai.io",
+              // Scripts: GTM, GA4, Google Ads, Facebook Pixel, Clarity, Vercel, MagicFlow
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com https://connect.facebook.net https://*.clarity.ms https://va.vercel-scripts.com https://www.magicflowai.io https://www.googleadservices.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: blob: https://cdn.sanity.io https://images.berqwp.com https://magicworksitsolutions.com https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://www.google.co.in https://www.google.com",
-              "connect-src 'self' https://wa86etuq.api.sanity.io https://*.supabase.co https://www.google-analytics.com https://analytics.google.com https://va.vercel-scripts.com https://www.magicflowai.io https://*.magicflowai.io https://stats.g.doubleclick.net https://*.doubleclick.net",
-              "frame-src 'self' https://www.googletagmanager.com https://cal.com https://www.google.com",
+              // Images: Sanity, WordPress CDN, site assets, Google tracking pixels, Facebook pixel, Google Ads pixels, Clarity pixel
+              "img-src 'self' data: blob: https://cdn.sanity.io https://images.berqwp.com https://magicworksitsolutions.com https://www.google-analytics.com https://www.googletagmanager.com https://www.facebook.com https://www.google.co.in https://www.google.com https://www.googleadservices.com https://*.clarity.ms",
+              // Connections: Sanity API, Supabase, GA4, Vercel Analytics, MagicFlow (https+wss), Google Ads, Clarity, Cal.com, Facebook
+              "connect-src 'self' https://wa86etuq.api.sanity.io https://*.supabase.co https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://vitals.vercel-insights.com https://va.vercel-scripts.com https://www.magicflowai.io https://*.magicflowai.io wss://*.magicflowai.io https://*.doubleclick.net https://td.doubleclick.net https://www.googleadservices.com https://*.clarity.ms https://graph.facebook.com https://cal.com",
+              // Frames: GTM noscript, Cal.com booking widget, Google embeds, Google Ads remarketing, MagicFlow chatbot iframe
+              "frame-src 'self' https://www.googletagmanager.com https://cal.com https://www.google.com https://td.doubleclick.net https://www.magicflowai.io https://*.magicflowai.io",
+              // Web workers: Clarity analytics uses a web worker
+              "worker-src 'self' blob:",
+              // Security hardening
+              "form-action 'self'",
               "object-src 'none'",
               "base-uri 'self'",
             ].join("; "),
