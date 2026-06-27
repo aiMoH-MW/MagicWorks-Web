@@ -125,8 +125,8 @@ export async function getJobOpeningBySlug(slug: string) {
   return client.fetch(
     `*[_type == "jobOpening" && slug.current == $slug][0] {
       _id, title, subtitle, slug, department, area, location, type, experience,
-      salary, qualification, mandatory, summary, responsibilities, requirements,
-      niceToHave, closing, status, postedAt
+      salary, qualification, mandatory, preferredCandidate, summary, responsibilities,
+      requirements, niceToHave, gainItems, closing, status, postedAt
     }`,
     { slug }
   );

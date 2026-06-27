@@ -89,6 +89,13 @@ export const jobOpening = defineType({
       description: 'Highlighted callout. E.g. "Must have prior agency experience."',
     }),
     defineField({
+      name: "preferredCandidate",
+      title: "Preferred Candidate",
+      type: "text",
+      rows: 3,
+      description: "Shown in the meta table as the Preferred Candidate row (italic, yellow background).",
+    }),
+    defineField({
       name: "summary",
       title: "Role Summary",
       type: "text",
@@ -112,6 +119,13 @@ export const jobOpening = defineType({
       title: "Nice to Have",
       type: "array",
       of: [{ type: "string" }],
+    }),
+    defineField({
+      name: "gainItems",
+      title: "What You Will Gain",
+      type: "array",
+      of: [{ type: "string" }],
+      description: 'Each item formatted as "Title: Description". Renders as a 2-column grid. For internship roles.',
     }),
     defineField({
       name: "closing",

@@ -27,11 +27,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const job = await getJobOpeningBySlug(slug).catch(() => null);
   if (!job) return { title: "Role not found" };
   const dept = deptLabels[job.department ?? ""] ?? job.department ?? "";
-  const area = job.area ? ` · ${job.area}` : "";
+  const area = job.area ? " · " + job.area : "";
   return {
-    title: `${job.title} · Careers`,
+    title: job.title + " · Careers",
     description: job.summary,
-    alternates: { canonical: `/careers/${slug}` },
+    alternates: { canonical: "/careers/" + slug },
     other: {
       "script:application/ld+json": JSON.stringify({
         "@context": "https://schema.org/",
@@ -55,10 +55,77 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
             addressCountry: "IN",
           },
         },
-        industry: `${dept}${area}`,
+        industry: dept + area,
       }),
     },
   };
+}
+
+/** Render qualification with bold "Preferred:" / "Also acceptable:" labels */
+function QualificationCell({ qual }: { qual: string }) {
+  const lines = qual.split("\n");
+  return (
+    <>
+      {lines.map((line, i) => {
+        if (line.startsWith("Preferred:")) {
+          return (
+            <span key={i}>
+              <strong>Preferred:</strong>
+              {line.slice("Preferred:".length)}
+              {i < lines.length - 1 && <br />}
+            </span>
+          );
+        }
+        if (line.startsWith("Also acceptable:")) {
+          return (
+            <span key={i}>
+              <strong>Also acceptable:</strong>
+              {line.slice("Also acceptable:".length)}
+              {i < lines.length - 1 && <br />}
+            </span>
+          );
+        }
+        if (line.startsWith("Other relevant degrees")) {
+          return (
+            <span key={i}>
+              <strong>Other relevant degrees</strong>
+              {line.slice("Other relevant degrees".length)}
+              {i < lines.length - 1 && <br />}
+            </span>
+          );
+        }
+        return (
+          <span key={i}>
+            {line}
+            {i < lines.length - 1 && <br />}
+          </span>
+        );
+      })}
+    </>
+  );
+}
+
+/** Render experience — parenthetical note in italic gray */
+function ExperienceCell({ exp }: { exp: string }) {
+  const match = exp.match(/^([^(]+)(\(.*\))?(.*)$/);
+  if (!match || !match[2]) return <>{exp}</>;
+  return (
+    <>
+      {match[1].trim()}
+      {" "}
+      <em className="text-[#9A9AA8] text-[13px]">{match[2]}</em>
+      {match[3]}
+    </>
+  );
+}
+
+/** Section heading with gold underline, matching HTML .jd-section h3 */
+function SectionHeading({ children }: { children: React.ReactNode }) {
+  return (
+    <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(18px,2.2vw,20px)] text-[#2A1B5C] mb-4 pb-2 border-b-2 border-[#D4A537] inline-block">
+      {children}
+    </h2>
+  );
 }
 
 export default async function JobOpeningPage({ params }: Props) {
@@ -68,14 +135,15 @@ export default async function JobOpeningPage({ params }: Props) {
 
   const dept = deptLabels[job.department ?? ""] ?? job.department ?? "";
   const eyebrow = [dept, job.area].filter(Boolean).join(" · ");
+  const isInternship = job.type === "internship";
 
-  const typeLabel = job.type === "internship"
+  const typeLabel = isInternship
     ? "Internship"
     : job.type ? job.type.replace(/-/g, " ").replace(/\b\w/g, (c: string) => c.toUpperCase()) : "Full-time";
 
   return (
     <>
-      {/* Hero */}
+      {/* ── Hero ── */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-200px] top-[-150px] w-[680px] h-[680px] pointer-events-none opacity-60" aria-hidden="true">
           {[330, 250, 170, 90].map((r, i) => (
@@ -99,145 +167,204 @@ export default async function JobOpeningPage({ params }: Props) {
             {job.title}
           </h1>
           {job.subtitle && (
-            <p className="text-[18px] text-[#C8B8FF] mt-2">{job.subtitle}</p>
+            <p className="text-[15px] text-[#C8B8FF] mt-2">{job.subtitle}</p>
           )}
-          <p className="text-[14px] text-[#C8B8FF] mt-4 mb-6 tracking-[0.02em]">
-            <strong className="text-[#F7F3EA] font-semibold">{job.location ?? "Pune"}</strong>
-            {" (On-site)"}
-            {job.type && ` · ${typeLabel}`}
-            {job.experience && ` · ${job.experience}`}
+          <p className="text-[13px] text-[#C8B8FF] mt-3 mb-6">
+            {job.location ?? "Pune"}
+            {" · "}
+            {typeLabel}
+            {isInternship ? " · Agency-side role" : " · Agency-side role"}
           </p>
           <a
             href="#apply"
-            className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full no-underline hover:scale-[1.02] transition-transform"
+            className="inline-block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] px-7 py-[11px] rounded-full no-underline hover:opacity-90 transition-opacity"
           >
-            Apply now
+            Apply Now
           </a>
         </div>
       </section>
 
-      {/* Facts bar */}
-      <section className="bg-[#F7F3EA] border-b border-[#D8D8DE] py-10">
-        <div className="max-w-[1120px] mx-auto px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.14em] text-[#9A9AA8] mb-1.5">Location</p>
-              <p className="font-[family-name:var(--font-head)] font-bold text-[16px] text-[#2A1B5C] leading-[1.3]">
-                {job.location ?? "Pune"}
-                <span className="block font-sans font-normal text-[12px] text-[#3F3F4A] mt-0.5">On-site</span>
-              </p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.14em] text-[#9A9AA8] mb-1.5">Experience</p>
-              <p className="font-[family-name:var(--font-head)] font-bold text-[16px] text-[#2A1B5C] leading-[1.3]">
-                {job.experience ?? "—"}
-              </p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.14em] text-[#9A9AA8] mb-1.5">Salary / Stipend</p>
-              <p className="font-[family-name:var(--font-head)] font-bold text-[16px] text-[#2A1B5C] leading-[1.3]">
-                {job.salary ?? "Competitive"}
-                {job.salary && job.type !== "internship" && (
-                  <span className="block font-sans font-normal text-[12px] text-[#3F3F4A] mt-0.5">Not a bar for a deserving candidate</span>
+      {/* ── Main content ── */}
+      <section className="bg-[#F7F3EA] py-16">
+        <div className="max-w-[900px] mx-auto px-6 md:px-8">
+
+          {/* ── Meta table ── */}
+          <div className="mb-10 bg-white border border-[#D8D8DE] rounded-[12px] overflow-hidden">
+            <table className="w-full border-collapse text-[14px]">
+              <tbody>
+                {isInternship && (
+                  <>
+                    <tr className="border-b border-[#D8D8DE]">
+                      <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] w-[175px] align-top">Department</td>
+                      <td className="text-[#3F3F4A] py-[10px] px-[16px]">{dept}</td>
+                    </tr>
+                    <tr className="border-b border-[#D8D8DE]">
+                      <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] align-top">Employment Type</td>
+                      <td className="text-[#3F3F4A] py-[10px] px-[16px]">
+                        <span className="inline-block bg-[#0e7a3e] text-white text-[11px] font-bold uppercase tracking-[.1em] px-2 py-0.5 rounded">Internship</span>
+                      </td>
+                    </tr>
+                    {job.experience && (
+                      <tr className="border-b border-[#D8D8DE]">
+                        <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] align-top">Duration</td>
+                        <td className="text-[#3F3F4A] py-[10px] px-[16px]">{job.experience}</td>
+                      </tr>
+                    )}
+                  </>
                 )}
-              </p>
-            </div>
-            <div>
-              <p className="text-[11px] uppercase tracking-[0.14em] text-[#9A9AA8] mb-1.5">Qualification</p>
-              <p className="font-[family-name:var(--font-head)] font-bold text-[16px] text-[#2A1B5C] leading-[1.3]">
-                {job.qualification ?? "Any graduate"}
-              </p>
-            </div>
+                <tr className="border-b border-[#D8D8DE]">
+                  <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] align-top">Location</td>
+                  <td className="text-[#3F3F4A] py-[10px] px-[16px]">{job.location ?? "Pune"} (On-site)</td>
+                </tr>
+                {!isInternship && job.experience && (
+                  <tr className="border-b border-[#D8D8DE]">
+                    <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] align-top">Experience</td>
+                    <td className="text-[#3F3F4A] py-[10px] px-[16px]">
+                      <ExperienceCell exp={job.experience} />
+                    </td>
+                  </tr>
+                )}
+                {job.salary && (
+                  <tr className="border-b border-[#D8D8DE]">
+                    <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] align-top">
+                      {isInternship ? "Stipend" : "Salary Range"}
+                    </td>
+                    <td className="text-[#3F3F4A] py-[10px] px-[16px]">
+                      <strong className="text-[#2A1B5C]">{job.salary}</strong>
+                      {!isInternship && (
+                        <em className="text-[#9A9AA8] text-[13px] ml-2">(Salary not a bar for a deserving candidate)</em>
+                      )}
+                    </td>
+                  </tr>
+                )}
+                {job.qualification && (
+                  <tr className="border-b border-[#D8D8DE]">
+                    <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] align-top">Qualification</td>
+                    <td className="text-[#3F3F4A] py-[10px] px-[16px]">
+                      <QualificationCell qual={job.qualification} />
+                    </td>
+                  </tr>
+                )}
+                {job.mandatory && (
+                  <tr className="border-b border-[#D8D8DE]">
+                    <td className="font-bold text-[#2A1B5C] bg-[#f9f7f3] py-[10px] px-[16px] align-top">Mandatory</td>
+                    <td className="text-[#3F3F4A] py-[10px] px-[16px]">
+                      <span className="inline-block bg-[#fee2e2] text-[#b91c1c] text-[11px] font-bold uppercase tracking-[.1em] px-2 py-0.5 rounded mr-2">Must Have</span>
+                      {job.mandatory}
+                    </td>
+                  </tr>
+                )}
+                {job.preferredCandidate && (
+                  <tr>
+                    <td className="font-bold text-[#2A1B5C] bg-[#fdf6e3] py-[10px] px-[16px] align-top">Preferred Candidate</td>
+                    <td className="text-[#3F3F4A] bg-[#fffdf5] py-[10px] px-[16px] italic">{job.preferredCandidate}</td>
+                  </tr>
+                )}
+              </tbody>
+            </table>
           </div>
 
-          {job.mandatory && (
-            <div className="mt-6 bg-[#EDE9F7] border-l-4 border-[#5B3FBE] rounded-[6px] px-6 py-4">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#5B3FBE] mb-1">Mandatory</p>
-              <p className="text-[15px] text-[#3F3F4A]">{job.mandatory}</p>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Job content */}
-      <section className="bg-[#F7F3EA] py-16">
-        <div className="max-w-[760px] mx-auto px-8">
-
-          {job.summary && (
-            <div className="mb-10">
-              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
-                Who we are looking for
-              </h2>
-              <p className="text-[16px] text-[#3F3F4A] leading-[1.65]">{job.summary}</p>
-            </div>
-          )}
-
+          {/* ── About MagicWorks ── */}
           <div className="mb-10">
-            <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
-              About MagicWorks
-            </h2>
-            <p className="text-[16px] text-[#3F3F4A] leading-[1.65]">
+            <SectionHeading>About MagicWorks</SectionHeading>
+            <p className="text-[15px] text-[#3F3F4A] leading-[1.65] mt-4">
               MagicWorks IT Solutions Pvt. Ltd. is a Pune-based AI-first digital marketing agency that turns traffic, leads, and operations into predictable revenue. With 17+ years of experience, a team of 30+ experts, and a 98% client satisfaction rate, we help businesses across Education, Manufacturing, Real Estate, Travel, Hospitality, and more achieve measurable growth.
             </p>
           </div>
 
+          {/* ── Job Summary ── */}
+          {job.summary && (
+            <div className="mb-10">
+              <SectionHeading>Job Summary</SectionHeading>
+              <p className="text-[15px] text-[#3F3F4A] leading-[1.65] mt-4">{job.summary}</p>
+            </div>
+          )}
+
+          {/* ── Key Responsibilities ── */}
           {job.responsibilities?.length > 0 && (
             <div className="mb-10">
-              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
-                What you will do
-              </h2>
-              <ul className="list-none space-y-0">
-                {job.responsibilities.map((r: string) => (
-                  <li key={r} className="relative pl-[22px] py-[7px] text-[15px] text-[#3F3F4A] leading-[1.55]">
-                    <span className="absolute left-0 top-[14px] w-[7px] h-[7px] rounded-full bg-[#5B3FBE]" />
-                    {r}
-                  </li>
-                ))}
-              </ul>
+              <SectionHeading>Key Responsibilities</SectionHeading>
+              <div className="mt-4">
+                {job.responsibilities.map((item: string, idx: number) => {
+                  if (item.startsWith("## ")) {
+                    return (
+                      <h4 key={idx} className="text-[13.5px] font-bold text-[#5B3FBE] mt-4 mb-2">
+                        {item.slice(3)}
+                      </h4>
+                    );
+                  }
+                  return (
+                    <div key={idx} className="relative pl-[18px] mb-[7px]">
+                      <span className="absolute left-0 top-[8px] w-[6px] h-[6px] rounded-full bg-[#D4A537]" />
+                      <span className="text-[14px] text-[#3F3F4A] leading-[1.6]">{item}</span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
 
+          {/* ── Required Skills ── */}
           {job.requirements?.length > 0 && (
             <div className="mb-10">
-              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
-                Required skills
-              </h2>
-              <ul className="list-none space-y-0">
+              <SectionHeading>Required Skills</SectionHeading>
+              <ul className="list-none mt-4">
                 {job.requirements.map((r: string) => (
-                  <li key={r} className="relative pl-[22px] py-[7px] text-[15px] text-[#3F3F4A] leading-[1.55]">
-                    <span className="absolute left-0 top-[14px] w-[7px] h-[7px] rounded-full bg-[#5B3FBE]" />
-                    {r}
+                  <li key={r} className="relative pl-[18px] mb-[7px]">
+                    <span className="absolute left-0 top-[8px] w-[6px] h-[6px] rounded-full bg-[#D4A537]" />
+                    <span className="text-[14px] text-[#3F3F4A] leading-[1.6]">{r}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
+          {/* ── Preferred Skills ── */}
           {job.niceToHave?.length > 0 && (
             <div className="mb-10">
-              <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(20px,2.6vw,24px)] text-[#2A1B5C] mb-4">
-                Preferred skills
-              </h2>
-              <ul className="list-none space-y-0">
+              <SectionHeading>Preferred Skills</SectionHeading>
+              <ul className="list-none mt-4">
                 {job.niceToHave.map((r: string) => (
-                  <li key={r} className="relative pl-[22px] py-[7px] text-[15px] text-[#3F3F4A] leading-[1.55]">
-                    <span className="absolute left-0 top-[14px] w-[7px] h-[7px] rounded-full bg-[#9A9AA8]" />
-                    {r}
+                  <li key={r} className="relative pl-[18px] mb-[7px]">
+                    <span className="absolute left-0 top-[8px] w-[6px] h-[6px] rounded-full bg-[#D4A537]" />
+                    <span className="text-[14px] text-[#3F3F4A] leading-[1.6]">{r}</span>
                   </li>
                 ))}
               </ul>
             </div>
           )}
 
-          {job.closing && (
-            <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-6 text-[15px] text-[#3F3F4A] leading-[1.6]">
-              {job.closing}
+          {/* ── What You Will Gain (internship) ── */}
+          {job.gainItems?.length > 0 && (
+            <div className="mb-10">
+              <SectionHeading>What You Will Gain</SectionHeading>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-[10px] mt-4">
+                {job.gainItems.map((item: string) => {
+                  const colonIdx = item.indexOf(": ");
+                  const title = colonIdx > -1 ? item.slice(0, colonIdx) : item;
+                  const desc = colonIdx > -1 ? item.slice(colonIdx + 2) : "";
+                  return (
+                    <div key={item} className="bg-[#f5f3fc] border border-[#ddd8ff] rounded-[8px] p-[12px]">
+                      <strong className="text-[#5B3FBE] text-[13px] block mb-1">{title}</strong>
+                      {desc && <span className="text-[#3F3F4A] text-[13px]">{desc}</span>}
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           )}
+
+          {/* ── Closing note ── */}
+          {job.closing && (
+            <div className="bg-[#f0ecff] border-l-4 border-[#5B3FBE] rounded-r-[8px] px-[16px] py-[12px] mt-4 mb-10">
+              <p className="text-[#2A1B5C] text-[13.5px] leading-[1.6] m-0">{job.closing}</p>
+            </div>
+          )}
+
         </div>
       </section>
 
-      {/* Apply section */}
+      {/* ── Apply section ── */}
       <section className="bg-[#EDE9F7] py-20" id="apply">
         <div className="max-w-[760px] mx-auto px-8">
           <div className="text-center mb-10">
@@ -253,14 +380,14 @@ export default async function JobOpeningPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Back to all roles */}
+      {/* ── Back to all roles ── */}
       <section className="bg-[#2A1B5C] py-8">
         <div className="max-w-[1120px] mx-auto px-8 text-center">
           <Link
             href="/careers"
             className="text-[#C8B8FF] text-[13px] uppercase tracking-[0.1em] font-bold no-underline hover:text-[#D4A537] transition-colors"
           >
-            ← Back to all open roles
+            Back to all open roles
           </Link>
         </div>
       </section>
