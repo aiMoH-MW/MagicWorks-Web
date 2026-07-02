@@ -5,6 +5,36 @@
 
 ---
 
+## Session: 2 July 2026 (Mohan / Claude Sonnet)
+
+### What was built
+
+#### 1. Career application form — field reorder + new fields
+- New field order: Name, Email, Phone, Total Experience, Relevant Experience, Current CTC, Expected CTC, Resume, Cover Letter, LinkedIn URL.
+- Added two new required fields: **Total Experience**, **Relevant Experience** (free text, e.g. "3 years").
+- Removed **Portfolio / Work URL** field from the form (not in the requested field list — backend/DB field left intact, just no longer collected).
+- Resume upload max size reduced from 5 MB → **2 MB** (still PDF/.doc/.docx only).
+- Added hint note under cover letter: "Your cover letter may increase your chances of shortlisting."
+- **File:** `app/(site)/careers/[slug]/ApplyForm.tsx`
+
+#### 2. Backend — persist & surface new experience fields
+- `app/api/careers/route.ts`: reads `total_experience`/`relevant_experience` from form data, inserts into `career_applications`, includes in HR notification email body, passes to Gemini scoring.
+- `lib/gemini-score.ts`: `ApplicationInput` now accepts `total_experience`/`relevant_experience`; included in the scoring prompt context.
+- `app/admin/page.tsx`: added both fields to the `Row` interface and the careers table `cols` array so they're visible in the admin dashboard.
+
+#### 3. AI scoring — new "experience fit" dimension
+- Added `experience_score` as a 5th scoring dimension (alongside resume, cover, profile, CTC). Weighs `total_experience`/`relevant_experience` against role seniority; relevant experience weighted higher than total experience. Missing/unclear = neutral 50.
+- New weights: resume 30% + experience 20% + cover 20% + profile 10% + ctc 20% (was resume 40% + cover 25% + profile 15% + ctc 20%).
+- `ScoreBreakdown` type (both `lib/gemini-score.ts` and `app/admin/page.tsx`) now includes `experience_score`; admin score panel shows an "Experience fit" bar.
+- No DB migration needed — `ai_score_breakdown` is JSONB, stores the new key automatically. Only new applications get an experience_score; historical rows keep their old 4-field breakdown (panel just won't show that bar for them, no error).
+
+### Pending / carry-forward
+
+- [x] Run `supabase/migrations/add_experience_fields.sql` in Supabase SQL Editor — done 2 Jul 2026, confirmed success by Mohan.
+- [ ] Confirm with Mohan whether Portfolio / Work URL should be permanently dropped or re-added elsewhere.
+
+---
+
 ## Session: 26 June 2026 (Mohan / Claude Sonnet)
 
 ### What was built

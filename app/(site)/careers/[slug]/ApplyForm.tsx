@@ -9,13 +9,13 @@ const ALLOWED_TYPES = [
   "application/msword",
   "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 ];
-const MAX_MB = 5;
+const MAX_MB = 2;
 
 export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobTitle: string }) {
   const [state, setState] = useState<State>("idle");
   const [form, setForm] = useState({
-    name: "", email: "", phone: "", linkedin_url: "", portfolio_url: "", cover_letter: "",
-    current_ctc: "", expected_ctc: "",
+    name: "", email: "", phone: "", total_experience: "", relevant_experience: "",
+    current_ctc: "", expected_ctc: "", cover_letter: "", linkedin_url: "",
   });
   const [resume, setResume] = useState<File | null>(null);
   const [resumeError, setResumeError] = useState("");
@@ -103,7 +103,7 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
         ))}
       </div>
 
-      {/* Phone + LinkedIn */}
+      {/* Phone + Total Experience */}
       <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Phone *</label>
@@ -112,21 +112,31 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
             className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
         </div>
         <div>
-          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">LinkedIn URL</label>
-          <input name="linkedin_url" type="url" placeholder="linkedin.com/in/you"
-            value={form.linkedin_url} onChange={handleChange}
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Total Experience *</label>
+          <input name="total_experience" type="text" required placeholder="e.g. 3 years · 0 if fresher"
+            value={form.total_experience} onChange={handleChange}
             className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
         </div>
       </div>
 
-      {/* Current CTC + Expected CTC */}
+      {/* Relevant Experience + Current CTC */}
       <div className="grid sm:grid-cols-2 gap-4">
+        <div>
+          <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Relevant Experience *</label>
+          <input name="relevant_experience" type="text" required placeholder="e.g. 2 years"
+            value={form.relevant_experience} onChange={handleChange}
+            className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
+        </div>
         <div>
           <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Current CTC *</label>
           <input name="current_ctc" type="text" required placeholder="e.g. ₹3 LPA · 0 if fresher"
             value={form.current_ctc} onChange={handleChange}
             className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
         </div>
+      </div>
+
+      {/* Expected CTC */}
+      <div className="grid sm:grid-cols-2 gap-4">
         <div>
           <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Expected CTC *</label>
           <input name="expected_ctc" type="text" required placeholder="e.g. ₹6 LPA"
@@ -134,20 +144,12 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
             className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
         </div>
       </div>
-      <p className="text-[11px] text-[#9A9AA8] -mt-3 italic">Freshers: enter 0 for current CTC.</p>
-
-      {/* Portfolio */}
-      <div>
-        <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">Portfolio / Work URL</label>
-        <input name="portfolio_url" type="url" placeholder="yoursite.com or Behance, GitHub…"
-          value={form.portfolio_url} onChange={handleChange}
-          className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
-      </div>
+      <p className="text-[11px] text-[#9A9AA8] -mt-3 italic">Freshers: enter 0 for current CTC and total/relevant experience.</p>
 
       {/* Resume upload */}
       <div>
         <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
-          Resume / CV * <span className="normal-case text-[#9A9AA8]">(PDF or Word · max 5 MB)</span>
+          Resume / CV * <span className="normal-case text-[#9A9AA8]">(PDF or Word · max 2 MB)</span>
         </label>
         <div
           onClick={() => fileRef.current?.click()}
@@ -186,6 +188,15 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
         <textarea name="cover_letter" rows={4} placeholder="Why this role? What would you bring?"
           value={form.cover_letter} onChange={handleChange}
           className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] resize-none focus:outline-none focus:border-[#5B3FBE] transition-colors" />
+        <p className="text-[11px] text-[#9A9AA8] mt-1 italic">Your cover letter may increase your chances of shortlisting.</p>
+      </div>
+
+      {/* LinkedIn */}
+      <div>
+        <label className="block text-[11px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">LinkedIn URL</label>
+        <input name="linkedin_url" type="url" placeholder="linkedin.com/in/you"
+          value={form.linkedin_url} onChange={handleChange}
+          className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[14px] text-[#1A1A22] focus:outline-none focus:border-[#5B3FBE] transition-colors" />
       </div>
 
       {state === "error" && (

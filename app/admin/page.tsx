@@ -8,6 +8,7 @@ type CareerSortCol = "date" | "role" | "score";
 
 interface ScoreBreakdown {
   resume_score: number;
+  experience_score: number;
   cover_score: number;
   profile_score: number;
   ctc_score: number;
@@ -32,6 +33,8 @@ interface Row {
   portfolio_url?: string;
   resume_url?: string;
   cover_letter?: string;
+  total_experience?: string;
+  relevant_experience?: string;
   current_ctc?: string;
   expected_ctc?: string;
   // AI score
@@ -158,7 +161,7 @@ function CareerRow({ row }: { row: Row }) {
     return (v as string) ?? "—";
   };
 
-  const cols = ["created_at", "job_title", "name", "email", "phone", "current_ctc", "expected_ctc", "linkedin_url", "portfolio_url", "resume_url", "ai_score"];
+  const cols = ["created_at", "job_title", "name", "email", "phone", "total_experience", "relevant_experience", "current_ctc", "expected_ctc", "linkedin_url", "portfolio_url", "resume_url", "ai_score"];
 
   return (
     <>
@@ -221,6 +224,7 @@ function CareerRow({ row }: { row: Row }) {
                 {row.ai_score != null && row.ai_score_breakdown ? (
                   <div className="space-y-2.5">
                     <ScoreBar label="Resume match"         value={row.ai_score_breakdown.resume_score} />
+                    <ScoreBar label="Experience fit"       value={row.ai_score_breakdown.experience_score} />
                     <ScoreBar label="Cover letter"         value={row.ai_score_breakdown.cover_score} />
                     <ScoreBar label="Profile completeness" value={row.ai_score_breakdown.profile_score} />
                     <ScoreBar label="CTC fit"              value={row.ai_score_breakdown.ctc_score} />

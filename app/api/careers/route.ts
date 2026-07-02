@@ -56,6 +56,8 @@ export async function POST(req: NextRequest) {
     const linkedin_url  = fd.get("linkedin_url")  as string | null;
     const portfolio_url = fd.get("portfolio_url") as string | null;
     const cover_letter  = fd.get("cover_letter")  as string | null;
+    const total_experience    = fd.get("total_experience")    as string | null;
+    const relevant_experience = fd.get("relevant_experience") as string | null;
     const current_ctc   = fd.get("current_ctc")   as string | null;
     const expected_ctc  = fd.get("expected_ctc")  as string | null;
     const resumeFile    = fd.get("resume") as File | null;
@@ -91,6 +93,8 @@ export async function POST(req: NextRequest) {
         portfolio_url: portfolio_url || null,
         cover_letter:  cover_letter  || null,
         resume_url:    resume_path   || null,
+        total_experience:    total_experience    || null,
+        relevant_experience: relevant_experience || null,
         current_ctc:   current_ctc   || null,
         expected_ctc:  expected_ctc  || null,
       })
@@ -106,6 +110,8 @@ export async function POST(req: NextRequest) {
         job_title: job_title || job_slug,
         job_slug,
         name,
+        total_experience,
+        relevant_experience,
         current_ctc,
         expected_ctc,
         phone,
@@ -152,6 +158,8 @@ export async function POST(req: NextRequest) {
           `Name:         ${name}`,
           `Email:        ${email}`,
           `Phone:        ${phone || "—"}`,
+          `Total Exp:    ${total_experience || "—"}`,
+          `Relevant Exp: ${relevant_experience || "—"}`,
           `LinkedIn:     ${linkedin_url || "—"}`,
           `Portfolio:    ${portfolio_url || "—"}`,
           `Current CTC:  ${current_ctc || "—"}`,
