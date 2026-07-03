@@ -538,13 +538,15 @@ export default function AdminPage() {
                       <CareerTh label="Name"                         currentSort={careerSort} />
                       <CareerTh label="Email"                        currentSort={careerSort} />
                       <CareerTh label="Phone"                        currentSort={careerSort} />
+                      <CareerTh label="Total Exp"                    currentSort={careerSort} />
+                      <CareerTh label="Rel. Exp"                     currentSort={careerSort} />
                       <CareerTh label="Current CTC"                  currentSort={careerSort} />
                       <CareerTh label="Expected CTC"                 currentSort={careerSort} />
-                      <CareerTh label="LinkedIn"                    currentSort={careerSort} />
-                      <CareerTh label="Portfolio"                   currentSort={careerSort} />
-                      <CareerTh label="Resume"                      currentSort={careerSort} />
-                      <CareerTh label="AI Score" sortCol="score"   currentSort={careerSort} onSort={toggleCareerSort} />
-                      <CareerTh label=""                            currentSort={careerSort} />
+                      <CareerTh label="LinkedIn"                     currentSort={careerSort} />
+                      <CareerTh label="Portfolio"                    currentSort={careerSort} />
+                      <CareerTh label="Resume"                       currentSort={careerSort} />
+                      <CareerTh label="AI Score" sortCol="score"    currentSort={careerSort} onSort={toggleCareerSort} />
+                      <CareerTh label=""                             currentSort={careerSort} />
                     </tr>
                   </thead>
                   <tbody>
