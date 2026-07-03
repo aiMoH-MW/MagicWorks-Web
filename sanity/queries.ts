@@ -102,7 +102,7 @@ export async function getFeaturedCaseStudy() {
 export async function getCaseStudyBySlug(slug: string) {
   return client.fetch(
     `*[_type == "caseStudy" && slug.current == $slug][0] {
-      _id, title, slug, client, heroMetric, heroMetricLabel, industry, pillar,
+      _id, title, slug, client, clientUrl, clientPartnersUrl, heroMetric, heroMetricLabel, industry, pillar,
       situation, intervention, result, metrics, testimonial, publishedAt,
       "coverImage": coverImage.asset->url,
       "coverImageAlt": coverImage.alt

@@ -24,6 +24,18 @@ export const caseStudy = defineType({
       type: "string",
     }),
     defineField({
+      name: "clientUrl",
+      title: "Client Website URL",
+      type: "url",
+      description: "Primary website — rendered as a backlink on the case study page",
+    }),
+    defineField({
+      name: "clientPartnersUrl",
+      title: "Client Partners / Profile Page URL",
+      type: "url",
+      description: "Secondary link (e.g. /partners page) — rendered alongside the main URL",
+    }),
+    defineField({
       name: "heroMetric",
       title: "Hero Metric (gold number — e.g. 75,000+)",
       type: "string",

@@ -70,7 +70,33 @@ export default async function CaseStudyPage({ params }: Props) {
             </div>
             <div>
               {study.client && (
-                <p className="text-[#D4A537] text-[11px] uppercase tracking-[0.16em] font-bold mb-3">{study.client}</p>
+                <p className="text-[#D4A537] text-[11px] uppercase tracking-[0.16em] font-bold mb-2">{study.client}</p>
+              )}
+              {(study.clientUrl || study.clientPartnersUrl) && (
+                <div className="flex flex-wrap gap-4 mb-3">
+                  {study.clientUrl && (
+                    <a
+                      href={study.clientUrl}
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                      className="inline-flex items-center gap-1.5 text-[12px] text-[#C8B8FF] hover:text-[#D4A537] transition-colors no-underline"
+                    >
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                      Visit website
+                    </a>
+                  )}
+                  {study.clientPartnersUrl && (
+                    <a
+                      href={study.clientPartnersUrl}
+                      rel="nofollow noopener noreferrer"
+                      target="_blank"
+                      className="inline-flex items-center gap-1.5 text-[12px] text-[#C8B8FF] hover:text-[#D4A537] transition-colors no-underline"
+                    >
+                      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                      Partnership profile
+                    </a>
+                  )}
+                </div>
               )}
               <h1 className="font-[family-name:var(--font-head)] font-bold text-[clamp(26px,4vw,38px)] leading-[1.15] text-[#F7F3EA]">
                 {study.title}
