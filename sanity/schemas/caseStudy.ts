@@ -107,6 +107,17 @@ export const caseStudy = defineType({
       rows: 4,
     }),
     defineField({
+      name: "evidenceImage",
+      title: "Evidence / Data Screenshot",
+      type: "image",
+      options: { hotspot: true },
+      description: "Optional screenshot (e.g. analytics, Bing Webmaster Tools) shown below the metrics grid",
+      fields: [
+        defineField({ name: "alt", title: "Alt text", type: "string" }),
+        defineField({ name: "caption", title: "Caption", type: "string" }),
+      ],
+    }),
+    defineField({
       name: "metrics",
       title: "Supporting Metrics",
       type: "array",

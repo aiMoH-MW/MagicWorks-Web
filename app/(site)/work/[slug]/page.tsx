@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getCaseStudyBySlug, getAllCaseStudies } from "@/sanity/queries";
 
 export const revalidate = 60;
@@ -156,6 +157,27 @@ export default async function CaseStudyPage({ params }: Props) {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Evidence image */}
+      {study.evidenceImage && (
+        <section className="bg-[#F7F3EA] pb-4 pt-2">
+          <div className="max-w-[860px] mx-auto px-8">
+            <div className="rounded-[12px] overflow-hidden border border-[#D8D8DE] shadow-[0_4px_24px_rgba(42,27,92,0.08)]">
+              <Image
+                src={study.evidenceImage}
+                alt={study.evidenceImageAlt ?? "Data evidence"}
+                width={860}
+                height={480}
+                className="w-full h-auto"
+                sizes="(max-width: 900px) 100vw, 860px"
+              />
+            </div>
+            {study.evidenceImageCaption && (
+              <p className="text-[12px] text-[#9A9AA8] text-center mt-3 italic">{study.evidenceImageCaption}</p>
+            )}
           </div>
         </section>
       )}

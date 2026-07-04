@@ -105,7 +105,10 @@ export async function getCaseStudyBySlug(slug: string) {
       _id, title, slug, client, clientUrl, clientPartnersUrl, heroMetric, heroMetricLabel, industry, pillar,
       situation, intervention, result, metrics, testimonial, publishedAt,
       "coverImage": coverImage.asset->url,
-      "coverImageAlt": coverImage.alt
+      "coverImageAlt": coverImage.alt,
+      "evidenceImage": evidenceImage.asset->url,
+      "evidenceImageAlt": evidenceImage.alt,
+      "evidenceImageCaption": evidenceImage.caption
     }`,
     { slug }
   );
