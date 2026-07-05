@@ -19,6 +19,8 @@
 - [Web Development](https://magicworksitsolutions.com/services/web-development): Custom websites and web applications for ambitious businesses.
 - [AI-Native Websites](https://magicworksitsolutions.com/services/web-development/ai-native-websites): Websites built with AI-first architecture and answer-engine readiness.
 - [E-commerce](https://magicworksitsolutions.com/services/web-development/ecommerce): Online store development, integration, and management.
+- [WordPress Development](https://magicworksitsolutions.com/services/web-development/wordpress): Custom WordPress websites, redesigns, and ongoing development for Indian businesses.
+- [Portals & Member Sites](https://magicworksitsolutions.com/services/web-development/portals-member-sites): AI-native member portals, client dashboards, and gated community sites.
 - [Maintenance & AMC](https://magicworksitsolutions.com/services/web-development/maintenance-amc): Annual maintenance contracts for ongoing website support.
 - [AI Consultation](https://magicworksitsolutions.com/services/ai-consultation): AI strategy, readiness, and implementation for Indian businesses.
 - [Process Audit](https://magicworksitsolutions.com/services/ai-consultation/process-audit): AI readiness assessment and workflow audit.

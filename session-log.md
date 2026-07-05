@@ -33,12 +33,57 @@
 - `app/(site)/insights/[slug]/page.tsx`: same image/externalImage handler updates applied (was using `fill` + forced `aspectRatio: "16/9"` container; now uses actual Sanity dimensions with fluid CSS).
 - `components/ChatWidget.tsx`: MagicFlow chatbot no longer loads via `strategy="lazyOnload"`. Now deferred to first user interaction (scroll / click / keydown / touchstart) OR 5-second timeout, whichever comes first. Script injected manually via `document.createElement`. Chatbot still opens normally on localhost:3000 — deferral is invisible to the user.
 
+### Commit
+```
+127ac63 fix: P0 SEO fixes, new service pages, P2 CWV image CLS and chatbot defer
+```
+12 files changed, 130 insertions(+), 39 deletions(-). Vercel deployed Ready in 1m 25s.
+
+### Post-deploy PageSpeed check (Lighthouse lab, 5 Jul 2026)
+- CLS: **0** (lab test confirms image fix working; CRuX field data lags 28 days)
+- LCP: 5.4s (lab/slow-4G — CRuX field was 1.7s Good; not a regression)
+- TBT: 120ms
+- Flagged: render-blocking requests (~120ms savings), legacy JavaScript (~17KB savings)
+
 ### Pending / carry-forward
-- [ ] Commit the above from Windows (sandbox git via mount is unreliable — index.lock + stale file view).
-- [ ] P1: shorten blog + case-study titles/H1s (Sanity Studio; `seoTitle` field already exists on insight schema — consider same for caseStudy).
-- [ ] P1: truncate careers meta descriptions (~437 chars live) to ~150 in careers/[slug] generateMetadata.
-- [ ] P1: whitepaper detail pages missing from sitemap — check `getGatedInsights()` GROQ filter.
+- [x] Commit the above from Windows — done, commit 127ac63.
+- [x] P1: truncate careers meta descriptions to ~150 chars — done in careers/[slug] generateMetadata (trims at word boundary).
+- [x] P1: whitepaper detail pages missing from sitemap — root cause: reports and whitepapers are hardcoded static pages (not Sanity), so `getGatedInsights()` always returned empty. Fix: added 5 missing report slugs + 2 whitepaper slugs to static routes in sitemap.ts.
+- [x] `public/llms.txt`: added WordPress Development and Portals & Member Sites entries to Web Development section.
+- [ ] P1: shorten blog titles/H1s in Sanity Studio — 24 of 26 articles have titles over 70 chars (see list below); must be edited in Studio using the `seoTitle` field (title field sets the H1). Priority order: longest first.
+- [ ] P2 follow-up: re-check PageSpeed CRuX field data in 2-3 weeks; if CLS still >0.1 investigate GTM/ad script injection.
 - [ ] Optionally bulk-patch Sanity article bodies `/insights/` → `/blog/` (renderer rewrite covers the front end meanwhile).
+
+#### Long article titles to shorten in Sanity Studio (H1s over 70 chars)
+
+Edit these at https://wa86etuq.sanity.studio — use the `seoTitle` field if you want a shorter SEO title without changing the display H1, or shorten the `title` field directly.
+
+| Chars | Current title | URL |
+|---|---|---|
+| 109 | The Startup Digital Playbook: How Top Digital Marketing Companies Fuel Sustainable Growth for Indian Startups | /blog/the-startups-digital-rewire... |
+| 108 | The Complete Social Media Marketing Guide for Indian Businesses: Dos, Donts, and What Actually Works in 2026 | /blog/the-essential-guide-to-social-media... |
+| 107 | The CEO's Framework for AI Investment Decisions in Marketing and Sales: An Indian Operator's Guide for 2026 | /blog/ai-investment-framework-indian-ceos... |
+| 105 | AI Lead Qualification for B2B India: How Sales Heads Should Build the Filter Before the Lead Volume Spike | /blog/ai-lead-qualification-b2b-india... |
+| 101 | The Foundation of Digital Success: Strategic Web Design and Development for Indian Businesses in 2026 | /blog/the-foundation-of-digital-success... |
+| 100 | How the Best Digital Marketing Agencies Transform Indian Businesses: 8 Real Capabilities That Matter | /blog/transform-your-business-with-the-best... |
+| 98 | AI-Powered Social Media Services vs. Traditional Agencies in India 2026: The Definitive Comparison | /blog/ai-social-media-services-vs-traditional... |
+| 98 | The Real Cost of Website Development in India: Why a Rs 15,000 Site Loses Indian Businesses Crores | /blog/website-development-cost-india |
+| 97 | From Spend to Scale: How Performance Marketing Agencies Drive Measurable Growth for Indian Brands | /blog/how-performance-marketing-agencies... |
+| 94 | Why 80% of Indian SMEs Fail at Digital Transformation -- And What the Smart 20% Do Differently | /blog/why-digital-transformation-fails-smes-india |
+| 93 | The Real Cost of AI in Indian Marketing and Sales: Honest Numbers Across 5 Use Cases for 2026 | /blog/real-cost-of-ai-indian-marketing-sales-2026 |
+| 92 | Why Indian B2B Companies Spend More on Marketing and Get Less: The 4 Strategy Gaps Explained | /blog/indian-b2b-marketing-strategy-gap-explained |
+| 92 | AI Chatbots vs. Traditional Lead Forms for B2B in India: What the Data Actually Says in 2026 | /blog/ai-chatbot-vs-lead-forms-b2b-india |
+| 90 | Why Pune Businesses Are Choosing AI-Powered Social Media Over Traditional Agencies in 2026 | /blog/pune-businesses-ai-social-media... |
+| 87 | How to Choose the Right Social Media Marketing Company in Pune: The Complete 2026 Guide | /blog/social-media-marketing-company-pune-2026 |
+| 87 | Google AI Overviews & AI Max in India: What Advertisers Must Change in the Next 90 Days | /blog/google-ai-mode-india-advertisers-2026 |
+| 86 | How AI is Transforming Performance Marketing for Indian Brands: A Practical 2026 Guide | /blog/how-ai-transforms-performance-marketing... |
+| 85 | How to Build a Customer-Led Content Strategy That Actually Converts: India 2026 Guide | /blog/strengthen-your-content-strategy... |
+| 85 | Why Strategic Digital Marketing Firms Are Critical for Indian Business Growth in 2026 | /blog/why-strategic-digital-marketing-firms... |
+| 84 | Beyond Code: How to Identify and Choose India's Top Web Development Agencies in 2026 | /blog/beyond-code-what-sets-top-web-development... |
+| 84 | Google Ads for Indian B2B: 7 Budget-Killing Mistakes and Exactly How to Fix Each One | /blog/search-engine-marketing-b2b-google-ads... |
+| 83 | Shopify Website Development for Indian E-Commerce: The Complete 2026 Strategy Guide | /blog/transform-your-online-presence-with-shopify... |
+| 78 | 7 Proven Methods to Increase Website Conversions for Indian Businesses in 2026 | /blog/4-proven-methods-to-increase... |
+| 77 | How to Hire the Best Digital Marketing Agency in India: A Complete 2026 Guide | /blog/the-ultimate-guide-to-hiring... |
 
 ---
 

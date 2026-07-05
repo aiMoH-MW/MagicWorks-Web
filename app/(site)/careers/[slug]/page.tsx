@@ -28,9 +28,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!job) return { title: "Role not found" };
   const dept = deptLabels[job.department ?? ""] ?? job.department ?? "";
   const area = job.area ? " · " + job.area : "";
+  const metaDesc = job.summary
+    ? job.summary.length > 155
+      ? job.summary.slice(0, 152).replace(/\s\S*$/, "") + "..."
+      : job.summary
+    : undefined;
   return {
     title: job.title + " · Careers",
-    description: job.summary,
+    description: metaDesc,
     alternates: { canonical: "/careers/" + slug },
     other: {
       "script:application/ld+json": JSON.stringify({
