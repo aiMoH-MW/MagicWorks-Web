@@ -125,14 +125,14 @@ const builds = [
     tag: "Execution",
     tagColor: "#5B3FBE",
     body: "AI-native only, with authentication, role-based access, and at least one AI-assisted workflow as standard. Strategy for these sits in Platform Consultation.",
-    href: "/services/platform-consultation",
+    href: "/services/web-development/portals-member-sites",
   },
   {
     title: "WordPress (on request)",
     tag: "When right",
     tagColor: "#9A9AA8",
     body: "A curated plugin stack on managed hosting, for simple brochure sites or when you require WordPress specifically. Not the default.",
-    href: "/contact",
+    href: "/services/web-development/wordpress",
   },
   {
     title: "Web AMC",
