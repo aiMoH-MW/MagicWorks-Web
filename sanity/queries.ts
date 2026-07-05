@@ -37,7 +37,9 @@ export async function getInsightBySlug(slug: string) {
           ...,
           "url": asset->url,
           "alt": alt,
-          caption
+          caption,
+          "width": asset->metadata.dimensions.width,
+          "height": asset->metadata.dimensions.height
         }
       },
       seoTitle

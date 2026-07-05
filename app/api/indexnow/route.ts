@@ -8,12 +8,12 @@ const BASE = process.env.NEXT_PUBLIC_SITE_URL ?? "https://magicworksitsolutions.
 function urlsForDocument(docType: string, slug: string): string[] {
   switch (docType) {
     case "insight":
-      // /blog/{slug} is canonical; /insights/{slug} redirects to it
-      return [`${BASE}/blog/${slug}`, `${BASE}/insights/${slug}`];
+      // /blog/{slug} is canonical — never ping redirecting /insights/ URLs
+      return [`${BASE}/blog/${slug}`];
     case "caseStudy":
       return [`${BASE}/work/${slug}`];
     case "jobOpening":
-      return [`${BASE}/about/careers/${slug}`];
+      return [`${BASE}/careers/${slug}`];
     default:
       return [];
   }
@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
     const urls = [
       BASE,
       `${BASE}/services`,
-      `${BASE}/insights`,
+      `${BASE}/blog`,
       `${BASE}/work`,
       `${BASE}/about`,
       `${BASE}/contact`,

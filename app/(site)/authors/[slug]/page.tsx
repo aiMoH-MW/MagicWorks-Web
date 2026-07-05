@@ -84,7 +84,7 @@ export default async function AuthorPage({ params }: Props) {
             {articles.map((a: { slug: { current: string }; coverImage?: string; externalCoverImageUrl?: string; title: string; categories?: string[]; publishedAt?: string; excerpt?: string }) => (
               <Link
                 key={a.slug.current}
-                href={`/insights/${a.slug.current}`}
+                href={`/blog/${a.slug.current}`}
                 className="flex gap-5 bg-white rounded-[10px] overflow-hidden border border-[#E8E4F0] hover:border-[#D4A537] transition-all no-underline group shadow-sm"
               >
                 {(a.coverImage || a.externalCoverImageUrl) && (

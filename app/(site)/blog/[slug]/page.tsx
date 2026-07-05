@@ -148,10 +148,19 @@ const articleComponents: PortableTextComponents = {
       </code>
     ),
     link: ({ children, value }) => {
-      const isExternal = value?.href?.startsWith("http");
+      // Legacy Sanity content links to /insights/<slug>; articles now live at
+      // /blog/<slug> (whitepapers/reports still live under /insights/).
+      // Rewrite here to avoid internal 308 redirect hops.
+      const rawHref: string = value?.href ?? "";
+      const href = rawHref
+        .replace("https://magicworksitsolutions.com/insights/", "https://magicworksitsolutions.com/blog/")
+        .replace(/^\/insights\//, "/blog/")
+        .replace("/blog/whitepapers/", "/insights/whitepapers/")
+        .replace("/blog/reports/", "/insights/reports/");
+      const isExternal = href.startsWith("http") && !href.startsWith("https://magicworksitsolutions.com");
       return (
         <a
-          href={value?.href}
+          href={href}
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "nofollow noopener noreferrer" : undefined}
           className="text-[#5B3FBE] underline underline-offset-2 decoration-[rgba(91,63,190,0.4)] hover:text-[#2A1B5C] hover:decoration-[#2A1B5C] transition-colors"
@@ -170,8 +179,8 @@ const articleComponents: PortableTextComponents = {
             <Image
               src={value.url}
               alt={value.alt ?? ""}
-              width={0}
-              height={0}
+              width={1200}
+              height={675}
               sizes="(max-width: 768px) 100vw, 760px"
               style={{ width: "100%", height: "auto" }}
               className="block"
@@ -186,14 +195,16 @@ const articleComponents: PortableTextComponents = {
     image: ({ value }) => {
       const src = value?.url;
       if (!src) return null;
+      const imgW = typeof value.width === "number" ? value.width : 1200;
+      const imgH = typeof value.height === "number" ? value.height : 675;
       return (
         <figure className="my-12">
           <div className="rounded-[12px] overflow-hidden shadow-[0_16px_56px_rgba(42,27,92,0.18)]">
             <Image
               src={src}
               alt={value.alt ?? ""}
-              width={0}
-              height={0}
+              width={imgW}
+              height={imgH}
               sizes="(max-width: 768px) 100vw, 760px"
               style={{ width: "100%", height: "auto" }}
               className="block"

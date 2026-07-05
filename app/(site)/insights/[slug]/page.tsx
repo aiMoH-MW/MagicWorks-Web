@@ -41,7 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: article.seoTitle ?? article.title,
     description: article.excerpt ? (article.excerpt.length > 155 ? article.excerpt.slice(0, 152) + '...' : article.excerpt) : undefined,
-    alternates: { canonical: `/insights/${slug}` },
+    alternates: { canonical: `/blog/${slug}` },
     keywords: article.tags ?? [],
     openGraph: {
       title: article.seoTitle ?? article.title,
@@ -163,8 +163,16 @@ const articleComponents: PortableTextComponents = {
       if (!value?.url) return null;
       return (
         <figure className="my-12 -mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24">
-          <div className="relative w-full rounded-[12px] overflow-hidden bg-[#EDE9F7] shadow-[0_16px_56px_rgba(42,27,92,0.18)]" style={{ aspectRatio: "16/9" }}>
-            <Image src={value.url} alt={value.alt ?? ""} fill className="object-contain" sizes="(max-width: 768px) 100vw, 1200px" />
+          <div className="rounded-[12px] overflow-hidden bg-[#EDE9F7] shadow-[0_16px_56px_rgba(42,27,92,0.18)]">
+            <Image
+              src={value.url}
+              alt={value.alt ?? ""}
+              width={1200}
+              height={675}
+              sizes="(max-width: 768px) 100vw, 760px"
+              style={{ width: "100%", height: "auto" }}
+              className="block"
+            />
           </div>
           {value.caption && (
             <figcaption className="text-center text-[13px] text-[#9A9AA8] mt-4 italic leading-[1.5]">{value.caption}</figcaption>
@@ -175,18 +183,19 @@ const articleComponents: PortableTextComponents = {
     image: ({ value }) => {
       const src = value?.url;
       if (!src) return null;
+      const imgW = typeof value.width === "number" ? value.width : 1200;
+      const imgH = typeof value.height === "number" ? value.height : 675;
       return (
         <figure className="my-12 -mx-4 sm:-mx-10 md:-mx-16 lg:-mx-24">
-          <div
-            className="relative w-full rounded-[12px] overflow-hidden bg-[#EDE9F7] shadow-[0_16px_56px_rgba(42,27,92,0.18)]"
-            style={{ aspectRatio: "16/9" }}
-          >
+          <div className="rounded-[12px] overflow-hidden bg-[#EDE9F7] shadow-[0_16px_56px_rgba(42,27,92,0.18)]">
             <Image
               src={src}
               alt={value.alt ?? ""}
-              fill
-              className="object-contain"
-              sizes="(max-width: 768px) 100vw, 1200px"
+              width={imgW}
+              height={imgH}
+              sizes="(max-width: 768px) 100vw, 760px"
+              style={{ width: "100%", height: "auto" }}
+              className="block"
             />
           </div>
           {value.caption && (
@@ -367,7 +376,7 @@ export default async function InsightArticlePage({ params }: Props) {
     : null;
 
   // ── JSON-LD schemas (SEO + AEO + GEO) ───────────────────────────────────────
-  const canonicalUrl = `https://magicworksitsolutions.com/insights/${slug}`;
+  const canonicalUrl = `https://magicworksitsolutions.com/blog/${slug}`;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -828,7 +837,7 @@ export default async function InsightArticlePage({ params }: Props) {
               {(related as RelatedArticle[]).map((r) => (
                 <Link
                   key={r._id}
-                  href={`/insights/${r.slug.current}`}
+                  href={`/blog/${r.slug.current}`}
                   className="group bg-white border border-[#D8D8DE] rounded-[10px] overflow-hidden no-underline hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.12)] transition-all flex flex-col"
                   style={{ borderTop: "3px solid #5B3FBE" }}
                 >

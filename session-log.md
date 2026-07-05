@@ -5,6 +5,43 @@
 
 ---
 
+## Session: 5 July 2026 (Mohan / Claude Fable)
+
+### What was built
+
+#### 1. Technical SEO audit (Screaming Frog crawl of 23 June, cross-checked live)
+- Full prioritised report: `seo-audit-report-2026-07-05.md`. Crawl-era items already fixed live (security headers, duplicate title suffix, sitemap /insights URLs) documented so they aren't re-worked.
+
+#### 2. P0 SEO fixes (code)
+- `app/sitemap.ts`: removed noindexed `/privacy` and `/terms` from sitemap (was contradictory signal to Google).
+- `app/(site)/privacy/page.tsx`, `app/(site)/terms/page.tsx`: robots `follow: false` → `follow: true` (keep noindex, stop blocking PageRank flow).
+- `app/(site)/blog/[slug]/page.tsx`: Portable Text link renderer now rewrites legacy `/insights/<slug>` in-body links to `/blog/<slug>` (kills ~31 internal 308 hops); whitepapers/reports paths preserved; internal absolute links no longer get `nofollow`/`_blank`.
+- `app/(site)/authors/[slug]/page.tsx`: article cards `/insights/` → `/blog/`.
+- `app/(site)/insights/[slug]/page.tsx` (legacy route): canonicals + related links → `/blog/`.
+- `app/api/indexnow/route.ts`: no longer pings redirecting `/insights/` and `/about/careers/` URLs; bulk list `/insights` → `/blog`.
+- `package.json`: build script `next build && next-sitemap` → `next build` (app/sitemap.ts is the real sitemap; next-sitemap output was shadowed). `next-sitemap.config.js` + dependency left in place — remove in a cleanup commit.
+- All verified on localhost:3000: 0 remaining `/insights/` article links, sitemap clean, robots correct.
+
+#### 3. New service pages
+- NEW `app/(site)/services/web-development/wordpress/page.tsx` — WordPress Development (on-request positioning, honest-note band, when/when-not, stack table, MagicWorks Host callout, process, FAQ, contact form).
+- NEW `app/(site)/services/web-development/portals-member-sites/page.tsx` — Portals and Member Sites (AI-native positioning, use cases, process, FAQ, contact form).
+- UPDATED `app/(site)/services/web-development/page.tsx` — fixed two broken LEARN MORE hrefs (portals card was pointing to `/services/platform-consultation`, WordPress card to `/contact`).
+
+#### 4. P2 Core Web Vitals fixes
+- `sanity/queries.ts`: `getInsightBySlug` body image projection now fetches `asset->metadata.dimensions.width` and `height` — Sanity asset IDs encode native dimensions so this is zero-cost.
+- `app/(site)/blog/[slug]/page.tsx`: Portable Text `image` handler now uses `width={imgW}` / `height={imgH}` from Sanity metadata (fallback 1200x675), replacing the broken `width={0} height={0}` that caused 26 Screaming Frog "missing size attributes" flags and CLS. `externalImage` handler (WordPress-import URLs) uses `width={1200}` `height={675}` as fallback — no native dimension data available for external URLs.
+- `app/(site)/insights/[slug]/page.tsx`: same image/externalImage handler updates applied (was using `fill` + forced `aspectRatio: "16/9"` container; now uses actual Sanity dimensions with fluid CSS).
+- `components/ChatWidget.tsx`: MagicFlow chatbot no longer loads via `strategy="lazyOnload"`. Now deferred to first user interaction (scroll / click / keydown / touchstart) OR 5-second timeout, whichever comes first. Script injected manually via `document.createElement`. Chatbot still opens normally on localhost:3000 — deferral is invisible to the user.
+
+### Pending / carry-forward
+- [ ] Commit the above from Windows (sandbox git via mount is unreliable — index.lock + stale file view).
+- [ ] P1: shorten blog + case-study titles/H1s (Sanity Studio; `seoTitle` field already exists on insight schema — consider same for caseStudy).
+- [ ] P1: truncate careers meta descriptions (~437 chars live) to ~150 in careers/[slug] generateMetadata.
+- [ ] P1: whitepaper detail pages missing from sitemap — check `getGatedInsights()` GROQ filter.
+- [ ] Optionally bulk-patch Sanity article bodies `/insights/` → `/blog/` (renderer rewrite covers the front end meanwhile).
+
+---
+
 ## Session: 2 July 2026 (Mohan / Claude Sonnet)
 
 ### What was built

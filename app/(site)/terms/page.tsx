@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Terms of Use",
   description: "Terms of Use for magicworksitsolutions.com | MagicWorks IT Solutions Pvt. Ltd.",
   alternates: { canonical: "/terms" },
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 };
 
 const toc = [

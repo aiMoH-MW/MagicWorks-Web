@@ -50,8 +50,6 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${base}/group/magicflow-ai`,                                           changeFrequency: "monthly", priority: 0.6 },
   { url: `${base}/group/magic-pipeline`,                                         changeFrequency: "monthly", priority: 0.6 },
   { url: `${base}/group/magicworks-host`,                                        changeFrequency: "monthly", priority: 0.6 },
-  { url: `${base}/privacy`,                                                      changeFrequency: "yearly",  priority: 0.3 },
-  { url: `${base}/terms`,                                                        changeFrequency: "yearly",  priority: 0.3 },
 ];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

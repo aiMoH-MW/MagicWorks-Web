@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "Privacy policy for magicworksitsolutions.com, MagicWorks IT Solutions Pvt. Ltd. How we collect, use, and protect your data under the DPDP Act 2023.",
   alternates: { canonical: "/privacy" },
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
 };
 
 const toc = [

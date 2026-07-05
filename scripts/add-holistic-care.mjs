@@ -1,3 +1,19 @@
+// Load .env.local (plain `node` does not auto-load it)
+import { readFileSync } from "fs";
+import { resolve } from "path";
+try {
+  const raw = readFileSync(resolve(process.cwd(), ".env.local"), "utf8");
+  for (const line of raw.split("\n")) {
+    const trimmed = line.trim();
+    if (!trimmed || trimmed.startsWith("#")) continue;
+    const idx = trimmed.indexOf("=");
+    if (idx < 0) continue;
+    const key = trimmed.slice(0, idx).trim();
+    const val = trimmed.slice(idx + 1).trim();
+    if (key && !(key in process.env)) process.env[key] = val;
+  }
+} catch { /* .env.local not found — rely on existing env */ }
+
 /**
  * Seed script: The Holistic Care case study
  * Run from magicworks-web/ root: node scripts/add-holistic-care.mjs
