@@ -42,7 +42,7 @@ export async function POST(req: NextRequest) {
   // Fetch a batch of unscored applications
   const { data: apps, error } = await client
     .from("career_applications")
-    .select("id, job_title, job_slug, name, current_ctc, expected_ctc, phone, linkedin_url, portfolio_url, cover_letter, resume_url")
+    .select("id, job_title, job_slug, name, total_experience, relevant_experience, current_ctc, expected_ctc, phone, linkedin_url, portfolio_url, cover_letter, resume_url")
     .is("ai_score", null)
     .order("created_at", { ascending: false })
     .range(offset, offset + limit - 1);
@@ -79,15 +79,17 @@ export async function POST(req: NextRequest) {
       }
 
       const score = await scoreApplication({
-        job_title:     app.job_title || app.job_slug || "Unknown Role",
-        job_slug:      app.job_slug || "",
-        name:          app.name,
-        current_ctc:   app.current_ctc,
-        expected_ctc:  app.expected_ctc,
-        phone:         app.phone,
-        linkedin_url:  app.linkedin_url,
-        portfolio_url: app.portfolio_url,
-        cover_letter:  app.cover_letter,
+        job_title:          app.job_title || app.job_slug || "Unknown Role",
+        job_slug:           app.job_slug || "",
+        name:               app.name,
+        total_experience:   app.total_experience,
+        relevant_experience: app.relevant_experience,
+        current_ctc:        app.current_ctc,
+        expected_ctc:       app.expected_ctc,
+        phone:              app.phone,
+        linkedin_url:       app.linkedin_url,
+        portfolio_url:      app.portfolio_url,
+        cover_letter:       app.cover_letter,
         resumeBuffer,
         resumeMimeType,
       });

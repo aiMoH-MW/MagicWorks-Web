@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse, after } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 import { scoreApplication } from "@/lib/gemini-score";
@@ -103,25 +103,30 @@ export async function POST(req: NextRequest) {
 
     if (dbError) throw dbError;
 
-    // ── Gemini AI Scoring (async — does not block the response) ───────────────
+    // ── Gemini AI Scoring ─────────────────────────────────────────────────────
+    // after() keeps the Vercel function alive until scoring completes even
+    // after the response has been sent — fixes fire-and-forget termination.
     if (inserted?.id) {
-      const rowId = inserted.id as string;
-      scoreApplication({
-        job_title: job_title || job_slug,
-        job_slug,
-        name,
-        total_experience,
-        relevant_experience,
-        current_ctc,
-        expected_ctc,
-        phone,
-        linkedin_url,
-        portfolio_url,
-        cover_letter,
-        resumeBuffer:   uploaded?.buf ?? null,
-        resumeMimeType: resumeFile?.type ?? null,
-      })
-        .then(async (score) => {
+      const rowId         = inserted.id as string;
+      const scoringBuf    = uploaded?.buf ?? null;
+      const scoringMime   = resumeFile?.type ?? null;
+      after(async () => {
+        try {
+          const score = await scoreApplication({
+            job_title:        job_title || job_slug,
+            job_slug,
+            name,
+            total_experience,
+            relevant_experience,
+            current_ctc,
+            expected_ctc,
+            phone,
+            linkedin_url,
+            portfolio_url,
+            cover_letter,
+            resumeBuffer:   scoringBuf,
+            resumeMimeType: scoringMime,
+          });
           if (!score) return;
           const { error: scoreErr } = await createServiceClient()
             .from("career_applications")
@@ -138,8 +143,10 @@ export async function POST(req: NextRequest) {
           } else {
             console.log(`[careers/score] ${name} → ${score.overall_score} (${score.label})`);
           }
-        })
-        .catch((err) => console.error("[careers/score] error:", err));
+        } catch (err) {
+          console.error("[careers/score] error:", err);
+        }
+      });
     }
 
     // ── Email notification ────────────────────────────────────────────────────
