@@ -21,6 +21,7 @@ export default function ContactForm() {
     company: "",
     pillar: "",
     message: "",
+    _gotcha: "",
   });
 
   function handleChange(
@@ -183,6 +184,18 @@ export default function ContactForm() {
           placeholder="What are you trying to achieve? What has or hasn't worked so far?"
         />
       </div>
+
+      {/* Honeypot — hidden from humans, bots fill it */}
+      <input
+        name="_gotcha"
+        type="text"
+        value={form._gotcha}
+        onChange={handleChange}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+      />
 
       {state === "error" && (
         <p className="text-red-600 text-[14px]">

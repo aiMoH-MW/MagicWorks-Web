@@ -34,6 +34,7 @@ export default function WebDevelopmentContactForm({
           pillar: "Web Development",
           source_page: sourcePage,
           message: parts.join("\n"),
+          _gotcha: fd.get("_gotcha"),
         }),
       });
       if (res.ok) setStatus("sent");
@@ -102,6 +103,16 @@ export default function WebDevelopmentContactForm({
         <label className="block text-[12px] font-semibold text-[#2A1B5C] uppercase tracking-[0.08em] mb-1">Tell us about your project</label>
         <textarea name="message" rows={3} placeholder="What does the site need to do? Existing stack, rough scope, any constraints..." className="w-full border border-[#D8D8DE] rounded-[8px] px-4 py-3 text-[14px] text-[#2A1B5C] placeholder:text-[#9A9AA8] focus:outline-none focus:ring-2 focus:ring-[#5B3FBE]/30 resize-none" />
       </div>
+      {/* Honeypot — hidden from humans, bots fill it */}
+      <input
+        name="_gotcha"
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+      />
+
       {status === "error" && (
         <p className="text-[13px] text-red-600">Something went wrong. Please try again or email us directly.</p>
       )}

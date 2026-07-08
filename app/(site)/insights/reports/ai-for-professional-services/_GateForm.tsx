@@ -14,6 +14,7 @@ export default function GateForm() {
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState("");
+  const [gotcha, setGotcha] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -33,6 +34,7 @@ export default function GateForm() {
           company: company || undefined,
           message: `Role: ${role || "not specified"}. Requested: AI for Professional Services Guide`,
           source_page: "playbook-ai-professional-services",
+          _gotcha: gotcha,
         }),
       });
       setDone(true);
@@ -135,7 +137,18 @@ export default function GateForm() {
         </select>
       </div>
 
-      {error && <p className="text-[12px] text-red-500 mb-3">{error}</p>}
+      {/* Honeypot — hidden from humans, bots fill it */}
+      <input
+        name="_gotcha"
+        type="text"
+        value={gotcha}
+        onChange={(e) => setGotcha(e.target.value)}
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+      />
+            {error && <p className="text-[12px] text-red-500 mb-3">{error}</p>}
 
       <button
         type="submit"

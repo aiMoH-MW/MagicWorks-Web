@@ -5,7 +5,12 @@ import { sendNotification } from "@/lib/email";
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { name, email, phone, company, website, pillar, message, source_page } = body;
+    const { name, email, phone, company, website, pillar, message, source_page, _gotcha } = body;
+
+    // Honeypot — bots fill hidden fields, humans don't
+    if (_gotcha) {
+      return NextResponse.json({ success: true }, { status: 201 });
+    }
 
     if (!name || !email) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
