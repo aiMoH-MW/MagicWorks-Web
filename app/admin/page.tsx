@@ -302,6 +302,8 @@ export default function AdminPage() {
   const [sortDir, setSortDir] = useState<"desc" | "asc">("desc");
   const [careerSort, setCareerSort] = useState<{ col: CareerSortCol; dir: "asc" | "desc" }>({ col: "date", dir: "desc" });
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
+  const [deleting, setDeleting] = useState(false);
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
@@ -321,6 +323,8 @@ export default function AdminPage() {
     if (authed) fetchRows(tab, dateFrom, dateTo, sortDir);
   }, [authed, tab, dateFrom, dateTo, sortDir, fetchRows]);
 
+  useEffect(() => { setSelectedIds(new Set()); }, [tab]);
+
   useEffect(() => {
     if (!authed) return;
     (["newsletter", "whitepaper", "playbooks", "leads", "consultation", "careers"] as Tab[]).forEach(async (t) => {
@@ -334,6 +338,28 @@ export default function AdminPage() {
     e.preventDefault();
     if (password === ADMIN_SECRET) { setAuthed(true); setLoginError(""); }
     else setLoginError("Incorrect password.");
+  }
+
+  async function handleDelete() {
+    if (!selectedIds.size) return;
+    if (!confirm(`Delete ${selectedIds.size} record${selectedIds.size > 1 ? "s" : ""}? This cannot be undone.`)) return;
+    setDeleting(true);
+    try {
+      const res = await fetch("/api/admin/delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
+        body: JSON.stringify({ ids: [...selectedIds], tab }),
+      });
+      if (!res.ok) throw new Error("Delete failed");
+      const toRemove = selectedIds.size;
+      setSelectedIds(new Set());
+      setCounts((prev) => ({ ...prev, [tab]: Math.max(0, prev[tab] - toRemove) }));
+      await fetchRows(tab, dateFrom, dateTo, sortDir);
+    } catch {
+      alert("Delete failed. Please try again.");
+    } finally {
+      setDeleting(false);
+    }
   }
 
   function toggleCareerSort(col: CareerSortCol) {
@@ -472,14 +498,27 @@ export default function AdminPage() {
             )}
             {hasFilter && tab !== "careers" && <p className="text-white/30 text-[11px] mt-1">Date filter active</p>}
           </div>
-          <button
-            onClick={() => exportCSV(rows, tab + "-" + new Date().toISOString().slice(0, 10) + ".csv")}
-            className="flex items-center gap-2 text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-4 py-2 transition-colors">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
-            </svg>
-            Export CSV
-          </button>
+          <div className="flex items-center gap-2">
+            {selectedIds.size > 0 && (
+              <button
+                onClick={handleDelete}
+                disabled={deleting}
+                className="flex items-center gap-2 text-[12px] text-red-400 hover:text-red-300 border border-red-500/30 hover:border-red-400/60 rounded-lg px-4 py-2 transition-colors disabled:opacity-50">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
+                </svg>
+                {deleting ? "Deleting…" : `Delete ${selectedIds.size} selected`}
+              </button>
+            )}
+            <button
+              onClick={() => exportCSV(rows, tab + "-" + new Date().toISOString().slice(0, 10) + ".csv")}
+              className="flex items-center gap-2 text-[12px] text-white/50 hover:text-white border border-white/[0.12] hover:border-white/30 rounded-lg px-4 py-2 transition-colors">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Export CSV
+            </button>
+          </div>
         </div>
 
         {/* Filters */}
@@ -515,7 +554,9 @@ export default function AdminPage() {
           {tab === "careers" && (
             <span className="text-white/25 text-[11px] italic">Click Date, Role or AI Score headers to sort ↑↓</span>
           )}
-          <span className="ml-auto text-white/20 text-[11px]">{rows.length} records</span>
+          <span className="ml-auto text-white/20 text-[11px]">
+            {rows.length} records{selectedIds.size > 0 ? ` · ${selectedIds.size} selected` : ""}
+          </span>
         </div>
 
         {/* Table */}
@@ -562,6 +603,17 @@ export default function AdminPage() {
                 <table className="w-full text-[13px]">
                   <thead>
                     <tr className="border-b border-white/[0.07]">
+                      <th className="px-4 py-3 w-10">
+                        <input
+                          type="checkbox"
+                          checked={rows.length > 0 && rows.every((r) => selectedIds.has(r.id))}
+                          onChange={(e) => {
+                            if (e.target.checked) setSelectedIds(new Set(rows.map((r) => r.id)));
+                            else setSelectedIds(new Set());
+                          }}
+                          className="accent-[#D4A537] w-3.5 h-3.5 cursor-pointer"
+                        />
+                      </th>
                       {cols.map((c) => (
                         <th key={c} className="text-left px-5 py-3 text-white/30 uppercase tracking-[0.1em] text-[10px] font-semibold whitespace-nowrap">
                           {c.replace(/_/g, " ")}
@@ -571,7 +623,22 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {rows.map((row, i) => (
-                      <tr key={row.id ?? i} className="border-b border-white/[0.05] hover:bg-white/[0.03] transition-colors">
+                      <tr key={row.id ?? i} className={"border-b border-white/[0.05] transition-colors " + (selectedIds.has(row.id) ? "bg-[#D4A537]/[0.06]" : "hover:bg-white/[0.03]")}>
+                        <td className="px-4 py-3 w-10">
+                          <input
+                            type="checkbox"
+                            checked={selectedIds.has(row.id)}
+                            onChange={(e) => {
+                              setSelectedIds((prev) => {
+                                const next = new Set(prev);
+                                if (e.target.checked) next.add(row.id);
+                                else next.delete(row.id);
+                                return next;
+                              });
+                            }}
+                            className="accent-[#D4A537] w-3.5 h-3.5 cursor-pointer"
+                          />
+                        </td>
                         {cols.map((c) => {
                           const rawVal = (row as unknown as Record<string, unknown>)[c];
                           const display = c === "created_at"
