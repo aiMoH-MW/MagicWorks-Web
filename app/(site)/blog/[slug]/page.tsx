@@ -310,7 +310,7 @@ export default async function BlogArticlePage({ params }: Props) {
 
   const readingTime = estimateReadingTime(article.body ?? []);
   const formattedDate = article.publishedAt
-    ? new Date(article.publishedAt).toLocaleDateString("en-IN", { year: "numeric", month: "long", day: "numeric" })
+    ? new Date(article.publishedAt).toLocaleDateString("en-IN", { year: "numeric", month: "long" })
     : null;
 
   const heroStats: HeroStat[] = article.caseStudyHeroStats ?? [];
@@ -809,7 +809,7 @@ export default async function BlogArticlePage({ params }: Props) {
                     </p>
                     {r.publishedAt && (
                       <p className="mt-3 text-[12px] text-[#9A9AA8]">
-                        {new Date(r.publishedAt).toLocaleDateString("en-IN", { year: "numeric", month: "short", day: "numeric" })}
+                        {new Date(r.publishedAt).toLocaleDateString("en-IN", { year: "numeric", month: "short" })}
                       </p>
                     )}
                   </div>

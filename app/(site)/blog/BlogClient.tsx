@@ -114,7 +114,6 @@ export default function BlogClient({ articles }: { articles: Article[] }) {
                         ? new Date(a.publishedAt).toLocaleDateString("en-IN", {
                             year: "numeric",
                             month: "short",
-                            day: "numeric",
                           })
                         : ""}
                     </span>
