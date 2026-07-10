@@ -60,6 +60,9 @@
 - [Is Your Website Speed Killing Your Ad ROI?](https://magicworksitsolutions.com/blog/website-speed-killing-ad-roi): How slow load times silently drain paid media budgets and the specific fixes that recover lost ROI.
 - [Full-Funnel vs Fragmented Agencies: Why You Need One Team, Not Five Vendors](https://magicworksitsolutions.com/blog/full-funnel-vs-fragmented-agencies): Why single-agency full-funnel programmes outperform the multi-vendor model for attribution and results.
 - [What Is an AI-Native Website and Why Your Business Needs One in 2026](https://magicworksitsolutions.com/blog/what-is-an-ai-native-website): What makes a website AI-native, how it differs from a standard site, and why it matters for search visibility and lead quality.
+- [The New Psychology of Personalisation: What AI Knows About Your Buyer](https://magicworksitsolutions.com/blog/the-new-psychology-of-personalisation-what-ai-knows-about-your-buyer): How AI-driven personalisation changes buyer expectations and what marketers must do to keep up.
+- [How AI Removes Guesswork from Buyer Behaviour](https://magicworksitsolutions.com/blog/how-ai-removes-guesswork-from-buyer-behaviour): The ways AI tools give marketers reliable signals about intent, timing, and messaging - replacing assumption with evidence.
+- [How AI Shortens the Distance Between Awareness and Action](https://magicworksitsolutions.com/blog/how-ai-shortens-the-distance-between-awareness-and-action): Why AI-powered marketing compresses the buyer journey and how to design campaigns that convert faster.
 
 ## Tools
 
