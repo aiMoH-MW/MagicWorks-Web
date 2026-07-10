@@ -30,14 +30,18 @@ function loadStoredPrefs(): Prefs | null {
 }
 
 export default function CookieBanner() {
+  // Start as false (off-screen) — the element is always in the DOM so no CLS from
+  // a fixed element being injected after paint. We animate with transform only.
   const [visible, setVisible] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const [showPrefs, setShowPrefs] = useState(false);
   const [prefs, setPrefs] = useState<Prefs>({ analytics: true, marketing: true });
 
   useEffect(() => {
+    setMounted(true);
     if (!loadStoredPrefs()) {
-      const t = setTimeout(() => setVisible(true), 700);
-      return () => clearTimeout(t);
+      // Show on next frame — no arbitrary delay, just wait for hydration
+      requestAnimationFrame(() => setVisible(true));
     }
   }, []);
 
@@ -82,12 +86,14 @@ export default function CookieBanner() {
     if (!loadStoredPrefs()) setVisible(true);
   }
 
-  if (!visible) return null;
+  // Before hydration: render nothing (avoids SSR/client mismatch).
+  // After hydration: always keep in DOM, slide in/out with transform.
+  if (!mounted) return null;
 
   return (
     <>
       {/* ── Preferences modal ─────────────────────────────────────────── */}
-      {showPrefs && (
+      {showPrefs && visible && (
         <div
           role="dialog"
           aria-modal="true"
@@ -207,11 +213,18 @@ export default function CookieBanner() {
       )}
 
       {/* ── Bottom banner ──────────────────────────────────────────────── */}
+      {/* Always in the DOM after mount — slide with transform so fixed element
+          never causes a layout reflow (CLS fix). */}
       {!showPrefs && (
         <div
           role="region"
           aria-label="Cookie consent"
-          className="mw-cookie-banner fixed bottom-0 left-0 right-0 z-[1000] bg-[#1E1248] border-t border-white/10 shadow-[0_-4px_32px_rgba(0,0,0,0.35)]"
+          aria-hidden={!visible}
+          className={
+            "mw-cookie-banner fixed bottom-0 left-0 right-0 z-[1000] bg-[#1E1248] border-t border-white/10 shadow-[0_-4px_32px_rgba(0,0,0,0.35)] " +
+            "transition-transform duration-300 ease-out will-change-transform " +
+            (visible ? "translate-y-0" : "translate-y-full pointer-events-none")
+          }
         >
           <div className="max-w-[1200px] mx-auto px-6 py-4 md:px-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
             <div className="flex-1 min-w-0">
