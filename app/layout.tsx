@@ -12,15 +12,15 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "optional",
-  preload: true,
+  preload: false, // Body font — no preload needed; falls back to system sans-serif instantly
 });
 
 const sourceSerif4 = Source_Serif_4({
   variable: "--font-head",
   subsets: ["latin"],
-  display: "optional",
-  preload: true,
-  weight: ["600", "700"],
+  display: "swap",  // Renders fallback immediately → fast LCP; swaps when ready
+  preload: true,    // Only the weight used in above-fold headings
+  weight: ["700"],  // Bold only — "600" is semibold, not used in H1
 });
 
 export const metadata: Metadata = {
@@ -174,6 +174,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${sourceSerif4.variable} h-full antialiased`}>
       <head>
+        {/* Preload nav logo — critical LCP element, must fire before client JS hydrates */}
+        <link rel="preload" href="/logo-header.webp" as="image" type="image/webp" fetchPriority="high" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
