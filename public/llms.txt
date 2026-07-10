@@ -47,6 +47,20 @@
 - [Reports](https://magicworksitsolutions.com/insights/reports): Downloadable research reports.
 - [Whitepapers](https://magicworksitsolutions.com/insights/whitepapers): In-depth whitepapers on marketing and AI topics (gated, requires email).
 
+## Blog Articles
+
+- [How AI Search Is Changing SEO: A Practical Guide to Answer Engine Optimisation](https://magicworksitsolutions.com/blog/ai-search-answer-engine-optimisation-guide): What AEO is, how it differs from SEO, and a practical checklist for getting cited by AI systems like ChatGPT, Copilot, and Perplexity.
+- [SEO vs AEO vs GEO: What Each One Actually Means and Where They Overlap](https://magicworksitsolutions.com/blog/seo-vs-aeo-vs-geo-differences): Plain-language guide to the three disciplines, how they overlap, and which one your business needs.
+- [How to Measure AI Citations: A Practical Measurement Guide](https://magicworksitsolutions.com/blog/how-to-measure-ai-citations): Step-by-step workflow for tracking AI citations across Bing Webmaster Tools, Google Analytics, and manual spot checks.
+- [Commission-Based Ad Management: What It Costs You Beyond the Commission](https://magicworksitsolutions.com/blog/commission-based-ad-management): Why the commission model creates misaligned incentives and what to demand instead.
+- [The Education Funnel: From Enquiry to Enrolment](https://magicworksitsolutions.com/blog/education-funnel-enquiry-to-enrolment): How education institutions can close the gap between lead volume and actual enrolments with a structured digital funnel.
+- [Why Manufacturing Businesses Are Invisible on Google (And What to Do About It)](https://magicworksitsolutions.com/blog/manufacturing-invisible-on-google): The specific reasons B2B manufacturers fail to rank and the fixes that work.
+- [LinkedIn Thought Leadership and AI Citations: How to Get Both Working Together](https://magicworksitsolutions.com/blog/linkedin-thought-leadership-ai-citations): A framework for using LinkedIn content to build AI citation authority alongside organic reach.
+- [Performance Marketing for High-Ticket Education: What Works and What Wastes Budget](https://magicworksitsolutions.com/blog/performance-marketing-high-ticket-education): Paid media strategy tailored to high-intent, high-consideration education buyers.
+- [Is Your Website Speed Killing Your Ad ROI?](https://magicworksitsolutions.com/blog/website-speed-killing-ad-roi): How slow load times silently drain paid media budgets and the specific fixes that recover lost ROI.
+- [Full-Funnel vs Fragmented Agencies: Why You Need One Team, Not Five Vendors](https://magicworksitsolutions.com/blog/full-funnel-vs-fragmented-agencies): Why single-agency full-funnel programmes outperform the multi-vendor model for attribution and results.
+- [What Is an AI-Native Website and Why Your Business Needs One in 2026](https://magicworksitsolutions.com/blog/what-is-an-ai-native-website): What makes a website AI-native, how it differs from a standard site, and why it matters for search visibility and lead quality.
+
 ## Tools
 
 - [AI Readiness Assessment](https://magicworksitsolutions.com/tools/ai-readiness-assessment): Free interactive quiz to assess your business's readiness to adopt AI.
