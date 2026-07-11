@@ -304,6 +304,8 @@ export default function AdminPage() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [selectedIds, setSelectedIds] = useState<Set<string>>(new Set());
   const [deleting, setDeleting] = useState(false);
+  const [deleteConfirm, setDeleteConfirm] = useState(false);
+  const [deleteError, setDeleteError] = useState("");
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
@@ -323,7 +325,7 @@ export default function AdminPage() {
     if (authed) fetchRows(tab, dateFrom, dateTo, sortDir);
   }, [authed, tab, dateFrom, dateTo, sortDir, fetchRows]);
 
-  useEffect(() => { setSelectedIds(new Set()); }, [tab]);
+  useEffect(() => { setSelectedIds(new Set()); setDeleteConfirm(false); setDeleteError(""); }, [tab]);
 
   useEffect(() => {
     if (!authed) return;
@@ -342,7 +344,7 @@ export default function AdminPage() {
 
   async function handleDelete() {
     if (!selectedIds.size) return;
-    if (!confirm(`Delete ${selectedIds.size} record${selectedIds.size > 1 ? "s" : ""}? This cannot be undone.`)) return;
+    setDeleteError("");
     setDeleting(true);
     try {
       const res = await fetch("/api/admin/delete", {
@@ -350,13 +352,15 @@ export default function AdminPage() {
         headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
         body: JSON.stringify({ ids: [...selectedIds], tab }),
       });
-      if (!res.ok) throw new Error("Delete failed");
+      const json = await res.json();
+      if (!res.ok) throw new Error(json.error ?? `HTTP ${res.status}`);
       const toRemove = selectedIds.size;
       setSelectedIds(new Set());
+      setDeleteConfirm(false);
       setCounts((prev) => ({ ...prev, [tab]: Math.max(0, prev[tab] - toRemove) }));
       await fetchRows(tab, dateFrom, dateTo, sortDir);
-    } catch {
-      alert("Delete failed. Please try again.");
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : "Delete failed");
     } finally {
       setDeleting(false);
     }
@@ -499,16 +503,35 @@ export default function AdminPage() {
             {hasFilter && tab !== "careers" && <p className="text-white/30 text-[11px] mt-1">Date filter active</p>}
           </div>
           <div className="flex items-center gap-2">
-            {selectedIds.size > 0 && (
+            {selectedIds.size > 0 && !deleteConfirm && (
               <button
-                onClick={handleDelete}
-                disabled={deleting}
-                className="flex items-center gap-2 text-[12px] text-red-400 hover:text-red-300 border border-red-500/30 hover:border-red-400/60 rounded-lg px-4 py-2 transition-colors disabled:opacity-50">
+                onClick={() => { setDeleteError(""); setDeleteConfirm(true); }}
+                className="flex items-center gap-2 text-[12px] text-red-400 hover:text-red-300 border border-red-500/30 hover:border-red-400/60 rounded-lg px-4 py-2 transition-colors">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 01-2 2H8a2 2 0 01-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4h6v2"/>
                 </svg>
-                {deleting ? "Deleting…" : `Delete ${selectedIds.size} selected`}
+                Delete {selectedIds.size} selected
               </button>
+            )}
+            {deleteConfirm && (
+              <div className="flex items-center gap-2">
+                {deleteError && (
+                  <span className="text-[11px] text-red-400 max-w-[200px] truncate" title={deleteError}>{deleteError}</span>
+                )}
+                <span className="text-[12px] text-white/50">Delete {selectedIds.size} record{selectedIds.size > 1 ? "s" : ""}?</span>
+                <button
+                  onClick={handleDelete}
+                  disabled={deleting}
+                  className="text-[12px] font-semibold text-white bg-red-600 hover:bg-red-500 rounded-lg px-3 py-1.5 transition-colors disabled:opacity-50">
+                  {deleting ? "Deleting…" : "Yes, delete"}
+                </button>
+                <button
+                  onClick={() => { setDeleteConfirm(false); setDeleteError(""); }}
+                  disabled={deleting}
+                  className="text-[12px] text-white/40 hover:text-white border border-white/10 rounded-lg px-3 py-1.5 transition-colors">
+                  Cancel
+                </button>
+              </div>
             )}
             <button
               onClick={() => exportCSV(rows, tab + "-" + new Date().toISOString().slice(0, 10) + ".csv")}
