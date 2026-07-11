@@ -35,15 +35,32 @@ export async function POST(req: NextRequest) {
   }
 
   const table = TABLE_MAP[tab];
-  const { error } = await createServiceClient()
-    .from(table)
-    .delete()
-    .in("id", ids);
-
-  if (error) {
-    console.error("[admin/delete] error:", error);
-    return NextResponse.json({ error: "Delete failed" }, { status: 500 });
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!serviceKey) {
+    console.error("[admin/delete] SUPABASE_SERVICE_ROLE_KEY is not set");
+    return NextResponse.json({ error: "Server misconfiguration: service key missing" }, { status: 500 });
   }
 
-  return NextResponse.json({ deleted: ids.length });
+  const { data: deleted, error } = await createServiceClient()
+    .from(table)
+    .delete()
+    .in("id", ids)
+    .select("id");
+
+  if (error) {
+    console.error("[admin/delete] Supabase error:", JSON.stringify(error));
+    return NextResponse.json({ error: `Supabase: ${error.message} (code ${error.code})` }, { status: 500 });
+  }
+
+  const actualCount = deleted?.length ?? 0;
+  if (actualCount === 0) {
+    // Rows found in UI but Supabase deleted 0 — RLS blocking or ID mismatch
+    console.warn("[admin/delete] 0 rows deleted from", table, "for ids:", ids);
+    return NextResponse.json(
+      { error: `RLS blocked delete on '${table}' — check Supabase policies or service key` },
+      { status: 403 }
+    );
+  }
+
+  return NextResponse.json({ deleted: actualCount });
 }
