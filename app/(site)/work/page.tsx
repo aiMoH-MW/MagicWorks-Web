@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/work" },
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300; // ISR: rebuild at most every 5 minutes
 
 const collectionPageSchema = {
   "@context": "https://schema.org",

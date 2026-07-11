@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/insights" },
 };
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300; // ISR: rebuild at most every 5 minutes
 
 const categoryLabels: Record<string, string> = {
   "digital-marketing": "Digital Marketing",

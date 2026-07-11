@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { getActiveJobOpenings } from "@/sanity/queries";
 
-export const revalidate = 300;
+export const revalidate = 300; // ISR: rebuild at most every 5 minutes
 
 export const metadata: Metadata = {
   title: "Open Roles: Join the Team",
@@ -10,8 +10,6 @@ export const metadata: Metadata = {
     "Join MagicWorks IT Solutions in Pune. We are hiring across digital marketing, web development, AI, design, and operations. See open roles.",
   alternates: { canonical: "/careers" },
 };
-
-export const dynamic = "force-dynamic";
 
 const collectionPageSchema = {
   "@context": "https://schema.org",
