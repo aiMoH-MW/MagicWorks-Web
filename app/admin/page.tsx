@@ -306,6 +306,8 @@ export default function AdminPage() {
   const [deleting, setDeleting] = useState(false);
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleteError, setDeleteError] = useState("");
+  const [rescoring, setRescoring] = useState(false);
+  const [rescoreProgress, setRescoreProgress] = useState<{ scored: number; remaining: number } | null>(null);
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
@@ -363,6 +365,31 @@ export default function AdminPage() {
       setDeleteError(err instanceof Error ? err.message : "Delete failed");
     } finally {
       setDeleting(false);
+    }
+  }
+
+  async function handleRescore() {
+    setRescoring(true);
+    setRescoreProgress({ scored: 0, remaining: 0 });
+    let totalScored = 0;
+    try {
+      for (;;) {
+        const res = await fetch("/api/admin/rescore", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
+          body: JSON.stringify({ limit: 10, offset: 0 }),
+        });
+        if (!res.ok) break;
+        const json = await res.json();
+        const batchScored: number = json.scored ?? 0;
+        totalScored += batchScored;
+        const remaining: number = Math.max(0, (json.total_unscored ?? 0) - batchScored - (json.skipped ?? 0));
+        setRescoreProgress({ scored: totalScored, remaining });
+        if (((json.scored ?? 0) + (json.skipped ?? 0) + (json.failed ?? 0)) === 0) break;
+      }
+      await fetchRows(tab, dateFrom, dateTo, sortDir);
+    } finally {
+      setRescoring(false);
     }
   }
 
@@ -532,6 +559,26 @@ export default function AdminPage() {
                   Cancel
                 </button>
               </div>
+            )}
+            {tab === "careers" && (
+              rescoring ? (
+                <span className="text-[12px] text-white/40 flex items-center gap-2">
+                  <svg className="animate-spin" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 12a9 9 0 11-6.219-8.56"/>
+                  </svg>
+                  {rescoreProgress ? `Scored ${rescoreProgress.scored} (${rescoreProgress.remaining} left)` : "Starting..."}
+                </span>
+              ) : (
+                <button
+                  onClick={handleRescore}
+                  title="Score all unscored applications using Gemini AI"
+                  className="flex items-center gap-2 text-[12px] text-[#C8B8FF]/70 hover:text-[#C8B8FF] border border-[#C8B8FF]/20 hover:border-[#C8B8FF]/50 rounded-lg px-4 py-2 transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2a10 10 0 0 1 7.38 3.22"/><path d="M20.7 12.5a9 9 0 1 1-9-9"/><polyline points="22 4 22 10 16 10"/>
+                  </svg>
+                  {rescoreProgress ? `Done (${rescoreProgress.scored} scored)` : "Score All"}
+                </button>
+              )
             )}
             <button
               onClick={() => exportCSV(rows, tab + "-" + new Date().toISOString().slice(0, 10) + ".csv")}
