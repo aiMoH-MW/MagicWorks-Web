@@ -65,6 +65,7 @@ export async function POST(req: NextRequest) {
   let scored = 0;
   let skipped = 0;
   let failed = 0;
+  let lastError = "";
 
   for (const app of (apps ?? [])) {
     try {
@@ -105,7 +106,7 @@ export async function POST(req: NextRequest) {
         resumeMimeType,
       });
 
-      if (!score) { skipped++; continue; }
+      if (!score) { skipped++; lastError = lastError || "scoreApplication returned null (GEMINI_API_KEY missing or invalid)"; continue; }
 
       const { error: updateErr } = await client
         .from("career_applications")
@@ -121,10 +122,12 @@ export async function POST(req: NextRequest) {
       if (updateErr) { console.error("[rescore] update failed:", updateErr); failed++; }
       else scored++;
 
-      // Small delay to avoid hitting Gemini rate limits
-      await new Promise((r) => setTimeout(r, 500));
+      // Delay between calls — 1s gap keeps well within paid tier limits (2000 RPM)
+      await new Promise((r) => setTimeout(r, 1000));
     } catch (err) {
-      console.error("[rescore] error for", app.id, err);
+      const msg = err instanceof Error ? err.message : String(err);
+      console.error("[rescore] error for", app.id, msg);
+      lastError = lastError || msg;
       failed++;
     }
   }
@@ -133,6 +136,7 @@ export async function POST(req: NextRequest) {
     scored,
     skipped,
     failed,
+    last_error: lastError || null,
     total_unscored: totalUnscored ?? 0,
     batch_size: limit,
     offset,
