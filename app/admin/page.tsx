@@ -151,7 +151,7 @@ function DragScroll({ children }: { children: React.ReactNode }) {
 }
 
 // ── Careers Row with Expandable Score Panel ───────────────────────────────────
-function CareerRow({ row }: { row: Row }) {
+function CareerRow({ row, selected, onToggle }: { row: Row; selected: boolean; onToggle: (id: string) => void }) {
   const [open, setOpen] = useState(false);
 
   const val = (key: string) => (row as unknown as Record<string, unknown>)[key];
@@ -166,9 +166,17 @@ function CareerRow({ row }: { row: Row }) {
   return (
     <>
       <tr
-        className={"border-b border-white/[0.05] transition-colors cursor-pointer " + (open ? "bg-white/[0.05]" : "hover:bg-white/[0.03]")}
+        className={"border-b border-white/[0.05] transition-colors cursor-pointer " + (open ? "bg-white/[0.05]" : (selected ? "bg-[#D4A537]/[0.06]" : "hover:bg-white/[0.03]"))}
         onClick={() => setOpen((o) => !o)}
       >
+        <td className="px-4 py-3 w-10" onClick={(e) => e.stopPropagation()}>
+          <input
+            type="checkbox"
+            checked={selected}
+            onChange={() => onToggle(row.id)}
+            className="accent-[#D4A537] w-3.5 h-3.5 cursor-pointer"
+          />
+        </td>
         {cols.map((c) => {
           const isLink   = c === "linkedin_url" || c === "portfolio_url";
           const isResume = c === "resume_url";
@@ -365,6 +373,27 @@ export default function AdminPage() {
       setDeleteError(err instanceof Error ? err.message : "Delete failed");
     } finally {
       setDeleting(false);
+    }
+  }
+
+  async function handleRescoreSelected() {
+    if (!selectedIds.size) return;
+    setRescoring(true);
+    setRescoreProgress({ scored: 0, remaining: 0 });
+    try {
+      const res = await fetch("/api/admin/rescore", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
+        body: JSON.stringify({ ids: [...selectedIds] }),
+      });
+      if (res.ok) {
+        const json = await res.json();
+        setRescoreProgress({ scored: json.scored ?? 0, remaining: 0 });
+      }
+      await fetchRows(tab, dateFrom, dateTo, sortDir);
+      setSelectedIds(new Set());
+    } finally {
+      setRescoring(false);
     }
   }
 
@@ -568,6 +597,16 @@ export default function AdminPage() {
                   </svg>
                   {rescoreProgress ? `Scored ${rescoreProgress.scored} (${rescoreProgress.remaining} left)` : "Starting..."}
                 </span>
+              ) : selectedIds.size > 0 ? (
+                <button
+                  onClick={handleRescoreSelected}
+                  title="Score selected applications using Gemini AI"
+                  className="flex items-center gap-2 text-[12px] text-[#D4A537]/80 hover:text-[#D4A537] border border-[#D4A537]/30 hover:border-[#D4A537]/60 rounded-lg px-4 py-2 transition-colors">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 2a10 10 0 0 1 7.38 3.22"/><path d="M20.7 12.5a9 9 0 1 1-9-9"/><polyline points="22 4 22 10 16 10"/>
+                  </svg>
+                  Score {selectedIds.size} selected
+                </button>
               ) : (
                 <button
                   onClick={handleRescore}
@@ -644,6 +683,17 @@ export default function AdminPage() {
                 <table className="w-full text-[13px]" style={{ minWidth: 1100 }}>
                   <thead>
                     <tr className="border-b border-white/[0.07]">
+                      <th className="px-4 py-3 w-10">
+                        <input
+                          type="checkbox"
+                          checked={careerRows.length > 0 && careerRows.every((r) => selectedIds.has(r.id))}
+                          onChange={(e) => {
+                            if (e.target.checked) setSelectedIds(new Set(careerRows.map((r) => r.id)));
+                            else setSelectedIds(new Set());
+                          }}
+                          className="accent-[#D4A537] w-3.5 h-3.5 cursor-pointer"
+                        />
+                      </th>
                       <CareerTh label="Date"         sortCol="date"  currentSort={careerSort} onSort={toggleCareerSort} />
                       <CareerTh label="Role"         sortCol="role"  currentSort={careerSort} onSort={toggleCareerSort} />
                       <CareerTh label="Name"                         currentSort={careerSort} />
@@ -662,7 +712,16 @@ export default function AdminPage() {
                   </thead>
                   <tbody>
                     {careerRows.map((row, i) => (
-                      <CareerRow key={row.id ?? i} row={row} />
+                      <CareerRow
+                        key={row.id ?? i}
+                        row={row}
+                        selected={selectedIds.has(row.id)}
+                        onToggle={(id) => setSelectedIds((prev) => {
+                          const next = new Set(prev);
+                          if (next.has(id)) next.delete(id); else next.add(id);
+                          return next;
+                        })}
+                      />
                     ))}
                   </tbody>
                 </table>

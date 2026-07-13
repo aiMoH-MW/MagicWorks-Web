@@ -25,27 +25,38 @@ export async function POST(req: NextRequest) {
 
   let limit = 20;
   let offset = 0;
+  let specificIds: string[] | null = null;
   try {
     const body = await req.json().catch(() => ({}));
+    if (Array.isArray(body.ids) && body.ids.length > 0) specificIds = body.ids as string[];
     if (body.limit) limit = Number(body.limit);
     if (body.offset) offset = Number(body.offset);
   } catch { /* no body */ }
 
   const client = createServiceClient();
 
-  // Count total unscored
-  const { count: totalUnscored } = await client
-    .from("career_applications")
-    .select("id", { count: "exact", head: true })
-    .is("ai_score", null);
+  const SELECT_COLS = "id, job_title, job_slug, name, total_experience, relevant_experience, current_ctc, expected_ctc, phone, linkedin_url, portfolio_url, cover_letter, resume_url";
 
-  // Fetch a batch of unscored applications
-  const { data: apps, error } = await client
-    .from("career_applications")
-    .select("id, job_title, job_slug, name, total_experience, relevant_experience, current_ctc, expected_ctc, phone, linkedin_url, portfolio_url, cover_letter, resume_url")
-    .is("ai_score", null)
-    .order("created_at", { ascending: false })
-    .range(offset, offset + limit - 1);
+  // Count total unscored (only meaningful for batch mode)
+  const { count: totalUnscored } = specificIds
+    ? { count: specificIds.length }
+    : await client
+        .from("career_applications")
+        .select("id", { count: "exact", head: true })
+        .is("ai_score", null);
+
+  // Fetch records — by specific IDs or next unscored batch
+  const { data: apps, error } = specificIds
+    ? await client
+        .from("career_applications")
+        .select(SELECT_COLS)
+        .in("id", specificIds)
+    : await client
+        .from("career_applications")
+        .select(SELECT_COLS)
+        .is("ai_score", null)
+        .order("created_at", { ascending: false })
+        .range(offset, offset + limit - 1);
 
   if (error) {
     return NextResponse.json({ error: error.message }, { status: 500 });
