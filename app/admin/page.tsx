@@ -315,7 +315,7 @@ export default function AdminPage() {
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleteError, setDeleteError] = useState("");
   const [rescoring, setRescoring] = useState(false);
-  const [rescoreProgress, setRescoreProgress] = useState<{ scored: number; remaining: number } | null>(null);
+  const [rescoreProgress, setRescoreProgress] = useState<{ scored: number; remaining: number; skipped: number; failed: number } | null>(null);
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
@@ -379,16 +379,28 @@ export default function AdminPage() {
   async function handleRescoreSelected() {
     if (!selectedIds.size) return;
     setRescoring(true);
-    setRescoreProgress({ scored: 0, remaining: 0 });
+    const ids = [...selectedIds];
+    let totalScored = 0;
+    let totalSkipped = 0;
+    let totalFailed = 0;
+    setRescoreProgress({ scored: 0, remaining: ids.length, skipped: 0, failed: 0 });
     try {
-      const res = await fetch("/api/admin/rescore", {
-        method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
-        body: JSON.stringify({ ids: [...selectedIds] }),
-      });
-      if (res.ok) {
-        const json = await res.json();
-        setRescoreProgress({ scored: json.scored ?? 0, remaining: 0 });
+      // Score one at a time — avoids Vercel function timeout on large batches
+      for (let i = 0; i < ids.length; i++) {
+        const res = await fetch("/api/admin/rescore", {
+          method: "POST",
+          headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
+          body: JSON.stringify({ ids: [ids[i]] }),
+        });
+        if (res.ok) {
+          const json = await res.json();
+          totalScored  += (json.scored  as number) ?? 0;
+          totalSkipped += (json.skipped as number) ?? 0;
+          totalFailed  += (json.failed  as number) ?? 0;
+        } else {
+          totalFailed++;
+        }
+        setRescoreProgress({ scored: totalScored, remaining: ids.length - i - 1, skipped: totalSkipped, failed: totalFailed });
       }
       await fetchRows(tab, dateFrom, dateTo, sortDir);
       setSelectedIds(new Set());
@@ -399,8 +411,10 @@ export default function AdminPage() {
 
   async function handleRescore() {
     setRescoring(true);
-    setRescoreProgress({ scored: 0, remaining: 0 });
+    setRescoreProgress({ scored: 0, remaining: 0, skipped: 0, failed: 0 });
     let totalScored = 0;
+    let totalSkipped = 0;
+    let totalFailed = 0;
     try {
       for (;;) {
         const res = await fetch("/api/admin/rescore", {
@@ -410,10 +424,12 @@ export default function AdminPage() {
         });
         if (!res.ok) break;
         const json = await res.json();
-        const batchScored: number = json.scored ?? 0;
-        totalScored += batchScored;
+        const batchScored: number = (json.scored as number) ?? 0;
+        totalScored  += batchScored;
+        totalSkipped += (json.skipped as number) ?? 0;
+        totalFailed  += (json.failed  as number) ?? 0;
         const remaining: number = Math.max(0, (json.total_unscored ?? 0) - batchScored - (json.skipped ?? 0));
-        setRescoreProgress({ scored: totalScored, remaining });
+        setRescoreProgress({ scored: totalScored, remaining, skipped: totalSkipped, failed: totalFailed });
         if (((json.scored ?? 0) + (json.skipped ?? 0) + (json.failed ?? 0)) === 0) break;
       }
       await fetchRows(tab, dateFrom, dateTo, sortDir);
@@ -595,7 +611,9 @@ export default function AdminPage() {
                   <svg className="animate-spin" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M21 12a9 9 0 11-6.219-8.56"/>
                   </svg>
-                  {rescoreProgress ? `Scored ${rescoreProgress.scored} (${rescoreProgress.remaining} left)` : "Starting..."}
+                  {rescoreProgress
+                    ? `Scoring... ${rescoreProgress.scored} done, ${rescoreProgress.remaining} left${rescoreProgress.failed > 0 ? ` (${rescoreProgress.failed} failed)` : ""}`
+                    : "Starting..."}
                 </span>
               ) : selectedIds.size > 0 ? (
                 <button
@@ -615,7 +633,15 @@ export default function AdminPage() {
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 2a10 10 0 0 1 7.38 3.22"/><path d="M20.7 12.5a9 9 0 1 1-9-9"/><polyline points="22 4 22 10 16 10"/>
                   </svg>
-                  {rescoreProgress ? `Done (${rescoreProgress.scored} scored)` : "Score All"}
+                  {rescoreProgress
+                    ? rescoreProgress.scored > 0
+                      ? `Done (${rescoreProgress.scored} scored)`
+                      : rescoreProgress.skipped > 0
+                        ? `Key error? (${rescoreProgress.skipped} skipped)`
+                        : rescoreProgress.failed > 0
+                          ? `Failed (${rescoreProgress.failed} errors)`
+                          : "Score All"
+                    : "Score All"}
                 </button>
               )
             )}
