@@ -45,7 +45,7 @@ const pillars = [
 
 const stats = [
   { num: "17+", cap: "Years building for Indian businesses" },
-  { num: "75,000+", cap: "Qualified leads per year for one education client" },
+  { num: "50,000+", cap: "Qualified leads in 16 months for one education client" },
   { num: "4", cap: "Service pillars, one accountable team" },
   { num: "5", cap: "Working days to strategy and proposal" },
 ];
@@ -315,10 +315,10 @@ export default function HomePage() {
           <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-5 sm:p-12 grid md:grid-cols-[280px_1fr] gap-8 sm:gap-12 items-center">
             <div>
               <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(56px,8vw,84px)] text-[#2A1B5C] leading-[0.95]">
-                75,000+
+                50,000+
               </div>
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#3F3F4A] mt-3">
-                Qualified leads per year
+                Qualified leads in 16 months
               </p>
               <p className="text-[13px] mt-4">
                 <span className="text-[#5B3FBE] uppercase tracking-[0.06em] font-semibold text-[12px]">
@@ -346,10 +346,10 @@ export default function HomePage() {
                 ))}
               </div>
               <Link
-                href="/work"
+                href="/work/simplidistance-mba-enrollments"
                 className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
               >
-                See all case studies →
+                Read the full case study →
               </Link>
             </div>
           </div>
