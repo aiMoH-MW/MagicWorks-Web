@@ -19,9 +19,9 @@ const inter = Inter({
 const sourceSerif4 = Source_Serif_4({
   variable: "--font-head",
   subsets: ["latin"],
-  display: "swap",  // Renders fallback immediately → fast LCP; swaps when ready
-  preload: true,    // Only the weight used in above-fold headings
-  weight: ["700"],  // Bold only — "600" is semibold, not used in H1
+  display: "optional", // No swap reflow — uses fallback permanently if font isn't ready in time (fixes CLS)
+  preload: true,        // Only the weight used in above-fold headings
+  weight: ["700"],      // Bold only — "600" is semibold, not used in H1
 });
 
 export const metadata: Metadata = {
@@ -52,6 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@MagicWorks123",
     title: "MagicWorks · AI-First Digital Marketing Agency in Pune",
     description: "Human strategy, machine acceleration. Predictable revenue for ambitious Indian businesses.",
     images: ["/og-default.png"],
@@ -78,14 +79,16 @@ const organizationSchema = {
     "MagicWorks IT Solutions Pvt. Ltd. is an AI-first digital marketing agency based in Pune, India. Founded in 2009, the firm delivers digital marketing, web development, AI consultation, and marketplace platform consultation to businesses across education, real estate, manufacturing, and professional services sectors.",
   foundingDate: "2009",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 20 },
+  telephone: "+91-97645-66644",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Pune",
+    streetAddress: "Office 201, Vasant Bahawa, Bavdhan",
     addressLocality: "Pune",
     addressRegion: "Maharashtra",
     addressCountry: "IN",
-    postalCode: "411001",
+    postalCode: "411021",
   },
+  geo: { "@type": "GeoCoordinates", latitude: 18.5195, longitude: 73.7898 },
   areaServed: [
     { "@type": "Country", name: "India" },
     { "@type": "City", name: "Pune" },
@@ -166,8 +169,11 @@ const organizationSchema = {
     ],
   },
   sameAs: [
-    "https://linkedin.com/company/magicworks-it-solutions",
-    "https://magicworksitsolutions.com",
+    "https://www.linkedin.com/company/magicworks-it-solutions-private-limited/",
+    "https://www.facebook.com/Magicworksitsolutions/",
+    "https://twitter.com/MagicWorks123",
+    "https://www.youtube.com/@magicworksitsolutions",
+    "https://www.instagram.com/magicworks_it_solutions/",
   ],
 };
 
@@ -175,8 +181,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${sourceSerif4.variable} h-full antialiased`}>
       <head>
-        {/* Preload nav logo — critical LCP element, must fire before client JS hydrates */}
-        <link rel="preload" href="/logo-header.webp" as="image" type="image/webp" fetchPriority="high" />
+        {/* Preload nav logo — H1 text is the actual LCP element, so this no longer competes for high priority bandwidth */}
+        <link rel="preload" href="/logo-header.webp" as="image" type="image/webp" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}

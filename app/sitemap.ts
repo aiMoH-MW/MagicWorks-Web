@@ -72,10 +72,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]);
 
   const insightRoutes: MetadataRoute.Sitemap = insightSlugs.map(
-    (s: { slug: string }) => ({
+    (s: { slug: string; _updatedAt?: string }) => ({
       url: `${base}/blog/${s.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.7,
+      lastModified: s._updatedAt ? new Date(s._updatedAt) : undefined,
     })
   );
 
@@ -89,10 +90,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   const careerRoutes: MetadataRoute.Sitemap = jobs.map(
-    (j: { slug: { current: string } }) => ({
+    (j: { slug: { current: string }; _updatedAt?: string }) => ({
       url: `${base}/careers/${j.slug.current}`,
       changeFrequency: "weekly" as const,
       priority: 0.6,
+      lastModified: j._updatedAt ? new Date(j._updatedAt) : undefined,
     })
   );
 
@@ -106,15 +108,24 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   );
 
   const authorRoutes: MetadataRoute.Sitemap = teamMembers.map(
-    (m: { slug: string }) => ({
+    (m: { slug: string; _updatedAt?: string }) => ({
       url: `${base}/authors/${m.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      lastModified: m._updatedAt ? new Date(m._updatedAt) : undefined,
     })
   );
 
+  // Static routes have no per-page CMS date — stamp with build time so Google
+  // still receives a lastmod signal (better than none) for freshness.
+  const buildTime = new Date();
+  const staticRoutesWithDate: MetadataRoute.Sitemap = staticRoutes.map((r) => ({
+    ...r,
+    lastModified: buildTime,
+  }));
+
   return [
-    ...staticRoutes,
+    ...staticRoutesWithDate,
     ...insightRoutes,
     ...caseStudyRoutes,
     ...careerRoutes,

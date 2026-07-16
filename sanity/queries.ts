@@ -64,7 +64,7 @@ export async function getRelatedInsights(currentSlug: string, limit = 3) {
 
 export async function getInsightSlugs() {
   return client.fetch(
-    `*[_type == "insight"] { "slug": slug.current }`
+    `*[_type == "insight"] { "slug": slug.current, _updatedAt }`
   );
 }
 
@@ -121,7 +121,7 @@ export async function getCaseStudyBySlug(slug: string) {
 export async function getActiveJobOpenings() {
   return client.fetch(
     `*[_type == "jobOpening" && status == "active"] | order(type asc, postedAt desc) {
-      _id, title, slug, department, area, location, type, experience, salary, summary, postedAt
+      _id, title, slug, department, area, location, type, experience, salary, summary, postedAt, _updatedAt
     }`
   );
 }
@@ -175,6 +175,6 @@ export async function getTeamMembers() {
 
 export async function getTeamMemberSlugs() {
   return client.fetch(
-    `*[_type == "teamMember" && defined(slug.current)] { "slug": slug.current }`
+    `*[_type == "teamMember" && defined(slug.current)] { "slug": slug.current, _updatedAt }`
   );
 }

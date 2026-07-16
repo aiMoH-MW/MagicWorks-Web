@@ -80,24 +80,9 @@ const faq = [
   },
 ];
 
-const organizationSchema = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "@id": "https://magicworksitsolutions.com/#organization",
-  name: "MagicWorks IT Solutions Pvt. Ltd.",
-  url: "https://magicworksitsolutions.com",
-  logo: "https://magicworksitsolutions.com/logo.png",
-  foundingDate: "2009",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Pune",
-    addressRegion: "Maharashtra",
-    addressCountry: "IN",
-  },
-  sameAs: ["https://linkedin.com/company/magicworks-it-solutions"],
-  description:
-    "AI-first digital marketing agency in Pune. Digital marketing, web development, AI consultation, and platform consultation for ambitious Indian businesses.",
-};
+// Note: Organization schema is NOT duplicated here — it's defined once, globally,
+// in app/layout.tsx (@id: .../#organization). Defining it again on this page would
+// create a duplicate @id collision in the entity graph across every crawl.
 
 const webSiteSchema = {
   "@context": "https://schema.org",
@@ -142,10 +127,6 @@ const faqSchema = {
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteSchema) }}

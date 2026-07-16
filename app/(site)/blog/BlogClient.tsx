@@ -73,7 +73,7 @@ export default function BlogClient({ articles }: { articles: Article[] }) {
         <p className="text-[#9A9AA8] text-[15px]">No articles in this category yet.</p>
       ) : (
         <div className="grid md:grid-cols-3 gap-8">
-          {filtered.map((a) => {
+          {filtered.map((a, index) => {
             const thumb = a.coverImage ?? a.externalCoverImageUrl;
             return (
               <Link
@@ -89,6 +89,7 @@ export default function BlogClient({ articles }: { articles: Article[] }) {
                       fill
                       className="object-cover"
                       sizes="(max-width: 768px) 100vw, 33vw"
+                      priority={index < 3}
                     />
                   </div>
                 )}
