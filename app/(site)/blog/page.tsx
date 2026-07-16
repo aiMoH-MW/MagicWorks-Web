@@ -22,12 +22,36 @@ const collectionPageSchema = {
   about: { "@id": "https://magicworksitsolutions.com/#organization" },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://magicworksitsolutions.com/blog" },
+  ],
+};
+
 export default async function BlogPage() {
   const articles = await getAllInsights().catch(() => []);
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: articles.slice(0, 10).map((a: { slug: { current: string }; title: string }, i: number) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://magicworksitsolutions.com/blog/${a.slug.current}`,
+      name: a.title,
+    })),
+  };
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {articles.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      )}
 
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">

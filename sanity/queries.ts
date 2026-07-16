@@ -9,7 +9,7 @@ export async function getAllInsights() {
         _id, title, slug, excerpt, publishedAt, pillar, isGated,
         "categories": coalesce(categories, select(defined(category) => [category], [])),
         externalCoverImageUrl,
-        "author": author->{ name, role, "photo": photo.asset->url },
+        "author": author->{ name, role, "photo": photo.asset->url, "slug": slug.current },
         "coverImage": coverImage.asset->url,
         "coverImageAlt": coverImage.alt
       }`

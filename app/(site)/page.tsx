@@ -124,6 +124,19 @@ const faqSchema = {
   })),
 };
 
+const howToSchema = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How MagicWorks works with a new client",
+  description: "The five-step engagement process MagicWorks follows with every new client, from first call to ongoing reporting.",
+  step: steps.map((s) => ({
+    "@type": "HowToStep",
+    position: Number(s.n),
+    name: s.t,
+    text: s.d,
+  })),
+};
+
 export default function HomePage() {
   return (
     <>
@@ -134,6 +147,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
       />
       <script
         type="application/ld+json"

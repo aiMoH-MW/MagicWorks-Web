@@ -23,6 +23,15 @@ const collectionPageSchema = {
   about: { "@id": "https://magicworksitsolutions.com/#organization" },
 };
 
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "Client Work", item: "https://magicworksitsolutions.com/work" },
+  ],
+};
+
 type CaseStudy = {
   _id: string;
   slug: { current: string };
@@ -43,9 +52,24 @@ type CaseStudy = {
 export default async function WorkPage() {
   const studies = (await getAllCaseStudies().catch(() => [])) as CaseStudy[];
 
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: studies.map((s, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://magicworksitsolutions.com/work/${s.slug.current}`,
+      name: s.title,
+    })),
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      {studies.length > 0 && (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+      )}
 
       {/* ── HERO ───────────────────────────────────────────────────── */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">

@@ -13,15 +13,15 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "optional",
-  preload: false, // Body font — no preload needed; falls back to system sans-serif instantly
+  preload: false,
 });
 
 const sourceSerif4 = Source_Serif_4({
   variable: "--font-head",
   subsets: ["latin"],
-  display: "optional", // No swap reflow — uses fallback permanently if font isn't ready in time (fixes CLS)
-  preload: true,        // Only the weight used in above-fold headings
-  weight: ["700"],      // Bold only — "600" is semibold, not used in H1
+  display: "optional",
+  preload: true,
+  weight: ["700"],
 });
 
 export const metadata: Metadata = {
@@ -181,13 +181,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en" className={`${inter.variable} ${sourceSerif4.variable} h-full antialiased`}>
       <head>
-        {/* Preload nav logo — H1 text is the actual LCP element, so this no longer competes for high priority bandwidth */}
         <link rel="preload" href="/logo-header.webp" as="image" type="image/webp" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://cdn.sanity.io" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://connect.facebook.net" />
+        <link rel="dns-prefetch" href="https://www.magicflowai.io" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
-        {/* Google Consent Mode v2 — defaults must fire BEFORE GTM loads */}
         <Script
           id="consent-defaults"
           strategy="beforeInteractive"
@@ -216,7 +219,6 @@ try{
         />
       </head>
       <body className="min-h-full flex flex-col bg-[#F7F3EA] text-[#1A1A22]">
-        {/* GTM noscript fallback */}
         <noscript>
           <iframe
             src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
@@ -229,7 +231,6 @@ try{
         <Analytics />
         <ChatWidget />
         <CookieBanner />
-        {/* GTM — deferred until first user interaction to eliminate TBT from tracking scripts */}
         <LazyGTM />
       </body>
     </html>
