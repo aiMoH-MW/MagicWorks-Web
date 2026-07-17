@@ -47,7 +47,7 @@ export async function GET(req: NextRequest) {
       const { data, error } = await applyFilters(
         client.from("leads").select("*")
           .not("source_page", "ilike", "playbook-%")
-          .in("pillar", ["Digital Marketing", "Web Development", "Not sure yet"]),
+          .in("pillar", ["Digital Marketing", "Web Development", "Brand, Research & Publishing", "Not sure yet"]),
         from, to, asc
       );
       if (error) throw error;
