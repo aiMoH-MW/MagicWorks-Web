@@ -41,7 +41,6 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${base}/services/brand-research-publishing/playbook-production`,          changeFrequency: "monthly", priority: 0.75 },
   { url: `${base}/services/brand-research-publishing/case-study-production`,        changeFrequency: "monthly", priority: 0.7 },
   { url: `${base}/services/brand-research-publishing/video-retainer`,               changeFrequency: "monthly", priority: 0.85 },
-  { url: `${base}/services/brand-research-publishing/website-content-writing`,      changeFrequency: "monthly", priority: 0.7 },
   { url: `${base}/industries`,                                                   changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/industries/education`,                                         changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/industries/real-estate`,                                       changeFrequency: "monthly", priority: 0.8 },

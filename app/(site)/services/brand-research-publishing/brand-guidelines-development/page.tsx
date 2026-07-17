@@ -187,7 +187,7 @@ export default function BrandGuidelinesDevelopmentPage() {
               </div>
               <ul className="space-y-0">
                 {[
-                  "Annual revenue of ₹25 Cr or more, or a referral from an existing MagicWorks client.",
+                  "Annual revenue of ₹10 Cr or more, or a referral from an existing MagicWorks client.",
                   "Going through a rebrand, a repositioning, or a growth phase that has outgrown existing assets.",
                   "Launching a new business line or subsidiary that needs its own coherent identity.",
                   "A leadership team that has noticed brand inconsistency is costing credibility, not just aesthetics."

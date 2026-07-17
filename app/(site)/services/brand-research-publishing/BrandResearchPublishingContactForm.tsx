@@ -12,7 +12,6 @@ const services = [
   "Playbook Production",
   "Case Study Production",
   "Video Retainer",
-  "Website Content Writing",
   "Not sure yet",
 ];
 

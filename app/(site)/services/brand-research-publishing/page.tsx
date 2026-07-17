@@ -46,12 +46,6 @@ const services = [
     desc: "Recurring monthly video production for established brands: training, explainer, A-roll and B-roll, and podcast formats.",
     flagship: false,
   },
-  {
-    slug: "website-content-writing",
-    name: "Website Content Writing",
-    desc: "Structured content writing for the pages of a new website build. Bundled as a Pillar 02 add-on only, not sold standalone.",
-    flagship: false,
-  },
 ];
 
 const faqSchema = {
@@ -66,7 +60,7 @@ const faqSchema = {
     {
       "@type": "Question",
       name: "What is the Brand Audit, and is it really free?",
-      acceptedAnswer: { "@type": "Answer", text: "Yes. The Brand Audit is a free, written PDF report identifying inconsistency in your brand assets across your website, decks, social, and collateral. It is offered to qualified prospects (₹25 Cr+ annual revenue, or by referral) and delivered as a report only, not a live presentation." },
+      acceptedAnswer: { "@type": "Answer", text: "Yes. The Brand Audit is a free, written PDF report identifying inconsistency in your brand assets across your website, decks, social, and collateral. It is offered to qualified prospects (₹10 Cr+ annual revenue, or by referral) and delivered as a report only, not a live presentation." },
     },
     {
       "@type": "Question",
@@ -89,7 +83,7 @@ const serviceSchema = {
   serviceType: "Brand Strategy and Content Production",
   category: "Brand and Creative Services",
   description:
-    "Durable creative assets: Brand Guidelines Development and Correction, Whitepaper Production, Playbook Production, Case Study Production, Video Retainer, and Website Content Writing.",
+    "Durable creative assets: Brand Guidelines Development and Correction, Whitepaper Production, Playbook Production, Case Study Production, and Video Retainer.",
   url: "https://magicworksitsolutions.com/services/brand-research-publishing",
   provider: {
     "@type": "Organization",
@@ -100,7 +94,7 @@ const serviceSchema = {
   areaServed: { "@type": "Country", name: "India" },
   audience: {
     "@type": "Audience",
-    audienceType: "Marketing heads, brand heads, founders, and CEOs at businesses with ₹25 Cr+ annual revenue seeking durable brand assets and published thought leadership.",
+    audienceType: "Marketing heads, brand heads, founders, and CEOs at businesses with ₹10 Cr+ annual revenue seeking durable brand assets and published thought leadership.",
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -185,7 +179,7 @@ export default function BrandResearchPublishingPage() {
             { label: "Pillar type", val: "Delivery, sibling to Pillars 01 & 02" },
             { label: "Hero services", val: "Guidelines, Whitepaper, Video Retainer" },
             { label: "Pricing", val: "Fixed-fee project or monthly retainer" },
-            { label: "Built for", val: "₹25 Cr+ revenue, marketing & brand heads" },
+            { label: "Built for", val: "₹10 Cr+ revenue, marketing & brand heads" },
           ].map((item) => (
             <div key={item.label}>
               <p className="text-[11px] uppercase tracking-[0.14em] text-[#9A9AA8] mb-1">{item.label}</p>
@@ -201,10 +195,10 @@ export default function BrandResearchPublishingPage() {
           <div className="max-w-[680px] mb-12">
             <p className="eyebrow text-[#5B3FBE] mb-4">What is in scope</p>
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C] mb-3">
-              Seven services. Three hero services, four supporting or bundled.
+              Six services. Three hero services, three supporting or bundled.
             </h2>
             <p className="text-[16px] text-[#3F3F4A]">
-              Each hero service is sellable on its own as a project or retainer. Case Study Production and Website Content Writing are bundled add-ons, not standalone lines, listed here for completeness.
+              Each hero service is sellable on its own as a project or retainer. Case Study Production is a bundled add-on, listed here for completeness. Website Content Writing is delivered quietly inside Web Development engagements and is not marketed as a separate line.
             </p>
           </div>
 
@@ -216,7 +210,7 @@ export default function BrandResearchPublishingPage() {
                 Brand Audit
               </h3>
               <p className="text-[15px] leading-[1.6] text-[#C8B8FF] max-w-[620px]">
-                A free, written PDF report identifying inconsistency in your brand assets across website, decks, social, and collateral. Delivered as a report only, not a live presentation. Offered to prospects who meet a size bar (₹25 Cr+ revenue) or come by referral.
+                A free, written PDF report identifying inconsistency in your brand assets across website, decks, social, and collateral. Delivered as a report only, not a live presentation. Offered to prospects who meet a size bar (₹10 Cr+ revenue) or come by referral.
               </p>
             </div>
             <div className="flex-shrink-0">
@@ -285,7 +279,7 @@ export default function BrandResearchPublishingPage() {
               </div>
               <ul className="space-y-0">
                 {[
-                  "Annual revenue of ₹25 Cr or more, or a referral from an existing MagicWorks client.",
+                  "Annual revenue of ₹10 Cr or more, or a referral from an existing MagicWorks client.",
                   "Buyer is a marketing head, brand head, founder, or CEO with authority to invest in durable assets.",
                   "Trigger is a rebrand, repositioning, outgrown assets, a new business line, or a thought-leadership goal.",
                   "In Education, Real Estate, or Manufacturing for retainer work; industry-agnostic for standalone brand and whitepaper projects.",
