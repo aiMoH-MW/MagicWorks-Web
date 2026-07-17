@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 
+// Always execute fresh — this endpoint serves live admin data and must never
+// be cached at the CDN/edge layer (was previously served stale, e.g. new
+// leads not appearing until a cache-busting request forced revalidation).
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "magicworks-admin-2026";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -10,10 +16,17 @@ function applyFilters(q: any, from: string | null, to: string | null, asc: boole
   return q.order("created_at", { ascending: asc });
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function noStoreJson(body: any, init?: number | ResponseInit) {
+  const res = NextResponse.json(body, typeof init === "number" ? { status: init } : init);
+  res.headers.set("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0");
+  return res;
+}
+
 export async function GET(req: NextRequest) {
   const auth = req.headers.get("x-admin-secret");
   if (auth !== ADMIN_SECRET) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return noStoreJson({ error: "Unauthorized" }, 401);
   }
 
   const sp   = req.nextUrl.searchParams;
@@ -30,7 +43,7 @@ export async function GET(req: NextRequest) {
         from, to, asc
       );
       if (error) throw error;
-      return NextResponse.json({ data });
+      return noStoreJson({ data });
     }
 
     if (tab === "whitepaper") {
@@ -40,7 +53,7 @@ export async function GET(req: NextRequest) {
         .select("*")
         .order("id", { ascending: asc });
       if (error) throw error;
-      return NextResponse.json({ data });
+      return noStoreJson({ data });
     }
 
     if (tab === "leads") {
@@ -51,7 +64,7 @@ export async function GET(req: NextRequest) {
         from, to, asc
       );
       if (error) throw error;
-      return NextResponse.json({ data });
+      return noStoreJson({ data });
     }
 
     if (tab === "consultation") {
@@ -61,7 +74,7 @@ export async function GET(req: NextRequest) {
         from, to, asc
       );
       if (error) throw error;
-      return NextResponse.json({ data });
+      return noStoreJson({ data });
     }
 
     if (tab === "playbooks") {
@@ -70,7 +83,7 @@ export async function GET(req: NextRequest) {
         from, to, asc
       );
       if (error) throw error;
-      return NextResponse.json({ data });
+      return noStoreJson({ data });
     }
 
     if (tab === "careers") {
@@ -94,12 +107,12 @@ export async function GET(req: NextRequest) {
         })
       );
 
-      return NextResponse.json({ data: rows });
+      return noStoreJson({ data: rows });
     }
 
-    return NextResponse.json({ data: [] });
+    return noStoreJson({ data: [] });
   } catch (err) {
     console.error(err);
-    return NextResponse.json({ error: "Failed to fetch data" }, { status: 500 });
+    return noStoreJson({ error: "Failed to fetch data" }, 500);
   }
 }
