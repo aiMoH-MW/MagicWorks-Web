@@ -8,6 +8,7 @@ const serviceLinks = [
   { label: "Web Development", href: "/services/web-development" },
   { label: "AI Consultation", href: "/services/ai-consultation" },
   { label: "Platform Consultation", href: "/services/platform-consultation" },
+  { label: "Brand, Research & Publishing", href: "/services/brand-research-publishing" },
 ];
 
 const industryLinks = [

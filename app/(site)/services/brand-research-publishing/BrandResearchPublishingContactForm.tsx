@@ -4,31 +4,32 @@ import { useState } from "react";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
-const pillars = [
-  "Digital Marketing",
-  "Web Development",
-  "AI Consultation",
-  "Platform Consultation",
-  "Brand, Research & Publishing",
+const services = [
+  "Brand Audit (free)",
+  "Brand Guidelines Development",
+  "Brand Guidelines Correction",
+  "Whitepaper Production",
+  "Playbook Production",
+  "Case Study Production",
+  "Video Retainer",
+  "Website Content Writing",
   "Not sure yet",
 ];
 
-export default function ContactForm() {
+export default function BrandResearchPublishingContactForm() {
   const [state, setState] = useState<FormState>("idle");
   const [form, setForm] = useState({
     name: "",
     email: "",
     phone: "",
     company: "",
-    pillar: "",
+    service_interest: "",
     message: "",
     _gotcha: "",
   });
 
   function handleChange(
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
@@ -37,10 +38,23 @@ export default function ContactForm() {
     e.preventDefault();
     setState("submitting");
     try {
+      const parts: string[] = [];
+      if (form.service_interest) parts.push(`Service: ${form.service_interest}`);
+      if (form.message) parts.push(`\n${form.message}`);
+
       const res = await fetch("/api/leads", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...form, source_page: "/contact" }),
+        body: JSON.stringify({
+          name: form.name,
+          email: form.email,
+          phone: form.phone,
+          company: form.company,
+          pillar: "Brand, Research & Publishing",
+          source_page: "/services/brand-research-publishing",
+          message: parts.join("\n"),
+          _gotcha: form._gotcha,
+        }),
       });
       if (!res.ok) throw new Error("Submit failed");
       setState("success");
@@ -52,13 +66,12 @@ export default function ContactForm() {
   if (state === "success") {
     return (
       <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-10 text-center">
-        <div className="text-[40px] mb-4">✓</div>
+        <div className="text-[40px] mb-4">&#10003;</div>
         <h3 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#2A1B5C] mb-3">
-          Thank you. Message received.
+          Thank you. We&apos;ll be in touch.
         </h3>
         <p className="text-[15px] text-[#3F3F4A]">
-          A team member will reach out within one working day to schedule your
-          discovery call.
+          A team member will reach out within one working day to confirm the right starting point.
         </p>
       </div>
     );
@@ -71,14 +84,11 @@ export default function ContactForm() {
     >
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label
-            htmlFor="name"
-            className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1"
-          >
+          <label htmlFor="brp-name" className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
             Name *
           </label>
           <input
-            id="name"
+            id="brp-name"
             name="name"
             type="text"
             required
@@ -89,14 +99,11 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label
-            htmlFor="email"
-            className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1"
-          >
+          <label htmlFor="brp-email" className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
             Email *
           </label>
           <input
-            id="email"
+            id="brp-email"
             name="email"
             type="email"
             required
@@ -110,14 +117,11 @@ export default function ContactForm() {
 
       <div className="grid sm:grid-cols-2 gap-5">
         <div>
-          <label
-            htmlFor="phone"
-            className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1"
-          >
+          <label htmlFor="brp-phone" className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
             Phone
           </label>
           <input
-            id="phone"
+            id="brp-phone"
             name="phone"
             type="tel"
             value={form.phone}
@@ -127,14 +131,11 @@ export default function ContactForm() {
           />
         </div>
         <div>
-          <label
-            htmlFor="company"
-            className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1"
-          >
+          <label htmlFor="brp-company" className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
             Company
           </label>
           <input
-            id="company"
+            id="brp-company"
             name="company"
             type="text"
             value={form.company}
@@ -146,47 +147,39 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label
-          htmlFor="pillar"
-          className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1"
-        >
+        <label htmlFor="brp-service" className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
           What are you most interested in?
         </label>
         <select
-          id="pillar"
-          name="pillar"
-          value={form.pillar}
+          id="brp-service"
+          name="service_interest"
+          value={form.service_interest}
           onChange={handleChange}
           className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[15px] text-[#1A1A22] bg-white focus:outline-none focus:border-[#5B3FBE] transition-colors"
         >
           <option value="">Select a service</option>
-          {pillars.map((p) => (
-            <option key={p} value={p}>
-              {p}
-            </option>
+          {services.map((s) => (
+            <option key={s} value={s}>{s}</option>
           ))}
         </select>
       </div>
 
       <div>
-        <label
-          htmlFor="message"
-          className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1"
-        >
-          Tell us about your goals
+        <label htmlFor="brp-message" className="block text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mb-1">
+          Tell us a little about it
         </label>
         <textarea
-          id="message"
+          id="brp-message"
           name="message"
           rows={4}
           value={form.message}
           onChange={handleChange}
           className="w-full border border-[#D8D8DE] rounded-[6px] px-4 py-3 text-[15px] text-[#1A1A22] resize-none focus:outline-none focus:border-[#5B3FBE] transition-colors"
-          placeholder="What are you trying to achieve? What has or hasn't worked so far?"
+          placeholder="What prompted the enquiry? A rebrand, a launch, an inconsistency you have noticed?"
         />
       </div>
 
-      {/* Honeypot — hidden from humans, bots fill it */}
+      {/* Honeypot: hidden from humans, bots fill it */}
       <input
         name="_gotcha"
         type="text"
@@ -209,7 +202,7 @@ export default function ContactForm() {
         disabled={state === "submitting"}
         className="w-full bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] px-8 py-[14px] rounded-full cursor-pointer border-none hover:scale-[1.01] transition-transform disabled:opacity-60"
       >
-        {state === "submitting" ? "Sending…" : "Send message"}
+        {state === "submitting" ? "Sending..." : "Send enquiry"}
       </button>
 
       <p className="text-[12px] text-[#9A9AA8] text-center">

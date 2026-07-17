@@ -41,12 +41,20 @@ const pillars = [
     body: "Founder-led judgment for portal and platform builders. Independent advice, no bundling, no conflict of interest.",
     href: "/services/platform-consultation",
   },
+  {
+    num: "05",
+    type: "execution",
+    label: "Execution",
+    title: "Brand, Research & Publishing",
+    body: "Durable creative assets your team keeps using: brand guidelines, whitepapers and playbooks, and recurring video production. Delivery, not advisory.",
+    href: "/services/brand-research-publishing",
+  },
 ];
 
 const stats = [
   { num: "17+", cap: "Years building for Indian businesses" },
   { num: "50,000+", cap: "Qualified leads in 16 months for one education client" },
-  { num: "4", cap: "Service pillars, one accountable team" },
+  { num: "5", cap: "Service pillars, one accountable team" },
   { num: "5", cap: "Working days to strategy and proposal" },
 ];
 
@@ -68,7 +76,7 @@ const industries = [
 const faq = [
   {
     q: "What does MagicWorks do?",
-    a: "MagicWorks is an AI-first digital marketing agency in Pune. We offer four services: digital marketing, web development, AI consultation, and marketplace and platform consultation, for ambitious Indian businesses.",
+    a: "MagicWorks is an AI-first digital marketing agency in Pune. We offer five services: digital marketing, web development, AI consultation, marketplace and platform consultation, and brand, research and publishing, for ambitious Indian businesses.",
   },
   {
     q: "Where is MagicWorks based?",
@@ -91,7 +99,7 @@ const webSiteSchema = {
   name: "MagicWorks IT Solutions",
   url: "https://magicworksitsolutions.com",
   description:
-    "AI-first digital marketing agency in Pune. Digital marketing, web development, AI consultation, and platform consultation for ambitious Indian businesses.",
+    "AI-first digital marketing agency in Pune. Digital marketing, web development, AI consultation, platform consultation, and brand, research and publishing for ambitious Indian businesses.",
   publisher: { "@id": "https://magicworksitsolutions.com/#organization" },
   potentialAction: {
     "@type": "SearchAction",
@@ -136,6 +144,39 @@ const howToSchema = {
     text: s.d,
   })),
 };
+
+function PillarCard({ p }: { p: (typeof pillars)[number] }) {
+  return (
+    <div
+      className={`bg-white border border-[#D8D8DE] rounded-[10px] p-8 relative transition-all hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)] ${
+        p.type === "execution"
+          ? "border-t-[3px] border-t-[#5B3FBE]"
+          : "border-t-[3px] border-t-[#D4A537]"
+      }`}
+    >
+      <span
+        className={`absolute top-8 right-8 text-[10px] font-bold uppercase tracking-[0.12em] ${
+          p.type === "execution" ? "text-[#5B3FBE]" : "text-[#9a7b1f]"
+        }`}
+      >
+        {p.label}
+      </span>
+      <p className="font-[family-name:var(--font-head)] font-bold text-[14px] text-[#9A9AA8] tracking-[0.1em]">
+        {p.num}
+      </p>
+      <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mt-1 mb-3">
+        {p.title}
+      </h3>
+      <p className="text-[15px] text-[#3F3F4A] mb-6">{p.body}</p>
+      <Link
+        href={p.href}
+        className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
+      >
+        Learn more →
+      </Link>
+    </div>
+  );
+}
 
 export default function HomePage() {
   return (
@@ -187,7 +228,7 @@ export default function HomePage() {
           </h1>
           <p className="text-[18px] leading-[1.55] text-[#C8B8FF] max-w-[620px] mt-6 mb-10">
             We turn traffic, leads, and operations into predictable revenue for
-            ambitious Indian businesses. Four service pillars, one team, built
+            ambitious Indian businesses. Five service pillars, one team, built
             to compound over time.
           </p>
           <div className="flex gap-4 flex-wrap items-center">
@@ -232,48 +273,26 @@ export default function HomePage() {
           <div className="max-w-[680px] mb-12">
             <hr className="gold-rule mb-6" />
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(24px,3.4vw,30px)] text-[#2A1B5C] mb-3">
-              Four pillars. Two that deliver, two that advise.
+              Five pillars. Three that deliver, two that advise.
             </h2>
             <p className="text-[16px] text-[#3F3F4A]">
-              Digital Marketing and Web Development produce work you can buy as a
-              deliverable. AI Consultation and Platform Consultation produce
-              judgment: we advise and design the roadmap, and you stay free to
-              choose who builds it. The boundary is deliberate, and it keeps our
-              advice honest.
+              Digital Marketing, Web Development, and Brand, Research &amp;
+              Publishing produce work you can buy as a deliverable. AI
+              Consultation and Platform Consultation produce judgment: we
+              advise and design the roadmap, and you stay free to choose who
+              builds it. The boundary is deliberate, and it keeps our advice
+              honest.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {pillars.map((p) => (
-              <div
-                key={p.num}
-                className={`bg-white border border-[#D8D8DE] rounded-[10px] p-8 relative transition-all hover:-translate-y-[3px] hover:shadow-[0_14px_40px_rgba(42,27,92,0.10)] ${
-                  p.type === "execution"
-                    ? "border-t-[3px] border-t-[#5B3FBE]"
-                    : "border-t-[3px] border-t-[#D4A537]"
-                }`}
-              >
-                <span
-                  className={`absolute top-8 right-8 text-[10px] font-bold uppercase tracking-[0.12em] ${
-                    p.type === "execution" ? "text-[#5B3FBE]" : "text-[#9a7b1f]"
-                  }`}
-                >
-                  {p.label}
-                </span>
-                <p className="font-[family-name:var(--font-head)] font-bold text-[14px] text-[#9A9AA8] tracking-[0.1em]">
-                  {p.num}
-                </p>
-                <h3 className="font-[family-name:var(--font-head)] font-bold text-[20px] text-[#2A1B5C] mt-1 mb-3">
-                  {p.title}
-                </h3>
-                <p className="text-[15px] text-[#3F3F4A] mb-6">{p.body}</p>
-                <Link
-                  href={p.href}
-                  className="text-[#5B3FBE] font-bold text-[13px] uppercase tracking-[0.06em] no-underline hover:underline"
-                >
-                  Learn more →
-                </Link>
-              </div>
+            {pillars.slice(0, 4).map((p) => (
+              <PillarCard key={p.num} p={p} />
             ))}
+          </div>
+          <div className="mt-6 flex justify-center">
+            <div className="w-full md:max-w-[calc(50%-12px)]">
+              <PillarCard p={pillars[4]} />
+            </div>
           </div>
         </div>
       </section>

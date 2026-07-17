@@ -76,6 +76,7 @@ export const caseStudy = defineType({
           { title: "Web Development", value: "web-development" },
           { title: "AI Consultation", value: "ai-consultation" },
           { title: "Platform Consultation", value: "platform-consultation" },
+          { title: "Brand, Research & Publishing", value: "brand-research-publishing" },
         ],
       },
     }),
