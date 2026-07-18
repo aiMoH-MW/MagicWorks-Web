@@ -61,6 +61,21 @@ body {
   scrollbar-gutter: stable; /* reserves scrollbar space so page doesn't shift when it appears */
 }
 
+/* MagicFlow AI chat widget (injected by third-party embed script into <body>
+   as a position:fixed iframe). The vendor script resizes this iframe's box
+   directly (e.g. collapsed bubble -> open panel) by mutating width/height/top
+   via inline styles, which the browser renders as an instant jump. That jump
+   is exactly what the Layout Instability API penalizes as CLS — confirmed via
+   live PerformanceObserver capture showing this iframe as the shift source on
+   both the homepage and /careers. Forcing a smooth transition on the box
+   properties the vendor mutates turns the instant jump into a short animation,
+   removing the abrupt visual shift real (especially mobile) visitors see and
+   that CrUX/GSC field data measures as poor CLS site-wide. This does not touch
+   the widget's own functionality — only how its outer box animates. */
+body > iframe[style] {
+  transition: width 0.25s ease-out, height 0.25s ease-out, top 0.25s ease-out, left 0.25s ease-out !important;
+}
+
 /* Cookie banner slide-up */
 @keyframes mw-slide-up {
   from { transform: translateY(100%); }
