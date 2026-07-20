@@ -2,6 +2,7 @@ import { NextRequest, NextResponse, after } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 import { scoreApplication } from "@/lib/gemini-score";
+import { getJobOpeningBySlug } from "@/sanity/queries";
 
 const HR_EMAIL = "careers@magicworksitsolutions.com";
 const RESUME_BUCKET = "resumes";
@@ -66,6 +67,13 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name, email, and job are required" }, { status: 400 });
     }
 
+    // Resume is required — the form already enforces this client-side, but that
+    // is trivially bypassable (direct API calls, JS disabled), so enforce it
+    // here too. This is what was letting resume-less applications through.
+    if (!resumeFile || resumeFile.size === 0) {
+      return NextResponse.json({ error: "A resume upload is required" }, { status: 400 });
+    }
+
     // ── Upload resume to Supabase Storage ─────────────────────────────────────
     const uploaded = resumeFile ? await uploadResume(resumeFile, job_slug, name) : null;
     const resume_path = uploaded?.path ?? null;
@@ -112,9 +120,11 @@ export async function POST(req: NextRequest) {
       const scoringMime   = resumeFile?.type ?? null;
       after(async () => {
         try {
+          const jobOpening = await getJobOpeningBySlug(job_slug).catch(() => null);
           const score = await scoreApplication({
             job_title:        job_title || job_slug,
             job_slug,
+            job_salary_range: jobOpening?.salary ?? null,
             name,
             total_experience,
             relevant_experience,

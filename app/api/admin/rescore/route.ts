@@ -13,6 +13,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { scoreApplication } from "@/lib/gemini-score";
+import { getJobOpeningBySlug } from "@/sanity/queries";
 
 const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "magicworks-admin-2026";
 const RESUME_BUCKET = "resumes";
@@ -67,6 +68,18 @@ export async function POST(req: NextRequest) {
   let failed = 0;
   let lastError = "";
 
+  // Cache job-salary lookups per unique job_slug so a batch of applications
+  // for the same role doesn't hit Sanity once per application.
+  const salaryCache = new Map<string, string | null>();
+  async function getSalaryForSlug(slug: string | null | undefined): Promise<string | null> {
+    if (!slug) return null;
+    if (salaryCache.has(slug)) return salaryCache.get(slug)!;
+    const job = await getJobOpeningBySlug(slug).catch(() => null);
+    const salary = job?.salary ?? null;
+    salaryCache.set(slug, salary);
+    return salary;
+  }
+
   for (const app of (apps ?? [])) {
     try {
       // Download resume from Supabase Storage if path exists
@@ -90,9 +103,12 @@ export async function POST(req: NextRequest) {
         }
       }
 
+      const job_salary_range = await getSalaryForSlug(app.job_slug);
+
       const score = await scoreApplication({
         job_title:          app.job_title || app.job_slug || "Unknown Role",
         job_slug:           app.job_slug || "",
+        job_salary_range,
         name:               app.name,
         total_experience:   app.total_experience,
         relevant_experience: app.relevant_experience,
