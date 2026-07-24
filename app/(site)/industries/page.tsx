@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "MagicWorks works deeply in education, real estate, manufacturing, and professional services. See how we apply our four service pillars across each sector.",
   alternates: { canonical: "/industries" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/industries",
+    title: "Industries | MagicWorks",
+    description:
+      "MagicWorks works deeply in education, real estate, manufacturing, and professional services. See how we apply our service pillars across each sector.",
+  },
 };
 
 const industries = [

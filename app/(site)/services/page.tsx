@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "Five service pillars: Digital Marketing, Web Development, AI Consultation, Marketplace & Platform Consultation, and Brand, Research & Publishing. Three that deliver, two that advise.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/services",
+    title: "Digital Marketing, Web, AI & Brand Services | MagicWorks",
+    description:
+      "Five service pillars: Digital Marketing, Web Development, AI Consultation, Marketplace & Platform Consultation, and Brand, Research & Publishing.",
+  },
 };
 
 const pillars = [

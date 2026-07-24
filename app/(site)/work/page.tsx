@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   description:
     "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
   alternates: { canonical: "/work" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/work",
+    title: "Client Work & Case Studies | MagicWorks",
+    description:
+      "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
+  },
 };
 
 export const revalidate = 300; // ISR: rebuild at most every 5 minutes

@@ -8,6 +8,12 @@ export const metadata: Metadata = {
   description:
     "Practical thinking on digital marketing, AI, web development, and business growth from the MagicWorks team.",
   alternates: { canonical: "/insights" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/insights",
+    title: "Insights | MagicWorks",
+    description:
+      "Practical thinking on digital marketing, AI, web development, and business growth from the MagicWorks team.",
+  },
 };
 
 export const revalidate = 300; // ISR: rebuild at most every 5 minutes

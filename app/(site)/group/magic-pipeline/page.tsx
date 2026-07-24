@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "Magic Pipeline is a SaaS AI CRM and sales pipeline product from the MagicWorks Group. Part of the MagicWorks family.",
   alternates: { canonical: "/group/magic-pipeline" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/group/magic-pipeline",
+    title: "Magic Pipeline: CRM and Revenue Ops | MagicWorks",
+    description:
+      "Magic Pipeline is a SaaS AI CRM and sales pipeline product from the MagicWorks Group. Part of the MagicWorks family.",
+  },
 };
 
 const softwareSchema = {

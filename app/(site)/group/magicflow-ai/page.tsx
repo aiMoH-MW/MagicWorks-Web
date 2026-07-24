@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "MagicFlow AI is an AI product from the MagicWorks Group, a SaaS chatbot and automation platform for businesses. Part of the MagicWorks family.",
   alternates: { canonical: "/group/magicflow-ai" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/group/magicflow-ai",
+    title: "MagicFlow AI: Lead Capture and Automation | MagicWorks",
+    description:
+      "MagicFlow AI is an AI product from the MagicWorks Group, a SaaS chatbot and automation platform for businesses.",
+  },
 };
 
 const softwareSchema = {

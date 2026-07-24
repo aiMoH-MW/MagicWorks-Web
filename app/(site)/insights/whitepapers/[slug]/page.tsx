@@ -71,15 +71,78 @@ export async function generateMetadata(props: { params: Promise<{ slug: string }
   };
 }
 
+// "May 2026" -> "2026-05-01" (only month/year is tracked, so day is approximated)
+function toIsoDate(monthYear: string): string {
+  const months = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const [month, year] = monthYear.split(" ");
+  const mi = months.indexOf(month);
+  if (mi === -1 || !year) return monthYear;
+  return `${year}-${String(mi + 1).padStart(2, "0")}-01`;
+}
+
+// Reference the single canonical Organization entity defined in app/layout.tsx
+// rather than redeclaring it here — avoids stale/conflicting data under the
+// same @id (previously had an outdated WordPress logo path and an incomplete
+// sameAs array).
+const organizationSchema = {
+  "@type": "Organization",
+  "@id": "https://magicworksitsolutions.com/#organization",
+};
+
 export default async function WhitepaperDetailPage(props: { params: Promise<{ slug: string }> }) {
   const { slug } = await props.params;
   const wp = whitepapers.find((w) => w.slug === slug);
   if (!wp) notFound();
 
   const others = whitepapers.filter((w) => w.slug !== slug);
+  const canonicalUrl = `https://magicworksitsolutions.com/insights/whitepapers/${wp.slug}`;
+
+  const reportSchema = {
+    "@context": "https://schema.org",
+    "@type": ["Report", "Article"],
+    "@id": `${canonicalUrl}#report`,
+    headline: wp.title,
+    name: wp.title,
+    description: wp.description,
+    url: canonicalUrl,
+    datePublished: toIsoDate(wp.publishedDate),
+    isAccessibleForFree: true,
+    inLanguage: "en-IN",
+    author: organizationSchema,
+    publisher: organizationSchema,
+    about: wp.category,
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+    isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+      { "@type": "ListItem", position: 2, name: "Insights", item: "https://magicworksitsolutions.com/insights" },
+      { "@type": "ListItem", position: 3, name: "Whitepapers", item: "https://magicworksitsolutions.com/insights/whitepapers" },
+      { "@type": "ListItem", position: 4, name: wp.title, item: canonicalUrl },
+    ],
+  };
+
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    url: canonicalUrl,
+    name: `${wp.title} | Whitepapers`,
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: [".aeo-lede"],
+    },
+  };
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reportSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
+
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-100px] top-[-80px] w-[400px] h-[400px] pointer-events-none opacity-40" aria-hidden="true">
@@ -143,7 +206,7 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
             {/* Left: main content */}
             <div>
               <h2 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#2A1B5C] mb-4">About this whitepaper</h2>
-              <p className="text-[16px] text-[#3F3F4A] leading-[1.75] mb-10">{wp.description}</p>
+              <p className="aeo-lede text-[16px] text-[#3F3F4A] leading-[1.75] mb-10">{wp.description}</p>
 
               <h2 className="font-[family-name:var(--font-head)] font-bold text-[22px] text-[#2A1B5C] mb-5">What you'll learn</h2>
               <ul className="space-y-4 mb-10">

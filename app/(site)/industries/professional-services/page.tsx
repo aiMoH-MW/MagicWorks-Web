@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "MagicWorks works with CA firms, law practices, consultancies, and advisory firms. Trusted advisors advising trusted advisors: AI and digital marketing.",
   alternates: { canonical: "/industries/professional-services" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/industries/professional-services",
+    title: "Digital Marketing for Professional Services | MagicWorks",
+    description:
+      "MagicWorks works with CA firms, law practices, consultancies, and advisory firms. Trusted advisors advising trusted advisors.",
+  },
 };
 
 const breadcrumbSchema = {

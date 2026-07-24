@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "Book a thirty-minute discovery call with MagicWorks. No obligation. We will tell you honestly whether we are the right fit for your business.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/contact",
+    title: "Talk to Us: Discovery Call and Enquiries | MagicWorks",
+    description:
+      "Book a thirty-minute discovery call with MagicWorks. No obligation. We will tell you honestly whether we are the right fit for your business.",
+  },
 };
 
 const contactSchema = {
@@ -183,6 +189,23 @@ export default function ContactPage() {
               <p className="text-[13px] text-[#9A9AA8] mt-3">
                 Serving clients across India: Mumbai, Bangalore, Hyderabad, Delhi-NCR. Offshore: Europe & USA.
               </p>
+              <a
+                href="https://www.google.com/maps/dir/?api=1&destination=18.5195,73.7898"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-4 text-[#5B3FBE] font-semibold text-[13px] no-underline hover:underline"
+              >
+                Get directions →
+              </a>
+              <iframe
+                title="MagicWorks IT Solutions office location"
+                src="https://www.google.com/maps?q=18.5195,73.7898&z=15&output=embed"
+                width="100%"
+                height="220"
+                style={{ border: 0, marginTop: "16px", borderRadius: "10px" }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
 

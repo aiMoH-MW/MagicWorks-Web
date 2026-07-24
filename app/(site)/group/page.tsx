@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "Three sibling brands: MagicFlow AI for lead capture, Magic Pipeline for CRM and revenue ops, and MagicWorks Host for hosting and domains.",
   alternates: { canonical: "/group" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/group",
+    title: "The Group: Three Sibling Brands | MagicWorks",
+    description:
+      "Three sibling brands: MagicFlow AI for lead capture, Magic Pipeline for CRM and revenue ops, and MagicWorks Host for hosting and domains.",
+  },
 };
 
 const brands = [

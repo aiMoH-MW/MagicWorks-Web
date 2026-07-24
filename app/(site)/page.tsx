@@ -118,7 +118,7 @@ const speakableSchema = {
   url: "https://magicworksitsolutions.com/",
   speakable: {
     "@type": "SpeakableSpecification",
-    cssSelector: ["h1", ".eyebrow", "h2"],
+    cssSelector: ["h1", ".eyebrow", "h2", ".faq-answer"],
   },
 };
 
@@ -408,7 +408,7 @@ export default function HomePage() {
             {faq.map((f) => (
               <div key={f.q}>
                 <h3 className="font-semibold text-[15px] text-[#2A1B5C] mb-2">{f.q}</h3>
-                <p className="text-[14px] text-[#3F3F4A]">{f.a}</p>
+                <p className="faq-answer text-[14px] text-[#3F3F4A]">{f.a}</p>
               </div>
             ))}
           </div>

@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Whitepapers | Insights",
   description: "Free whitepapers from MagicWorks IT Solutions: in-depth research on AI automation readiness and performance marketing ROI for Indian businesses.",
   alternates: { canonical: "/insights/whitepapers" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/insights/whitepapers",
+    title: "Whitepapers | Insights | MagicWorks",
+    description: "Free whitepapers from MagicWorks IT Solutions: in-depth research on AI automation readiness and performance marketing ROI for Indian businesses.",
+  },
 };
 
 const whitepapers = [
@@ -46,9 +51,46 @@ const whitepapers = [
   },
 ];
 
+const collectionPageSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://magicworksitsolutions.com/insights/whitepapers",
+  name: "Whitepapers | MagicWorks Insights",
+  description:
+    "Free whitepapers from MagicWorks IT Solutions: in-depth research on AI automation readiness and performance marketing ROI for Indian businesses.",
+  url: "https://magicworksitsolutions.com/insights/whitepapers",
+  isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
+  about: { "@id": "https://magicworksitsolutions.com/#organization" },
+};
+
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+    { "@type": "ListItem", position: 2, name: "Insights", item: "https://magicworksitsolutions.com/insights" },
+    { "@type": "ListItem", position: 3, name: "Whitepapers", item: "https://magicworksitsolutions.com/insights/whitepapers" },
+  ],
+};
+
+const itemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  itemListElement: whitepapers.map((wp, i) => ({
+    "@type": "ListItem",
+    position: i + 1,
+    url: `https://magicworksitsolutions.com/insights/whitepapers/${wp.slug}`,
+    name: wp.title,
+  })),
+};
+
 export default function WhitepapersPage() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }} />
+
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">
         <svg className="absolute right-[-100px] top-[-80px] w-[400px] h-[400px] pointer-events-none opacity-40" aria-hidden="true">

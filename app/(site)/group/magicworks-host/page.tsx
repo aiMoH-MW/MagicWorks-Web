@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "Domain registration, web hosting and SSL certificates from MagicWorks Host, part of the MagicWorks Group. All new enquiries handled here.",
   alternates: { canonical: "/group/magicworks-host" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/group/magicworks-host",
+    title: "MagicWorks Host: Domains and Hosting | MagicWorks",
+    description:
+      "Domain registration, web hosting and SSL certificates from MagicWorks Host, part of the MagicWorks Group.",
+  },
 };
 
 const serviceSchema = {

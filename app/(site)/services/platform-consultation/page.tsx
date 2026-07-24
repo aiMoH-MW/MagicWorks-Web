@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "Founder-led judgment for portal and platform builders. Independent advice, no bundling. Strategy for edtech, B2B trade, and wellness platforms.",
   alternates: { canonical: "/services/platform-consultation" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/services/platform-consultation",
+    title: "Marketplace & Platform Consultation | MagicWorks",
+    description:
+      "Founder-led judgment for portal and platform builders. Independent advice, no bundling. Strategy for edtech, B2B trade, and wellness platforms.",
+  },
 };
 
 const serviceSchema = {

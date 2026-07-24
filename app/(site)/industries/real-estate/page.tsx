@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "MagicWorks helps real estate developers generate qualified buyer enquiries. 6,500+ units in pipeline for Aishwaryam with below-benchmark CPL.",
   alternates: { canonical: "/industries/real-estate" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/industries/real-estate",
+    title: "Digital Marketing & Web for Real Estate | MagicWorks",
+    description:
+      "MagicWorks helps real estate developers generate qualified buyer enquiries. 6,500+ units in pipeline for Aishwaryam with below-benchmark CPL.",
+  },
 };
 
 const breadcrumbSchema = {

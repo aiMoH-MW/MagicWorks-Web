@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "Predictable revenue from traffic and leads. Ten digital marketing services on a monthly retainer, with a commission tier for larger ad spends. Book a call.",
   alternates: { canonical: "/services/digital-marketing" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/services/digital-marketing",
+    title: "Digital Marketing Agency in Pune | MagicWorks",
+    description:
+      "Predictable revenue from traffic and leads. Ten digital marketing services on a monthly retainer, with a commission tier for larger ad spends.",
+  },
 };
 
 const services = [

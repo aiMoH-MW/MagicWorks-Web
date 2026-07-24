@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "Durable creative assets your team keeps using: brand guidelines, whitepapers and playbooks, and recurring video production. A delivery pillar, not advisory.",
   alternates: { canonical: "/services/brand-research-publishing" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/services/brand-research-publishing",
+    title: "Brand Guidelines, Whitepapers & Video Retainers | MagicWorks",
+    description:
+      "Durable creative assets your team keeps using: brand guidelines, whitepapers and playbooks, and recurring video production.",
+  },
 };
 
 const services = [

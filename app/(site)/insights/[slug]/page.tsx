@@ -388,25 +388,13 @@ export default async function InsightArticlePage({ params }: Props) {
     ],
   };
 
+  // Reference the single canonical Organization entity defined in app/layout.tsx
+  // rather than redeclaring it here — avoids stale/conflicting data under the
+  // same @id (previously had an outdated WordPress logo path, an incomplete
+  // sameAs array, and a differently-formatted phone number).
   const organizationSchema = {
     "@type": "Organization",
     "@id": "https://magicworksitsolutions.com/#organization",
-    name: "MagicWorks IT Solutions Pvt. Ltd.",
-    url: "https://magicworksitsolutions.com",
-    sameAs: ["https://www.linkedin.com/company/magicworks-it-solutions/"],
-    logo: {
-      "@type": "ImageObject",
-      url: "https://magicworksitsolutions.com/wp-content/uploads/2025/10/logo_mwits.png",
-      width: 300,
-      height: 60,
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      telephone: "+91-9764566644",
-      contactType: "customer service",
-      areaServed: "IN",
-      availableLanguage: ["English", "Hindi"],
-    },
   };
 
   // GEO — rich Article schema with mentions, citations, speakable (helps AI engines cite)
@@ -428,11 +416,15 @@ export default async function InsightArticlePage({ params }: Props) {
     author: article.author
       ? {
           "@type": "Person",
-          "@id": "https://magicworksitsolutions.com/about/#swapnil-ughade",
+          "@id": article.author.slug
+            ? `https://magicworksitsolutions.com/authors/${article.author.slug}#person`
+            : undefined,
           name: article.author.name,
-          jobTitle: "Founder",
+          jobTitle: article.author.role || "Author",
           worksFor: { "@type": "Organization", "@id": "https://magicworksitsolutions.com/#organization" },
-          url: "https://magicworksitsolutions.com/about/",
+          url: article.author.slug
+            ? `https://magicworksitsolutions.com/authors/${article.author.slug}`
+            : undefined,
           sameAs: article.author.linkedin ? [article.author.linkedin] : [],
         }
       : undefined,

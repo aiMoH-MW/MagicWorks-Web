@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   description:
     "Join MagicWorks IT Solutions in Pune. We are hiring across digital marketing, web development, AI, design, and operations. See open roles.",
   alternates: { canonical: "/careers" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/careers",
+    title: "Open Roles: Join the Team | MagicWorks",
+    description:
+      "Join MagicWorks IT Solutions in Pune. We are hiring across digital marketing, web development, AI, design, and operations.",
+  },
 };
 
 const collectionPageSchema = {

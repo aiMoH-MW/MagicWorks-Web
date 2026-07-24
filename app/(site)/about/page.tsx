@@ -1,11 +1,19 @@
 ﻿import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
+import { getTeamMemberBySlug } from "@/sanity/queries";
 
 export const metadata: Metadata = {
   title: "About MagicWorks: AI-First Agency, Pune",
   description:
     "Founded 2009. AI-first digital marketing agency in Pune. 17 years building for ambitious Indian businesses: digital marketing, web development, and AI.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/about",
+    title: "About MagicWorks: AI-First Agency, Pune | MagicWorks",
+    description:
+      "Founded 2009. AI-first digital marketing agency in Pune. 17 years building for ambitious Indian businesses: digital marketing, web development, and AI.",
+  },
 };
 
 const schema = {
@@ -24,7 +32,10 @@ const schema = {
 const founderSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  "@id": "https://magicworksitsolutions.com/#founder",
+  // Same @id used for Swapnil's author byline on blog/insight posts
+  // (see app/(site)/blog/[slug]/page.tsx and insights/[slug]/page.tsx),
+  // so Google can consolidate this Person entity across pages.
+  "@id": "https://magicworksitsolutions.com/authors/swapnil-ughade#person",
   name: "Swapnil Ughade",
   jobTitle: "Founder",
   worksFor: { "@id": "https://magicworksitsolutions.com/#organization" },
@@ -56,7 +67,9 @@ const values = [
   { title: "Consultation-only for advisory", body: "Our AI and Platform practices do not bundle advice with implementation. We designed that boundary deliberately to keep the advice honest." },
 ];
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const founder = await getTeamMemberBySlug("swapnil-ughade").catch(() => null);
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
@@ -144,6 +157,33 @@ export default function AboutPage() {
           <div>
             <hr className="gold-rule mb-6" />
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,28px)] text-[#2A1B5C] mb-5">Led by the founder.</h2>
+            <div className="flex items-center gap-4 mb-5">
+              {founder?.photo ? (
+                <Image
+                  src={founder.photo}
+                  alt={founder.photoAlt || "Swapnil Ughade"}
+                  width={72}
+                  height={72}
+                  className="rounded-full border-2 border-[#D4A537] flex-shrink-0 object-cover"
+                />
+              ) : (
+                <div className="w-[72px] h-[72px] rounded-full border-2 border-[#D4A537] bg-gradient-to-br from-[#5B3FBE] to-[#D4A537] flex-shrink-0" />
+              )}
+              <div>
+                <p className="font-semibold text-[16px] text-[#2A1B5C]">Swapnil Ughade</p>
+                <p className="text-[13px] text-[#3F3F4A]">Founder, MagicWorks IT Solutions</p>
+                {founder?.linkedin && (
+                  <a
+                    href={founder.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-[#5B3FBE] text-[12px] font-semibold no-underline hover:underline"
+                  >
+                    LinkedIn Profile
+                  </a>
+                )}
+              </div>
+            </div>
             <p className="text-[16px] text-[#3F3F4A] leading-[1.65] mb-4">
               MagicWorks IT Solutions was founded and is led by <strong>Swapnil Ughade</strong>, who brings 17 years of experience across digital marketing, web development, and AI strategy for ambitious Indian businesses.
             </p>

@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "Independent AI advisory for Indian businesses. We design the roadmap; you choose who builds it. Vendor-neutral consultation only.",
   alternates: { canonical: "/services/ai-consultation" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/services/ai-consultation",
+    title: "AI Consultation for Founders & Operators | MagicWorks",
+    description:
+      "Independent AI advisory for Indian businesses. We design the roadmap; you choose who builds it. Vendor-neutral consultation only.",
+  },
 };
 
 /* --- JSON-LD schemas --------------------------------------- */

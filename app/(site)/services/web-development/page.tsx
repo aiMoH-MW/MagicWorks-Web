@@ -7,6 +7,12 @@ export const metadata: Metadata = {
   description:
     "AI-native websites that compound brand and conversion. Built on Next.js to generate business, not just to look good. From idea to live in 3 to 10 weeks.",
   alternates: { canonical: "/services/web-development" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/services/web-development",
+    title: "Web Development Agency in Pune | MagicWorks",
+    description:
+      "AI-native websites that compound brand and conversion. Built on Next.js to generate business, not just to look good. From idea to live in 3 to 10 weeks.",
+  },
 };
 
 const serviceSchema = {

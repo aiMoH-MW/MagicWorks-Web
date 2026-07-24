@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "AI consultation and digital marketing for Indian manufacturers. B2B lead generation, digital presence, and AI process roadmaps.",
   alternates: { canonical: "/industries/manufacturing" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/industries/manufacturing",
+    title: "Digital Marketing & AI for Manufacturing | MagicWorks",
+    description:
+      "AI consultation and digital marketing for Indian manufacturers. B2B lead generation, digital presence, and AI process roadmaps.",
+  },
 };
 
 const breadcrumbSchema = {

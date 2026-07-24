@@ -6,6 +6,12 @@ export const metadata: Metadata = {
   description:
     "MagicWorks helps education businesses generate high-intent student enquiries. See how we drove 75,000+ qualified leads per year for SimpliDistance.",
   alternates: { canonical: "/industries/education" },
+  openGraph: {
+    url: "https://magicworksitsolutions.com/industries/education",
+    title: "Digital Marketing for Education Institutes | MagicWorks",
+    description:
+      "MagicWorks helps education businesses generate high-intent student enquiries. See how we drove 75,000+ qualified leads per year for SimpliDistance.",
+  },
 };
 
 const breadcrumbSchema = {
