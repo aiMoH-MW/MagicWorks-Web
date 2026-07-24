@@ -1,0 +1,808 @@
+{
+  "file": "blog-5-ai-vendor-due-diligence-checklist.md",
+  "frontmatter": {
+    "title": "How to Evaluate an AI Vendor in India: A CXO's Technical & Commercial Due Diligence Checklist",
+    "slug": "how-to-evaluate-ai-vendor-india-due-diligence-checklist",
+    "author": "Mohan Chute",
+    "category": "AI Consultation",
+    "meta_description": "A CXO's due diligence checklist for evaluating AI vendors in India: data ownership, integration depth, pricing scalability, and contract terms that actually matter.",
+    "word_count_target": "3000+",
+    "links_to": [
+      "/services/ai-consultation",
+      "/services/ai-consultation/vendor-sprint",
+      "/services/ai-consultation/embedded-advisor"
+    ]
+  },
+  "faqCount": 5,
+  "faq": [
+    {
+      "question": "Should we always negotiate a pilot period before a full contract?",
+      "answer": "In most cases, yes: a paid pilot with clearly defined success criteria, agreed in advance, is one of the most effective ways to de-risk a vendor decision, and a vendor's willingness to structure one honestly is itself informative. Be wary of vendors who resist any pilot structure and push directly to a long-term commitment."
+    },
+    {
+      "question": "How do we evaluate AI-specific claims, like model accuracy, that are harder to verify than typical software features?",
+      "answer": "Ask for accuracy figures measured on data similar to yours, not the vendor's own benchmark dataset, and treat any accuracy claim without a stated methodology and test set with real skepticism. If a vendor can't or won't run a validation test against a sample of your actual data before you sign, that's a meaningful gap in the evaluation, not a minor one."
+    },
+    {
+      "question": "Is it reasonable to use a checklist like this ourselves, or do we need outside help?",
+      "answer": "An internal team can absolutely run this checklist directly: the framework itself is the main value, not access to any proprietary information. Outside help tends to matter most when you're evaluating several vendors in parallel under time pressure, or when you want a genuinely independent read on a vendor relationship you're already emotionally invested in from an early, positive demo."
+    },
+    {
+      "question": "What's the single biggest mistake founders make in AI vendor evaluations?",
+      "answer": "Treating the sales demo as the evaluation, rather than as the starting point for one. The demo tells you the product can work well under ideal conditions; it tells you almost nothing about data ownership, integration reality at your specific scale, or what the relationship looks like at renewal time, which is exactly what this checklist is designed to surface before a contract is signed, not after."
+    },
+    {
+      "question": "Does a strong reference customer guarantee the vendor will work well for us?",
+      "answer": "No: a reference customer confirms the product can work well for a business somewhat similar to yours, but doesn't guarantee your specific data quality, integration complexity, or internal adoption effort will match theirs closely enough to produce the same result. Treat a strong reference as a meaningfully positive signal, not as a substitute for running the rest of the checklist against your own specific situation."
+    }
+  ],
+  "blockCount": 39,
+  "blockStyleSummary": {
+    "normal": 28,
+    "h2": 11
+  },
+  "blocks": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kavt39b",
+          "text": "The vendor evaluation questions that matter most are almost never the ones covered in a sales demo: data ownership, real integration depth, pricing scalability, and exit terms decide whether a contract you sign this quarter becomes a problem in eighteen months.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kawt39b",
+          "text": " If you're a founder or CXO at an Indian manufacturing or professional services firm about to sign with an AI vendor, for document processing, predictive maintenance, lead scoring, or any other application, this is the checklist we use in vendor evaluations, organised around the questions that actually separate a good decision from an expensive one.",
+          "marks": []
+        }
+      ],
+      "_key": "kaut39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kayt39b",
+          "text": "This assumes you've already decided \"buy\" is the right call for this specific opportunity: if you haven't made that decision yet, our related piece on the ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "kb0t39b",
+          "text": "build, buy, or wait framework",
+          "marks": [
+            "kazt39b"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kb1t39b",
+          "text": " is the better starting point.",
+          "marks": []
+        }
+      ],
+      "_key": "kaxt39b",
+      "markDefs": [
+        {
+          "_key": "kazt39b",
+          "_type": "link",
+          "href": "/blog"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kb3t39b",
+          "text": "Why the sales demo doesn't tell you what you need to know",
+          "marks": []
+        }
+      ],
+      "_key": "kb2t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kb5t39b",
+          "text": "A vendor demo is optimised to show the product working well on curated data, in a clean environment, with the sales team's chosen use case. That's not dishonest, exactly: it's just not the information you need to make a good decision. The questions that determine whether this vendor relationship works well for your business over several years live in the contract terms, the integration specifics, and the vendor's own data practices: none of which show up in a thirty-minute product walkthrough.",
+          "marks": []
+        }
+      ],
+      "_key": "kb4t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kb7t39b",
+          "text": "The following checklist is organised into four categories: data and ownership, technical integration, commercial terms, and vendor stability. Each includes the specific question to ask and what a concerning answer sounds like.",
+          "marks": []
+        }
+      ],
+      "_key": "kb6t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kb9t39b",
+          "text": "Category 1: Data ownership and portability",
+          "marks": []
+        }
+      ],
+      "_key": "kb8t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbbt39b",
+          "text": "Who owns the data we put into your system, and in what format can we get it back out?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kbct39b",
+          "text": " A vendor that can't give you a clear, specific answer, including the exact export format and whether it includes the model's learned parameters or just raw input data, is a vendor you'll struggle to leave later, regardless of how good the product looks today. The concerning answer sounds like reassurance without specifics: \"of course you own your data\" without a clear description of what \"your data\" actually includes once it's been processed by their system.",
+          "marks": []
+        }
+      ],
+      "_key": "kbat39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbet39b",
+          "text": "Is our data used to train models that serve other customers?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kbft39b",
+          "text": " This matters both commercially (your operational data may have competitive value you don't want shared, even in aggregated form) and, in some sectors, for compliance reasons. Get this in writing in the contract, not just as a verbal assurance in a sales call: verbal assurances don't survive a change in the vendor's own policies eighteen months later.",
+          "marks": []
+        }
+      ],
+      "_key": "kbdt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbht39b",
+          "text": "What happens to our data if we terminate the contract?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kbit39b",
+          "text": " A specific, contractually stated data-deletion timeline and process is what you want. \"We'll work with you on that\" is not an answer: it's a placeholder for a conversation that will happen, if at all, at the least convenient possible time: during a dispute or a difficult renewal negotiation.",
+          "marks": []
+        }
+      ],
+      "_key": "kbgt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbkt39b",
+          "text": "Category 2: Technical integration depth",
+          "marks": []
+        }
+      ],
+      "_key": "kbjt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbmt39b",
+          "text": "Is the integration with our specific ERP/CRM/systems a standard, tested connector, or custom work billed separately?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kbnt39b",
+          "text": " Sales demos often show integration with a popular platform (SAP, Salesforce, a common Indian ERP) that may or may not match your actual, possibly customised deployment. Ask specifically whether the integration has been done before with your exact system and version, not just \"we integrate with [platform name]\" in the abstract.",
+          "marks": []
+        }
+      ],
+      "_key": "kblt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbpt39b",
+          "text": "What's the actual data latency between our system and theirs?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kbqt39b",
+          "text": " For time-sensitive applications, inventory-linked demand forecasting, real-time lead scoring, a batch sync that runs every six hours is a materially different product than genuine real-time integration, even if both get described as \"integrated\" in a sales conversation. Ask for the specific sync mechanism and frequency, not just confirmation that integration exists.",
+          "marks": []
+        }
+      ],
+      "_key": "kbot39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbst39b",
+          "text": "What happens when our upstream system changes: a new ERP version, a modified data schema?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kbtt39b",
+          "text": " Vendors vary enormously in how proactively they monitor and adapt to upstream changes versus waiting for you to report a break. Ask for a specific example of how they've handled this for an existing customer, not a hypothetical answer.",
+          "marks": []
+        }
+      ],
+      "_key": "kbrt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbvt39b",
+          "text": "Category 3: Commercial terms and pricing scalability",
+          "marks": []
+        }
+      ],
+      "_key": "kbut39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kbxt39b",
+          "text": "How does pricing scale as our usage grows, and what does that look like at 3x our current volume?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kbyt39b",
+          "text": " Vendor pricing that looks reasonable at pilot scale can become disproportionately expensive at production scale, particularly for usage-based pricing models tied to API calls, documents processed, or user seats. Ask the vendor to model pricing at a realistic growth scenario, not just today's volume, and get that model in writing.",
+          "marks": []
+        }
+      ],
+      "_key": "kbwt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kc0t39b",
+          "text": "Are there minimum commitment terms, and what's the actual cost of exiting early?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kc1t39b",
+          "text": " Multi-year contracts with significant early-termination penalties are common and not inherently unreasonable, but they need to be weighed explicitly against how confident you are in the vendor relationship after only a pilot period. A vendor pushing hard for a three-year commitment before you've run even a short pilot is a signal worth noting, not necessarily disqualifying, but worth noting.",
+          "marks": []
+        }
+      ],
+      "_key": "kbzt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kc3t39b",
+          "text": "What's included in the quoted price versus billed as a separate professional-services engagement?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kc4t39b",
+          "text": " Implementation support, custom integration work, and ongoing account management are sometimes bundled into the headline price and sometimes billed separately once you're already committed. Get an itemised breakdown before signing, not an assumption based on the initial quote.",
+          "marks": []
+        }
+      ],
+      "_key": "kc2t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kc6t39b",
+          "text": "Category 4: Vendor stability and support",
+          "marks": []
+        }
+      ],
+      "_key": "kc5t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kc8t39b",
+          "text": "How long has this specific product, not just the company, been in market, and how many customers of a comparable size to us are using it in production, not just in pilot?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kc9t39b",
+          "text": " A well-funded, well-known company can still have a specific AI product that's relatively new and under-tested at your scale. Ask for reference customers specifically comparable in size and use case, and actually call them: a vendor unwilling to provide any comparable reference is a meaningful signal.",
+          "marks": []
+        }
+      ],
+      "_key": "kc7t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcbt39b",
+          "text": "What's the support model, and what's the actual response time commitment for a production issue, in writing?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kcct39b",
+          "text": " \"We offer support\" is not a service-level agreement. Get a specific, contractually stated response time for critical issues, and ask what happens (in terms of credits, remedies, or escalation) if that commitment is missed.",
+          "marks": []
+        }
+      ],
+      "_key": "kcat39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcet39b",
+          "text": "What's the vendor's own AI governance and security posture: do they have a documented incident history, and how do they handle it?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kcft39b",
+          "text": " Every vendor of sufficient scale has had some kind of incident. A vendor who claims a spotless history is either very new or not being fully candid; a vendor who can describe a past incident and what they changed as a result is generally a more trustworthy signal than a claim of perfection.",
+          "marks": []
+        }
+      ],
+      "_key": "kcdt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcht39b",
+          "text": "Putting it together: a scored evaluation, not a gut call",
+          "marks": []
+        }
+      ],
+      "_key": "kcgt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcjt39b",
+          "text": "The value of a checklist like this comes from using it consistently across every vendor you seriously consider, scored the same way, rather than applying it loosely to the vendor you already like and skipping it for others. In our experience running vendor evaluations for Indian mid-market clients, the vendor that wins the sales-demo impression and the vendor that scores best across data ownership, integration depth, commercial terms, and stability are different vendors more often than founders expect going in, which is precisely the value of forcing the comparison onto a consistent, written scorecard rather than relying on which pitch felt most persuasive in the room.",
+          "marks": []
+        }
+      ],
+      "_key": "kcit39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kclt39b",
+          "text": "A realistic example",
+          "marks": []
+        }
+      ],
+      "_key": "kckt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcnt39b",
+          "text": "Consider a manufacturing firm evaluating two vendors for an AI-powered quality-inspection platform. Vendor A's demo was polished, with a well-known brand and an impressive dashboard. Vendor B's demo was less visually refined but included a working live integration test against a sample of the firm's own actual inspection data, brought by the vendor to the second meeting specifically to prove the integration claim rather than just asserting it.",
+          "marks": []
+        }
+      ],
+      "_key": "kcmt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcpt39b",
+          "text": "Running both through the four categories: Vendor A's contract was vague on data ownership after processing, quoted pricing that scaled sharply above a stated volume threshold buried in an appendix, and could not provide a production reference customer in the same sub-industry. Vendor B's contract specified data ownership and export format clearly, offered a capped pricing tier appropriate to the firm's realistic 18-month volume, and connected the firm directly with two comparable production customers who confirmed both the integration claims and the support responsiveness. The demo impression favoured Vendor A; the due diligence favoured Vendor B clearly enough that it wasn't a close call once the checklist was actually applied.",
+          "marks": []
+        }
+      ],
+      "_key": "kcot39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcrt39b",
+          "text": "Red flags that should pause a deal regardless of how good the product looks",
+          "marks": []
+        }
+      ],
+      "_key": "kcqt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kctt39b",
+          "text": "Beyond the specific checklist questions, a handful of behavioural signals during the evaluation process itself are worth treating as near-automatic reasons to slow down, independent of how impressive the product demo was.",
+          "marks": []
+        }
+      ],
+      "_key": "kcst39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcvt39b",
+          "text": "Reluctance to put data ownership or pricing-at-scale terms in writing, even after being asked directly.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kcwt39b",
+          "text": " A vendor who verbally reassures you on these points but resists putting specifics in the contract is telling you, indirectly, that the written terms would say something less favourable than the verbal reassurance. Take the hint.",
+          "marks": []
+        }
+      ],
+      "_key": "kcut39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kcyt39b",
+          "text": "Pressure to sign before completing a reference check or pilot.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kczt39b",
+          "text": " Urgency tactics, a discount that expires this week, a claim that the pricing will increase at quarter-end, are sales techniques, not genuine reasons to skip due diligence on a multi-year commitment. A vendor confident in their product's actual performance rarely needs to rush the evaluation.",
+          "marks": []
+        }
+      ],
+      "_key": "kcxt39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kd1t39b",
+          "text": "Inability to name a specific limitation of their own product.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kd2t39b",
+          "text": " Every real AI product has genuine limitations: data requirements it can't meet, edge cases it handles poorly, scale thresholds where performance degrades. A vendor who can't or won't name any limitation when asked directly is either unfamiliar with their own product's actual behaviour in production or being deliberately evasive: neither is reassuring.",
+          "marks": []
+        }
+      ],
+      "_key": "kd0t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kd4t39b",
+          "text": "A sales team that can't get a technical person on a call within a reasonable timeframe.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kd5t39b",
+          "text": " For any evaluation involving real integration complexity, you need direct access to someone who can answer specific technical questions, not just a relayed answer from an engineer the sales rep spoke to separately. Persistent difficulty getting that access during evaluation is a preview of what support will look like after you've signed.",
+          "marks": []
+        }
+      ],
+      "_key": "kd3t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kd7t39b",
+          "text": "How this checklist changes for larger, multi-vendor deployments",
+          "marks": []
+        }
+      ],
+      "_key": "kd6t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kd9t39b",
+          "text": "Everything above applies most directly to evaluating a single vendor for a single, well-defined use case. For larger deployments spanning multiple AI tools across different functions, common once an organisation has been through a few individual vendor decisions successfully, an additional layer of diligence matters: how well the vendors' data models and APIs interoperate with each other, not just with your core systems, and whether you're inadvertently building a dependency on a specific combination of vendors that would be costly to unwind if any single one needs to be replaced. This is usually the point at which a more structured, ongoing advisory relationship becomes more valuable than a one-off evaluation for each new tool, since the interoperability risk compounds with each additional vendor added to the stack.",
+          "marks": []
+        }
+      ],
+      "_key": "kd8t39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kdbt39b",
+          "text": "Involving legal and finance earlier than feels necessary",
+          "marks": []
+        }
+      ],
+      "_key": "kdat39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kddt39b",
+          "text": "A common pattern in AI vendor evaluations is treating the technical and product evaluation as the main event and bringing in legal and finance review only once a vendor has effectively already been chosen internally, at which point their feedback arrives too late to meaningfully change the negotiating position. Involving both functions earlier, even just a brief early read on the contract's data and liability terms and a realistic model of pricing at scale, tends to catch problems while there's still real leverage to renegotiate, rather than after the internal team has already emotionally committed to a specific vendor and is reluctant to reopen the conversation over contract language.",
+          "marks": []
+        }
+      ],
+      "_key": "kdct39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kdft39b",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ],
+      "_key": "kdet39b",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kdht39b",
+          "text": "If you're facing a specific vendor decision and want a structured, independent evaluation rather than working through this checklist alone under time pressure, our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "kdjt39c",
+          "text": "Vendor & Build-vs-Buy Sprint",
+          "marks": [
+            "kdit39c"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kdkt39c",
+          "text": " is built exactly for this: a focused engagement that ends in a scored comparison and a clear recommendation, vendor-neutral throughout. For ongoing vendor decisions as they come up over time, our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "kdmt39c",
+          "text": "Embedded AI Advisor",
+          "marks": [
+            "kdlt39c"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kdnt39c",
+          "text": " engagement extends this same rigor as a standing relationship. Both sit within our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "kdpt39c",
+          "text": "AI Consultation",
+          "marks": [
+            "kdot39c"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kdqt39c",
+          "text": " practice, which remains consultation-only: we help you evaluate, you choose who you sign with.",
+          "marks": []
+        }
+      ],
+      "_key": "kdgt39b",
+      "markDefs": [
+        {
+          "_key": "kdit39c",
+          "_type": "link",
+          "href": "/services/ai-consultation/vendor-sprint"
+        },
+        {
+          "_key": "kdlt39c",
+          "_type": "link",
+          "href": "/services/ai-consultation/embedded-advisor"
+        },
+        {
+          "_key": "kdot39c",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kdst39c",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ],
+      "_key": "kdrt39c",
+      "markDefs": []
+    }
+  ]
+}

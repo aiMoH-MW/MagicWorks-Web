@@ -1,0 +1,852 @@
+{
+  "file": "blog-1-from-audit-to-action.md",
+  "frontmatter": {
+    "title": "From Audit to Action: Turning AI Process-Audit Findings Into a Roadmap You Can Actually Execute",
+    "slug": "from-audit-to-action-ai-roadmap",
+    "author": "Mohan Chute",
+    "category": "AI Consultation",
+    "meta_description": "An AI process audit is only useful if it turns into a roadmap someone actually executes. Here's how to turn audit findings into a sequenced, defensible 12-month plan.",
+    "word_count_target": "3000+",
+    "links_to": [
+      "/services/ai-consultation",
+      "/services/ai-consultation/process-audit",
+      "/services/ai-consultation/vendor-sprint",
+      "/services/ai-consultation/embedded-advisor"
+    ]
+  },
+  "faqCount": 6,
+  "faq": [
+    {
+      "question": "How long should it take to go from audit findings to an approved roadmap?",
+      "answer": "For a focused, one-or-two-process audit, two to four weeks is realistic if the right decision-makers are in the room for the roadmap workshop itself. Delays almost always come from waiting on a decision-maker's calendar, not from the analysis taking longer than expected."
+    },
+    {
+      "question": "Do we need the same firm that ran the audit to build the roadmap?",
+      "answer": "No. A properly written roadmap is meant to be actionable with any implementation partner: that separation is the entire point of a consultation-only engagement. If your audit was bundled with a mandate to also build the solution, that's worth scrutinising on its own; see our note on evaluating AI vendors for the questions to ask."
+    },
+    {
+      "question": "What if the roadmap says \"buy\" for something we assumed we'd build?",
+      "answer": "That's a common and often correct outcome. Teams frequently overestimate their own ability to maintain a custom AI tool over eighteen months, versus underestimating how quickly a well-scoped vendor evaluation can settle the question. The audit's job is to make that trade-off visible, not to protect anyone's assumption going in."
+    },
+    {
+      "question": "Can the roadmap change once we start executing it?",
+      "answer": "It should be expected to, at the scheduled review point, but changing it off-schedule, mid-sprint, because a new opportunity looked more exciting in a leadership meeting, is exactly the pattern that causes roadmaps to stall. Build the flexibility into the review cadence, not into ad-hoc revisions."
+    },
+    {
+      "question": "What's the single biggest predictor that a roadmap will actually get executed rather than stall?",
+      "answer": "In our experience, it's less about the quality of the ranking and more about whether a single named person is accountable for noticing drift at a fixed interval. Roadmaps with a genuine owner and a review date that isn't allowed to slip get executed at a materially higher rate than roadmaps that were well-designed but left to \"whoever has time to check on it.\""
+    },
+    {
+      "question": "Should the roadmap include initiatives we're not confident will work?",
+      "answer": "Yes, if they're honestly ranked as higher-risk rather than presented with false confidence. A roadmap that only includes safe, certain wins tends to under-deliver on the larger opportunities an audit typically surfaces; the point of ranking by risk alongside value is to sequence the uncertain, higher-upside initiatives deliberately, with a smaller initial commitment, rather than avoiding them entirely or betting the whole roadmap on them first."
+    }
+  ],
+  "blockCount": 42,
+  "blockStyleSummary": {
+    "normal": 30,
+    "h2": 7,
+    "h3": 5
+  },
+  "blocks": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1t35s",
+          "text": "Most AI audits end in a slide deck. Very few end in a roadmap anyone actually follows.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k2t35s",
+          "text": " If your organisation has already run, or is about to run, a process audit against AI capability, the hard part isn't the audit itself. It's what happens in the six weeks after the findings land on your desk: turning a list of \"opportunities\" into a sequence of decisions your team can commit to, budget for, and execute without a second committee meeting undoing the first one.",
+          "marks": []
+        }
+      ],
+      "_key": "k0t35s",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4t35t",
+          "text": "This is written for founders, COOs, and operations heads at Indian manufacturing and professional services firms who have either commissioned an AI process audit already, or are weighing whether to. It assumes you already understand ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k5t35t",
+          "text": "why",
+          "marks": [
+            "em"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k6t35t",
+          "text": " an audit matters: what it doesn't assume is that you know what to do with one once it's finished, because in our experience, that's where most engagements quietly die.",
+          "marks": []
+        }
+      ],
+      "_key": "k3t35t",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k8t35t",
+          "text": "The audit isn't the deliverable: the roadmap is",
+          "marks": []
+        }
+      ],
+      "_key": "k7t35t",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kat35t",
+          "text": "An AI process audit typically produces three things: a map of your current processes as they actually run (not as the org chart says they run), an honest ranking of where AI can and cannot help right now, and a set of build-versus-buy judgment calls. That's valuable work. But on its own, it's diagnostic: it tells you what's true, not what to do about it in what order, with what resourcing, and with what fallback if the first initiative underperforms.",
+          "marks": []
+        }
+      ],
+      "_key": "k9t35t",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kct35t",
+          "text": "The organisations that get real value out of an audit treat it as the input to a roadmap, not the output of the engagement. The roadmap is the thing that survives contact with a budget cycle, a change in leadership priorities, or a vendor who over-promised in the sales call.",
+          "marks": []
+        }
+      ],
+      "_key": "kbt35t",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "ket35t",
+          "text": "Why so many audits stall here",
+          "marks": []
+        }
+      ],
+      "_key": "kdt35t",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kgt35t",
+          "text": "Three patterns show up again and again once an audit is complete and nothing happens next:",
+          "marks": []
+        }
+      ],
+      "_key": "kft35t",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kit35u",
+          "text": "The findings sit with the wrong owner.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kjt35u",
+          "text": " An audit commissioned by IT gets read by IT. An audit commissioned by operations gets read by operations. If the roadmap that follows doesn't have a named executive sponsor who owns the P&L impact, not just the technical delivery, it has no natural champion when priorities compete for budget in Q3.",
+          "marks": []
+        }
+      ],
+      "_key": "kht35t",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "klt35u",
+          "text": "Every opportunity looks equally urgent.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kmt35u",
+          "text": " Audits are good at identifying opportunities and bad, by default, at sequencing them. A list of eight \"high-potential\" automation opportunities with no forced ranking is not a roadmap. It's a menu. And menus don't get executed; they get debated.",
+          "marks": []
+        }
+      ],
+      "_key": "kkt35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kot35u",
+          "text": "Nobody owns the build-versus-buy call.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "kpt35u",
+          "text": " The audit might correctly flag that three of your five opportunities are better solved by an existing vendor tool than a custom build, but if that recommendation isn't followed by an actual vendor evaluation process with a decision deadline, \"build vs. buy\" becomes \"buy... eventually... maybe.\"",
+          "marks": []
+        }
+      ],
+      "_key": "knt35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "krt35u",
+          "text": "The four things a workable roadmap needs that most audits don't include",
+          "marks": []
+        }
+      ],
+      "_key": "kqt35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "ktt35u",
+          "text": "1. A forced ranking, not a list",
+          "marks": []
+        }
+      ],
+      "_key": "kst35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kvt35u",
+          "text": "A defensible roadmap ranks opportunities against three criteria simultaneously: effort to implement, the size of the return if it works, and the risk if it doesn't (including the risk of the vendor disappearing, the model underperforming on your actual data, or your team not having the bandwidth to maintain it). Ranking on value alone is how organisations end up starting with the hardest, highest-effort initiative because it also happens to be the most exciting one to talk about in a board meeting. Ranking on effort alone is how organisations end up automating something trivial while the actual bottleneck goes untouched for another year.",
+          "marks": []
+        }
+      ],
+      "_key": "kut35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kxt35u",
+          "text": "The honest version of this ranking will sometimes put a genuinely important process, say, quality inspection reporting in a manufacturing plant, behind a smaller, faster win, because the inspection process depends on data that doesn't exist in usable form yet. That's not a failure of ambition. It's sequencing reality correctly instead of sequencing it aspirationally.",
+          "marks": []
+        }
+      ],
+      "_key": "kwt35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "kzt35u",
+          "text": "2. A named decision for each build-versus-buy question, with a date attached",
+          "marks": []
+        }
+      ],
+      "_key": "kyt35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k11t35u",
+          "text": "\"We'll evaluate vendors for this\" is not a decision. It's a placeholder for a decision that, in our experience, gets pushed to the following quarter roughly two-thirds of the time it isn't given an actual date. A workable roadmap assigns each opportunity one of three explicit statuses: build in-house (with a named technical owner), buy from a vendor (with a shortlist and an evaluation deadline), or defer (with a specific, written reason, usually \"the data isn't ready\" or \"the team doesn't have bandwidth until Q2\", rather than an unstated one).",
+          "marks": []
+        }
+      ],
+      "_key": "k10t35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k13t35u",
+          "text": "If you're at the point of comparing vendors formally rather than just scoping the decision, that's a distinct, focused engagement in its own right: see our piece on ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k15t35u",
+          "text": "build, buy, or wait",
+          "marks": [
+            "k14t35u"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k16t35u",
+          "text": " for the decision framework, or go straight to a structured ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k18t35u",
+          "text": "vendor and build-vs-buy sprint",
+          "marks": [
+            "k17t35u"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k19t35u",
+          "text": " if you already know you need outside eyes on a specific choice.",
+          "marks": []
+        }
+      ],
+      "_key": "k12t35u",
+      "markDefs": [
+        {
+          "_key": "k14t35u",
+          "_type": "link",
+          "href": "/blog"
+        },
+        {
+          "_key": "k17t35u",
+          "_type": "link",
+          "href": "/services/ai-consultation/vendor-sprint"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1bt35v",
+          "text": "3. A sequencing logic that respects dependencies",
+          "marks": []
+        }
+      ],
+      "_key": "k1at35u",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1dt35v",
+          "text": "Some AI initiatives are genuinely independent of each other. Most, in a mid-sized organisation, are not. A roadmap that recommends automating proposal generation in month one and RFQ-to-quote in month two, without noting that both draw on the same underlying CRM data, and that the CRM data quality problem needs fixing first, is a roadmap that will hit the same wall twice, six weeks apart, instead of once.",
+          "marks": []
+        }
+      ],
+      "_key": "k1ct35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1ft35v",
+          "text": "Good sequencing usually looks less exciting on paper than an ambitious parallel rollout. It often starts with a data or process-hygiene fix that produces no visible AI outcome in month one, which is precisely why it gets skipped by roadmaps built for a steering-committee presentation rather than for execution.",
+          "marks": []
+        }
+      ],
+      "_key": "k1et35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1ht35v",
+          "text": "4. A review point that isn't \"we'll circle back\"",
+          "marks": []
+        }
+      ],
+      "_key": "k1gt35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1jt35v",
+          "text": "A twelve-month roadmap without a scheduled formal review at month three or four is a roadmap that will drift by month six, because nobody drifts on purpose: they drift by not having a forcing function to notice they've drifted. The review doesn't need to be elaborate. It needs to ask three questions on a fixed date: did the first initiative deliver what the audit predicted, does the ranking of the remaining initiatives still hold given what we now know, and has anything changed about resourcing or leadership priority that should re-order the sequence.",
+          "marks": []
+        }
+      ],
+      "_key": "k1it35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1lt35v",
+          "text": "What \"actually executing\" looks like in practice",
+          "marks": []
+        }
+      ],
+      "_key": "k1kt35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1nt35v",
+          "text": "Picture a mid-sized manufacturing business that ran a process audit and identified five opportunities: automating RFQ-to-quote turnaround, digitising quality inspection reporting, building a supplier-response chatbot, improving demand forecasting, and automating expense approvals. All five are legitimate. None of them are equally urgent, equally feasible today, or equally low-risk.",
+          "marks": []
+        }
+      ],
+      "_key": "k1mt35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1pt35v",
+          "text": "A workable roadmap doesn't try to run all five in parallel. It picks the one with the clearest data foundation already in place, often RFQ-to-quote, since sales teams tend to already have structured historical quote data even when other departments don't, and sequences it first, with a named owner, a build-or-buy decision made in week two rather than debated for a quarter, and a defined success metric tied to actual turnaround time, not a vague \"efficiency improvement.\" The quality inspection initiative, which depends on digitising paper-based inspection sheets that don't currently exist in structured form, gets sequenced later, with the data-digitisation work called out explicitly as its own precursor step rather than folded silently into \"phase two.\"",
+          "marks": []
+        }
+      ],
+      "_key": "k1ot35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1rt35v",
+          "text": "This is the difference between a roadmap that reads well and a roadmap that ships. The first version of almost every roadmap reads well. Only the second version changes how the business actually runs.",
+          "marks": []
+        }
+      ],
+      "_key": "k1qt35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1tt35v",
+          "text": "Notice, too, what this sequencing choice quietly implies about the chatbot and forecasting opportunities: they aren't rejected, just placed later, with an explicit reason. That distinction, deferred with a stated cause versus silently dropped, is what keeps a five-item roadmap from shrinking to a one-item roadmap by month six, which is the single most common way ambitious audit findings end up delivering far less than they promised.",
+          "marks": []
+        }
+      ],
+      "_key": "k1st35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1vt35v",
+          "text": "Who should own this, internally",
+          "marks": []
+        }
+      ],
+      "_key": "k1ut35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k1xt35v",
+          "text": "The audit itself is often commissioned by whoever felt the pain most acutely: frequently an operations head or a COO. The roadmap that follows needs an owner with the authority to make a build-versus-buy call stick even when a department head prefers a different vendor, and the standing to defend a sequencing decision that puts someone's pet initiative in month nine instead of month one. In practice, this is almost always a founder, CEO, or COO, which is exactly the audience an ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k1zt35v",
+          "text": "AI process audit and roadmap engagement",
+          "marks": [
+            "k1yt35v"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k20t35v",
+          "text": " is built for, and precisely why the roadmap output is written to be actionable by ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k21t35v",
+          "text": "any",
+          "marks": [
+            "em"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k22t35v",
+          "text": " implementation partner, not just the one who ran the audit.",
+          "marks": []
+        }
+      ],
+      "_key": "k1wt35v",
+      "markDefs": [
+        {
+          "_key": "k1yt35v",
+          "_type": "link",
+          "href": "/services/ai-consultation/process-audit"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k24t35v",
+          "text": "If your leadership team doesn't yet share a common vocabulary for what AI can and cannot reasonably do, a surprisingly common blocker, even at the roadmap-approval stage, it's worth reading about why an ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k26t35v",
+          "text": "AI literacy workshop",
+          "marks": [
+            "k25t35v"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k27t35v",
+          "text": " often needs to happen before a roadmap can get real buy-in, rather than after.",
+          "marks": []
+        }
+      ],
+      "_key": "k23t35v",
+      "markDefs": [
+        {
+          "_key": "k25t35v",
+          "_type": "link",
+          "href": "/blog"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k29t35v",
+          "text": "Signs your roadmap is drifting before anyone admits it",
+          "marks": []
+        }
+      ],
+      "_key": "k28t35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2bt35v",
+          "text": "Roadmap drift rarely announces itself. It shows up as small, individually reasonable-sounding decisions that, added together, quietly dismantle the sequencing the audit recommended. A few patterns are worth watching for deliberately, because by the time they're obvious to everyone in the room, the roadmap has usually already lost most of its original discipline.",
+          "marks": []
+        }
+      ],
+      "_key": "k2at35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2dt35v",
+          "text": "The first initiative's timeline keeps slipping without anyone renegotiating the rest of the sequence.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k2et35v",
+          "text": " A two-week delay on the first opportunity is normal. A two-week delay that nobody flags against the second and third opportunities' start dates is how a twelve-month roadmap quietly becomes an eighteen-month one without a single explicit decision to extend it.",
+          "marks": []
+        }
+      ],
+      "_key": "k2ct35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2gt35v",
+          "text": "A new \"urgent\" opportunity appears and gets slotted in ahead of the agreed sequence.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k2ht35v",
+          "text": " This is often legitimate, genuine urgency does happen, but it should trigger an explicit re-ranking conversation, not a quiet insertion. If the new opportunity is genuinely more urgent, the roadmap should say so on the record, with the opportunity it displaced pushed back deliberately rather than left ambiguous.",
+          "marks": []
+        }
+      ],
+      "_key": "k2ft35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2jt35v",
+          "text": "Success metrics defined at the roadmap stage quietly become \"engagement\" or \"adoption\" metrics instead of the original business outcome.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k2kt35v",
+          "text": " This is one of the more common and least noticed forms of drift. A roadmap that set out to reduce RFQ turnaround time by a specific percentage can slide, six months in, into being evaluated on how many people logged into the new tool: a much easier number to report favourably, and a much weaker proxy for whether the initiative actually worked.",
+          "marks": []
+        }
+      ],
+      "_key": "k2it35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2mt35v",
+          "text": "The build-versus-buy decision gets revisited informally, outside the scheduled review point, whenever a compelling new vendor pitch arrives.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k2nt35v",
+          "text": " A roadmap with real discipline treats its own review cadence as the forum for reconsidering these calls, not an ad hoc reaction to whichever vendor emailed most recently.",
+          "marks": []
+        }
+      ],
+      "_key": "k2lt35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2pt35v",
+          "text": "What good roadmap governance costs, in practical terms",
+          "marks": []
+        }
+      ],
+      "_key": "k2ot35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2rt35v",
+          "text": "None of the above requires an elaborate program-management office for a mid-sized business. In practice, disciplined roadmap governance costs surprisingly little in formal process: a single named owner, a calendar invite for the quarterly review that isn't allowed to be silently skipped, and a one-page tracking document that records the ranking, the build/buy/defer status for each item, and the actual (not aspirational) start and completion dates. The discipline is less about the tooling and more about a cultural willingness to say, out loud, in the quarterly review, \"we are behind\" or \"we changed our mind about the sequencing, and here's why\", rather than letting the roadmap document quietly stop matching reality while everyone is too busy to notice.",
+          "marks": []
+        }
+      ],
+      "_key": "k2qt35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2tt35v",
+          "text": "Where this tends to break down in smaller organisations specifically is the absence of anyone whose job explicitly includes noticing drift. In a larger company, a program manager's role often is exactly this kind of tracking. In a founder-led mid-market business, that function usually has to be deliberately assigned: sometimes to an internal operations lead, sometimes to whichever advisor or partner helped build the roadmap in the first place, precisely because they have the least incentive to let it quietly slide.",
+          "marks": []
+        }
+      ],
+      "_key": "k2st35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2vt35v",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ],
+      "_key": "k2ut35v",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k2xt35v",
+          "text": "If you're evaluating whether your organisation needs a process audit at all, or you've already run one and are now staring at a set of findings without a clear next step, this is exactly the gap our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k2zt35v",
+          "text": "AI Process Audit & Roadmap",
+          "marks": [
+            "k2yt35v"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k30t35v",
+          "text": " engagement is built to close: a fixed four-to-six-week engagement that ends in a roadmap built to survive a budget cycle, not just a steering committee meeting. It sits alongside our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k32t35v",
+          "text": "AI Consultation",
+          "marks": [
+            "k31t35v"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k33t35v",
+          "text": " practice more broadly, which is consultation-only: we design the roadmap, you choose who builds it.",
+          "marks": []
+        }
+      ],
+      "_key": "k2wt35v",
+      "markDefs": [
+        {
+          "_key": "k2yt35v",
+          "_type": "link",
+          "href": "/services/ai-consultation/process-audit"
+        },
+        {
+          "_key": "k31t35v",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k35t35v",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ],
+      "_key": "k34t35v",
+      "markDefs": []
+    }
+  ]
+}

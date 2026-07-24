@@ -1,0 +1,783 @@
+{
+  "file": "blog-2-build-buy-or-wait.md",
+  "frontmatter": {
+    "title": "Build, Buy, or Wait: A Practical Framework for Your Next AI Investment Decision",
+    "slug": "build-buy-or-wait-ai-investment-decision",
+    "author": "Mohan Chute",
+    "category": "AI Consultation",
+    "meta_description": "Build, buy, or wait: the three-option framework for deciding your next AI investment, with real cost, timeline, and risk trade-offs for Indian mid-market firms.",
+    "word_count_target": "3000+",
+    "links_to": [
+      "/services/ai-consultation",
+      "/services/ai-consultation/vendor-sprint",
+      "/services/ai-consultation/process-audit"
+    ]
+  },
+  "faqCount": 4,
+  "faq": [
+    {
+      "question": "How do we know if we're not ready and should wait, versus just being risk-averse?",
+      "answer": "The honest test is whether you can name the specific missing input, a data source, a stable process, a named owner, and a rough timeline for when it will exist. If you can name it, you're genuinely waiting on something concrete. If the answer is a general unease with AI initiatives, that's a different conversation, often better addressed with an AI literacy workshop than by delaying indefinitely."
+    },
+    {
+      "question": "Is it ever right to build and buy for the same process?",
+      "answer": "Yes: a common and reasonable pattern is buying a vendor platform for the commodity parts of a process (document ingestion, basic classification) while building a thin custom layer on top for the parts that are genuinely specific to your business (a scoring rubric, a routing rule). The mistake is building the commodity parts from scratch when a vendor has already solved them well."
+    },
+    {
+      "question": "Who should make this decision: IT, operations, or leadership?",
+      "answer": "The technical feasibility assessment belongs with whoever will maintain the solution, but the actual build-buy-wait decision needs an owner with budget authority and a stake in the business outcome, not just the technical delivery: otherwise the decision tends to default to whichever department scoped it first, rather than what's actually right for the business."
+    },
+    {
+      "question": "What if we've already started building and now suspect we should have bought instead?",
+      "answer": "This is more common than it sounds, and it's worth an honest mid-project pause rather than sunk-cost momentum. Revisiting the same three questions at the current stage of the build, rather than treating the original decision as fixed, usually clarifies whether to finish, pivot to a vendor solution, or scope down to a narrower internal tool."
+    }
+  ],
+  "blockCount": 42,
+  "blockStyleSummary": {
+    "normal": 31,
+    "h2": 8,
+    "h3": 3
+  },
+  "blocks": [
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k37t36i",
+          "text": "Every AI investment decision is actually a choice between three options, not two, and \"wait\" is a legitimate answer far more often than most vendor pitches would have you believe.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k38t36i",
+          "text": " If you're a founder or CXO at an Indian manufacturing or professional services firm weighing whether to build a custom AI tool, buy an existing solution, or hold off, this is the framework we use with clients to make that decision on the merits, not on whichever option was pitched most persuasively last.",
+          "marks": []
+        }
+      ],
+      "_key": "k36t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3at36i",
+          "text": "Why \"build vs. buy\" is the wrong question to start with",
+          "marks": []
+        }
+      ],
+      "_key": "k39t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3ct36i",
+          "text": "Most conversations about AI investment jump straight to comparing a custom build against an off-the-shelf vendor. That's a reasonable comparison to make: eventually. But it skips a prior question that determines whether either option is worth pursuing right now: is the problem you're trying to solve actually ready to be solved with AI, given the data, process maturity, and internal ownership you currently have?",
+          "marks": []
+        }
+      ],
+      "_key": "k3bt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3et36i",
+          "text": "\"Wait\" isn't a euphemism for inaction. It's the correct answer when the underlying process is still too inconsistent to automate reliably, when the data needed to train or configure a solution doesn't exist in usable form, or when the team that would need to maintain the solution doesn't exist yet. Choosing to wait, with a specific and named condition for revisiting the decision, is a more disciplined choice than building or buying something that will underperform because the groundwork wasn't there.",
+          "marks": []
+        }
+      ],
+      "_key": "k3dt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3gt36i",
+          "text": "The three options, honestly compared",
+          "marks": []
+        }
+      ],
+      "_key": "k3ft36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3it36i",
+          "text": "Option 1: Build",
+          "marks": []
+        }
+      ],
+      "_key": "k3ht36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3kt36i",
+          "text": "Building a custom AI solution, whether that's an internal tool for demand forecasting, a bespoke document-processing pipeline, or a custom-trained classification model, makes sense when your process is genuinely unusual enough that no existing vendor tool fits it well, when you have (or are willing to hire) the technical capacity to maintain it for years, not just to ship it once, and when the problem is core enough to your competitive position that owning the solution outright matters strategically.",
+          "marks": []
+        }
+      ],
+      "_key": "k3jt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3mt36i",
+          "text": "The honest cost of building isn't just the initial development spend. It's the ongoing maintenance burden: retraining models as your data drifts, patching integrations when upstream systems change their APIs, and the institutional risk of the one engineer who understands the system leaving. We've seen custom-built tools that worked well in month one become quietly abandoned by month fourteen, not because the underlying idea was wrong, but because nobody budgeted for the unglamorous work of keeping it running.",
+          "marks": []
+        }
+      ],
+      "_key": "k3lt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3ot36i",
+          "text": "Build makes sense when:",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k3pt36i",
+          "text": " the process is genuinely differentiated, not a solved problem in your industry; you have committed in-house or retained technical capacity for multi-year maintenance, not just initial delivery; and the cost of being wrong about vendor lock-in outweighs the cost of building it yourself.",
+          "marks": []
+        }
+      ],
+      "_key": "k3nt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3rt36i",
+          "text": "Option 2: Buy",
+          "marks": []
+        }
+      ],
+      "_key": "k3qt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3tt36i",
+          "text": "Buying an existing tool, a vendor platform for AI-assisted quality inspection, a CRM-integrated lead-scoring add-on, a document-extraction SaaS product, makes sense far more often than most internal teams initially assume, because the problem you're facing (RFQ turnaround, expense approval routing, basic demand forecasting) has usually already been solved reasonably well by someone else, and their solution has already absorbed years of edge-case handling that a first internal build won't have.",
+          "marks": []
+        }
+      ],
+      "_key": "k3st36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3vt36i",
+          "text": "The risk with buying isn't usually the technology: it's the vendor relationship. Contract terms that don't specify data portability, pricing that scales unpredictably with usage, and integration promises made in a sales call that don't survive contact with your actual ERP or CRM configuration are the recurring failure modes. A rigorous vendor evaluation, checking data ownership terms, actual (not promised) integration depth, and what happens if you want to leave in eighteen months, matters more than the feature comparison sheet most evaluations focus on.",
+          "marks": []
+        }
+      ],
+      "_key": "k3ut36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k3xt36i",
+          "text": "Buy makes sense when:",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k3yt36i",
+          "text": " the problem is common enough that mature vendor solutions exist; your team's real capacity is better spent on your core business than on maintaining infrastructure; and you're willing to invest real time in evaluating vendors properly rather than picking the one with the best demo.",
+          "marks": []
+        }
+      ],
+      "_key": "k3wt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k40t36i",
+          "text": "If you already know you're leaning toward buying but the field of vendors is large or genuinely confusing, that evaluation is exactly what a structured ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k42t36i",
+          "text": "vendor and build-vs-buy sprint",
+          "marks": [
+            "k41t36i"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k43t36i",
+          "text": " is designed for: a short, focused engagement that ends in a shortlist and a scored comparison, not a vague sense of which vendor \"felt right.\"",
+          "marks": []
+        }
+      ],
+      "_key": "k3zt36i",
+      "markDefs": [
+        {
+          "_key": "k41t36i",
+          "_type": "link",
+          "href": "/services/ai-consultation/vendor-sprint"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "h3",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k45t36i",
+          "text": "Option 3: Wait",
+          "marks": []
+        }
+      ],
+      "_key": "k44t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k47t36i",
+          "text": "Waiting is the option nobody pitches you, because no vendor or system integrator makes money from you deciding not to buy anything yet. But it's frequently the right call, and recognising it early saves real money.",
+          "marks": []
+        }
+      ],
+      "_key": "k46t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k49t36i",
+          "text": "Wait makes sense when the data needed doesn't exist in structured, usable form: training a demand-forecasting model on inconsistent, hand-entered spreadsheet data will produce a model that's confidently wrong, which is worse than no model at all. It also makes sense when the underlying process itself is still changing: automating a workflow that's about to be redesigned anyway means automating the wrong thing. And it makes sense when there's no clear internal owner for the outcome: an AI tool without someone accountable for whether it's actually working tends to quietly stop being used within a year, regardless of how well it was built or bought.",
+          "marks": []
+        }
+      ],
+      "_key": "k48t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4bt36i",
+          "text": "The discipline in choosing \"wait\" is attaching a specific, revisitable condition to it, not \"we'll wait and see,\" but \"we'll revisit this once our inspection data has been digitised for two full quarters\" or \"once we've appointed someone to own this process.\" Vague waiting drifts into permanent inaction; conditional waiting is a real decision with a trigger.",
+          "marks": []
+        }
+      ],
+      "_key": "k4at36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4dt36i",
+          "text": "A simple way to work through the decision",
+          "marks": []
+        }
+      ],
+      "_key": "k4ct36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4ft36i",
+          "text": "For any specific AI opportunity, three questions in sequence get you most of the way to build, buy, or wait:",
+          "marks": []
+        }
+      ],
+      "_key": "k4et36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4ht36i",
+          "text": "Is the underlying process stable and the data usable today?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k4it36i",
+          "text": " If no, the answer is wait, and the actionable next step is fixing the data or process problem, not evaluating vendors or scoping a build against a moving target.",
+          "marks": []
+        }
+      ],
+      "_key": "k4gt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4kt36i",
+          "text": "Does a mature vendor solution already exist for this exact problem?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k4lt36i",
+          "text": " If yes, and your process isn't meaningfully different from how the vendor's other customers use it, buy is usually the more defensible choice, both financially and in terms of ongoing risk.",
+          "marks": []
+        }
+      ],
+      "_key": "k4jt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4nt36i",
+          "text": "Is this specific process core to how you compete, and different enough that no vendor solution fits?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k4ot36i",
+          "text": " If yes, and only if you also have committed technical capacity to maintain it, build becomes the right call.",
+          "marks": []
+        }
+      ],
+      "_key": "k4mt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4qt36i",
+          "text": "Most opportunities resolve to \"buy\" once this sequence is actually run, which is a slightly deflating outcome for teams excited about building something custom, but it's the honest result in the majority of cases we see across Indian manufacturing and professional services clients.",
+          "marks": []
+        }
+      ],
+      "_key": "k4pt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4st36i",
+          "text": "A worked example",
+          "marks": []
+        }
+      ],
+      "_key": "k4rt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4ut36i",
+          "text": "Consider a professional services firm evaluating whether to build, buy, or wait on an AI tool for proposal drafting. Running the sequence: the underlying process, pulling from past proposals, formatting to a house template, tailoring to a specific client's stated requirements, is reasonably stable and the historical proposal data exists, if a little inconsistently organised. That answers the first question in the affirmative, so it's not a \"wait.\"",
+          "marks": []
+        }
+      ],
+      "_key": "k4tt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4wt36i",
+          "text": "On the second question, mature vendor tools for AI-assisted proposal drafting exist and are not particularly differentiated for this firm's use case: the firm's proposals, while good, don't follow a structure meaningfully different from how similar firms format theirs. That points to \"buy.\"",
+          "marks": []
+        }
+      ],
+      "_key": "k4vt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k4yt36i",
+          "text": "The temptation to build instead often comes from a reasonable-sounding but ultimately weak argument: \"our proposals are unique to us.\" In our experience, that's true at the level of content, but rarely true at the level of process, and a vendor tool configured with the firm's own templates and past proposals as reference material usually gets 90% of the value of a custom build at a fraction of the cost and none of the multi-year maintenance burden.",
+          "marks": []
+        }
+      ],
+      "_key": "k4xt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k50t36i",
+          "text": "Where founders get this wrong most often",
+          "marks": []
+        }
+      ],
+      "_key": "k4zt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k52t36i",
+          "text": "The most common mistake isn't picking the wrong option in the abstract: it's skipping the sequence and starting from whichever option was pitched to them first. A compelling vendor demo makes \"buy\" feel obviously correct without checking data readiness first. An enthusiastic internal engineer proposing a custom build makes \"build\" feel exciting without an honest accounting of multi-year maintenance cost. And the absence of any pitch at all means \"wait\" rarely even enters the conversation as a deliberate choice, even when it's the right one.",
+          "marks": []
+        }
+      ],
+      "_key": "k51t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k54t36i",
+          "text": "A second common mistake is treating the decision as permanent. The right call on build-versus-buy-versus-wait for a given process can change within twelve months: data that wasn't usable becomes usable once a digitisation project completes, or a vendor market that didn't exist eighteen months ago now has three credible players. Revisiting the decision at a scheduled point, rather than only when something breaks, keeps the original choice from calcifying into a decision nobody consciously made twice.",
+          "marks": []
+        }
+      ],
+      "_key": "k53t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k56t36i",
+          "text": "Cost dimensions people forget to compare",
+          "marks": []
+        }
+      ],
+      "_key": "k55t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k58t36i",
+          "text": "Most build-versus-buy comparisons focus on the most visible number, the build's development quote versus the vendor's annual license fee, and stop there. That comparison alone systematically favours buying in the short term and can systematically favour building in a comparison that ignores what happens after year one. A more honest comparison includes several dimensions that are easy to leave out because they're harder to quantify upfront.",
+          "marks": []
+        }
+      ],
+      "_key": "k57t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5at36i",
+          "text": "Total cost of ownership over three years, not year one.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k5bt36i",
+          "text": " A custom build's headline cost is usually the initial development spend. Its real cost includes ongoing maintenance, retraining as your business and data change, and the opportunity cost of the engineering time spent maintaining it instead of building something else. A vendor's headline cost is the subscription fee. Its real cost includes the integration and change-management time, the risk of price increases at renewal, and any professional-services fees not included in the base quote. Both hidden costs are usually larger than either party's initial pitch suggests.",
+          "marks": []
+        }
+      ],
+      "_key": "k59t36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5dt36i",
+          "text": "The cost of being wrong.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k5et36i",
+          "text": " If you build and the initiative doesn't work, you've spent development time and have a maintenance liability to either fix or decommission. If you buy and the vendor's tool doesn't work for your use case, you typically have a contract to exit and a shorter sunk-cost tail, assuming the contract terms allow for reasonably clean exit, which is exactly why contract terms matter as much as the product itself.",
+          "marks": []
+        }
+      ],
+      "_key": "k5ct36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5gt36i",
+          "text": "The cost of internal distraction.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k5ht36i",
+          "text": " Building diverts your best technical people from whatever they'd otherwise be doing for the core business. This cost is real even when the build itself succeeds, and it's the cost most consistently underweighted by teams excited about a custom solution, because the enthusiasm of building something new obscures the opportunity cost of what isn't getting built instead.",
+          "marks": []
+        }
+      ],
+      "_key": "k5ft36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5jt36i",
+          "text": "A pre-mortem exercise worth running before committing",
+          "marks": []
+        }
+      ],
+      "_key": "k5it36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5lt36i",
+          "text": "Before finalising a build, buy, or wait decision on a meaningful initiative, it's worth spending twenty minutes explicitly imagining the decision has failed eighteen months from now, and asking why. For a build decision, the honest failure modes are usually some combination of: the original developer left and nobody else understands the system, the model's accuracy degraded as real-world data drifted from the training set and nobody was monitoring for it, or the maintenance burden turned out to be double what was budgeted and the tool was quietly abandoned. For a buy decision, the failure modes tend to be: the vendor's pricing scaled unfavourably as usage grew, the integration broke when an upstream system was upgraded and support was slow to respond, or the vendor was acquired and the product's roadmap changed in a direction that no longer served your use case.",
+          "marks": []
+        }
+      ],
+      "_key": "k5kt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5nt36i",
+          "text": "Running this exercise honestly, before signing anything, surfaces risks that a straightforward cost comparison misses entirely, and often changes which option looks genuinely safer, once the most likely failure mode for each path is named explicitly rather than left as a vague, unstated worry.",
+          "marks": []
+        }
+      ],
+      "_key": "k5mt36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "h2",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5pt36i",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ],
+      "_key": "k5ot36i",
+      "markDefs": []
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k5rt36i",
+          "text": "If you're facing a specific build-buy-or-wait decision right now and want a structured, vendor-neutral evaluation rather than working through it alone, that's exactly what our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k5tt36i",
+          "text": "Vendor & Build-vs-Buy Sprint",
+          "marks": [
+            "k5st36i"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k5ut36i",
+          "text": " is built for: a focused engagement that ends in a clear recommendation and, if buying, a scored shortlist. If you're earlier in the process and unsure which of your opportunities are even ready for this decision, an ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k5wt36j",
+          "text": "AI Process Audit & Roadmap",
+          "marks": [
+            "k5vt36j"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k5xt36j",
+          "text": " is the right starting point, and our broader ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "k5zt36j",
+          "text": "AI Consultation",
+          "marks": [
+            "k5yt36j"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "k60t36j",
+          "text": " practice remains consultation-only throughout: we help you decide, you choose who builds or sells to you.",
+          "marks": []
+        }
+      ],
+      "_key": "k5qt36i",
+      "markDefs": [
+        {
+          "_key": "k5st36i",
+          "_type": "link",
+          "href": "/services/ai-consultation/vendor-sprint"
+        },
+        {
+          "_key": "k5vt36j",
+          "_type": "link",
+          "href": "/services/ai-consultation/process-audit"
+        },
+        {
+          "_key": "k5yt36j",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "style": "normal",
+      "children": [
+        {
+          "_type": "span",
+          "_key": "k62t36j",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ],
+      "_key": "k61t36j",
+      "markDefs": []
+    }
+  ]
+}
