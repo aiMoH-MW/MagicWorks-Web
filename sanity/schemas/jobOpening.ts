@@ -72,9 +72,16 @@ export const jobOpening = defineType({
     }),
     defineField({
       name: "salary",
-      title: "Salary / Stipend Range",
+      title: "Salary / Stipend Range (Public)",
       type: "string",
-      description: 'E.g. "₹2.50 to 3.60 LPA" or "Performance-based stipend"',
+      description: 'Shown on the public careers page. E.g. "₹2.50 to 3.60 LPA" or "Performance-based stipend".',
+    }),
+    defineField({
+      name: "internalScoringBudget",
+      title: "Internal Budget (for AI scoring only — NEVER shown publicly)",
+      type: "string",
+      description:
+        'Used only by the AI CTC-fit scorer to compare against applicants’ expected CTC. Never queried by any public-facing page. Set this when the public "Salary / Stipend Range" text is non-numeric (e.g. "Performance-based") so the scorer has an actual figure to check against. E.g. "₹5,000 to ₹7,000 per month".',
     }),
     defineField({
       name: "qualification",

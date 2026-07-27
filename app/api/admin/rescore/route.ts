@@ -13,7 +13,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { scoreApplication } from "@/lib/gemini-score";
-import { getJobOpeningBySlug } from "@/sanity/queries";
+import { getJobSalaryForScoring } from "@/sanity/queries";
 
 const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "magicworks-admin-2026";
 const RESUME_BUCKET = "resumes";
@@ -74,8 +74,10 @@ export async function POST(req: NextRequest) {
   async function getSalaryForSlug(slug: string | null | undefined): Promise<string | null> {
     if (!slug) return null;
     if (salaryCache.has(slug)) return salaryCache.get(slug)!;
-    const job = await getJobOpeningBySlug(slug).catch(() => null);
-    const salary = job?.salary ?? null;
+    const job = await getJobSalaryForScoring(slug).catch(() => null);
+    // internalScoringBudget (internships with non-numeric public salary text)
+    // takes priority over the public salary field for scoring purposes.
+    const salary = job?.internalScoringBudget || job?.salary || null;
     salaryCache.set(slug, salary);
     return salary;
   }

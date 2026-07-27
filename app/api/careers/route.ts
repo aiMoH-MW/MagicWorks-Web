@@ -2,7 +2,7 @@ import { NextRequest, NextResponse, after } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 import { scoreApplication } from "@/lib/gemini-score";
-import { getJobOpeningBySlug } from "@/sanity/queries";
+import { getJobSalaryForScoring } from "@/sanity/queries";
 
 const HR_EMAIL = "careers@magicworksitsolutions.com";
 const RESUME_BUCKET = "resumes";
@@ -120,11 +120,15 @@ export async function POST(req: NextRequest) {
       const scoringMime   = resumeFile?.type ?? null;
       after(async () => {
         try {
-          const jobOpening = await getJobOpeningBySlug(job_slug).catch(() => null);
+          const jobOpening = await getJobSalaryForScoring(job_slug).catch(() => null);
           const score = await scoreApplication({
             job_title:        job_title || job_slug,
             job_slug,
-            job_salary_range: jobOpening?.salary ?? null,
+            // internalScoringBudget (set for internships whose public salary
+            // text is non-numeric, e.g. "Performance-based") takes priority
+            // over the public salary field — never exposed to the client,
+            // used only in this server-side scoring call.
+            job_salary_range: jobOpening?.internalScoringBudget || jobOpening?.salary || null,
             name,
             total_experience,
             relevant_experience,

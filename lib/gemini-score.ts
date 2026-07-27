@@ -252,6 +252,24 @@ Respond with ONLY this JSON (no extra keys, no markdown):
         const pct = Math.round((overBudgetRatio - 1) * 100);
         summary = `${summary} (CTC guardrail: expected CTC is ~${pct}% above this role's budgeted range — ctc_score and overall score adjusted down accordingly.)`;
       }
+
+      // ── Extreme-mismatch override ─────────────────────────────────────────
+      // CTC is only 20% of the weighted score, so even a full ctc_score cap
+      // (100 -> 20) only moves the overall score by ~16 points — not enough to
+      // push a candidate with an otherwise strong profile out of "Good Fit"
+      // territory. But past a certain point, no resume/experience/cover
+      // quality makes the hire viable: a candidate expecting more than 3x a
+      // role's budgeted ceiling is exceedingly unlikely to accept an offer at
+      // that budget, full stop. Force the OVERALL score itself (not just
+      // ctc_score) down below the "Weak Fit" threshold in that case, so the
+      // label can't be masked by strength elsewhere.
+      const EXTREME_OVER_BUDGET_RATIO = 3.0;
+      const EXTREME_OVERALL_CAP = 35;
+      if (overBudgetRatio > EXTREME_OVER_BUDGET_RATIO && overallScore > EXTREME_OVERALL_CAP) {
+        overallScore = EXTREME_OVERALL_CAP;
+        const pct = Math.round(overBudgetRatio * 100);
+        summary = `${summary} (Extreme CTC mismatch: expected CTC is ~${pct}% of this role's budgeted ceiling — more than 3x over budget. Overall score capped regardless of other signals; this candidate is very unlikely to accept an offer within budget.)`;
+      }
     }
 
     const label: ScoreResult["label"] =

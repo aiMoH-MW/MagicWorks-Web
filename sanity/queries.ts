@@ -137,6 +137,21 @@ export async function getJobOpeningBySlug(slug: string) {
   );
 }
 
+// Server-side only — fetches internalScoringBudget alongside the public salary
+// text so the AI CTC-fit scorer can check applicants against a real number even
+// on postings (internships) whose public salary field is deliberately vague
+// ("Performance-based"). NEVER call this from a page component or any route
+// whose response reaches the browser — internalScoringBudget must stay
+// server-side only. Use getJobOpeningBySlug() for anything public-facing.
+export async function getJobSalaryForScoring(slug: string) {
+  return client.fetch(
+    `*[_type == "jobOpening" && slug.current == $slug][0] {
+      salary, internalScoringBudget
+    }`,
+    { slug }
+  );
+}
+
 // ── Team Members ──────────────────────────────────────────────────────────
 
 export async function getTeamMemberBySlug(slug: string) {

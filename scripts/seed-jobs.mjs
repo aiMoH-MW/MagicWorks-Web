@@ -72,6 +72,8 @@ const jobs = [
     type:       'internship',
     experience: '3 to 6 Months',
     salary:     'Performance-based',
+    // Internal-only — used solely by the AI CTC-fit scorer, never shown on the public page.
+    internalScoringBudget: '₹5,000 to ₹7,000 per month',
     qualification: 'Completed a certified Digital Marketing course, OR holds a degree in Digital Marketing or related field.\nB.E. (any stream) preferred; B.Sc. (CS/IT), M.Sc., MCA, BCA also acceptable.',
     mandatory:  'Basic understanding of SEO or digital marketing fundamentals',
     preferredCandidate:
@@ -137,6 +139,8 @@ const jobs = [
     type:       'internship',
     experience: '3 to 6 Months',
     salary:     'Performance-based',
+    // Internal-only — used solely by the AI CTC-fit scorer, never shown on the public page.
+    internalScoringBudget: '₹5,000 to ₹7,000 per month',
     qualification: 'Preferred: B.E. / B.Tech (CS, IT, or related)\nAlso acceptable: MCA, B.Sc. (CS/IT) with a strong deployed portfolio',
     mandatory:  'React.js proficiency + Active use of AI coding tools (Claude / Claude Code)',
     preferredCandidate:
