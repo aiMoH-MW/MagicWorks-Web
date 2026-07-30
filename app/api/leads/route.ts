@@ -1,6 +1,17 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
+import { syncLeadToMagicPipeline } from "@/lib/magicpipeline";
+
+function buildMagicPipelineFormName(pillar?: string | null, sourcePage?: string | null) {
+  if (sourcePage && sourcePage.toLowerCase().startsWith("playbook-")) {
+    return `Playbook Download: ${sourcePage.replace(/^playbook-/i, "")}`;
+  }
+  if (pillar === "AI Consultation" || pillar === "Platform Consultation") {
+    return `Consultation Enquiry: ${pillar}`;
+  }
+  return `Service Enquiry: ${pillar || "Unknown"}`;
+}
 
 export async function POST(req: NextRequest) {
   try {
@@ -16,6 +27,9 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
 
+    const utm_source = req.nextUrl.searchParams.get("utm_source");
+    const utm_campaign = req.nextUrl.searchParams.get("utm_campaign");
+
     const { error } = await createServiceClient().from("leads").insert({
       name,
       email,
@@ -25,12 +39,25 @@ export async function POST(req: NextRequest) {
       pillar: pillar || null,
       message: message || null,
       source_page: source_page || null,
-      utm_source: req.nextUrl.searchParams.get("utm_source"),
+      utm_source,
       utm_medium: req.nextUrl.searchParams.get("utm_medium"),
-      utm_campaign: req.nextUrl.searchParams.get("utm_campaign"),
+      utm_campaign,
     });
 
     if (error) throw error;
+
+    await syncLeadToMagicPipeline({
+      formName: buildMagicPipelineFormName(pillar, source_page),
+      name,
+      email,
+      phone,
+      company,
+      website,
+      message,
+      pageUrl: source_page || undefined,
+      utmSource: utm_source || undefined,
+      utmCampaign: utm_campaign || undefined,
+    });
 
     await sendNotification(
       `New lead from ${source_page ?? "website"}: ${name}`,

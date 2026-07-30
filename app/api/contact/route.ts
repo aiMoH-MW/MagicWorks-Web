@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
+import { syncLeadToMagicPipeline } from "@/lib/magicpipeline";
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,6 +21,14 @@ export async function POST(req: NextRequest) {
     });
 
     if (error) throw error;
+
+    await syncLeadToMagicPipeline({
+      formName: `Contact Us${subject ? `: ${subject}` : ""}`,
+      name,
+      email,
+      phone,
+      message,
+    });
 
     const phoneRow = phone ? "<p><strong>Phone:</strong> " + phone + "</p>" : "";
     const subjectRow = subject ? "<p><strong>Subject:</strong> " + subject + "</p>" : "";

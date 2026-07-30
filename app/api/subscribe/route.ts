@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
+import { syncLeadToMagicPipeline } from "@/lib/magicpipeline";
 
 export async function POST(req: NextRequest) {
   try {
@@ -24,6 +25,11 @@ export async function POST(req: NextRequest) {
       // Silently succeed on duplicate (same email + same whitepaper)
       if (error && error.code !== "23505") throw error;
 
+      await syncLeadToMagicPipeline({
+        formName: `Whitepaper Opt-in: ${whitepaperSlug}`,
+        email: cleanEmail,
+      });
+
       await sendNotification(
         `New whitepaper opt-in: ${whitepaperSlug}`,
         `<p><strong>Email:</strong> ${cleanEmail}</p><p><strong>Whitepaper:</strong> ${whitepaperSlug}</p>`
@@ -35,6 +41,11 @@ export async function POST(req: NextRequest) {
         .upsert({ email: cleanEmail, source: cleanSource }, { onConflict: "email" });
 
       if (error) throw error;
+
+      await syncLeadToMagicPipeline({
+        formName: `Newsletter Signup: ${cleanSource}`,
+        email: cleanEmail,
+      });
 
       await sendNotification(
         `New newsletter subscriber: ${cleanSource}`,
