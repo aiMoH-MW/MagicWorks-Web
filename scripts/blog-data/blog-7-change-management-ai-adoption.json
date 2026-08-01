@@ -1,0 +1,577 @@
+{
+  "blocks": [
+    {
+      "_type": "block",
+      "_key": "b871gb",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s88ote",
+          "text": "The tool almost always works. Adoption is what fails.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s89zth",
+          "text": " We have watched technically sound AI deployments sit unused six months after go-live, not because the model performed poorly, but because the people whose daily work it touched never actually changed how they worked. The dashboard exists. The old spreadsheet, run in parallel out of habit, is still the one decisions get made from.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b90w1n",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s91qmi",
+          "text": "This is written for founders, COOs, and operations heads at Indian mid-market firms who have deployed, or are about to deploy, an AI tool into a live team process. It assumes the technical build is sound; it is about the much harder, much less discussed problem of getting people to actually trust and use it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b92jgk",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s93v4c",
+          "text": "Why \"the tool is ready\" and \"the team has adopted it\" are different milestones",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b94man",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s952vs",
+          "text": "A go-live date marks when a system is technically available. It says nothing about whether the people who are supposed to use it have changed their actual behaviour. These two milestones get conflated constantly in project planning, and the gap between them is where most AI initiatives quietly lose their promised return: not at the point of deployment, but in the weeks after, when the old way of working is still faster for an individual employee than learning to trust a new one.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b9610b",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s97sb1",
+          "text": "This gap is rarely captured in a project plan because it doesn't look like a technical risk. It looks like \"change management\", a phrase vague enough that it often gets a single slide in a project kickoff and no further attention until adoption numbers come back low three months later, at which point it's treated as a training problem rather than what it usually is: a trust and incentive problem.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b9875b",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s992sm",
+          "text": "Resistance rarely looks like resistance",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b1004dv",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1014ar",
+          "text": "Very few employees openly refuse to use a new AI tool. What actually happens is quieter and harder to spot: the tool gets used exactly enough to satisfy a manager who might ask about it, while the real decision-making quietly continues to happen the old way, off to the side, in a parallel spreadsheet or a WhatsApp thread. This isn't sabotage. It's usually a rational response to a system nobody has yet proven is more reliable than the process it's replacing, from the point of view of the person whose job depends on getting the answer right.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b102qu4",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1035j6",
+          "text": "Three patterns behind stalled adoption, and what's actually driving each one",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b104geh",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s105g7c",
+          "text": "The tool changes who looks competent.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s10632c",
+          "text": " If a sales manager has built their reputation on gut-feel deal prioritisation and the new AI tool now ranks deals differently, adopting it isn't a neutral act: it's an implicit admission that the old method wasn't as good. Expecting enthusiastic adoption from the person whose expertise the tool is partially replacing, without addressing that directly, is a common and avoidable planning gap.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b1076ma",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1084q0",
+          "text": "Nobody explained what the tool gets wrong, only what it gets right.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s109sdt",
+          "text": " Every AI system has known failure modes. If the rollout only communicates the upside, the first time an employee catches the tool making a visibly wrong call, in front of a customer or a colleague, trust collapses immediately and is hard to rebuild. Teams that are told upfront, honestly, where the tool is expected to be weak tend to trust it more, not less, once it performs as described.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b1101sk",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s111ytx",
+          "text": "The incentive structure still rewards the old behaviour.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s112wcm",
+          "text": " If a team's targets, bonuses, or informal praise still track the old process's metrics, rational employees will keep optimising for those metrics, regardless of what tool sits on their desktop. Adoption follows incentives, not intentions, and a rollout plan that doesn't touch the incentive structure is asking people to work against their own measured performance.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b113xby",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s114xa7",
+          "text": "What an actual adoption plan needs, beyond training",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b115ror",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s116mam",
+          "text": "A named champion inside the team, not just in IT",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b117ilf",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s118pyf",
+          "text": "Training delivered by an outside vendor or IT department rarely carries the same weight as a peer inside the team who has visibly adopted the tool and can vouch for it in the team's own language. Effective rollouts identify this person deliberately, often someone respected but not necessarily the most senior, and give them real time and standing to answer questions and troubleshoot in the first few weeks, rather than leaving adoption support entirely to a help desk ticket.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b119865",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s120khd",
+          "text": "A defined parallel-run period with an explicit end date",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b121hh8",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1229y3",
+          "text": "Running the old process alongside the new one for a short, bounded period is reasonable and often necessary for building trust. Running it indefinitely, because nobody set an end date, is how the old process quietly becomes permanent. A workable plan states, in advance, exactly when the parallel run ends and the new tool becomes the system of record, and treats that date as a real deadline rather than an aspiration.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b123p9k",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s124aqp",
+          "text": "Visible correction, not just visible launch",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b125q8m",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s126ogs",
+          "text": "The single highest-leverage moment in an adoption timeline is the first time the tool is wrong and someone visibly, openly corrects it and explains why, rather than quietly working around it. Teams that see errors handled transparently build more trust in a system than teams that only ever see a polished, error-free demo, because the transparent correction proves the tool is being actively managed rather than blindly trusted.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b127bnr",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s128mhw",
+          "text": "A concrete example",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b129n38",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s130r53",
+          "text": "Consider a mid-sized logistics firm that rolled out an AI tool to prioritise which delayed shipments needed manual intervention first. The model was accurate. Adoption stalled anyway, because the two senior dispatchers whose judgment the tool was meant to augment had built their reputations on exactly this kind of prioritisation call, and the tool's rankings occasionally disagreed with theirs in ways nobody had prepared them to expect.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b13181h",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s132wq8",
+          "text": "The fix wasn't a better model. It was making one of the two dispatchers the internal champion, explicitly asking them to flag disagreements between their judgment and the tool's ranking each week, and reviewing those disagreements openly rather than assuming the tool was always right. Within six weeks, the dispatcher was using the tool as a first pass and applying judgment on top of it, rather than ignoring it, because the process had made room for their expertise instead of silently overriding it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b133bml",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s134jsx",
+          "text": "Who should own adoption, internally",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b135hd7",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s136h1a",
+          "text": "Adoption ownership is frequently left unassigned, on the assumption that it will happen naturally once training is complete. It rarely does. Someone, usually the process owner rather than IT, needs explicit responsibility for tracking actual usage in the weeks after go-live, not just availability, and for surfacing resistance early rather than waiting for a quarterly review to reveal that the old spreadsheet never actually went away.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b138yl7",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk137kud",
+          "_type": "link",
+          "href": "/blog/ai-literacy-gap-leadership-alignment"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s139dfy",
+          "text": "This is also frequently the same gap that shows up before a roadmap is even approved: if leadership itself doesn't share a common, honest vocabulary for what the tool can and can't do, adoption resistance often starts at the top rather than on the front line. Our note on the ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s1400eo",
+          "text": "AI literacy gap",
+          "marks": [
+            "lk137kud"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s141x40",
+          "text": " covers why that alignment has to happen before a rollout, not during one.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b142o3r",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s143eke",
+          "text": "Signs adoption is stalling before anyone admits it",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b144e6f",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1454e0",
+          "text": "Usage numbers look fine, but nobody can point to a decision the tool actually changed.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s1462re",
+          "text": " High login counts with no behavioural change is a strong signal the tool is being used to satisfy a metric, not to make decisions.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b14709a",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s148opw",
+          "text": "The parallel spreadsheet is still being updated \"just in case\".",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s1492or",
+          "text": " If the old system is still being maintained months after go-live, it hasn't actually been retired; it has just gone quiet in official meetings while remaining the real system of record.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b1506fa",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s151gxa",
+          "text": "Questions about the tool are directed at IT rather than at the internal champion.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s152qjh",
+          "text": " This usually means the champion role was never properly established, or the person in it doesn't have the standing or time the role requires.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b153mzh",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s154mry",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b157ux6",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk155td8",
+          "_type": "link",
+          "href": "/services/ai-consultation/workshop"
+        },
+        {
+          "_key": "lk156u7m",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1586ld",
+          "text": "If your organisation is planning an AI rollout and wants the people side planned as deliberately as the technical build, that alignment work is a core part of our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s159ryv",
+          "text": "AI Literacy & Leadership Workshop",
+          "marks": [
+            "lk155td8"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s160thc",
+          "text": ", and it sits alongside our broader ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s161nbd",
+          "text": "AI Consultation",
+          "marks": [
+            "lk156u7m"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s162gaa",
+          "text": " practice, which is built to help you sequence both the technology and the adoption plan realistically, not just the technology.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b163nei",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1648t3",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "How do we know if our AI tool has a real adoption problem versus just a slow start?",
+      "answer": "A slow start typically shows steadily rising usage and a shrinking gap with the old process. A real adoption problem shows flat or superficial usage, decisions still visibly being made the old way, and a parallel spreadsheet or process that never actually gets retired despite the tool being technically available."
+    },
+    {
+      "question": "Is change management really necessary for a small AI pilot, or only for large rollouts?",
+      "answer": "The scale of the change-management effort should match the scale of the behaviour change being asked of the team, not the size of the technical project. A small pilot that asks an experienced employee to trust a new judgment call over their own can face exactly the same resistance a large rollout does."
+    },
+    {
+      "question": "What's the biggest mistake companies make in AI adoption planning?",
+      "answer": "Treating adoption as a training problem rather than a trust and incentive problem. Training explains how to use a tool; it does nothing to address why an employee whose expertise or metrics the tool affects might rationally prefer to keep working the old way."
+    },
+    {
+      "question": "How long should a parallel-run period last before retiring the old process?",
+      "answer": "It varies by process complexity, but the key requirement isn't the exact length, it's that an end date is set explicitly in advance and treated as a real deadline. Open-ended parallel runs are the most common way old processes quietly become permanent."
+    },
+    {
+      "question": "Should we hide the AI tool's known weaknesses from the team to build confidence?",
+      "answer": "No. Teams that are told upfront where a tool is expected to be weak tend to trust it more once it performs as described, because the first visible mistake doesn't come as a surprise that undermines the whole rollout. Hiding weaknesses tends to produce the opposite of the intended effect."
+    }
+  ]
+}

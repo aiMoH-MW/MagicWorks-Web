@@ -1,0 +1,633 @@
+{
+  "blocks": [
+    {
+      "_type": "block",
+      "_key": "b1jnl",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s235q",
+          "text": "Almost every stalled AI project gets blamed on the model.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s3edt",
+          "text": " In our experience, the model is rarely the actual problem. What fails first, quietly and much earlier, is the data the model was supposed to learn from: fragmented across systems nobody reconciled, inconsistently labelled, or simply too thin in history to validate anything against. By the time this becomes visible, it usually looks like an AI problem. It started as a data problem months before any AI vendor was in the room.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b4rkw",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s5epb",
+          "text": "This is written for founders, COOs, and operations leaders at Indian mid-market firms who are about to commission an AI initiative, or who already ran one that quietly underdelivered and are trying to work out why. If the honest answer to \"why did the pilot disappoint us\" is somewhere in your data, not your vendor, this is the piece that explains what to check before you sign the next contract.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b6d6y",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s77ok",
+          "text": "The failure shows up as an AI problem, but it started earlier",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b8lks",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s9nxq",
+          "text": "The pattern is consistent enough to recognise on sight. A vendor demo works cleanly on a curated sample dataset. The business signs off on a pilot. Three months in, the tool's accuracy on real, messy company data is noticeably worse than what the demo promised, and the conversation shifts to whether the model needs retraining, whether the vendor oversold the product, or whether AI simply isn't ready for this use case yet. Rarely does the conversation start with the data the model was actually asked to work with, even though that is almost always where the gap opened up.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b10nzv",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s11apx",
+          "text": "None of this is a knock on the vendors involved. A model can only be as good as the signal it is given. If your CRM has three different spellings of the same client name, if your inventory system and your finance system disagree about what \"in stock\" means, or if the only record of why a claim was rejected sits in a relationship manager's memory rather than a structured field, no amount of model sophistication closes that gap. It has to be closed on the data side, and that work has to happen before the AI initiative starts, not as an emergency fix once results disappoint.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b12j6m",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1397d",
+          "text": "Three data problems that never show up in a sales demo",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b147py",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s15p63",
+          "text": "Fragmented records across systems.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s16dtv",
+          "text": " Most mid-sized Indian firms run on a patchwork: a CRM here, a tally or ERP export there, WhatsApp and email threads holding decisions that never made it into either. A vendor demo is built on a clean export. Production reality is reconciling three sources that were never designed to agree with each other, and discovering the disagreement only once the AI tool starts producing answers that don't match what the sales team already knows to be true.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b17zu2",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s18pwp",
+          "text": "Undocumented business logic.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s19s9q",
+          "text": " Every organisation has rules that live in someone's head rather than in a field: which customers get a discount and why, which supplier substitutions are acceptable, which exceptions to the standard process are actually routine. An AI system trained only on the structured data will miss all of this, and the result looks like the AI \"getting it wrong\" when it is more accurately described as the AI never having been told the rule in the first place.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b202r6",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s21dag",
+          "text": "Inconsistent labelling and free text.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s22d6n",
+          "text": " A field called \"status\" that contains \"done\", \"Done\", \"complete\", \"Completed - see notes\", and a blank cell all meaning roughly the same thing is a common finding, not an edge case. It is invisible in a spreadsheet a human reads casually, and it is exactly the kind of noise that quietly degrades anything built on top of it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b23kz1",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s24zga",
+          "text": "What a real data-readiness check actually looks at",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b254sd",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s263l0",
+          "text": "Where does the data live, and who can actually touch it",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b27oxo",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s28z0v",
+          "text": "The first question is less technical than it sounds: for the specific process you want AI to help with, which systems hold the relevant data, and does anyone have write access and export rights across all of them without waiting on a different department's IT ticket. A surprising number of AI initiatives stall for weeks not because the data is bad, but because getting a clean export of it requires three separate approvals that nobody scoped in at the start.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b296ny",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s30lye",
+          "text": "How clean is it, actually, not \"mostly clean\"",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b313tx",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s32fp2",
+          "text": "\"Mostly clean\" is doing a lot of work in that sentence, and it is worth pressure-testing before an initiative is scoped. A readiness check samples a meaningful slice of the actual records the AI would use, not a curated example set, and checks it against the questions a model will actually need answered: are the categories consistent, is the free text parseable, are there enough non-null values in the fields that matter for the use case to be viable at all.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b332cj",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s34ffh",
+          "text": "Is there enough history to validate against",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b35x26",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s363sc",
+          "text": "Even perfectly structured data can be too thin to be useful. A model meant to predict demand needs enough historical cycles to have seen the pattern it is being asked to recognise; a model meant to flag anomalies needs enough \"normal\" examples to know what abnormal looks like. A readiness check asks, explicitly, whether the available history covers enough cycles and enough variation, or whether the first phase of any real initiative needs to be building that history before AI can meaningfully use it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b37ell",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s38knf",
+          "text": "The uncomfortable finding most readiness checks produce",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b39mvk",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s40wae",
+          "text": "Here is what tends to happen once this work is done honestly: the flagship use case that motivated the whole initiative, the one leadership is most excited about, often turns out not to be data-ready yet. A smaller, less exciting, adjacent use case usually is. A manufacturing firm that wants AI-assisted demand forecasting frequently discovers that its sales-order history is structured well enough to support it, while the process everyone actually cares most about, say, predictive maintenance on plant equipment, depends on sensor logs that were never captured in a usable form to begin with.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b41vwd",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s42kmg",
+          "text": "This is not a reason to abandon the ambitious use case. It is a reason to sequence it correctly: start where the data already supports a real result, and treat building the missing data foundation for the bigger opportunity as its own named, budgeted piece of work, rather than something quietly folded into \"phase one\" and then blamed on the AI when it doesn't materialise on schedule.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b43ejr",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s44h85",
+          "text": "Who should own the data-readiness fix",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b453xw",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s46qh9",
+          "text": "This is the part organisations most often get wrong structurally. Data-readiness work tends to fall in the gap between IT, which owns the systems but not the business meaning of the data inside them, and the process owner, who understands the business meaning but rarely has the access or the mandate to reconcile records across systems. Neither side is wrong to hesitate: it genuinely isn't fully their job. It has to be explicitly assigned to one named owner, with authority to pull people from both sides in, before the AI initiative is scoped, not once it stalls.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b48fqb",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk47twm",
+          "_type": "link",
+          "href": "/services/ai-consultation/process-audit"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s49p8b",
+          "text": "In practice, this is one of the first things a properly run ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s500na",
+          "text": "AI process audit",
+          "marks": [
+            "lk47twm"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s510rm",
+          "text": " should surface: not just which processes are good AI candidates, but which of them are actually ready today versus which need data-foundation work first. Skipping this step is the single most common reason a promising initiative underperforms in its first quarter.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b520y1",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s53zvd",
+          "text": "Signs your organisation isn't data-ready yet",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b54roy",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s551p1",
+          "text": "Nobody can produce a clean export without a meeting.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s56ipt",
+          "text": " If pulling a representative sample of the data in question requires coordinating three people and a week of back-and-forth, that friction is itself the finding: the data isn't organised for anyone, human or AI, to use quickly.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b57ha5",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s58jjd",
+          "text": "The same customer or product appears under multiple spellings or IDs.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s59wqu",
+          "text": " This sounds trivial until an AI tool starts treating what should be one entity as several, quietly fragmenting whatever pattern it was supposed to detect.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b60dnh",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s611v6",
+          "text": "\"We know what that field really means\" is a common sentence in meetings.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s62oob",
+          "text": " If institutional knowledge is routinely required to interpret a field correctly, that knowledge needs to be captured in structured form before an automated system can be expected to interpret it correctly on its own.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b63147",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s64kvx",
+          "text": "History exists, but only after a system migration two years ago.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s65es7",
+          "text": " A shorter, cleaner history is often more useful than a longer, fragmented one, but it needs to be checked explicitly rather than assumed to be sufficient because a start date sounds long enough.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b66lmx",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s67cqs",
+          "text": "What fixing this costs, in practical terms",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b685c8",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s69onz",
+          "text": "Data-readiness work is rarely as expensive as leadership fears, and rarely as fast as vendors imply. For a single, well-scoped process, it is often measured in a small number of weeks: reconciling one or two systems, standardising a handful of fields, and documenting the business rules that currently live only in someone's head. The cost that actually matters is not the effort itself, but the decision to do it deliberately, on its own timeline, rather than discovering it is needed halfway through a pilot that was scoped without it, when it becomes an unplanned delay that erodes confidence in the whole initiative.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b70wfs",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s717sp",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b74dya",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk72v6p",
+          "_type": "link",
+          "href": "/services/ai-consultation/process-audit"
+        },
+        {
+          "_key": "lk73305",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s755g5",
+          "text": "If you are scoping an AI initiative and want an honest answer on whether your data can actually support it before you commit budget to a vendor, that is precisely what our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s76clp",
+          "text": "AI Process Audit & Roadmap",
+          "marks": [
+            "lk72v6p"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s77id3",
+          "text": " engagement is built to establish early, alongside our broader ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s78p6r",
+          "text": "AI Consultation",
+          "marks": [
+            "lk73305"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s79rdn",
+          "text": " practice, which is consultation-only: we tell you what's ready, what isn't, and what order to tackle it in, and you choose who builds it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b81hfr",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk80t82",
+          "_type": "link",
+          "href": "/blog/from-audit-to-action-ai-roadmap"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s82j55",
+          "text": "Once the roadmap exists, the discipline of actually executing it, rather than letting good findings quietly stall, is its own separate challenge; see our note on turning ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s83uob",
+          "text": "audit findings into a roadmap you can execute",
+          "marks": [
+            "lk80t82"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s84ym0",
+          "text": " for what that looks like in practice.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b85ixv",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s8628h",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "How long does a data-readiness check take before an AI project starts?",
+      "answer": "For a single, well-scoped process, one to three weeks is typical: enough time to sample real records across the relevant systems, check for consistency and history depth, and document the business rules that currently live outside any structured field. Longer timelines usually mean the scope has quietly expanded to cover multiple processes at once."
+    },
+    {
+      "question": "Can we just fix the data as we go, alongside the AI pilot?",
+      "answer": "You can, but it is worth doing with eyes open: fixing data mid-pilot usually means the pilot's early results are measuring the data problem more than the AI's actual capability, which makes it hard to judge the tool fairly and easy to blame the wrong thing when results disappoint."
+    },
+    {
+      "question": "What if the readiness check says our flagship use case isn't ready yet?",
+      "answer": "That is a common and genuinely useful outcome, not a failure. It usually means starting with a smaller, adjacent use case where the data already supports a real result, while treating the data-foundation work for the bigger opportunity as its own named, budgeted phase rather than an assumption baked silently into the first pilot."
+    },
+    {
+      "question": "Who inside our company should be responsible for data readiness?",
+      "answer": "It needs a single named owner with the authority to pull people from both IT and the relevant business process together, because the work genuinely sits between the two. Leaving it undecided is how it falls through the gap between departments that each assume it's someone else's responsibility."
+    },
+    {
+      "question": "Does a small or mid-sized company really need a formal data-readiness check, or is that overkill?",
+      "answer": "The formality should scale to the initiative, not be skipped entirely. Even an informal version, sampling real records and asking the three questions above honestly, catches most of the expensive surprises. What tends to go wrong is skipping the check altogether because the initiative feels too small to warrant it, only to discover the data problem after the vendor contract is already signed."
+    }
+  ]
+}

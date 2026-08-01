@@ -1,0 +1,461 @@
+{
+  "blocks": [
+    {
+      "_type": "block",
+      "_key": "b165uh5",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1669mt",
+          "text": "\"Should we just hire someone for this?\" is the question that comes up in nearly every AI strategy conversation we have.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s167ahr",
+          "text": " It's a reasonable instinct. It's also frequently answered too quickly, in either direction, before the actual shape of the need has been worked out.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b168ltk",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s169s8z",
+          "text": "This is written for founders and COOs at companies roughly fifty to five hundred employees who are past the \"should we do anything with AI\" question and now facing a narrower, more practical one: build internal capability by hiring, or bring in an outside advisor on an ongoing basis. Both are legitimate answers. The right one depends on specifics most companies don't examine closely enough before deciding.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b170tbz",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s171xo5",
+          "text": "The two options aren't actually competing for the same job",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b172l75",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1736lh",
+          "text": "An in-house AI hire and an embedded external advisor are often framed as substitutes, which is part of why the decision gets made on budget alone rather than on fit. They are better understood as different tools solving different problems. A strong in-house hire builds and maintains things day to day, sits in team meetings, and accumulates deep, specific knowledge of your systems over years. An embedded advisor brings pattern recognition from many engagements across companies, a vendor-neutral view unclouded by wanting to build everything themselves, and is structured to be temporary or ongoing at a fraction of a full-time loaded cost.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b174itc",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s175ron",
+          "text": "Confusing the two leads to two common, expensive mistakes: hiring a single AI lead too early, before there is enough steady, well-defined work to justify a full-time role, and burning out or under-using that person on a portfolio of unrelated one-off requests; or retaining an advisor indefinitely for work that has become repetitive and operational enough that it would now be genuinely cheaper, and better for institutional memory, to bring in-house.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b17625m",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s177ya0",
+          "text": "Questions that actually determine the right answer",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b178opd",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s17905i",
+          "text": "Is the work steady enough to fill a real role, or does it come in bursts?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b180xj5",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s181dkt",
+          "text": "A single, well-defined stream of AI-related work, say, continuously improving one customer-facing recommendation system, can justify a full-time hire once it's mature enough to need daily attention. A scattered set of unrelated AI questions across departments, one quarter it's marketing automation, the next it's supply chain forecasting, rarely does, because no single hire is likely to be genuinely expert across all of it, and the role ends up thin across many things rather than deep in any of them.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b182gfu",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s183v2q",
+          "text": "Do you need vendor-neutral judgment, or an implementer?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b184hd4",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s185e6q",
+          "text": "If the immediate need is evaluating which of three vendors to trust with a specific problem, an in-house hire who will eventually implement whichever vendor is chosen has a structural conflict of interest in that evaluation, even an honest one: their own expertise and preferences will shape the recommendation, consciously or not. An outside advisor with no stake in which vendor wins, and no long-term interest in building everything themselves, is structurally better positioned for that specific judgment call.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b186j0b",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s187mzs",
+          "text": "How much of the value is pattern recognition versus institutional depth?",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b188ulj",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s189u7d",
+          "text": "Some of the highest-value AI decisions in a mid-market company come from having seen a dozen similar situations play out elsewhere: which vendor claims tend to hold up under real usage, which build-vs-buy calls similar-sized companies later regretted, which data problems always surface eventually regardless of what a demo shows. That kind of pattern recognition compounds across many companies, not within one. Institutional depth, by contrast, deep familiarity with your specific systems, your team's quirks, your customers' edge cases, compounds only inside your own company, and only an in-house hire builds it.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b190ap2",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s1913dc",
+          "text": "A framework, not a rule",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b192i4i",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s193hrl",
+          "text": "Companies at the smaller end of this range, roughly fifty to one hundred fifty employees, usually get more value from an embedded advisor relationship at this stage: the AI-related work is rarely steady enough yet to fill a role, and the vendor-neutral judgment matters disproportionately while the company is still making its first few significant AI decisions. Companies at the larger end, two hundred fifty to five hundred employees, more often have enough steady, well-defined AI work to justify at least one focused in-house hire, frequently alongside a retained advisor for the specific moments, a major vendor decision, an annual roadmap review, that benefit from an outside, pattern-informed view.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b195nid",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk194xl5",
+          "_type": "link",
+          "href": "/blog/vendor-neutral-ai-advisor-embedded-engagement"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s196yuh",
+          "text": "This is also where the shape of the engagement matters more than the label: an embedded, vendor-neutral advisory relationship looks and functions differently from either a traditional consulting project or a full-time hire, and it's worth understanding the difference before assuming your only two options are \"hire\" or \"one-off consulting project\". See our note on ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s197o46",
+          "text": "what a vendor-neutral embedded AI advisor actually does",
+          "marks": [
+            "lk194xl5"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s198gpj",
+          "text": " month to month for what that middle option looks like in practice.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b1998j7",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s200prg",
+          "text": "A hybrid that works better than either extreme, in practice",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b201xty",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2021qu",
+          "text": "The companies we've seen get the best outcomes rarely pick one option permanently. They start with an embedded advisor while the AI roadmap and first few decisions are being made, because the judgment needed at that stage is exactly the vendor-neutral, pattern-informed kind an outsider is best positioned to bring. As specific initiatives mature into steady, well-defined operational work, an in-house hire is brought on to own that work day to day, often someone the advisor helped recruit or evaluate. The advisor relationship then continues at a lighter cadence, for the periodic, higher-stakes decisions, a major vendor renewal, an annual strategy review, rather than disappearing entirely.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b203x7v",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s204uwj",
+          "text": "The mistake to avoid in either direction",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b205451",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s206d9b",
+          "text": "Hiring too early locks in a single perspective before the company has enough data points to know what it actually needs.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s207alh",
+          "text": " A first AI hire made before any real roadmap exists often ends up shaping the roadmap around their own prior experience and preferences, rather than around what the company's specific situation calls for.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b208adv",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s209lrk",
+          "text": "Retaining an advisor indefinitely for work that has become routine wastes money and slows institutional learning.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s210jj2",
+          "text": " If the same advisor is still doing the same operational task eighteen months in, with no plan to transition it in-house, that is worth questioning directly rather than assuming the arrangement is still the efficient one.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b211gus",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s212j3s",
+          "text": "Who should make this call",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b2133hy",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s214f2n",
+          "text": "This decision sits above any single department head, because it involves a genuine trade-off between short-term flexibility and long-term institutional capability that only someone with visibility across the whole company, usually the founder or COO, can weigh properly. Delegating it entirely to whichever department is loudest about needing AI help tends to produce a hire or an engagement scoped around that department's immediate frustration rather than the company's actual medium-term need.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b215fvb",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s216879",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b219ury",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk2173hh",
+          "_type": "link",
+          "href": "/services/ai-consultation/embedded-advisor"
+        },
+        {
+          "_key": "lk218duk",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s220l1h",
+          "text": "If you're trying to work out whether your organisation needs an in-house hire, an embedded advisor, or both, and in what sequence, that's exactly the kind of judgment call our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s2213iy",
+          "text": "embedded advisory",
+          "marks": [
+            "lk2173hh"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s222g3h",
+          "text": " engagements are designed to help with directly, alongside our broader ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s223s1w",
+          "text": "AI Consultation",
+          "marks": [
+            "lk218duk"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s224efh",
+          "text": " practice: vendor-neutral by design, so the recommendation reflects your situation rather than anyone's incentive to be hired or retained longer than necessary.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b225k98",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s226a48",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "At what company size does it make sense to hire a full-time AI lead?",
+      "answer": "There's no fixed headcount threshold; the better test is whether there is a single, steady stream of AI-related work mature enough to need daily attention. Companies with roughly 250 or more employees more often reach that point, but a smaller company with one dominant, well-defined AI use case can justify it earlier, and a larger company with only scattered AI needs across departments can justify it later."
+    },
+    {
+      "question": "Isn't an embedded advisor just a more expensive way to get the same thing as a consulting project?",
+      "answer": "The structure is different in practice. A consulting project typically ends with a deliverable and a handoff; an embedded advisory relationship continues alongside your team on an ongoing basis, vendor-neutral, without the incentive a traditional project-based consultancy sometimes has to recommend more scope or a specific implementation to sell."
+    },
+    {
+      "question": "Can we start with an in-house hire and add an advisor later if we need outside judgment?",
+      "answer": "Yes, though it's less common than the reverse. It usually happens when a company realises, partway through, that a specific decision, often a major vendor evaluation, genuinely benefits from a vendor-neutral outside view that the in-house hire, however capable, can't fully provide given their existing responsibilities and potential preferences."
+    },
+    {
+      "question": "What's the biggest risk of hiring an AI lead too early?",
+      "answer": "The new hire's own prior experience and preferences tend to shape the company's early AI roadmap by default, simply because there isn't yet an independent, vendor-neutral roadmap for them to execute against. That can lock in a direction that reflects one person's background more than the company's actual situation."
+    },
+    {
+      "question": "Does an embedded advisor replace the need for any in-house AI capability at all?",
+      "answer": "Not usually, and not indefinitely. The advisor model works best for judgment, sequencing, and vendor-neutral evaluation; day-to-day operation of a mature AI tool generally benefits from an in-house owner over time, both for cost efficiency and for retaining institutional knowledge inside the company rather than with an outside party."
+    }
+  ]
+}

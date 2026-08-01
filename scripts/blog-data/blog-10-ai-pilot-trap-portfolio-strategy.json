@@ -1,0 +1,525 @@
+{
+  "blocks": [
+    {
+      "_type": "block",
+      "_key": "b308cgc",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s309dww",
+          "text": "Running five small AI pilots at once feels like momentum.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s310lqn",
+          "text": " In our experience, it is usually the opposite: a company that has five pilots running simultaneously, each owned by a different department, each reporting its own version of success, more often ends up with less usable AI capability a year later than a company that ran one pilot properly and scaled it before starting a second.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b311onf",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s312421",
+          "text": "This is written for founders and COOs at Indian mid-market firms who are, or are being encouraged to be, excited about \"AI everywhere\" simultaneously: marketing wants a content tool, operations wants a forecasting model, HR wants a resume screener, and each department is moving forward independently because waiting for a company-wide plan feels slower than just starting.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b31323z",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s3144e7",
+          "text": "Why parallel pilots feel productive and usually aren't",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b315ykt",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s31654s",
+          "text": "Each individual pilot, viewed in isolation, is defensible. The marketing team's content tool genuinely might save time. The forecasting pilot genuinely might improve accuracy. The problem isn't any single pilot's merit; it's that five pilots running in parallel, each without visibility into the others, compete for the same scarce resources, a small number of people who actually understand both the business processes and enough about AI to evaluate a vendor honestly, without anyone noticing the resource is being spread five ways instead of concentrated on getting one thing genuinely right.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b317se3",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s3183qo",
+          "text": "A year later, the common pattern is five pilots in some intermediate state, none of them properly scaled, each department reporting its own pilot as a partial success because nobody wants to admit theirs stalled, and no organisation-wide capability or lesson actually compounding from the effort spent. Compare this to one pilot, run with full attention and a real measurement discipline, scaled properly, with the lessons from that one experience, what data problems showed up, what vendor claims held up, how adoption actually worked, directly informing a faster, better second pilot.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b319z03",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s320e97",
+          "text": "The resource that quietly runs out first",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b3214le",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s322958",
+          "text": "It is rarely budget that constrains parallel AI pilots in a mid-market company; most individual pilots are inexpensive enough that five of them together still fit inside a modest overall spend. What runs out is attention from the small number of people, often just one or two, who can meaningfully evaluate whether a given pilot's results are real, ask the vendor the right hard questions, and notice early when a pilot's data foundation isn't there yet. Spread across five simultaneous efforts, that attention becomes thin enough that none of the five gets the scrutiny a single pilot would have received.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b323uiu",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s324cpj",
+          "text": "How this typically starts",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b325t00",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s326ytr",
+          "text": "Parallel pilots rarely begin as a deliberate strategy. They begin because a company-wide AI conversation feels slow, and individual department heads, reasonably, don't want to wait for it before addressing their own team's obvious opportunity. Each pilot is locally rational. The absence of any forum where someone can see all five happening at once, and ask whether that's actually the best use of the company's limited AI-capable attention this year, is the actual gap, not any individual department's decision to move forward.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b327xuj",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s328sei",
+          "text": "What a portfolio approach looks like instead",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b3299xu",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s330ago",
+          "text": "One shared view of everything in flight",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b3319ha",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s332bun",
+          "text": "This doesn't require a heavyweight program office. It requires a single, simple, honestly maintained list: every AI initiative currently active anywhere in the company, who owns it, what stage it's in, and what it's asking of the limited pool of people who can properly evaluate AI work. The value isn't in tracking for its own sake; it's in making the trade-off visible before it's made by accident.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b333cfh",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s334f8p",
+          "text": "A forced sequencing conversation, not a ban on parallel work",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b335vl2",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s336xcq",
+          "text": "Sequencing doesn't mean only one AI initiative is ever allowed to exist. It means a deliberate conversation happens, with real trade-offs named, about which one or two initiatives get the concentrated attention this quarter, and which genuinely can wait, rather than every department's pilot proceeding by default because nobody was in a position to say no.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b337re8",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s338b5w",
+          "text": "A rule for when a second pilot is allowed to start",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b339dil",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s340zkl",
+          "text": "The simplest version that tends to work well in practice: a second pilot starts once the first has either scaled successfully or been honestly closed out with a documented reason, not simply once someone in another department gets excited about a new idea. This single rule does more to prevent portfolio sprawl than any amount of governance documentation, because it forces a real decision point rather than an accumulation of open-ended experiments.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b341jf6",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s3423qn",
+          "text": "A concrete illustration",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b343ba0",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s344fbe",
+          "text": "A mid-sized professional services firm found itself, within the same year, running an AI drafting tool for one practice area, a client-intake chatbot for the front desk, and a resource-forecasting model for staffing, each championed by a different partner, none coordinated with the others. Eighteen months in, the drafting tool had quietly stalled on adoption, the chatbot had launched but nobody had measured whether it actually reduced front-desk workload, and the forecasting model was still in a data-cleanup phase that had never been properly scoped or resourced.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b345656",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s346j7d",
+          "text": "The fix wasn't cancelling any of the three outright. It was creating a single shared list of all three, assigning one clear owner across the firm to ask, honestly, which one deserved the concentrated attention needed to actually finish, and pausing the other two deliberately, with a stated reason, rather than letting all three continue indefinitely at a thin, under-resourced pace. The drafting tool, once given real attention instead of a third of somebody's time, reached genuine adoption within two months of being prioritised properly.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b347gho",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s348u2s",
+          "text": "Who should own the portfolio view",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b349oty",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s350h5q",
+          "text": "This has to sit above any individual department head, for the same reason a build-versus-buy roadmap decision does: it requires visibility across the whole company and the standing to tell a department that its pilot, however locally reasonable, isn't this quarter's priority. In practice this is almost always a founder, CEO, or COO, sometimes supported by an outside advisor whose only stake in the sequencing decision is getting it right, not protecting any one department's project.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b3536pm",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk351zng",
+          "_type": "link",
+          "href": "/blog/from-audit-to-action-ai-roadmap"
+        },
+        {
+          "_key": "lk352ycn",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s354rg1",
+          "text": "This is closely related to, but distinct from, the roadmap discipline covered in our note on ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s355g44",
+          "text": "turning audit findings into an executable plan",
+          "marks": [
+            "lk351zng"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s356v04",
+          "text": "; the portfolio question here is less about sequencing within one initiative and more about whether the company should be running several unrelated AI efforts at once at all, a question worth asking explicitly before committing to a fifth pilot, alongside our broader ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s3575y6",
+          "text": "AI Consultation",
+          "marks": [
+            "lk352ycn"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s358boy",
+          "text": " work.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b359cxq",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s36038p",
+          "text": "Signs your organisation has fallen into the pilot trap",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b3615wr",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s36215n",
+          "text": "Nobody can name, without checking, how many AI pilots are currently active across the company.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s363ixb",
+          "text": " If the true count is a surprise even to leadership, the portfolio has already outrun anyone's ability to manage it deliberately.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b364tv1",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s3652rh",
+          "text": "Each pilot's status update comes from the department running it, with no independent check.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s3668lq",
+          "text": " This is how five stalled pilots each get reported as \"on track\" for a year, because nobody outside the department has visibility to challenge that framing.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b367g7v",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s3683gn",
+          "text": "A new pilot started this quarter without anyone asking what should pause to make room for it.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s369tsa",
+          "text": " Genuine prioritisation involves saying no to something, not just yes to everything new.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b370n65",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s371xlm",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b373e78",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk372tts",
+          "_type": "link",
+          "href": "/services/ai-consultation/embedded-advisor"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s374uga",
+          "text": "If your organisation is juggling multiple AI initiatives without a clear view of which ones deserve real attention this year, that portfolio-level judgment is exactly what an ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s375wff",
+          "text": "embedded, vendor-neutral AI advisor",
+          "marks": [
+            "lk372tts"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s376xig",
+          "text": " is positioned to bring: someone whose only stake is getting the sequencing right, not defending any single department's pet project.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b377c3i",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s378h3z",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "Is it ever a good idea to run more than one AI pilot at the same time?",
+      "answer": "Yes, but deliberately, with the resourcing and attention split explicitly acknowledged, rather than by default because several departments each started their own without visibility into the others. The problem isn't parallel work itself; it's parallel work nobody is tracking as a portfolio."
+    },
+    {
+      "question": "What's the clearest sign our company has too many AI pilots running at once?",
+      "answer": "If leadership can't immediately name how many AI initiatives are currently active company-wide, and each one's status comes only from the department running it with no independent check, that's a strong sign the portfolio has outrun anyone's ability to manage it."
+    },
+    {
+      "question": "Doesn't slowing down to sequence pilots mean we lose momentum to competitors?",
+      "answer": "In our experience it's the opposite: five simultaneously under-resourced pilots that stall a year later represent far less real progress than one properly resourced pilot that reaches genuine, scaled adoption and produces lessons that make the next one faster."
+    },
+    {
+      "question": "Who should decide which AI pilot gets priority when multiple departments want to move forward?",
+      "answer": "This decision needs to sit above any individual department head, typically with a founder, CEO, or COO, sometimes supported by an outside advisor with no stake in protecting any one department's project, because it requires visibility and standing that no single department head has on their own."
+    },
+    {
+      "question": "What's a simple rule for preventing pilot sprawl without heavy process?",
+      "answer": "A second AI pilot is only greenlit once the first has either scaled successfully or been honestly closed out with a documented reason. That single rule, consistently applied, prevents most of the sprawl that a full governance framework is otherwise built to solve."
+    }
+  ]
+}

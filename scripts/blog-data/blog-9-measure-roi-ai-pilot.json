@@ -1,0 +1,601 @@
+{
+  "blocks": [
+    {
+      "_type": "block",
+      "_key": "b227fkr",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s228vmn",
+          "text": "\"The pilot went well\" is the sentence that precedes more bad scaling decisions than almost any other in AI projects.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s229ydb",
+          "text": " It usually means the tool worked, technically, on the specific slice of the problem the pilot covered. It rarely means anyone measured whether it actually moved a number the business cares about, or whether that result will hold once the pilot expands beyond its original, favourable conditions.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b230v2e",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s231h8k",
+          "text": "This is written for founders, COOs, and operations leaders at Indian mid-market firms who are running, or about to run, an AI pilot and want a genuine answer, before committing to scale it, on whether it actually delivered a return worth expanding.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b232hfl",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2333h4",
+          "text": "Why \"it went well\" isn't a measurement",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b234455",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s235tzw",
+          "text": "Pilots are almost structurally biased toward looking successful. They're usually run on a favourable slice of the business, with more attention from the team than a fully scaled rollout will ever get again, and with a natural incentive for whoever championed the pilot to interpret ambiguous results generously. None of this is dishonest. It's simply what happens when a small, closely watched test is mistaken for a representative sample of what full-scale performance will look like.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b2362wd",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s237h58",
+          "text": "A genuine ROI measurement has to be defined before the pilot starts, tied to a business outcome rather than a technical one, and checked against what would have happened anyway, not just what happened during the pilot in isolation.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b238s5h",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s239pmq",
+          "text": "The metrics that actually matter, and the ones that quietly substitute for them",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b240mbo",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s241x13",
+          "text": "Business outcome, not technical performance",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b2429dl",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s243se0",
+          "text": "Model accuracy, response time, or usage rate are technical metrics.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s244505",
+          "text": " They matter as diagnostics, but none of them is a business outcome on their own. A support chatbot with 95% intent-recognition accuracy that doesn't measurably reduce resolution time or support headcount hasn't yet proven a return; it has proven the model works, which is a different, smaller claim.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b245176",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s246gt7",
+          "text": "The honest question is: what changed in a number leadership already tracks?",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s247zcz",
+          "text": " Revenue per rep, cost per resolved ticket, days sales outstanding, defect rate, whatever the process was meant to improve. If the pilot can't point to movement in a metric that predates the AI initiative and would have been tracked regardless, the pilot has demonstrated capability, not value.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b248ede",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s249tqq",
+          "text": "A believable counterfactual, not just a before-and-after",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b250fbg",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s25182c",
+          "text": "A number improving during the pilot period doesn't by itself prove the AI caused it. Seasonal effects, a concurrent process change, or simply the extra attention a pilot process gets from an engaged team can all move a metric independently of the tool. A credible pilot measurement compares the pilot group against a comparable control, even an imperfect one, a similar team or region that didn't get the new tool, rather than relying solely on a single before-and-after comparison that can't rule out other causes.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b25207h",
+      "style": "h3",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2538pq",
+          "text": "Performance under normal, not ideal, conditions",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b254u03",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s255b8c",
+          "text": "Pilots often run under conditions that won't persist at scale: a smaller, more engaged team, closer oversight from whoever is championing the project, and a narrower slice of the real-world variation the process eventually has to handle. A pilot ROI figure needs to be checked against whether those favourable conditions are structural to the pilot phase itself, in which case the number will likely shrink once they go away at scale, rather than assumed to be representative of steady-state performance.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b256hmx",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2576g5",
+          "text": "A concrete example of the gap",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b258kjz",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s259swa",
+          "text": "Consider a B2B services firm that piloted an AI tool to draft first-pass responses to inbound RFPs. During the eight-week pilot, response time dropped sharply, and the team reported the tool as a clear success. What the pilot measurement didn't initially separate out: the pilot ran during the firm's quietest sales quarter, with only the two most experienced proposal writers using the tool, both of whom were also the two people most invested in proving it worked.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b260fyg",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s26181k",
+          "text": "When the tool rolled out to the full team during a busier quarter, response time improvement was real but roughly half of what the pilot had suggested, because the full team's average editing time on AI drafts was higher than the two pilot users', and volume was higher too. The gap wasn't a failure of the tool. It was a pilot measurement that never separated the tool's actual effect from the favourable conditions the pilot happened to run under, which meant the scaling decision was made on an inflated number.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b262s12",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s263n3k",
+          "text": "What to define before the pilot starts, not after",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b264300",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s265ks6",
+          "text": "The specific business metric the pilot is meant to move, named in advance.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s266hyr",
+          "text": " Not \"improve efficiency\" in general, but a specific number that already exists in a report someone reviews today.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b267g7i",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s268o6c",
+          "text": "A comparison group or a clear \"what would have happened anyway\" baseline.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s269hzc",
+          "text": " Even an imperfect comparison, a similar team, region, or time period without the tool, beats no comparison at all.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b270ege",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s271sc2",
+          "text": "A minimum pilot duration long enough to include at least one normal, non-favourable period.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s2728yp",
+          "text": " A pilot that only ever runs during a quiet quarter or with the most capable team members will systematically overstate what scaling will deliver.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b273si1",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s274mur",
+          "text": "A predetermined threshold for what counts as \"worth scaling\".",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s275csw",
+          "text": " Deciding this after seeing the results invites motivated reasoning; deciding it in advance, even roughly, keeps the scaling decision honest.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b276vta",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s277zk5",
+          "text": "Who should own this measurement",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b278mw3",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s279ijy",
+          "text": "Ownership of the ROI measurement should sit with someone who did not champion the pilot and has no stake in its outcome looking favourable, typically a finance lead or an operations head one level removed from whoever ran the day-to-day pilot. This isn't a matter of trust; it's a structural safeguard against the entirely human tendency to interpret ambiguous results in favour of a project one has personally invested time and credibility into.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b281jiv",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk2806pt",
+          "_type": "link",
+          "href": "/services/ai-consultation/process-audit"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2823vw",
+          "text": "This measurement discipline is also one of the clearest, most defensible outputs a properly scoped ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s283pf4",
+          "text": "AI process audit and roadmap",
+          "marks": [
+            "lk2806pt"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s284bxz",
+          "text": " engagement should produce upfront: a named metric, a baseline, and a threshold, agreed before the pilot starts, not reconstructed afterward to justify whatever happened.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b285di2",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2862ep",
+          "text": "Signs a pilot's ROI claim deserves a second look",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b287fop",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2887s3",
+          "text": "The only evidence offered is qualitative: \"the team loves it\", \"it feels faster\".",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s289eg9",
+          "text": " Positive sentiment is a reasonable early signal, but it is not, on its own, a measured return.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b290cci",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s291afe",
+          "text": "The comparison is only to the period immediately before the pilot, with no adjustment for season or context.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s292ovu",
+          "text": " This is the most common way a pilot's apparent success turns out to be partly, or entirely, something else.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b2937e9",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s2947ja",
+          "text": "The person presenting the results is the same person who championed the pilot, with no independent review.",
+          "marks": [
+            "strong"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s295au8",
+          "text": " Not a sign of dishonesty, but a reason to have someone else check the numbers before a scaling budget is approved.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b296rw9",
+      "style": "h2",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s297zvx",
+          "text": "Where this fits",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b3005dl",
+      "style": "normal",
+      "markDefs": [
+        {
+          "_key": "lk298hq3",
+          "_type": "link",
+          "href": "/services/ai-consultation/process-audit"
+        },
+        {
+          "_key": "lk299jfl",
+          "_type": "link",
+          "href": "/services/ai-consultation"
+        }
+      ],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s3017gc",
+          "text": "If you're running an AI pilot and want the ROI question answered honestly, with a real baseline, before you commit to scaling it, that discipline is built into our ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s302sy8",
+          "text": "AI Process Audit & Roadmap",
+          "marks": [
+            "lk298hq3"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s3036rz",
+          "text": " engagement and our broader ",
+          "marks": []
+        },
+        {
+          "_type": "span",
+          "_key": "s304qjc",
+          "text": "AI Consultation",
+          "marks": [
+            "lk299jfl"
+          ]
+        },
+        {
+          "_type": "span",
+          "_key": "s305lpt",
+          "text": " practice: consultation-only, so the measurement isn't shaped by an interest in selling you the next phase.",
+          "marks": []
+        }
+      ]
+    },
+    {
+      "_type": "block",
+      "_key": "b306etk",
+      "style": "normal",
+      "markDefs": [],
+      "children": [
+        {
+          "_type": "span",
+          "_key": "s307n4f",
+          "text": "Mohan Chute is the founder of MagicWorks IT Solutions, with 17+ years across digital marketing, web strategy, and AI. He writes from inside live client engagements, not theory.",
+          "marks": [
+            "em"
+          ]
+        }
+      ]
+    }
+  ],
+  "faq": [
+    {
+      "question": "How long should an AI pilot run before we trust the ROI numbers?",
+      "answer": "Long enough to include at least one normal, non-favourable period for the team and the business cycle, not just the most convenient window. A pilot that only runs during a quiet quarter with the most capable users will reliably overstate what happens at scale."
+    },
+    {
+      "question": "What's the single biggest mistake companies make when measuring pilot ROI?",
+      "answer": "Measuring a technical metric, accuracy, usage, speed, and treating it as a business outcome. A model can perform well technically without moving any number leadership actually tracks, and that gap only becomes visible if the business metric was defined and measured from the start."
+    },
+    {
+      "question": "Do we need a formal control group to measure ROI properly?",
+      "answer": "A perfect control group is rarely available in a mid-market company, but even an imperfect comparison, a similar team or region that didn't get the tool during the same period, is far better than a single before-and-after number with no adjustment for other factors that could explain the change."
+    },
+    {
+      "question": "Who should be responsible for evaluating whether a pilot succeeded?",
+      "answer": "Ideally someone who didn't champion the pilot and has no stake in it looking successful, often a finance lead or an operations head one step removed from the day-to-day project. This reduces the natural tendency to interpret ambiguous results generously."
+    },
+    {
+      "question": "What if the pilot's real ROI turns out to be lower than the initial results suggested?",
+      "answer": "That's a common and genuinely useful finding, not a failure of the initiative. It usually means scaling should proceed with adjusted expectations, or that the favourable conditions the pilot ran under need to be addressed directly, more training, better data, realistic team capacity, before a full rollout, rather than assumed away."
+    }
+  ]
+}
