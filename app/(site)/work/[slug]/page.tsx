@@ -34,8 +34,10 @@ export default async function CaseStudyPage({ params }: Props) {
   const caseStudySchema = {
     "@context": "https://schema.org",
     "@type": "Article",
+    articleSection: "Case Study",
     headline: study.title,
     description: study.situation ?? "",
+    image: study.coverImage ?? undefined,
     datePublished: study.publishedAt ?? undefined,
     dateModified: study.publishedAt ?? undefined,
     author: { "@type": "Organization", name: "MagicWorks IT Solutions Pvt. Ltd." },
@@ -44,9 +46,20 @@ export default async function CaseStudyPage({ params }: Props) {
     mainEntityOfPage: { "@type": "WebPage", "@id": `https://magicworksitsolutions.com/work/${slug}` },
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://magicworksitsolutions.com" },
+      { "@type": "ListItem", position: 2, name: "Client Work", item: "https://magicworksitsolutions.com/work" },
+      { "@type": "ListItem", position: 3, name: study.title, item: `https://magicworksitsolutions.com/work/${slug}` },
+    ],
+  };
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       {/* Hero */}
       <section className="bg-[#2A1B5C] text-[#F7F3EA] py-28 pb-20 min-h-[480px] relative overflow-hidden">

@@ -315,7 +315,7 @@ export default function AdminPage() {
   const [deleteConfirm, setDeleteConfirm] = useState(false);
   const [deleteError, setDeleteError] = useState("");
   const [rescoring, setRescoring] = useState(false);
-  const [rescoreProgress, setRescoreProgress] = useState<{ scored: number; remaining: number; skipped: number; failed: number } | null>(null);
+  const [rescoreProgress, setRescoreProgress] = useState<{ scored: number; remaining: number; skipped: number; failed: number; lastError?: string } | null>(null);
 
   const fetchRows = useCallback(async (t: Tab, from: string, to: string, sort: string) => {
     setLoading(true);
@@ -392,15 +392,18 @@ export default function AdminPage() {
           headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
           body: JSON.stringify({ ids: [ids[i]] }),
         });
+        let lastErr: string | undefined;
         if (res.ok) {
           const json = await res.json();
           totalScored  += (json.scored  as number) ?? 0;
           totalSkipped += (json.skipped as number) ?? 0;
           totalFailed  += (json.failed  as number) ?? 0;
+          if (json.last_error) lastErr = json.last_error as string;
         } else {
           totalFailed++;
+          lastErr = `HTTP ${res.status}`;
         }
-        setRescoreProgress({ scored: totalScored, remaining: ids.length - i - 1, skipped: totalSkipped, failed: totalFailed });
+        setRescoreProgress({ scored: totalScored, remaining: ids.length - i - 1, skipped: totalSkipped, failed: totalFailed, lastError: lastErr });
       }
       await fetchRows(tab, dateFrom, dateTo, sortDir);
       setSelectedIds(new Set());
@@ -636,11 +639,13 @@ export default function AdminPage() {
                   {rescoreProgress
                     ? rescoreProgress.scored > 0
                       ? `Done (${rescoreProgress.scored} scored)`
-                      : rescoreProgress.skipped > 0
-                        ? `Key error? (${rescoreProgress.skipped} skipped)`
-                        : rescoreProgress.failed > 0
-                          ? `Failed (${rescoreProgress.failed} errors)`
-                          : "Score All"
+                      : rescoreProgress.lastError
+                        ? rescoreProgress.lastError.slice(0, 60)
+                        : rescoreProgress.skipped > 0
+                          ? `Skipped — check Vercel logs`
+                          : rescoreProgress.failed > 0
+                            ? `Failed — check Vercel logs`
+                            : "Score All"
                     : "Score All"}
                 </button>
               )
