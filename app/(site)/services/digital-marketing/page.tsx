@@ -436,7 +436,7 @@ export default function DigitalMarketingPage() {
           <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-12 grid md:grid-cols-[300px_1fr] gap-12 items-center">
             <div>
               <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(56px,8vw,84px)] text-[#2A1B5C] leading-[0.95]">
-                75k+
+                50,000+
               </div>
               <hr className="w-[64px] h-[3px] bg-[#D4A537] border-0 my-4" />
               <p className="text-[13px] uppercase tracking-[0.12em] text-[#3F3F4A]">
@@ -450,7 +450,7 @@ export default function DigitalMarketingPage() {
             </div>
             <div>
               <p className="font-[family-name:var(--font-head)] italic text-[clamp(18px,2.4vw,24px)] leading-[1.4] text-[#2A1B5C] mb-6">
-                &ldquo;75,000+ qualified admissions enquiries a year at a cost per lead 30 to 40% below benchmark, and four times the growth by Year 3.&rdquo;
+                &ldquo;50,000+ qualified admissions enquiries a year at a cost per lead 30 to 40% below benchmark, and four times the growth by Year 3.&rdquo;
               </p>
               <Link
                 href="/work/simplidistance-mba-enrollments"

@@ -66,7 +66,7 @@ const caseStudies = [
     title: "SimpliDistance Scales MBA Enrollments With High-Intent Search Advertising",
     slug: { _type: "slug", current: "simplidistance-mba-enrollments" },
     client: "SimpliDistance",
-    heroMetric: "75,000+",
+    heroMetric: "50,000+",
     heroMetricLabel: "Qualified leads per year",
     industry: "education",
     pillar: "digital-marketing",
@@ -77,9 +77,9 @@ const caseStudies = [
     intervention:
       "MagicWorks designed a Google Search-first performance marketing framework built around deep intent targeting to capture students actively searching for distance and online MBA programs, a hyper-intent keyword strategy aligned to course type, university, eligibility, and admission timelines, conversion-optimised landing pages engineered for enquiry completion, continuous A/B testing across ads, keywords, and landing experiences, and a scalable campaign architecture enabling rapid expansion across programs and locations. Google Search Ads became the core growth engine — optimised not just for traffic, but for enrollment-ready leads.",
     result:
-      "SimpliDistance achieved 75,000+ qualified leads per year, a consistent 4–8% admission conversion rate, cost per lead delivered 30–40% below direct university acquisition benchmarks, consistent performance even during low-demand seasons, and 4x lead volume growth by Year 3 of the engagement. The campaign compounded: each cohort of data improved targeting for the next.",
+      "SimpliDistance achieved 50,000+ qualified leads per year, a consistent 4–8% admission conversion rate, cost per lead delivered 30–40% below direct university acquisition benchmarks, consistent performance even during low-demand seasons, and 4x lead volume growth by Year 3 of the engagement. The campaign compounded: each cohort of data improved targeting for the next.",
     metrics: [
-      { _key: k(), value: "75,000+", label: "Qualified leads per year" },
+      { _key: k(), value: "50,000+", label: "Qualified leads per year" },
       { _key: k(), value: "4–8%", label: "Admission conversion rate" },
       { _key: k(), value: "30–40%", label: "Below benchmark CPL" },
       { _key: k(), value: "4×", label: "Lead growth by Year 3" },

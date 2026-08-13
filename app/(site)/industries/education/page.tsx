@@ -4,13 +4,13 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Digital Marketing for Education Institutes",
   description:
-    "MagicWorks helps education businesses generate high-intent student enquiries. See how we drove 75,000+ qualified leads per year for SimpliDistance.",
+    "MagicWorks helps education businesses generate high-intent student enquiries. See how we drove 50,000+ qualified leads per year for SimpliDistance.",
   alternates: { canonical: "/industries/education" },
   openGraph: {
     url: "https://magicworksitsolutions.com/industries/education",
     title: "Digital Marketing for Education Institutes | MagicWorks",
     description:
-      "MagicWorks helps education businesses generate high-intent student enquiries. See how we drove 75,000+ qualified leads per year for SimpliDistance.",
+      "MagicWorks helps education businesses generate high-intent student enquiries. See how we drove 50,000+ qualified leads per year for SimpliDistance.",
   },
 };
 
@@ -36,7 +36,7 @@ const serviceSchema = {
 };
 
 const faq = [
-  { q: "How does MagicWorks generate student enquiries?", a: "We run Google Search campaigns targeting active course seekers, Meta Ads timed to admission cycles, SEO for sustained organic pipeline, and AI-native websites built for conversion. Our anchor case study is SimpliDistance: 75,000+ qualified admissions leads per year at 30–40% below benchmark CPL." },
+  { q: "How does MagicWorks generate student enquiries?", a: "We run Google Search campaigns targeting active course seekers, Meta Ads timed to admission cycles, SEO for sustained organic pipeline, and AI-native websites built for conversion. Our anchor case study is SimpliDistance: 50,000+ qualified admissions leads per year at 30–40% below benchmark CPL." },
   { q: "What makes your education marketing different?", a: "We understand admission cycles and programme-level targeting. We distinguish between a click, an enquiry, and an enrolment-ready lead, and we build campaigns around that distinction." },
   { q: "Do you work with online and distance education providers?", a: "Yes. SimpliDistance, our longest-running education client, is India's fastest-growing portal for distance and online MBA admissions." },
 ];
@@ -102,7 +102,7 @@ export default function EducationPage() {
           </h2>
           <div className="bg-white border border-[#D8D8DE] border-t-[3px] border-t-[#D4A537] rounded-[10px] p-10 grid md:grid-cols-[260px_1fr] gap-10 items-center">
             <div>
-              <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(52px,7vw,76px)] text-[#2A1B5C] leading-[0.95]">75,000+</div>
+              <div className="font-[family-name:var(--font-head)] font-bold text-[clamp(52px,7vw,76px)] text-[#2A1B5C] leading-[0.95]">50,000+</div>
               <p className="text-[12px] uppercase tracking-[0.12em] text-[#3F3F4A] mt-2">Qualified leads per year</p>
               <p className="text-[12px] mt-3 text-[#5B3FBE] uppercase tracking-[0.06em] font-semibold">SimpliDistance · Education</p>
             </div>
