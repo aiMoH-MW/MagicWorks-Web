@@ -26,10 +26,10 @@ const whitepapers = [
       "A phased 90-day roadmap for first-time AI adopters",
       "India-specific benchmarks from real SME deployments",
     ],
-    pages: "24 pages",
+    pages: "10 pages",
     audience: "Founders · COOs · Operations heads",
     publishedDate: "May 2026",
-    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1XXp8iH6y2Anuddt2SrKHNEEq52lqUV72",
+    pdfUrl: "/whitepapers/ai-automation-readiness-indian-smes.pdf",
   },
   {
     slug: "performance-marketing-roi",
@@ -44,10 +44,10 @@ const whitepapers = [
       "The full-funnel measurement framework MagicWorks uses with clients",
       "A campaign audit checklist you can run today",
     ],
-    pages: "32 pages",
+    pages: "30 pages",
     audience: "Marketing heads · Founders · Growth managers",
     publishedDate: "May 2026",
-    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1ReNkY6rW8DexdZfdFxzRbmSB6Xnzy4Nl",
+    pdfUrl: "/whitepapers/performance-marketing-roi.pdf",
   },
 ];
 
@@ -174,7 +174,7 @@ export default function WhitepapersPage() {
                 {/* CTAs */}
                 <div className="mt-auto flex flex-col sm:flex-row gap-3">
                   <a
-                    href={wp.googleDriveUrl}
+                    href={wp.pdfUrl}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="flex-1 bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] py-3 rounded-full text-center no-underline hover:scale-[1.02] transition-transform"

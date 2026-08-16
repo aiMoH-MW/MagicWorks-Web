@@ -24,10 +24,10 @@ const whitepapers = [
       "COOs and operations heads responsible for process improvement",
       "Strategy teams building a 2026–27 technology roadmap",
     ],
-    pages: "24 pages",
+    pages: "10 pages",
     audience: "Founders · COOs · Operations heads",
     publishedDate: "May 2026",
-    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1XXp8iH6y2Anuddt2SrKHNEEq52lqUV72",
+    pdfUrl: "/whitepapers/ai-automation-readiness-indian-smes.pdf",
   },
   {
     slug: "performance-marketing-roi",
@@ -49,10 +49,10 @@ const whitepapers = [
       "Founders reviewing performance marketing spend",
       "Growth managers building in-house reporting capability",
     ],
-    pages: "32 pages",
+    pages: "30 pages",
     audience: "Marketing heads · Founders · Growth managers",
     publishedDate: "May 2026",
-    googleDriveUrl: "https://drive.google.com/uc?export=download&id=1ReNkY6rW8DexdZfdFxzRbmSB6Xnzy4Nl",
+    pdfUrl: "/whitepapers/performance-marketing-roi.pdf",
   },
 ];
 
@@ -186,7 +186,7 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
               </div>
               <p className="text-[12px] text-[#C8B8FF] mb-4">Free PDF · {wp.pages}</p>
               <a
-                href={wp.googleDriveUrl}
+                href={wp.pdfUrl}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
                 className="block bg-[#D4A537] text-[#2A1B5C] font-bold text-[12px] uppercase tracking-[0.08em] py-3 px-6 rounded-full no-underline hover:scale-[1.02] transition-transform"
@@ -238,7 +238,7 @@ export default async function WhitepaperDetailPage(props: { params: Promise<{ sl
                 <p className="text-[13px] font-semibold text-[#2A1B5C] mb-1">{wp.title}</p>
                 <p className="text-[12px] text-[#9A9AA8] mb-5">{wp.pages} · Free PDF</p>
                 <a
-                  href={wp.googleDriveUrl}
+                  href={wp.pdfUrl}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="block bg-[#D4A537] text-[#2A1B5C] font-bold text-[13px] uppercase tracking-[0.08em] py-3 rounded-full no-underline hover:scale-[1.02] transition-transform mb-3"

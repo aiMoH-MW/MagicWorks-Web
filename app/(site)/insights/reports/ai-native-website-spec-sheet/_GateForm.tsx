@@ -2,8 +2,7 @@
 
 import { useState } from "react";
 
-const PDF_URL =
-  "https://drive.google.com/uc?export=download&id=10wkLheVJJWdHFH0h9EsopURSjzBHyJet";
+const PDF_URL = "/reports/MagicWorks_AI_Native_Website_Spec_Sheet-3.pdf";
 
 export default function GateForm() {
   const [name, setName] = useState("");

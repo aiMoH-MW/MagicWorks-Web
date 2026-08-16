@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 
-// TODO: Replace with the Google Drive download link for MagicWorks_AI_for_Professional_Services.pdf
-// Format: https://drive.google.com/uc?export=download&id=<FILE_ID>
-const PDF_URL = "REPLACE_WITH_DRIVE_LINK";
+const PDF_URL = "/reports/MagicWorks_AI_for_Professional_Services.pdf";
 
 export default function GateForm() {
   const [name, setName] = useState("");
