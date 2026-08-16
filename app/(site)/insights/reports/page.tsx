@@ -27,6 +27,23 @@ type Playbook = {
 
 const PLAYBOOKS: Playbook[] = [
   {
+    cat: "dm",
+    catLabel: "Digital Marketing",
+    title: "The Commission-Tier Performance Marketing Playbook",
+    description:
+      "How to run Google Ads and Meta Ads at ₹5 lakh or more per month with the agency accountable to actual outcomes, not hours billed. Six diagnostic questions, an anchor case study, and a 90-day onboarding plan.",
+    meta: ["22 pages", "45 min read", "Marketing heads, founders & CFOs"],
+    href: "/insights/reports/commission-tier-performance-marketing-playbook",
+    cta: "Get the playbook",
+    preview: [
+      "The six-question commission-tier diagnostic",
+      "₹19.8M ad spend, 50,000+ leads at ₹396 CPL case study",
+      "Why the ₹5 lakh/month threshold matters",
+      "Running Google Ads and Meta Ads together",
+      "The 90-day onboarding plan",
+    ],
+  },
+  {
     cat: "ai",
     catLabel: "Search & AI Visibility",
     title: "The AI Search Visibility Playbook",
