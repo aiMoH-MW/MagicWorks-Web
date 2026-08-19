@@ -49,6 +49,25 @@ const whitepapers = [
     publishedDate: "May 2026",
     pdfUrl: "/whitepapers/performance-marketing-roi.pdf",
   },
+  {
+    slug: "ai-native-websites-vs-traditional-websites",
+    title: "AI-Native Websites vs Traditional Websites: A Cost-Benefit Analysis",
+    category: "AI-Native Websites",
+    description:
+      "A practical decision framework for CEOs, founders, marketing heads, and CFOs evaluating whether to rebuild on AI-native website architecture or optimise the current site. Covers two cost-benefit dimensions most rebuild proposals miss, six industry-specific compression candidates, and the break-even math.",
+    highlights: [
+      "The two cost-benefit dimensions of a rebuild: marketing performance and internal operational efficiency",
+      "The 53% mobile abandonment math across Rs 5, 10, and 25 lakh monthly ad budgets",
+      "The MagicWorks internal case study: HR resume screening compressed from 8 hours to 1 hour daily",
+      "Compression candidates across 6 Indian industries: real estate, edtech, healthcare, manufacturing, professional services, and D2C",
+      "A prioritisation matrix for choosing your first AI-native compression pilot",
+      "The break-even math: typical investment, payback period, and when a rebuild is NOT the right call",
+    ],
+    pages: "19 pages",
+    audience: "CEOs · Founders · Marketing heads · CFOs",
+    publishedDate: "August 2026",
+    pdfUrl: "/whitepapers/ai-native-websites-vs-traditional-websites.pdf",
+  },
 ];
 
 const collectionPageSchema = {

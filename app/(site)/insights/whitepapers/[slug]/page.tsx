@@ -54,6 +54,31 @@ const whitepapers = [
     publishedDate: "May 2026",
     pdfUrl: "/whitepapers/performance-marketing-roi.pdf",
   },
+  {
+    slug: "ai-native-websites-vs-traditional-websites",
+    title: "AI-Native Websites vs Traditional Websites: A Cost-Benefit Analysis",
+    category: "AI-Native Websites",
+    tagline: "The governed cost-benefit analysis before you commit to a rebuild.",
+    description:
+      "Most website rebuild proposals cover only design, load time, and conversion rate. This whitepaper delivers the framework MagicWorks uses with clients: two cost-benefit dimensions (marketing performance and internal operational efficiency), the MagicWorks internal HR case study, industry-specific compression candidates, and the break-even math for a Rs 8 to Rs 15 lakh AI-native rebuild. Built for CEOs, founders, marketing heads, and CFOs who want the full economic case before signing.",
+    whatYoullLearn: [
+      "The two cost-benefit dimensions of a website rebuild, and why most proposals only cover one",
+      "The 53% mobile abandonment math and what it costs across Rs 5, 10, and 25 lakh monthly ad budgets",
+      "The MagicWorks internal case study: HR resume screening compressed from 8 hours to 1 hour daily",
+      "Compression candidates specific to six Indian industries: real estate, edtech, healthcare, manufacturing, professional services, and D2C",
+      "A 2x2 prioritisation matrix for choosing your first AI-native compression pilot",
+      "The break-even math: typical investment, payback period, and the profiles for whom a rebuild is NOT the right call",
+    ],
+    whoItsFor: [
+      "CEOs and founders evaluating a website rebuild",
+      "Marketing heads accountable for paid media ROI",
+      "CFOs assessing the investment case for AI-native infrastructure",
+    ],
+    pages: "19 pages",
+    audience: "CEOs · Founders · Marketing heads · CFOs",
+    publishedDate: "August 2026",
+    pdfUrl: "/whitepapers/ai-native-websites-vs-traditional-websites.pdf",
+  },
 ];
 
 export async function generateStaticParams() {
