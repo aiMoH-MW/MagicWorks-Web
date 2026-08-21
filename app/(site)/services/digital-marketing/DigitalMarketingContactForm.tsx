@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 export default function DigitalMarketingContactForm({
   sourcePage = "/services/digital-marketing",
@@ -37,8 +38,10 @@ export default function DigitalMarketingContactForm({
           _gotcha: fd.get("_gotcha"),
         }),
       });
-      if (res.ok) setStatus("sent");
-      else setStatus("error");
+      if (res.ok) {
+        trackLeadSubmit("digital-marketing");
+        setStatus("sent");
+      } else setStatus("error");
     } catch {
       setStatus("error");
     }

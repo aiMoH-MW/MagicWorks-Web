@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 const PDF_URL = "/reports/MagicWorks_AI_Readiness_Playbook-1.pdf";
 
@@ -35,6 +36,7 @@ export default function GateForm() {
           _gotcha: gotcha,
         }),
       });
+      trackLeadSubmit("playbook-ai-readiness");
       setDone(true);
     } catch {
       setError("Something went wrong. Please try again.");

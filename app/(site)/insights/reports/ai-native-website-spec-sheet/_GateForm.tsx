@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 const PDF_URL = "/reports/MagicWorks_AI_Native_Website_Spec_Sheet-3.pdf";
 
@@ -35,6 +36,7 @@ export default function GateForm() {
           _gotcha: gotcha,
         }),
       });
+      trackLeadSubmit("spec-sheet-ai-native-website");
       setDone(true);
     } catch {
       setError("Something went wrong. Please try again.");

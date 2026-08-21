@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 export default function WebDevelopmentContactForm({
   sourcePage = "/services/web-development",
@@ -37,8 +38,10 @@ export default function WebDevelopmentContactForm({
           _gotcha: fd.get("_gotcha"),
         }),
       });
-      if (res.ok) setStatus("sent");
-      else setStatus("error");
+      if (res.ok) {
+        trackLeadSubmit("web-development");
+        setStatus("sent");
+      } else setStatus("error");
     } catch {
       setStatus("error");
     }

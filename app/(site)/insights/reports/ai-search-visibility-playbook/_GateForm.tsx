@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 const PDF_URL = "/reports/MagicWorks_AI_Search_Visibility_Playbook.pdf";
 
@@ -35,6 +36,7 @@ export default function GateForm() {
           _gotcha: gotcha,
         }),
       });
+      trackLeadSubmit("playbook-ai-search-visibility");
       setDone(true);
     } catch {
       setError("Something went wrong. Please try again.");

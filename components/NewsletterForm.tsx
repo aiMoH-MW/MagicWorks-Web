@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 interface Props {
   source: string;
@@ -23,6 +24,7 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed");
+      trackLeadSubmit(`newsletter-${variant}`);
       setStatus("success");
       setEmail("");
     } catch (err) {

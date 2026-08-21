@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 const PDF_URL = "/reports/commission-tier-performance-marketing-playbook.pdf";
 
@@ -36,6 +37,7 @@ export default function GateForm() {
           _gotcha: gotcha,
         }),
       });
+      trackLeadSubmit("playbook-commission-tier-performance-marketing");
       setDone(true);
     } catch {
       setError("Something went wrong. Please try again.");

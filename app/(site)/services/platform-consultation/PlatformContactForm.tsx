@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -62,6 +63,7 @@ export default function PlatformContactForm() {
         }),
       });
       if (!res.ok) throw new Error("Submit failed");
+      trackLeadSubmit("platform-consultation");
       setState("success");
     } catch {
       setState("error");

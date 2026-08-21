@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 const PDF_URL = "/reports/MagicWorks_Platform_Strategy_Checklist.pdf";
 
@@ -35,6 +36,7 @@ export default function GateForm() {
           _gotcha: gotcha,
         }),
       });
+      trackLeadSubmit("report-platform-strategy-checklist");
       setDone(true);
     } catch {
       setError("Something went wrong. Please try again.");

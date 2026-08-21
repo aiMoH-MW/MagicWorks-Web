@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { trackLeadSubmit } from "@/lib/analytics";
 
 type State = "idle" | "submitting" | "success" | "error";
 
@@ -64,6 +65,7 @@ export default function ApplyForm({ jobSlug, jobTitle }: { jobSlug: string; jobT
 
       const res = await fetch("/api/careers", { method: "POST", body: fd });
       if (!res.ok) throw new Error();
+      trackLeadSubmit("careers-apply");
       setState("success");
     } catch {
       setState("error");
