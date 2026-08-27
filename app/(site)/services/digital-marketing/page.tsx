@@ -444,7 +444,7 @@ export default function DigitalMarketingPage() {
               </p>
               <p className="text-[13px] mt-3">
                 <span className="text-[#5B3FBE] uppercase tracking-[0.06em] font-semibold text-[12px]">
-                  Education · SimpliDistance
+                  Education · Distance-MBA Platform
                 </span>
               </p>
             </div>

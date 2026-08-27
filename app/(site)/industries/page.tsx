@@ -19,7 +19,7 @@ const industries = [
     title: "Education",
     href: "/industries/education",
     tag: "Digital Marketing · Web",
-    body: "High-intent student enquiries, admission-cycle campaigns, and AI-native portals. Anchor case: SimpliDistance, 50,000+ qualified leads per year.",
+    body: "High-intent student enquiries, admission-cycle campaigns, and AI-native portals. Anchor case: a leading distance & online MBA platform, 50,000+ qualified leads per year.",
     metric: "50,000+",
     metricLabel: "Qualified leads / year",
   },

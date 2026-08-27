@@ -341,7 +341,7 @@ export default function HomePage() {
               </p>
               <p className="text-[13px] mt-4">
                 <span className="text-[#5B3FBE] uppercase tracking-[0.06em] font-semibold text-[12px]">
-                  SimpliDistance · Education
+                  Distance-MBA Platform · Education
                 </span>
               </p>
             </div>
