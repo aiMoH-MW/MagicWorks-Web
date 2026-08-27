@@ -8,6 +8,8 @@
  *   - Retitles the case study to a generic, stat-led headline
  *   - Rewrites the Situation opening line to "Our client is..."
  *   - Replaces "SimpliDistance's" with "the platform's" in the Intervention text
+ *   - Replaces the Google Ads evidence screenshot with a redacted version
+ *     (brand name blacked out in the account breadcrumb)
  *
  * Run: node scripts/anonymize-simplidistance-case-study.mjs
  * Requires .env.local with NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET, SANITY_API_TOKEN
@@ -45,6 +47,7 @@ const client = createClient({
 });
 
 const NEW_TITLE = "How a Leading Distance & Online MBA Platform Scaled to 50,000+ Qualified Leads With High-Intent Search Advertising";
+const REDACTED_EVIDENCE_IMAGE = path.join(__dirname, "media", "simplidistance-evidence-redacted.png");
 
 async function main() {
   console.log("\n🔍  Looking up case study by slug 'simplidistance-mba-enrollments'…");
@@ -61,7 +64,24 @@ async function main() {
   console.log(`    Current client field: ${doc.client ?? "(none)"}`);
   console.log(`    Current clientUrl: ${doc.clientUrl ?? "(none)"}\n`);
 
+  if (!fs.existsSync(REDACTED_EVIDENCE_IMAGE)) {
+    console.error(`❌  Redacted evidence image not found: ${REDACTED_EVIDENCE_IMAGE}`);
+    process.exit(1);
+  }
+
   const patches = { set: {}, unset: [] };
+
+  if (doc.evidenceImage) {
+    console.log("📤  Uploading redacted evidence screenshot…");
+    const evidenceAsset = await client.assets.upload("image", fs.createReadStream(REDACTED_EVIDENCE_IMAGE), {
+      filename: "simplidistance-evidence-redacted.png",
+    });
+    console.log(`✅  Uploaded: ${evidenceAsset._id}\n`);
+    patches.set.evidenceImage = {
+      ...doc.evidenceImage,
+      asset: { _type: "reference", _ref: evidenceAsset._id },
+    };
+  }
 
   patches.set.title = NEW_TITLE;
 
@@ -96,6 +116,7 @@ async function main() {
   if (patches.unset.length) console.log("    Unsetting:", patches.unset.join(", "));
   if (patches.set.situation) console.log("    New situation opening:", patches.set.situation.slice(0, 80) + "…");
   if (patches.set.intervention) console.log("    New intervention opening:", patches.set.intervention.slice(0, 80) + "…");
+  if (patches.set.evidenceImage) console.log("    Evidence image: swapped to redacted screenshot");
 
   let p = client.patch(doc._id).set(patches.set);
   if (patches.unset.length) p = p.unset(patches.unset);
