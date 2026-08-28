@@ -102,7 +102,7 @@ export default async function AboutPage() {
             <hr className="gold-rule mb-6" />
             <h2 className="font-[family-name:var(--font-head)] font-bold text-[clamp(22px,3vw,30px)] text-[#2A1B5C] mb-5">What we stand for.</h2>
             <p className="text-[16px] text-[#3F3F4A] mb-4">MagicWorks is an AI-first digital marketing agency. We work with ambitious Indian businesses that want predictable revenue from traffic, leads, and operations, not just activity reports.</p>
-            <p className="text-[16px] text-[#3F3F4A] mb-4">We are not a campaign factory. We are not a technology vendor. We are a practice: four service pillars, one team, one accountability model, built to compound over time.</p>
+            <p className="text-[16px] text-[#3F3F4A] mb-4">We are not a campaign factory. We are not a technology vendor. We are a practice: five service pillars, one team, one accountability model, built to compound over time.</p>
             <p className="text-[16px] text-[#3F3F4A]">The word &ldquo;purpose&rdquo; in our tagline is deliberate. Every decision (about which services to offer, which clients to work with, which advice to give) is made against a long-term standard, not a short-term target.</p>
           </div>
           <div className="space-y-5">
@@ -140,7 +140,7 @@ export default async function AboutPage() {
           {[
             { num: "17", cap: "Years of practice" },
             { num: "2009", cap: "Year founded" },
-            { num: "4", cap: "Service pillars" },
+            { num: "5", cap: "Service pillars" },
             { num: "Pune", cap: "Headquartered" },
           ].map(s => (
             <div key={s.num}>

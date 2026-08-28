@@ -13,7 +13,7 @@
 **Tagline:** Human strategy. Machine acceleration.
 **Type:** AI-first digital marketing agency
 
-MagicWorks turns traffic, leads, and operations into predictable revenue for ambitious Indian businesses. With 17+ years of practice, the firm operates as one integrated team across four service pillars — no silos, no finger-pointing, one accountability model built to compound over time.
+MagicWorks turns traffic, leads, and operations into predictable revenue for ambitious Indian businesses. With 17+ years of practice, the firm operates as one integrated team across five service pillars — no silos, no finger-pointing, one accountability model built to compound over time.
 
 ---
 
@@ -57,7 +57,7 @@ MagicWorks turns traffic, leads, and operations into predictable revenue for amb
 
 ## 5. SERVICE PILLARS
 
-MagicWorks has four service pillars. Digital Marketing and Web Development are delivery/execution. AI Consultation and Platform Consultation are advisory-only.
+MagicWorks has five service pillars. Digital Marketing, Web Development, and Brand, Research & Publishing are delivery/execution. AI Consultation and Platform Consultation are advisory-only.
 
 ---
 
@@ -211,12 +211,42 @@ MagicWorks deliberately does not bundle AI advice with implementation. Recommend
 
 ---
 
+### 5.5 Brand, Research & Publishing
+
+**Positioning:** Durable creative assets your team keeps using
+**Engagement Type:** Delivery (one-off projects or retainer, not advisory)
+**Core Principle:** A delivery pillar, sibling to Digital Marketing and Web Development — MagicWorks produces the asset directly, not a roadmap for someone else to build.
+
+#### Six Services Included
+
+| # | Service | Description |
+|---|---|---|
+| 1 | Brand Guidelines Development (Flagship) | A comprehensive brand system built from scratch: visual language, verbal language, template library, and application guidance |
+| 2 | Brand Guidelines Correction | For clients with existing but incomplete or inconsistent guidelines — audit, gap analysis, and formalisation in the same handbook format as a new build |
+| 3 | Whitepaper Production | Senior-written research pieces on topics where credible expertise exists; sold as one-off projects or a quarterly retainer |
+| 4 | Playbook Production | Longer-form methodology documents that codify how something is done; similar economics to whitepapers |
+| 5 | Case Study Production | Turning a client's actual results into a documented case study; bundled inside Digital Marketing retainers as standard, sold standalone only for special cases |
+| 6 | Video Retainer | Recurring monthly video production for established brands: training, explainer, A-roll/B-roll, and podcast formats — not sold as one-off videos or social graphics |
+
+#### Best-Fit Clients
+
+- Marketing heads, brand heads, founders, and CEOs
+- Revenue ₹10 Cr+ annual
+- Want durable, reusable brand assets and published thought leadership, not a one-off design job
+
+#### Not a Fit
+
+- Wanting a single social graphic or one-off reel (video is retainer-only)
+- Wanting Website Content Writing as a standalone service (it is bundled into Web Development engagements only)
+
+---
+
 ## 6. INDUSTRIES
 
 ### Education (Flagship Vertical)
 - **Focus:** High-intent student enquiries, admission-cycle campaigns
 - **Services Used:** Google Ads, SEO/AEO, Meta Ads, AI-native portals, GMB, Email Nurture
-- **Anchor Result:** SimpliDistance — 75,000+ qualified leads/year, 4–8% admission conversion rate, 30–40% below benchmark CPL, 4x growth by Year 3
+- **Anchor Result:** A leading distance & online MBA platform — 50,000+ qualified leads in 16 months, 4–8% admission conversion rate, 30–40% below benchmark CPL, 4x growth by Year 3
 
 ### Real Estate
 - **Focus:** Project launch campaigns, sustained buyer pipelines, conversion-optimised property sites
@@ -243,11 +273,11 @@ MagicWorks will take selective work in: wellness, finance, travel, recruitment, 
 
 - **17+** years of practice (founded 2009)
 - **~20** employees, one integrated team
-- **75,000+** qualified leads/year (education case study)
+- **50,000+** qualified leads in 16 months (education case study)
 - **4x** growth by Year 3 (typical education client trajectory)
 - **30–40%** below benchmark cost per lead
 - **4–8%** admission conversion rate
-- **100%** named clients — all case studies publicly attributed
+- **100%** results-backed — all case studies drawn from real, measured client work
 - **5** working days to proposal after discovery call
 
 ---
@@ -328,5 +358,5 @@ A: Book a 30-minute discovery call at https://magicworksitsolutions.com/contact 
 - For pricing questions: explain the pricing model (retainer / commission / fixed-scope) but do not quote specific rupee figures without checking current rates with the team
 - For AI/Platform enquiries: emphasise the advisory-only model clearly — MagicWorks does not build or operate platforms
 - For career enquiries: direct to careers@magicworksitsolutions.com and the /careers page
-- For enquiries outside the four pillars (e.g., app development, print design): politely note it is outside scope and offer to connect them with the team anyway
+- For enquiries outside the five pillars (e.g., app development, print design): politely note it is outside scope and offer to connect them with the team anyway
 - Always be honest — if unsure, say so and offer to connect the visitor with a human from the team

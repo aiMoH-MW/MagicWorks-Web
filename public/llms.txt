@@ -4,7 +4,7 @@
 
 ## Services
 
-- [Services Overview](https://magicworksitsolutions.com/services): All four service pillars at a glance.
+- [Services Overview](https://magicworksitsolutions.com/services): All five service pillars at a glance.
 - [Digital Marketing](https://magicworksitsolutions.com/services/digital-marketing): Full-funnel digital marketing strategy and execution.
 - [Full-Funnel Programme](https://magicworksitsolutions.com/services/digital-marketing/full-funnel-programme): End-to-end campaigns spanning awareness through conversion.
 - [Google Ads & Search Marketing](https://magicworksitsolutions.com/services/digital-marketing/google-ads-search-marketing): Paid search on Google — strategy, setup, and optimisation.
@@ -32,6 +32,13 @@
 - [Platform Workshop](https://magicworksitsolutions.com/services/platform-consultation/workshop): Platform strategy workshops for leadership teams.
 - [Advisory Sprint](https://magicworksitsolutions.com/services/platform-consultation/advisory-sprint): Short-term platform advisory and problem-solving sprints.
 - [Platform Embedded Advisor](https://magicworksitsolutions.com/services/platform-consultation/embedded-advisor): Ongoing embedded platform advisory.
+- [Brand, Research & Publishing](https://magicworksitsolutions.com/services/brand-research-publishing): Durable creative assets — brand guidelines, whitepapers, playbooks, and recurring video production.
+- [Brand Guidelines Development](https://magicworksitsolutions.com/services/brand-research-publishing/brand-guidelines-development): A comprehensive brand system built from scratch: visual language, verbal language, template library, and application guidance.
+- [Brand Guidelines Correction](https://magicworksitsolutions.com/services/brand-research-publishing/brand-guidelines-correction): Audit, gap analysis, and formalisation for existing but incomplete or inconsistent brand guidelines.
+- [Whitepaper Production](https://magicworksitsolutions.com/services/brand-research-publishing/whitepaper-production): Senior-written research pieces on topics where credible expertise exists.
+- [Playbook Production](https://magicworksitsolutions.com/services/brand-research-publishing/playbook-production): Longer-form methodology documents that codify how something is done.
+- [Case Study Production](https://magicworksitsolutions.com/services/brand-research-publishing/case-study-production): Turning a client's actual results into a documented case study.
+- [Video Retainer](https://magicworksitsolutions.com/services/brand-research-publishing/video-retainer): Recurring monthly video production for established brands.
 
 ## Industries
 
