@@ -6,13 +6,13 @@ import WorkClient from "./WorkClient";
 export const metadata: Metadata = {
   title: "Client Work & Case Studies",
   description:
-    "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
+    "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, honest accounts of what changed, named where clients agree.",
   alternates: { canonical: "/work" },
   openGraph: {
     url: "https://magicworksitsolutions.com/work",
     title: "Client Work & Case Studies | MagicWorks",
     description:
-      "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
+      "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, honest accounts of what changed, named where clients agree.",
   },
 };
 
@@ -23,7 +23,7 @@ const collectionPageSchema = {
   "@type": "CollectionPage",
   "@id": "https://magicworksitsolutions.com/work",
   name: "MagicWorks Case Studies",
-  description: "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, named clients, honest accounts of what changed.",
+  description: "Result-led case studies from MagicWorks. Education, real estate, manufacturing: real numbers, honest accounts of what changed, named where clients agree.",
   url: "https://magicworksitsolutions.com/work",
   isPartOf: { "@id": "https://magicworksitsolutions.com/#website" },
   about: { "@id": "https://magicworksitsolutions.com/#organization" },
@@ -105,8 +105,8 @@ export default async function WorkPage() {
             Results that speak plainly.
           </h1>
           <p className="text-[18px] leading-[1.6] text-[#C8B8FF] max-w-[500px]">
-            Situation, intervention, result. Real numbers, named clients, honest
-            accounts of what changed, and why.
+            Situation, intervention, result. Real numbers, honest accounts of
+            what changed and why, named where clients agree.
           </p>
 
           {/* Aggregate strip */}
@@ -115,7 +115,7 @@ export default async function WorkPage() {
               {[
                 { v: `${studies.length}`, l: "Case studies" },
                 { v: "3", l: "Industries" },
-                { v: "100%", l: "Named clients" },
+                { v: "100%", l: "Verified results" },
               ].map(({ v, l }) => (
                 <div key={l} className="flex items-center gap-3">
                   <span className="font-[family-name:var(--font-head)] font-bold text-[28px] text-[#D4A537] leading-none">

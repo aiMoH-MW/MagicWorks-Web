@@ -30,8 +30,8 @@ const faq = [
     a: "Discovery interviews, data verification, drafting, and design, the same rigour for bundled or standalone delivery.",
   },
   {
-    q: "What if we don't have a named client willing to be quoted?",
-    a: "A case study needs verifiable data and a client willing to be named. Without that, it is not a fit.",
+    q: "What if we don't have a client willing to be named?",
+    a: "A case study needs verifiable data. Most clients agree to be named, but where confidentiality requires it, we can publish an anonymised version instead, the data and the story stay accurate either way.",
   }
 ];
 
@@ -203,7 +203,7 @@ export default function CaseStudyProductionPage() {
               <ul className="space-y-0">
                 {[
                   "Wants a case study as a way to avoid buying the underlying marketing or delivery work. The case study documents real results; it does not create them.",
-                  "Cannot provide verifiable data or a client willing to be named."
+                  "Cannot provide verifiable data, and won't agree to a named or anonymised published account."
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-4 py-[14px] border-b border-[#EDE9F7] last:border-0 list-none">
                     <span className="mt-[13px] flex-shrink-0 w-[12px] h-[2px] bg-[#9A9AA8]" />
