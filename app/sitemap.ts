@@ -58,6 +58,8 @@ const staticRoutes: MetadataRoute.Sitemap = [
   { url: `${base}/insights/reports/platform-strategy-checklist`,                 changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/insights/whitepapers/ai-automation-readiness-indian-smes`,     changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/insights/whitepapers/performance-marketing-roi`,               changeFrequency: "monthly", priority: 0.8 },
+  { url: `${base}/insights/whitepapers/ai-native-websites-vs-traditional-websites`, changeFrequency: "monthly", priority: 0.8 },
+  { url: `${base}/insights/whitepapers/psychology-behind-content-that-ranks-in-ai-answers`, changeFrequency: "monthly", priority: 0.8 },
   { url: `${base}/about`,                                                        changeFrequency: "monthly", priority: 0.75 },
   { url: `${base}/careers`,                                                      changeFrequency: "weekly",  priority: 0.65 },
   { url: `${base}/tools/ai-readiness-assessment`,                                changeFrequency: "monthly", priority: 0.75 },

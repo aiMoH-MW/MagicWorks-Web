@@ -79,6 +79,32 @@ const whitepapers = [
     publishedDate: "August 2026",
     pdfUrl: "/whitepapers/ai-native-websites-vs-traditional-websites.pdf",
   },
+  {
+    slug: "psychology-behind-content-that-ranks-in-ai-answers",
+    title: "The Psychology Behind Content That Ranks in AI Answers",
+    category: "SEO / AEO",
+    tagline: "How marketing leaders build brand authority, earn AI citations, and win visibility in the new search journey.",
+    description:
+      "For two decades, marketing teams competed for rankings. Generative AI is changing that competition: a buyer can now ask ChatGPT, Google AI Overviews, Perplexity, or Copilot a question and get a synthesised answer without visiting a single website. This whitepaper covers the psychology behind AI citation, an eight-dimension readiness scorecard, a 2x2 prioritisation matrix, editorial governance for brand-fact consistency, and a 90-day roadmap from baseline to measurement, including MagicWorks' own citation self-audit across four AI engines.",
+    whatYoullLearn: [
+      "Why ranking well and being cited inside an AI-generated answer are no longer the same fight",
+      "Six psychological principles behind AI-citable content, from authority heuristics and the consistency effect to structural chunking and entity clarity",
+      "The 'Atomic Answer' principle: writing self-contained editorial units that survive being retrieved outside the full page",
+      "An eight-dimension AI visibility readiness scorecard to score any page from 1 to 5 before deciding what to rewrite",
+      "The 2x2 prioritisation matrix and decision rule for choosing which pages to rewrite first",
+      "How to build a Brand Knowledge Layer that keeps facts consistent across website, PR, social, and sales collateral",
+      "A 90-day, six-phase roadmap from baseline audit to measurement, plus the metrics that matter beyond traffic",
+    ],
+    whoItsFor: [
+      "CMOs and marketing leaders building an AI visibility strategy",
+      "Content strategists and SEO/AEO teams responsible for citation and answer-engine performance",
+      "Founders and communications teams who want a measurable roadmap, not just theory",
+    ],
+    pages: "12 pages",
+    audience: "CMOs · Marketing leaders · Content strategists · Founders",
+    publishedDate: "August 2026",
+    pdfUrl: "/whitepapers/psychology-behind-content-that-ranks-in-ai-answers.pdf",
+  },
 ];
 
 export async function generateStaticParams() {

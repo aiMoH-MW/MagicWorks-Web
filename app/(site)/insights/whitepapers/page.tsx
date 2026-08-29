@@ -68,6 +68,25 @@ const whitepapers = [
     publishedDate: "August 2026",
     pdfUrl: "/whitepapers/ai-native-websites-vs-traditional-websites.pdf",
   },
+  {
+    slug: "psychology-behind-content-that-ranks-in-ai-answers",
+    title: "The Psychology Behind Content That Ranks in AI Answers",
+    category: "SEO / AEO",
+    description:
+      "A practical framework for marketing leaders and content strategists who want their brand cited, mentioned, and recommended inside ChatGPT, Google AI Overviews, Perplexity, and Copilot. Covers the psychology behind AI citation, an eight-dimension readiness scorecard, editorial governance for brand-fact consistency, and a 90-day roadmap from baseline to measurement.",
+    highlights: [
+      "Six psychological principles behind AI-citable content, from authority heuristics to structural chunking",
+      "An eight-dimension AI visibility readiness scorecard to score any page from 1 to 5",
+      "The 2x2 prioritisation matrix for choosing which pages to rewrite first",
+      "How to build an editorial governance layer that keeps brand facts consistent everywhere",
+      "A 90-day, six-phase roadmap from baseline audit to measurement",
+      "MagicWorks' own citation self-audit across ChatGPT, Google AI Overviews, Gemini, and Perplexity",
+    ],
+    pages: "12 pages",
+    audience: "CMOs · Marketing leaders · Content strategists · Founders",
+    publishedDate: "August 2026",
+    pdfUrl: "/whitepapers/psychology-behind-content-that-ranks-in-ai-answers.pdf",
+  },
 ];
 
 const collectionPageSchema = {
