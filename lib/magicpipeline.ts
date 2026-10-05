@@ -28,6 +28,9 @@ type MagicPipelineLeadPayload = {
   submissionId?: string | null;
   utmSource?: string | null;
   utmCampaign?: string | null;
+  utmMedium?: string | null;
+  utmTerm?: string | null;
+  utmContent?: string | null;
 };
 
 export async function syncLeadToMagicPipeline(payload: MagicPipelineLeadPayload) {
@@ -62,6 +65,9 @@ export async function syncLeadToMagicPipeline(payload: MagicPipelineLeadPayload)
         message: payload.message || undefined,
         utm_source: payload.utmSource || undefined,
         utm_campaign: payload.utmCampaign || undefined,
+        utm_medium: payload.utmMedium || undefined,
+        utm_term: payload.utmTerm || undefined,
+        utm_content: payload.utmContent || undefined,
       }),
     });
 

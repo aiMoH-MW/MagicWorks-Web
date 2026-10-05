@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
 import { syncLeadToMagicPipeline } from "@/lib/magicpipeline";
+import { getAttribution, extraColumns, withAttributionFallback, attributionSummary } from "@/lib/attribution";
 
 export async function POST(req: NextRequest) {
   try {
@@ -12,13 +13,20 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name, email, and message are required" }, { status: 400 });
     }
 
-    const { error } = await createServiceClient().from("contact_submissions").insert({
-      name,
-      email,
-      phone: phone || null,
-      subject: subject || null,
-      message,
-    });
+    const attr = getAttribution(req);
+
+    const { error } = await withAttributionFallback(
+      (extra) =>
+        createServiceClient().from("contact_submissions").insert({
+          name,
+          email,
+          phone: phone || null,
+          subject: subject || null,
+          message,
+          ...extra,
+        }),
+      extraColumns(attr, true)
+    );
 
     if (error) throw error;
 
@@ -28,6 +36,11 @@ export async function POST(req: NextRequest) {
       email,
       phone,
       message,
+      utmSource: attr.utm_source || undefined,
+      utmCampaign: attr.utm_campaign || undefined,
+      utmMedium: attr.utm_medium || undefined,
+      utmTerm: attr.utm_term || undefined,
+      utmContent: attr.utm_content || undefined,
     });
 
     const phoneRow = phone ? "<p><strong>Phone:</strong> " + phone + "</p>" : "";
@@ -42,6 +55,7 @@ export async function POST(req: NextRequest) {
       phoneRow +
       subjectRow +
       "<p><strong>Message:</strong><br>" + msgBody + "</p>" +
+      "<p><strong>Attribution:</strong> " + (attributionSummary(attr) || "direct / none captured") + "</p>" +
       "<p style=\"color:#888;font-size:12px;\">Submitted via the Contact page on magicworksitsolutions.com</p>"
     );
 

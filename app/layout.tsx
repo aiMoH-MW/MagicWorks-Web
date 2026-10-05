@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
 import ChatWidget from "@/components/ChatWidget";
 import CookieBanner from "@/components/CookieBanner";
+import AttributionCapture from "@/components/AttributionCapture";
 import LazyGTM from "@/components/LazyGTM";
 import "./globals.css";
 
@@ -231,6 +232,7 @@ try{
         <Analytics />
         <ChatWidget />
         <CookieBanner />
+        <AttributionCapture />
         <LazyGTM />
       </body>
     </html>

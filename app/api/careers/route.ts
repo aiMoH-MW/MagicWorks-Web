@@ -3,6 +3,7 @@ import { createServiceClient } from "@/lib/supabase";
 import nodemailer from "nodemailer";
 import { scoreApplication } from "@/lib/gemini-score";
 import { getJobSalaryForScoring } from "@/sanity/queries";
+import { getAttribution, extraColumns, withAttributionFallback } from "@/lib/attribution";
 
 const HR_EMAIL = "careers@magicworksitsolutions.com";
 const RESUME_BUCKET = "resumes";
@@ -89,25 +90,31 @@ export async function POST(req: NextRequest) {
 
     // ── Supabase insert — use service client so .select("id") isn't blocked by RLS
     const svc = createServiceClient();
-    const { data: inserted, error: dbError } = await svc
-      .from("career_applications")
-      .insert({
-        job_slug,
-        job_title:     job_title || job_slug,
-        name,
-        email,
-        phone:         phone         || null,
-        linkedin_url:  linkedin_url  || null,
-        portfolio_url: portfolio_url || null,
-        cover_letter:  cover_letter  || null,
-        resume_url:    resume_path   || null,
-        total_experience:    total_experience    || null,
-        relevant_experience: relevant_experience || null,
-        current_ctc:   current_ctc   || null,
-        expected_ctc:  expected_ctc  || null,
-      })
-      .select("id")
-      .single();
+    const attr = getAttribution(req);
+    const { data: inserted, error: dbError } = await withAttributionFallback(
+      (extra) =>
+        svc
+          .from("career_applications")
+          .insert({
+            job_slug,
+            job_title:     job_title || job_slug,
+            name,
+            email,
+            phone:         phone         || null,
+            linkedin_url:  linkedin_url  || null,
+            portfolio_url: portfolio_url || null,
+            cover_letter:  cover_letter  || null,
+            resume_url:    resume_path   || null,
+            total_experience:    total_experience    || null,
+            relevant_experience: relevant_experience || null,
+            current_ctc:   current_ctc   || null,
+            expected_ctc:  expected_ctc  || null,
+            ...extra,
+          })
+          .select("id")
+          .single(),
+      extraColumns(attr, true)
+    );
 
     if (dbError) throw dbError;
 

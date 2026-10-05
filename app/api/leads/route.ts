@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
 import { syncLeadToMagicPipeline } from "@/lib/magicpipeline";
+import { getAttribution, extraColumns, withAttributionFallback, attributionSummary } from "@/lib/attribution";
 
 function buildMagicPipelineFormName(pillar?: string | null, sourcePage?: string | null) {
   if (sourcePage && sourcePage.toLowerCase().startsWith("playbook-")) {
@@ -27,22 +28,27 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
 
-    const utm_source = req.nextUrl.searchParams.get("utm_source");
-    const utm_campaign = req.nextUrl.searchParams.get("utm_campaign");
+    // UTMs + click IDs captured on landing (cookie), query string as fallback
+    const attr = getAttribution(req);
 
-    const { error } = await createServiceClient().from("leads").insert({
-      name,
-      email,
-      phone: phone || null,
-      company: company || null,
-      website: website || null,
-      pillar: pillar || null,
-      message: message || null,
-      source_page: source_page || null,
-      utm_source,
-      utm_medium: req.nextUrl.searchParams.get("utm_medium"),
-      utm_campaign,
-    });
+    const { error } = await withAttributionFallback(
+      (extra) =>
+        createServiceClient().from("leads").insert({
+          name,
+          email,
+          phone: phone || null,
+          company: company || null,
+          website: website || null,
+          pillar: pillar || null,
+          message: message || null,
+          source_page: source_page || null,
+          utm_source: attr.utm_source,
+          utm_medium: attr.utm_medium,
+          utm_campaign: attr.utm_campaign,
+          ...extra,
+        }),
+      extraColumns(attr, false)
+    );
 
     if (error) throw error;
 
@@ -55,8 +61,11 @@ export async function POST(req: NextRequest) {
       website,
       message,
       pageUrl: source_page || undefined,
-      utmSource: utm_source || undefined,
-      utmCampaign: utm_campaign || undefined,
+      utmSource: attr.utm_source || undefined,
+      utmCampaign: attr.utm_campaign || undefined,
+      utmMedium: attr.utm_medium || undefined,
+      utmTerm: attr.utm_term || undefined,
+      utmContent: attr.utm_content || undefined,
     });
 
     await sendNotification(
@@ -70,6 +79,7 @@ export async function POST(req: NextRequest) {
         ${pillar ? `<p><strong>Service interest:</strong> ${pillar}</p>` : ""}
         ${message ? `<p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>` : ""}
         <p><strong>Source page:</strong> ${source_page ?? "unknown"}</p>
+        <p><strong>Attribution:</strong> ${attributionSummary(attr) || "direct / none captured"}</p>
       `
     );
 
