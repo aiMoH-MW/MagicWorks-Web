@@ -1,13 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
+import { isAdminRequest } from "@/lib/adminAuth";
 
 // Always execute fresh — this endpoint serves live admin data and must never
 // be cached at the CDN/edge layer (was previously served stale, e.g. new
 // leads not appearing until a cache-busting request forced revalidation).
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
-
-const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "magicworks-admin-2026";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function applyFilters(q: any, from: string | null, to: string | null, asc: boolean) {
@@ -24,8 +23,7 @@ function noStoreJson(body: any, init?: number | ResponseInit) {
 }
 
 export async function GET(req: NextRequest) {
-  const auth = req.headers.get("x-admin-secret");
-  if (auth !== ADMIN_SECRET) {
+  if (!isAdminRequest(req)) {
     return noStoreJson({ error: "Unauthorized" }, 401);
   }
 

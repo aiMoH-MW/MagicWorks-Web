@@ -31,6 +31,10 @@ type MagicPipelineLeadPayload = {
   utmMedium?: string | null;
   utmTerm?: string | null;
   utmContent?: string | null;
+  gclid?: string | null;
+  fbclid?: string | null;
+  landingPage?: string | null;
+  referrer?: string | null;
 };
 
 export async function syncLeadToMagicPipeline(payload: MagicPipelineLeadPayload) {
@@ -68,6 +72,10 @@ export async function syncLeadToMagicPipeline(payload: MagicPipelineLeadPayload)
         utm_medium: payload.utmMedium || undefined,
         utm_term: payload.utmTerm || undefined,
         utm_content: payload.utmContent || undefined,
+        gclid: payload.gclid || undefined,
+        fbclid: payload.fbclid || undefined,
+        landing_page: payload.landingPage || undefined,
+        referrer: payload.referrer || undefined,
       }),
     });
 

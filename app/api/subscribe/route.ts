@@ -22,6 +22,10 @@ export async function POST(req: NextRequest) {
       utmMedium: attr.utm_medium || undefined,
       utmTerm: attr.utm_term || undefined,
       utmContent: attr.utm_content || undefined,
+      gclid: attr.gclid || undefined,
+      fbclid: attr.fbclid || undefined,
+      landingPage: attr.landing_page || undefined,
+      referrer: attr.referrer || undefined,
     };
     const attrRow = `<p><strong>Attribution:</strong> ${attributionSummary(attr) || "direct / none captured"}</p>`;
 

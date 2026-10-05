@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
-
-const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "magicworks-admin-2026";
+import { isAdminRequest } from "@/lib/adminAuth";
 
 const TABLE_MAP: Record<string, string> = {
   newsletter:   "newsletter_subscribers",
@@ -13,8 +12,7 @@ const TABLE_MAP: Record<string, string> = {
 };
 
 export async function POST(req: NextRequest) {
-  const auth = req.headers.get("x-admin-secret");
-  if (auth !== ADMIN_SECRET) {
+  if (!isAdminRequest(req)) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 

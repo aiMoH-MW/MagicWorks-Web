@@ -1,8 +1,6 @@
 "use client";
 import { useState, useEffect, useCallback, useRef } from "react";
 
-const ADMIN_SECRET = process.env.NEXT_PUBLIC_ADMIN_SECRET ?? "magicworks-admin-2026";
-
 type Tab = "newsletter" | "whitepaper" | "leads" | "consultation" | "careers" | "playbooks";
 type CareerSortCol = "date" | "role" | "score";
 
@@ -326,7 +324,7 @@ export default function AdminPage() {
       const p = new URLSearchParams({ tab: t, sort });
       if (from) p.set("from", from);
       if (to)   p.set("to", to);
-      const res = await fetch(`/api/admin/data?${p}`, { headers: { "x-admin-secret": ADMIN_SECRET } });
+      const res = await fetch(`/api/admin/data?${p}`, { cache: "no-store" });
       const json = await res.json();
       setRows(json.data ?? []);
     } finally {
@@ -343,16 +341,40 @@ export default function AdminPage() {
   useEffect(() => {
     if (!authed) return;
     (["newsletter", "whitepaper", "playbooks", "leads", "consultation", "careers"] as Tab[]).forEach(async (t) => {
-      const res = await fetch(`/api/admin/data?tab=${t}`, { headers: { "x-admin-secret": ADMIN_SECRET } });
+      const res = await fetch(`/api/admin/data?tab=${t}`, { cache: "no-store" });
       const json = await res.json();
       setCounts((prev) => ({ ...prev, [t]: json.data?.length ?? 0 }));
     });
   }, [authed]);
 
-  function handleLogin(e: React.FormEvent) {
+  // Restore an existing server-side session on load
+  useEffect(() => {
+    fetch("/api/admin/session", { cache: "no-store" })
+      .then((res) => res.json())
+      .then((json) => { if (json.authed) setAuthed(true); })
+      .catch(() => {});
+  }, []);
+
+  async function handleLogin(e: React.FormEvent) {
     e.preventDefault();
-    if (password === ADMIN_SECRET) { setAuthed(true); setLoginError(""); }
-    else setLoginError("Incorrect password.");
+    setLoginError("");
+    try {
+      const res = await fetch("/api/admin/session", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
+      if (res.ok) { setAuthed(true); setPassword(""); }
+      else setLoginError("Incorrect password.");
+    } catch {
+      setLoginError("Sign-in failed. Please try again.");
+    }
+  }
+
+  async function handleLogout() {
+    await fetch("/api/admin/session", { method: "DELETE" }).catch(() => {});
+    setAuthed(false);
+    setRows([]);
   }
 
   async function handleDelete() {
@@ -362,7 +384,7 @@ export default function AdminPage() {
     try {
       const res = await fetch("/api/admin/delete", {
         method: "POST",
-        headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ids: [...selectedIds], tab }),
       });
       const json = await res.json();
@@ -392,7 +414,7 @@ export default function AdminPage() {
       for (let i = 0; i < ids.length; i++) {
         const res = await fetch("/api/admin/rescore", {
           method: "POST",
-          headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ ids: [ids[i]] }),
         });
         let lastErr: string | undefined;
@@ -425,7 +447,7 @@ export default function AdminPage() {
       for (;;) {
         const res = await fetch("/api/admin/rescore", {
           method: "POST",
-          headers: { "Content-Type": "application/json", "x-admin-secret": ADMIN_SECRET },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ limit: 10, offset: 0 }),
         });
         if (!res.ok) break;
@@ -562,8 +584,9 @@ export default function AdminPage() {
           })}
         </nav>
         {sidebarOpen && (
-          <div className="px-6 py-4 border-t border-white/[0.07]">
+          <div className="px-6 py-4 border-t border-white/[0.07] flex items-center justify-between">
             <p className="text-white/20 text-[10px]">MagicWorks © 2026</p>
+            <button onClick={handleLogout} className="text-white/40 hover:text-white/70 text-[11px]">Sign out</button>
           </div>
         )}
       </aside>
