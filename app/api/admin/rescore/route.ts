@@ -1,7 +1,7 @@
 /**
  * POST /api/admin/rescore
  * One-time (and on-demand) endpoint to AI-score existing career applications.
- * Protected by the admin session cookie (see lib/adminAuth.ts).
+ * Protected by the same ADMIN_SECRET used by the rest of the admin API.
  *
  * Body (JSON, optional):
  *   { limit: 20, offset: 0 }   — defaults: limit 20, offset 0
@@ -12,14 +12,15 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
-import { isAdminRequest } from "@/lib/adminAuth";
 import { scoreApplication } from "@/lib/gemini-score";
 import { getJobSalaryForScoring } from "@/sanity/queries";
 
+const ADMIN_SECRET = process.env.ADMIN_SECRET ?? "magicworks-admin-2026";
 const RESUME_BUCKET = "resumes";
 
 export async function POST(req: NextRequest) {
-  if (!isAdminRequest(req)) {
+  const auth = req.headers.get("x-admin-secret");
+  if (auth !== ADMIN_SECRET) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
