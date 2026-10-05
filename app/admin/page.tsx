@@ -25,6 +25,9 @@ interface Row {
   pillar?: string;
   subject?: string;
   source_page?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
   created_at: string;
   // careers-specific
   job_title?: string;
@@ -476,7 +479,7 @@ export default function AdminPage() {
   const newsletterCols = ["created_at", "email", "source"];
   const whitepaperCols = ["created_at", "email", "whitepaper"];
   const playbookCols   = ["created_at", "name", "email", "company", "message", "source_page"];
-  const leadsCols      = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page"];
+  const leadsCols      = ["created_at", "name", "email", "phone", "company", "pillar", "message", "source_page", "utm_source", "utm_medium", "utm_campaign"];
   const cols =
     tab === "playbooks"                         ? playbookCols
     : tab === "leads" || tab === "consultation" ? leadsCols
