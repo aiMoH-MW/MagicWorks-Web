@@ -42,6 +42,8 @@ export default function AttributionCapture() {
   useEffect(() => {
     try {
       if (marketingDenied()) return;
+      // Internal pages are not visitor touches; never let them become first touch.
+      if (window.location.pathname.startsWith("/admin")) return;
 
       const params = new URLSearchParams(window.location.search);
       const campaign: Touch = {};
