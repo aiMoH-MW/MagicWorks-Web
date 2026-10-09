@@ -485,9 +485,9 @@ export default function LandingPage({ config }: { config: LandingConfig }) {
           <p className="mx-auto mb-8 max-w-xl text-[16px] leading-relaxed" style={{ color: "#C8B8FF" }}>
             {config.finalCta.text}
           </p>
-          <ul className="mx-auto mb-10 flex max-w-md flex-col gap-2.5 text-left">
+          <ul className="mx-auto mb-10 flex flex-col items-center gap-3 sm:flex-row sm:flex-wrap sm:justify-center sm:gap-x-8">
             {config.finalCta.ticks.map((t) => (
-              <li key={t} className="flex items-center gap-3 text-[15px] text-white/90">
+              <li key={t} className="flex items-center justify-center gap-2.5 text-[15px] text-white/90">
                 <span className="text-[#D4A537]">✓</span>
                 {t}
               </li>
