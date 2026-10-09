@@ -89,6 +89,29 @@ function Icon({ name, className }: { name: IconName; className?: string }) {
 
 const HEAD = "font-[family-name:var(--font-head)]";
 
+/** Concentric ring decoration, same motif as the rest of the site's dark heroes. */
+function Rings({ className, radii, center }: { className: string; radii: number[]; center: number }) {
+  return (
+    <svg className={`pointer-events-none absolute ${className}`} aria-hidden="true">
+      {radii.map((r, i) => {
+        const gold = i === Math.floor(radii.length / 2);
+        return (
+          <circle
+            key={r}
+            cx={center}
+            cy={center}
+            r={r}
+            fill="none"
+            stroke={gold ? "#D4A537" : "#7C63D8"}
+            strokeWidth="1.5"
+            opacity={gold ? 0.7 : 0.45}
+          />
+        );
+      })}
+    </svg>
+  );
+}
+
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <p className="mb-3 text-[12px] font-bold uppercase tracking-[0.15em] text-[#D4A537]">
@@ -129,8 +152,15 @@ function Block({ s, i }: { s: Section; i: number }) {
     case "intro": {
       const dark = s.tone === "dark";
       return (
-        <section className={`w-full px-6 py-20 ${dark ? "bg-[#2A1B5C]" : "bg-white"}`}>
-          <div className="mx-auto max-w-6xl">
+        <section className={`relative w-full overflow-hidden px-6 py-20 ${dark ? "bg-[#2A1B5C]" : "bg-white"}`}>
+          {dark && (
+            <Rings
+              className="-left-[240px] -top-[200px] h-[600px] w-[600px] opacity-50"
+              radii={[100, 170, 240, 310]}
+              center={300}
+            />
+          )}
+          <div className="relative mx-auto max-w-6xl">
             <Eyebrow>{s.eyebrow}</Eyebrow>
             <H2 dark={dark}>{s.title}</H2>
             <div className="max-w-3xl space-y-4">
@@ -217,8 +247,13 @@ function Block({ s, i }: { s: Section; i: number }) {
 
     case "why":
       return (
-        <section className="w-full bg-[#2A1B5C] px-6 py-20">
-          <div className="mx-auto max-w-6xl">
+        <section className="relative w-full overflow-hidden bg-[#2A1B5C] px-6 py-20">
+          <Rings
+            className="-right-[220px] -top-[220px] h-[600px] w-[600px] opacity-50"
+            radii={[100, 170, 240, 310]}
+            center={300}
+          />
+          <div className="relative mx-auto max-w-6xl">
             <Eyebrow>{s.eyebrow}</Eyebrow>
             <H2 dark>{s.title}</H2>
             <div className="mt-8 grid grid-cols-1 gap-x-12 gap-y-5 sm:grid-cols-2">
@@ -381,15 +416,15 @@ export default function LandingPage({ config }: { config: LandingConfig }) {
 
       {/* HERO */}
       <section className="relative w-full overflow-hidden bg-[#2A1B5C] px-6 py-16 sm:py-24">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-40 -top-40 h-[480px] w-[480px] rounded-full opacity-40 blur-3xl"
-          style={{ background: "radial-gradient(circle, #5B3FBE 0%, transparent 70%)" }}
+        <Rings
+          className="-right-[200px] -top-[160px] h-[760px] w-[760px] opacity-70"
+          radii={[120, 200, 280, 360, 440]}
+          center={380}
         />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -bottom-40 -left-32 h-[380px] w-[380px] rounded-full opacity-25 blur-3xl"
-          style={{ background: "radial-gradient(circle, #D4A537 0%, transparent 70%)" }}
+        <Rings
+          className="-bottom-[220px] -left-[220px] hidden h-[520px] w-[520px] opacity-40 md:block"
+          radii={[100, 170, 240]}
+          center={260}
         />
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-start gap-12 lg:grid-cols-5">
           <div className="lg:col-span-3">
@@ -399,6 +434,7 @@ export default function LandingPage({ config }: { config: LandingConfig }) {
             <h1 className={`${HEAD} mb-6 text-[38px] font-semibold leading-[1.05] text-white sm:text-[60px]`}>
               {config.h1}
             </h1>
+            <hr className="my-6 h-[3px] w-16 border-0 bg-[#D4A537]" />
             <p className="mb-8 max-w-xl text-[18px] leading-relaxed" style={{ color: "#C8B8FF" }}>
               {config.lead}
             </p>
@@ -432,10 +468,15 @@ export default function LandingPage({ config }: { config: LandingConfig }) {
 
       {/* FINAL CTA */}
       <section className="relative w-full overflow-hidden bg-[#2A1B5C] px-6 py-20">
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-24 top-0 h-[320px] w-[320px] rounded-full opacity-30 blur-3xl"
-          style={{ background: "radial-gradient(circle, #5B3FBE 0%, transparent 70%)" }}
+        <Rings
+          className="-left-[180px] -top-[180px] h-[560px] w-[560px] opacity-60"
+          radii={[90, 160, 230, 300]}
+          center={280}
+        />
+        <Rings
+          className="-bottom-[200px] -right-[200px] h-[520px] w-[520px] opacity-50"
+          radii={[100, 170, 240]}
+          center={260}
         />
         <div className="relative mx-auto max-w-3xl text-center">
           <h2 className={`${HEAD} mb-4 text-[32px] font-semibold leading-[1.15] text-white sm:text-[44px]`}>
