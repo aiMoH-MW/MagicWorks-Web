@@ -1,0 +1,1164 @@
+{
+ "id": "10",
+ "slug": "reading-ga4-attribution-honestly",
+ "title": "Attribution Is a Story You Tell Yourself",
+ "seoTitle": "GA4 Attribution Models Explained Plainly",
+ "excerpt": "GA4 attribution models explained: what each assumes, what it cannot see, and how to read the report as a probability, not a verdict. With real data.",
+ "tags": [
+  "ga4 attribution models explained",
+  "GA4 data-driven attribution",
+  "GA4 last click attribution",
+  "high direct traffic in GA4",
+  "GA4 model comparison report",
+  "offline marketing attribution"
+ ],
+ "imageAlt": "A cricket scoreboard crediting only the final shot while earlier moments of the match fade into the background.",
+ "infographicAlt": "Infographic of one customer journey from a hoarding to a form fill, how attribution models assign credit, what no model can see, a real account where direct traffic was four times organic, and five habits for reading attribution.",
+ "chartAlt": "Line chart of monthly users from March to August 2026: direct traffic spiked to 2,299 in June, four times organic search, before organic overtook it by August.",
+ "folder": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_10_Attribution_Is_a_Story_You_Tell_Yourself/10_Attribution-Is-a-Story-You-Tell-Yourself",
+ "download": {
+  "label": "Attribution-reading guide",
+  "href": "/downloads/attribution-reading-guide.pdf"
+ },
+ "body": [
+  {
+   "_type": "block",
+   "_key": "p10_002",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_001",
+     "text": "GA4 attribution models explained plainly: what each one assumes, what it cannot see, and how to read the report as a probability, not a verdict.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_004",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_003",
+     "text": "When India wins a close cricket match, the headlines go to whoever hit the winning runs. Nobody forgets the six in the last over. The opening spell that took three early wickets, the catch on the boundary in the thirtieth over, the partnership that steadied the chase: all of it mattered, and very little of it makes the headline.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_006",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_005",
+     "text": "Marketing attribution works the same way. A customer sees a hoarding, hears about you from a friend, reads a blog post, clicks an ad, and fills a form a week later. Some model has to decide who gets the credit. Whatever it decides is a story, told after the fact, about a match it only partly watched.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_013",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p10_010",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_007",
+     "text": "This piece takes its principle from the ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p10_008",
+     "text": "Same as Ever",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_009",
+     "text": " side of the ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p10_011",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "p10_010"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_012",
+     "text": " series: certainty is a story, and probability is the truth. Morgan Housel’s writing returns again and again to how much people prefer a clean story to a messy truth. An attribution report is a clean story. Reading it well means remembering the mess underneath.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_015",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_014",
+     "text": "WHAT IT IS DOING",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_017",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_016",
+     "text": "GA4 attribution models, explained plainly",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_022",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p10_019",
+     "_type": "link",
+     "href": "https://support.google.com/analytics/answer/10596866"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_018",
+     "text": "An attribution model is a rule for splitting the credit for a conversion across the touchpoints that came before it. ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p10_020",
+     "text": "GA4 offers three",
+     "marks": [
+      "p10_019"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_021",
+     "text": ":",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_025",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_023",
+     "text": "Data-driven attribution.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_024",
+     "text": " The default. It uses your account’s conversion data to estimate how much each touchpoint contributed.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_028",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_026",
+     "text": "Paid and organic last click.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_027",
+     "text": " All the credit goes to the last channel the person clicked before converting. Direct visits are ignored.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_031",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_029",
+     "text": "Google paid channels last click.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_030",
+     "text": " All the credit goes to the last Google Ads click, if there was one.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_033",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_032",
+     "text": "GA4 used to offer first click, linear, time decay, and position-based models as well. Google removed them in November 2023. If you are reading an older guide that walks you through comparing six models, it is describing a report that no longer exists.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_035",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_034",
+     "text": "Here is the part that matters. Every one of these is a model. Data-driven attribution sounds like measurement, but it is an estimate built only from the touchpoints GA4 can see. It cannot give credit to anything it cannot see.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_037",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_036",
+     "text": "UNDER THE HOOD",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_039",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_038",
+     "text": "What data-driven attribution is really estimating",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_041",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_040",
+     "text": "Data-driven attribution works by comparison. It looks at the paths of people who converted and the paths of people who did not, and estimates how much each touchpoint changed the odds of a conversion. If people who saw a particular channel converted more often than similar people who did not, that channel earns more credit.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_043",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_042",
+     "text": "That is a clever method, and it is still an estimate. It depends on three things being true: that GA4 recorded the touchpoints correctly, that there is enough conversion data for the comparison to mean something, and that the paths it cannot see do not matter much. In a small account, or one with patchy tagging, or one where most influence happens offline, those assumptions break quietly. The report still shows neat percentages. They just rest on less than they seem to.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_045",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_044",
+     "text": "There is also a time limit. GA4 only looks back a set number of days before a conversion, a lookback window you can check in its attribution settings. A buyer who first found you well before that window shows up as if the journey began later. For long, considered purchases, a lot of the early work falls outside the frame.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_047",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_046",
+     "text": "FROM THE WORK",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_049",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_048",
+     "text": "The month direct traffic took over the report",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_051",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_050",
+     "text": "An electric-vehicle information website we work with gives a clean example. Through spring 2026, its organic search traffic grew steadily as its rankings improved. Then June arrived.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "image",
+   "_key": "p10_052",
+   "__file": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_10_Attribution_Is_a_Story_You_Tell_Yourself/10_Attribution-Is-a-Story-You-Tell-Yourself/images/c3_direct_vs_organic.png",
+   "alt": "Line chart of monthly users from March to August 2026: direct traffic spiked to 2,299 in June, four times organic search, before organic overtook it by August."
+  },
+  {
+   "_type": "block",
+   "_key": "p10_054",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_053",
+     "text": "In June, GA4 recorded 2,299 users from direct traffic, against 556 from organic search. In the first week of the month alone, 1,631 people arrived as direct, against 90 from organic. On the report, “Direct” looked like the best-performing channel on the site.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_059",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p10_056",
+     "_type": "link",
+     "href": "https://support.google.com/analytics/answer/9756891"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_055",
+     "text": "It almost certainly was not. In GA4, the Direct channel means the source is ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p10_057",
+     "text": "recorded as “(direct)” with no medium",
+     "marks": [
+      "p10_056"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_058",
+     "text": ". Sometimes that is a person who typed the address or used a bookmark. Just as often, it is a person who arrived from somewhere GA4 could not identify: a link shared on WhatsApp, a link inside an app, an untagged email or campaign, a redirect that dropped its tracking. All of it lands in direct.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_061",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_060",
+     "text": "So the honest reading of June is not “people suddenly typed our address.” It is “something sent a lot of people, and we did not tag it.” Any attribution model working from that data will hand the credit to the wrong place. By August, organic search had passed direct: 1,808 users against 1,306.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_063",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_062",
+     "text": "FROM THE WORK",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_065",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_064",
+     "text": "The revenue no model could see",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_067",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_066",
+     "text": "The second example is bigger and quieter. A large Indian manufacturing brand we worked with ran digital campaigns for nine months alongside a heavy offline presence: TV, hoardings, painted walls across towns and villages. Digital produced hundreds of tracked leads. But most of the brand’s actual business came through its offline presence.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_069",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_068",
+     "text": "GA4 gave that offline work no credit at all. Not because it did nothing, but because GA4 cannot see a hoarding. A buyer who saw the brand on TV for years, then searched its name and clicked a paid ad, shows up in GA4 as a paid search conversion. The model is not wrong about the click. It is silent about the years.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_071",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_070",
+     "text": "This is the single most important thing to understand about attribution. It can only share out credit among the touchpoints it recorded. Everything else, TV, word of mouth, a salesperson’s visit, a dealer’s recommendation, is invisible, and its share of the credit goes to whichever digital touch happened to come last.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "image",
+   "_key": "p10_072",
+   "__file": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_10_Attribution_Is_a_Story_You_Tell_Yourself/10_Attribution-Is-a-Story-You-Tell-Yourself/images/mw-ga4-attribution-infographic.jpg",
+   "alt": "Infographic of one customer journey from a hoarding to a form fill, how attribution models assign credit, what no model can see, a real account where direct traffic was four times organic, and five habits for reading attribution."
+  },
+  {
+   "_type": "block",
+   "_key": "p10_074",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_073",
+     "text": "HOW TO READ IT",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_076",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_075",
+     "text": "Five habits for reading GA4 attribution without fooling yourself",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_079",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_077",
+     "text": "Compare the models before you trust one.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_078",
+     "text": " GA4’s model comparison report shows how credit shifts between data-driven and last click. Where they agree, be more confident. Where they disagree, you have found the uncertainty.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_082",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_080",
+     "text": "Read the conversion paths.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_081",
+     "text": " The conversion paths report shows the sequence of channels before a conversion. It is the closest GA4 gets to showing you the whole match.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_085",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_083",
+     "text": "Tag every link you control.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_084",
+     "text": " UTM parameters on emails, WhatsApp messages, QR codes, and partner links keep that traffic out of the direct bucket. Most attribution errors start as tagging gaps.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_088",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_086",
+     "text": "Bring offline outcomes in.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_087",
+     "text": " Import closed sales from your CRM, or at least compare them each month with what GA4 claims. Ask new customers how they heard about you, and keep the answers.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_091",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_089",
+     "text": "Test the big bets.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_090",
+     "text": " For large channels, the only real proof is an experiment: change spend in one region or period, hold another steady, and compare. It is slower than a report, and far harder to argue with.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_093",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_092",
+     "text": "TRANSLATION",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_095",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_094",
+     "text": "What the report says, and what it may mean",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_097",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_096",
+     "text": "Reading GA4 attribution with a pinch of salt",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "comparisonTable",
+   "_key": "p10_103",
+   "colA": "It may mean",
+   "colB": "Check this",
+   "rows": [
+    {
+     "_type": "row",
+     "_key": "p10_098",
+     "metric": "Direct traffic spiked",
+     "a": "Untagged links or campaigns",
+     "b": "Recent WhatsApp shares, emails, press mentions"
+    },
+    {
+     "_type": "row",
+     "_key": "p10_099",
+     "metric": "Paid search wins most conversions",
+     "a": "Branded searches from people who already knew you",
+     "b": "Split brand and non-brand campaigns"
+    },
+    {
+     "_type": "row",
+     "_key": "p10_100",
+     "metric": "Organic gets little credit",
+     "a": "Research visits early in the journey",
+     "b": "Conversion paths report"
+    },
+    {
+     "_type": "row",
+     "_key": "p10_101",
+     "metric": "Social shows almost no conversions",
+     "a": "Influence without the final click",
+     "b": "Branded search trend, customer surveys"
+    },
+    {
+     "_type": "row",
+     "_key": "p10_102",
+     "metric": "One channel’s conversions doubled",
+     "a": "A tracking or settings change",
+     "b": "Change history and key event settings"
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_105",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_104",
+     "text": "PROBABILITY, NOT PROOF",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_107",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_106",
+     "text": "Decide with ranges, not verdicts",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_109",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_108",
+     "text": "None of this makes attribution useless. It makes it a model, and a model is useful when you know its limits. Treat the report as a probability: this channel probably contributes a lot, that one probably less, and this is how confident we are.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_114",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p10_111",
+     "_type": "link",
+     "href": "/blog/one-big-bet-vs-many-small-ones"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_110",
+     "text": "In practice, that changes how you spend. Move budget in steps rather than all at once, the same discipline we argued for in ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p10_112",
+     "text": "One Big Bet vs Many Small Ones",
+     "marks": [
+      "p10_111"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_113",
+     "text": ". Watch whether total leads and sales move, not just whether the credited channel looks better. And when the model and the business disagree, trust the business, and go and find out why.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_116",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_115",
+     "text": "How to present attribution to a leadership team",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_118",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_117",
+     "text": "The way attribution is reported shapes how it is believed. A slide that says “paid search drove 62 percent of conversions” sounds like a fact. A slide that says “GA4 credits paid search with most conversions; last click and data-driven agree on this, so we are fairly confident” tells the truth and invites the right follow-up questions.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_121",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_119",
+     "text": "Say which model.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_120",
+     "text": " Every attribution number should name the model behind it.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_124",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_122",
+     "text": "Show agreement or disagreement.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_123",
+     "text": " If two models tell the same story, say so. If they do not, show both.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_127",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_125",
+     "text": "Name what is missing.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_126",
+     "text": " One line on what the report cannot see, such as offline media or phone sales, stops people treating it as complete.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_130",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_128",
+     "text": "Pair it with totals.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_129",
+     "text": " Show total leads and sales next to credited conversions, so nobody mistakes a shift in credit for a change in results.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p10_132",
+   "style": "blockquote",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_131",
+     "text": "Attribution is a model of what happened, not a record of it.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p10_133",
+   "title": "The Decision Rule",
+   "body": "Never cut a channel on attribution alone. If GA4 says a channel contributes little, test it: reduce it in one region or period and watch total sales, not credited conversions. If sales hold, the model was right. If they drop, the model was blind.",
+   "variant": "key-takeaway"
+  },
+  {
+   "_type": "block",
+   "_key": "p10_135",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_134",
+     "text": "The winning six still matters. So do the wickets in the first over. A good captain reads the whole scorecard, and a good marketer reads attribution the same way: as one account of the match, written by a scorer who missed half of it.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p10_136",
+   "title": "Free download: Attribution-reading guide",
+   "body": "A one-page guide to GA4’s three models, the five reading habits, and the checks to run before you move budget on an attribution report. Free to download, no sign-up.",
+   "variant": "info"
+  },
+  {
+   "_type": "block",
+   "_key": "p10_138",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p10_137",
+     "_type": "link",
+     "href": "/downloads/attribution-reading-guide.pdf"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_139",
+     "text": "Download: ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p10_140",
+     "text": "Attribution-reading guide",
+     "marks": [
+      "p10_137",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p10_141",
+   "title": "Is your attribution report telling the whole story?",
+   "body": "Our measurement audit checks your GA4 tagging, key events, and attribution setup, and shows you where the report is guessing.",
+   "variant": "stat"
+  },
+  {
+   "_type": "block",
+   "_key": "p10_143",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p10_142",
+     "_type": "link",
+     "href": "/contact"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_144",
+     "text": "→ Talk to us about a measurement audit",
+     "marks": [
+      "p10_142",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_146",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_145",
+     "text": "Research referenced: Google Analytics Help on attribution models and default channel groups; data from an electric-vehicle information website (2026) and a large Indian manufacturing brand (2024 to 2025), anonymised.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p10_151",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p10_148",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p10_147",
+     "text": "Part of the ",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_149",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "em",
+      "p10_148"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p10_150",
+     "text": " series on the marketing principles that survive every platform update.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "_key": "p10_152",
+   "question": "What attribution models are available in GA4?",
+   "answer": "Three: data-driven attribution, which is the default, paid and organic last click, and Google paid channels last click. The first click, linear, time decay, and position-based models were removed in November 2023."
+  },
+  {
+   "_key": "p10_153",
+   "question": "Is GA4 data-driven attribution accurate?",
+   "answer": "It is an estimate, not a measurement. It uses your conversion data to share credit among the touchpoints GA4 recorded. It cannot credit anything it cannot see, such as TV, outdoor ads, word of mouth, or untagged links, so that credit goes to whichever tracked touch is left."
+  },
+  {
+   "_key": "p10_154",
+   "question": "Why is direct traffic so high in GA4?",
+   "answer": "Direct includes visitors GA4 cannot trace, not just people who typed your address. Links shared on WhatsApp or inside apps, untagged emails and campaigns, and broken redirects all land in direct. A sudden spike usually means a tagging gap. In one real account, direct traffic reached four times organic search in a single month."
+  },
+  {
+   "_key": "p10_155",
+   "question": "How can I measure marketing that GA4 cannot see?",
+   "answer": "Import offline sales from your CRM, ask new customers how they heard about you, watch branded search volume, and for big channels run a simple test: change spend in one region or period, hold another steady, and compare total sales."
+  }
+ ]
+}

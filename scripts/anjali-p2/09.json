@@ -1,0 +1,1407 @@
+{
+ "id": "09",
+ "slug": "vanity-vs-value-metrics",
+ "title": "Vanity vs Value",
+ "seoTitle": "Vanity Metrics vs Actionable Metrics",
+ "excerpt": "Vanity metrics vs actionable metrics, through one real account: 16.5 crore impressions, lakhs of rupees spent, and the few numbers that actually paid.",
+ "tags": [
+  "vanity metrics vs actionable metrics",
+  "what are vanity metrics",
+  "vanity metrics examples in marketing",
+  "actionable marketing metrics",
+  "brand awareness vs lead generation",
+  "Looker Studio stakeholder report"
+ ],
+ "imageAlt": "A crowded market stall handing out free samples beside a quiet stall where a customer is paying.",
+ "infographicAlt": "Infographic comparing metrics that feel good with metrics that pay, the four-question vanity test ending in keep, move or drop, and a real account where 16.5 crore awareness impressions produced zero tracked leads while Google Ads produced 385.",
+ "chartAlt": "Two bar charts: awareness campaigns spent about 4.5 lakh rupees for 16.5 crore impressions and zero tracked leads, while Google Ads produced 385 leads and Meta lead ads produced 264.",
+ "folder": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_09_Vanity-vs-Value/09_Vanity-vs-Value",
+ "download": {
+  "label": "Vanity-metric audit checklist",
+  "href": "/downloads/vanity-metric-audit-checklist.pdf"
+ },
+ "body": [
+  {
+   "_type": "block",
+   "_key": "p09_002",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_001",
+     "text": "Vanity metrics vs actionable metrics, told through one real account: 16.5 crore impressions, lakhs of rupees, and the few numbers that actually paid.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_004",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_003",
+     "text": "Every Indian market has two kinds of stalls. One plays loud music, hands out free samples, and always has a crowd. The other is quieter, with a short line of people who already know what they want. At the end of the day, it is often the quiet one counting more money.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_006",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_005",
+     "text": "Marketing reports have the same two stalls. Some numbers draw a crowd in a review meeting: reach in crores, impressions, followers, video views. Others are small and unglamorous: qualified leads, orders, cost per sale. The first kind feels like progress. The second kind is progress.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_013",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p09_010",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_007",
+     "text": "That is the whole difference between vanity metrics and actionable metrics, and it is older than any ad platform. The principle comes from the ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p09_008",
+     "text": "Same as Ever",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_009",
+     "text": " side of the ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p09_011",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "p09_010"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_012",
+     "text": " series: feeling productive is not the same as being productive. Morgan Housel makes a related point about stories. The best story, not the best number, usually wins the room. A crore-sized reach figure is a very good story.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_015",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_014",
+     "text": "WHY THEY FEEL GOOD",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_017",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_016",
+     "text": "Vanity metrics are easy to grow and hard to argue with",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_019",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_018",
+     "text": "A vanity metric has three habits. It goes up whenever you spend more. It is big, so it looks impressive on a slide. And it rarely leads to a decision. Nobody moves budget because reach went from 40 lakh to 50 lakh.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_021",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_020",
+     "text": "Actionable metrics behave differently. They can go down. They are often small numbers. And each one points at something to fix: a landing page, a keyword, a form, a sales follow-up.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_023",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_022",
+     "text": "That is why reports drift toward vanity. It is not dishonesty. It is comfort. A big number that only goes up is easier to present than a small number that raises questions.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_025",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_024",
+     "text": "FROM THE WORK",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_027",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_026",
+     "text": "16.5 crore impressions, and the leads that did not follow",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_029",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_028",
+     "text": "Here is what that comfort costs in a real account. The client is a large Indian manufacturing brand, a household name in its category. Over nine months, from December 2024 to August 2025, the plan leaned heavily on awareness: brand campaigns on Meta and YouTube ran alongside lead generation on Google and Meta.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_031",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_030",
+     "text": "The awareness side delivered exactly what it promised. About ₹4.5 lakh bought roughly 16.5 crore impressions, with monthly reach in the tens of lakhs. On a slide, those numbers are enormous.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_033",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_032",
+     "text": "Then we asked the question the slide does not ask. What did it return?",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "image",
+   "_key": "p09_034",
+   "__file": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_09_Vanity-vs-Value/09_Vanity-vs-Value/images/c2_spend_vs_leads.png",
+   "alt": "Two bar charts: awareness campaigns spent about 4.5 lakh rupees for 16.5 crore impressions and zero tracked leads, while Google Ads produced 385 leads and Meta lead ads produced 264."
+  },
+  {
+   "_type": "block",
+   "_key": "p09_036",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_035",
+     "text": "The awareness campaigns produced no tracked leads. They were never built to, and that matters, but it also meant their only visible output was the size of the audience. Click-through rates on the brand campaigns stayed well under a tenth of a percent. On YouTube, 57 lakh impressions produced 772 clicks, at anywhere from ₹99 to over ₹900 per click.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_038",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_037",
+     "text": "The lead generation side told a different story. Google Ads search and remarketing produced 385 leads over the nine months. Meta lead ads produced 264. The first six months were rough: Meta lead ads cost ₹1.85 lakh for 28 leads. In the last three months, a similar total spend, packed into half the time, produced 236.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_040",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_039",
+     "text": "Lead generation, same account, two periods",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "comparisonTable",
+   "_key": "p09_043",
+   "colA": "Lead generation spend",
+   "colB": "Tracked leads",
+   "rows": [
+    {
+     "_type": "row",
+     "_key": "p09_041",
+     "metric": "Dec 2024 to May 2025 (6 months)",
+     "a": "₹4.43 lakh",
+     "b": "193"
+    },
+    {
+     "_type": "row",
+     "_key": "p09_042",
+     "metric": "Jun to Aug 2025 (3 months)",
+     "a": "₹4.56 lakh",
+     "b": "456"
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_045",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_044",
+     "text": "Google Ads and Meta lead generation campaigns only. Awareness spend excluded.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_047",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_046",
+     "text": "But even the leads were not the finish line. Only a small share turned into orders, and none at the scale a brand this size runs on. Most of the brand’s real business came from where it always had: its offline presence. TV, hoardings, painted walls in towns and villages. That work reached a wide audience, the right audience, and built the kind of trust that makes a buyer pick one brand over another at the counter.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_049",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_048",
+     "text": "THE REAL LESSON",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_051",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_050",
+     "text": "Awareness is real. Reporting it as results is the mistake.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_056",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p09_053",
+     "_type": "link",
+     "href": "https://ipa.co.uk/knowledge/ipa-blog/the-next-chapter-for-the-long-and-the-short-of-it"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_052",
+     "text": "It would be easy, and wrong, to read this as “digital awareness does not work.” Brand building matters. The IPA’s long-running effectiveness research by Les Binet and Peter Field found the strongest results came from a balance, roughly ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p09_054",
+     "text": "60:40 between brand building and sales activation",
+     "marks": [
+      "p09_053"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_055",
+     "text": ", because brand work pays back over the long term while activation pays back now.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_058",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_057",
+     "text": "The lessons from this account are narrower, and more useful.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_061",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_059",
+     "text": "Every channel has a job.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_060",
+     "text": " For a mass-market brand with decades of offline presence, TV and outdoor were already doing the awareness job well. Digital’s strongest job was catching people who were already looking, and proving what that was worth.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_064",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_062",
+     "text": "Judge each channel on its own job.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_063",
+     "text": " Awareness bought on Meta should be judged on awareness measures, such as reach in the right regions or growth in branded searches, not on leads it was never designed to produce.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_067",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_065",
+     "text": "Do not let the big number stand in for the result.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_066",
+     "text": " 16.5 crore impressions is a cost. It is what the money bought, not what it earned.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_070",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_068",
+     "text": "Digital’s real edge is measurement.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_069",
+     "text": " It is the one medium where you can connect a rupee to a lead to a sale. That edge is wasted if the report stops at reach.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_072",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_071",
+     "text": "WHY IT KEEPS HAPPENING",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_074",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_073",
+     "text": "Why smart teams still buy vanity",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_076",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_075",
+     "text": "Nobody sets out to waste money on a big number. Vanity creeps in for ordinary, human reasons, and they are worth naming because they repeat in almost every account.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_079",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_077",
+     "text": "The platform shows it first.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_078",
+     "text": " Ad dashboards open on reach, impressions, and clicks. Revenue is not in the ad platform at all, so the first numbers anyone sees are the vanity ones.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_082",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_080",
+     "text": "Big numbers are easy to share.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_081",
+     "text": " “We reached 50 lakh people” travels well in a leadership meeting. “Cost per qualified lead fell by ₹300” needs explaining.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_085",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_083",
+     "text": "Familiar strategies feel safer.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_084",
+     "text": " A plan that looks like what worked before, a big awareness push, feels less risky than a new one, even when the channel is different.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_088",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_086",
+     "text": "Sales data lives somewhere else.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_087",
+     "text": " Orders sit with the sales team or in a CRM. Joining them to marketing data takes effort, so the report stops where the easy data stops.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_090",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_089",
+     "text": "None of these is a character flaw. They are the default settings of how marketing gets reported. Changing the outcome means changing the defaults.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_092",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_091",
+     "text": "THE TEST",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_094",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_093",
+     "text": "Four questions that expose a vanity metric",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_096",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_095",
+     "text": "Run every number in your report through these.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_099",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_097",
+     "text": "Can it go down?",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_098",
+     "text": " If a metric only rises with spend, it is measuring the budget, not the result.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_102",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_100",
+     "text": "Does it lead to a decision?",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_101",
+     "text": " If it moved 20 percent, what would you change? No answer means vanity.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_105",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_103",
+     "text": "How far is it from money?",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_104",
+     "text": " Count the steps between the metric and a sale. The more steps, the more it can flatter.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_108",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_106",
+     "text": "Would the finance team care?",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_107",
+     "text": " If the people who approve budgets would shrug, it belongs on page two.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "image",
+   "_key": "p09_109",
+   "__file": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_09_Vanity-vs-Value/09_Vanity-vs-Value/images/mw-vanity-vs-value-infographic.jpg",
+   "alt": "Infographic comparing metrics that feel good with metrics that pay, the four-question vanity test ending in keep, move or drop, and a real account where 16.5 crore awareness impressions produced zero tracked leads while Google Ads produced 385."
+  },
+  {
+   "_type": "block",
+   "_key": "p09_111",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_110",
+     "text": "SIDE BY SIDE",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_113",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_112",
+     "text": "Vanity metrics and the actionable metrics behind them",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_115",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_114",
+     "text": "What feels good, and what pays",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "comparisonTable",
+   "_key": "p09_122",
+   "colA": "Pays",
+   "colB": "Why the swap",
+   "rows": [
+    {
+     "_type": "row",
+     "_key": "p09_116",
+     "metric": "Reach and impressions",
+     "a": "Cost per qualified lead",
+     "b": "Shows what the reach turned into"
+    },
+    {
+     "_type": "row",
+     "_key": "p09_117",
+     "metric": "Followers and likes",
+     "a": "Leads or sales from social",
+     "b": "Counts the audience that acts"
+    },
+    {
+     "_type": "row",
+     "_key": "p09_118",
+     "metric": "Clicks and CTR",
+     "a": "Landing page conversion rate",
+     "b": "Tests whether the click could buy"
+    },
+    {
+     "_type": "row",
+     "_key": "p09_119",
+     "metric": "Rankings",
+     "a": "Impressions and clicks per keyword",
+     "b": "Shows how often you are actually seen"
+    },
+    {
+     "_type": "row",
+     "_key": "p09_120",
+     "metric": "Sessions and page views",
+     "a": "Key events: forms, calls, chats",
+     "b": "Counts actions, not visits"
+    },
+    {
+     "_type": "row",
+     "_key": "p09_121",
+     "metric": "Total leads",
+     "a": "Lead-to-sale rate",
+     "b": "Separates buyers from form fills"
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_124",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_123",
+     "text": "IN LOOKER STUDIO",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_126",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_125",
+     "text": "A stakeholder report that cannot flatter you",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_128",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_127",
+     "text": "The fix is not to hide reach. It is to put reach in its place.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_130",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_129",
+     "text": "In Looker Studio, build the first page around money: spend, qualified leads, cost per qualified lead, and sales or pipeline, each with last month and last year beside it. Put awareness numbers on a second page, under a heading that names their job, such as “brand reach in target regions.” Add one line of text on every page saying what changed and what you will do about it.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_132",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_131",
+     "text": "When a report opens with a number that can go down, people start asking better questions in the meeting. That is the point.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_134",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_133",
+     "text": "IF WE STARTED AGAIN",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_136",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_135",
+     "text": "The same budget, planned around value",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_138",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_137",
+     "text": "If the same nine months and the same budget were planned again from the first day, the channels might not change much. What would change is the job each one is given, and how it is judged.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_141",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_139",
+     "text": "Search goes first.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_140",
+     "text": " People searching for the product already know what they want. The account’s search campaigns were the most dependable source of leads throughout, and they deserve the first rupee.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_144",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_142",
+     "text": "Remarketing gets a real budget.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_143",
+     "text": " In the final month, remarketing to people who had already visited produced 55 leads at about ₹580 each, the lowest cost per lead in the account. Warm audiences are cheap to convert.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_147",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_145",
+     "text": "Lead ads are judged on quality, not volume.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_146",
+     "text": " Every lead is checked with the sales team within a week, and campaigns are scored on leads that became conversations, not form fills.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_150",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_148",
+     "text": "Awareness is given an awareness goal.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_149",
+     "text": " If digital brand campaigns run at all, they target the regions where the offline presence is thin, and they are judged on growth in branded searches from those regions.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_153",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_151",
+     "text": "One monthly meeting joins the two sides.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_152",
+     "text": " Marketing brings spend and leads. Sales brings orders. The report is built from both.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p09_155",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_154",
+     "text": "That plan is less impressive on a slide. It is far easier to defend when the finance team asks what the money did.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_157",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_156",
+     "text": "ONE CAVEAT",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_159",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_158",
+     "text": "When a vanity metric earns its place",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_161",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_160",
+     "text": "Vanity metrics are not useless. They are diagnostics. A falling click-through rate tells you the creative is tired. Impressions that stop growing can tell you a campaign has hit its budget cap or run out of audience. Reach in the right regions is a fair goal for a brand campaign, if the report says so plainly. The problem is never the metric. It is using it to answer a question it cannot answer.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_163",
+   "style": "blockquote",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_162",
+     "text": "Reach is what you paid for. Revenue is what you got.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p09_164",
+   "title": "The Decision Rule",
+   "body": "Before any number goes into a report, name the decision it informs. If you cannot name one, move it to the appendix. If it is a brand metric, label it as one and judge it against a brand goal, not a sales goal.",
+   "variant": "key-takeaway"
+  },
+  {
+   "_type": "block",
+   "_key": "p09_166",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_165",
+     "text": "The loud stall is not wrong to play music. People need to know it exists. But a stall owner who mistakes the crowd for the day’s takings will keep buying louder speakers. Count the crowd. Then count the drawer, and let the drawer decide.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p09_167",
+   "title": "Free download: Vanity-metric audit checklist",
+   "body": "Run every metric in your current report through the four-question test and sort it into keep, move, or drop. Free to download, no sign-up.",
+   "variant": "info"
+  },
+  {
+   "_type": "block",
+   "_key": "p09_169",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p09_168",
+     "_type": "link",
+     "href": "/downloads/vanity-metric-audit-checklist.pdf"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_170",
+     "text": "Download: ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p09_171",
+     "text": "Vanity-metric audit checklist",
+     "marks": [
+      "p09_168",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p09_172",
+   "title": "Want reports that tell you the truth?",
+   "body": "We build reporting that leads with spend, qualified leads, and revenue, and puts reach where it belongs.",
+   "variant": "stat"
+  },
+  {
+   "_type": "block",
+   "_key": "p09_174",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p09_173",
+     "_type": "link",
+     "href": "/contact"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_175",
+     "text": "→ Talk to us about reporting",
+     "marks": [
+      "p09_173",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_177",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_176",
+     "text": "Research referenced: IPA, Binet and Field on balancing brand building and sales activation; campaign data from a large Indian manufacturing brand, December 2024 to August 2025, anonymised.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p09_182",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p09_179",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p09_178",
+     "text": "Part of the ",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_180",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "em",
+      "p09_179"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p09_181",
+     "text": " series on the marketing principles that survive every platform update.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "_key": "p09_183",
+   "question": "What is the difference between vanity metrics and actionable metrics?",
+   "answer": "A vanity metric grows with spend, looks impressive, and rarely leads to a decision, such as reach, impressions, or followers. An actionable metric can go down and points to something to fix, such as cost per qualified lead, landing page conversion rate, or lead-to-sale rate."
+  },
+  {
+   "_key": "p09_184",
+   "question": "Are impressions and reach vanity metrics?",
+   "answer": "Only when they are reported as results. They are fair measures for a brand campaign with a brand goal. They become vanity when they stand in for leads or revenue. In one real account, 16.5 crore awareness impressions produced no tracked leads, because that was never their job."
+  },
+  {
+   "_key": "p09_185",
+   "question": "How do I spot a vanity metric in my report?",
+   "answer": "Ask four questions: can it go down, does it lead to a decision, how many steps is it from a sale, and would the finance team care. A metric that fails most of these belongs in the appendix, not on the first page."
+  },
+  {
+   "_key": "p09_186",
+   "question": "Should brands stop spending on awareness?",
+   "answer": "No. IPA research by Les Binet and Peter Field found the strongest results came from balancing brand building and sales activation, roughly 60:40. The mistake is judging awareness on leads, or buying it on a channel where offline media already does the job better."
+  }
+ ]
+}

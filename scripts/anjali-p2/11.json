@@ -1,0 +1,1434 @@
+{
+ "id": "11",
+ "slug": "the-sunday-problem",
+ "title": "The Sunday Problem",
+ "seoTitle": "Google Ads Ad Scheduling: The Sunday Problem",
+ "excerpt": "Google Ads ad scheduling, read from real day-of-week data: why the same days keep losing, what Smart Bidding ignores, and how to test before you cut.",
+ "tags": [
+  "google ads ad scheduling",
+  "Google Ads dayparting",
+  "best time to run Google Ads",
+  "ad schedule bid adjustments with Smart Bidding",
+  "day of week performance Google Ads",
+  "weekend Google Ads performance"
+ ],
+ "imageAlt": "A weekly village haat busy on market day, with the same lane quiet on another day.",
+ "infographicAlt": "Infographic on the Sunday problem: ads that run while the business is closed lose leads, how scheduling works with and without Smart Bidding, and how to fix it by matching the ad schedule to business hours.",
+ "chartAlt": "",
+ "folder": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_11_The-Sunday-Problem/11_The-Sunday-Problem",
+ "download": {
+  "label": "Dayparting analysis template",
+  "href": "/downloads/dayparting-analysis-template.xlsx"
+ },
+ "body": [
+  {
+   "_type": "block",
+   "_key": "p11_002",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_001",
+     "text": "Google Ads ad scheduling starts with a simple pattern: people buy differently on different days, and the same days keep losing, week after week.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_004",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_003",
+     "text": "In much of rural India, the weekly haat still sets the rhythm of trade. Traders know which day the village comes to buy, and which days are for looking, talking, and going home empty-handed. Nobody needs a spreadsheet to know it. The pattern has held for generations.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_006",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_005",
+     "text": "Online buyers have their own weekly rhythm, and it holds just as stubbornly. Some days people research. Some days they decide. Some days they are with family and barely think about work at all. Google Ads ad scheduling is how you respond to that rhythm, once you have read it.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_013",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_010",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_007",
+     "text": "The principle comes from the ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p11_008",
+     "text": "Same as Ever",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_009",
+     "text": " side of the ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p11_011",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "p11_010"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_012",
+     "text": " series: patterns repeat because people do not change. Morgan Housel’s argument is that human behaviour is the most reliable thing in any system. Day-of-week data is a small, practical proof of it.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_015",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_014",
+     "text": "FROM THE WORK",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_017",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_016",
+     "text": "The day that kept losing",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_022",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_019",
+     "_type": "link",
+     "href": "/blog/campaigns-you-should-have-killed"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_018",
+     "text": "We first wrote about this pattern in ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p11_020",
+     "text": "The Campaigns You Should Have Killed Last Month",
+     "marks": [
+      "p11_019"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_021",
+     "text": ". On one distance-education account, splitting cost per lead by day of the week showed the same shape, week after week.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_024",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_023",
+     "text": "Cost per lead by day, one account, anonymised",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "comparisonTable",
+   "_key": "p11_028",
+   "colA": "Cost per lead",
+   "colB": "What it told us",
+   "rows": [
+    {
+     "_type": "row",
+     "_key": "p11_025",
+     "metric": "Wednesday",
+     "a": "about ₹798",
+     "b": "Strongest day, best conversion rate"
+    },
+    {
+     "_type": "row",
+     "_key": "p11_026",
+     "metric": "Friday",
+     "a": "about ₹923",
+     "b": "Quietly weak"
+    },
+    {
+     "_type": "row",
+     "_key": "p11_027",
+     "metric": "Sunday",
+     "a": "about ₹971",
+     "b": "Weakest, week after week"
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_030",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_029",
+     "text": "Sunday leads cost about 22 percent more than Wednesday leads. Not once, but as a pattern. And a pattern that repeats every week is not bad luck. It is information about how the buyers behave.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_032",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_031",
+     "text": "WHY IT REPEATS",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_034",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_033",
+     "text": "Browsing days and deciding days",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_036",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_035",
+     "text": "Why would one day keep losing? The reasons vary by business, but a few show up again and again.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_039",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_037",
+     "text": "Different intent.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_038",
+     "text": " On weekends, many people browse. They compare, save, and plan. The decision often comes on a weekday, back at a desk.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_042",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_040",
+     "text": "Different people.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_041",
+     "text": " The person researching on Sunday may not be the person who signs off. In B2B especially, the buyer is in the office Monday to Friday.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_045",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_043",
+     "text": "Slower follow-up.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_044",
+     "text": " A lead that arrives on Sunday may wait until Monday for a call. By then, the prospect may have filled three other forms.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_048",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_046",
+     "text": "A more distracted audience.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_047",
+     "text": " Family time, cricket, errands. The same ad meets people with less attention to give.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_050",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_049",
+     "text": "For an education account, the likely story is that people research courses at the weekend and act during the week. Your account may tell a different story. That is the point: read your own.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_052",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_051",
+     "text": "ONE CAUTION",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_054",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_053",
+     "text": "Sunday is not always the problem",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_056",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_055",
+     "text": "The principle is not “Sunday is bad.” For a car showroom, a furniture store, or a restaurant, the weekend may be the best time of the week. For a B2B supplier, Saturday and Sunday may be close to dead. The pattern is specific to your buyers. What never changes is that there is one, and that it repeats.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_061",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_058",
+     "_type": "link",
+     "href": "https://support.google.com/google-ads/answer/7457111"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_057",
+     "text": "There is also a trap. A Sunday click that becomes a Monday lead is not a wasted Sunday. ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p11_059",
+     "text": "Google Ads reports a conversion on the date the ad was shown",
+     "marks": [
+      "p11_058"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_060",
+     "text": ", while other tools date it by when the conversion happened. If your analytics says Monday is your best day and Google Ads says Sunday clicks convert well, both may be describing the same buyer.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_063",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_062",
+     "text": "HOW TO READ IT",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_065",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_064",
+     "text": "How to find your own Sunday",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_068",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_066",
+     "text": "Pull 8 to 12 weeks of data.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_067",
+     "text": " Enough for the pattern to show and for single odd days to wash out.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_071",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_069",
+     "text": "Split by day of week, then by hour.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_070",
+     "text": " In Google Ads, the ad schedule and time reports show performance by day and hour. In GA4, add day of week as a dimension to your conversion reports.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_074",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_072",
+     "text": "Judge on conversions, not clicks.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_073",
+     "text": " Compare cost per lead and conversion rate by day. A day with cheap clicks and no leads is not a good day.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_077",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_075",
+     "text": "Check lead quality by day.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_076",
+     "text": " Match leads to your CRM. A day that produces cheap leads nobody closes is a weak day in disguise.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_080",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_078",
+     "text": "Look for repetition.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_079",
+     "text": " One bad Sunday is noise. Eight bad Sundays in a row is a pattern.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_082",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_081",
+     "text": "INSIDE THE DAY",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_084",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_083",
+     "text": "The hour matters as much as the day",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_086",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_085",
+     "text": "Once you split by day, split by hour. Days hide patterns of their own. A Wednesday can be strong at 11 in the morning and weak at 11 at night, and the daily average blends the two into something that describes neither.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_088",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_087",
+     "text": "A few hourly shapes show up often enough to check for. Office hours tend to carry B2B searches, when buyers are at their desks and able to act. Late-night browsing on mobile is often research, not decision. Lunch hours can bring quick, curious clicks that rarely finish a form. None of these is a rule. Each is a hypothesis your own data can confirm or reject.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_090",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_089",
+     "text": "One hourly check matters more than the rest: if your ads ask people to call, make sure someone answers. Running call ads at 9 at night when the phones are off means paying for clicks that end in a ringing line. The fix is often not in the bid at all. It is in matching the ad schedule to the hours your team can respond.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "image",
+   "_key": "p11_091",
+   "__file": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_11_The-Sunday-Problem/11_The-Sunday-Problem/images/mw-sunday-problem-infographic.jpg",
+   "alt": "Infographic on the Sunday problem: ads that run while the business is closed lose leads, how scheduling works with and without Smart Bidding, and how to fix it by matching the ad schedule to business hours."
+  },
+  {
+   "_type": "block",
+   "_key": "p11_093",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_092",
+     "text": "WHAT TO DO",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_095",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_094",
+     "text": "Ad scheduling in Google Ads, with and without Smart Bidding",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_100",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_097",
+     "_type": "link",
+     "href": "https://support.google.com/google-ads/answer/2404244"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_096",
+     "text": "Once the pattern is clear, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p11_098",
+     "text": "ad scheduling",
+     "marks": [
+      "p11_097"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_099",
+     "text": " gives you two levers: which days and hours your ads can show, and how much you bid in each. Which lever works depends on how the campaign bids.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_102",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_101",
+     "text": "On manual or clicks-based bidding",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_104",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_103",
+     "text": "Use ad schedule bid adjustments. Lower bids on the weak days or hours and raise them on the strong ones, in modest steps, then review after two to four weeks.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_106",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_105",
+     "text": "On Smart Bidding",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_111",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_108",
+     "_type": "link",
+     "href": "https://support.google.com/google-ads/answer/2732132"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_107",
+     "text": "This is where many accounts go wrong. With Smart Bidding strategies such as Maximize conversions or Target CPA, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p11_109",
+     "text": "manual ad schedule bid adjustments are not used",
+     "marks": [
+      "p11_108"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_110",
+     "text": ", because the system already adjusts bids by time of day. What it does honour is the schedule itself: your ads show only on the days and hours you allow. So under Smart Bidding, your levers change.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_114",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_112",
+     "text": "Exclude hours only when the data is strong.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_113",
+     "text": " Switching off the weakest overnight hours is often safe. Switching off whole days is a bigger bet.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_117",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_115",
+     "text": "Shift budget, not bids.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_116",
+     "text": " Move spend toward the campaigns and audiences that perform on your strong days.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_120",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_118",
+     "text": "Change the message.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_119",
+     "text": " A Sunday browser may respond better to a guide or a comparison than to “call now.”",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_123",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_121",
+     "text": "Fix the follow-up.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_122",
+     "text": " If Sunday leads go cold by Monday, the fix may be in sales response time, not in Google Ads at all.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_125",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_124",
+     "text": "BEFORE YOU SWITCH OFF",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_127",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_126",
+     "text": "Test before you cut a day",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_129",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_128",
+     "text": "Switching Sunday off completely is tempting, and sometimes right. But test it first. Reduce Sunday spend for four weeks, or run the change as a campaign experiment, and watch total weekly leads and sales, not just Sunday’s numbers. If the week holds, the Sunday spend was waste. If Monday drops, Sunday was doing quiet work that no report was crediting.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_131",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_130",
+     "text": "A WORKED EXAMPLE",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_133",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_132",
+     "text": "What we would test on the education account",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_135",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_134",
+     "text": "Here is how the pattern above turns into a plan, step by step, on a campaign running Smart Bidding.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_138",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_136",
+     "text": "Keep Sunday on, for now.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_137",
+     "text": " Sunday leads are more expensive, but not wasted. Switching the day off is the last step, not the first.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_141",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_139",
+     "text": "Change what Sunday asks for.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_140",
+     "text": " Test ads that offer a course brochure or a fee comparison instead of “apply now,” matching the research mood of the day.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_144",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_142",
+     "text": "Move the follow-up.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_143",
+     "text": " Make Sunday leads the first calls on Monday morning, before they fill other forms.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_147",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_145",
+     "text": "Measure the whole week.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_146",
+     "text": " Track total weekly leads and cost per lead for four weeks, not Sunday alone.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_150",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_148",
+     "text": "Then decide.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_149",
+     "text": " If Sunday cost per lead moves closer to Wednesday’s, keep the change. If nothing moves, test a lower Sunday budget next.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p11_152",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_151",
+     "text": "Dayparting decision guide",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "comparisonTable",
+   "_key": "p11_157",
+   "colA": "On manual or clicks bidding",
+   "colB": "On Smart Bidding",
+   "rows": [
+    {
+     "_type": "row",
+     "_key": "p11_153",
+     "metric": "A day costs more every week",
+     "a": "Lower that day’s bid in steps",
+     "b": "Change the message or shift budget"
+    },
+    {
+     "_type": "row",
+     "_key": "p11_154",
+     "metric": "Some hours never convert",
+     "a": "Lower bids for those hours",
+     "b": "Exclude them from the schedule"
+    },
+    {
+     "_type": "row",
+     "_key": "p11_155",
+     "metric": "Leads go cold before follow-up",
+     "a": "Fix response time first",
+     "b": "Fix response time first"
+    },
+    {
+     "_type": "row",
+     "_key": "p11_156",
+     "metric": "Pattern appears for two weeks only",
+     "a": "Wait for more data",
+     "b": "Wait for more data"
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_159",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_158",
+     "text": "WHEN THE CALENDAR MOVES",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_161",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_160",
+     "text": "Patterns repeat, until the season shifts them",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_163",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_162",
+     "text": "Weekly rhythms hold, but the calendar bends them. In India, festival weeks, exam and admission seasons, month-end salary days, and long weekends all change when people search and buy. A Sunday in the middle of an admission season may behave nothing like a Sunday in a quiet month.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_165",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_164",
+     "text": "So read the pattern again every quarter, and compare like with like: this October against last October, not against July. Keep a simple note of the events that shaped each period, so a strange week does not get mistaken for a new trend. The rhythm of human behaviour does not change. The calendar it plays out on does.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_167",
+   "style": "blockquote",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_166",
+     "text": "One bad Sunday is noise. Eight bad Sundays in a row is a pattern.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p11_168",
+   "title": "The Decision Rule",
+   "body": "Adjust a day only when the pattern repeats for at least eight weeks, holds on conversions and not just clicks, and survives a check on lead quality. Then change one thing, test it, and measure the whole week.",
+   "variant": "key-takeaway"
+  },
+  {
+   "_type": "block",
+   "_key": "p11_170",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_169",
+     "text": "The haat trader does not open every day with the same stock and the same shout. He knows which day the village buys. Your account knows too. It has been telling you every week. Ad scheduling is simply the habit of listening.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p11_171",
+   "title": "Free download: Dayparting analysis template",
+   "body": "A ready spreadsheet template to split your Google Ads data by day and hour, compare cost per lead and conversion rate, and spot the patterns that repeat. Free to download, no sign-up.",
+   "variant": "info"
+  },
+  {
+   "_type": "block",
+   "_key": "p11_173",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_172",
+     "_type": "link",
+     "href": "/downloads/dayparting-analysis-template.xlsx"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_174",
+     "text": "Download: ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p11_175",
+     "text": "Dayparting analysis template",
+     "marks": [
+      "p11_172",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p11_176",
+   "title": "Know which days are costing you?",
+   "body": "Our optimization sprint reads your account by day, hour, device, and audience, and turns the patterns into a short list of changes.",
+   "variant": "stat"
+  },
+  {
+   "_type": "block",
+   "_key": "p11_178",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_177",
+     "_type": "link",
+     "href": "/contact"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_179",
+     "text": "→ Talk to us about an optimization sprint",
+     "marks": [
+      "p11_177",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_181",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_180",
+     "text": "Research referenced: Google Ads Help on ad scheduling, bid adjustments, and conversion reporting dates; account data from a distance-education advertiser, anonymised.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p11_186",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p11_183",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p11_182",
+     "text": "Part of the ",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_184",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "em",
+      "p11_183"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p11_185",
+     "text": " series on the marketing principles that survive every platform update.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "_key": "p11_187",
+   "question": "What is ad scheduling in Google Ads?",
+   "answer": "Ad scheduling lets you choose the days and hours your ads can show and, on manual or clicks-based bidding, raise or lower bids for specific days and times. It is how you respond to patterns in when your buyers actually convert."
+  },
+  {
+   "_key": "p11_188",
+   "question": "Does ad scheduling work with Smart Bidding?",
+   "answer": "Partly. Smart Bidding strategies do not use manual ad schedule bid adjustments, because they already adjust bids by time of day. But they do follow the schedule itself, so your ads only show on the days and hours you allow."
+  },
+  {
+   "_key": "p11_189",
+   "question": "Should I turn off my Google Ads on weekends?",
+   "answer": "Only if your own data says so. For many B2B and education accounts, weekends convert worse. For retail, showrooms, and restaurants, they may convert best. Test a reduction first and watch total weekly leads, because weekend research often converts on a weekday."
+  },
+  {
+   "_key": "p11_190",
+   "question": "How much data do I need to find a day-of-week pattern?",
+   "answer": "Eight to twelve weeks, judged on conversions rather than clicks. One weak day is noise. A day that underperforms week after week is a pattern worth acting on. In one real account, Sunday leads cost about 22 percent more than Wednesday leads, every week."
+  }
+ ]
+}

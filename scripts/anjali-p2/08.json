@@ -1,0 +1,1349 @@
+{
+ "id": "08",
+ "slug": "what-the-dashboard-hides",
+ "title": "What the Dashboard Hides",
+ "seoTitle": "Marketing Metrics That Matter: A Field Guide",
+ "excerpt": "The marketing metrics that matter rarely sit on the first screen. A field guide to reading past rank and reach to the numbers that move revenue.",
+ "tags": [
+  "marketing metrics that matter",
+  "marketing KPIs that drive revenue",
+  "marketing dashboard metrics",
+  "Looker Studio marketing dashboard",
+  "Search Console impressions vs ranking",
+  "ranking on page one but no traffic"
+ ],
+ "imageAlt": "A shopkeeper counting the day’s cash at closing time while a busy market street blurs past outside.",
+ "infographicAlt": "Infographic: the three layers of every dashboard (reach, intent, revenue), six swaps from easy metrics to useful ones, the four tiles page one needs, and a real account where page-one keywords were seen in only 0.35 percent of searches.",
+ "chartAlt": "Bar chart: seven keywords ranked on page one in July 2026, yet the site appeared in under 1 percent of monthly searches for each, from 0.01 to 0.93 percent.",
+ "folder": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_08_What-the-Dashboard-Hides/08_What-the-Dashboard-Hides",
+ "download": {
+  "label": "Metrics-that-matter reference sheet",
+  "href": "/downloads/metrics-that-matter-reference-sheet.pdf"
+ },
+ "body": [
+  {
+   "_type": "block",
+   "_key": "p08_002",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_001",
+     "text": "The marketing metrics that matter are rarely the ones on the first screen. A field guide to reading past the easy numbers to the few that move revenue.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_004",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_003",
+     "text": "A shopkeeper in a busy market can count footfall all day. Hundreds walk past. Dozens step in. A few pick something up and put it back. None of it tells him how the day went. He finds that out at night, when he counts the cash drawer.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_006",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_005",
+     "text": "Most marketing dashboards are footfall counters. Impressions, reach, clicks, sessions, rankings. They are easy to collect, so they fill the screen. The marketing metrics that matter, the ones that tell you whether money came back, sit further down the page, or are missing altogether.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_013",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p08_008",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_007",
+     "text": "This piece opens the measurement chapter of the series that began with ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p08_009",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "p08_008"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_010",
+     "text": ". It borrows two old ideas. Sun Tzu wrote that the general who wins makes many calculations before the battle, and the general who loses makes few. Morgan Housel’s ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p08_011",
+     "text": "Same as Ever",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_012",
+     "text": " keeps returning to a quieter point: the biggest risks are the ones nobody is looking at. A dashboard is where you make your calculations. It is also where the unseen risk hides.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_015",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_014",
+     "text": "WHY DASHBOARDS DRIFT",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_017",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_016",
+     "text": "Easy numbers crowd out useful ones",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_019",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_018",
+     "text": "Every tool shows you what it can count, not what you need to know. Ad platforms count impressions and clicks. Analytics counts sessions and page views. Rank trackers count positions. None of them can see a sale that closes on a phone call three weeks later, unless someone connects the two.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_021",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_020",
+     "text": "So dashboards drift toward the easy. The numbers that are free to collect get the big tiles. The numbers that take work, like cost per qualified lead, lead-to-sale rate, and revenue by channel, get a small table on page four, or no table at all.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_026",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p08_023",
+     "_type": "link",
+     "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7901608/"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_022",
+     "text": "There is an old name for what happens next. ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p08_024",
+     "text": "Goodhart’s law",
+     "marks": [
+      "p08_023"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_025",
+     "text": " says that when a measure becomes a target, it stops being a good measure. Chase clicks and you will get clicks. Chase rankings and you will get rankings. Whether you get customers is a separate question, and the dashboard will not ask it for you.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_028",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_027",
+     "text": "FROM THE WORK",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_030",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_029",
+     "text": "Page one, and almost nobody saw it",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_032",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_031",
+     "text": "Here is what that gap looks like in a real account. An electric-vehicle information website we work with tracks about 20 keywords every week. By July 2026, the rank tracker showed the site on page one for 11 of them. Some sat at position 3 or 4 every single week. On a dashboard, that is a success story.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_034",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_033",
+     "text": "Then we searched for those keywords ourselves. The site was not there.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_038",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_035",
+     "text": "So we put two numbers side by side for each keyword: how many people search for it in a month, and how many times the site actually appeared in those searches, taken from Search Console. Across the 11 page-one keywords, there were about 3.94 lakh searches in July. The site appeared 1,377 times. That is ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p08_036",
+     "text": "0.35 percent",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_037",
+     "text": " of the searches it was supposedly ranking for.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "image",
+   "_key": "p08_039",
+   "__file": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_08_What-the-Dashboard-Hides/08_What-the-Dashboard-Hides/images/c1_rank_vs_visibility.png",
+   "alt": "Bar chart: seven keywords ranked on page one in July 2026, yet the site appeared in under 1 percent of monthly searches for each, from 0.01 to 0.93 percent."
+  },
+  {
+   "_type": "block",
+   "_key": "p08_041",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_040",
+     "text": "One keyword with about 1.1 lakh monthly searches held position 4 all month and appeared 232 times. Another reached position 1 for a week and appeared 6 times. The rank was real. It just was not the rank most searchers saw.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_043",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_042",
+     "text": "The pattern flipped on the smallest keywords. A comparison query with about 480 monthly searches ranked between 3 and 6 and appeared 169 times, about a third of all searches. Small, specific keywords turned a ranking into visibility. The big head terms did not.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_048",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p08_045",
+     "_type": "link",
+     "href": "https://support.google.com/webmasters/answer/7042828"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_044",
+     "text": "Why the gap? A rank check is a snapshot. It looks at one search, from one location, on one device, at one moment. Search Console ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p08_046",
+     "text": "counts an impression",
+     "marks": [
+      "p08_045"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_047",
+     "text": " each time the site appears on a page of results a real person is looking at. When the two disagree by a factor of a hundred, the snapshot is the one that is wrong. The weekly data showed it too: several keywords jumped from position 100 to position 2 and back again within a month. That is not a position. It is a flicker.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_050",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_049",
+     "text": "How to tell a real ranking from a flicker",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_053",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_051",
+     "text": "Put impressions next to search volume.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_052",
+     "text": " If a page-one keyword appears in only a sliver of its monthly searches, the ranking is not stable.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_056",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_054",
+     "text": "Read rank as a trend, not a number.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_055",
+     "text": " Look at several weeks together. A rank that jumps between 2 and 100 is not a rank you own.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_059",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_057",
+     "text": "Search the way your buyers do.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_058",
+     "text": " Logged out, from the city and on the device they use.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_062",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_060",
+     "text": "Follow the keyword down to leads.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_061",
+     "text": " A keyword that ranks and appears but never converts is still a vanity number.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_064",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_063",
+     "text": "Search volume from Keyword Planner is itself an estimate, so treat the share as a direction, not a precise figure. But when the direction is 0.35 percent, you do not need precision to know something is off.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_066",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_065",
+     "text": "SAME MONTH, TWO READINGS",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_068",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_067",
+     "text": "Two dashboards, one set of numbers",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_070",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_069",
+     "text": "It is worth seeing how differently the same month reads depending on what the dashboard chooses to show.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_072",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_071",
+     "text": "The first dashboard, the one most teams build, says this: 11 tracked keywords on page one in July, up from none in May. Organic search users up from 8 in March to 1,648 in July. Every line points up and to the right. The natural conclusion is to keep doing exactly what we are doing.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_074",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_073",
+     "text": "The second dashboard uses the same data and adds one column. It says: we appeared in 0.35 percent of the searches for our page-one keywords. Our biggest head terms barely showed us at all. The keywords that did turn rank into visibility were small, specific, and closer to a buying decision. The natural conclusion here is different: stop celebrating the head-term rankings, build more pages around specific questions buyers actually ask, and track share of searches every month alongside rank.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_076",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_075",
+     "text": "Neither dashboard is false. The traffic growth was real and worth celebrating. But only the second one tells you where the next month of effort should go. That is the test of any dashboard: not whether the numbers are right, but whether they point you at the right work.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_078",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_077",
+     "text": "THE THREE LAYERS",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_080",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_079",
+     "text": "The marketing metrics that move revenue",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_082",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_081",
+     "text": "It helps to sort every number on a dashboard into three layers, and to be clear about which layer it belongs to.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_084",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_083",
+     "text": "Layer one: reach, the context",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_086",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_085",
+     "text": "Impressions, reach, rankings, sessions. Useful for spotting problems. They tell you whether you were in the room. They do not tell you whether anyone listened.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_088",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_087",
+     "text": "Layer two: intent, the signal",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_090",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_089",
+     "text": "Impression share on the keywords that sell, click-through rate on search, landing page conversion rate, qualified lead rate. These tell you whether the right people are paying attention.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_092",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_091",
+     "text": "Layer three: revenue, the verdict",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_094",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_093",
+     "text": "Cost per qualified lead, lead-to-sale rate, revenue or pipeline by channel, payback period. These tell you whether the money came back. They are the hardest to collect, and the only ones the business actually runs on.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_096",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_095",
+     "text": "Swap the easy number for the useful one",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "comparisonTable",
+   "_key": "p08_103",
+   "colA": "What it hides",
+   "colB": "Track this instead",
+   "rows": [
+    {
+     "_type": "row",
+     "_key": "p08_097",
+     "metric": "Impressions",
+     "a": "Whether the right people saw it",
+     "b": "Impression share on the keywords that sell"
+    },
+    {
+     "_type": "row",
+     "_key": "p08_098",
+     "metric": "Rankings",
+     "a": "How often you actually appear",
+     "b": "Search Console impressions and clicks per keyword"
+    },
+    {
+     "_type": "row",
+     "_key": "p08_099",
+     "metric": "Clicks and CTR",
+     "a": "Whether visitors could buy",
+     "b": "Landing page conversion rate"
+    },
+    {
+     "_type": "row",
+     "_key": "p08_100",
+     "metric": "Sessions",
+     "a": "Broken or duplicate sessions",
+     "b": "Key events: form fills, calls, chats"
+    },
+    {
+     "_type": "row",
+     "_key": "p08_101",
+     "metric": "Leads",
+     "a": "Whether the leads were real",
+     "b": "Qualified lead rate and lead-to-sale rate"
+    },
+    {
+     "_type": "row",
+     "_key": "p08_102",
+     "metric": "Cost per lead",
+     "a": "Lead quality",
+     "b": "Cost per qualified lead and cost per sale"
+    }
+   ]
+  },
+  {
+   "_type": "image",
+   "_key": "p08_104",
+   "__file": "Docs/Blogs/Anjali/MagicWorks_SWNW_P2_08_What-the-Dashboard-Hides/08_What-the-Dashboard-Hides/images/mw-what-the-dashboard-hides-infographic.jpg",
+   "alt": "Infographic: the three layers of every dashboard (reach, intent, revenue), six swaps from easy metrics to useful ones, the four tiles page one needs, and a real account where page-one keywords were seen in only 0.35 percent of searches."
+  },
+  {
+   "_type": "block",
+   "_key": "p08_106",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_105",
+     "text": "BUILDING IT",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_108",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_107",
+     "text": "Build the dashboard around one question",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_110",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_109",
+     "text": "Most dashboards answer twenty questions badly. A good one answers one question well: did marketing make money this month? Everything else either supports that answer or moves to a second page.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_112",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_111",
+     "text": "In Looker Studio, that usually means a first page with four tiles: spend, qualified leads, cost per qualified lead, and revenue or pipeline from marketing. Below them, one chart of those numbers over time and one table by channel. Reach and traffic go on page two, labelled as diagnostics.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_117",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p08_114",
+     "_type": "link",
+     "href": "/blog/leads-youre-losing-to-tracking"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_113",
+     "text": "The hard part is not the chart. It is the plumbing. GA4 needs the right key events marked, not every click. Leads from calls and chats need tracking, or the dashboard will quietly undercount the channels that drive them, the exact problem we covered in ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p08_115",
+     "text": "The Leads You’re Losing to Tracking You Can’t See",
+     "marks": [
+      "p08_114"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_116",
+     "text": ". And revenue usually lives in a CRM or a sales sheet, so it has to be brought in, even by hand once a month, before the top row means anything.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_119",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_118",
+     "text": "WHAT THE TOOLS MISS",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_121",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_120",
+     "text": "What GA4 and Looker Studio cannot see",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_123",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_122",
+     "text": "Be clear about the blind spots, or the dashboard will quietly fill them with confidence.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_126",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_124",
+     "text": "Offline influence.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_125",
+     "text": " A TV spot, a hoarding, a friend’s recommendation. GA4 records the visit, not the reason for it.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_129",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_127",
+     "text": "The sale itself.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_128",
+     "text": " Unless revenue is imported, the dashboard ends at the lead.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_132",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_130",
+     "text": "Lead quality.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_131",
+     "text": " A form fill from a student and a form fill from a buyer count the same.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_135",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_133",
+     "text": "The searches you miss.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_134",
+     "text": " Dashboards report where you appear. The searches where you never show up do not appear anywhere.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_137",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_136",
+     "text": "None of this is a reason to distrust the data. It is a reason to know where the data ends.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_139",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_138",
+     "text": "THE ROUTINE",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_141",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_140",
+     "text": "A monthly reading routine",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_144",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_142",
+     "text": "Start at the bottom.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_143",
+     "text": " Read revenue and cost per sale before you read traffic.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_147",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_145",
+     "text": "Check the pipes.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_146",
+     "text": " Are key events firing? Did any source jump suddenly? A spike in direct traffic is often a tagging gap, not a sudden rise in fame.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_150",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_148",
+     "text": "Compare, do not just read.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_149",
+     "text": " This month against last month, and against the same month last year.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_153",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_151",
+     "text": "Ask one question of every number.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_152",
+     "text": " What would I do differently if this moved 20 percent?",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_156",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_154",
+     "text": "Write down one decision.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_155",
+     "text": " A dashboard that never changes a decision is decoration.",
+     "marks": []
+    }
+   ],
+   "listItem": "number",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "p08_158",
+   "style": "blockquote",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_157",
+     "text": "A number is only useful if it can change what you do next.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p08_159",
+   "title": "The Decision Rule",
+   "body": "If a metric went up 20 percent tomorrow and you would not change anything, it does not belong on page one. Keep it, label it as a diagnostic, and give its space to a number that decides where the next rupee goes.",
+   "variant": "key-takeaway"
+  },
+  {
+   "_type": "block",
+   "_key": "p08_161",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_160",
+     "text": "The dashboard is not lying. It is answering the questions it was built to answer, and most dashboards were built to count activity. Rebuild yours around the cash drawer. Count the footfall too, but know which number tells you how the day went.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p08_162",
+   "title": "Free download: Metrics-that-matter reference sheet",
+   "body": "A one-page map of which metrics belong in reach, intent, and revenue, and what to track instead of each easy number. Free to download, no sign-up.",
+   "variant": "info"
+  },
+  {
+   "_type": "block",
+   "_key": "p08_164",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p08_163",
+     "_type": "link",
+     "href": "/downloads/metrics-that-matter-reference-sheet.pdf"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_165",
+     "text": "Download: ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "p08_166",
+     "text": "Metrics-that-matter reference sheet",
+     "marks": [
+      "p08_163",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "p08_167",
+   "title": "Not sure your dashboard is telling the truth?",
+   "body": "We set up GA4 and Looker Studio reporting that connects spend to leads and revenue, not just traffic.",
+   "variant": "stat"
+  },
+  {
+   "_type": "block",
+   "_key": "p08_169",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p08_168",
+     "_type": "link",
+     "href": "/contact"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_170",
+     "text": "→ Talk to us about analytics setup",
+     "marks": [
+      "p08_168",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_172",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_171",
+     "text": "Research referenced: Google Search Console Help on impressions and position; writing on Goodhart’s law; search data from an electric-vehicle information website, March to August 2026, anonymised.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "p08_177",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "p08_174",
+     "_type": "link",
+     "href": "/blog/same-war-new-weapons"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "p08_173",
+     "text": "Part of the ",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_175",
+     "text": "Same War, New Weapons",
+     "marks": [
+      "em",
+      "p08_174"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "p08_176",
+     "text": " series on the marketing principles that survive every platform update.",
+     "marks": [
+      "em"
+     ]
+    }
+   ]
+  }
+ ],
+ "faq": [
+  {
+   "_key": "p08_178",
+   "question": "What are the marketing metrics that matter most?",
+   "answer": "The ones that connect spend to money: cost per qualified lead, lead-to-sale rate, revenue or pipeline by channel, and payback period. Reach and traffic metrics help diagnose problems, but they do not tell you whether marketing made money."
+  },
+  {
+   "_key": "p08_179",
+   "question": "Why does my site rank on page one but get so little traffic?",
+   "answer": "A rank tracker checks one search, from one place and device, at one moment. Search Console counts every real appearance. If a page-one keyword shows impressions for only a tiny share of its monthly searches, the ranking is unstable or local, not a position most searchers see. In one real account, page-one keywords appeared in just 0.35 percent of searches."
+  },
+  {
+   "_key": "p08_180",
+   "question": "How do I check whether a ranking is real?",
+   "answer": "Put Search Console impressions next to the keyword’s monthly search volume, read the rank as a trend across several weeks, and search logged out from the city and device your buyers use. Then follow the keyword through to clicks and leads."
+  },
+  {
+   "_key": "p08_181",
+   "question": "What should be on the first page of a marketing dashboard?",
+   "answer": "Four numbers that answer whether marketing made money: spend, qualified leads, cost per qualified lead, and revenue or pipeline from marketing. Reach, traffic, and rankings belong on a second page, labelled as diagnostics."
+  }
+ ]
+}
