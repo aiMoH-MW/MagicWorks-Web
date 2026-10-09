@@ -17,13 +17,18 @@ function makeTransport() {
   });
 }
 
-export async function sendNotification(subject: string, html: string) {
+export async function sendNotification(
+  subject: string,
+  html: string,
+  extraTo: string[] = []
+) {
   try {
     const transport = makeTransport();
     if (!transport) return; // SMTP not configured
+    const to = Array.from(new Set([...extraTo, ...NOTIFY_TO]));
     await transport.sendMail({
       from:    '"MagicWorks Website" <noreply@magicworksitsolutions.com>',
-      to:      NOTIFY_TO.join(", "),
+      to:      to.join(", "),
       subject,
       html,
     });

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
 import { syncLeadToMagicPipeline } from "@/lib/magicpipeline";
+import { resolveLandingRoute } from "@/lib/leadRouting";
 import { getAttribution, extraColumns, withAttributionFallback, attributionSummary } from "@/lib/attribution";
 
 function buildMagicPipelineFormName(pillar?: string | null, sourcePage?: string | null) {
@@ -72,8 +73,13 @@ export async function POST(req: NextRequest) {
       referrer: attr.referrer || undefined,
     });
 
+    // Paid-ads landing pages: tag the subject and route to the campaign owner
+    const landing = resolveLandingRoute(source_page);
+
     await sendNotification(
-      `New lead from ${source_page ?? "website"}: ${name}`,
+      landing.label
+        ? `[${landing.label}] New lead: ${name}`
+        : `New lead from ${source_page ?? "website"}: ${name}`,
       `
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
@@ -84,7 +90,8 @@ export async function POST(req: NextRequest) {
         ${message ? `<p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>` : ""}
         <p><strong>Source page:</strong> ${source_page ?? "unknown"}</p>
         <p><strong>Attribution:</strong> ${attributionSummary(attr) || "direct / none captured"}</p>
-      `
+      `,
+      landing.recipients
     );
 
     return NextResponse.json({ success: true }, { status: 201 });
