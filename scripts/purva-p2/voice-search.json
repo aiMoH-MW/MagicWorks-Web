@@ -1,0 +1,1574 @@
+{
+ "key": "voice-search",
+ "folder": "Docs/Blogs/Purva/Voice-Search-in-India",
+ "image": "Docs/Blogs/Purva/Voice-Search-in-India/Voice-Search-in-India.jpg",
+ "title": "Voice Search in India: How Customers Ask Out Loud, and How Your Business Becomes the Answer",
+ "seoTitle": "Voice Search in India: Be the Spoken Answer · MagicWorks",
+ "excerpt": "How Indian customers ask voice assistants for local businesses, and how to make your business the answer. No technical work needed.",
+ "slug": "voice-search-in-india-how-customers-ask-out-loud",
+ "tags": [
+  "voice search optimisation",
+  "voice search SEO",
+  "voice search India"
+ ],
+ "imageAlt": "A woman driving in Pune asks her phone for the best dentist open now near her, and a voice assistant shows nearby clinic options on the dashboard screen",
+ "body": [
+  {
+   "_type": "block",
+   "_key": "pvvo_002",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_001",
+     "text": "A customer is driving through Baner with one hand on the wheel. She says to her phone, \"Best dentist open now near me.\" She does not get a page of ten blue links. She gets a short spoken answer, and perhaps a couple of options on the screen.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_004",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_003",
+     "text": "If your clinic is the one the assistant names, she calls you. If it is not, you were never part of the conversation, and you will not know that it happened.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_006",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_005",
+     "text": "That is what voice search changes. A typed search shows a customer many options and lets them choose. A spoken question usually returns one answer, or very few. This article explains how customers ask out loud, what tends to decide which business gets named, and how to prepare your business for it, in plain language and without any technical work.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_008",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_007",
+     "text": "What Changed on Your Customers' Phones This Year",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_010",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_009",
+     "text": "For years, \"voice search\" mostly meant Google Assistant on Android phones. That is changing. Google has been replacing Assistant with its Gemini AI as the default voice experience on Android, and the timeline was extended from 2025 into 2026 (9to5Google, 2025). In India, Android phones began switching automatically from Assistant to Gemini from 4 September 2026, in phases that differ by device, brand and region (Careerindia, 2026).",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_012",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_011",
+     "text": "For a business owner, the practical meaning is this: when a customer presses the power button or says \"Hey Google\", their question now goes to an AI model that gives conversational answers, rather than a command system that reads out a search result. Gemini supports English and nine Indian languages, including Hindi, Marathi, Tamil and Telugu, although some Indian languages do not yet support the \"Hey Google\" wake phrase, and press-to-talk still works (Careerindia, 2026).",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_014",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_013",
+     "text": "This is a moving situation, and the rollout is not complete on every phone. But the direction is clear. The voice assistant in your customer's pocket is becoming an AI that explains, compares and recommends, which makes it more important that your business is easy to describe correctly.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_016",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_015",
+     "text": "How People Actually Ask Out Loud",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_018",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_017",
+     "text": "Spoken questions are different from typed ones. People type \"dentist Baner\". They say, \"Which is the best dentist in Baner that is open on Sunday?\" Spoken queries tend to be longer, shaped like a full question, and more local.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_020",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_019",
+     "text": "Three patterns matter most for businesses:",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_023",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_021",
+     "text": "They are full questions.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_022",
+     "text": " \"How much does it cost to...\", \"Which is the best...\", \"Is there a... near me?\" Your content needs to answer questions in the same shape.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_026",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_024",
+     "text": "They are local and urgent.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_025",
+     "text": " Phrases such as \"near me\", \"open now\" and \"closest\" are common. A widely quoted Google figure says that 88% of consumers who do a local search on their smartphone visit or contact a business within a day (Google, via Synup, 2026). That figure comes from older Google research, so treat it as directional, but it explains why spoken local questions have such high intent.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_032",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_029",
+     "_type": "link",
+     "href": "/blog/aeo-in-hindi-and-regional-languages-is-your-business-invisible"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_027",
+     "text": "They often mix languages.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_028",
+     "text": " Many customers move between English and Hindi, or English and Marathi, within a single sentence. We covered the language side in detail in ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_030",
+     "text": "AEO in Hindi and Regional Languages",
+     "marks": [
+      "pvvo_029"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_031",
+     "text": ", including Google's statement at Google for India 2024 that 40% of Gemini's Indian-language users already rely on voice input.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_034",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_033",
+     "text": "One caution about the numbers you will see online. Many voice search statistics are repeated across dozens of websites and trace back to surveys from several years ago. The more recent picture is more nuanced: dedicated smart speakers have stalled, while voice on smartphones, in cars and inside apps keeps climbing (SQ Magazine, 2026). For most Indian businesses, the phone is the voice device that matters.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_036",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_035",
+     "text": "What Decides Which Business Gets Named",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_038",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_037",
+     "text": "No one outside the companies that build these assistants knows exactly how they choose. Anyone who promises a formula should be treated with caution. What we can say, from how these systems behave and from what has been published, is that three things consistently help.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_044",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_041",
+     "_type": "link",
+     "href": "/blog/before-ai-can-recommend-you-it-has-to-know-you"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_039",
+     "text": "1. The assistant can find a clear answer about you.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_040",
+     "text": " If your website and profiles state what you do, where you are and who you serve in plain sentences, an assistant has something to work with. This is the foundation we describe in ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_042",
+     "text": "Before AI Can Recommend You, It Has to Know You",
+     "marks": [
+      "pvvo_041"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_043",
+     "text": ".",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_050",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_047",
+     "_type": "link",
+     "href": "/blog/where-your-business-should-be-listed-online-in-india"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_045",
+     "text": "2. Your local details are complete and consistent.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_046",
+     "text": " Opening hours, address, phone number and services, correct on your Google Business Profile and the same everywhere else. If you are unsure where else you appear, our article on ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_048",
+     "text": "where your business should be listed online",
+     "marks": [
+      "pvvo_047"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_049",
+     "text": " will help you decide.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_053",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_051",
+     "text": "3. Your answers are short, direct and written the way people speak.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_052",
+     "text": " Spoken answers are brief. An often-quoted analysis of voice results put the average spoken answer at about 29 words (DemandSage, 2026, citing older research). Whether or not the exact number holds today, the principle does: an assistant is far more likely to use a clear two-sentence answer than a long paragraph with the point buried at the end.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_055",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_054",
+     "text": "Write for the Ear",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_057",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_056",
+     "text": "Writing for voice is mostly writing clearly. Here is a simple method you can apply to your website's FAQ and service pages.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_060",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_058",
+     "text": "Use the customer's question as the heading.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_059",
+     "text": " \"Is your clinic open on Sundays?\" works better than \"Opening hours\".",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_063",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_061",
+     "text": "Answer in the first sentence.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_062",
+     "text": " Then add detail afterwards. Compare:",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_066",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_064",
+     "text": "Weak:",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_065",
+     "text": " \"Our clinic has been serving the community for many years and takes pride in offering flexible timings for patient convenience. Please see below for details.\"",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_069",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_067",
+     "text": "Strong:",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_068",
+     "text": " \"Yes, we are open on Sundays from 10 am to 2 pm. Appointments are recommended, and walk-ins are welcome when there is space.\"",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_071",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_070",
+     "text": "The second version works for a person reading, for a person listening, and for an assistant looking for something to say.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_074",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_072",
+     "text": "Use everyday words.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_073",
+     "text": " Say \"root canal\", not \"endodontic therapy\", if that is what your customers ask for. Use the names of areas and landmarks your customers use, such as \"near Balewadi High Street\" or \"opposite the railway station\".",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_077",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_075",
+     "text": "Write each answer as if it will be read aloud.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_076",
+     "text": " If it sounds awkward when you say it out loud, rewrite it.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_079",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_078",
+     "text": "The Local Details Voice Depends On",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_081",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_080",
+     "text": "For local businesses, voice answers rely heavily on a handful of basic facts. Check each one today.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_084",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_082",
+     "text": "Opening hours, including holidays.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_083",
+     "text": " Diwali, Ganesh Chaturthi and local festivals change hours for many businesses. Update them before the day, not after.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_087",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_085",
+     "text": "Phone number and address.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_086",
+     "text": " Written the same way everywhere, with a landmark in the description if your location is hard to find.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_090",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_088",
+     "text": "Services, in customer words.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_089",
+     "text": " List what you do the way customers ask for it.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_093",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_091",
+     "text": "Languages spoken at your business.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_092",
+     "text": " If your team speaks Hindi, Marathi and English, say so. Customers asking in a particular language often want to know.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_096",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_094",
+     "text": "Payment methods and practical details.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_095",
+     "text": " UPI accepted, parking available, appointment needed. These are common spoken questions.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_099",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_097",
+     "text": "Reviews and replies.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_098",
+     "text": " Assistants often include ratings in local answers, so recent reviews and your replies to them count.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_101",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_100",
+     "text": "Common Mistakes That Keep Businesses Out of Spoken Answers",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_103",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_102",
+     "text": "When we look at how businesses show up for spoken questions, the same handful of problems appear again and again. Each one is fixable in an afternoon.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_106",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_104",
+     "text": "Vague service names.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_105",
+     "text": " A clinic that lists \"comprehensive dental solutions\" is harder to match to \"root canal treatment near me\" than one that names the treatments patients actually ask for.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_109",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_107",
+     "text": "Hours that are wrong on festival days.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_108",
+     "text": " An assistant that tells a customer you are open when you are closed damages trust faster than not appearing at all. Set holiday hours in advance.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_112",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_110",
+     "text": "Different phone numbers in different places.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_111",
+     "text": " If the number on your website differs from the one on your profile, an assistant has two answers to choose from, and a customer may get the wrong one.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_115",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_113",
+     "text": "Answers buried in brochures.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_114",
+     "text": " If your prices, timings or process appear only in a downloaded brochure or an image, they are easier to miss than the same facts written as plain text on a page.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_118",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_116",
+     "text": "Ignored reviews.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_117",
+     "text": " Because assistants often mention ratings, a profile with a long gap in reviews or replies can look inactive next to a competitor's.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_121",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_119",
+     "text": "Treating voice as English-only.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_120",
+     "text": " If your customers speak Hindi, Marathi or a mix of languages, an English-only website leaves a large part of the conversation unanswered.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_123",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_122",
+     "text": "None of these needs a new tool or a developer. They need someone to own the details, check them regularly, and write answers the way customers ask the questions.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_125",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_124",
+     "text": "How to Test It Yourself",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_127",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_126",
+     "text": "You cannot easily track voice queries in standard website reports, because voice and typed searches usually look the same once they arrive. The practical measure is the spoken test.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_129",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_128",
+     "text": "Take your phone, and ask it ten questions out loud, in the way a customer would. For example:",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_131",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_130",
+     "text": "\"Best [your service] near me\"",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_133",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_132",
+     "text": "\"Is [your business name] open today?\"",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_135",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_134",
+     "text": "\"How much does [your service] cost in [your area]?\"",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_137",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_136",
+     "text": "\"Which [your service] in [your city] is open on Sunday?\"",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_139",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_138",
+     "text": "Write down which businesses are named, whether yours appears, and whether the details that are read out are correct. Do this once a month, using the same questions, and note what changes. It takes ten minutes and tells you more than most dashboards.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_141",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_140",
+     "text": "For Marketing Heads and Founders: Where to Start This Week",
+     "marks": [
+      "em",
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_144",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_142",
+     "text": "Write down the ten questions your customers ask most often.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_143",
+     "text": " Ask your front desk or sales team. These are your voice questions.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_147",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_145",
+     "text": "Rewrite the first two sentences of each answer.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_146",
+     "text": " Put the answer first, in plain words, and publish them as an FAQ on your website.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_150",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_148",
+     "text": "Check your hours, phone number and address everywhere.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_149",
+     "text": " Start with Google Business Profile, then your website and main listings, and correct every mismatch.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_153",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_151",
+     "text": "Run the spoken test.",
+     "marks": [
+      "strong"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_152",
+     "text": " Ask your phone ten questions out loud and keep the results as your starting point.",
+     "marks": []
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_155",
+   "style": "h2",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_154",
+     "text": "What This Means for Your Business",
+     "marks": [
+      "strong"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_157",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_156",
+     "text": "Voice search is not a separate technology that needs its own project. It is the same fundamentals, a clear description of your business, correct local details and direct answers to real questions, tested by a customer who speaks instead of types.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_159",
+   "style": "normal",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_158",
+     "text": "What has changed is the stakes. A typed search offers many options. A spoken one often returns one. With Gemini now replacing Google Assistant on Android phones in India, the assistant answering your customers is becoming more conversational and more selective, which rewards businesses that are easy to describe and easy to trust.",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "callout",
+   "_key": "pvvo_160",
+   "title": "Want to Know Whether Your Business Is the Answer",
+   "body": "MagicWorks' Search & Answer Engine Optimisation service covers how your business appears in spoken and AI-generated answers, and our GMB Optimisation service keeps your local details accurate and current.",
+   "variant": "key-takeaway"
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_167",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_162",
+     "_type": "link",
+     "href": "/services/digital-marketing/seo-aeo"
+    },
+    {
+     "_key": "pvvo_165",
+     "_type": "link",
+     "href": "/services/digital-marketing/gmb-optimisation"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_161",
+     "text": "Explore: ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_163",
+     "text": "Search & Answer Engine Optimisation service",
+     "marks": [
+      "pvvo_162"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_164",
+     "text": " and ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_166",
+     "text": "GMB Optimisation service",
+     "marks": [
+      "pvvo_165"
+     ]
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_173",
+   "style": "h3",
+   "markDefs": [],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_172",
+     "text": "Sources",
+     "marks": []
+    }
+   ]
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_179",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_177",
+     "_type": "link",
+     "href": "https://www.careerindia.com/news/google-assistant-to-gemini-switch-india-2026-update-android-settings-011-65087.html"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_174",
+     "text": "Careerindia, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_175",
+     "text": "Google Assistant To Gemini Switch In India 2026",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_176",
+     "text": " (4 September 2026): ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_178",
+     "text": "careerindia.com",
+     "marks": [
+      "pvvo_177"
+     ]
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_185",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_183",
+     "_type": "link",
+     "href": "https://9to5google.com/2025/12/19/google-assistant-gemini-2026/"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_180",
+     "text": "9to5Google, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_181",
+     "text": "Gemini will replace Google Assistant on Android in 2026",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_182",
+     "text": " (19 December 2025): ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_184",
+     "text": "9to5google.com/2025/12/19/google-assistant-gemini-2026",
+     "marks": [
+      "pvvo_183"
+     ]
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_191",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_189",
+     "_type": "link",
+     "href": "/blog/aeo-in-hindi-and-regional-languages-is-your-business-invisible"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_186",
+     "text": "MagicWorks, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_187",
+     "text": "AEO in Hindi and Regional Languages",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_188",
+     "text": ", citing Google for India 2024 (14 August 2026): ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_190",
+     "text": "magicworksitsolutions.com/blog/aeo-in-hindi-and-regional-languages-is-your-business-invisible",
+     "marks": [
+      "pvvo_189"
+     ]
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_197",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_195",
+     "_type": "link",
+     "href": "https://sqmagazine.co.uk/voice-search-statistics/"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_192",
+     "text": "SQ Magazine, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_193",
+     "text": "Voice Search Statistics 2026",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_194",
+     "text": " (17 July 2026): ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_196",
+     "text": "sqmagazine.co.uk/voice-search-statistics",
+     "marks": [
+      "pvvo_195"
+     ]
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_203",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_201",
+     "_type": "link",
+     "href": "https://www.synup.com/en/voice-search-statistics"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_198",
+     "text": "Synup, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_199",
+     "text": "80+ Industry Specific Voice Search Statistics For 2026",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_200",
+     "text": ", citing Google: ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_202",
+     "text": "synup.com/en/voice-search-statistics",
+     "marks": [
+      "pvvo_201"
+     ]
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  },
+  {
+   "_type": "block",
+   "_key": "pvvo_209",
+   "style": "normal",
+   "markDefs": [
+    {
+     "_key": "pvvo_207",
+     "_type": "link",
+     "href": "https://www.demandsage.com/voice-search-statistics/"
+    }
+   ],
+   "children": [
+    {
+     "_type": "span",
+     "_key": "pvvo_204",
+     "text": "DemandSage, ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_205",
+     "text": "57 Voice Search Statistics 2026",
+     "marks": [
+      "em"
+     ]
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_206",
+     "text": ": ",
+     "marks": []
+    },
+    {
+     "_type": "span",
+     "_key": "pvvo_208",
+     "text": "demandsage.com/voice-search-statistics",
+     "marks": [
+      "pvvo_207"
+     ]
+    }
+   ],
+   "listItem": "bullet",
+   "level": 1
+  }
+ ],
+ "faq": [
+  {
+   "_key": "pvvo_168",
+   "question": "What is voice search optimisation?",
+   "answer": "It is the practice of making your business easy for an assistant to find, understand and name when someone asks a question out loud. In practice that means a clear description of your business, correct and consistent local details, and short, direct answers written in the way customers speak."
+  },
+  {
+   "_key": "pvvo_169",
+   "question": "Is voice search different from normal SEO?",
+   "answer": "It builds on the same foundations, but the questions are longer and more conversational, and the answer is usually a single result rather than a list. That makes clear, direct answers and accurate local details more important than they are for a typed search."
+  },
+  {
+   "_key": "pvvo_170",
+   "question": "Do I need new technology or a smart speaker to optimise for voice?",
+   "answer": "No. For most Indian businesses, voice search happens on customers' smartphones. The work is writing clear answers, keeping your Google Business Profile and listings accurate, and testing by asking your own phone questions out loud."
+  },
+  {
+   "_key": "pvvo_171",
+   "question": "Does voice search work in Hindi and other Indian languages?",
+   "answer": "Yes. Gemini supports English and nine Indian languages, including Hindi, Marathi, Tamil and Telugu, though some languages do not yet support the \"Hey Google\" wake phrase, and press-to-talk still works. If your customers ask in their own language, your answers should be available in that language too."
+  }
+ ]
+}
