@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { trackLeadSubmit } from "@/lib/analytics";
+import { normalizePhone, PHONE_ERROR } from "@/lib/phone";
 
 type FormState = "idle" | "submitting" | "success" | "error";
 
@@ -47,14 +48,23 @@ export default function LandingForm({
     _gotcha: "",
   });
 
+  const [phoneError, setPhoneError] = useState("");
+
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) {
+    if (e.target.name === "phone" && phoneError) setPhoneError("");
     setValues((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    const cleanPhone = normalizePhone(values.phone);
+    if (!cleanPhone) {
+      setPhoneError(PHONE_ERROR);
+      return;
+    }
+    setPhoneError("");
     setState("submitting");
 
     // Dropdown answers go into the message so they show in /admin and the email
@@ -73,7 +83,7 @@ export default function LandingForm({
         body: JSON.stringify({
           name: values.name,
           email: values.email,
-          phone: values.phone,
+          phone: cleanPhone,
           company: values.company,
           pillar,
           message,
@@ -148,15 +158,30 @@ export default function LandingForm({
           onChange={handleChange}
           className={inputCls}
         />
-        <input
-          type="tel"
-          name="phone"
-          placeholder="Phone"
-          autoComplete="tel"
-          value={values.phone}
-          onChange={handleChange}
-          className={inputCls}
-        />
+        <div>
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Mobile number (10 digits)"
+            autoComplete="tel"
+            inputMode="tel"
+            required
+            maxLength={18}
+            value={values.phone}
+            onChange={handleChange}
+            onBlur={() => {
+              if (values.phone && !normalizePhone(values.phone)) setPhoneError(PHONE_ERROR);
+            }}
+            aria-invalid={phoneError ? true : undefined}
+            aria-describedby={phoneError ? "phone-error" : undefined}
+            className={inputCls}
+          />
+          {phoneError && (
+            <p id="phone-error" role="alert" className="mt-1.5 text-[13px] text-[#FFB4B4]">
+              {phoneError}
+            </p>
+          )}
+        </div>
         <input
           type="text"
           name="company"

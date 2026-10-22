@@ -3,6 +3,7 @@ import { createServiceClient } from "@/lib/supabase";
 import { sendNotification } from "@/lib/email";
 import { syncLeadToMagicPipeline } from "@/lib/magicpipeline";
 import { resolveLandingRoute } from "@/lib/leadRouting";
+import { normalizePhone, PHONE_ERROR } from "@/lib/phone";
 import { getAttribution, extraColumns, withAttributionFallback, attributionSummary } from "@/lib/attribution";
 
 function buildMagicPipelineFormName(pillar?: string | null, sourcePage?: string | null) {
@@ -29,6 +30,15 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "Name and email are required" }, { status: 400 });
     }
 
+    // Landing pages: phone is mandatory and must be a real number (server-side guard)
+    let cleanPhone: string | null = phone || null;
+    if (resolveLandingRoute(source_page).label) {
+      cleanPhone = normalizePhone(String(phone ?? ""));
+      if (!cleanPhone) {
+        return NextResponse.json({ error: PHONE_ERROR }, { status: 400 });
+      }
+    }
+
     // UTMs + click IDs captured on landing (cookie), query string as fallback
     const attr = getAttribution(req);
 
@@ -37,7 +47,7 @@ export async function POST(req: NextRequest) {
         createServiceClient().from("leads").insert({
           name,
           email,
-          phone: phone || null,
+          phone: cleanPhone,
           company: company || null,
           website: website || null,
           pillar: pillar || null,
@@ -57,7 +67,7 @@ export async function POST(req: NextRequest) {
       formName: buildMagicPipelineFormName(pillar, source_page),
       name,
       email,
-      phone,
+      phone: cleanPhone ?? undefined,
       company,
       website,
       message,
@@ -84,7 +94,7 @@ export async function POST(req: NextRequest) {
         <h2>New Contact Form Submission</h2>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ""}
+        ${cleanPhone ? `<p><strong>Phone:</strong> ${cleanPhone}</p>` : ""}
         ${company ? `<p><strong>Company:</strong> ${company}</p>` : ""}
         ${pillar ? `<p><strong>Service interest:</strong> ${pillar}</p>` : ""}
         ${message ? `<p><strong>Message:</strong><br>${message.replace(/\n/g, "<br>")}</p>` : ""}
