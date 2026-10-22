@@ -22,6 +22,7 @@ interface LandingRoute {
 const LANDING_ROUTES: Record<string, LandingRoute> = {
   "/google-ads-agency-pune": { label: "Google Ads LP", envKey: "LEAD_NOTIFY_GOOGLE_ADS" },
   "/meta-ads-agency-pune": { label: "Meta Ads LP", envKey: "LEAD_NOTIFY_META_ADS" },
+  "/seo-aeo-agency-pune": { label: "SEO & AEO LP", envKey: "LEAD_NOTIFY_SEO_AEO" },
   "/web-development-agency-pune": { label: "Web Dev LP", envKey: "LEAD_NOTIFY_WEB_DEV" },
 };
 
