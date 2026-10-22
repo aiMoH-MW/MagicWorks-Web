@@ -14,6 +14,9 @@
  * unset or mistyped.
  */
 
+/** Always notified for every landing-page lead (sales@ is added in lib/email.ts). */
+const DEFAULT_LANDING_RECIPIENTS = ["purva.desai@magicworksitsolutions.com"];
+
 interface LandingRoute {
   label: string;
   envKey: string;
@@ -34,10 +37,13 @@ export function resolveLandingRoute(sourcePage?: string | null): {
   const route = LANDING_ROUTES[sourcePage.replace(/\/+$/, "")];
   if (!route) return { label: null, recipients: [] };
 
-  const recipients = (process.env[route.envKey] ?? "")
+  const extra = (process.env[route.envKey] ?? "")
     .split(",")
     .map((s) => s.trim())
     .filter((s) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s));
+
+  // Purva gets every landing-page lead; env vars can add more people per campaign.
+  const recipients = Array.from(new Set([...DEFAULT_LANDING_RECIPIENTS, ...extra]));
 
   return { label: route.label, recipients };
 }
