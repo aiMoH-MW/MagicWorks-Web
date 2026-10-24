@@ -6,13 +6,25 @@ import { getAttribution, extraColumns, withAttributionFallback, attributionSumma
 
 export async function POST(req: NextRequest) {
   try {
-    const { email, source } = await req.json();
+    const { email, source, _gotcha, elapsedMs } = await req.json();
 
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return NextResponse.json({ error: "Valid email is required" }, { status: 400 });
     }
 
     const cleanEmail = email.toLowerCase().trim();
+
+    // Bot filters. Return a fake success so bots do not learn what tripped them.
+    const [local, domain] = cleanEmail.split("@");
+    const isGmail = domain === "gmail.com" || domain === "googlemail.com";
+    const looksLikeBot =
+      Boolean(_gotcha) || // honeypot filled
+      (typeof elapsedMs === "number" && elapsedMs < 3000) || // submitted faster than a human can type
+      (isGmail && (local.match(/\./g)?.length ?? 0) >= 4); // random-dotted Gmail, e.g. o.ru.l.a.w.e.p.e.y.16
+    if (looksLikeBot) {
+      console.warn("[subscribe] blocked likely bot:", cleanEmail);
+      return NextResponse.json({ success: true }, { status: 201 });
+    }
     const cleanSource = source || "footer";
     const db = createServiceClient();
     const attr = getAttribution(req);

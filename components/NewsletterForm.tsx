@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { trackLeadSubmit } from "@/lib/analytics";
 
 interface Props {
@@ -11,6 +11,21 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
+  const [hp, setHp] = useState(""); // honeypot: humans never see or fill this
+  const startedAt = useRef(Date.now());
+
+  const honeypot = (
+    <input
+      type="text"
+      name="company_url"
+      value={hp}
+      onChange={(e) => setHp(e.target.value)}
+      tabIndex={-1}
+      autoComplete="off"
+      aria-hidden="true"
+      style={{ position: "absolute", left: "-9999px", top: "-9999px", width: "1px", height: "1px", overflow: "hidden" }}
+    />
+  );
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -20,7 +35,7 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, source }),
+        body: JSON.stringify({ email, source, _gotcha: hp, elapsedMs: Date.now() - startedAt.current }),
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || "Failed");
@@ -52,6 +67,7 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-2">
+            {honeypot}
             <input
               type="email"
               required
@@ -94,6 +110,7 @@ export default function NewsletterForm({ source, variant = "footer" }: Props) {
           </div>
         ) : (
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-2 lg:shrink-0">
+            {honeypot}
             <input
               type="email"
               required
