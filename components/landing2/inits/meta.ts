@@ -11,7 +11,9 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
   var CONFIG = {
     HUBSPOT_PORTAL_ID: 'YOUR_HUBSPOT_PORTAL_ID',  // HubSpot > Settings > Account (Hub ID)
     HUBSPOT_FORM_GUID: 'YOUR_HUBSPOT_FORM_GUID',  // HubSpot > Marketing > Forms > your form
-    META_PIXEL_ID: 'YOUR_META_PIXEL_ID'           // Meta Events Manager > Data sources > your Pixel
+    META_PIXEL_ID: 'YOUR_META_PIXEL_ID',
+    GOOGLE_ADS_ID: 'AW-18402352411',
+    GOOGLE_ADS_LABEL: 'CczACNCuneUcEJu69sZE'           // Meta Events Manager > Data sources > your Pixel
   };
   // The HubSpot form needs these fields: firstname, email, phone, company, message
   /* ====================================================================================== */
@@ -19,6 +21,18 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function isSet(v) { return v && v.indexOf('YOUR_') !== 0 && v.indexOf('XXXX') === -1; }
   function $(id) { return document.getElementById(id); }
+
+  /* ---- Google tag: loads only once a real ID is entered ---- */
+  if (isSet(CONFIG.GOOGLE_ADS_ID)) {
+    var gs = document.createElement('script');
+    gs.async = true;
+    gs.src = 'https://www.googletagmanager.com/gtag/js?id=' + CONFIG.GOOGLE_ADS_ID;
+    document.head.appendChild(gs);
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', CONFIG.GOOGLE_ADS_ID);
+  }
 
   /* ---- Meta Pixel: loads only once a real Pixel ID is entered ---- */
   if (isSet(CONFIG.META_PIXEL_ID)) {
@@ -199,7 +213,7 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
     'f-email': function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
     'f-phone': validPhone,
     'f-company': function (v) { return v.trim().length >= 2; },
-    'f-goal': function (v) { return v.trim().length >= 20; }
+    'f-goal': function () { return true; }
   };
   function check(id) {
     var el = $(id), ok = rules[id](el.value);
@@ -224,7 +238,7 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
 
     
     var message = ['Role: ' + (ROLES[val('role')] || val('role')), 'Monthly ad budget: ' + (BUDGETS[val('budget')] || val('budget')),
-                   'Goal: ' + form.elements.goal.value.trim()]
+                   (form.elements.goal.value.trim() ? 'Goal: ' + form.elements.goal.value.trim() : '')]
       .filter(Boolean).join(' | ');
 
     submitBtn.disabled = true;
@@ -249,6 +263,9 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
       window.dataLayer = window.dataLayer || []; window.dataLayer.push({ event: 'lead_form_submit', form_name: 'lp-meta-ads-pune' });
       showSuccess();
       if (window.fbq && isSet(CONFIG.META_PIXEL_ID)) { window.fbq('track', 'Lead'); }
+      if (window.gtag && isSet(CONFIG.GOOGLE_ADS_ID) && isSet(CONFIG.GOOGLE_ADS_LABEL)) {
+        window.gtag('event', 'conversion', { send_to: CONFIG.GOOGLE_ADS_ID + '/' + CONFIG.GOOGLE_ADS_LABEL });
+      }
     })
     .catch(function (err) { statusEl.textContent = (err && err.bad) ? 'Please check your name, email and 10-digit phone number, then try again.' : 'Something went wrong. Please call us on +91 97645 66644.'; })
     .finally(function () { submitBtn.disabled = false; });

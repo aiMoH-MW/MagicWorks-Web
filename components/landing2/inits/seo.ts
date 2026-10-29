@@ -11,8 +11,8 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
   var CONFIG = {
     HUBSPOT_PORTAL_ID: 'YOUR_HUBSPOT_PORTAL_ID',  // HubSpot > Settings > Account (Hub ID)
     HUBSPOT_FORM_GUID: 'YOUR_HUBSPOT_FORM_GUID',  // HubSpot > Marketing > Forms > your form
-    GOOGLE_ADS_ID: 'AW-XXXXXXXXXX',               // Google Ads > Tools > Conversions > Tag setup
-    GOOGLE_ADS_LABEL: 'XXXXXXXXXXXXXXXXXXXX'      // conversion label for the lead form
+    GOOGLE_ADS_ID: 'AW-18402352411',               // Google Ads > Tools > Conversions > Tag setup
+    GOOGLE_ADS_LABEL: 'CczACNCuneUcEJu69sZE'      // conversion label for the lead form
   };
   // The HubSpot form needs these fields: firstname, email, phone, company, website, message
   /* ====================================================================================== */

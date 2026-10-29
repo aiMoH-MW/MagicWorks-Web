@@ -11,8 +11,8 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
   var CONFIG = {
     HUBSPOT_PORTAL_ID: 'YOUR_HUBSPOT_PORTAL_ID',  // HubSpot > Settings > Account (Hub ID)
     HUBSPOT_FORM_GUID: 'YOUR_HUBSPOT_FORM_GUID',  // HubSpot > Marketing > Forms > your form
-    GOOGLE_ADS_ID: 'AW-XXXXXXXXXX',               // Google Ads > Tools > Conversions > Tag setup
-    GOOGLE_ADS_LABEL: 'XXXXXXXXXXXXXXXXXXXX'      // conversion label for the lead form
+    GOOGLE_ADS_ID: 'AW-18402352411',               // Google Ads > Tools > Conversions > Tag setup
+    GOOGLE_ADS_LABEL: 'CczACNCuneUcEJu69sZE'      // conversion label for the lead form
   };
   // The HubSpot form needs these fields: firstname, email, phone, company, message
   /* ====================================================================================== */
@@ -229,7 +229,7 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
     'f-email': function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()); },
     'f-phone': validPhone,
     'f-company': function (v) { return v.trim().length >= 2; },
-    'f-goal': function (v) { return v.trim().length >= 20; }
+    'f-goal': function () { return true; }
   };
   function check(id) {
     var el = $(id), ok = rules[id](el.value);
@@ -252,7 +252,7 @@ var __root = document.querySelector('.lpx'); if (__root) __root.classList.add('j
     
     var roleTxt = { owner: 'Founder or business owner', head: 'Marketing, product or business head', ops: 'Operations, IT or finance head', leader: 'Director, VP or other senior leader' }[val('role')] || val('role');
     var budgetTxt = { '2-5l': 'Rs 2 to 5 lakh', '5-10l': 'Rs 5 to 10 lakh', '10l-plus': 'Rs 10 lakh or more' }[val('budget')] || val('budget');
-    var message = ['Role: ' + roleTxt, 'Budget: ' + budgetTxt, 'Goal: ' + form.elements.goal.value.trim()]
+    var message = ['Role: ' + roleTxt, 'Budget: ' + budgetTxt, (form.elements.goal.value.trim() ? 'Goal: ' + form.elements.goal.value.trim() : '')]
       .filter(Boolean).join(' | ');
 
     submitBtn.disabled = true;
